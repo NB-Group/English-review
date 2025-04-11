@@ -1,39 +1,62 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <title>自动化默写</title>
-    <link rel="stylesheet" href="./style.css" />
-    <script src="./main.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/docx@9.1.0/build/index.umd.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-  </head>
-  <body>
-    <div id="message" style="display: none"></div>
-    <div id="container">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英语复习系统</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.jsdelivr.net/npm/docx@9.1.0/build/index.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="./docx-data.js"></script>
+  <script src="./main.js"></script>
+</head>
+<body>
+  <div id="message"></div>
+  
+  <div id="container">
+    <div id="header">
+      <h1>喵～英语复习小助手</h1>
+      <button id="theme-toggle" class="icon-button">🌙</button>
+    </div>
+    
+    <div id="main-content">
       <div id="answer">
-        <h1>自动化默写</h1><h5 style="margin-top: 0;">Written by 梁皓文</h5>
-        <input type="file" id="file-input" accept=".docx" />
+        <div class="form-group">
+          <label for="file-selector">选择练习文档喵～</label>
+          <select id="file-selector" class="select-input"></select>
+        </div>
+        
         <div id="question">
-          <p id="chinese-text">请上传一个 .docx 文件开始。</p>
-          <input
-            class="input"
-            type="text"
-            id="answer-input"
-            placeholder="请输入对应的英文"
-          />
-          <button id="submit-button">提交</button>
+          <div id="chinese-text">喵～请选择一个文档开始练习</div>
+          
+          <div class="input-container">
+            <input class="input" type="text" id="answer-input" placeholder="请输入对应的英文喵～" disabled>
+          </div>
+          
+          <div class="progress-container">
+            <div id="progress-bar">
+              <div id="progress-bar-inner"></div>
+            </div>
+            <span id="progress-text">0/0</span>
+          </div>
+          
+          <div class="button-group">
+            <button id="submit-button" class="primary-button" disabled>提交喵～</button>
+          </div>
         </div>
       </div>
+      
       <div id="list">
-        <h3>错题列表：</h3>
+        <h3>错题记录喵～</h3>
         <div id="error-list">
           <ul id="error-items"></ul>
         </div>
-        <button id="retry-button">重做错题</button>
-        <button id="export-button">导出错题</button>
+        <div class="button-group">
+          <button id="retry-button" class="secondary-button">重做错题</button>
+          <button id="export-button" class="secondary-button">导出错题</button>
+        </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>
