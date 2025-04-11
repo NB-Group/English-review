@@ -33,7 +33,7 @@ function message(text, type = "info") {
     } else if (text.includes("完成")) {
         catgirlText = text.replace("完成", "完成啦喵～");
     } else if (text.match(/^回答正确/)) {
-        catgirlText = "喵呜～答对啦！主人真是太厉害了～";
+        catgirlText = "喵呜～答对啦！真是太厉害了～";
     } else if (text.match(/^回答错误/)) {
         catgirlText = "呜喵...答错了呢，不要灰心哦～正确答案是：" + text.split("：")[1];
     } else if (!text.includes("喵")) {
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             updateProgressBar();
             displayNext();
-            message(`喵～已加载"${selectedDoc}"，共${qaPairs.length}道题目等着主人来解答呢！`, "success");
+            message(`喵～已加载"${selectedDoc}"，共${qaPairs.length}道题目等着你来解答喵！`, "success");
         } else {
             message("呜呜～无法加载所选文档呢", "error");
         }
@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // 比较处理后的答案
         if (filterAnswer(userAnswer) === filterAnswer(correctAnswer)) {
-            message("喵呜～答对啦！主人真是太聪明了～", "success");
+            message("喵呜～答对啦！真是太聪明了～", "success");
         } else {
             // 检查是否包含连接词调换的情况
             const checkConnectedPhrases = (text1, text2) => {
@@ -270,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 
                 message(`呜呜～答错了呢...正确答案是：${correctAnswer}`, "error");
             } else {
-                message("喵～答对啦！虽然连接词顺序不同，但主人真棒！", "success");
+                message("喵～答对啦！虽然连接词顺序不同，但你真棒！", "success");
             }
         }
         
@@ -296,7 +296,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             if (isRetryMode) {
                 if (wrongAnswers.length === 0) {
-                    message("喵呜～太厉害了！主人把所有错题都改正啦！", "success");
+                    message("喵呜～太厉害了！把所有错题都改正啦！", "success");
                 } else {
                     message(`呜喵～还有 ${wrongAnswers.length} 道题需要继续练习哦`, "warning");
                 }
@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 const correctCount = qaPairs.length - wrongAnswers.length;
                 const percentage = Math.round((correctCount / qaPairs.length) * 100);
-                message(`喵～主人完成了所有题目！正确率: ${percentage}%，${percentage > 80 ? '真是太厉害了！' : '继续加油哦～'}`, "info");
+                message(`喵～完成了所有题目！正确率: ${percentage}%，${percentage > 80 ? '真是太厉害了！' : '继续加油哦～'}`, "info");
             }
         }
     }
@@ -312,7 +312,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 重做错题
     retryBtn.addEventListener("click", function () {
         if (wrongAnswers.length === 0) {
-            message("喵～没有错题需要重做呢，主人太厉害啦！", "warning");
+            message("喵～没有错题需要重做呢，太厉害啦！", "warning");
             return;
         }
 
@@ -324,7 +324,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         updateProgressBar();
         displayNext();
-        message("喵～开始练习错题啦！主人加油哦～", "info");
+        message("喵～开始练习错题啦！加油哦～", "info");
     });
 
     // 导出错题
