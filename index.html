@@ -16,7 +16,10 @@
   <div id="container">
     <div id="header">
       <h1>喵～英语复习小助手</h1>
-      <button id="theme-toggle" class="icon-button">🌙</button>
+      <div class="header-buttons">
+        <button id="pomodoro-button" class="icon-button" title="设置番茄时钟">⏱️</button>
+        <button id="theme-toggle" class="icon-button" title="切换颜色模式">🌙</button>
+      </div>
     </div>
     
     <div id="main-content">
@@ -57,6 +60,33 @@
         </div>
       </div>
     </div>
+  </div>
+  
+  <!-- 番茄时钟设置弹窗 -->
+  <div id="pomodoro-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>番茄时钟设置喵～</h2>
+      <div class="form-group">
+        <label for="study-time">学习时间（分钟）：</label>
+        <input type="number" id="study-time" min="1" max="120" value="25" class="input">
+      </div>
+      <div class="form-group">
+        <label for="break-time">休息时间（分钟）：</label>
+        <input type="number" id="break-time" min="1" max="30" value="5" class="input">
+      </div>
+      <button id="start-pomodoro" class="primary-button">开始计时喵～</button>
+    </div>
+  </div>
+  
+  <!-- 番茄时钟显示区域 -->
+  <div id="pomodoro-timer" class="timer-container">
+    <div class="timer-content">
+      <span id="timer-status">学习中</span>
+      <span id="timer-countdown">25:00</span>
+    </div>
+    <button id="pause-timer" class="icon-button" title="暂停/继续">⏯️</button>
+    <button id="stop-timer" class="icon-button" title="停止">⏹️</button>
   </div>
 </body>
 </html>
