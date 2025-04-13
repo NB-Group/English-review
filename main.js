@@ -20,7 +20,8 @@ const STORAGE_KEYS = {
     POMODORO_CONFIG: 'english_review_pomodoro_config',
     POMODORO_STATE: 'english_review_pomodoro_state',
     WRONG_ANSWERS: 'english_review_wrong_answers',
-    CURRENT_FILE: 'english_review_current_file'
+    CURRENT_FILE: 'english_review_current_file',
+    AUDIO_ENABLED: 'english_review_audio_enabled' // 新增音频设置键名
 };
 
 // 番茄时钟状态
@@ -34,6 +35,10 @@ const pomodoroState = {
     timerId: null,
     lastUpdate: Date.now() // 新增：最后更新时间戳
 };
+
+// 新增：音频播放状态
+let isAudioEnabled = false;
+const audioCache = {}; // 音频缓存
 
 // 猫娘风格消息提示
 function message(text, type = "info") {
@@ -68,6 +73,9 @@ function message(text, type = "info") {
     // 重置所有类型
     messageEl.className = '';
     messageEl.classList.add(`message-${type}`);
+
+    // 播放音频（如果启用）
+    playAudioMessage(catgirlText); // 使用最终的猫娘文本作为文件名基础
     
     // 自动隐藏（错误消息除外）
     if (type !== "error") {
@@ -75,6 +83,73 @@ function message(text, type = "info") {
             messageEl.style.display = 'none';
         }, 3000);
     }
+}
+
+// 修改播放音频消息函数，添加可选的specificAudioFile参数
+function playAudioMessage(text, specificAudioFile = null) {
+    if (!isAudioEnabled) return;
+
+    // 如果提供了特定的音频文件名，则直接使用
+    let audioFilename = specificAudioFile;
+
+    // 如果没有提供特定的音频文件名，则尝试通过关键词匹配
+    if (!audioFilename) {
+        // 音频文件名与关键场景的映射表
+        const audioMappings = [
+            { keywords: ["开始练习错题", "加油"], filename: "喵～开始练习错题啦！加油哦～.mp3" },
+            { keywords: ["没有错题需要重做", "太厉害"], filename: "喵～没有错题需要重做呢，太厉害啦！.mp3" },
+            { keywords: ["没有错题可以导出"], filename: "喵呜～没有错题可以导出呢.mp3" },
+            { keywords: ["已加载", "题目等着你"], filename: "喵～已加载所选文档，这些题目等着你来解答喵！.mp3" },
+            { keywords: ["答错了", "正确答案"], filename: "喵喵～ 呜呜～答错了呢...正确答案是这个.mp3" },
+            { keywords: ["错题导出成功", "复习"], filename: "喵～错题导出成功啦喵～啦！可以回去好好复习哦～.mp3" },
+            // 新增音频映射
+            { keywords: ["答对啦", "太聪明了"], filename: "答对了喵~.mp3" },
+            { keywords: ["完成了所有题目"], filename: "喵～已完成所有题目喵～.mp3" },
+            { keywords: ["太厉害了", "都改正啦"], filename: "喵～太厉害了！都改正啦！.mp3" },
+            { keywords: ["番茄时钟开始啦"], filename: "喵～番茄时钟开始啦！.mp3" },
+            { keywords: ["该学习啦", "加油"], filename: "喵～该学习啦！加油哦～.mp3" },
+            { keywords: ["休息时间到啦"], filename: "喵～休息时间到啦！伸展一下身体吧～.mp3" }
+        ];
+
+        // 尝试查找匹配的音频文件
+        for (const mapping of audioMappings) {
+            if (mapping.keywords.some(keyword => text.includes(keyword))) {
+                audioFilename = mapping.filename;
+                break;
+            }
+        }
+    }
+
+    // 如果没找到匹配的文件，则退出
+    if (!audioFilename) {
+        console.log(`没有找到匹配的音频文件: "${text}"`);
+        return;
+    }
+
+    const audioPath = `Audio/${audioFilename}`;
+
+    // 尝试从缓存加载
+    if (audioCache[audioPath]) {
+        audioCache[audioPath].play().catch(e => console.error("播放缓存音频失败:", e));
+        return;
+    }
+
+    // 创建新的 Audio 对象
+    const audio = new Audio(audioPath);
+    
+    // 预加载并播放
+    audio.preload = 'auto';
+    audio.play().then(() => {
+        // 播放成功，加入缓存
+        audioCache[audioPath] = audio;
+    }).catch(error => {
+        console.warn(`无法加载或播放音频: ${audioPath}`, error);
+    });
+    
+    // 错误处理
+    audio.onerror = (e) => {
+        console.error(`加载音频文件出错: ${audioPath}`, e);
+    };
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -102,6 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const timerStatus = document.getElementById("timer-status");
     const pauseTimerBtn = document.getElementById("pause-timer");
     const stopTimerBtn = document.getElementById("stop-timer");
+    const audioToggleBtn = document.getElementById("audio-toggle"); // 获取音频按钮
     
     // 状态变量
     let currentIndex = 0;
@@ -142,6 +218,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function saveWrongAnswers() {
         localStorage.setItem(STORAGE_KEYS.WRONG_ANSWERS, JSON.stringify(wrongAnswers));
         localStorage.setItem(STORAGE_KEYS.CURRENT_FILE, currentFileName);
+    }
+
+    // 新增：保存音频设置
+    function saveAudioSetting() {
+        localStorage.setItem(STORAGE_KEYS.AUDIO_ENABLED, JSON.stringify(isAudioEnabled));
     }
 
     // 恢复番茄时钟配置
@@ -237,6 +318,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // 新增：恢复音频设置
+    function restoreAudioSetting() {
+        const savedAudioSetting = localStorage.getItem(STORAGE_KEYS.AUDIO_ENABLED);
+        if (savedAudioSetting !== null) {
+            isAudioEnabled = JSON.parse(savedAudioSetting);
+            updateAudioButtonState(); // 更新按钮状态
+            message(`喵～语音提示已${isAudioEnabled ? '开启' : '关闭'}`, "info");
+        }
+    }
+
     // 初始化番茄时钟弹窗
     pomodoroBtn.addEventListener("click", function() {
         pomodoroModal.style.display = "block";
@@ -281,6 +372,7 @@ document.addEventListener("DOMContentLoaded", function () {
         pomodoroModal.style.display = "none";
         timerContainer.style.display = "flex";
         message(`喵～番茄时钟开始啦！先学习 ${studyTime} 分钟哦`, "info");
+        playAudioMessage(null, "喵～番茄时钟开始啦！.mp3"); // 添加番茄钟开始时的音频
     }
     
     // 更新计时器显示
@@ -314,11 +406,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     // 切换到休息模式
                     pomodoroState.remainingSeconds = pomodoroState.breakMinutes * 60;
                     message("喵～休息时间到啦！去伸展一下身体吧～", "success");
+                    playAudioMessage(null, "喵～休息时间到啦！伸展一下身体吧～.mp3");
                     playNotificationSound();
                 } else {
                     // 切换到学习模式
                     pomodoroState.remainingSeconds = pomodoroState.studyMinutes * 60;
                     message("喵～该学习啦！加油哦～", "info");
+                    playAudioMessage(null, "喵～该学习啦！加油哦～.mp3");
                     playNotificationSound();
                 }
                 
@@ -407,6 +501,7 @@ document.addEventListener("DOMContentLoaded", function () {
             updateProgressBar();
             displayNext();
             message(`喵～已加载"${selectedDoc}"，共${qaPairs.length}道题目等着你来解答喵！`, "success");
+            playAudioMessage(null, "喵～已加载所选文档，这些题目等着你来解答喵！.mp3");
             
             // 加载新文档时，清空之前保存的错题
             localStorage.removeItem(STORAGE_KEYS.WRONG_ANSWERS);
@@ -554,6 +649,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (isCorrect || checkSlashOptions(userAnswer)) {
             message("喵呜～答对啦！真是太聪明了～", "success");
+            playAudioMessage(null, "答对了喵~.mp3"); // 添加答对时的音频播放
         } else {
             // 检查是否包含连接词调换的情况
             const checkConnectedPhrases = (text1, text2) => {
@@ -663,6 +759,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 errorItems.appendChild(errorItem);
                 
                 message(`呜呜～答错了呢...正确答案是：${correctAnswers.join(' 或 ')}`, "error");
+                playAudioMessage(null, "喵喵～ 呜呜～答错了呢...正确答案是这个.mp3");
             }
         }
         
@@ -692,6 +789,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (isRetryMode) {
                 if (wrongAnswers.length === 0) {
                     message("喵呜～太厉害了！把所有错题都改正啦！", "success");
+                    playAudioMessage(null, "喵～太厉害了！都改正啦！.mp3"); // 添加改正所有错题时的音频
                 } else {
                     message(`呜喵～还有 ${wrongAnswers.length} 道题需要继续练习哦`, "warning");
                 }
@@ -700,6 +798,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const correctCount = qaPairs.length - wrongAnswers.length;
                 const percentage = Math.round((correctCount / qaPairs.length) * 100);
                 message(`喵～完成了所有题目！正确率: ${percentage}%，${percentage > 80 ? '真是太厉害了！' : '继续加油哦～'}`, "info");
+                playAudioMessage(null, "喵～已完成所有题目喵～.mp3"); // 添加完成所有题目时的音频
             }
         }
     }
@@ -708,6 +807,7 @@ document.addEventListener("DOMContentLoaded", function () {
     retryBtn.addEventListener("click", function () {
         if (wrongAnswers.length === 0) {
             message("喵～没有错题需要重做呢，太厉害啦！", "warning");
+            playAudioMessage(null, "喵～没有错题需要重做呢，太厉害啦！.mp3");
             return;
         }
 
@@ -720,6 +820,7 @@ document.addEventListener("DOMContentLoaded", function () {
         updateProgressBar();
         displayNext();
         message("喵～开始练习错题啦！加油哦～", "info");
+        playAudioMessage(null, "喵～开始练习错题啦！加油哦～.mp3");
         
         // 清空错题后保存到本地存储
         saveWrongAnswers();
@@ -729,6 +830,7 @@ document.addEventListener("DOMContentLoaded", function () {
     exportBtn.addEventListener("click", function () {
         if (wrongAnswers.length === 0) {
             message("喵呜～没有错题可以导出呢", "warning");
+            playAudioMessage(null, "喵呜～没有错题可以导出呢.mp3");
             return;
         }
 
@@ -779,6 +881,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.body.removeChild(a);
 
                 message("喵～错题导出成功啦！可以回去好好复习哦～", "success");
+                playAudioMessage(null, "喵～错题导出成功啦喵～啦！可以回去好好复习哦～.mp3");
             });
         } catch (error) {
             console.error('导出错题时出错:', error);
@@ -801,11 +904,31 @@ document.addEventListener("DOMContentLoaded", function () {
         document.documentElement.classList.toggle('dark');
     });
 
+    // 新增：切换音频播放事件监听
+    audioToggleBtn.addEventListener("click", function() {
+        isAudioEnabled = !isAudioEnabled;
+        updateAudioButtonState();
+        saveAudioSetting(); // 保存设置
+        message(`喵～语音提示已${isAudioEnabled ? '开启' : '关闭'}`, "info");
+    });
+
+    // 新增：更新音频按钮状态和图标
+    function updateAudioButtonState() {
+        audioToggleBtn.textContent = isAudioEnabled ? '🔊' : '🔇';
+        audioToggleBtn.title = isAudioEnabled ? '关闭语音提示' : '开启语音提示';
+        if (isAudioEnabled) {
+            audioToggleBtn.classList.add('audio-enabled');
+        } else {
+            audioToggleBtn.classList.remove('audio-enabled');
+        }
+    }
+
     // 在页面加载时恢复状态
     function initializeFromLocalStorage() {
         restorePomodoroConfig();
         restorePomodoroState();
         restoreWrongAnswers();
+        restoreAudioSetting(); // 恢复音频设置
     }
 
     // 初始化
@@ -816,5 +939,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('beforeunload', function() {
         savePomodoroState();
         saveWrongAnswers();
+        // 音频设置在切换时已保存，此处无需重复保存
     });
 });

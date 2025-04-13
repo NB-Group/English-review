@@ -391,6 +391,12 @@ button:disabled {
     transform: scale(0.9);
 }
 
+/* 新增：音频按钮状态样式 */
+.icon-button.audio-enabled {
+    /* 可以添加特定样式，例如不同的背景或边框颜色 */
+    /* background: var(--success); */
+}
+
 /* 错题列表 */
 #list h3 {
     margin-bottom: 1rem;
