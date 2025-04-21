@@ -164,6 +164,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const submitBtn = document.getElementById("submit-button");
     const retryBtn = document.getElementById("retry-button");
     const exportBtn = document.getElementById("export-button");
+    const importBtn = document.getElementById("import-button"); // 获取导入按钮
+    const importFileInput = document.getElementById("import-file-input"); // 获取文件输入框
     
     // 番茄时钟元素
     const pomodoroModal = document.getElementById("pomodoro-modal");
@@ -302,9 +304,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     wrongAnswers.forEach(qa => {
                         const errorItem = document.createElement("li");
                         errorItem.className = "error-item";
+                        // 处理可能没有 highlightedAnswer 的情况（例如导入的错题）
+                        const highlighted = qa.highlightedAnswer || qa.english; 
                         errorItem.innerHTML = `
                             <div class="error-chinese">${qa.chinese}</div>
-                            <div class="error-correct">正确: ${qa.highlightedAnswer}</div>
+                            <div class="error-correct">正确: ${highlighted}</div>
                             <div class="error-user">你的答案: ${qa.userAnswer}</div>
                         `;
                         errorItems.appendChild(errorItem);
@@ -533,11 +537,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 处理答案提交
     function handleSubmit() {
-        if (currentIndex >= qaPairs.length) return;
+        // 增加调试信息
+        console.log("handleSubmit called. currentIndex:", currentIndex, "qaPairs.length:", qaPairs.length);
+        
+        if (currentIndex >= qaPairs.length) {
+            console.log("handleSubmit aborted: No more questions.");
+            return;
+        }
         
         const userAnswer = answerInput.value.trim();
         if (!userAnswer) {
             message("喵～请输入答案再提交哦", "warning");
+            console.log("handleSubmit aborted: No user answer.");
             return;
         }
         
@@ -778,6 +789,7 @@ document.addEventListener("DOMContentLoaded", function () {
             answerInput.value = "";
             answerInput.focus();
             answerInput.disabled = false;
+            submitBtn.disabled = false; // 确保在有下一题时启用按钮
         } else {
             chineseText.textContent = isRetryMode ? 
                 "喵～错题练习完成啦！" : 
@@ -785,19 +797,26 @@ document.addEventListener("DOMContentLoaded", function () {
             
             answerInput.value = "";
             answerInput.disabled = true;
+            submitBtn.disabled = true; // 在没有题目时禁用按钮
             
+            let playedRetryCompletionAudio = false; // 添加标志位
             if (isRetryMode) {
                 if (wrongAnswers.length === 0) {
                     message("喵呜～太厉害了！把所有错题都改正啦！", "success");
                     playAudioMessage(null, "喵～太厉害了！都改正啦！.mp3"); // 添加改正所有错题时的音频
+                    playedRetryCompletionAudio = true; // 标记已播放重试完成音频
                 } else {
                     message(`呜喵～还有 ${wrongAnswers.length} 道题需要继续练习哦`, "warning");
                 }
-                isRetryMode = false;
-            } else {
+                isRetryMode = false; // 在判断完成后重置模式
+            } 
+            
+            // 只有在非重试模式完成，或者重试模式完成但未播放特定完成音频时，才播放通用完成音频
+            if (!playedRetryCompletionAudio && !isRetryMode) { 
                 const correctCount = qaPairs.length - wrongAnswers.length;
-                const percentage = Math.round((correctCount / qaPairs.length) * 100);
-                message(`喵～完成了所有题目！正确率: ${percentage}%，${percentage > 80 ? '真是太厉害了！' : '继续加油哦～'}`, "info");
+                // 确保 qaPairs.length > 0 避免除以零
+                const percentage = qaPairs.length > 0 ? Math.round((correctCount / qaPairs.length) * 100) : 100; 
+                message(`喵～完成了所有题目！正确率: ${percentage}%，${percentage >= 80 ? '真是太厉害了！' : '继续加油哦～'}`, "info");
                 playAudioMessage(null, "喵～已完成所有题目喵～.mp3"); // 添加完成所有题目时的音频
             }
         }
@@ -889,13 +908,146 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // 事件监听
-    submitBtn.addEventListener("click", handleSubmit);
-    
-    answerInput.addEventListener("keypress", function (event) {
-        if (event.key === "Enter") {
-            event.preventDefault();
-            handleSubmit();
+    // 新增：处理错题导入 (修改为处理 DOCX)
+    async function importWrongAnswers(file) {
+        const reader = new FileReader();
+        
+        reader.onload = async function(event) {
+            try {
+                const arrayBuffer = event.target.result;
+                // 确保 docx, PizZip, docxtemplater 库已通过 <script> 标签加载
+                const { Document, Paragraph } = docx; 
+                
+                // --- 使用 PizZip 和 docxtemplater 解析 ---
+                let importedCount = 0;
+                // 显式从 window 对象访问 PizZip 和 docxtemplater
+                if (typeof window.PizZip === 'undefined' || typeof window.docxtemplater === 'undefined') {
+                    message("呜呜～导入所需的库未能加载喵～", "error");
+                    console.error("PizZip or docxtemplater not loaded");
+                    return; 
+                }
+                
+                const zip = new window.PizZip(arrayBuffer); // 使用 window.PizZip
+                const doc = new window.docxtemplater(zip, { 
+                    paragraphLoop: true,
+                    linebreaks: true,
+                });
+                // 获取文档的纯文本内容
+                const textContent = doc.getFullText(); 
+                console.log("DOCX Full Text Content:", textContent); // 调试：输出完整文本内容
+                const lines = textContent.split('\n').filter(line => line.trim() !== '');
+                console.log("Processed Lines:", lines); // 调试：输出处理后的行数组
+
+                // --- 修改解析逻辑以处理单行格式 ---
+                lines.forEach((line, index) => {
+                    line = line.trim();
+                    console.log(`\nProcessing line ${index + 1}: "${line}"`); // 调试：输出当前处理的行
+
+                    // 检查行是否同时包含 ' - ' 和 '错误答案: '
+                    if (line.includes(' - ') && line.includes('错误答案: ')) {
+                        console.log(`Line ${index + 1} contains required separators.`); // 调试
+                        try {
+                            // 按 '错误答案: ' 分割
+                            const parts = line.split('错误答案: ');
+                            console.log(`  Split by '错误答案: ' ->`, parts); // 调试
+                            const qaPart = parts[0].trim();
+                            const userAnswer = parts[1] ? parts[1].trim() : ''; // 添加检查确保 parts[1] 存在
+                            console.log(`    QA Part: "${qaPart}", User Answer: "${userAnswer}"`); // 调试
+
+                            // 按 ' - ' 分割前半部分
+                            const qaParts = qaPart.split(' - ');
+                            console.log(`    Split QA Part by ' - ' ->`, qaParts); // 调试
+                            if (qaParts.length >= 2) {
+                                const currentEnglish = qaParts[0].trim();
+                                // 处理中文中可能包含 ' - '，取第一个 ' - ' 之后的所有内容
+                                const currentChinese = qaParts.slice(1).join(' - ').trim(); 
+                                console.log(`      English: "${currentEnglish}", Chinese: "${currentChinese}"`); // 调试
+
+                                if (currentEnglish && currentChinese && userAnswer) {
+                                    console.log(`      Extracted data seems valid.`); // 调试
+                                    // 检查是否已存在相同的错题（基于英文和中文）
+                                    const exists = wrongAnswers.some(qa => qa.english === currentEnglish && qa.chinese === currentChinese);
+                                    
+                                    if (!exists) {
+                                        console.log(`      Adding new wrong answer.`); // 调试
+                                        // 创建错题对象
+                                        const newWrongAnswer = {
+                                            english: currentEnglish,
+                                            chinese: currentChinese,
+                                            userAnswer: userAnswer,
+                                            highlightedAnswer: currentEnglish // 导入时无高亮信息
+                                        };
+                                        wrongAnswers.push(newWrongAnswer);
+                                        
+                                        // 更新界面显示
+                                        const errorItem = document.createElement("li");
+                                        errorItem.className = "error-item";
+                                        errorItem.innerHTML = `
+                                            <div class="error-chinese">${newWrongAnswer.chinese}</div>
+                                            <div class="error-correct">正确: ${newWrongAnswer.highlightedAnswer}</div>
+                                            <div class="error-user">你的答案: ${newWrongAnswer.userAnswer}</div>
+                                        `;
+                                        errorItems.appendChild(errorItem);
+                                        importedCount++;
+                                    } else {
+                                        console.log(`      Wrong answer already exists.`); // 调试
+                                    }
+                                } else {
+                                     console.log(`      Extracted data invalid (empty fields).`); // 调试
+                                }
+                            } else {
+                                console.log(`      QA Part split failed or insufficient parts.`); // 调试
+                            }
+                        } catch (parseError) {
+                            console.warn(`解析行时出错: "${line}"`, parseError); // 修改日志
+                        }
+                    } else {
+                         console.log(`Line ${index + 1} skipped: Missing required separators (' - ' or '错误答案: ').`); // 调试
+                    }
+                    // 可以选择性地保留旧逻辑以支持两行格式，或者完全替换
+                    /* else if (line.startsWith('错误答案: ')) { ... } else if (line.includes(' - ')) { ... } */
+                });
+                // --- 解析逻辑修改结束 ---
+
+
+                if (importedCount > 0) {
+                    saveWrongAnswers(); // 保存更新后的错题列表
+                    message(`喵～成功导入了 ${importedCount} 道错题！`, "success");
+                } else {
+                    message("喵呜～没有找到符合格式的新错题可以导入呢", "info");
+                    console.log("Import finished, no new items added."); // 调试
+                }
+
+            } catch (error) {
+                console.error('导入 DOCX 错题时出错:', error);
+                message("呜呜～导入错题文件时出错了呢", "error");
+            } finally {
+                // 重置文件输入框
+                importFileInput.value = null;
+            }
+        };
+        
+        reader.onerror = function() {
+            message("呜呜～读取文件失败了呢", "error");
+            importFileInput.value = null;
+        };
+        
+        reader.readAsArrayBuffer(file); // 以 ArrayBuffer 格式读取 DOCX 文件
+    }
+
+    // 新增：导入按钮点击事件
+    importBtn.addEventListener("click", function() {
+        importFileInput.click(); // 触发隐藏的文件输入框
+    });
+
+    // 新增：文件输入框变化事件
+    importFileInput.addEventListener("change", function(event) {
+        const file = event.target.files[0];
+        if (file && file.name.endsWith('.docx')) { // 检查文件扩展名
+            importWrongAnswers(file);
+        } else if(file) {
+            message("喵呜～请选择 .docx 格式的文件哦", "warning");
+            importFileInput.value = null; // 清空选择
         }
     });
     
@@ -941,4 +1093,21 @@ document.addEventListener("DOMContentLoaded", function () {
         saveWrongAnswers();
         // 音频设置在切换时已保存，此处无需重复保存
     });
+
+    // --- 确保事件监听器已添加 ---
+    // 提交按钮点击事件
+    submitBtn.addEventListener("click", handleSubmit);
+
+    // 输入框 Enter 键事件
+    answerInput.addEventListener("keypress", function(event) {
+        // 检查是否按下了 Enter 键 (keyCode 13)
+        if (event.key === "Enter" || event.keyCode === 13) {
+            event.preventDefault(); // 阻止默认的回车行为（如换行）
+            // 只有在按钮未被禁用时才触发提交
+            if (!submitBtn.disabled) { 
+                handleSubmit();
+            }
+        }
+    });
+    // --- 事件监听器检查结束 ---
 });

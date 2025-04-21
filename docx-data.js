@@ -1408,6 +1408,116 @@ const docxData = {
       "english": ["voluntary"],
       "chinese": "adj.自愿的"
     }
+  ],
+  "U4-1": [ 
+    {
+      "english": ["take part in a contest"],
+      "chinese": "参加比赛"
+    },
+    {
+      "english": ["look at the poster on the noticeboard"],
+      "chinese": "看布告栏上的海报"
+    },
+    {
+      "english": ["come on board"],
+      "chinese": "加入某个组织、团队或参加某个活动"
+    },
+    {
+      "english": ["the next champion"],
+      "chinese": "下一个冠军"
+    },
+    {
+      "english": ["spell English words"],
+      "chinese": "拼写英语单词"
+    },
+    {
+      "english": ["tell a lie"],
+      "chinese": "撒谎"
+    },
+    {
+      "english": ["tell the difference"],
+      "chinese": "辨别，看出不同之处"
+    },
+    {
+      "english": ["tell the time"],
+      "chinese": "报时"
+    },
+    {
+      "english": ["tell the truth"],
+      "chinese": "说实话"
+    },
+    {
+      "english": ["make a decision"],
+      "chinese": "做决定"
+    },
+    {
+      "english": ["make a suggestion"],
+      "chinese": "提建议"
+    },
+    {
+      "english": ["make a mistake"],
+      "chinese": "犯错误"
+    },
+    {
+      "english": ["by mistake"],
+      "chinese": "错误地"
+    },
+    {
+      "english": ["make a difference"],
+      "chinese": "有影响，起作用"
+    },
+    {
+      "english": ["be honest with sb."],
+      "chinese": "对某人诚实"
+    },
+    {
+      "english": ["They praised me for being honest."],
+      "chinese": "他们表扬了我的诚实"
+    },
+    {
+      "english": ["Honesty is the best policy."],
+      "chinese": "诚实为上"
+    },
+    {
+      "english": ["honest", "dishonest", "honesty"],
+      "chinese": "adj. 诚实的 / adj. 不诚实的 / n. 诚实"
+    },
+    {
+      "english": ["mistake", "mistook", "mistaken"],
+      "chinese": "n. 错误 v. 误会，看错 (过去式, 过去分词)"
+    },
+    {
+      "english": ["lie (n.)", "lie (v.)", "lies", "lying", "lied", "lied", "liar"],
+      "chinese": "n.谎言 / v. 撒谎 (单三, 现在分词, 过去式, 过去分词) / n. 骗子，说谎者"
+    },
+    {
+      "english": ["lie", "lay", "lain"],
+      "chinese": "v. 躺 (过去式, 过去分词)"
+    },
+    {
+      "english": ["spell", "spelling"],
+      "chinese": "v. 拼写 / n. 拼写"
+    },
+    {
+      "english": ["true", "truly", "truth"],
+      "chinese": "adj. 真实的，正确的 / adv. 真实地，正确地 / n. 真相"
+    },
+    {
+      "english": ["decide", "decision", "decisive"],
+      "chinese": "v. 决定 / n. 决定 / adj.果断地，决断的"
+    },
+    {
+      "english": ["suggest", "suggestion"],
+      "chinese": "v. 建议 / n. 建议"
+    },
+    {
+      "english": ["win", "winner"],
+      "chinese": "v. 赢 / n. 获胜者"
+    },
+    {
+      "english": ["champion", "championship"],
+      "chinese": "n. 冠军 / n. 锦标赛， 冠军称号"
+    }
   ]
 };
 
