@@ -1518,6 +1518,187 @@ const docxData = {
       "english": ["champion", "championship"],
       "chinese": "n. 冠军 / n. 锦标赛， 冠军称号"
     }
+  ],  "U4-2": [
+    {
+      "english": ["in one's lifetime"],
+      "chinese": "在某人的一生中"
+    },
+    {
+      "english": ["the bass fishing season"],
+      "chinese": "鲈鱼捕捞季"
+    },
+    {
+      "english": ["many fishermen"],
+      "chinese": "很多渔民"
+    },
+    {
+      "english": ["protect fish"],
+      "chinese": "保护鱼"
+    },
+    {
+      "english": ["limit the catch"],
+      "chinese": "限制捕捞"
+    },
+    {
+      "english": ["live on an island"],
+      "chinese": "住在一个岛上"
+    },
+    {
+      "english": ["in the middle of the lake"],
+      "chinese": "在湖中心"
+    },
+    {
+      "english": ["something huge"],
+      "chinese": "巨大的某件东西"
+    },
+    {
+      "english": ["on the other end"],
+      "chinese": "在另一端"
+    },
+    {
+      "english": ["lift the fish from the water"],
+      "chinese": "把鱼从水里提起"
+    },
+    {
+      "english": ["light a match"],
+      "chinese": "点亮一根火柴(light/lit/lit)"
+    },
+    {
+      "english": ["a handsome fish"],
+      "chinese": "一条漂亮的鱼"
+    },
+    {
+      "english": ["two hours before the season opened"],
+      "chinese": "捕捞季开始前两小时"
+    },
+    {
+      "english": ["other fish"],
+      "chinese": "其他的鱼"
+    },
+    {
+      "english": ["in the moonlight"],
+      "chinese": "在月光下"
+    },
+    {
+      "english": ["tell from his father's voice"],
+      "chinese": "从他父亲的声音判断"
+    },
+    {
+      "english": ["even though/if"],
+      "chinese": "即使 纵然"
+    },
+    {
+      "english": ["have no choice"],
+      "chinese": "没有选择"
+    },
+    {
+      "english": ["work the hook out of the lip of the bass"],
+      "chinese": "把鱼钩从鲈鱼的嘴唇里取出来"
+    },
+    {
+      "english": ["lower it into the black water"],
+      "chinese": "将它降低放入黑暗的水中"
+    },
+    {
+      "english": ["give a wave with its tail"],
+      "chinese": "摇了摇尾巴"
+    },
+    {
+      "english": ["put the fish back"],
+      "chinese": "把鱼放回去"
+    },
+    {
+      "english": ["double over"],
+      "chinese": "弯折"
+    },
+    {
+      "english": ["a successful architect"],
+      "chinese": "一位成功的建筑师"
+    },
+    {
+      "english": ["such a huge fish as that one"],
+      "chinese": "和那条一样大的鱼"
+    },
+    {
+      "english": ["He tied the bait and practised casting."],
+      "chinese": "他系上鱼饵，练习抛钓线。"
+    },
+    {
+      "english": ["They went fishing at the same place."],
+      "chinese": "他们去了相同的地方钓鱼"
+    },
+    {
+      "english": ["limit"],
+      "chinese": "n./v. 限制"
+    },
+    {
+      "english": ["limited"],
+      "chinese": "adj. 受限的"
+    },
+    {
+      "english": ["low"],
+      "chinese": "adj. 低的"
+    },
+    {
+      "english": ["lower"],
+      "chinese": "v. （缓慢的）放下，降下"
+    },
+    {
+      "english": ["choose"],
+      "chinese": "v. (chose,chosen) 选择"
+    },
+    {
+      "english": ["choice"],
+      "chinese": "n. 选择"
+    },
+    {
+      "english": ["succeed"],
+      "chinese": "v. 成功"
+    },
+    {
+      "english": ["success"],
+      "chinese": "n. 成功"
+    },
+    {
+      "english": ["successful"],
+      "chinese": "adj. 成功的"
+    },
+    {
+      "english": ["successfully"],
+      "chinese": "adv. 成功地"
+    },
+    {
+      "english": ["practise"],
+      "chinese": "v. 练习"
+    },
+    {
+      "english": ["practice"],
+      "chinese": "n./v. 练习"
+    },
+    {
+      "english": ["practical"],
+      "chinese": "adj. 实际的，真实的"
+    },
+    {
+      "english": ["practically"],
+      "chinese": "adv. 实际地"
+    },
+    {
+      "english": ["appear"],
+      "chinese": "v. 出现"
+    },
+    {
+      "english": ["disappear"],
+      "chinese": "v. 消失"
+    },
+    {
+      "english": ["appearance"],
+      "chinese": "n. 出现"
+    },
+    {
+      "english": ["disappearance"],
+      "chinese": "n. 消失"
+    }
   ]
 };
 
