@@ -1409,7 +1409,7 @@ const docxData = {
       "chinese": "adj.自愿的"
     }
   ],
-  "U4-1": [ 
+  "U4-1": [
     {
       "english": ["take part in a contest"],
       "chinese": "参加比赛"
@@ -1518,7 +1518,165 @@ const docxData = {
       "english": ["champion", "championship"],
       "chinese": "n. 冠军 / n. 锦标赛， 冠军称号"
     }
-  ],  "U4-2": [
+  ]
+  , "U4-2": [
+    {
+      "english": ["in a bit of trouble"],
+      "chinese": "遇到一点麻烦"
+    },
+    {
+      "english": ["have trouble doing"],
+      "chinese": "做...有麻烦"
+    },
+    {
+      "english": ["get into trouble"],
+      "chinese": "陷入麻烦"
+    },
+    {
+      "english": ["the advice column"],
+      "chinese": "建议专栏"
+    },
+    {
+      "english": ["be worried about"],
+      "chinese": "对...感到担忧"
+    },
+    {
+      "english": ["feel guilty about"],
+      "chinese": "感到内疚"
+    },
+    {
+      "english": ["feel guilty of"],
+      "chinese": "对…感到负罪感的"
+    },
+    {
+      "english": ["explain sth. to sb."],
+      "chinese": "向...解释"
+    },
+    {
+      "english": ["lend sth. to sb.", "lend sb. sth."],
+      "chinese": "借给某人某物"
+    },
+    {
+      "english": ["accidentally spill a glass of water"],
+      "chinese": "不小心洒了一杯水"
+    },
+    {
+      "english": ["by accident"],
+      "chinese": "意外地"
+    },
+    {
+      "english": ["be stuck"],
+      "chinese": "粘住，卡住"
+    },
+    {
+      "english": ["mean a lot to you"],
+      "chinese": "对你意义重大"
+    },
+    {
+      "english": ["be careless about"],
+      "chinese": "对 ……粗心大意"
+    },
+    {
+      "english": ["be honest with your friend"],
+      "chinese": "对你的朋友诚实"
+    },
+    {
+      "english": ["You don't mean it."],
+      "chinese": "你不是故意的。"
+    },
+    {
+      "english": ["I'm truly sorry."],
+      "chinese": "我真的很抱歉。"
+    },
+    {
+      "english": ["buy you another copy"],
+      "chinese": "给你买另一本"
+    },
+    {
+      "english": ["mean to do sth."],
+      "chinese": "打算或蓄意做某事"
+    },
+    {
+      "english": ["mean doing sth."],
+      "chinese": "意味着… 等于是…"
+    },
+    {
+      "english": ["unluckily"],
+      "chinese": "adv. 不幸的；遗憾的；倒霉的"
+    },
+    {
+      "english": ["unlucky"],
+      "chinese": "adj. 不幸的；倒霉的"
+    },
+    {
+      "english": ["luck"],
+      "chinese": "n. 运气；幸运"
+    },
+    {
+      "english": ["lucky"],
+      "chinese": "adj. 幸运的"
+    },
+    {
+      "english": ["luckily"],
+      "chinese": "adv. 幸运地"
+    },
+    {
+      "english": ["copy"],
+      "chinese": "n. 复印件；副本；复制品 v. 复制；抄写"
+    },
+    {
+      "english": ["copier"],
+      "chinese": "n. 复印机；抄写员"
+    },
+    {
+      "english": ["explain"],
+      "chinese": "v. 解释；说明"
+    },
+    {
+      "english": ["explanation"],
+      "chinese": "n. 解释；说明"
+    },
+    {
+      "english": ["lend"],
+      "chinese": "v. 借给；借出(lend-lent-lent)"
+    },
+    {
+      "english": ["borrow"],
+      "chinese": "v. 借入，借来"
+    },
+    {
+      "english": ["accidentally"],
+      "chinese": "adv. 意外地；偶然地"
+    },
+    {
+      "english": ["accident"],
+      "chinese": "n. 事故；意外事件"
+    },
+    {
+      "english": ["accidental"],
+      "chinese": "adj. 意外的；偶然的"
+    },
+    {
+      "english": ["spill"],
+      "chinese": "v.（使）洒出，泼出，溢出 (spill-spilled/spilt-spilled/spilt)"
+    },
+    {
+      "english": ["careless"],
+      "chinese": "adj. 不小心的；不仔细的；粗心的"
+    },
+    {
+      "english": ["care"],
+      "chinese": "n. 照顾；关心 v. 关心；在意"
+    },
+    {
+      "english": ["careful"],
+      "chinese": "adj. 仔细的；小心的"
+    },
+    {
+      "english": ["carelessly"],
+      "chinese": "adv. 粗心地；漫不经心地"
+    }
+  ], "U4-3": [
     {
       "english": ["in one's lifetime"],
       "chinese": "在某人的一生中"
