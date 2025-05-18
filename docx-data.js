@@ -1518,8 +1518,8 @@ const docxData = {
       "english": ["champion", "championship"],
       "chinese": "n. 冠军 / n. 锦标赛， 冠军称号"
     }
-  ]
-  , "U4-2": [
+  ],
+  "U4-2": [
     {
       "english": ["in a bit of trouble"],
       "chinese": "遇到一点麻烦"
@@ -1676,7 +1676,8 @@ const docxData = {
       "english": ["carelessly"],
       "chinese": "adv. 粗心地；漫不经心地"
     }
-  ], "U4-3": [
+  ],
+  "U4-3": [
     {
       "english": ["in one's lifetime"],
       "chinese": "在某人的一生中"
@@ -1856,6 +1857,152 @@ const docxData = {
     {
       "english": ["disappearance"],
       "chinese": "n. 消失"
+    }
+  ],
+  "U5-1": [
+    {
+      "english": ["a giant panda"],
+      "chinese": "一只大熊猫"
+    },
+    {
+      "english": ["a blue whale"],
+      "chinese": "一头蓝鲸"
+    },
+    {
+      "english": ["a group of kangaroos"],
+      "chinese": "一群袋鼠"
+    },
+    {
+      "english": ["learn more about wildlife"],
+      "chinese": "了解到更多关于野生动物的知识"
+    },
+    {
+      "english": ["central/western China"],
+      "chinese": "中国中部/西部"
+    },
+    {
+      "english": ["live in the bamboo forests"],
+      "chinese": "住在竹林里"
+    },
+    {
+      "english": ["live in Africa/Australia"],
+      "chinese": "住在非洲/澳洲"
+    },
+    {
+      "english": ["live in almost every ocean"],
+      "chinese": "生活在几乎每一个海洋中"
+    },
+    {
+      "english": ["use their big tails to keep balance"],
+      "chinese": "用他们的尾巴来保持平衡"
+    },
+    {
+      "english": ["the biggest land animal"],
+      "chinese": "最大的陆地动物"
+    },
+    {
+      "english": ["after a careful search"],
+      "chinese": "在仔细的搜索之后"
+    },
+    {
+      "english": ["an injured wing"],
+      "chinese": "一个受伤的翅膀"
+    },
+    {
+      "english": ["a homeless dog"],
+      "chinese": "一只无家可归的狗"
+    },
+    {
+      "english": ["look dangerous/ gentle"],
+      "chinese": "看起来危险的/温柔的"
+    },
+    {
+      "english": ["go hungry"],
+      "chinese": "挨饿"
+    },
+    {
+      "english": ["put them in cages"],
+      "chinese": "把他们放进笼子"
+    },
+    {
+      "english": ["have a long trunk"],
+      "chinese": "有一根长象鼻"
+    },
+    {
+      "english": ["a team of cyclists"],
+      "chinese": "一对骑自行车的人"
+    },
+    {
+      "english": ["would rather do sth."],
+      "chinese": "宁可做某事"
+    },
+    {
+      "english": ["What is the largest living animal on the earth?"],
+      "chinese": "什么是地球上最大的生物"
+    },
+    {
+      "english": ["How does it look?"],
+      "chinese": "它看起来怎么样？"
+    },
+    {
+      "english": ["In the Antarctic, penguins stay together to protect themselves against the cold and windy weather."],
+      "chinese": "在南极，企鹅们聚在一块来保护自己，抵御严寒和狂风天气。"
+    },
+    {
+      "english": ["balance"],
+      "chinese": "n. 平衡 v. 使平衡"
+    },
+    {
+      "english": ["balanced"],
+      "chinese": "adj. 平衡的"
+    },
+    {
+      "english": ["danger"],
+      "chinese": "n. 危险"
+    },
+    {
+      "english": ["dangerous"],
+      "chinese": "adj. 危险的"
+    },
+    {
+      "english": ["gentle"],
+      "chinese": "adj. 温柔的"
+    },
+    {
+      "english": ["gently"],
+      "chinese": "adv. 温柔地"
+    },
+    {
+      "english": ["hunger"],
+      "chinese": "n. 饿"
+    },
+    {
+      "english": ["hungry"],
+      "chinese": "adj. 饿的"
+    },
+    {
+      "english": ["centre"],
+      "chinese": "n. 中间"
+    },
+    {
+      "english": ["central"],
+      "chinese": "adj. 中间的"
+    },
+    {
+      "english": ["west"],
+      "chinese": "n. 西方"
+    },
+    {
+      "english": ["western"],
+      "chinese": "adj. 西方的"
+    },
+    {
+      "english": ["home"],
+      "chinese": "n. 家"
+    },
+    {
+      "english": ["homeless"],
+      "chinese": "adj. 无家可归的"
     }
   ]
 };
