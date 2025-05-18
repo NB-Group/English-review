@@ -1,4 +1,4 @@
-const docxData = {
+export const docxData = {
   "U1-1": [
     {
       "english": ["a radio station"],
@@ -2004,10 +2004,215 @@ const docxData = {
       "english": ["homeless"],
       "chinese": "adj. 无家可归的"
     }
+  ],
+  "U5-3": [
+    {
+      "english": ["play the trumpet"],
+      "chinese": "吹小号"
+    },
+    {
+      "english": ["sit down quietly by the pool"],
+      "chinese": "在水池旁安静坐下"
+    },
+    {
+      "english": ["lift field glasses"],
+      "chinese": "举起望远镜"
+    },
+    {
+      "english": ["smell delicious"],
+      "chinese": "闻起来清新的"
+    },
+    {
+      "english": ["appear to be only a few feet away"],
+      "chinese": "似乎仅在几英尺远"
+    },
+    {
+      "english": ["mind his being there"],
+      "chinese": "介意他在这里"
+    },
+    {
+      "english": ["close to …"],
+      "chinese": "离…近"
+    },
+    {
+      "english": ["in fact"],
+      "chinese": "事实上"
+    },
+    {
+      "english": ["keep company with the two swans"],
+      "chinese": "陪伴两只天鹅"
+    },
+    {
+      "english": ["in the wilderness"],
+      "chinese": "在荒野中"
+    },
+    {
+      "english": ["be satisfied with", "satisfy sb."],
+      "chinese": "对…感到满意/使…满意"
+    },
+    {
+      "english": ["in midmorning"],
+      "chinese": "在上午10点左右"
+    },
+    {
+      "english": ["focus the glasses on the nest"],
+      "chinese": "将望远镜聚焦于鸟巢"
+    },
+    {
+      "english": ["climb out of the nest"],
+      "chinese": "爬出鸟巢"
+    },
+    {
+      "english": ["its grey head and neck"],
+      "chinese": "它灰色的头和脖子"
+    },
+    {
+      "english": ["soft fine feathers"],
+      "chinese": "柔软细致的羽毛"
+    },
+    {
+      "english": ["be covered with"],
+      "chinese": "被……所覆盖"
+    },
+    {
+      "english": ["fall off"],
+      "chinese": "掉下来"
+    },
+    {
+      "english": ["climb up his mother's back"],
+      "chinese": "爬上他母亲的背"
+    },
+    {
+      "english": ["as sure as I'm alive"],
+      "chinese": "非常确信"
+    },
+    {
+      "english": ["a camping experience"],
+      "chinese": "一次露营经历"
+    },
+    {
+      "english": ["arrive at the pond", "reach the pond", "get to the pond"],
+      "chinese": "抵达池塘"
+    },
+    {
+      "english": ["sit nearby"],
+      "chinese": "坐在附近"
+    },
+    {
+      "english": ["lead them right up to me"],
+      "chinese": "将它们直接带到我面前"
+    },
+    {
+      "english": ["one after another"],
+      "chinese": "一个接一个"
+    },
+    {
+      "english": ["expect (sb.) to do sth."],
+      "chinese": "期待去做某事"
+    },
+    {
+      "english": ["keep still"],
+      "chinese": "保持一动不动"
+    },
+    {
+      "english": ["The sky looked pale in the early morning."],
+      "chinese": "天空在清晨看起来是灰白的"
+    },
+    {
+      "english": ["He saw a small head pushing through the mother's feathers."],
+      "chinese": "他看到一颗小脑袋从妈妈的羽毛下探出来"
+    },
+    {
+      "english": ["A baby swan walked his way down into his mother's feathers for warmth."],
+      "chinese": "一只天鹅幼崽径直向母亲走去,埋进她的羽毛中取暖"
+    },
+    {
+      "english": ["The mother swan just sat and sat, enjoying her babies, watching them use their legs."],
+      "chinese": "母天鹅只是静静地坐着,充满爱意地看着她的孩子们迈动他们的腿"
+    },
+    {
+      "english": ["The Sun was up in the sky,"],
+      "chinese": "太阳当头照时"
+    },
+    {
+      "english": ["They were sort of brownish-grey in colour, a bit dirty but very cute."],
+      "chinese": "他们颜色略微呈灰褐色,有点脏兮兮的,但十分可爱"
+    },
+    {
+      "english": ["warm"],
+      "chinese": "adj. 温暖的"
+    },
+    {
+      "english": ["warmly"],
+      "chinese": "adv. 热情地 温暖地"
+    },
+    {
+      "english": ["warmth"],
+      "chinese": "n. 温暖"
+    },
+    {
+      "english": ["appear"],
+      "chinese": "v. 出现，显得…"
+    },
+    {
+      "english": ["appearance"],
+      "chinese": "n. 出现"
+    },
+    {
+      "english": ["disappear"],
+      "chinese": "v. 消失"
+    },
+    {
+      "english": ["disappearance"],
+      "chinese": "n. 消失"
+    },
+    {
+      "english": ["satisfy"],
+      "chinese": "v. 使满意"
+    },
+    {
+      "english": ["satisfied"],
+      "chinese": "adj. 感到满意的"
+    },
+    {
+      "english": ["satisfying"],
+      "chinese": "adj. 令人满意的"
+    },
+    {
+      "english": ["satisfaction"],
+      "chinese": "n. 满意"
+    },
+    {
+      "english": ["protect"],
+      "chinese": "v. 保护"
+    },
+    {
+      "english": ["protection"],
+      "chinese": "n. 保护"
+    },
+    {
+      "english": ["protective"],
+      "chinese": "adj. 保护的"
+    },
+    {
+      "english": ["company"],
+      "chinese": "n. 公司 陪伴"
+    },
+    {
+      "english": ["companion"],
+      "chinese": "n. 同伴"
+    },
+    {
+      "english": ["cover"],
+      "chinese": "n./v. 封面/覆盖"
+    },
+    {
+      "english": ["covered"],
+      "chinese": "adj. 被覆盖的 有顶的"
+    },
+    {
+      "english": ["coverage"],
+      "chinese": "n. 覆盖范围 新闻报道"
+    }
   ]
 };
-
-// 导出数据对象
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  module.exports = { docxData };
-}

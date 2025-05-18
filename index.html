@@ -7,11 +7,10 @@
   <link rel="stylesheet" href="./style.css">
   <script src="https://cdn.jsdelivr.net/npm/docx@9.1.0/build/index.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-  <!-- 更新 PizZip 库的 CDN 链接 -->
   <script src="https://cdn.jsdelivr.net/npm/pizzip@3.1.7/dist/pizzip.min.js"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.47.1/docxtemplater.min.js"></script>
-  <script src="./docx-data.js"></script>
-  <script src="./main.js"></script>
+  <!-- 使用ES模块导入 -->
+  <script type="module" src="./js/main.js"></script>
 </head>
 <body>
   <div id="message"></div>
@@ -22,7 +21,7 @@
       <div class="header-buttons">
         <button id="pomodoro-button" class="icon-button" title="设置番茄时钟">⏱️</button>
         <button id="theme-toggle" class="icon-button" title="切换颜色模式">🌙</button>
-        <button id="audio-toggle" class="icon-button" title="开启/关闭语音提示">🔇</button> <!-- 新增按钮 -->
+        <button id="audio-toggle" class="icon-button" title="开启/关闭语音提示">🔇</button>
       </div>
     </div>
     
@@ -60,10 +59,10 @@
         </div>
         <div class="button-group">
           <button id="retry-button" class="secondary-button">重做错题</button>
-          <button id="import-button" class="secondary-button">导入错题</button> <!-- 新增导入按钮 -->
+          <button id="import-button" class="secondary-button">导入错题</button>
           <button id="export-button" class="secondary-button">导出错题</button>
         </div>
-        <input type="file" id="import-file-input" accept=".docx" style="display: none;"> <!-- 修改 accept 属性 -->
+        <input type="file" id="import-file-input" accept=".docx" style="display: none;">
       </div>
     </div>
   </div>
