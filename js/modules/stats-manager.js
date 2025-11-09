@@ -481,6 +481,69 @@ export class StatsManager {
     }
     
     /**
+     * 导出错题本
+     */
+    exportWrongAnswers() {
+        const allWrongAnswers = this.getAllWrongAnswers();
+        if (allWrongAnswers.length === 0) {
+            return false;
+        }
+        
+        // 创建文本格式的错题本
+        let content = '英语复习助手 - 错题本\n';
+        content += `导出时间: ${new Date().toLocaleString('zh-CN')}\n`;
+        content += `总错题数: ${allWrongAnswers.length}\n`;
+        content += `未掌握: ${allWrongAnswers.filter(w => !w.mastered).length}\n`;
+        content += `已掌握: ${allWrongAnswers.filter(w => w.mastered).length}\n\n`;
+        content += '='.repeat(50) + '\n\n';
+        
+        // 按年级和单元分组
+        const grouped = {};
+        allWrongAnswers.forEach(wrong => {
+            const key = `${wrong.grade}年级-${wrong.unit}`;
+            if (!grouped[key]) {
+                grouped[key] = [];
+            }
+            grouped[key].push(wrong);
+        });
+        
+        Object.keys(grouped).sort().forEach(key => {
+            content += `\n【${key}】\n`;
+            content += '-'.repeat(50) + '\n';
+            
+            grouped[key].forEach((wrong, index) => {
+                const date = new Date(wrong.timestamp).toLocaleString('zh-CN');
+                const status = wrong.mastered ? '✓ 已掌握' : '○ 待复习';
+                content += `\n${index + 1}. ${wrong.chinese}\n`;
+                content += `   正确答案: ${wrong.correct}\n`;
+                if (wrong.userAnswer) {
+                    content += `   你的答案: ${wrong.userAnswer}\n`;
+                }
+                content += `   时间: ${date}\n`;
+                content += `   状态: ${status}\n`;
+                if (wrong.reviewCount > 0) {
+                    content += `   复习次数: ${wrong.reviewCount}\n`;
+                }
+            });
+            content += '\n';
+        });
+        
+        // 导出为文本文件
+        const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `错题本_${new Date().toISOString().split('T')[0]}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        
+        URL.revokeObjectURL(url);
+        return true;
+    }
+    
+    /**
      * 清空统计数据
      */
     clearStats() {

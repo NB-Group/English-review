@@ -19,6 +19,7 @@ export class EnglishReviewApp {
         this.statsManager = new StatsManager();
 
         this.currentGrade = null;
+        this.currentSemester = null; // 当前选中的学期
         this.currentUnit = null;
         this.currentQuestions = [];
         this.currentQuestionIndex = 0;
@@ -38,15 +39,54 @@ export class EnglishReviewApp {
         this.setupEventListeners();
         this.loadSettings();
         this.restoreLearningProgress(); // 恢复学习进度
+        this.updateNotebookBadge(); // 更新错题本徽章
     }
     
     setupEventListeners() {
-        // 年级选择
-        document.querySelectorAll('.grade-btn').forEach(btn => {
+        // 年级和学期选择（新设计）
+        document.querySelectorAll('.semester-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                const grade = e.currentTarget.dataset.grade;
-                this.selectGrade(grade);
+                e.stopPropagation();
+                const gradeItem = e.currentTarget.closest('.grade-item');
+                const grade = gradeItem.dataset.grade;
+                const semester = e.currentTarget.dataset.semester;
+                
+                // 更新UI状态
+                document.querySelectorAll('.grade-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.querySelectorAll('.semester-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                
+                gradeItem.classList.add('active');
+                e.currentTarget.classList.add('active');
+                
+                // 保存当前选中的年级和学期
+                this.currentGrade = grade;
+                this.currentSemester = semester;
+                this.saveLearningProgress();
+                
+                // 显示预览（异步）
+                this.showUnitPreview(grade, semester).catch(err => {
+                    console.error('显示单元预览失败:', err);
+                    this.uiManager.showMessage('加载单元列表失败', 'error');
+                });
             });
+        });
+        
+        // 单元预览卡片点击 - 直接进入学习，跳过单元选择页面
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.preview-unit-card')) {
+                const card = e.target.closest('.preview-unit-card');
+                const unit = card.dataset.unit;
+                const grade = card.dataset.grade;
+                if (unit && grade) {
+                    // 直接选择单元，跳过单元选择页面
+                    this.currentGrade = grade;
+                    this.selectUnit(unit);
+                }
+            }
         });
         
         // 返回按钮
@@ -54,6 +94,11 @@ export class EnglishReviewApp {
             btn.addEventListener('click', () => {
                 this.goBack();
             });
+        });
+        
+        // 错题本按钮（主页）
+        document.getElementById('notebook-btn').addEventListener('click', () => {
+            this.showNotebook();
         });
         
         // 设置按钮
@@ -83,6 +128,11 @@ export class EnglishReviewApp {
         // 输入框获得焦点时自动选中文本（方便快速输入）
         answerInput.addEventListener('focus', (e) => {
             e.target.select();
+        });
+        
+        // 重新开始按钮
+        document.getElementById('restart-btn').addEventListener('click', () => {
+            this.restartCurrentSession();
         });
         
         // 重做错题
@@ -122,21 +172,210 @@ export class EnglishReviewApp {
             wrong: 0,
             wrongAnswers: []
         };
-        this.showUnitSelection();
+        this.showUnitSelection().catch(err => {
+            console.error('显示单元选择页面失败:', err);
+            this.uiManager.showMessage('加载单元列表失败', 'error');
+        });
+    }
+    
+    /**
+     * 显示单元预览（异步，等待单元列表加载）
+     */
+    async showUnitPreview(grade, semester) {
+        // 更新预览标题
+        const gradeName = grade === '7' ? '七年级' : '八年级';
+        const semesterName = semester === 'Up' ? '上册' : '下册';
+        document.getElementById('preview-title').textContent = `${gradeName}${semesterName}`;
+        
+        // 更新预览内容（显示加载中）
+        const previewContainer = document.getElementById('unit-preview');
+        previewContainer.innerHTML = `
+            <div class="preview-placeholder">
+                <p>加载中...</p>
+            </div>
+        `;
+        
+        // 确保单元列表已加载
+        let units = this.dataManager.getUnitsForGrade(grade);
+        if (!units || Object.keys(units).length === 0) {
+            // 如果单元列表为空，尝试重新加载
+            await this.dataManager.scanUnitFiles();
+            units = this.dataManager.getUnitsForGrade(grade);
+        }
+        
+        const semesterUnits = units[semester] || [];
+        
+        // 清空预览容器
+        previewContainer.innerHTML = '';
+        
+        if (semesterUnits.length === 0) {
+            previewContainer.innerHTML = `
+                <div class="preview-placeholder">
+                    <p>该学期暂无可用单元</p>
+                </div>
+            `;
+            return;
+        }
+        
+        semesterUnits.forEach(unit => {
+            const fullUnit = `${semester}/${unit}`;
+            const card = document.createElement('div');
+            card.className = 'preview-unit-card';
+            card.dataset.grade = grade;
+            card.dataset.unit = fullUnit;
+            
+            // 获取单元完成状态
+            const isCompleted = this.isUnitCompleted(grade, fullUnit);
+            const progressPercent = this.getUnitProgressPercent(grade, fullUnit);
+            
+            let statusText = '点击开始学习';
+            if (isCompleted) {
+                statusText = '✓ 已完成';
+                card.classList.add('preview-unit-completed');
+            } else if (progressPercent > 0) {
+                statusText = `进度: ${progressPercent}%`;
+                card.classList.add('preview-unit-in-progress');
+            }
+            
+            card.innerHTML = `
+                <h3>${unit}</h3>
+                <p class="preview-unit-status">${statusText}</p>
+                ${progressPercent > 0 && !isCompleted ? `
+                    <div class="preview-unit-progress-bar">
+                        <div class="preview-unit-progress-fill" style="width: ${progressPercent}%"></div>
+                    </div>
+                ` : ''}
+            `;
+            previewContainer.appendChild(card);
+        });
     }
     
     showGradeSelection() {
         this.currentPage = 'grade-selection';
         this.uiManager.showPage('grade-selection');
+        
+        // 重置预览状态（但不重置侧边栏选中状态，因为可能正在恢复）
+        document.getElementById('preview-title').textContent = '请选择年级和学期';
+        document.getElementById('unit-preview').innerHTML = `
+            <div class="preview-placeholder">
+                <p>选择左侧的年级和学期，查看可用的单元</p>
+            </div>
+        `;
+        
+        // 更新侧边栏显示单元完成状态
+        this.updateSidebarUnitStatus().catch(err => {
+            console.error('更新侧边栏状态失败:', err);
+        });
+        
         this.saveLearningProgress();
     }
+    
+    /**
+     * 恢复侧边栏的选中状态
+     */
+    restoreSidebarSelection() {
+        if (!this.currentGrade || !this.currentSemester) {
+            return;
+        }
+        
+        // 恢复年级选中状态
+        const gradeItem = document.querySelector(`.grade-item[data-grade="${this.currentGrade}"]`);
+        if (gradeItem) {
+            document.querySelectorAll('.grade-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            gradeItem.classList.add('active');
+            
+            // 恢复学期选中状态
+            const semesterBtn = gradeItem.querySelector(`.semester-btn[data-semester="${this.currentSemester}"]`);
+            if (semesterBtn) {
+                document.querySelectorAll('.semester-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                semesterBtn.classList.add('active');
+                
+                // 显示预览
+                this.showUnitPreview(this.currentGrade, this.currentSemester).catch(err => {
+                    console.error('显示单元预览失败:', err);
+                });
+            }
+        }
+    }
+    
+    /**
+     * 更新侧边栏中每个单元的完成状态显示
+     */
+    async updateSidebarUnitStatus() {
+        // 确保单元列表已加载
+        await this.dataManager.scanUnitFiles();
+        
+        // 遍历所有年级
+        document.querySelectorAll('.grade-item').forEach(gradeItem => {
+            const grade = gradeItem.dataset.grade;
+            const units = this.dataManager.getUnitsForGrade(grade);
+            
+            // 清除之前的状态类
+            gradeItem.classList.remove('grade-completed', 'grade-in-progress');
+            
+            if (!units || Object.keys(units).length === 0) {
+                return;
+            }
+            
+            // 计算该年级所有单元的完成情况
+            let totalUnits = 0;
+            let completedUnits = 0;
+            let inProgressUnits = 0;
+            
+            Object.keys(units).forEach(semester => {
+                units[semester].forEach(unit => {
+                    const fullUnit = `${semester}/${unit}`;
+                    totalUnits++;
+                    if (this.isUnitCompleted(grade, fullUnit)) {
+                        completedUnits++;
+                    } else if (this.getUnitProgressPercent(grade, fullUnit) > 0) {
+                        inProgressUnits++;
+                    }
+                });
+            });
+            
+            // 更新年级项的显示
+            const gradeName = gradeItem.querySelector('.grade-name');
+            if (gradeName && totalUnits > 0) {
+                const progressText = completedUnits > 0 || inProgressUnits > 0 
+                    ? ` (${completedUnits}/${totalUnits} 已完成)`
+                    : '';
+                const gradeText = grade === '7' ? '七年级' : '八年级';
+                gradeName.innerHTML = `${gradeText}${progressText}`;
+                
+                // 添加完成状态类
+                if (completedUnits === totalUnits) {
+                    gradeItem.classList.add('grade-completed');
+                } else if (completedUnits > 0 || inProgressUnits > 0) {
+                    gradeItem.classList.add('grade-in-progress');
+                }
+            }
+        });
+        
+        // 如果当前有选中的年级和学期，更新预览区域
+        if (this.currentGrade && this.currentSemester) {
+            await this.showUnitPreview(this.currentGrade, this.currentSemester);
+        }
+    }
 
-    showUnitSelection() {
+    async showUnitSelection() {
         this.currentPage = 'unit-selection';
-        const units = this.dataManager.getUnitsForGrade(this.currentGrade);
+        
+        // 确保单元列表已加载
+        let units = this.dataManager.getUnitsForGrade(this.currentGrade);
+        if (!units || Object.keys(units).length === 0) {
+            // 如果单元列表为空，尝试重新加载
+            await this.dataManager.scanUnitFiles();
+            units = this.dataManager.getUnitsForGrade(this.currentGrade);
+        }
+        
         this.uiManager.showUnitSelection(this.currentGrade, units, (unit) => {
             this.selectUnit(unit);
-        });
+        }, this); // 传递app实例，用于获取进度信息
         this.saveLearningProgress();
     }
     
@@ -145,16 +384,72 @@ export class EnglishReviewApp {
 
         // 异步加载题目数据
         this.currentQuestions = await this.dataManager.getQuestionsForUnit(this.currentGrade, unit);
-        this.currentQuestionIndex = 0;
-        this.sessionStats = {
-            total: this.currentQuestions.length,
-            correct: 0,
-            wrong: 0,
-            wrongAnswers: []
-        };
+        
+        // 从unit的独立进度中恢复
+        let shouldRestoreProgress = false;
+        const progress = this.getUnitProgress(this.currentGrade, unit);
+        
+        if (progress) {
+            // 检查进度是否有效且未过期（24小时内）
+            const now = Date.now();
+            const hoursDiff = (now - progress.timestamp) / (1000 * 60 * 60);
+            
+            // 如果已完成，从头开始
+            if (progress.isCompleted) {
+                this.currentQuestionIndex = 0;
+                this.sessionStats = {
+                    total: this.currentQuestions.length,
+                    correct: 0,
+                    wrong: 0,
+                    wrongAnswers: []
+                };
+            } else if (hoursDiff <= 24 && 
+                      progress.currentQuestionIndex > 0 && 
+                      progress.currentQuestionIndex < this.currentQuestions.length) {
+                // 恢复未完成的进度
+                shouldRestoreProgress = true;
+                this.currentQuestionIndex = progress.currentQuestionIndex;
+                // 恢复统计信息，但要确保总数匹配
+                if (progress.sessionStats) {
+                    this.sessionStats = {
+                        ...progress.sessionStats,
+                        total: this.currentQuestions.length
+                    };
+                } else {
+                    this.sessionStats = {
+                        total: this.currentQuestions.length,
+                        correct: 0,
+                        wrong: 0,
+                        wrongAnswers: []
+                    };
+                }
+                console.log(`恢复进度：第 ${this.currentQuestionIndex + 1}/${this.currentQuestions.length} 题`);
+            } else {
+                // 进度过期或无效，从头开始
+                this.currentQuestionIndex = 0;
+                this.sessionStats = {
+                    total: this.currentQuestions.length,
+                    correct: 0,
+                    wrong: 0,
+                    wrongAnswers: []
+                };
+            }
+        } else {
+            // 没有保存的进度，从头开始
+            this.currentQuestionIndex = 0;
+            this.sessionStats = {
+                total: this.currentQuestions.length,
+                correct: 0,
+                wrong: 0,
+                wrongAnswers: []
+            };
+        }
 
         this.showStudyPage();
         this.displayCurrentQuestion();
+        if (shouldRestoreProgress) {
+            this.uiManager.showMessage(`已恢复之前的默写进度（第 ${this.currentQuestionIndex + 1} 题）`, 'success');
+        }
         this.saveLearningProgress();
     }
     
@@ -166,6 +461,9 @@ export class EnglishReviewApp {
     
     displayCurrentQuestion() {
         if (this.currentQuestionIndex >= this.currentQuestions.length) {
+            // 标记为已完成
+            this.currentQuestionIndex = this.currentQuestions.length;
+            this.saveLearningProgress(); // 保存完成状态
             this.showStats();
             return;
         }
@@ -295,8 +593,14 @@ export class EnglishReviewApp {
         }
 
         // 保存统计数据和学习进度
-        this.statsManager.updateStats(this.currentGrade, this.currentUnit, isCorrect);
+        const questionData = {
+            chinese: question.chinese,
+            english: correctAnswer,
+            userAnswer: userAnswer
+        };
+        this.statsManager.updateStats(this.currentGrade, this.currentUnit, isCorrect, questionData);
         this.saveLearningProgress();
+        this.updateNotebookBadge(); // 更新错题本徽章
     }
     
     nextQuestion() {
@@ -323,6 +627,13 @@ export class EnglishReviewApp {
             wrongAnswers: this.sessionStats.wrongAnswers
         });
         this.saveLearningProgress();
+        
+        // 更新侧边栏状态（如果当前在年级选择页面）
+        if (this.currentGrade) {
+            this.updateSidebarUnitStatus().catch(err => {
+                console.error('更新侧边栏状态失败:', err);
+            });
+        }
     }
     
     retryWrongAnswers() {
@@ -377,20 +688,34 @@ export class EnglishReviewApp {
         const stats = this.statsManager.getWrongAnswersStats();
 
         this.uiManager.showNotebook(allWrongAnswers, stats);
+        this.updateNotebookBadge(); // 更新徽章
+    }
+    
+    /**
+     * 更新错题本徽章（显示是否有未掌握的错题）
+     */
+    updateNotebookBadge() {
+        const notebookBtn = document.getElementById('notebook-btn');
+        if (!notebookBtn) return;
+        
+        const stats = this.statsManager.getWrongAnswersStats();
+        if (stats.unmastered > 0) {
+            notebookBtn.classList.add('has-errors');
+        } else {
+            notebookBtn.classList.remove('has-errors');
+        }
     }
 
     /**
      * 导出错题本
      */
     exportNotebook() {
-        const allWrongAnswers = this.statsManager.getAllWrongAnswers();
-        if (allWrongAnswers.length === 0) {
+        const success = this.statsManager.exportWrongAnswers();
+        if (success) {
+            this.uiManager.showMessage('错题本导出成功', 'success');
+        } else {
             this.uiManager.showMessage('错题本是空的，无法导出', 'warning');
-            return;
         }
-
-        // 使用现有的导出功能
-        this.statsManager.exportWrongAnswers();
     }
 
     /**
@@ -406,6 +731,7 @@ export class EnglishReviewApp {
                 setTimeout(() => {
                     this.showNotebook();
                 }, 500);
+                this.updateNotebookBadge(); // 更新徽章
             }
         );
     }
@@ -414,12 +740,13 @@ export class EnglishReviewApp {
      * 标记错题为已掌握
      */
     markWrongAnswerAsMastered(wrongAnswerId) {
-        this.statsManager.markWrongAnswerAsMastered(wrongAnswerId);
+        this.statsManager.markWrongAnswerMastered(wrongAnswerId);
         this.uiManager.showMessage('已标记为已掌握', 'success');
         // 刷新错题本页面
         setTimeout(() => {
             this.showNotebook();
         }, 300);
+        this.updateNotebookBadge(); // 更新徽章
     }
 
     /**
@@ -429,12 +756,15 @@ export class EnglishReviewApp {
         this.uiManager.showConfirm(
             '确定要删除这个错题吗？',
             () => {
-                this.statsManager.removeWrongAnswer(wrongAnswerId);
+                // 确保ID类型匹配（转换为数字）
+                const id = typeof wrongAnswerId === 'string' ? parseFloat(wrongAnswerId) : wrongAnswerId;
+                this.statsManager.removeWrongAnswer(id);
                 this.uiManager.showMessage('错题已删除', 'success');
                 // 刷新错题本页面
                 setTimeout(() => {
                     this.showNotebook();
                 }, 300);
+                this.updateNotebookBadge(); // 更新徽章
             }
         );
     }
@@ -446,22 +776,91 @@ export class EnglishReviewApp {
     
     /**
      * 保存学习进度到本地存储
+     * 为每个unit单独保存进度
      */
     saveLearningProgress() {
         try {
+            if (!this.currentGrade || !this.currentUnit) {
+                return; // 如果没有选择年级和单元，不保存
+            }
+            
+            // 检查 currentQuestions 是否存在
+            if (!this.currentQuestions || !Array.isArray(this.currentQuestions)) {
+                console.warn('currentQuestions 未初始化，跳过保存进度');
+                return;
+            }
+            
+            // 为当前unit保存进度
+            const unitKey = `${this.currentGrade}-${this.currentUnit}`;
             const progressData = {
                 currentGrade: this.currentGrade,
+                currentSemester: this.currentSemester, // 保存当前选中的学期
                 currentUnit: this.currentUnit,
                 currentQuestionIndex: this.currentQuestionIndex,
-                currentQuestions: this.currentQuestions,
+                totalQuestions: this.currentQuestions.length,
                 sessionStats: this.sessionStats,
                 currentPage: this.currentPage,
-                timestamp: Date.now()
+                timestamp: Date.now(),
+                isCompleted: this.currentQuestionIndex >= this.currentQuestions.length
             };
+            
+            // 获取所有unit的进度
+            const allProgress = this.getAllUnitProgress();
+            allProgress[unitKey] = progressData;
+            
+            // 保存所有进度
+            localStorage.setItem('english_review_all_progress', JSON.stringify(allProgress));
+            
+            // 同时保存当前进度（用于快速恢复）
             localStorage.setItem('english_review_progress', JSON.stringify(progressData));
         } catch (error) {
             console.error('保存学习进度失败:', error);
         }
+    }
+    
+    /**
+     * 获取所有unit的进度
+     */
+    getAllUnitProgress() {
+        try {
+            const saved = localStorage.getItem('english_review_all_progress');
+            return saved ? JSON.parse(saved) : {};
+        } catch (error) {
+            console.error('获取所有unit进度失败:', error);
+            return {};
+        }
+    }
+    
+    /**
+     * 获取指定unit的进度
+     */
+    getUnitProgress(grade, unit) {
+        const unitKey = `${grade}-${unit}`;
+        const allProgress = this.getAllUnitProgress();
+        const progress = allProgress[unitKey] || null;
+        console.log(`获取进度 - Key: ${unitKey}, 找到进度:`, progress ? '是' : '否');
+        return progress;
+    }
+    
+    /**
+     * 判断unit是否已完成
+     */
+    isUnitCompleted(grade, unit) {
+        const progress = this.getUnitProgress(grade, unit);
+        return progress && progress.isCompleted === true;
+    }
+    
+    /**
+     * 获取unit的完成进度百分比
+     */
+    getUnitProgressPercent(grade, unit) {
+        const progress = this.getUnitProgress(grade, unit);
+        if (!progress || !progress.totalQuestions) return 0;
+        
+        if (progress.isCompleted) return 100;
+        
+        const completed = progress.currentQuestionIndex || 0;
+        return Math.round((completed / progress.totalQuestions) * 100);
     }
 
     /**
@@ -478,48 +877,98 @@ export class EnglishReviewApp {
                 const hoursDiff = (now - progressData.timestamp) / (1000 * 60 * 60);
                 if (hoursDiff > 24) {
                     console.log('学习进度已过期，重新开始');
+                    localStorage.removeItem('english_review_progress');
                     this.showGradeSelection();
                     return;
                 }
 
-                // 恢复基本状态
-                this.currentGrade = progressData.currentGrade;
-                this.currentUnit = progressData.currentUnit;
-                this.currentQuestionIndex = progressData.currentQuestionIndex;
-                this.currentQuestions = progressData.currentQuestions;
-                this.sessionStats = progressData.sessionStats;
-                this.currentPage = progressData.currentPage;
-
-                // 根据当前页面恢复界面
-                switch (this.currentPage) {
-                    case 'grade-selection':
-                        this.showGradeSelection();
-                        break;
-                    case 'unit-selection':
-                        this.showUnitSelection();
-                        break;
-                    case 'study-page':
-                        this.showStudyPage();
-                        this.displayCurrentQuestion();
-                        break;
-                    case 'stats-page':
-                        this.showStats();
-                        break;
-                    case 'settings-page':
-                        this.showSettings();
-                        break;
-                    default:
-                        this.showGradeSelection();
-                }
-
-                console.log('学习进度已恢复');
+                // 自动恢复学习进度
+                this.continueLearningProgress(progressData);
             } else {
                 this.showGradeSelection();
             }
         } catch (error) {
             console.error('恢复学习进度失败:', error);
+            this.clearLearningProgress();
             this.showGradeSelection();
         }
+    }
+    
+    /**
+     * 继续学习进度
+     */
+    continueLearningProgress(progressData) {
+        // 恢复基本状态
+        this.currentGrade = progressData.currentGrade;
+        this.currentSemester = progressData.currentSemester || null; // 恢复选中的学期
+        this.currentUnit = progressData.currentUnit;
+        this.currentQuestionIndex = progressData.currentQuestionIndex;
+        this.currentQuestions = progressData.currentQuestions;
+        this.sessionStats = progressData.sessionStats;
+        this.currentPage = progressData.currentPage;
+
+        // 根据当前页面恢复界面
+        switch (this.currentPage) {
+            case 'grade-selection':
+                this.showGradeSelection();
+                // 恢复侧边栏的选中状态
+                this.restoreSidebarSelection();
+                break;
+            case 'unit-selection':
+                this.showUnitSelection().catch(err => {
+                    console.error('显示单元选择页面失败:', err);
+                    this.uiManager.showMessage('加载单元列表失败', 'error');
+                });
+                break;
+            case 'study-page':
+                this.showStudyPage();
+                this.displayCurrentQuestion();
+                this.uiManager.showMessage('已恢复之前的默写进度', 'success');
+                break;
+            case 'stats-page':
+                this.showStats();
+                break;
+            case 'settings-page':
+                this.showSettings();
+                break;
+            default:
+                this.showGradeSelection();
+        }
+
+        console.log('学习进度已恢复');
+    }
+    
+    /**
+     * 清除学习进度
+     */
+    clearLearningProgress() {
+        localStorage.removeItem('english_review_progress');
+        this.currentGrade = null;
+        this.currentUnit = null;
+        this.currentQuestionIndex = 0;
+        this.currentQuestions = [];
+        this.sessionStats = null;
+        this.currentPage = 'grade-selection';
+    }
+    
+    /**
+     * 重新开始当前会话
+     */
+    restartCurrentSession() {
+        if (!this.currentGrade || !this.currentUnit || !this.currentQuestions || this.currentQuestions.length === 0) {
+            this.uiManager.showMessage('没有可重新开始的会话', 'warning');
+            return;
+        }
+        
+        this.uiManager.showConfirm(
+            `确定要重新开始吗？\n当前进度：${this.currentQuestionIndex + 1}/${this.currentQuestions.length} 题\n\n重新开始将清除当前进度并返回年级选择页面，但不会删除已记录的错题。`,
+            () => {
+                // 清除学习进度并返回年级选择页面
+                this.clearLearningProgress();
+                this.showGradeSelection();
+                this.uiManager.showMessage('已清除进度，请重新选择年级和单元', 'success');
+            }
+        );
     }
 
     goBack() {
@@ -530,13 +979,16 @@ export class EnglishReviewApp {
                 this.showGradeSelection();
                 break;
             case 'study-page':
-                this.showUnitSelection();
+                // 直接返回年级选择页面，跳过单元选择页面
+                this.showGradeSelection();
                 break;
             case 'stats-page':
-                this.showUnitSelection();
+                // 从统计页面返回时，也返回到年级选择页面
+                this.showGradeSelection();
                 break;
             case 'notebook-page':
-                this.showStats();
+                // 从错题本返回时，返回到年级选择页面
+                this.showGradeSelection();
                 break;
             case 'settings-page':
                 this.showGradeSelection();

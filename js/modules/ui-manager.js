@@ -44,7 +44,7 @@ export class UIManager {
     /**
      * 显示单元选择页面
      */
-    showUnitSelection(grade, units, onUnitSelect) {
+    showUnitSelection(grade, units, onUnitSelect, appInstance) {
         document.getElementById('grade-title').textContent = `${grade}年级单元`;
 
         const unitGrid = document.getElementById('unit-grid');
@@ -61,13 +61,43 @@ export class UIManager {
 
             // 添加单元卡片
             units[semester].forEach(unit => {
+                const fullUnit = `${semester}/${unit}`;
                 const unitCard = document.createElement('button');
                 unitCard.className = 'unit-card';
-                unitCard.dataset.unit = `${semester}/${unit}`;
+                unitCard.dataset.unit = fullUnit;
+                
+                // 获取进度信息
+                let statusText = '点击开始学习';
+                let progressPercent = 0;
+                let isCompleted = false;
+                
+                if (appInstance) {
+                    isCompleted = appInstance.isUnitCompleted(grade, fullUnit);
+                    progressPercent = appInstance.getUnitProgressPercent(grade, fullUnit);
+                    
+                    // 调试信息
+                    console.log(`Unit: ${fullUnit}, Grade: ${grade}, Completed: ${isCompleted}, Progress: ${progressPercent}%`);
+                    
+                    if (isCompleted) {
+                        statusText = '✓ 已完成';
+                        unitCard.classList.add('unit-card-completed');
+                    } else if (progressPercent > 0) {
+                        statusText = `进度: ${progressPercent}%`;
+                        unitCard.classList.add('unit-card-in-progress');
+                    }
+                } else {
+                    console.warn('appInstance 未传递到 showUnitSelection');
+                }
+                
                 unitCard.innerHTML = `
                     <div class="unit-card-content">
                         <h3>${unit}</h3>
-                        <p>点击开始学习</p>
+                        <p class="unit-status">${statusText}</p>
+                        ${progressPercent > 0 && !isCompleted ? `
+                            <div class="unit-progress-bar">
+                                <div class="unit-progress-fill" style="width: ${progressPercent}%"></div>
+                            </div>
+                        ` : ''}
                     </div>
                 `;
                 unitGrid.appendChild(unitCard);

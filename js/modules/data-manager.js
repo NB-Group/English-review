@@ -7,15 +7,39 @@
 export class DataManager {
     constructor() {
         this.loadedUnits = new Map(); // 缓存已加载的单元数据
-        this.unitFiles = this.scanUnitFiles(); // 扫描所有单元文件
+        this.unitFiles = {}; // 单元文件映射，将从服务器加载
+        this.scanUnitFiles(); // 异步扫描所有单元文件
     }
 
     /**
-     * 扫描所有单元文件
+     * 扫描所有单元文件（从服务器API获取）
      */
-    scanUnitFiles() {
-        // 这里我们将维护一个单元文件映射
-        // 实际项目中，这些文件应该通过构建工具生成或动态扫描
+    async scanUnitFiles() {
+        try {
+            // 尝试从服务器API获取单元列表
+            const response = await fetch('/api/scan-units');
+            if (response.ok) {
+                const units = await response.json();
+                this.unitFiles = units;
+                console.log('成功从服务器加载单元列表:', units);
+                return units;
+            } else {
+                console.warn('无法从服务器获取单元列表，使用默认列表');
+                this.unitFiles = this.getDefaultUnitFiles();
+                return this.unitFiles;
+            }
+        } catch (error) {
+            console.warn('扫描单元文件失败，使用默认列表:', error);
+            // 如果服务器不可用，使用默认列表作为后备
+            this.unitFiles = this.getDefaultUnitFiles();
+            return this.unitFiles;
+        }
+    }
+
+    /**
+     * 获取默认的单元文件列表（作为后备）
+     */
+    getDefaultUnitFiles() {
         return {
             '7': {
                 'Up': ['U1-1'],
@@ -23,16 +47,9 @@ export class DataManager {
             },
             '8': {
                 'Up': [],
-                'Down': [
-                    'U1-reading',
-                    'U1-speaking',
-                    'U1-viewing-listening',
-                    'U2-reading',
-                    'U2-viewing-listening',
-                    'U3-reading',
-                    'U3-speaking',
-                    'U3-viewing-listening'
-                ]
+                'Down': ['U1-reading', 'U1-speaking', 'U1-viewing-listening', 
+                         'U2-reading', 'U2-viewing-listening', 
+                         'U3-reading', 'U3-speaking', 'U3-viewing-listening']
             }
         };
     }
@@ -49,39 +66,23 @@ export class DataManager {
 	}
 
     /**
-     * 清除内存缓存
-     */
-    clearCache() {
-        this.loadedUnits.clear();
-        console.log('已清除单元数据缓存');
-    }
-
-    /**
      * 动态加载单元数据
      */
-    async loadUnitData(grade, semester, unit, forceReload = false) {
+    async loadUnitData(grade, semester, unit) {
         const key = `${grade}-${semester}-${unit}`;
 
-        // 检查缓存（如果强制重新加载，则跳过缓存）
-        if (!forceReload && this.loadedUnits.has(key)) {
+        // 检查缓存
+        if (this.loadedUnits.has(key)) {
             return this.loadedUnits.get(key);
         }
 
         // 构建文件路径（年级目录为中文，且以站点根相对路径加载）
         const gradeDir = this.getGradeDirectory(grade);
-        // 添加时间戳查询参数以破坏浏览器缓存
-        const timestamp = Date.now();
-        const filePath = `data/${gradeDir}/${semester}/${unit}.js?v=${timestamp}`;
+        const filePath = `data/${gradeDir}/${semester}/${unit}.js`;
 
         try {
-            // 使用 fetch 加载模块内容，禁用缓存
-            const response = await fetch(filePath, {
-                cache: 'no-store',
-                headers: {
-                    'Cache-Control': 'no-cache',
-                    'Pragma': 'no-cache'
-                }
-            });
+            // 使用 fetch 加载模块内容（相对站点根，无需 ../../）
+            const response = await fetch(filePath);
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             }
@@ -136,15 +137,23 @@ export class DataManager {
      * 获取指定年级的所有单元
      */
     getUnitsForGrade(grade) {
+        // 如果单元文件还未加载，返回空对象
+        if (!this.unitFiles || Object.keys(this.unitFiles).length === 0) {
+            // 尝试同步加载（如果可能）
+            if (this.unitFiles === undefined) {
+                this.unitFiles = {};
+            }
+            return {};
+        }
         return this.unitFiles[grade] || {};
     }
 
     /**
      * 获取指定单元的所有题目
      */
-    async getQuestionsForUnit(grade, unitPath, forceReload = false) {
+    async getQuestionsForUnit(grade, unitPath) {
         const [semester, unit] = unitPath.split('/');
-        const questions = await this.loadUnitData(grade, semester, unit, forceReload);
+        const questions = await this.loadUnitData(grade, semester, unit);
 
         if (!questions || questions.length === 0) {
             console.error(`未找到题目数据: ${grade}年级 ${semester} ${unit}`);

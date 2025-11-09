@@ -84,6 +84,8 @@ body {
     justify-content: center;
     padding: var(--space-lg);
     position: relative;
+    overflow-x: hidden; /* 防止水平溢出 */
+    width: 100%;
 }
 
 /* 页面系统 */
@@ -235,65 +237,369 @@ body {
 }
 
 /* ============================================
-   年级选择页面
+   年级选择页面 - 新设计
    ============================================ */
 #grade-selection {
-    text-align: center;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0;
+    overflow-x: hidden; /* 防止水平溢出 */
 }
 
-.grade-buttons {
+.grade-selection-container {
     display: flex;
-    gap: var(--space-lg);
-    justify-content: center;
-    margin-top: var(--space-2xl);
+    height: 100vh;
+    min-height: 600px;
+    gap: 0;
+    overflow-x: hidden; /* 防止水平溢出 */
+    overflow-y: auto; /* 允许垂直滚动 */
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* 确保不超出父容器 */
+    padding-left: 0; /* 确保左侧没有额外padding */
 }
 
-.grade-btn {
-    flex: 0 0 180px;
+/* 左侧倾斜侧边栏 */
+.sidebar {
+    width: 320px;
+    min-width: 280px;
+    background: var(--bg-elevated);
+    border-right: 1px solid var(--border);
+    position: relative;
+    transform: skewX(-5deg);
+    transform-origin: top center; /* 改为中心点，避免向左溢出 */
+    overflow: hidden;
+    margin-right: 50px; /* 为倾斜效果留出足够空间 */
+    margin-left: 87px; /* 为左侧倾斜留出空间，防止向左溢出 */
+    flex-shrink: 0; /* 防止被压缩 */
+}
+
+.sidebar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(34, 229, 143, 0.03), rgba(0, 179, 255, 0.03));
+    pointer-events: none;
+}
+
+.sidebar-content {
+    padding: var(--space-2xl) var(--space-xl);
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: var(--space-md);
-    padding: var(--space-xl);
-    background: var(--bg-elevated);
+    position: relative;
+    z-index: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidebar-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-2xl);
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+}
+
+.grade-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    flex: 1;
+}
+
+.grade-item {
+    background: var(--bg);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    cursor: pointer;
+    padding: var(--space-lg);
     transition: all var(--transition-base);
-    text-decoration: none;
-    color: var(--text-primary);
+    cursor: pointer;
 }
 
-.grade-btn:hover {
+.grade-item:hover {
     border-color: var(--primary);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
 }
 
-.grade-icon {
-    width: 64px;
-    height: 64px;
+.grade-item.active {
+    border-color: var(--primary);
+    background: rgba(34, 229, 143, 0.05);
+    box-shadow: 0 0 0 2px rgba(34, 229, 143, 0.1);
+}
+
+.grade-item-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.grade-number {
+    width: 48px;
+    height: 48px;
     border-radius: var(--radius-full);
     background: var(--primary);
     color: var(--bg);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 700;
+    flex-shrink: 0;
 }
 
-.grade-label {
+.grade-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.semester-buttons {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.semester-btn {
+    flex: 1;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: inherit;
+}
+
+.semester-btn:hover {
+    border-color: var(--primary);
+    color: var(--text-primary);
+    background: var(--bg-hover);
+}
+
+.semester-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--bg);
+}
+
+/* 右侧预览区域 */
+.preview-area {
+    flex: 1;
+    background: var(--bg);
+    overflow-y: auto;
+    padding: var(--space-2xl);
+}
+
+.preview-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.preview-header {
+    margin-bottom: var(--space-2xl);
+}
+
+.preview-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.unit-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-lg);
+}
+
+.preview-placeholder {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: var(--space-2xl);
+    color: var(--text-secondary);
     font-size: 1rem;
+}
+
+.preview-unit-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.preview-unit-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(34, 229, 143, 0.05), rgba(0, 179, 255, 0.05));
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.preview-unit-card:hover::before {
+    opacity: 1;
+}
+
+.preview-unit-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.preview-unit-card:active {
+    transform: translateY(-2px);
+}
+
+.preview-unit-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 var(--space-sm) 0;
+    color: var(--text-primary);
+    position: relative;
+    z-index: 1;
+}
+
+.preview-unit-card p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* 预览单元卡片完成状态 */
+.preview-unit-completed {
+    border-color: var(--success);
+    background: linear-gradient(135deg, rgba(34, 229, 143, 0.08), rgba(34, 229, 143, 0.03));
+}
+
+.preview-unit-completed::before {
+    background: linear-gradient(135deg, rgba(34, 229, 143, 0.15), rgba(34, 229, 143, 0.08));
+    opacity: 1;
+}
+
+.preview-unit-completed .preview-unit-status {
+    color: var(--success);
+    font-weight: 600;
+}
+
+.preview-unit-in-progress {
+    border-color: var(--primary);
+}
+
+.preview-unit-in-progress .preview-unit-status {
+    color: var(--primary);
     font-weight: 500;
 }
 
-/* 设置按钮 */
-.settings-btn {
+.preview-unit-status {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin: var(--space-sm) 0 0 0;
+    position: relative;
+    z-index: 1;
+}
+
+.preview-unit-progress-bar {
+    width: 100%;
+    height: 4px;
+    background: var(--bg-secondary);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: var(--space-sm);
+    position: relative;
+    z-index: 1;
+}
+
+.preview-unit-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    border-radius: 2px;
+    transition: width var(--transition-base);
+}
+
+/* 年级项完成状态 */
+.grade-item.grade-completed {
+    border-color: var(--success);
+    background: linear-gradient(135deg, rgba(34, 229, 143, 0.05), rgba(34, 229, 143, 0.02));
+}
+
+.grade-item.grade-completed .grade-name {
+    color: var(--success);
+}
+
+.grade-item.grade-in-progress {
+    border-color: var(--primary);
+}
+
+.grade-item.grade-in-progress .grade-name {
+    color: var(--primary);
+}
+
+/* 头部操作按钮容器 */
+.header-actions {
     position: fixed;
     top: var(--space-lg);
     right: var(--space-lg);
     z-index: 1000;
+    display: flex;
+    gap: var(--space-md);
+    align-items: center;
+}
+
+/* 设置按钮和错题本按钮 */
+.settings-btn,
+.notebook-btn {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.settings-btn:hover,
+.notebook-btn:hover {
+    background: var(--bg-hover);
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.notebook-btn {
+    position: relative;
+}
+
+.notebook-btn::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    background: var(--error);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.notebook-btn.has-errors::after {
+    opacity: 1;
 }
 
 /* ============================================
@@ -397,6 +703,55 @@ body {
     margin: 0;
 }
 
+.unit-status {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin: var(--space-xs) 0 !important;
+}
+
+/* 已完成状态的单元卡片 */
+.unit-card-completed {
+    border-color: var(--success);
+    background: linear-gradient(135deg, rgba(34, 229, 143, 0.05), rgba(34, 229, 143, 0.02));
+}
+
+.unit-card-completed .unit-status {
+    color: var(--success);
+    font-weight: 600;
+}
+
+.unit-card-completed::before {
+    background: linear-gradient(135deg, rgba(34, 229, 143, 0.1), rgba(34, 229, 143, 0.05));
+    opacity: 1;
+}
+
+/* 进行中状态的单元卡片 */
+.unit-card-in-progress {
+    border-color: var(--primary);
+}
+
+.unit-card-in-progress .unit-status {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* 单元进度条 */
+.unit-progress-bar {
+    width: 100%;
+    height: 4px;
+    background: var(--bg-secondary);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: var(--space-xs);
+}
+
+.unit-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    border-radius: 2px;
+    transition: width var(--transition-base);
+}
+
 /* ============================================
    学习页面
    ============================================ */
@@ -414,6 +769,9 @@ body {
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--text-secondary);
+    flex: 1;
+    justify-content: center;
+    margin: 0 var(--space-md);
 }
 
 .progress-bar {
@@ -935,6 +1293,34 @@ body {
 /* ============================================
    响应式设计
    ============================================ */
+@media (max-width: 1024px) {
+    .grade-selection-container {
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+    }
+    
+    .sidebar {
+        width: 100%;
+        transform: none;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        margin-right: 0; /* 移动设备上不需要边距 */
+    }
+    
+    .sidebar-content {
+        transform: none;
+    }
+    
+    .preview-area {
+        padding: var(--space-lg);
+    }
+    
+    .unit-preview {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
     .app {
         padding: var(--space-md);
@@ -948,14 +1334,35 @@ body {
         font-size: 2rem;
     }
     
-    .grade-buttons {
+    .grade-selection-container {
         flex-direction: column;
-        align-items: center;
     }
     
-    .grade-btn {
+    .sidebar {
         width: 100%;
-        max-width: 280px;
+        transform: none;
+    }
+    
+    .sidebar-content {
+        transform: none;
+        padding: var(--space-lg);
+    }
+    
+    .grade-list {
+        gap: var(--space-md);
+    }
+    
+    .preview-area {
+        padding: var(--space-md);
+    }
+    
+    .preview-title {
+        font-size: 1.5rem;
+    }
+    
+    .unit-preview {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: var(--space-md);
     }
     
     .unit-grid {

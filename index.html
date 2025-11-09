@@ -12,28 +12,65 @@
     <div id="app" class="app">
         <!-- 年级选择页面 -->
         <div id="grade-selection" class="page active">
-            <div class="card">
-                <h1 class="title">英语复习助手</h1>
-                <p class="subtitle">选择你的年级开始学习</p>
+            <div class="grade-selection-container">
+                <!-- 左侧倾斜侧边栏 -->
+                <div class="sidebar">
+                    <div class="sidebar-content">
+                        <h2 class="sidebar-title">选择年级</h2>
+                        <div class="grade-list">
+                            <div class="grade-item" data-grade="7">
+                                <div class="grade-item-header">
+                                    <span class="grade-number">七</span>
+                                    <span class="grade-name">七年级</span>
+                                </div>
+                                <div class="semester-buttons">
+                                    <button class="semester-btn" data-semester="Up">上册</button>
+                                    <button class="semester-btn" data-semester="Down">下册</button>
+                                </div>
+                            </div>
+                            <div class="grade-item" data-grade="8">
+                                <div class="grade-item-header">
+                                    <span class="grade-number">八</span>
+                                    <span class="grade-name">八年级</span>
+                                </div>
+                                <div class="semester-buttons">
+                                    <button class="semester-btn" data-semester="Up">上册</button>
+                                    <button class="semester-btn" data-semester="Down">下册</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="grade-buttons">
-                    <button class="grade-btn" data-grade="7">
-                        <div class="grade-icon">七</div>
-                        <span class="grade-label">七年级</span>
-                    </button>
-                    <button class="grade-btn" data-grade="8">
-                        <div class="grade-icon">八</div>
-                        <span class="grade-label">八年级</span>
-                    </button>
+                <!-- 右侧预览区域 -->
+                <div class="preview-area">
+                    <div class="preview-content">
+                        <div class="preview-header">
+                            <h2 class="preview-title" id="preview-title">请选择年级和学期</h2>
+                        </div>
+                        <div id="unit-preview" class="unit-preview">
+                            <div class="preview-placeholder">
+                                <p>选择左侧的年级和学期，查看可用的单元</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <button id="settings-btn" class="btn btn-icon settings-btn" aria-label="设置">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="3"></circle>
-                    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
-                </svg>
-            </button>
+            <div class="header-actions">
+                <button id="notebook-btn" class="btn btn-icon notebook-btn" aria-label="错题本" title="查看错题本">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                </button>
+                <button id="settings-btn" class="btn btn-icon settings-btn" aria-label="设置" title="设置">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <!-- 单元选择页面 -->
@@ -59,6 +96,7 @@
                             <div id="progress-fill" class="progress-fill"></div>
                         </div>
                     </div>
+                    <button id="restart-btn" class="btn btn-icon" aria-label="重新开始" title="重新开始默写">↻</button>
                 </div>
                 
                 <div class="question-area">
