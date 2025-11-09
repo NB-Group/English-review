@@ -161,6 +161,72 @@ export const docxData = {
       "chinese": "n.抒情诗；歌词 adj.抒情的"
     }
   ],
+  "U3-viewing-listening": [
+    {
+      "english": ["be curious about"],
+      "chinese": "对。。。感到好奇"
+    },
+    {
+      "english": ["an inborn ability"],
+      "chinese": "一种天生的能力"
+    },
+    {
+      "english": ["a psychology professor"],
+      "chinese": "一位心理学教授"
+    },
+    {
+      "english": ["give a speech to sb."],
+      "chinese": "做一个演讲"
+    },
+    {
+      "english": ["sb. is unfamiliar/familiar with sth."],
+      "chinese": "某人对某事不熟悉/熟悉"
+    },
+    {
+      "english": ["sth. is unfamiliar/familiar to sb."],
+      "chinese": "某事对某人来讲不熟悉/熟悉"
+    },
+    {
+      "english": ["ask countless questions"],
+      "chinese": "问无数问题"
+    },
+    {
+      "english": ["preschooler"],
+      "chinese": "学龄前儿童"
+    },
+    {
+      "english": ["grown-ups", "adults"],
+      "chinese": "成年人"
+    },
+    {
+      "english": ["learn by continuous reading and exploring"],
+      "chinese": "通过不断的阅读和探索学习"
+    },
+    {
+      "english": ["continue doing"],
+      "chinese": "持续做某事"
+    },
+    {
+      "english": ["by nature", "inborn"],
+      "chinese": "天生"
+    },
+    {
+      "english": ["no longer", "not any longer"],
+      "chinese": "不再"
+    },
+    {
+      "english": ["reach for objects"],
+      "chinese": "伸手拿东西"
+    },
+    {
+      "english": ["know how it works"],
+      "chinese": "直到它如何运作"
+    },
+    {
+      "english": ["rather than", "instead of"],
+      "chinese": "而不是"
+    }
+  ],
   "U1-2": [
     {
       "english": ["check out"],

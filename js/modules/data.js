@@ -35,7 +35,7 @@ export function initData() {
  * @param {boolean} shuffle - 是否打乱问题顺序
  * @returns {boolean} 是否成功加载数据
  */
-export function loadDocument(documentName, shuffle = true) {
+export function loadDocument(documentName, shuffle = false) {
     // 确保文档数据已加载 (现在从导入的模块获取)
     if (typeof docxData === 'undefined' || !docxData[documentName]) {
         showMessage("找不到指定文档喵～请确保文档数据已正确加载并且存在于 docx-data.js", "error");

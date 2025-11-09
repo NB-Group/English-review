@@ -1,97 +1,203 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>英语复习系统</title>
-  <link rel="stylesheet" href="./style.css">
-  <script src="https://cdn.jsdelivr.net/npm/docx@9.1.0/build/index.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/pizzip@3.1.7/dist/pizzip.min.js"></script> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.47.1/docxtemplater.min.js"></script>
-  <!-- 使用ES模块导入 -->
-  <script type="module" src="./js/main.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>英语复习助手</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="message"></div>
-  
-  <div id="container">
-    <div id="header">
-      <h1>喵～英语复习小助手</h1>
-      <div class="header-buttons">
-        <button id="pomodoro-button" class="icon-button" title="设置番茄时钟">⏱️</button>
-        <button id="theme-toggle" class="icon-button" title="切换颜色模式">🌙</button>
-        <button id="audio-toggle" class="icon-button" title="开启/关闭语音提示">🔇</button>
-      </div>
-    </div>
-    
-    <div id="main-content">
-      <div id="answer">
-        <div class="form-group">
-          <label for="file-selector">选择练习文档喵～</label>
-          <select id="file-selector" class="select-input"></select>
-        </div>
-        
-        <div id="question">
-          <div id="chinese-text">喵～请选择一个文档开始练习</div>
-          
-          <div class="input-container">
-            <input class="input" type="text" id="answer-input" placeholder="请输入对应的英文喵～" disabled>
-          </div>
-          
-          <div class="progress-container">
-            <div id="progress-bar">
-              <div id="progress-bar-inner"></div>
+    <div id="app" class="app">
+        <!-- 年级选择页面 -->
+        <div id="grade-selection" class="page active">
+            <div class="card">
+                <h1 class="title">英语复习助手</h1>
+                <p class="subtitle">选择你的年级开始学习</p>
+                
+                <div class="grade-buttons">
+                    <button class="grade-btn" data-grade="7">
+                        <div class="grade-icon">七</div>
+                        <span class="grade-label">七年级</span>
+                    </button>
+                    <button class="grade-btn" data-grade="8">
+                        <div class="grade-icon">八</div>
+                        <span class="grade-label">八年级</span>
+                    </button>
+                </div>
             </div>
-            <span id="progress-text">0/0</span>
-          </div>
-          
-          <div class="button-group">
-            <button id="submit-button" class="primary-button" disabled>提交喵～</button>
-          </div>
+            
+            <button id="settings-btn" class="btn btn-icon settings-btn" aria-label="设置">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+                </svg>
+            </button>
         </div>
-      </div>
-      
-      <div id="list">
-        <h3>错题记录喵～</h3>
-        <div id="error-list">
-          <ul id="error-items"></ul>
+
+        <!-- 单元选择页面 -->
+        <div id="unit-selection" class="page">
+            <div class="card">
+                <div class="page-header">
+                    <button class="btn btn-icon back-btn" aria-label="返回">←</button>
+                    <h2 class="heading" id="grade-title">七年级单元</h2>
+                </div>
+                
+                <div id="unit-grid" class="unit-grid"></div>
+            </div>
         </div>
-        <div class="button-group">
-          <button id="retry-button" class="secondary-button">重做错题</button>
-          <button id="import-button" class="secondary-button">导入错题</button>
-          <button id="export-button" class="secondary-button">导出错题</button>
+
+        <!-- 学习页面 -->
+        <div id="study-page" class="page">
+            <div class="card">
+                <div class="study-header">
+                    <button class="btn btn-icon back-btn" aria-label="返回">←</button>
+                    <div class="progress-info">
+                        <span id="current-progress">1/20</span>
+                        <div class="progress-bar">
+                            <div id="progress-fill" class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question-area">
+                    <div id="chinese-text" class="chinese-text">请选择一个单元开始学习</div>
+                    <div class="input-area">
+                        <input type="text" id="answer-input" class="input" placeholder="输入英文翻译..." autocomplete="off">
+                        <button id="submit-btn" class="btn btn-primary submit-btn">提交</button>
+                    </div>
+                </div>
+                
+                <div id="result-area" class="result-area hidden">
+                    <div id="result-message" class="result-message"></div>
+                    <button id="next-btn" class="btn btn-primary next-btn">下一题</button>
+                </div>
+            </div>
         </div>
-        <input type="file" id="import-file-input" accept=".docx" style="display: none;">
-      </div>
+
+        <!-- 统计页面 -->
+        <div id="stats-page" class="page">
+            <div class="card">
+                <div class="page-header">
+                    <button class="btn btn-icon back-btn" aria-label="返回">←</button>
+                    <h2 class="heading">学习统计</h2>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-questions">0</div>
+                        <div class="stat-label">总题数</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="correct-answers">0</div>
+                        <div class="stat-label">正确数</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="accuracy-rate">0%</div>
+                        <div class="stat-label">正确率</div>
+                    </div>
+                </div>
+
+                <div class="wrong-answers-section">
+                    <h3 class="heading">错题回顾</h3>
+                    <div id="wrong-answers-list" class="wrong-answers-list"></div>
+                </div>
+
+                <div class="stats-actions">
+                    <button id="retry-wrong-btn" class="btn btn-primary">重做错题</button>
+                    <button id="view-notebook-btn" class="btn">查看错题本</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 错题本页面 -->
+        <div id="notebook-page" class="page">
+            <div class="card">
+                <div class="page-header">
+                    <button class="btn btn-icon back-btn" aria-label="返回">←</button>
+                    <h2 class="heading">错题本</h2>
+                </div>
+
+                <div class="notebook-stats">
+                    <div class="notebook-stat">
+                        <span class="stat-value" id="notebook-total">0</span>
+                        <span class="stat-label">总错题数</span>
+                    </div>
+                    <div class="notebook-stat">
+                        <span class="stat-value" id="notebook-mastered">0</span>
+                        <span class="stat-label">已掌握</span>
+                    </div>
+                </div>
+
+                <div class="notebook-controls">
+                    <button id="export-notebook-btn" class="btn">导出错题</button>
+                    <button id="clear-notebook-btn" class="btn">清空错题本</button>
+                </div>
+
+                <div id="notebook-content" class="notebook-content"></div>
+            </div>
+        </div>
+
+        <!-- 设置页面 -->
+        <div id="settings-page" class="page">
+            <div class="card">
+                <div class="page-header">
+                    <button class="btn btn-icon back-btn" aria-label="返回">←</button>
+                    <h2 class="heading">设置</h2>
+                </div>
+                
+                <div class="settings-section">
+                    <h3 class="heading">AI 判题设置</h3>
+                    <div class="setting-item">
+                        <label for="api-key">API Key</label>
+                        <input type="password" id="api-key" class="setting-input" placeholder="输入 SiliconFlow API Key">
+                    </div>
+                    <div class="setting-item">
+                        <label for="ai-model">AI 模型</label>
+                        <select id="ai-model" class="setting-select">
+                            <option value="Qwen/Qwen2.5-7B-Instruct" selected>Qwen2.5-7B-Instruct (推荐)</option>
+                            <option value="Qwen/Qwen3-8B">Qwen3-8B</option>
+                            <option value="Qwen/Qwen2-7B">Qwen2-7B</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="enable-ai-grading">
+                            <span class="checkbox-custom"></span>
+                            <span>启用 AI 智能判题</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="settings-section">
+                    <h3 class="heading">学习设置</h3>
+                    <div class="setting-item">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="auto-next" checked>
+                            <span class="checkbox-custom"></span>
+                            <span>答对后自动进入下一题</span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="show-hints">
+                            <span class="checkbox-custom"></span>
+                            <span>显示提示信息</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div style="margin-top: var(--space-xl);">
+                    <button id="save-settings-btn" class="btn btn-primary" style="width: 100%;">保存设置</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  
-  <!-- 番茄时钟设置弹窗 -->
-  <div id="pomodoro-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <h2>番茄时钟设置喵～</h2>
-      <div class="form-group">
-        <label for="study-time">学习时间（分钟）：</label>
-        <input type="number" id="study-time" min="1" max="120" value="25" class="input">
-      </div>
-      <div class="form-group">
-        <label for="break-time">休息时间（分钟）：</label>
-        <input type="number" id="break-time" min="1" max="30" value="5" class="input">
-      </div>
-      <button id="start-pomodoro" class="primary-button">开始计时喵～</button>
-    </div>
-  </div>
-  
-  <!-- 番茄时钟显示区域 -->
-  <div id="pomodoro-timer" class="timer-container">
-    <div class="timer-content">
-      <span id="timer-status">学习中</span>
-      <span id="timer-countdown">25:00</span>
-    </div>
-    <button id="pause-timer" class="icon-button" title="暂停/继续">⏯️</button>
-    <button id="stop-timer" class="icon-button" title="停止">⏹️</button>
-  </div>
+
+    <!-- 消息提示 -->
+    <div id="message" class="message"></div>
+
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
