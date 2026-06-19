@@ -21,6 +21,7 @@ export class EnglishReviewApp {
         this.currentGrade = null;
         this.currentSemester = null; // 当前选中的学期
         this.currentUnit = null;
+        this.studyMode = 'normal';
         this.currentQuestions = [];
         this.currentQuestionIndex = 0;
         this.sessionStats = {
@@ -31,6 +32,7 @@ export class EnglishReviewApp {
         };
         this.autoNextTimer = null; // 自动下一题定时器
         this.currentPage = 'grade-selection'; // 当前页面状态
+        this._prefillCursorPos = null; // 预填光标位置标记
 
         this.init();
     }
@@ -38,352 +40,241 @@ export class EnglishReviewApp {
     init() {
         this.setupEventListeners();
         this.loadSettings();
-        this.restoreLearningProgress(); // 恢复学习进度
+        this.migrateGrade8Progress(); // 迁移八年级进度
+        this.restoreLearningProgress().catch(error => {
+            console.error('恢复学习进度失败:', error);
+        }); // 恢复学习进度
         this.updateNotebookBadge(); // 更新错题本徽章
     }
     
     setupEventListeners() {
-        // 年级和学期选择（新设计）
-        document.querySelectorAll('.semester-btn').forEach(btn => {
+        // Grade and Semester Selection (New Design)
+        document.querySelectorAll('.semester-select-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const gradeItem = e.currentTarget.closest('.grade-item');
-                const grade = gradeItem.dataset.grade;
+                e.stopPropagation(); 
+                
+                // Find the parent grade item or use dataset directly
+                const grade = e.currentTarget.dataset.grade;
                 const semester = e.currentTarget.dataset.semester;
                 
-                // 更新UI状态
-                document.querySelectorAll('.grade-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-                document.querySelectorAll('.semester-btn').forEach(b => {
-                    b.classList.remove('active');
-                });
-                
-                gradeItem.classList.add('active');
-                e.currentTarget.classList.add('active');
-                
-                // 保存当前选中的年级和学期
+                // Save current selection
                 this.currentGrade = grade;
                 this.currentSemester = semester;
+                this.studyMode = 'normal';
                 this.saveLearningProgress();
                 
-                // 显示预览（异步）
-                this.showUnitPreview(grade, semester).catch(err => {
-                    console.error('显示单元预览失败:', err);
-                    this.uiManager.showMessage('加载单元列表失败', 'error');
-                });
+                // Navigate to unit selection
+                this.showUnitSelection();
             });
         });
         
-        // 单元预览卡片点击 - 直接进入学习，跳过单元选择页面
-        document.addEventListener('click', (e) => {
-            if (e.target.closest('.preview-unit-card')) {
-                const card = e.target.closest('.preview-unit-card');
-                const unit = card.dataset.unit;
-                const grade = card.dataset.grade;
-                if (unit && grade) {
-                    // 直接选择单元，跳过单元选择页面
-                    this.currentGrade = grade;
-                    this.selectUnit(unit);
-                }
-            }
-        });
-        
-        // 返回按钮
+        // Back Button
         document.querySelectorAll('.back-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 this.goBack();
             });
         });
         
-        // 错题本按钮（主页）
-        document.getElementById('notebook-btn').addEventListener('click', () => {
-            this.showNotebook();
-        });
+        // Notebook Button (Top Bar)
+        const notebookBtn = document.getElementById('notebook-btn');
+        if (notebookBtn) {
+            notebookBtn.addEventListener('click', () => {
+                this.showNotebook();
+            });
+        }
         
-        // 设置按钮
-        document.getElementById('settings-btn').addEventListener('click', () => {
-            this.showSettings();
-        });
+        // Settings Button (Top Bar)
+        const settingsBtn = document.getElementById('settings-btn');
+        if (settingsBtn) {
+            settingsBtn.addEventListener('click', () => {
+                this.showSettings();
+            });
+        }
         
-        // 提交答案
-        document.getElementById('submit-btn').addEventListener('click', () => {
-            this.submitAnswer();
-        });
-        
-        // 下一题
-        document.getElementById('next-btn').addEventListener('click', () => {
-            this.nextQuestion();
-        });
-        
-        // 输入框回车提交（优化：支持Enter键，禁用时不允许提交）
-        const answerInput = document.getElementById('answer-input');
-        answerInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && !answerInput.disabled) {
-                e.preventDefault();
+        // Submit Answer
+        const submitBtn = document.getElementById('submit-btn');
+        if (submitBtn) {
+            submitBtn.addEventListener('click', () => {
                 this.submitAnswer();
+            });
+        }
+
+        // Skip Question
+        const skipBtn = document.getElementById('skip-btn');
+        if (skipBtn) {
+            skipBtn.addEventListener('click', () => {
+                this.skipQuestion();
+            });
+        }
+        
+        // Next Question
+        const nextBtn = document.getElementById('next-btn');
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                this.nextQuestion();
+            });
+        }
+        
+        // Input Enter Key
+        const answerInput = document.getElementById('answer-input');
+        if (answerInput) {
+            answerInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && !answerInput.disabled) {
+                    e.preventDefault();
+                    this.submitAnswer();
+                }
+            });
+            
+            // 聚焦时光标保持在当前位置（配合预填充等逻辑）
+            answerInput.addEventListener('focus', (e) => {
+                const len = e.target.value.length;
+                if (len > 0 && this._prefillCursorPos === null) {
+                    e.target.setSelectionRange(len, len);
+                }
+            });
+        }
+        
+        // Previous Question Button
+        const prevBtn = document.getElementById('prev-btn');
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                this.prevQuestion();
+            });
+        }
+
+        // Restart Button
+        const restartBtn = document.getElementById('restart-btn');
+        if (restartBtn) {
+            restartBtn.addEventListener('click', () => {
+                this.restartCurrentSession();
+            });
+        }
+        
+        // Retry Wrong Answers
+        const retryBtn = document.getElementById('retry-wrong-btn');
+        if (retryBtn) {
+            retryBtn.addEventListener('click', () => {
+                this.retryWrongAnswers();
+            });
+        }
+        
+        // Save Settings
+        const saveSettingsBtn = document.getElementById('save-settings-btn');
+        if (saveSettingsBtn) {
+            saveSettingsBtn.addEventListener('click', () => {
+                this.saveSettings();
+            });
+        }
+
+        // View Notebook from Stats
+        const viewNotebookBtn = document.getElementById('view-notebook-btn');
+        if (viewNotebookBtn) {
+            viewNotebookBtn.addEventListener('click', () => {
+                this.showNotebook();
+            });
+        }
+
+        // Export Notebook
+        const exportBtn = document.getElementById('export-notebook-btn');
+        if (exportBtn) {
+            exportBtn.addEventListener('click', () => {
+                this.exportNotebook();
+            });
+        }
+
+        // Clear Notebook
+        const clearBtn = document.getElementById('clear-notebook-btn');
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => {
+                this.clearNotebook();
+            });
+        }
+
+        const normalModeBtn = document.getElementById('mode-normal-btn');
+        const transformModeBtn = document.getElementById('mode-transform-btn');
+        if (normalModeBtn && transformModeBtn) {
+            normalModeBtn.addEventListener('click', () => {
+                this.studyMode = 'normal';
+                this.showUnitSelection();
+            });
+            transformModeBtn.addEventListener('click', () => {
+                this.studyMode = 'transform';
+                this.showUnitSelection();
+            });
+        }
+    }
+    
+    goBack() {
+        if (this.currentPage === 'unit-selection') {
+            this.showGradeSelection();
+        } else if (this.currentPage === 'study-page') {
+            this.showUnitSelection();
+        } else if (this.currentPage === 'stats-page') {
+            this.showUnitSelection(); // Back to unit selection makes more sense usually
+        } else if (this.currentPage === 'notebook-page' || this.currentPage === 'settings-page') {
+            // Return to previous page if possible, or default to home
+            // For simplicity, let's go home or unit selection depending on state
+            if (this.currentGrade && this.currentUnit) {
+                this.showStudyPage();
+            } else if (this.currentGrade) {
+                this.showUnitSelection();
+            } else {
+                this.showGradeSelection();
             }
-        });
-        
-        // 输入框获得焦点时自动选中文本（方便快速输入）
-        answerInput.addEventListener('focus', (e) => {
-            e.target.select();
-        });
-        
-        // 重新开始按钮
-        document.getElementById('restart-btn').addEventListener('click', () => {
-            this.restartCurrentSession();
-        });
-        
-        // 重做错题
-        document.getElementById('retry-wrong-btn').addEventListener('click', () => {
-            this.retryWrongAnswers();
-        });
-        
-        // 保存设置
-        document.getElementById('save-settings-btn').addEventListener('click', () => {
-            this.saveSettings();
-        });
-
-        // 错题本按钮
-        document.getElementById('view-notebook-btn').addEventListener('click', () => {
-            this.showNotebook();
-        });
-
-        // 导出错题本
-        document.getElementById('export-notebook-btn').addEventListener('click', () => {
-            this.exportNotebook();
-        });
-
-        // 清空错题本
-        document.getElementById('clear-notebook-btn').addEventListener('click', () => {
-            this.clearNotebook();
-        });
+        } else {
+            this.showGradeSelection();
+        }
     }
-    
-    selectGrade(grade) {
-        this.currentGrade = grade;
-        this.currentUnit = null;
-        this.currentQuestionIndex = 0;
-        this.currentQuestions = [];
-        this.sessionStats = {
-            total: 0,
-            correct: 0,
-            wrong: 0,
-            wrongAnswers: []
-        };
-        this.showUnitSelection().catch(err => {
-            console.error('显示单元选择页面失败:', err);
-            this.uiManager.showMessage('加载单元列表失败', 'error');
-        });
-    }
-    
+
     /**
-     * 显示单元预览（异步，等待单元列表加载）
+     * Show grade selection page (Home)
      */
-    async showUnitPreview(grade, semester) {
-        // 更新预览标题
-        const gradeName = grade === '7' ? '七年级' : '八年级';
-        const semesterName = semester === 'Up' ? '上册' : '下册';
-        document.getElementById('preview-title').textContent = `${gradeName}${semesterName}`;
-        
-        // 更新预览内容（显示加载中）
-        const previewContainer = document.getElementById('unit-preview');
-        previewContainer.innerHTML = `
-            <div class="preview-placeholder">
-                <p>加载中...</p>
-            </div>
-        `;
-        
-        // 确保单元列表已加载
-        let units = this.dataManager.getUnitsForGrade(grade);
-        if (!units || Object.keys(units).length === 0) {
-            // 如果单元列表为空，尝试重新加载
-            await this.dataManager.scanUnitFiles();
-            units = this.dataManager.getUnitsForGrade(grade);
-        }
-        
-        const semesterUnits = units[semester] || [];
-        
-        // 清空预览容器
-        previewContainer.innerHTML = '';
-        
-        if (semesterUnits.length === 0) {
-            previewContainer.innerHTML = `
-                <div class="preview-placeholder">
-                    <p>该学期暂无可用单元</p>
-                </div>
-            `;
-            return;
-        }
-        
-        semesterUnits.forEach(unit => {
-            const fullUnit = `${semester}/${unit}`;
-            const card = document.createElement('div');
-            card.className = 'preview-unit-card';
-            card.dataset.grade = grade;
-            card.dataset.unit = fullUnit;
-            
-            // 获取单元完成状态
-            const isCompleted = this.isUnitCompleted(grade, fullUnit);
-            const progressPercent = this.getUnitProgressPercent(grade, fullUnit);
-            
-            let statusText = '点击开始学习';
-            if (isCompleted) {
-                statusText = '✓ 已完成';
-                card.classList.add('preview-unit-completed');
-            } else if (progressPercent > 0) {
-                statusText = `进度: ${progressPercent}%`;
-                card.classList.add('preview-unit-in-progress');
-            }
-            
-            card.innerHTML = `
-                <h3>${unit}</h3>
-                <p class="preview-unit-status">${statusText}</p>
-                ${progressPercent > 0 && !isCompleted ? `
-                    <div class="preview-unit-progress-bar">
-                        <div class="preview-unit-progress-fill" style="width: ${progressPercent}%"></div>
-                    </div>
-                ` : ''}
-            `;
-            previewContainer.appendChild(card);
-        });
-    }
-    
     showGradeSelection() {
         this.currentPage = 'grade-selection';
         this.uiManager.showPage('grade-selection');
+        this.currentUnit = null; // Reset current unit
         
-        // 重置预览状态（但不重置侧边栏选中状态，因为可能正在恢复）
-        document.getElementById('preview-title').textContent = '请选择年级和学期';
-        document.getElementById('unit-preview').innerHTML = `
-            <div class="preview-placeholder">
-                <p>选择左侧的年级和学期，查看可用的单元</p>
-            </div>
-        `;
-        
-        // 更新侧边栏显示单元完成状态
-        this.updateSidebarUnitStatus().catch(err => {
-            console.error('更新侧边栏状态失败:', err);
-        });
+        // Update home cards status - Not needed in new design as cards are static, 
+        // but we might want to show progress eventually. For now, skipping complex updates.
         
         this.saveLearningProgress();
-    }
-    
-    /**
-     * 恢复侧边栏的选中状态
-     */
-    restoreSidebarSelection() {
-        if (!this.currentGrade || !this.currentSemester) {
-            return;
-        }
-        
-        // 恢复年级选中状态
-        const gradeItem = document.querySelector(`.grade-item[data-grade="${this.currentGrade}"]`);
-        if (gradeItem) {
-            document.querySelectorAll('.grade-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            gradeItem.classList.add('active');
-            
-            // 恢复学期选中状态
-            const semesterBtn = gradeItem.querySelector(`.semester-btn[data-semester="${this.currentSemester}"]`);
-            if (semesterBtn) {
-                document.querySelectorAll('.semester-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                semesterBtn.classList.add('active');
-                
-                // 显示预览
-                this.showUnitPreview(this.currentGrade, this.currentSemester).catch(err => {
-                    console.error('显示单元预览失败:', err);
-                });
-            }
-        }
-    }
-    
-    /**
-     * 更新侧边栏中每个单元的完成状态显示
-     */
-    async updateSidebarUnitStatus() {
-        // 确保单元列表已加载
-        await this.dataManager.scanUnitFiles();
-        
-        // 遍历所有年级
-        document.querySelectorAll('.grade-item').forEach(gradeItem => {
-            const grade = gradeItem.dataset.grade;
-            const units = this.dataManager.getUnitsForGrade(grade);
-            
-            // 清除之前的状态类
-            gradeItem.classList.remove('grade-completed', 'grade-in-progress');
-            
-            if (!units || Object.keys(units).length === 0) {
-                return;
-            }
-            
-            // 计算该年级所有单元的完成情况
-            let totalUnits = 0;
-            let completedUnits = 0;
-            let inProgressUnits = 0;
-            
-            Object.keys(units).forEach(semester => {
-                units[semester].forEach(unit => {
-                    const fullUnit = `${semester}/${unit}`;
-                    totalUnits++;
-                    if (this.isUnitCompleted(grade, fullUnit)) {
-                        completedUnits++;
-                    } else if (this.getUnitProgressPercent(grade, fullUnit) > 0) {
-                        inProgressUnits++;
-                    }
-                });
-            });
-            
-            // 更新年级项的显示
-            const gradeName = gradeItem.querySelector('.grade-name');
-            if (gradeName && totalUnits > 0) {
-                const progressText = completedUnits > 0 || inProgressUnits > 0 
-                    ? ` (${completedUnits}/${totalUnits} 已完成)`
-                    : '';
-                const gradeText = grade === '7' ? '七年级' : '八年级';
-                gradeName.innerHTML = `${gradeText}${progressText}`;
-                
-                // 添加完成状态类
-                if (completedUnits === totalUnits) {
-                    gradeItem.classList.add('grade-completed');
-                } else if (completedUnits > 0 || inProgressUnits > 0) {
-                    gradeItem.classList.add('grade-in-progress');
-                }
-            }
-        });
-        
-        // 如果当前有选中的年级和学期，更新预览区域
-        if (this.currentGrade && this.currentSemester) {
-            await this.showUnitPreview(this.currentGrade, this.currentSemester);
-        }
+        window.EnglishReview?.accountStorage?.saveRemoteData?.();
     }
 
     async showUnitSelection() {
         this.currentPage = 'unit-selection';
         
-        // 确保单元列表已加载
+        // Ensure units loaded
         let units = this.dataManager.getUnitsForGrade(this.currentGrade);
         if (!units || Object.keys(units).length === 0) {
-            // 如果单元列表为空，尝试重新加载
             await this.dataManager.scanUnitFiles();
             units = this.dataManager.getUnitsForGrade(this.currentGrade);
         }
         
-        this.uiManager.showUnitSelection(this.currentGrade, units, (unit) => {
+        // Filter by current semester
+        let displayUnits = {};
+        if (this.currentSemester && units[this.currentSemester]) {
+            displayUnits[this.currentSemester] = units[this.currentSemester];
+        } else {
+            // Fallback to showing everything if no semester selected (shouldn't happen with new UI)
+            displayUnits = units;
+        }
+        
+        this.uiManager.showUnitSelection(this.currentGrade, displayUnits, (unit) => {
             this.selectUnit(unit);
-        }, this); // 传递app实例，用于获取进度信息
+        }, this, this.studyMode);
         this.saveLearningProgress();
+        window.EnglishReview?.accountStorage?.saveRemoteData?.();
     }
     
     async selectUnit(unit) {
         this.currentUnit = unit;
 
-        // 异步加载题目数据
-        this.currentQuestions = await this.dataManager.getQuestionsForUnit(this.currentGrade, unit);
+        if (this.studyMode === 'transform') {
+            this.currentQuestions = await this.getTransformQuestionsForUnit(this.currentGrade, unit);
+        } else {
+            this.currentQuestions = await this.dataManager.getQuestionsForUnit(this.currentGrade, unit);
+        }
         
         // 从unit的独立进度中恢复
         let shouldRestoreProgress = false;
@@ -394,17 +285,25 @@ export class EnglishReviewApp {
             const now = Date.now();
             const hoursDiff = (now - progress.timestamp) / (1000 * 60 * 60);
             
-            // 如果已完成，从头开始
+            // 如果已完成，保持完成状态（不重置，避免覆盖完成状态）
             if (progress.isCompleted) {
-                this.currentQuestionIndex = 0;
-                this.sessionStats = {
-                    total: this.currentQuestions.length,
-                    correct: 0,
-                    wrong: 0,
-                    wrongAnswers: []
-                };
-            } else if (hoursDiff <= 24 && 
-                      progress.currentQuestionIndex > 0 && 
+                // 保持完成状态，currentQuestionIndex 应该等于题目总数
+                this.currentQuestionIndex = this.currentQuestions.length;
+                // 恢复之前的统计信息，如果没有则使用默认值
+                if (progress.sessionStats) {
+                    this.sessionStats = {
+                        ...progress.sessionStats,
+                        total: this.currentQuestions.length
+                    };
+                } else {
+                    this.sessionStats = {
+                        total: this.currentQuestions.length,
+                        correct: 0,
+                        wrong: 0,
+                        wrongAnswers: []
+                    };
+                }
+            } else if (progress.currentQuestionIndex > 0 && 
                       progress.currentQuestionIndex < this.currentQuestions.length) {
                 // 恢复未完成的进度
                 shouldRestoreProgress = true;
@@ -451,15 +350,151 @@ export class EnglishReviewApp {
             this.uiManager.showMessage(`已恢复之前的默写进度（第 ${this.currentQuestionIndex + 1} 题）`, 'success');
         }
         this.saveLearningProgress();
+        window.EnglishReview?.accountStorage?.saveRemoteData?.();
+    }
+
+    async getTransformQuestionsForUnit(grade, unit) {
+        return await this.dataManager.getTransformQuestionsForUnit(grade, unit);
+    }
+
+    buildWordFormQuestions(wordForms) {
+        const questions = [];
+
+        wordForms.forEach((entry) => {
+            if (!entry || !entry.word || !Array.isArray(entry.forms)) return;
+
+            entry.forms.forEach((formItem) => {
+                if (!formItem || !formItem.form) return;
+                const sourceWord = entry.word.trim();
+                const targetType = this.humanizeWordType(formItem.type);
+                const meaning = this.cleanTransformMeaning(formItem.chinese || '');
+
+                if (this.normalizeAnswer(sourceWord) === this.normalizeAnswer(formItem.form)) {
+                    return;
+                }
+
+                const promptParts = [`[词转特训] ${sourceWord}`];
+                if (targetType) promptParts.push(`(${targetType})`);
+                if (meaning) promptParts.push(`-> ${meaning}`);
+
+                questions.push({
+                    chinese: promptParts.join(' '),
+                    english: [formItem.form],
+                    metaKey: `${sourceWord}::${formItem.form}::${targetType}`
+                });
+            });
+        });
+
+        return questions;
+    }
+
+    buildVocabularyTransformQuestions(vocabulary) {
+        const questions = [];
+        const arrowPattern = /\s*(?:->|→|鈫?|→)\s*/;
+
+        vocabulary.forEach((item) => {
+            const englishText = Array.isArray(item.english) ? item.english.join(' / ') : (item.english || '');
+            const chineseText = item.chinese || '';
+            if (!arrowPattern.test(englishText) && !arrowPattern.test(chineseText)) return;
+
+            const englishSegments = englishText.split(arrowPattern).map((part) => part.trim()).filter(Boolean);
+            const chineseSegments = chineseText.split(arrowPattern).map((part) => part.trim()).filter(Boolean);
+            if (englishSegments.length < 2) return;
+
+            const source = this.parseTransformSegment(englishSegments[0], chineseSegments[0] || '');
+            for (let i = 1; i < englishSegments.length; i += 1) {
+                const target = this.parseTransformSegment(englishSegments[i], chineseSegments[i] || '');
+                if (!source.word || !target.word) continue;
+                if (this.normalizeAnswer(source.word) === this.normalizeAnswer(target.word)) continue;
+
+                const promptParts = [`[词转特训] ${source.word}`];
+                if (source.type) promptParts.push(`(${source.type})`);
+                promptParts.push('->');
+                if (target.type) promptParts.push(`写出${target.type}`);
+                else promptParts.push('写出对应词形');
+                if (target.meaning) promptParts.push(`(${target.meaning})`);
+
+                questions.push({
+                    chinese: promptParts.join(' '),
+                    english: [target.word],
+                    metaKey: `${source.word}::${target.word}::${target.type || ''}`
+                });
+            }
+        });
+
+        return questions;
+    }
+
+    parseTransformSegment(englishSegment, chineseSegment) {
+        const cleanedEnglish = englishSegment.replace(/[()]/g, ' ').replace(/\s+/g, ' ').trim();
+        const wordMatch = cleanedEnglish.match(/[A-Za-z][A-Za-z-]*/);
+        const typeMatch = cleanedEnglish.match(/\b(n|v|adj|adv|prep|conj|pron)\.?\b/i);
+
+        return {
+            word: wordMatch ? wordMatch[0] : '',
+            type: this.humanizeWordType(typeMatch ? typeMatch[1] : ''),
+            meaning: this.cleanTransformMeaning(chineseSegment)
+        };
+    }
+
+    cleanTransformMeaning(text) {
+        return (text || '')
+            .replace(/\s+/g, ' ')
+            .replace(/[()]/g, '')
+            .replace(/[：:]+$/g, '')
+            .trim();
+    }
+
+    humanizeWordType(type) {
+        const normalized = String(type || '').toLowerCase().replace(/\./g, '');
+        const map = {
+            noun: 'noun',
+            verb: 'verb',
+            adjective: 'adjective',
+            adverb: 'adverb',
+            pronoun: 'pronoun',
+            preposition: 'preposition',
+            conjunction: 'conjunction',
+            n: 'noun',
+            v: 'verb',
+            adj: 'adjective',
+            adv: 'adverb',
+            prep: 'preposition',
+            conj: 'conjunction',
+            pron: 'pronoun'
+        };
+        return map[normalized] || normalized;
+    }
+
+    deduplicateQuestions(questions) {
+        const seen = new Set();
+        return questions.filter((question) => {
+            const key = question.metaKey || `${question.chinese}::${(question.english || []).join('|')}`;
+            if (seen.has(key)) return false;
+            seen.add(key);
+            delete question.metaKey;
+            return true;
+        });
     }
     
     showStudyPage() {
         this.currentPage = 'study-page';
         this.uiManager.showPage('study-page');
         this.saveLearningProgress();
+        window.EnglishReview?.accountStorage?.saveRemoteData?.();
     }
     
     displayCurrentQuestion() {
+        if (!this.currentQuestions || !Array.isArray(this.currentQuestions) || this.currentQuestions.length === 0) {
+            console.warn('当前没有可显示的题目，返回年级选择页面');
+            const message = this.studyMode === 'transform'
+                ? '这个单元暂时没有词转数据，请先运行词转提取脚本'
+                : '未找到题目数据，请重新选择单元';
+            this.uiManager.showMessage(message, 'warning');
+            this.showUnitSelection();
+            return;
+        }
+
         if (this.currentQuestionIndex >= this.currentQuestions.length) {
             // 标记为已完成
             this.currentQuestionIndex = this.currentQuestions.length;
@@ -467,24 +502,66 @@ export class EnglishReviewApp {
             this.showStats();
             return;
         }
-        
+
         const question = this.currentQuestions[this.currentQuestionIndex];
         const progress = {
             current: this.currentQuestionIndex + 1,
             total: this.currentQuestions.length,
             percentage: ((this.currentQuestionIndex + 1) / this.currentQuestions.length) * 100
         };
-        
+
+        // 词转特训：智能预填充
+        let prefill = '';
+        let cursorPos = 0;
+        if (this.studyMode === 'transform' && question.sourceWord && question.targetWord) {
+            const src = question.sourceWord;
+            const tgt = question.targetWord;
+
+            if (tgt.toLowerCase().endsWith(src.toLowerCase())) {
+                // 目标词以源词结尾，如 comfortable → uncomfortable
+                // 预填源词，光标在开头，让用户打前缀
+                prefill = src;
+                cursorPos = 0;
+            } else {
+                // 找共同前缀，如 happy → happiness 预填 "happ"，光标在末尾
+                prefill = this.getCommonPrefix(src, tgt);
+                cursorPos = prefill.length;
+            }
+        }
+
         // 使用requestAnimationFrame确保流畅的UI更新
         requestAnimationFrame(() => {
-            this.uiManager.displayQuestion(question, progress);
+            this.uiManager.displayQuestion(question, progress, this.studyMode === 'transform');
             this.uiManager.hideResult();
-            
+
+            // 预填充
+            if (prefill) {
+                const input = document.getElementById('answer-input');
+                if (input) {
+                    input.value = prefill;
+                    input.setSelectionRange(cursorPos, cursorPos);
+                }
+            }
+            // 标记预填光标位置，防止 focus 事件覆盖
+            this._prefillCursorPos = cursorPos;
+
             // 延迟聚焦，确保输入框已启用
             setTimeout(() => {
                 this.uiManager.focusInput();
+                // 延迟清除标记，确保 focus 事件先触发
+                setTimeout(() => { this._prefillCursorPos = null; }, 50);
             }, 100);
         });
+    }
+
+    /** 计算两个单词的最长共同前缀（不区分大小写） */
+    getCommonPrefix(a, b) {
+        let i = 0;
+        const maxLen = Math.min(a.length, b.length);
+        while (i < maxLen && a[i].toLowerCase() === b[i].toLowerCase()) {
+            i++;
+        }
+        return a.substring(0, i);
     }
     
     async submitAnswer() {
@@ -504,19 +581,24 @@ export class EnglishReviewApp {
         this.uiManager.showLoading();
 
         try {
-            if (settings.enableAIGrading && settings.apiKey) {
-                // 使用AI判题
+            const exactMatch = this.gradeAnswerTraditional(question, userAnswer);
+
+            if (exactMatch) {
+                isCorrect = true;
+                feedback = '';
+            } else if (settings.enableAIGrading && settings.apiKey && this.studyMode !== 'transform') {
+                // 使用AI判题（词转特训不使用AI，答案必须精确匹配）
                 try {
                     const result = await this.aiGrader.gradeAnswer(question, userAnswer, settings);
                     isCorrect = result.isCorrect;
                     feedback = result.feedback;
                 } catch (error) {
                     console.error('AI判题失败，使用传统判题:', error);
-                    isCorrect = this.gradeAnswerTraditional(question, userAnswer);
+                    isCorrect = false;
                 }
             } else {
                 // 传统判题
-                isCorrect = this.gradeAnswerTraditional(question, userAnswer);
+                isCorrect = false;
             }
 
             this.processAnswer(isCorrect, feedback, userAnswer, question);
@@ -603,6 +685,51 @@ export class EnglishReviewApp {
         this.updateNotebookBadge(); // 更新错题本徽章
     }
     
+    skipQuestion() {
+        // 清除自动下一题定时器
+        if (this.autoNextTimer) {
+            clearTimeout(this.autoNextTimer);
+            this.autoNextTimer = null;
+        }
+
+        if (this.currentQuestionIndex < this.currentQuestions.length) {
+            const question = this.currentQuestions[this.currentQuestionIndex];
+            // 记录为跳过（不算对也不算错，但计入错题以便复习）
+            this.sessionStats.wrong++;
+            const correctAnswer = Array.isArray(question.english)
+                ? question.english[0]
+                : question.english;
+            this.sessionStats.wrongAnswers.push({
+                chinese: question.chinese,
+                correct: correctAnswer,
+                userAnswer: '(已跳过)',
+                unit: this.currentUnit
+            });
+            this.statsManager.updateStats(
+                this.currentGrade, this.currentUnit, false,
+                { chinese: question.chinese, english: correctAnswer, userAnswer: '(已跳过)' }
+            );
+        }
+
+        this.currentQuestionIndex++;
+        this.saveLearningProgress();
+        this.displayCurrentQuestion();
+    }
+
+    prevQuestion() {
+        // 清除自动下一题定时器
+        if (this.autoNextTimer) {
+            clearTimeout(this.autoNextTimer);
+            this.autoNextTimer = null;
+        }
+
+        if (this.currentQuestionIndex > 0) {
+            this.currentQuestionIndex--;
+            this.saveLearningProgress();
+            this.displayCurrentQuestion();
+        }
+    }
+
     nextQuestion() {
         // 清除自动下一题定时器，避免重复调用
         if (this.autoNextTimer) {
@@ -611,6 +738,7 @@ export class EnglishReviewApp {
         }
 
         this.currentQuestionIndex++;
+        this.saveLearningProgress();
         this.displayCurrentQuestion();
     }
     
@@ -627,13 +755,7 @@ export class EnglishReviewApp {
             wrongAnswers: this.sessionStats.wrongAnswers
         });
         this.saveLearningProgress();
-        
-        // 更新侧边栏状态（如果当前在年级选择页面）
-        if (this.currentGrade) {
-            this.updateSidebarUnitStatus().catch(err => {
-                console.error('更新侧边栏状态失败:', err);
-            });
-        }
+        window.EnglishReview?.accountStorage?.saveRemoteData?.();
     }
     
     retryWrongAnswers() {
@@ -665,6 +787,7 @@ export class EnglishReviewApp {
         const settings = this.settingsManager.getSettings();
         this.uiManager.showSettings(settings);
         this.saveLearningProgress();
+        window.EnglishReview?.accountStorage?.saveRemoteData?.();
     }
     
     saveSettings() {
@@ -684,11 +807,17 @@ export class EnglishReviewApp {
      * 显示错题本
      */
     showNotebook() {
-        const allWrongAnswers = this.statsManager.getAllWrongAnswers();
+        this.currentPage = 'notebook-page';
+        
+        // 显示所有错题（包括已掌握的），已掌握的会通过样式看起来淡一点
+        const allWrongAnswers = this.statsManager.getWrongAnswers(null, null, false);
+        // 统计信息显示所有错题（包括已掌握的）
         const stats = this.statsManager.getWrongAnswersStats();
 
         this.uiManager.showNotebook(allWrongAnswers, stats);
         this.updateNotebookBadge(); // 更新徽章
+        this.saveLearningProgress();
+        window.EnglishReview?.accountStorage?.saveRemoteData?.();
     }
     
     /**
@@ -780,39 +909,37 @@ export class EnglishReviewApp {
      */
     saveLearningProgress() {
         try {
-            if (!this.currentGrade || !this.currentUnit) {
-                return; // 如果没有选择年级和单元，不保存
-            }
-            
-            // 检查 currentQuestions 是否存在
-            if (!this.currentQuestions || !Array.isArray(this.currentQuestions)) {
-                console.warn('currentQuestions 未初始化，跳过保存进度');
-                return;
-            }
-            
-            // 为当前unit保存进度
-            const unitKey = `${this.currentGrade}-${this.currentUnit}`;
+            // 总是保存当前状态，即使没有选定单元
             const progressData = {
                 currentGrade: this.currentGrade,
-                currentSemester: this.currentSemester, // 保存当前选中的学期
+                currentSemester: this.currentSemester,
                 currentUnit: this.currentUnit,
-                currentQuestionIndex: this.currentQuestionIndex,
-                totalQuestions: this.currentQuestions.length,
+                studyMode: this.studyMode,
+                currentQuestionIndex: this.currentQuestionIndex || 0,
+                // 如果没有currentQuestions，使用0或之前的total
+                totalQuestions: (this.currentQuestions && this.currentQuestions.length) || 0,
                 sessionStats: this.sessionStats,
                 currentPage: this.currentPage,
                 timestamp: Date.now(),
-                isCompleted: this.currentQuestionIndex >= this.currentQuestions.length
+                isCompleted: this.currentQuestions && this.currentQuestions.length > 0 && this.currentQuestionIndex >= this.currentQuestions.length
             };
             
-            // 获取所有unit的进度
-            const allProgress = this.getAllUnitProgress();
-            allProgress[unitKey] = progressData;
-            
-            // 保存所有进度
-            localStorage.setItem('english_review_all_progress', JSON.stringify(allProgress));
-            
-            // 同时保存当前进度（用于快速恢复）
+            // 保存当前主进度（用于恢复会话）
             localStorage.setItem('english_review_progress', JSON.stringify(progressData));
+
+            // 仅当有完整单元信息时，才更新单元历史记录
+            if (this.currentGrade && this.currentUnit) {
+                const unitKey = this.getProgressKey(this.currentGrade, this.currentUnit, this.studyMode);
+                const allProgress = this.getAllUnitProgress();
+                
+                // 确保不覆盖已有的更好进度（例如已完成状态），除非当前也完成了
+                // 这里简单处理：直接更新，因为我们相信当前状态是最新的交互结果
+                // 但为了保留isCompleted状态，如果当前未完成但历史已完成，可能需要小心
+                // 不过app逻辑中恢复时已考虑了isCompleted
+                
+                allProgress[unitKey] = progressData;
+                localStorage.setItem('english_review_all_progress', JSON.stringify(allProgress));
+            }
         } catch (error) {
             console.error('保存学习进度失败:', error);
         }
@@ -832,10 +959,99 @@ export class EnglishReviewApp {
     }
     
     /**
+     * 迁移八年级进度：将原本在8-Down下的单元进度迁移到8-Up，并标记为已完成
+     */
+    migrateGrade8Progress() {
+        try {
+            // 检查是否已经执行过迁移
+            const migrationFlag = localStorage.getItem('grade8_migration_completed');
+            if (migrationFlag === 'true') {
+                return; // 已经迁移过，直接返回
+            }
+            
+            const allProgress = this.getAllUnitProgress();
+            let hasChanges = false;
+            
+            // 需要迁移的单元列表（除了U4-speaking）
+            const unitsToMigrate = [
+                'U1-reading',
+                'U1-speaking',
+                'U1-viewing-listening',
+                'U2-reading',
+                'U2-viewing-listening',
+                'U3-reading',
+                'U3-speaking',
+                'U3-viewing-listening'
+            ];
+            
+            unitsToMigrate.forEach(unit => {
+                const oldKey = `8-Down/${unit}`;
+                const newKey = `8-Up/${unit}`;
+                
+                // 如果新键已存在，跳过
+                if (allProgress[newKey]) {
+                    return;
+                }
+                
+                // 如果旧键存在，迁移数据并标记为已完成
+                if (allProgress[oldKey]) {
+                    // 复制进度数据并标记为已完成
+                    const oldProgress = allProgress[oldKey];
+                    allProgress[newKey] = {
+                        ...oldProgress,
+                        currentGrade: '8',
+                        currentSemester: 'Up',
+                        currentUnit: unit,
+                        isCompleted: true,
+                        // 确保currentQuestionIndex等于totalQuestions，表示已完成
+                        currentQuestionIndex: oldProgress.totalQuestions || oldProgress.currentQuestionIndex || 0,
+                        timestamp: Date.now()
+                    };
+                    hasChanges = true;
+                    console.log(`已迁移单元进度: ${oldKey} -> ${newKey} (标记为已完成)`);
+                } else {
+                    // 如果旧键不存在，创建新的已完成进度
+                    // 使用默认值，实际题目数量会在用户查看时自动更新
+                    allProgress[newKey] = {
+                        currentGrade: '8',
+                        currentSemester: 'Up',
+                        currentUnit: unit,
+                        currentQuestionIndex: 0,
+                        totalQuestions: 0,
+                        sessionStats: {
+                            total: 0,
+                            correct: 0,
+                            wrong: 0,
+                            wrongAnswers: []
+                        },
+                        currentPage: 'question',
+                        timestamp: Date.now(),
+                        isCompleted: true
+                    };
+                    hasChanges = true;
+                    console.log(`已创建新单元进度: ${newKey} (标记为已完成)`);
+                }
+            });
+            
+            // 如果有更改，保存进度并标记迁移完成
+            if (hasChanges) {
+                localStorage.setItem('english_review_all_progress', JSON.stringify(allProgress));
+                localStorage.setItem('grade8_migration_completed', 'true');
+                console.log('八年级进度迁移完成');
+            } else {
+                // 即使没有更改，也标记迁移完成，避免重复检查
+                localStorage.setItem('grade8_migration_completed', 'true');
+            }
+        } catch (error) {
+            console.error('迁移八年级进度失败:', error);
+        }
+    }
+    
+    /**
      * 获取指定unit的进度
      */
     getUnitProgress(grade, unit) {
-        const unitKey = `${grade}-${unit}`;
+        const unitKey = this.getProgressKey(grade, unit, this.studyMode);
         const allProgress = this.getAllUnitProgress();
         const progress = allProgress[unitKey] || null;
         console.log(`获取进度 - Key: ${unitKey}, 找到进度:`, progress ? '是' : '否');
@@ -845,6 +1061,10 @@ export class EnglishReviewApp {
     /**
      * 判断unit是否已完成
      */
+    getProgressKey(grade, unit, mode = 'normal') {
+        return `${grade}-${unit}::${mode}`;
+    }
+
     isUnitCompleted(grade, unit) {
         const progress = this.getUnitProgress(grade, unit);
         return progress && progress.isCompleted === true;
@@ -866,24 +1086,18 @@ export class EnglishReviewApp {
     /**
      * 恢复学习进度
      */
-    restoreLearningProgress() {
+    async restoreLearningProgress() {
         try {
             const saved = localStorage.getItem('english_review_progress');
             if (saved) {
                 const progressData = JSON.parse(saved);
 
-                // 检查数据是否过期（超过24小时）
+                // 检查数据是否过期（超过24小时）- 已移除限制
                 const now = Date.now();
-                const hoursDiff = (now - progressData.timestamp) / (1000 * 60 * 60);
-                if (hoursDiff > 24) {
-                    console.log('学习进度已过期，重新开始');
-                    localStorage.removeItem('english_review_progress');
-                    this.showGradeSelection();
-                    return;
-                }
-
+                // const hoursDiff = (now - progressData.timestamp) / (1000 * 60 * 60);
+                
                 // 自动恢复学习进度
-                this.continueLearningProgress(progressData);
+                await this.continueLearningProgress(progressData);
             } else {
                 this.showGradeSelection();
             }
@@ -897,22 +1111,65 @@ export class EnglishReviewApp {
     /**
      * 继续学习进度
      */
-    continueLearningProgress(progressData) {
+    async continueLearningProgress(progressData) {
         // 恢复基本状态
-        this.currentGrade = progressData.currentGrade;
+        this.currentGrade = progressData.currentGrade || null;
         this.currentSemester = progressData.currentSemester || null; // 恢复选中的学期
-        this.currentUnit = progressData.currentUnit;
-        this.currentQuestionIndex = progressData.currentQuestionIndex;
-        this.currentQuestions = progressData.currentQuestions;
-        this.sessionStats = progressData.sessionStats;
-        this.currentPage = progressData.currentPage;
+        this.currentUnit = progressData.currentUnit || null;
+        this.studyMode = progressData.studyMode || 'normal';
+        this.currentQuestionIndex = progressData.currentQuestionIndex || 0;
+        this.sessionStats = progressData.sessionStats || {
+            total: 0,
+            correct: 0,
+            wrong: 0,
+            wrongAnswers: []
+        };
+        this.currentPage = progressData.currentPage || 'grade-selection';
+
+        if (this.currentGrade && this.currentUnit) {
+            try {
+                if (this.studyMode === 'transform') {
+                    this.currentQuestions = await this.getTransformQuestionsForUnit(this.currentGrade, this.currentUnit);
+                } else {
+                    this.currentQuestions = await this.dataManager.getQuestionsForUnit(this.currentGrade, this.currentUnit);
+                }
+            } catch (error) {
+                console.error('恢复单元题目失败:', error);
+                this.currentQuestions = [];
+            }
+        } else {
+            this.currentQuestions = [];
+        }
+
+        if (!Array.isArray(this.currentQuestions)) {
+            this.currentQuestions = [];
+        }
+
+        const requiresQuestions = ['study-page', 'stats-page'].includes(this.currentPage);
+        if (requiresQuestions && this.currentQuestions.length === 0) {
+            this.uiManager.showMessage('无法恢复该单元的题目，请重新选择', 'warning');
+            this.showGradeSelection();
+            return;
+        }
+
+        if (this.currentQuestions.length > 0) {
+            this.sessionStats = {
+                ...this.sessionStats,
+                total: this.currentQuestions.length,
+                correct: this.sessionStats.correct || 0,
+                wrong: this.sessionStats.wrong || 0,
+                wrongAnswers: this.sessionStats.wrongAnswers || []
+            };
+
+            if (this.currentQuestionIndex > this.currentQuestions.length) {
+                this.currentQuestionIndex = this.currentQuestions.length;
+            }
+        }
 
         // 根据当前页面恢复界面
         switch (this.currentPage) {
             case 'grade-selection':
                 this.showGradeSelection();
-                // 恢复侧边栏的选中状态
-                this.restoreSidebarSelection();
                 break;
             case 'unit-selection':
                 this.showUnitSelection().catch(err => {
@@ -944,7 +1201,9 @@ export class EnglishReviewApp {
     clearLearningProgress() {
         localStorage.removeItem('english_review_progress');
         this.currentGrade = null;
+        this.currentSemester = null;
         this.currentUnit = null;
+        this.studyMode = 'normal';
         this.currentQuestionIndex = 0;
         this.currentQuestions = [];
         this.sessionStats = null;
@@ -969,33 +1228,6 @@ export class EnglishReviewApp {
                 this.uiManager.showMessage('已清除进度，请重新选择年级和单元', 'success');
             }
         );
-    }
-
-    goBack() {
-        const currentPage = document.querySelector('.page.active').id;
-
-        switch (currentPage) {
-            case 'unit-selection':
-                this.showGradeSelection();
-                break;
-            case 'study-page':
-                // 直接返回年级选择页面，跳过单元选择页面
-                this.showGradeSelection();
-                break;
-            case 'stats-page':
-                // 从统计页面返回时，也返回到年级选择页面
-                this.showGradeSelection();
-                break;
-            case 'notebook-page':
-                // 从错题本返回时，返回到年级选择页面
-                this.showGradeSelection();
-                break;
-            case 'settings-page':
-                this.showGradeSelection();
-                break;
-            default:
-                this.showGradeSelection();
-        }
     }
 }
 

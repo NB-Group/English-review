@@ -1,0 +1,139 @@
+{
+  "unit": "U1-reading",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "harmony",
+      "sourcePos": "n",
+      "sourceMeaning": "和谐",
+      "transforms": [
+        {
+          "type": "adj",
+          "form": "harmonious",
+          "meaning": "和谐的"
+        }
+      ]
+    },
+    {
+      "source": "strange",
+      "sourcePos": "adj",
+      "sourceMeaning": "奇怪的",
+      "transforms": [
+        {
+          "type": "n",
+          "form": "stranger",
+          "meaning": "陌生人"
+        }
+      ]
+    },
+    {
+      "source": "scare",
+      "sourcePos": "v",
+      "sourceMeaning": "使害怕",
+      "transforms": [
+        {
+          "type": "adj",
+          "form": "scared",
+          "meaning": "害怕的"
+        },
+        {
+          "type": "adj",
+          "form": "scary",
+          "meaning": "吓人的"
+        }
+      ]
+    },
+    {
+      "source": "shock",
+      "sourcePos": "n/v",
+      "sourceMeaning": "震惊",
+      "transforms": [
+        {
+          "type": "adj",
+          "form": "shocked",
+          "meaning": "震惊的"
+        },
+        {
+          "type": "adj",
+          "form": "shocking",
+          "meaning": "令人震惊的"
+        }
+      ]
+    },
+    {
+      "source": "vivid",
+      "sourcePos": "adj",
+      "sourceMeaning": "生动的;逼真的",
+      "transforms": [
+        {
+          "type": "adv",
+          "form": "vividly",
+          "meaning": "生动地;逼真地"
+        },
+        {
+          "type": "n",
+          "form": "vividness",
+          "meaning": "逼真"
+        }
+      ]
+    },
+    {
+      "source": "east",
+      "sourcePos": "n",
+      "sourceMeaning": "东;东方;东部",
+      "transforms": [
+        {
+          "type": "adj",
+          "form": "eastern",
+          "meaning": "东方的，东部的"
+        }
+      ]
+    },
+    {
+      "source": "west",
+      "sourcePos": "n",
+      "sourceMeaning": "西；西方；西部",
+      "transforms": [
+        {
+          "type": "adj",
+          "form": "western",
+          "meaning": "西方的；西部的"
+        }
+      ]
+    },
+    {
+      "source": "admire",
+      "sourcePos": "v",
+      "sourceMeaning": "钦佩",
+      "transforms": [
+        {
+          "type": "adj",
+          "form": "admirable",
+          "meaning": "令人钦佩的"
+        },
+        {
+          "type": "n",
+          "form": "admiration",
+          "meaning": "钦佩，赞美"
+        }
+      ]
+    },
+    {
+      "source": "curious",
+      "sourcePos": "adj",
+      "sourceMeaning": "好奇的",
+      "transforms": [
+        {
+          "type": "adv",
+          "form": "curiously",
+          "meaning": "好奇地"
+        },
+        {
+          "type": "n",
+          "form": "curiosity",
+          "meaning": "好奇心"
+        }
+      ]
+    }
+  ]
+}

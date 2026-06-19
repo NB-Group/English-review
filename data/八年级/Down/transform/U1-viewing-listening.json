@@ -1,0 +1,127 @@
+{
+  "unit": "U1-viewing-listening",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "create",
+      "sourcePos": "v",
+      "sourceMeaning": "创造",
+      "transforms": [
+        {
+          "type": "adj",
+          "form": "creative",
+          "meaning": "有创意的"
+        },
+        {
+          "type": "n",
+          "form": "creativity",
+          "meaning": "创意，创造力"
+        },
+        {
+          "type": "n",
+          "form": "creation",
+          "meaning": "创作作品"
+        }
+      ]
+    },
+    {
+      "source": "person",
+      "sourcePos": "n",
+      "sourceMeaning": "人",
+      "transforms": [
+        {
+          "type": "adj",
+          "form": "personal",
+          "meaning": "个人的"
+        },
+        {
+          "type": "adv",
+          "form": "personally",
+          "meaning": "亲自"
+        }
+      ]
+    },
+    {
+      "source": "express",
+      "sourcePos": "v",
+      "sourceMeaning": "表达",
+      "transforms": [
+        {
+          "type": "n",
+          "form": "expression",
+          "meaning": "表达"
+        },
+        {
+          "type": "adj",
+          "form": "expressive",
+          "meaning": "善于表达的，有表现力的"
+        }
+      ]
+    },
+    {
+      "source": "communicate",
+      "sourcePos": "v",
+      "sourceMeaning": "交流",
+      "transforms": [
+        {
+          "type": "n",
+          "form": "communication",
+          "meaning": "交流"
+        }
+      ]
+    },
+    {
+      "source": "develop",
+      "sourcePos": "v",
+      "sourceMeaning": "发展，培养",
+      "transforms": [
+        {
+          "type": "n",
+          "form": "development",
+          "meaning": "发展"
+        }
+      ]
+    },
+    {
+      "source": "imagine",
+      "sourcePos": "v",
+      "sourceMeaning": "想象",
+      "transforms": [
+        {
+          "type": "n",
+          "form": "imagination",
+          "meaning": "想象"
+        }
+      ]
+    },
+    {
+      "source": "entertain",
+      "sourcePos": "v",
+      "sourceMeaning": "娱乐",
+      "transforms": [
+        {
+          "type": "n",
+          "form": "entertainment",
+          "meaning": "娱乐"
+        },
+        {
+          "type": "n",
+          "form": "entertainer",
+          "meaning": "演艺人员"
+        }
+      ]
+    },
+    {
+      "source": "require",
+      "sourcePos": "v",
+      "sourceMeaning": "需要",
+      "transforms": [
+        {
+          "type": "n",
+          "form": "requirement",
+          "meaning": "需要"
+        }
+      ]
+    }
+  ]
+}

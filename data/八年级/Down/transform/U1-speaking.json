@@ -1,0 +1,148 @@
+{
+  "unit": "U1-speaking",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "act",
+      "sourcePos": "v",
+      "sourceMeaning": "表演",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "acting",
+          "meaning": "表演"
+        }
+      ]
+    },
+    {
+      "source": "pose",
+      "sourcePos": "v",
+      "sourceMeaning": "摆姿势",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "position",
+          "meaning": "位置；地方"
+        }
+      ]
+    },
+    {
+      "source": "pot",
+      "sourcePos": "n",
+      "sourceMeaning": "罐",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "pottery",
+          "meaning": "陶器；制陶技艺"
+        },
+        {
+          "type": "noun",
+          "form": "potter",
+          "meaning": "陶工"
+        }
+      ]
+    },
+    {
+      "source": "drama",
+      "sourcePos": "n",
+      "sourceMeaning": "戏剧",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "dramatic",
+          "meaning": "戏剧化的"
+        },
+        {
+          "type": "adverb",
+          "form": "dramatically",
+          "meaning": "戏剧性地"
+        }
+      ]
+    },
+    {
+      "source": "normal",
+      "sourcePos": "adj",
+      "sourceMeaning": "典型的；正常的",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "abnormal",
+          "meaning": "异常的，不正常的"
+        }
+      ]
+    },
+    {
+      "source": "prefer",
+      "sourcePos": "v",
+      "sourceMeaning": "更喜欢",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "preference",
+          "meaning": "偏爱"
+        }
+      ]
+    },
+    {
+      "source": "perform",
+      "sourcePos": "v",
+      "sourceMeaning": "表演，执行",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "performance",
+          "meaning": "表演"
+        }
+      ]
+    },
+    {
+      "source": "photograph",
+      "sourcePos": "v/n",
+      "sourceMeaning": "摄影",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "photographer",
+          "meaning": "摄影师"
+        }
+      ]
+    },
+    {
+      "source": "painting",
+      "sourcePos": "n",
+      "sourceMeaning": "画画",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "painter",
+          "meaning": "画家"
+        }
+      ]
+    },
+    {
+      "source": "sculpture",
+      "sourcePos": "v",
+      "sourceMeaning": "雕刻",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "sculptor",
+          "meaning": "雕刻家"
+        }
+      ]
+    },
+    {
+      "source": "music",
+      "sourcePos": "n",
+      "sourceMeaning": "音乐",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "musician",
+          "meaning": "音乐家"
+        }
+      ]
+    }
+  ]
+}

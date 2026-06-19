@@ -46,10 +46,11 @@ export class DataManager {
                 'Down': []
             },
             '8': {
-                'Up': [],
-                'Down': ['U1-reading', 'U1-speaking', 'U1-viewing-listening', 
-                         'U2-reading', 'U2-viewing-listening', 
-                         'U3-reading', 'U3-speaking', 'U3-viewing-listening']
+                'Up': ['U4-reading', 'U4-speaking', 'U1-reading', 'U1-speaking', 'U1-viewing-listening', 
+                       'U2-reading', 'U2-viewing-listening', 
+                       'U3-reading', 'U3-speaking', 'U3-viewing-listening',
+                       'U5-viewing-listening'],
+                'Down': []
             }
         };
     }
@@ -130,7 +131,52 @@ export class DataManager {
             });
         }
 
+        // 处理词性转换部分
+        if (unitData.wordForms) {
+            unitData.wordForms.forEach(wordForm => {
+                if (!wordForm || !Array.isArray(wordForm.forms)) {
+                    return;
+                }
+
+                wordForm.forms.forEach(formEntry => {
+                    if (!formEntry || !formEntry.form) {
+                        return;
+                    }
+
+                    const typeLabel = this.formatWordType(formEntry.type);
+                    const chineseMeaning = formEntry.chinese || wordForm.word || '';
+                    const typeSuffix = typeLabel ? `（${typeLabel}）` : '';
+                    const questionPrefix = wordForm.word ? `【词性转换】${wordForm.word}` : '【词性转换】';
+                    questions.push({
+                        chinese: `${questionPrefix}${typeSuffix ? ` ${typeSuffix}` : ''}：${chineseMeaning}`,
+                        english: [formEntry.form]
+                    });
+                });
+            });
+        }
+
         return questions;
+    }
+
+    /**
+     * 将词性类型转换为常见缩写
+     */
+    formatWordType(type) {
+        if (!type) return '';
+        const normalized = type.toLowerCase();
+        const typeMap = {
+            noun: 'n.',
+            verb: 'v.',
+            adjective: 'adj.',
+            adverb: 'adv.',
+            pronoun: 'pron.',
+            preposition: 'prep.',
+            conjunction: 'conj.',
+            interjection: 'interj.',
+            article: 'art.',
+            negative: 'neg.'
+        };
+        return typeMap[normalized] || type;
     }
     
     /**
@@ -162,6 +208,113 @@ export class DataManager {
 
         // 返回题目，不进行随机打乱
         return [...questions];
+    }
+
+    /**
+     * 获取指定单元的原始结构化数据
+     */
+    async getRawUnitData(grade, unitPath) {
+        const [semester, unit] = unitPath.split('/');
+        const gradeDir = this.getGradeDirectory(grade);
+        const filePath = `data/${gradeDir}/${semester}/${unit}.js`;
+
+        try {
+            const response = await fetch(filePath);
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            const code = await response.text();
+            const moduleFunction = new Function('exports', 'module', code + '; return module.exports || exports;');
+            const module = { exports: {} };
+            const exportsObj = {};
+            const result = moduleFunction(exportsObj, module) || {};
+            const unitData = (result && result.unitData)
+                || (module && module.exports && module.exports.unitData)
+                || (typeof window !== 'undefined' ? window.unitData : undefined);
+            if (typeof window !== 'undefined' && window.unitData) {
+                try { delete window.unitData; } catch (_) {}
+            }
+            return unitData || null;
+        } catch (error) {
+            console.error(`加载原始单元数据失败: ${filePath}`, error);
+            return null;
+        }
+    }
+    
+    async getTransformQuestionsForUnit(grade, unitPath) {
+        const [semester, unit] = unitPath.split('/');
+        const gradeDir = this.getGradeDirectory(grade);
+        const filePath = `data/${gradeDir}/${semester}/transform/${unit}.json`;
+
+        try {
+            const response = await fetch(filePath, { cache: 'no-cache' });
+            if (!response.ok) {
+                return [];
+            }
+
+            const data = await response.json();
+
+            // 支持新格式 transformGroups 和旧格式 transformQuestions
+            const groups = Array.isArray(data.transformGroups) ? data.transformGroups
+                : Array.isArray(data.transformQuestions) ? this._convertLegacyGroups(data.transformQuestions)
+                : [];
+
+            const questions = [];
+            for (const group of groups) {
+                const source = String(group.source || '').trim();
+                const sourcePos = String(group.sourcePos || '').trim();
+                const sourceMeaning = String(group.sourceMeaning || '').trim();
+                const transforms = Array.isArray(group.transforms) ? group.transforms : [];
+
+                for (const t of transforms) {
+                    const target = String(t.form || '').trim();
+                    const targetType = String(t.type || '').trim() || '对应词形';
+                    const targetMeaning = String(t.meaning || '').trim();
+                    if (!target) continue;
+                    if (source.toLowerCase() === target.toLowerCase()) continue;
+
+                    const chinese = `[词转特训] ${source}${sourcePos ? ' ' + sourcePos : ''}${sourceMeaning ? ' ' + sourceMeaning : ''} → ${targetType}`;
+
+                    questions.push({
+                        chinese: chinese,
+                        english: [target],
+                        sourceWord: source,
+                        sourcePos: sourcePos,
+                        sourceMeaning: sourceMeaning,
+                        targetWord: target,
+                        targetType: targetType,
+                        targetMeaning: targetMeaning,
+                    });
+                }
+            }
+            return questions;
+        } catch (error) {
+            console.warn(`加载词转数据失败: ${filePath}`, error);
+            return [];
+        }
+    }
+
+    /** 兼容旧格式 transformQuestions → 模拟 transformGroups */
+    _convertLegacyGroups(questions) {
+        const map = new Map();
+        for (const q of questions) {
+            const source = String(q.source || '').trim();
+            const target = String(q.target || '').trim();
+            if (!source || !target) continue;
+            if (!map.has(source)) {
+                map.set(source, {
+                    source,
+                    sourcePos: q.source_pos || '',
+                    sourceMeaning: q.source_meaning || '',
+                    transforms: [],
+                });
+            }
+            map.get(source).transforms.push({
+                type: q.target_pos || '对应词形',
+                form: target,
+            });
+        }
+        return Array.from(map.values());
     }
     
     /**

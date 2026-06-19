@@ -1,203 +1,169 @@
 const unitData = {
-  "title": "八年级下册 Unit 2 Reading",
+  "title": "八年级下册 Unit 2 reading",
   "vocabulary": [
     {
-      "english": ["amazing digital technologies"],
-      "chinese": "令人惊叹的数字技术"
+      "english": [
+        "use tubes to do experiment on…"
+      ],
+      "chinese": "用试管做有关。。。的实验"
     },
     {
-      "english": ["make life a lot easier for the disabled"],
-      "chinese": "使残疾人的生活便利许多"
+      "english": [
+        "be covered in",
+        "with"
+      ],
+      "chinese": "被。。。覆盖"
     },
     {
-      "english": ["a new type of smart walking stick"],
-      "chinese": "一种新型智能拐杖"
+      "english": [
+        "be surprised to do",
+        "at sth."
+      ],
+      "chinese": "惊讶地做某事"
     },
     {
-      "english": ["warn the blind of danger nearby"],
-      "chinese": "提醒盲人附近的危险"
+      "english": [
+        "to one’s surprise"
+      ],
+      "chinese": "使某人惊讶的是"
     },
     {
-      "english": ["as soon as"],
-      "chinese": "一...就"
+      "english": [
+        "pass through objects"
+      ],
+      "chinese": "穿透物体"
     },
     {
-      "english": ["get close"],
-      "chinese": "靠近"
+      "english": [
+        "This is how he discovered X-ray."
+      ],
+      "chinese": "这就是他如何发现X光的"
     },
     {
-      "english": ["warn sb. of the danger"],
-      "chinese": "警告某人有危险"
+      "english": [
+        "be widely used"
+      ],
+      "chinese": "被广泛使用"
     },
     {
-      "english": ["give directions"],
-      "chinese": "指明方向"
+      "english": [
+        "award sb. sth.=award sth. to sb."
+      ],
+      "chinese": "授予某人某物"
     },
     {
-      "english": ["inform its owner of/about sth."],
-      "chinese": "通知它的主人某事"
+      "english": [
+        "win an award for sth."
+      ],
+      "chinese": "因为。。。赢得一个奖项"
     },
     {
-      "english": ["train timetables"],
-      "chinese": "火车时刻表"
+      "english": [
+        "by accident"
+      ],
+      "chinese": "偶然；意外地"
     },
     {
-      "english": ["It is believed that..."],
-      "chinese": "据信"
+      "english": [
+        "find sth. doing("
+      ],
+      "chinese": "主动)/done (被动) 发现某事。。。"
     },
     {
-      "english": ["make it easy to share knowledge"],
-      "chinese": "使分享知识变得容易"
+      "english": [
+        "stop sb. from doing =prevent",
+        "keep sb. from doing"
+      ],
+      "chinese": "阻止某人做某事"
     },
     {
-      "english": ["no matter where they live", "wherever they live"],
-      "chinese": "无论他们住在哪里"
+      "english": [
+        "turn … into"
+      ],
+      "chinese": "变成"
     },
     {
-      "english": ["according to"],
-      "chinese": "根据"
+      "english": [
+        "life-saving medicine"
+      ],
+      "chinese": "救命的药"
     },
     {
-      "english": ["What is the population of...?"],
-      "chinese": "...的人口是多少？"
+      "english": [
+        "the discovery of …changed the course of medicine 。。。"
+      ],
+      "chinese": "的发现改变了医疗进程"
     },
     {
-      "english": ["in rural areas"],
-      "chinese": "在农村地区"
+      "english": [
+        "treat serious illness"
+      ],
+      "chinese": "治疗严重疾病"
     },
     {
-      "english": ["to change the situation"],
-      "chinese": "为了改变这一状况"
+      "english": [
+        "get sick with…"
+      ],
+      "chinese": "染上疾病"
     },
     {
-      "english": ["be provided with a powerful internet connection"],
-      "chinese": "被提供高速互联网连接"
+      "english": [
+        "a large number of"
+      ],
+      "chinese": "很多"
     },
     {
-      "english": ["provide sb. with sth.", "provide sth. for sb."],
-      "chinese": "为某人提供某物"
+      "english": [
+        "discover a treatment using a plant"
+      ],
+      "chinese": "用一种植物发现治疗方式"
     },
     {
-      "english": ["have a chance to learn"],
-      "chinese": "拥有学习的机会"
+      "english": [
+        "no matter how hard they tried"
+      ],
+      "chinese": "无论他们如何尝试"
     },
     {
-      "english": ["enjoy wonderful online lessons"],
-      "chinese": "享受精彩的在线课程"
+      "english": [
+        "take another close look at the medical classics"
+      ],
+      "chinese": "再仔细看一下医学经典"
     },
     {
-      "english": ["firefighting robots"],
-      "chinese": "消防机器人"
+      "english": [
+        "light up an idea"
+      ],
+      "chinese": "激发一个想法"
     },
     {
-      "english": ["communicate with..."],
-      "chinese": "与。。。交流"
+      "english": [
+        "light up my life"
+      ],
+      "chinese": "点亮我的生活"
     },
     {
-      "english": ["people caught in a fire"],
-      "chinese": "火灾中的人们"
+      "english": [
+        "volunteer to do"
+      ],
+      "chinese": "志愿做某事"
     },
     {
-      "english": ["be caught in"],
-      "chinese": "陷入困境"
+      "english": [
+        "become an important treatment for…"
+      ],
+      "chinese": "成为一种对。。。重要的治疗方式"
     },
     {
-      "english": ["move around"],
-      "chinese": "四处走动"
-    },
-    {
-      "english": ["In this way"],
-      "chinese": "通过这种方式"
-    },
-    {
-      "english": ["send video information to the control unit"],
-      "chinese": "向消防控制室发送视频信息"
-    },
-    {
-      "english": ["enable sb. to do sth."],
-      "chinese": "使某人能够做某事"
-    },
-    {
-      "english": ["do part of the dangerous work"],
-      "chinese": "承担部分危险工作"
-    },
-    {
-      "english": ["work under difficult conditions"],
-      "chinese": "在艰难条件下工作"
-    },
-    {
-      "english": ["Robots can really be a great help in dangerous situations."],
-      "chinese": "机器人在危险情况下确实可以提供很大帮助"
+      "english": [
+        "treat v."
+      ],
+      "chinese": "对待—treatment n.治疗"
     }
   ],
-  "wordForms": [
-    {
-      "word": "able",
-      "forms": [
-        { "type": "adjective", "chinese": "能够的", "form": "able" },
-        { "type": "negative", "chinese": "不能够的", "form": "unable" },
-        { "type": "related", "chinese": "残疾的", "form": "disabled" },
-        { "type": "noun", "chinese": "能力", "form": "ability" },
-        { "type": "verb", "chinese": "使。。。能", "form": "enable" }
-      ]
-    },
-    {
-      "word": "warn",
-      "forms": [
-        { "type": "verb", "chinese": "警告", "form": "warn" },
-        { "type": "noun", "chinese": "警告", "form": "warning" }
-      ]
-    },
-    {
-      "word": "detect",
-      "forms": [
-        { "type": "verb", "chinese": "发现、侦查", "form": "detect" },
-        { "type": "noun", "chinese": "侦查、探测", "form": "detection" },
-        { "type": "noun", "chinese": "侦探", "form": "detective" }
-      ]
-    },
-    {
-      "word": "object",
-      "forms": [
-        { "type": "noun", "chinese": "物体、宾语", "form": "object" },
-        { "type": "verb", "chinese": "不赞成", "form": "object" }
-      ]
-    },
-    {
-      "word": "direction",
-      "forms": [
-        { "type": "noun", "chinese": "方向", "form": "direction" },
-        { "type": "verb", "chinese": "给...指路，指示", "form": "direct" },
-        { "type": "adjective", "chinese": "直接的", "form": "direct" }
-      ]
-    },
-    {
-      "word": "inform",
-      "forms": [
-        { "type": "verb", "chinese": "通知", "form": "inform" },
-        { "type": "noun", "chinese": "信息", "form": "information" }
-      ]
-    },
-    {
-      "word": "rural",
-      "forms": [
-        { "type": "adjective", "chinese": "乡村的", "form": "rural" },
-        { "type": "adjective", "chinese": "城市的", "form": "urban" },
-        { "type": "noun", "chinese": "郊区", "form": "suburb" },
-        { "type": "adjective", "chinese": "郊区的", "form": "suburban" }
-      ]
-    },
-    {
-      "word": "firefighting",
-      "forms": [
-        { "type": "noun", "chinese": "灭火", "form": "firefighting" },
-        { "type": "noun", "chinese": "消防员", "form": "firefighter" }
-      ]
-    }
-  ]
+  "wordForms": []
 };
 
-// 为了兼容动态导入和直接导入
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { unitData };
 }

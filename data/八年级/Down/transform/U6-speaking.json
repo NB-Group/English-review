@@ -1,0 +1,40 @@
+{
+  "unit": "U6-speaking",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "comfort",
+      "sourcePos": "v",
+      "sourceMeaning": "安慰",
+      "transforms": [
+        {
+          "type": "adj",
+          "form": "comfortable",
+          "meaning": "舒服的"
+        },
+        {
+          "type": "adj",
+          "form": "uncomfortable",
+          "meaning": "不舒服的"
+        },
+        {
+          "type": "adv",
+          "form": "comfortably",
+          "meaning": "舒服地"
+        }
+      ]
+    },
+    {
+      "source": "proud",
+      "sourcePos": "adj",
+      "sourceMeaning": "骄傲的",
+      "transforms": [
+        {
+          "type": "n",
+          "form": "pride",
+          "meaning": "骄傲"
+        }
+      ]
+    }
+  ]
+}

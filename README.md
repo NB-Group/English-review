@@ -1,272 +1,135 @@
 # 英语复习助手
 
-一个现代化的英语学习应用，采用液态玻璃UI设计，支持AI智能判题和个性化学习体验。
+SAPG 风格英语词汇复习系统，支持 AI 智能判题与词形转换特训。
 
-## ✨ 特性
+## 快速开始
 
-### 🎨 现代化UI设计
-- 液态玻璃效果界面
-- 响应式设计，支持桌面和移动设备
-- 流畅的页面切换动画
-- 深色/浅色主题自适应
-
-### 🤖 AI智能判题
-- 集成SiliconFlow API
-- 支持语义理解判题
-- 个性化学习反馈
-- 多模型选择（Qwen3-8B、Qwen2-7B等）
-
-### 📚 分年级学习系统
-- 支持七年级、八年级
-- 按学期和单元组织内容
-- 上册/下册分类管理
-- 随机题目顺序
-
-### 📊 学习数据统计
-- 实时答题统计
-- 正确率分析
-- 连击记录
-- 错题收集和复习
-- 学习时长统计
-- 成就系统
-
-### ⚙️ 个性化设置
-- API Key配置
-- AI模型选择
-- 自动进入下一题
-- 提示信息开关
-- 主题切换
-
-## 🚀 快速开始
-
-### 1. 启动服务器（推荐）
 ```bash
-python server.py
+pip install -r requirements.txt    # 仅数据提取脚本需要
+python server.py                   # 启动开发服务器
 ```
-然后在浏览器中访问 `http://127.0.0.1:8080`
 
-### 2. 直接打开
-直接在浏览器中打开 `index.html` 文件即可开始使用。
+浏览器打开 `http://127.0.0.1:8080`。
 
-### 3. 选择年级
-在首页选择你要学习的年级（七年级或八年级）。
+## 功能
 
-### 4. 选择单元
-选择要练习的学期和单元，开始答题。
+### 两种学习模式
 
-### 5. 配置AI判题（可选）
-1. 点击设置按钮（⚙️）
-2. 输入SiliconFlow API Key
-3. 选择AI模型
-4. 启用AI智能判题
+| 模式 | 内容 | 判题 |
+|------|------|------|
+| **普通模式** | 看中文写英文词组 | 精确匹配 → AI 语义判题（可选） |
+| **词转特训** | 词形/词性转换（如动词→名词、形容词→副词） | 精确匹配 |
 
-## 🔧 AI判题配置
+词转数据由 AI（Qwen3-8B）从教师 DOCX 词组清单自动提取，按源词分组存储。
 
-### 获取API Key
-1. 访问 [SiliconFlow](https://api.siliconflow.cn/)
-2. 注册账号并获取API Key
-3. 在应用设置中输入API Key
+### AI 判题
 
-### 支持的模型
-- `Qwen/Qwen3-8B` (推荐)
-- `Qwen/Qwen2-7B`
-- `Qwen/Qwen2.5-7B-Instruct`
-- `meta-llama/Llama-3-8B-Instruct`
+集成 SiliconFlow API，语义级别判断答案正误。可配置 API Key 和模型。词转模式不使用 AI 判题以减少延迟。
 
-## 📁 项目结构
+### 错题本
+
+自动收集错题，支持标记已掌握、删除、重做。可导出双栏 `.doc` 文件。
+
+### 账号系统
+
+首次打开输入用户名，学习数据（设置、进度、错题）自动同步到服务器 `local_accounts/` 目录。
+
+### 进度恢复
+
+每道题实时保存，刷新页面自动恢复到离开时的位置。支持上一题回退和跳过。
+
+## 项目结构
 
 ```
 English-review/
-├── index.html              # 主页面
-├── demo.html               # 演示页面
-├── style.css               # 样式文件
-├── README.md               # 说明文档
-├── convert_existing_data.py # 数据转换脚本
-└── js/
-    ├── app.js              # 主应用文件
-    └── modules/
-        ├── data-manager.js     # 数据管理
-        ├── ui-manager.js       # 界面管理
-        ├── ai-grader.js        # AI判题
-        ├── settings-manager.js # 设置管理
-        └── stats-manager.js    # 统计管理
-    └── data/               # 旧版数据文件（可删除）
-        └── docx-data.js
-└── data/                   # 新版分年级数据结构
-    ├── 七年级/
-    │   ├── 上册/
-    │   │   ├── U1-1.js
-    │   │   ├── U1-2.js
-    │   │   └── ...
-    │   └── 下册/
-    │       ├── U3-1.js
-    │       ├── U3-2.js
-    │       └── ...
-    └── 八年级/
-        ├── 上册/
-        │   ├── U1-1.js
-        │   ├── U1-2.js
-        │   └── ...
-        └── 下册/
-            ├── U2-reading.js
-            ├── U3-1.js
-            └── ...
+├── index.html                  # 主页面
+├── style.css                   # 液态玻璃暗色主题
+├── server.py                   # 静态文件 + API 服务器
+├── CLAUDE.md                   # Claude Code 指引
+├── requirements.txt            # Python 依赖
+│
+├── js/
+│   ├── main.js                 # 入口，全局 EnglishReview 对象
+│   ├── app.js                  # 核心调度（导航、判题、进度）
+│   └── modules/
+│       ├── data-manager.js     # 加载数据文件并转换格式
+│       ├── ui-manager.js       # 页面渲染与交互
+│       ├── ai-grader.js        # SiliconFlow API 判题
+│       ├── settings-manager.js # 设置 CRUD
+│       ├── stats-manager.js    # 统计、错题本、导出
+│       └── account-storage.js  # 多用户账号 + 服务器存档
+│
+├── data/
+│   └── 八年级/
+│       ├── Down/               # 单元数据 .js 文件
+│       │   ├── U1-reading.js
+│       │   ├── U1-speaking.js
+│       │   ├── ...
+│       │   └── transform/      # 词转特训 .json（AI 提取）
+│       └── Up/
+│
+├── tools/
+│   ├── extract_transform_data_with_qwen.py  # AI 提取词转数据
+│   └── build_grade8_down_from_docx.py       # DOCX → JS 单元数据
+│
+└── local_accounts/             # 用户数据（自动生成）
 ```
 
-## 📊 数据结构
+## 数据格式
 
-### 新版分单元文件结构
+### 单元数据（`.js`）
 
-每个单元文件（如 `data/七年级/上册/U1-1.js`）包含：
-
-```javascript
-export const unitData = {
-  "title": "七年级上册 Unit 1-1",
+```js
+const unitData = {
+  "title": "八年级下册 Unit 1 Reading(1)",
   "vocabulary": [
-    {
-      "english": ["a radio station"],
-      "chinese": "一个电台"
-    },
-    {
-      "english": ["a famous musician", "world-famous musician"],
-      "chinese": "一位著名的音乐家"
-    }
-    // ... 更多词汇
+    { "english": ["a master of art"], "chinese": "艺术大师" }
   ],
   "wordForms": [
-    {
-      "word": "able",
-      "forms": [
-        { "type": "adjective", "chinese": "能够的", "form": "able" },
-        { "type": "negative", "chinese": "不能够的", "form": "unable" },
-        { "type": "noun", "chinese": "能力", "form": "ability" },
-        { "type": "verb", "chinese": "使。。。能", "form": "enable" }
-      ]
-    }
-    // ... 更多词性转换
+    { "word": "able", "forms": [
+      { "type": "adjective", "chinese": "能够的", "form": "able" },
+      { "type": "noun", "chinese": "能力", "form": "ability" }
+    ]}
   ]
 };
+// 底部双导出兼容 CommonJS 和全局变量
 ```
 
-## 🎯 使用指南
+### 词转数据（`transform/*.json`）
 
-### 基础学习流程
-1. **选择年级** → 选择要学习的年级
-2. **选择单元** → 选择具体的学期和单元
-3. **开始答题** → 看中文翻译英文
-4. **查看结果** → 获得即时反馈
-5. **查看统计** → 分析学习成果
+```json
+{
+  "unit": "U4-reading",
+  "transformGroups": [
+    {
+      "source": "confident",
+      "sourcePos": "adj",
+      "sourceMeaning": "自信的",
+      "transforms": [
+        { "type": "noun", "form": "confidence", "meaning": "信心" }
+      ]
+    }
+  ]
+}
+```
 
-### AI判题模式
-启用AI判题后，系统会：
-- 理解答案的语义含义
-- 提供详细的反馈信息
-- 给出改进建议
-- 支持同义词和近义词
+## API 端点
 
-### 错题管理
-- 自动收集错题
-- 支持错题重做
-- 标记已掌握的题目
-- 错题统计分析
+| 端点 | 方法 | 说明 |
+|------|------|------|
+| `/api/scan-units` | GET | 扫描 `data/` 目录，返回所有可用单元 |
+| `/api/account-data?user=xxx` | GET | 加载用户数据 |
+| `/api/account-data?user=xxx` | POST | 保存用户数据 |
 
-### 学习统计
-- 总体学习数据
-- 分年级/单元统计
-- 日常学习记录
-- 学习成就系统
+## 数据提取工具
 
-## 🛠️ 技术栈
+```bash
+# 从 DOCX 提取词转数据（并行调用 AI）
+python tools/extract_transform_data_with_qwen.py --force --workers 8
 
-- **前端框架**: 原生JavaScript ES6+
-- **UI设计**: CSS3 + 液态玻璃效果
-- **AI服务**: SiliconFlow API
-- **数据存储**: LocalStorage
-- **构建工具**: 无需构建，直接运行
+# 仅提取文本快照（不调 AI）
+python tools/extract_transform_data_with_qwen.py --txt-only
 
-## 📱 浏览器兼容性
-
-- Chrome 80+
-- Firefox 75+
-- Safari 13+
-- Edge 80+
-
-## 🔧 故障排除
-
-### 常见问题
-
-1. **favicon.ico 404错误**
-   - 这是正常的，应用已包含favicon.ico占位文件
-   - 不影响应用功能
-
-2. **单元数据加载失败**
-   - 确保对应的单元文件存在（如 `data/七年级/上册/U1-1.js`）
-   - 检查浏览器开发者工具的控制台错误信息
-   - 确认文件路径和名称正确
-
-3. **样式显示异常**
-   - 清除浏览器缓存
-   - 确保 `style.css` 文件正确加载
-   - 检查网络连接
-
-4. **AI判题功能**
-   - 需要有效的SiliconFlow API Key
-   - 确保网络连接正常
-   - 检查API配额和使用限制
-
-### 调试技巧
-
-打开浏览器开发者工具（F12）：
-- **Console**: 查看JavaScript错误和警告
-- **Network**: 检查资源加载状态
-- **Elements**: 查看DOM结构和样式
-
-## 🔄 数据管理
-
-### 本地存储
-应用使用LocalStorage存储以下数据：
-- 用户设置
-- 学习统计
-- 错题记录
-- 会话数据
-
-### 数据导出
-支持导出：
-- 学习统计数据
-- 应用设置
-- 错题记录
-
-## 🎨 自定义主题
-
-应用支持：
-- 自动主题（跟随系统）
-- 浅色主题
-- 深色主题
-
-## 📝 更新日志
-
-### v2.0.0 (2024-12-19)
-- 🎉 完全重构应用
-- ✨ 新增液态玻璃UI效果
-- 🤖 集成AI智能判题
-- 📊 全新的统计系统
-- ⚙️ 完善的设置管理
-- 📱 优化移动端体验
-
-## 🤝 贡献指南
-
-欢迎提交Issue和Pull Request来改进这个项目！
-
-## 📄 许可证
-
-MIT License - 详见 [LICENSE](LICENSE) 文件
-
-## 🙏 致谢
-
-- SiliconFlow 提供AI服务支持
-- 设计灵感来自现代化的玻璃拟态设计
-- 感谢所有使用和反馈的用户
-
----
-
-**开始你的英语学习之旅吧！** 🚀
+# 从 DOCX 构建单元 JS 文件
+python tools/build_grade8_down_from_docx.py
+```

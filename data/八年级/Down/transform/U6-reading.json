@@ -1,0 +1,91 @@
+{
+  "unit": "U6-reading",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "stand",
+      "sourcePos": "verb",
+      "sourceMeaning": "站",
+      "transforms": [
+        {
+          "type": "past tense",
+          "form": "stood",
+          "meaning": "站立（过去式）"
+        }
+      ]
+    },
+    {
+      "source": "hang",
+      "sourcePos": "verb",
+      "sourceMeaning": "悬挂",
+      "transforms": [
+        {
+          "type": "past tense",
+          "form": "hung",
+          "meaning": "悬挂（过去式）"
+        },
+        {
+          "type": "past participle",
+          "form": "hanged",
+          "meaning": "绞死（过去分词）"
+        }
+      ]
+    },
+    {
+      "source": "dig",
+      "sourcePos": "verb",
+      "sourceMeaning": "挖",
+      "transforms": [
+        {
+          "type": "past tense",
+          "form": "dug",
+          "meaning": "挖掘（过去式）"
+        },
+        {
+          "type": "present participle",
+          "form": "digging",
+          "meaning": "挖掘（现在分词）"
+        }
+      ]
+    },
+    {
+      "source": "lie",
+      "sourcePos": "verb",
+      "sourceMeaning": "躺",
+      "transforms": [
+        {
+          "type": "past tense",
+          "form": "lay",
+          "meaning": "躺（过去式）"
+        },
+        {
+          "type": "past participle",
+          "form": "lain",
+          "meaning": "躺（过去分词）"
+        },
+        {
+          "type": "present participle",
+          "form": "lying",
+          "meaning": "躺（现在分词）"
+        }
+      ]
+    },
+    {
+      "source": "shake",
+      "sourcePos": "verb",
+      "sourceMeaning": "摇晃",
+      "transforms": [
+        {
+          "type": "past tense",
+          "form": "shook",
+          "meaning": "摇晃（过去式）"
+        },
+        {
+          "type": "past participle",
+          "form": "shaken",
+          "meaning": "摇晃（过去分词）"
+        }
+      ]
+    }
+  ]
+}

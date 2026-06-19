@@ -1,0 +1,95 @@
+{
+  "unit": "U4-viewing-listening",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "change",
+      "sourcePos": "v",
+      "sourceMeaning": "改变",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "changeable",
+          "meaning": "多变的"
+        }
+      ]
+    },
+    {
+      "source": "fashion",
+      "sourcePos": "n",
+      "sourceMeaning": "时尚",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "fashionable",
+          "meaning": "流行的；时髦的"
+        }
+      ]
+    },
+    {
+      "source": "afford",
+      "sourcePos": "v",
+      "sourceMeaning": "买得起",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "affordable",
+          "meaning": "付得起的"
+        }
+      ]
+    },
+    {
+      "source": "energy",
+      "sourcePos": "n",
+      "sourceMeaning": "精力",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "energetic",
+          "meaning": "精力充沛的"
+        }
+      ]
+    },
+    {
+      "source": "art",
+      "sourcePos": "n",
+      "sourceMeaning": "艺术",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "artistic",
+          "meaning": "艺术的"
+        }
+      ]
+    },
+    {
+      "source": "decorate",
+      "sourcePos": "v",
+      "sourceMeaning": "装饰",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "decoration",
+          "meaning": "装饰"
+        }
+      ]
+    },
+    {
+      "source": "cloth",
+      "sourcePos": "n",
+      "sourceMeaning": "布料",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "clothes",
+          "meaning": "衣服"
+        },
+        {
+          "type": "noun",
+          "form": "clothing",
+          "meaning": "服装"
+        }
+      ]
+    }
+  ]
+}

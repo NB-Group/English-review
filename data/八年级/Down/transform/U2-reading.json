@@ -1,0 +1,100 @@
+{
+  "unit": "U2-reading",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "light",
+      "sourcePos": "v",
+      "sourceMeaning": "点燃",
+      "transforms": [
+        {
+          "type": "past tense",
+          "form": "lit",
+          "meaning": "点燃（过去式）"
+        }
+      ]
+    },
+    {
+      "source": "serious",
+      "sourcePos": "adj",
+      "sourceMeaning": "严重的",
+      "transforms": [
+        {
+          "type": "adverb",
+          "form": "seriously",
+          "meaning": "严重地"
+        }
+      ]
+    },
+    {
+      "source": "treat",
+      "sourcePos": "v",
+      "sourceMeaning": "对待",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "treatment",
+          "meaning": "治疗"
+        }
+      ]
+    },
+    {
+      "source": "medicine",
+      "sourcePos": "n",
+      "sourceMeaning": "药",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "medical",
+          "meaning": "医药的"
+        }
+      ]
+    },
+    {
+      "source": "accident",
+      "sourcePos": "n",
+      "sourceMeaning": "事故",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "accidental",
+          "meaning": "意外的"
+        },
+        {
+          "type": "adverb",
+          "form": "accidentally",
+          "meaning": "意外地"
+        }
+      ]
+    },
+    {
+      "source": "volunteer",
+      "sourcePos": "v",
+      "sourceMeaning": "志愿",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "voluntary",
+          "meaning": "志愿的"
+        },
+        {
+          "type": "adverb",
+          "form": "voluntarily",
+          "meaning": "志愿地"
+        }
+      ]
+    },
+    {
+      "source": "human",
+      "sourcePos": "n",
+      "sourceMeaning": "人类",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "humans",
+          "meaning": "人类"
+        }
+      ]
+    }
+  ]
+}

@@ -1,247 +1,195 @@
 const unitData = {
-  "title": "八年级下册 Unit 1 Speaking",
+  "title": "八年级下册 Unit 1  Speaking",
   "vocabulary": [
     {
-      "english": ["water in everyday life"],
-      "chinese": "日常生活中的水"
+      "english": [
+        "choose which art class to attend"
+      ],
+      "chinese": "选择参加哪门艺术课"
     },
     {
-      "english": ["give a group presentation"],
-      "chinese": "做一个小组展示"
+      "english": [
+        "I’m thinking of doing"
+      ],
+      "chinese": "我在考虑做。。。"
     },
     {
-      "english": ["share something new"],
-      "chinese": "分享一些新事物"
+      "english": [
+        "take the drama class"
+      ],
+      "chinese": "上戏剧课"
     },
     {
-      "english": ["What if we talk about the bad things that happen when we waste water?"],
-      "chinese": "那我们谈谈当我们浪费水后会发生的坏事怎么样？"
+      "english": [
+        "try something outside normal interests"
+      ],
+      "chinese": "尝试平常兴趣之外的事物"
     },
     {
-      "english": ["see the need to save water"],
-      "chinese": "明白节约水的必要"
+      "english": [
+        "Drama isn’t really my thing"
+      ],
+      "chinese": "我真的对戏剧不感兴趣"
     },
     {
-      "english": ["the more, the more"],
-      "chinese": "越。。。越。。。"
+      "english": [
+        "prefer photography to drama"
+      ],
+      "chinese": "喜欢摄影胜过戏剧"
     },
     {
-      "english": ["not only but also"],
-      "chinese": "不但。。。 而且。。。"
+      "english": [
+        "prefer (doing) A... to (doing) B... = like (doing) A.... better than (doing) B..."
+      ],
+      "chinese": "比起做B更喜欢做A"
     },
     {
-      "english": ["wastewater treatment"],
-      "chinese": "污水处理"
+      "english": [
+        "prefer to do A rather than do B"
+      ],
+      "chinese": "宁愿做A而不是B"
     },
     {
-      "english": ["make water less safe for drinking"],
-      "chinese": "让饮用水更不安全"
+      "english": [
+        "prefer to do =would rather do"
+      ],
+      "chinese": "宁愿做。。。"
     },
     {
-      "english": ["encourage sb. to do sth."],
-      "chinese": "鼓励某人做某事"
+      "english": [
+        "hope to do",
+        "hope that +"
+      ],
+      "chinese": "从句 希望做某事"
     },
     {
-      "english": ["start doing", "start to do"],
-      "chinese": "开始做某事"
+      "english": [
+        "develop a new hobby"
+      ],
+      "chinese": "培养新爱好"
     },
     {
-      "english": ["do a research", "research"],
-      "chinese": "做一个调查研究"
+      "english": [
+        "I was just kidding."
+      ],
+      "chinese": "我只是开玩笑"
     },
     {
-      "english": ["right away", "right now"],
-      "chinese": "立刻马上"
+      "english": [
+        "explore the world through..."
+      ],
+      "chinese": "通过。。。探索世界"
     },
     {
-      "english": ["agree to do sth."],
-      "chinese": "同意做某事"
+      "english": [
+        "performance and acting skills"
+      ],
+      "chinese": "表演和表演技巧"
     },
     {
-      "english": ["agree with sb."],
-      "chinese": "同意某人"
+      "english": [
+        "experience different painting skills"
+      ],
+      "chinese": "体验不同的绘画技巧"
     },
     {
-      "english": ["agree on", "agree about"],
-      "chinese": "同意某事"
+      "english": [
+        "find the best shooting positions"
+      ],
+      "chinese": "找到最佳拍摄位置"
     },
     {
-      "english": ["a matter of turning off the tap"],
-      "chinese": "关闭水龙头的事"
+      "english": [
+        "learn the basic skills of singing"
+      ],
+      "chinese": "学习唱歌的基本技巧"
     },
     {
-      "english": ["countless methods"],
-      "chinese": "无数方法"
+      "english": [
+        "play simple instruments"
+      ],
+      "chinese": "演奏简单乐器"
     },
     {
-      "english": ["take shorter showers"],
-      "chinese": "冲更短时间淋浴"
+      "english": [
+        "develop knowledge and understanding"
+      ],
+      "chinese": "积累知识和提升理解能力"
     },
     {
-      "english": ["water plants with grey water", "water plants with reused water"],
-      "chinese": "用灰水/用过的水浇花"
+      "english": [
+        "act  v."
+      ],
+      "chinese": "表演 → acting  n. 表演"
     },
     {
-      "english": ["use energy-saving washing machines"],
-      "chinese": "用节能洗衣机"
+      "english": [
+        "pose v."
+      ],
+      "chinese": "摆姿势  ——  position n. 位置；地方"
     },
     {
-      "english": ["run the dishwasher only when it is full"],
-      "chinese": "只有当放满后运作洗碗机"
+      "english": [
+        "pot n."
+      ],
+      "chinese": "罐→ pottery n. 陶器；制陶技艺 → potter n. 陶工"
     },
     {
-      "english": ["fix a dripping tap", "fix a leaking tap"],
-      "chinese": "修理滴水的龙头"
+      "english": [
+        "drama  n."
+      ],
+      "chinese": "戏剧 → dramatic  adj. 戏剧化的 → dramatically  adv. 戏剧性地"
     },
     {
-      "english": ["a kilo of sugar"],
-      "chinese": "一公斤糖"
+      "english": [
+        "normal  adj."
+      ],
+      "chinese": "典型的；正常的  n. 常态；→ abnormal  adj. 异常的，不正常的→normally adv. 通常；正常地"
     },
     {
-      "english": ["a hamburger"],
-      "chinese": "一个汉堡"
+      "english": [
+        "prefer  v."
+      ],
+      "chinese": "更喜欢  → preference  n. 偏爱"
     },
     {
-      "english": ["a cotton shirt"],
-      "chinese": "一件棉衬衫"
+      "english": [
+        "perform  v."
+      ],
+      "chinese": "表演，执行  → performance  n. 表演"
     },
     {
-      "english": ["Shall we"],
-      "chinese": "建议句型"
+      "english": [
+        "sculpture  v."
+      ],
+      "chinese": "雕刻  → sculptor  n. 雕刻家"
     },
     {
-      "english": ["Let's, shall we?"],
-      "chinese": "建议句型"
+      "english": [
+        "music  n."
+      ],
+      "chinese": "音乐  → musician  n. 音乐家"
     },
     {
-      "english": ["What about doing", "How about doing", "Why not"],
-      "chinese": "建议句型"
+      "english": [
+        "painting n."
+      ],
+      "chinese": "画画→painter n. 画家"
     },
     {
-      "english": ["What if we talk about"],
-      "chinese": "建议句型"
-    },
-    {
-      "english": ["You are right"],
-      "chinese": "表示同意"
-    },
-    {
-      "english": ["Sounds great!"],
-      "chinese": "表示同意"
-    },
-    {
-      "english": ["I couldn't agree more", "I totally agree"],
-      "chinese": "表示同意"
-    },
-    {
-      "english": ["That makes sense"],
-      "chinese": "表示同意"
-    },
-    {
-      "english": ["exactly!", "absolutely!"],
-      "chinese": "表示同意"
-    },
-    {
-      "english": ["I'm afraid I don't agree"],
-      "chinese": "表示不同意"
-    },
-    {
-      "english": ["I don't think that's a good idea"],
-      "chinese": "表示不同意"
-    },
-    {
-      "english": ["Oh, no. That's silly"],
-      "chinese": "表示不同意"
+      "english": [
+        "photograph  v.",
+        "n."
+      ],
+      "chinese": "摄影  → photographer  n. 摄影师"
     }
   ],
-  "wordForms": [
-    {
-      "word": "present",
-      "forms": [
-        { "type": "noun", "chinese": "礼物", "form": "present" },
-        { "type": "adjective", "chinese": "现在的", "form": "present" },
-        { "type": "verb", "chinese": "展示", "form": "present" },
-        { "type": "noun", "chinese": "展示", "form": "presentation" }
-      ]
-    },
-    {
-      "word": "bore",
-      "forms": [
-        { "type": "verb", "chinese": "使厌烦", "form": "bore" },
-        { "type": "adjective", "chinese": "感到厌烦的", "form": "bored" },
-        { "type": "adjective", "chinese": "令人厌烦的", "form": "boring" }
-      ]
-    },
-    {
-      "word": "exact",
-      "forms": [
-        { "type": "adjective", "chinese": "精确的", "form": "exact" },
-        { "type": "adverb", "chinese": "精确地，正是如此", "form": "exactly" }
-      ]
-    },
-    {
-      "word": "energy",
-      "forms": [
-        { "type": "noun", "chinese": "能量", "form": "energy" },
-        { "type": "adjective", "chinese": "充满能量的", "form": "energetic" }
-      ]
-    },
-    {
-      "word": "chemistry",
-      "forms": [
-        { "type": "noun", "chinese": "化学", "form": "chemistry" },
-        { "type": "noun", "chinese": "化学药品", "form": "chemical" },
-        { "type": "adjective", "chinese": "化学的", "form": "chemical" }
-      ]
-    },
-    {
-      "word": "treat",
-      "forms": [
-        { "type": "verb", "chinese": "对待", "form": "treat" },
-        { "type": "noun", "chinese": "加工，处理", "form": "treatment" }
-      ]
-    },
-    {
-      "word": "include",
-      "forms": [
-        { "type": "verb", "chinese": "包括", "form": "include" },
-        { "type": "preposition", "chinese": "包括", "form": "including" }
-      ]
-    },
-    {
-      "word": "encourage",
-      "forms": [
-        { "type": "verb", "chinese": "鼓励", "form": "encourage" },
-        { "type": "noun", "chinese": "勇气", "form": "courage" },
-        { "type": "noun", "chinese": "鼓励", "form": "encouragement" }
-      ]
-    },
-    {
-      "word": "agree",
-      "forms": [
-        { "type": "verb", "chinese": "同意", "form": "agree" },
-        { "type": "noun", "chinese": "同意", "form": "agreement" },
-        { "type": "verb", "chinese": "不同意", "form": "disagree" },
-        { "type": "noun", "chinese": "不同意", "form": "disagreement" }
-      ]
-    },
-    {
-      "word": "direct",
-      "forms": [
-        { "type": "adjective", "chinese": "直接的", "form": "direct" },
-        { "type": "adjective", "chinese": "间接的", "form": "indirect" },
-        { "type": "adverb", "chinese": "直接地", "form": "directly" },
-        { "type": "noun", "chinese": "方向", "form": "direction" }
-      ]
-    }
-  ]
+  "wordForms": []
 };
 
-// 为了兼容动态导入和直接导入
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { unitData };
 }
 if (typeof window !== 'undefined') {
   window.unitData = unitData;
 }
-

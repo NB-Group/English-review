@@ -1,0 +1,42 @@
+{
+  "unit": "U5-discovery",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "showed",
+      "sourcePos": "verb",
+      "sourceMeaning": "展示",
+      "transforms": [
+        {
+          "type": "past participle",
+          "form": "shown",
+          "meaning": "展示（过去分词）"
+        }
+      ]
+    },
+    {
+      "source": "burn",
+      "sourcePos": "verb",
+      "sourceMeaning": "燃烧",
+      "transforms": [
+        {
+          "type": "past tense",
+          "form": "burned",
+          "meaning": "燃烧（过去式）"
+        }
+      ]
+    },
+    {
+      "source": "learn",
+      "sourcePos": "verb",
+      "sourceMeaning": "学习",
+      "transforms": [
+        {
+          "type": "past tense",
+          "form": "learned",
+          "meaning": "学习（过去式）"
+        }
+      ]
+    }
+  ]
+}

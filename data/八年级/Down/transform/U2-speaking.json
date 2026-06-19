@@ -1,0 +1,88 @@
+{
+  "unit": "U2-speaking",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "dark",
+      "sourcePos": "adj",
+      "sourceMeaning": "黑暗的",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "darkness",
+          "meaning": "黑暗"
+        }
+      ]
+    },
+    {
+      "source": "fail",
+      "sourcePos": "verb",
+      "sourceMeaning": "失败",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "failure",
+          "meaning": "失败"
+        }
+      ]
+    },
+    {
+      "source": "expensive",
+      "sourcePos": "adj",
+      "sourceMeaning": "贵",
+      "transforms": [
+        {
+          "type": "adj",
+          "form": "inexpensive",
+          "meaning": "不贵"
+        }
+      ]
+    },
+    {
+      "source": "inspire",
+      "sourcePos": "verb",
+      "sourceMeaning": "激励",
+      "transforms": [
+        {
+          "type": "adj",
+          "form": "inspiring",
+          "meaning": "鼓舞人心的"
+        },
+        {
+          "type": "adj",
+          "form": "inspired",
+          "meaning": "卓越的"
+        }
+      ]
+    },
+    {
+      "source": "encourage",
+      "sourcePos": "verb",
+      "sourceMeaning": "鼓励",
+      "transforms": [
+        {
+          "type": "adj",
+          "form": "encouraging",
+          "meaning": "鼓舞人的"
+        },
+        {
+          "type": "noun",
+          "form": "encouragement",
+          "meaning": "鼓励激励"
+        }
+      ]
+    },
+    {
+      "source": "total",
+      "sourcePos": "adj",
+      "sourceMeaning": "完全的",
+      "transforms": [
+        {
+          "type": "adv",
+          "form": "totally",
+          "meaning": "完全地"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "unit": "U3-viewing-listening",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "pay",
+      "sourcePos": "v",
+      "sourceMeaning": "支付；付款",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "payment",
+          "meaning": "支付；付款"
+        }
+      ]
+    },
+    {
+      "source": "member",
+      "sourcePos": "n",
+      "sourceMeaning": "成员",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "membership",
+          "meaning": "会员资格"
+        }
+      ]
+    },
+    {
+      "source": "sale",
+      "sourcePos": "n",
+      "sourceMeaning": "出售",
+      "transforms": [
+        {
+          "type": "verb",
+          "form": "sell",
+          "meaning": "卖"
+        },
+        {
+          "type": "past tense",
+          "form": "sold",
+          "meaning": "卖（过去式）"
+        }
+      ]
+    },
+    {
+      "source": "donate",
+      "sourcePos": "v",
+      "sourceMeaning": "捐赠",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "donation",
+          "meaning": "捐赠"
+        }
+      ]
+    },
+    {
+      "source": "save",
+      "sourcePos": "v",
+      "sourceMeaning": "节省；储蓄",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "safe",
+          "meaning": "安全的"
+        },
+        {
+          "type": "adverb",
+          "form": "safely",
+          "meaning": "安全地"
+        },
+        {
+          "type": "noun",
+          "form": "safety",
+          "meaning": "安全"
+        }
+      ]
+    },
+    {
+      "source": "assistant",
+      "sourcePos": "n",
+      "sourceMeaning": "助手",
+      "transforms": [
+        {
+          "type": "verb",
+          "form": "assist",
+          "meaning": "帮助"
+        }
+      ]
+    },
+    {
+      "source": "manage",
+      "sourcePos": "v",
+      "sourceMeaning": "管理；设法",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "management",
+          "meaning": "管理"
+        },
+        {
+          "type": "noun",
+          "form": "manager",
+          "meaning": "管理者"
+        }
+      ]
+    }
+  ]
+}

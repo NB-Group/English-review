@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+
+# Local user data (contains personal info)
+local_accounts/
+
+# Test artifacts
+_test_bash_output.txt
+tools/word_txt/
+tools/__pycache__/
+
+# OS files
+.DS_Store
+Thumbs.db

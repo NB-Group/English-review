@@ -1,3 +1,4 @@
+import { AccountStorage } from './modules/account-storage.js';
 /**
  * 主入口模块
  * 导入并初始化应用
@@ -79,7 +80,16 @@ window.EnglishReview = {
 
 // 在页面加载完成后初始化应用
 let appInstance;
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    const accountStorage = new AccountStorage();
+    window.EnglishReview.accountStorage = accountStorage;
+
+    try {
+        await accountStorage.init();
+    } catch (error) {
+        console.error('账号初始化失败:', error);
+    }
+
     // 动态导入模块以确保兼容性
     import('./app.js').then(({ EnglishReviewApp }) => {
         appInstance = new EnglishReviewApp();
@@ -95,6 +105,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }).catch(error => {
         console.error('应用加载失败:', error);
     });
+});
+
+window.addEventListener('beforeunload', () => {
+    window.EnglishReview?.accountStorage?.saveRemoteData?.();
+});
+
+window.addEventListener('settingsChanged', () => {
+    window.EnglishReview?.accountStorage?.saveRemoteData?.();
 });
 
 // 设置错误处理

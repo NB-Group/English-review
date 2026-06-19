@@ -1,152 +1,148 @@
 #!/usr/bin/env python3
-"""
-简单的HTTP服务器，用于测试英语复习助手应用
-"""
-
-import http.server
-import socketserver
-import webbrowser
-import os
-import sys
 import json
+import os
+import socketserver
+import sys
 import urllib.parse
+from http.server import SimpleHTTPRequestHandler
+from pathlib import Path
 
 PORT = 8080
+ROOT_DIR = Path(__file__).resolve().parent
+DATA_DIR = ROOT_DIR / "data"
+ACCOUNT_DIR = ROOT_DIR / "local_accounts"
 
-class MyHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
+GRADE_MAP = {
+    "七年级": "7",
+    "八年级": "8",
+    "九年级": "9",
+}
+
+SEMESTER_MAP = {
+    "上册": "Up",
+    "下册": "Down",
+    "Up": "Up",
+    "Down": "Down",
+}
+
+
+def scan_units():
+    units = {}
+    if not DATA_DIR.exists():
+        return units
+
+    for grade_dir in DATA_DIR.iterdir():
+        if not grade_dir.is_dir():
+            continue
+        grade_num = GRADE_MAP.get(grade_dir.name)
+        if not grade_num:
+            continue
+        units[grade_num] = {}
+        for semester_dir in grade_dir.iterdir():
+            if not semester_dir.is_dir():
+                continue
+            semester_code = SEMESTER_MAP.get(semester_dir.name)
+            if not semester_code:
+                continue
+            unit_list = sorted(path.stem for path in semester_dir.glob("*.js"))
+            units[grade_num][semester_code] = unit_list
+    return units
+
+
+def safe_account_name(raw_name: str) -> str:
+    cleaned = "".join(ch for ch in raw_name if ch.isalnum() or ch in ("-", "_"))
+    return cleaned[:64] or "default"
+
+
+def account_file(user: str) -> Path:
+    ACCOUNT_DIR.mkdir(parents=True, exist_ok=True)
+    return ACCOUNT_DIR / f"{safe_account_name(user)}.json"
+
+
+class Handler(SimpleHTTPRequestHandler):
     def end_headers(self):
-        # 添加CORS头，允许跨域请求
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
-        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
         super().end_headers()
-    
+
     def do_OPTIONS(self):
-        """处理OPTIONS请求（CORS预检）"""
         self.send_response(200)
         self.end_headers()
-    
+
     def do_GET(self):
-        """处理GET请求"""
-        # 处理API请求：扫描单元文件
-        if self.path == '/api/scan-units':
-            self.handle_scan_units()
-        else:
-            # 默认的静态文件服务
-            super().do_GET()
-    
+        parsed = urllib.parse.urlparse(self.path)
+        if parsed.path == "/api/scan-units":
+            return self.handle_scan_units()
+        if parsed.path == "/api/account-data":
+            return self.handle_account_load(parsed)
+        return super().do_GET()
+
+    def do_POST(self):
+        parsed = urllib.parse.urlparse(self.path)
+        if parsed.path == "/api/account-data":
+            return self.handle_account_save(parsed)
+        self.send_error(404, "Unknown API")
+
+    def read_json_body(self):
+        length = int(self.headers.get("Content-Length", "0"))
+        body = self.rfile.read(length) if length else b"{}"
+        return json.loads(body.decode("utf-8"))
+
+    def write_json(self, payload, status=200):
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.end_headers()
+        self.wfile.write(json.dumps(payload, ensure_ascii=False).encode("utf-8"))
+
     def handle_scan_units(self):
-        """扫描data目录下的所有单元文件"""
         try:
-            units = {}
-            data_dir = os.path.join(os.path.dirname(__file__), 'data')
-            
-            if not os.path.exists(data_dir):
-                self.send_response(200)
-                self.send_header('Content-Type', 'application/json; charset=utf-8')
-                self.end_headers()
-                self.wfile.write(json.dumps({}).encode('utf-8'))
-                return
-            
-            # 年级映射：中文目录名 -> 数字年级
-            grade_map = {
-                '七年级': '7',
-                '八年级': '8',
-                '九年级': '9'
-            }
-            
-            # 学期映射：中文目录名 -> 英文代码
-            semester_map = {
-                '上册': 'Up',
-                '下册': 'Down'
-            }
-            
-            # 扫描所有年级目录
-            for grade_dir in os.listdir(data_dir):
-                grade_path = os.path.join(data_dir, grade_dir)
-                if not os.path.isdir(grade_path):
-                    continue
-                
-                grade_num = grade_map.get(grade_dir)
-                if not grade_num:
-                    continue
-                
-                units[grade_num] = {}
-                
-                # 扫描学期目录
-                for semester_dir in os.listdir(grade_path):
-                    semester_path = os.path.join(grade_path, semester_dir)
-                    if not os.path.isdir(semester_path):
-                        continue
-                    
-                    semester_code = semester_map.get(semester_dir)
-                    if not semester_code:
-                        continue
-                    
-                    unit_list = []
-                    # 扫描单元文件
-                    for filename in os.listdir(semester_path):
-                        if filename.endswith('.js'):
-                            unit_name = filename[:-3]  # 去掉.js后缀
-                            unit_list.append(unit_name)
-                    
-                    # 按单元名称排序
-                    unit_list.sort()
-                    units[grade_num][semester_code] = unit_list
-            
-            # 返回JSON响应
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
-            self.wfile.write(json.dumps(units, ensure_ascii=False).encode('utf-8'))
-            
-        except Exception as e:
-            print(f"扫描单元文件时出错: {e}")
-            import traceback
-            traceback.print_exc()
-            self.send_response(500)
-            self.send_header('Content-Type', 'application/json; charset=utf-8')
-            self.end_headers()
-            self.wfile.write(json.dumps({'error': str(e)}).encode('utf-8'))
+            self.write_json(scan_units())
+        except Exception as exc:
+            self.write_json({"error": str(exc)}, status=500)
+
+    def handle_account_load(self, parsed):
+        query = urllib.parse.parse_qs(parsed.query)
+        user = query.get("user", ["default"])[0]
+        path = account_file(user)
+        if not path.exists():
+            return self.write_json({"user": safe_account_name(user), "data": {}})
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            self.write_json({"user": safe_account_name(user), "data": data})
+        except Exception as exc:
+            self.write_json({"error": str(exc)}, status=500)
+
+    def handle_account_save(self, parsed):
+        query = urllib.parse.parse_qs(parsed.query)
+        user = query.get("user", ["default"])[0]
+        try:
+            payload = self.read_json_body()
+            path = account_file(user)
+            path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+            self.write_json({"ok": True, "user": safe_account_name(user)})
+        except Exception as exc:
+            self.write_json({"error": str(exc)}, status=500)
+
+
+class ThreadingTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
+    allow_reuse_address = True
+    daemon_threads = True
+
 
 def start_server():
-    """启动HTTP服务器"""
-    try:
-        with socketserver.TCPServer(("", PORT), MyHTTPRequestHandler) as httpd:
-            print(f"服务器启动成功！")
-            print(f"访问地址: http://127.0.0.1:{PORT}")
-            print(f"按 Ctrl+C 停止服务器")
+    os.chdir(ROOT_DIR)
+    with ThreadingTCPServer(("", PORT), Handler) as httpd:
+        print(f"Server running at http://127.0.0.1:{PORT}")
+        httpd.serve_forever()
 
-            # 自动打开浏览器
-            try:
-                webbrowser.open(f"http://127.0.0.1:{PORT}")
-            except:
-                pass
-
-            httpd.serve_forever()
-    except KeyboardInterrupt:
-        print("\n服务器已停止")
-    except OSError as e:
-        if e.errno == 48:  # Address already in use
-            print(f"端口 {PORT} 已被占用，请尝试其他端口")
-        else:
-            print(f"启动服务器失败: {e}")
 
 if __name__ == "__main__":
-    # 检查是否有可用的端口
     for port in range(8080, 8090):
         try:
-            with socketserver.TCPServer(("", port), MyHTTPRequestHandler) as httpd:
-                print(f"找到可用端口: {port}")
+            with ThreadingTCPServer(("", port), Handler):
                 PORT = port
                 break
         except OSError:
             continue
-
     start_server()
-
-
-
-
-
-

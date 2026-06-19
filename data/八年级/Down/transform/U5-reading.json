@@ -1,0 +1,81 @@
+{
+  "unit": "U5-reading",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "survive",
+      "sourcePos": "verb",
+      "sourceMeaning": "幸存；存活",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "survival",
+          "meaning": "幸存"
+        },
+        {
+          "type": "noun",
+          "form": "survivor",
+          "meaning": "幸存者"
+        }
+      ]
+    },
+    {
+      "source": "similar",
+      "sourcePos": "adjective",
+      "sourceMeaning": "相似的",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "similarity",
+          "meaning": "相似点"
+        }
+      ]
+    },
+    {
+      "source": "rapidly",
+      "sourcePos": "adverb",
+      "sourceMeaning": "迅速地",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "rapid",
+          "meaning": "迅速的"
+        }
+      ]
+    },
+    {
+      "source": "guard",
+      "sourcePos": "verb",
+      "sourceMeaning": "守卫；保卫",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "guardian",
+          "meaning": "监护人"
+        }
+      ]
+    },
+    {
+      "source": "urge",
+      "sourcePos": "verb",
+      "sourceMeaning": "督促",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "urgent",
+          "meaning": "紧急的"
+        },
+        {
+          "type": "adverb",
+          "form": "urgently",
+          "meaning": "紧急地"
+        },
+        {
+          "type": "noun",
+          "form": "urgency",
+          "meaning": "紧急"
+        }
+      ]
+    }
+  ]
+}

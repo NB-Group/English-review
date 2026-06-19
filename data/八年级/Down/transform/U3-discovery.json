@@ -1,0 +1,5 @@
+{
+  "unit": "U3-discovery",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": []
+}

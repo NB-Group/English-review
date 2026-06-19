@@ -1,0 +1,78 @@
+{
+  "unit": "U3-writing",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "spend",
+      "sourcePos": "verb",
+      "sourceMeaning": "花费",
+      "transforms": [
+        {
+          "type": "past tense",
+          "form": "spent",
+          "meaning": "花费（过去式）"
+        }
+      ]
+    },
+    {
+      "source": "save",
+      "sourcePos": "verb",
+      "sourceMeaning": "储蓄",
+      "transforms": [
+        {
+          "type": "past tense",
+          "form": "saved",
+          "meaning": "储蓄（过去式）"
+        }
+      ]
+    },
+    {
+      "source": "saving",
+      "sourcePos": "noun",
+      "sourceMeaning": "储蓄",
+      "transforms": [
+        {
+          "type": "verb",
+          "form": "save",
+          "meaning": "储蓄（动词）"
+        }
+      ]
+    },
+    {
+      "source": "spending",
+      "sourcePos": "noun",
+      "sourceMeaning": "消费",
+      "transforms": [
+        {
+          "type": "verb",
+          "form": "spend",
+          "meaning": "花费（动词）"
+        }
+      ]
+    },
+    {
+      "source": "manage",
+      "sourcePos": "verb",
+      "sourceMeaning": "管理",
+      "transforms": [
+        {
+          "type": "adverb",
+          "form": "wisely",
+          "meaning": "明智地"
+        }
+      ]
+    },
+    {
+      "source": "wise",
+      "sourcePos": "adjective",
+      "sourceMeaning": "明智的",
+      "transforms": [
+        {
+          "type": "adverb",
+          "form": "wisely",
+          "meaning": "明智地"
+        }
+      ]
+    }
+  ]
+}

@@ -8,7 +8,7 @@ export class AIGrader {
         this.apiUrl = 'https://api.siliconflow.cn/v1/chat/completions';
         this.settings = {
             apiKey: '',
-            aiModel: 'Qwen/Qwen2.5-7B-Instruct',
+            aiModel: 'Qwen/Qwen3-8B',
             enableAIGrading: false
         };
     }
@@ -57,7 +57,7 @@ export class AIGrader {
 学生答案: ${userAnswer}
 
 判题要求（严格但允许特定差异）：
-1. 只允许以下7种差异，其他方面必须严格：
+1. 只允许以下8种差异，其他方面必须严格：
    - 大小写差异（Cat/cat/CAT）✓ 允许
    - 单复数差异（cat/cats）✓ 允许
    - 时态差异（go/went, is/was）✓ 允许
@@ -65,24 +65,25 @@ export class AIGrader {
    - 倒装语序（正常语序和倒装语序）✓ 允许
    - 冠词差异（the/a/an/无冠词）✓ 允许
    - 所有格差异（one's/my/your/his/her/their/the/a/an/无所有格）✓ 允许
+   - 同义词或相近意思的词（如：fresh water/drinking water, big/large, happy/glad）✓ 允许（只要意思相近且符合语境）
 
 2. 以下情况必须判错（严格标准）：
    - 拼写错误（如：helo→hello, studnet→student）✗ 判错
-   - 用词错误（如：big→large, happy→glad，除非标准答案中包含该词）✗ 判错
+   - 用词错误（如：用完全不同的词，且意思明显不同）✗ 判错
    - 语法错误（除了时态、动词形式、倒装外的其他语法错误）✗ 判错
    - 缺少或多余单词（除非是标准答案中括号内的可选词，或冠词/所有格差异）✗ 判错
    - 词序错误（除了倒装外的其他语序错误）✗ 判错
-   - 意思不准确或偏离标准答案 ✗ 判错
+   - 意思不准确或明显偏离标准答案 ✗ 判错
 
 3. 判断标准：
-   - 学生答案必须与标准答案在意思上完全一致
-   - 只允许大小写、单复数、时态、动词形式、倒装、冠词、所有格这7种差异
-   - 其他任何差异（拼写、用词、语法、词序等）都应判错
+   - 学生答案必须与标准答案在意思上一致或相近
+   - 允许大小写、单复数、时态、动词形式、倒装、冠词、所有格、同义词这8种差异
+   - 其他任何差异（拼写、明显用词错误、语法、词序等）都应判错
 
 判题标准：
-- 只允许大小写/单复数/时态/动词形式/倒装/冠词/所有格差异，且意思完全一致：输出 True{标准答案}
-- 有任何其他错误（拼写、用词、语法、词序等）：输出 False{错误分析}
-- 意思不准确或偏离：输出 False{错误分析}
+- 只允许大小写/单复数/时态/动词形式/倒装/冠词/所有格/同义词差异，且意思一致或相近：输出 True{标准答案}
+- 有任何其他错误（拼写、明显用词错误、语法、词序等）：输出 False{错误分析}
+- 意思明显不准确或偏离：输出 False{错误分析}
 
 请直接输出 True{标准答案} 或 False{错误分析}，不要其他内容。`;
     }
@@ -106,7 +107,8 @@ export class AIGrader {
                     }
                 ],
                 temperature: 0.1,
-                max_tokens: 500
+                max_tokens: 500,
+                enable_thinking: false
             })
         };
         
@@ -317,8 +319,8 @@ export class AIGrader {
      */
     getSupportedModels() {
         return [
-            { value: 'Qwen/Qwen2.5-7B-Instruct', label: 'Qwen2.5-7B-Instruct (推荐)' },
-            { value: 'Qwen/Qwen3-8B', label: 'Qwen3-8B' },
+            { value: 'Qwen/Qwen3-8B', label: 'Qwen3-8B (推荐)' },
+            { value: 'Qwen/Qwen2.5-7B-Instruct', label: 'Qwen2.5-7B-Instruct' },
             { value: 'Qwen/Qwen2-7B', label: 'Qwen2-7B' },
             { value: 'meta-llama/Llama-3-8B-Instruct', label: 'Llama-3-8B-Instruct' }
         ];

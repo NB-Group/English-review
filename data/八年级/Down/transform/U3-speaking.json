@@ -1,0 +1,125 @@
+{
+  "unit": "U3-speaking",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "wise",
+      "sourcePos": "adj",
+      "sourceMeaning": "明智的",
+      "transforms": [
+        {
+          "type": "adverb",
+          "form": "wisely",
+          "meaning": "明智地"
+        },
+        {
+          "type": "noun",
+          "form": "wisdom",
+          "meaning": "智慧"
+        }
+      ]
+    },
+    {
+      "source": "independent",
+      "sourcePos": "adj",
+      "sourceMeaning": "独立的",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "independence",
+          "meaning": "独立"
+        },
+        {
+          "type": "adverb",
+          "form": "independently",
+          "meaning": "独立地"
+        },
+        {
+          "type": "adjective",
+          "form": "irresponsible",
+          "meaning": "不负责任的"
+        }
+      ]
+    },
+    {
+      "source": "responsible",
+      "sourcePos": "adj",
+      "sourceMeaning": "负责任的",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "responsibility",
+          "meaning": "责任"
+        },
+        {
+          "type": "adverb",
+          "form": "responsibly",
+          "meaning": "负责任地"
+        },
+        {
+          "type": "adjective",
+          "form": "irresponsible",
+          "meaning": "不负责任的"
+        }
+      ]
+    },
+    {
+      "source": "expect",
+      "sourcePos": "verb",
+      "sourceMeaning": "期望",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "expectation",
+          "meaning": "期望"
+        },
+        {
+          "type": "past tense",
+          "form": "expected",
+          "meaning": "预期的"
+        },
+        {
+          "type": "adjective",
+          "form": "unexpected",
+          "meaning": "预料之外的"
+        }
+      ]
+    },
+    {
+      "source": "mess",
+      "sourcePos": "verb",
+      "sourceMeaning": "使不整洁，弄乱",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "messy",
+          "meaning": "混乱的"
+        }
+      ]
+    },
+    {
+      "source": "value",
+      "sourcePos": "noun",
+      "sourceMeaning": "价值",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "valuable",
+          "meaning": "有价值的"
+        }
+      ]
+    },
+    {
+      "source": "regular",
+      "sourcePos": "adjective",
+      "sourceMeaning": "规律的",
+      "transforms": [
+        {
+          "type": "adverb",
+          "form": "regularly",
+          "meaning": "规律地"
+        }
+      ]
+    }
+  ]
+}

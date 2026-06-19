@@ -1,0 +1,81 @@
+{
+  "unit": "U3-reading",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "economy",
+      "sourcePos": "n",
+      "sourceMeaning": "经济",
+      "transforms": [
+        {
+          "type": "adj",
+          "form": "economic",
+          "meaning": "经济的"
+        },
+        {
+          "type": "n",
+          "form": "economist",
+          "meaning": "经济学家"
+        }
+      ]
+    },
+    {
+      "source": "trade",
+      "sourcePos": "v",
+      "sourceMeaning": "贸易；交易",
+      "transforms": [
+        {
+          "type": "n",
+          "form": "trader",
+          "meaning": "商人"
+        }
+      ]
+    },
+    {
+      "source": "produce",
+      "sourcePos": "v",
+      "sourceMeaning": "生产；产生",
+      "transforms": [
+        {
+          "type": "n",
+          "form": "product",
+          "meaning": "产品"
+        },
+        {
+          "type": "n",
+          "form": "production",
+          "meaning": "生产"
+        },
+        {
+          "type": "n",
+          "form": "producer",
+          "meaning": "生产者"
+        }
+      ]
+    },
+    {
+      "source": "value",
+      "sourcePos": "v",
+      "sourceMeaning": "重视；价值",
+      "transforms": [
+        {
+          "type": "adj",
+          "form": "valuable",
+          "meaning": "有价值的"
+        }
+      ]
+    },
+    {
+      "source": "complete",
+      "sourcePos": "v",
+      "sourceMeaning": "完成",
+      "transforms": [
+        {
+          "type": "adv",
+          "form": "completely",
+          "meaning": "完全地"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "unit": "U5-viewing-listening",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "destroy",
+      "sourcePos": "verb",
+      "sourceMeaning": "破坏",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "destruction",
+          "meaning": "破坏"
+        },
+        {
+          "type": "past tense",
+          "form": "destroyed",
+          "meaning": "破坏（过去式）"
+        }
+      ]
+    },
+    {
+      "source": "injure",
+      "sourcePos": "verb",
+      "sourceMeaning": "伤害；使受伤",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "injury",
+          "meaning": "伤害；损伤"
+        },
+        {
+          "type": "adjective",
+          "form": "injured",
+          "meaning": "受伤的"
+        }
+      ]
+    },
+    {
+      "source": "die",
+      "sourcePos": "verb",
+      "sourceMeaning": "死亡",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "death",
+          "meaning": "死亡"
+        },
+        {
+          "type": "adjective",
+          "form": "dead",
+          "meaning": "死亡的"
+        },
+        {
+          "type": "adjective",
+          "form": "deadly",
+          "meaning": "致命的"
+        }
+      ]
+    },
+    {
+      "source": "effect",
+      "sourcePos": "noun",
+      "sourceMeaning": "影响；效果",
+      "transforms": [
+        {
+          "type": "verb",
+          "form": "affect",
+          "meaning": "影响；打动"
+        },
+        {
+          "type": "adjective",
+          "form": "effective",
+          "meaning": "有效的"
+        },
+        {
+          "type": "adverb",
+          "form": "effectively",
+          "meaning": "有效地"
+        }
+      ]
+    },
+    {
+      "source": "nature",
+      "sourcePos": "noun",
+      "sourceMeaning": "自然",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "natural",
+          "meaning": "大自然的"
+        }
+      ]
+    }
+  ]
+}

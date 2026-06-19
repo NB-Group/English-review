@@ -1,0 +1,179 @@
+{
+  "unit": "U2-viewing-listening",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "discover",
+      "sourcePos": "v",
+      "sourceMeaning": "发现",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "discovery",
+          "meaning": "发现"
+        }
+      ]
+    },
+    {
+      "source": "explore",
+      "sourcePos": "v",
+      "sourceMeaning": "探索",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "exploration",
+          "meaning": "探索"
+        }
+      ]
+    },
+    {
+      "source": "economy",
+      "sourcePos": "n",
+      "sourceMeaning": "经济",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "economic",
+          "meaning": "经济的"
+        }
+      ]
+    },
+    {
+      "source": "excite",
+      "sourcePos": "v",
+      "sourceMeaning": "使兴奋",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "excitement",
+          "meaning": "兴奋"
+        }
+      ]
+    },
+    {
+      "source": "agree",
+      "sourcePos": "v",
+      "sourceMeaning": "同意",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "agreement",
+          "meaning": "同意"
+        }
+      ]
+    },
+    {
+      "source": "grow",
+      "sourcePos": "v",
+      "sourceMeaning": "生长",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "growth",
+          "meaning": "成长"
+        }
+      ]
+    },
+    {
+      "source": "long",
+      "sourcePos": "adj",
+      "sourceMeaning": "长的",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "length",
+          "meaning": "长度"
+        }
+      ]
+    },
+    {
+      "source": "wide",
+      "sourcePos": "adj",
+      "sourceMeaning": "宽的",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "width",
+          "meaning": "宽度"
+        }
+      ]
+    },
+    {
+      "source": "ill",
+      "sourcePos": "adj",
+      "sourceMeaning": "生病的",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "illness",
+          "meaning": "生病"
+        }
+      ]
+    },
+    {
+      "source": "sad",
+      "sourcePos": "adj",
+      "sourceMeaning": "悲伤的",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "sadness",
+          "meaning": "悲伤"
+        }
+      ]
+    },
+    {
+      "source": "happy",
+      "sourcePos": "adj",
+      "sourceMeaning": "快乐的",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "happiness",
+          "meaning": "快乐"
+        }
+      ]
+    },
+    {
+      "source": "society",
+      "sourcePos": "n",
+      "sourceMeaning": "社会",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "social",
+          "meaning": "社会的；社交的"
+        },
+        {
+          "type": "noun",
+          "form": "socialism",
+          "meaning": "社会主义"
+        }
+      ]
+    },
+    {
+      "source": "tour",
+      "sourcePos": "n",
+      "sourceMeaning": "旅游",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "tourism",
+          "meaning": "旅游业"
+        }
+      ]
+    },
+    {
+      "source": "real",
+      "sourcePos": "adj",
+      "sourceMeaning": "真的",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "realism",
+          "meaning": "现实主义"
+        }
+      ]
+    }
+  ]
+}

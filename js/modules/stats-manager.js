@@ -481,64 +481,70 @@ export class StatsManager {
     }
     
     /**
-     * 导出错题本
+     * 导出错题本为 DOC (Word 可打开的双栏 HTML)
      */
     exportWrongAnswers() {
         const allWrongAnswers = this.getAllWrongAnswers();
         if (allWrongAnswers.length === 0) {
             return false;
         }
-        
-        // 创建文本格式的错题本
-        let content = '英语复习助手 - 错题本\n';
-        content += `导出时间: ${new Date().toLocaleString('zh-CN')}\n`;
-        content += `总错题数: ${allWrongAnswers.length}\n`;
-        content += `未掌握: ${allWrongAnswers.filter(w => !w.mastered).length}\n`;
-        content += `已掌握: ${allWrongAnswers.filter(w => w.mastered).length}\n\n`;
-        content += '='.repeat(50) + '\n\n';
-        
+
+        // 清洗中文文本：去掉 [词转特训] 等标签前缀
+        const cleanChinese = (text) => {
+            return (text || '')
+                .replace(/^\[词转特训\]\s*/g, '')
+                .replace(/\[.*?\]/g, '')
+                .trim();
+        };
+
         // 按年级和单元分组
         const grouped = {};
         allWrongAnswers.forEach(wrong => {
             const key = `${wrong.grade}年级-${wrong.unit}`;
-            if (!grouped[key]) {
-                grouped[key] = [];
-            }
+            if (!grouped[key]) grouped[key] = [];
             grouped[key].push(wrong);
         });
-        
+
+        let rows = '';
         Object.keys(grouped).sort().forEach(key => {
-            content += `\n【${key}】\n`;
-            content += '-'.repeat(50) + '\n';
-            
+            rows += `<tr><td colspan="2" class="section">${key}</td></tr>`;
             grouped[key].forEach((wrong, index) => {
-                const date = new Date(wrong.timestamp).toLocaleString('zh-CN');
-                const status = wrong.mastered ? '✓ 已掌握' : '○ 待复习';
-                content += `\n${index + 1}. ${wrong.chinese}\n`;
-                content += `   正确答案: ${wrong.correct}\n`;
-                if (wrong.userAnswer) {
-                    content += `   你的答案: ${wrong.userAnswer}\n`;
-                }
-                content += `   时间: ${date}\n`;
-                content += `   状态: ${status}\n`;
-                if (wrong.reviewCount > 0) {
-                    content += `   复习次数: ${wrong.reviewCount}\n`;
-                }
+                rows += `
+                <tr>
+                    <td class="cn">${index + 1}. ${cleanChinese(wrong.chinese)}</td>
+                    <td class="en">${wrong.correct}</td>
+                </tr>`;
             });
-            content += '\n';
         });
-        
-        // 导出为文本文件
-        const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+
+        const html = `<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head><meta charset="utf-8"><title>错题本</title>
+<style>
+  body { font-family: 'Microsoft YaHei', sans-serif; padding: 20px; }
+  h1 { text-align: center; font-size: 18pt; margin-bottom: 16px; }
+  table { width: 100%; border-collapse: collapse; }
+  td { padding: 6px 10px; border: 1px solid #ccc; vertical-align: top; }
+  td.cn { width: 50%; }
+  td.en { width: 50%; font-family: 'Segoe UI', Calibri, sans-serif; }
+  td.section { background: #f0f0f0; font-weight: bold; font-size: 11pt; text-align: center; }
+</style></head>
+<body>
+  <h1>错题本</h1>
+  <table>${rows}</table>
+</body>
+</html>`;
+
+        const blob = new Blob(['﻿' + html], { type: 'application/msword;charset=utf-8' });
         const url = URL.createObjectURL(blob);
-        
         const a = document.createElement('a');
         a.href = url;
-        a.download = `错题本_${new Date().toISOString().split('T')[0]}.txt`;
+        a.download = `错题本_${new Date().toISOString().split('T')[0]}.doc`;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-        
         URL.revokeObjectURL(url);
         return true;
     }

@@ -1,0 +1,76 @@
+{
+  "unit": "U4-speaking",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "prefer",
+      "sourcePos": "verb",
+      "sourceMeaning": "偏爱",
+      "transforms": [
+        {
+          "type": "past tense",
+          "form": "preferred",
+          "meaning": "偏爱（过去式）"
+        },
+        {
+          "type": "noun",
+          "form": "preference",
+          "meaning": "偏爱（名词）"
+        }
+      ]
+    },
+    {
+      "source": "flower",
+      "sourcePos": "noun",
+      "sourceMeaning": "花",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "flowery",
+          "meaning": "花的"
+        }
+      ]
+    },
+    {
+      "source": "true",
+      "sourcePos": "adjective",
+      "sourceMeaning": "真的",
+      "transforms": [
+        {
+          "type": "adverb",
+          "form": "truly",
+          "meaning": "真的（副词）"
+        },
+        {
+          "type": "noun",
+          "form": "truth",
+          "meaning": "真相"
+        }
+      ]
+    },
+    {
+      "source": "formal",
+      "sourcePos": "adjective",
+      "sourceMeaning": "正式的",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "informal",
+          "meaning": "不正式的"
+        }
+      ]
+    },
+    {
+      "source": "drum",
+      "sourcePos": "noun",
+      "sourceMeaning": "鼓",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "drumming",
+          "meaning": "击鼓（名词）"
+        }
+      ]
+    }
+  ]
+}

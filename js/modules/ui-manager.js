@@ -33,7 +33,7 @@ export class UIManager {
             this.currentPage = pageId;
             
             // 聚焦到主要内容区域（无障碍）
-            const mainContent = targetPage.querySelector('.card, .heading');
+            const mainContent = targetPage.querySelector('.section-title, .hero-title, h2, h1');
             if (mainContent) {
                 mainContent.setAttribute('tabindex', '-1');
                 mainContent.focus();
@@ -42,75 +42,70 @@ export class UIManager {
     }
     
     /**
-     * 显示单元选择页面
+     * Show unit selection page
      */
-    showUnitSelection(grade, units, onUnitSelect, appInstance) {
-        document.getElementById('grade-title').textContent = `${grade}年级单元`;
+    showUnitSelection(grade, units, onUnitSelect, appInstance, studyMode = 'normal') {
+        // Update Title
+        const gradeTitle = document.getElementById('grade-title');
+        if (gradeTitle) {
+            gradeTitle.textContent = `${grade} GRADE - UNIT SELECTION`;
+        }
 
         const unitGrid = document.getElementById('unit-grid');
+        if (!unitGrid) return;
+
+        const normalBtn = document.getElementById('mode-normal-btn');
+        const transformBtn = document.getElementById('mode-transform-btn');
+        if (normalBtn && transformBtn) {
+            normalBtn.classList.toggle('active', studyMode === 'normal');
+            normalBtn.classList.toggle('secondary', studyMode !== 'normal');
+            transformBtn.classList.toggle('active', studyMode === 'transform');
+            transformBtn.classList.toggle('secondary', studyMode !== 'transform');
+        }
+        
         unitGrid.innerHTML = '';
 
         Object.keys(units).forEach(semester => {
-            // 添加学期标题
+            // Semester Title
             const semesterTitle = document.createElement('div');
-            semesterTitle.className = 'semester-title';
-            // 将英文的Up/Down转换为中文显示
-            const displaySemester = semester === 'Up' ? '上册' : '下册';
-            semesterTitle.innerHTML = `<h3>${displaySemester}</h3>`;
+            semesterTitle.className = 'semester-group-title';
+            const displaySemester = semester === 'Up' ? 'Semester 1 / 上册' : 'Semester 2 / 下册';
+            semesterTitle.textContent = displaySemester;
             unitGrid.appendChild(semesterTitle);
 
-            // 添加单元卡片
+            // Unit Cards
             units[semester].forEach(unit => {
                 const fullUnit = `${semester}/${unit}`;
-                const unitCard = document.createElement('button');
+                const unitCard = document.createElement('div');
                 unitCard.className = 'unit-card';
                 unitCard.dataset.unit = fullUnit;
                 
-                // 获取进度信息
-                let statusText = '点击开始学习';
-                let progressPercent = 0;
+                // Get Progress
+                let statusText = 'Start';
                 let isCompleted = false;
                 
                 if (appInstance) {
                     isCompleted = appInstance.isUnitCompleted(grade, fullUnit);
-                    progressPercent = appInstance.getUnitProgressPercent(grade, fullUnit);
-                    
-                    // 调试信息
-                    console.log(`Unit: ${fullUnit}, Grade: ${grade}, Completed: ${isCompleted}, Progress: ${progressPercent}%`);
+                    const progressPercent = appInstance.getUnitProgressPercent(grade, fullUnit);
                     
                     if (isCompleted) {
-                        statusText = '✓ 已完成';
-                        unitCard.classList.add('unit-card-completed');
+                        statusText = 'Completed';
+                        unitCard.classList.add('completed');
                     } else if (progressPercent > 0) {
-                        statusText = `进度: ${progressPercent}%`;
-                        unitCard.classList.add('unit-card-in-progress');
+                        statusText = `${progressPercent}% Progress`;
                     }
-                } else {
-                    console.warn('appInstance 未传递到 showUnitSelection');
                 }
                 
                 unitCard.innerHTML = `
-                    <div class="unit-card-content">
-                        <h3>${unit}</h3>
-                        <p class="unit-status">${statusText}</p>
-                        ${progressPercent > 0 && !isCompleted ? `
-                            <div class="unit-progress-bar">
-                                <div class="unit-progress-fill" style="width: ${progressPercent}%"></div>
-                            </div>
-                        ` : ''}
-                    </div>
+                    <h3>${unit}</h3>
+                    <div class="unit-status">${statusText}</div>
                 `;
+                
+                unitCard.addEventListener('click', () => {
+                    if (onUnitSelect) onUnitSelect(fullUnit);
+                });
+                
                 unitGrid.appendChild(unitCard);
-            });
-        });
-
-        // 设置单元选择事件
-        document.querySelectorAll('.unit-card').forEach(card => {
-            card.addEventListener('click', (e) => {
-                const unit = e.currentTarget.dataset.unit;
-                if (onUnitSelect) {
-                    onUnitSelect(unit);
-                }
             });
         });
 
@@ -120,13 +115,42 @@ export class UIManager {
     /**
      * 显示问题
      */
-    displayQuestion(question, progress) {
-        document.getElementById('chinese-text').textContent = question.chinese;
-        document.getElementById('current-progress').textContent = `${progress.current}/${progress.total}`;
-        document.getElementById('progress-fill').style.width = `${progress.percentage}%`;
-        
+    displayQuestion(question, progress, isTransform = false) {
+        const chineseEl = document.getElementById('chinese-text');
+        const progressEl = document.getElementById('current-progress');
+        const progressFill = document.getElementById('progress-fill');
+
+        progressEl.textContent = `${progress.current}/${progress.total}`;
+        progressFill.style.width = `${progress.percentage}%`;
+
+        if (isTransform && question.sourceWord) {
+            // 高档词转卡片渲染
+            const posLabel = question.sourcePos || '';
+            const srcMeaning = question.sourceMeaning || '';
+            const targetType = question.targetType || '';
+            const targetMeaning = question.targetMeaning || '';
+
+            chineseEl.innerHTML = `
+                <div class="tf-card">
+                    <div class="tf-badge">词转特训</div>
+                    <div class="tf-source">${this.escapeHtml(question.sourceWord)}</div>
+                    <div class="tf-source-meta">${this.escapeHtml(posLabel)}${posLabel && srcMeaning ? ' · ' : ''}${this.escapeHtml(srcMeaning)}</div>
+                    <div class="tf-divider"><span>${this.escapeHtml(targetType)}</span></div>
+                    ${targetMeaning ? `<div class="tf-hint">${this.escapeHtml(targetMeaning)}</div>` : ''}
+                </div>
+            `;
+        } else {
+            chineseEl.textContent = question.chinese;
+        }
+
         // 清空输入框
         this.clearInput();
+    }
+
+    escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
     }
     
     /**
@@ -163,18 +187,18 @@ export class UIManager {
         const resultArea = document.getElementById('result-area');
         const input = document.getElementById('answer-input');
         const submitBtn = document.getElementById('submit-btn');
-        
+
+        // 立即启用输入框，这样 focus 才不会失败
+        input.disabled = false;
+        submitBtn.disabled = false;
+
         // 先移除show类，触发退出动画
         resultArea.classList.remove('show');
-        
+
         // 等待动画完成后隐藏
         setTimeout(() => {
             resultArea.classList.add('hidden');
             resultArea.classList.remove('correct', 'incorrect');
-            
-            // 启用输入和提交按钮
-            input.disabled = false;
-            submitBtn.disabled = false;
         }, 300);
     }
 
@@ -232,7 +256,7 @@ export class UIManager {
         wrongAnswersList.innerHTML = '';
 
         if (stats.wrongAnswers.length === 0) {
-            wrongAnswersList.innerHTML = '<div class="no-wrong-answers">太棒了！没有错题 🎉</div>';
+            wrongAnswersList.innerHTML = '<div style="text-align:center; padding:20px; color:var(--success);">PERFECT SCORE! 🎉</div>';
             document.getElementById('retry-wrong-btn').style.display = 'none';
         } else {
             stats.wrongAnswers.forEach(wrong => {
@@ -240,8 +264,8 @@ export class UIManager {
                 item.className = 'wrong-answer-item';
                 item.innerHTML = `
                     <div class="wrong-chinese">${wrong.chinese}</div>
-                    <div class="wrong-correct">正确答案: ${wrong.correct}</div>
-                    <div class="wrong-user">你的答案: ${wrong.userAnswer}</div>
+                    <div class="wrong-correct">CORRECT: ${wrong.correct}</div>
+                    <div class="wrong-user">YOURS: ${wrong.userAnswer}</div>
                 `;
                 wrongAnswersList.appendChild(item);
             });
@@ -263,6 +287,8 @@ export class UIManager {
         notebookContent.innerHTML = '';
 
         if (allWrongAnswers.length === 0) {
+            // 根据是否有总错题数来决定显示不同的提示
+            if (stats.total === 0) {
             notebookContent.innerHTML = `
                 <div class="notebook-empty">
                     <div class="notebook-empty-icon">📚</div>
@@ -270,6 +296,15 @@ export class UIManager {
                     <p>还没有记录任何错题，继续学习吧！</p>
                 </div>
             `;
+            } else {
+                notebookContent.innerHTML = `
+                    <div class="notebook-empty">
+                        <div class="notebook-empty-icon">🎉</div>
+                        <h3>太棒了！</h3>
+                        <p>所有错题都已掌握，继续保持！</p>
+                    </div>
+                `;
+            }
         } else {
             // 按时间倒序排列
             const sortedWrongAnswers = allWrongAnswers.sort((a, b) => b.timestamp - a.timestamp);
@@ -277,6 +312,10 @@ export class UIManager {
             sortedWrongAnswers.forEach((wrong, index) => {
                 const item = document.createElement('div');
                 item.className = 'notebook-item';
+                // 为已掌握的错题添加CSS类，让它看起来淡一点
+                if (wrong.mastered) {
+                    item.classList.add('notebook-item-mastered');
+                }
 
                 const date = new Date(wrong.timestamp).toLocaleDateString('zh-CN');
                 const time = new Date(wrong.timestamp).toLocaleTimeString('zh-CN', {
@@ -301,11 +340,11 @@ export class UIManager {
                         </div>
                     </div>
                     <div class="notebook-item-actions">
-                        <button class="notebook-item-action" onclick="EnglishReview.app.markWrongAnswerAsMastered('${wrong.id}')" title="标记为已掌握">
-                            ✅
+                        <button class="notebook-item-action" onclick="EnglishReview.app.markWrongAnswerAsMastered('${wrong.id}')" title="Mark as Mastered">
+                            <i class="fas fa-check"></i>
                         </button>
-                        <button class="notebook-item-action" onclick="EnglishReview.app.removeWrongAnswer('${wrong.id}')" title="删除错题">
-                            🗑️
+                        <button class="notebook-item-action" onclick="EnglishReview.app.removeWrongAnswer('${wrong.id}')" title="Delete">
+                            <i class="fas fa-trash"></i>
                         </button>
                     </div>
                 `;
@@ -322,7 +361,7 @@ export class UIManager {
      */
     showSettings(settings) {
         document.getElementById('api-key').value = settings.apiKey || '';
-        document.getElementById('ai-model').value = settings.aiModel || 'Qwen/Qwen2.5-7B-Instruct';
+        document.getElementById('ai-model').value = settings.aiModel || 'Qwen/Qwen3-8B';
         document.getElementById('enable-ai-grading').checked = settings.enableAIGrading || false;
         document.getElementById('auto-next').checked = settings.autoNext !== false; // 默认true
         document.getElementById('show-hints').checked = settings.showHints || false;
@@ -356,7 +395,7 @@ export class UIManager {
         
         // 设置消息内容和类型
         messageEl.textContent = message;
-        messageEl.className = `message ${type}`;
+        messageEl.className = `toast-message ${type}`;
         
         // 显示消息
         messageEl.classList.remove('hidden');

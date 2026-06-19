@@ -8,7 +8,7 @@ export class SettingsManager {
         this.storageKey = 'english_review_settings_v2';
         this.defaultSettings = {
             apiKey: '',
-            aiModel: 'Qwen/Qwen2.5-7B-Instruct',
+            aiModel: 'Qwen/Qwen3-8B',
             enableAIGrading: false,
             autoNext: true,
             showHints: false,

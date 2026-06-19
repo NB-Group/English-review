@@ -1,0 +1,120 @@
+{
+  "unit": "U5-speaking",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "lock",
+      "sourcePos": "v",
+      "sourceMeaning": "锁上；锁住",
+      "transforms": [
+        {
+          "type": "past tense",
+          "form": "locked",
+          "meaning": "锁着的"
+        },
+        {
+          "type": "verb",
+          "form": "unlock",
+          "meaning": "开锁；解开"
+        },
+        {
+          "type": "past tense",
+          "form": "unlocked",
+          "meaning": "未锁的"
+        },
+        {
+          "type": "noun",
+          "form": "locker",
+          "meaning": "储物柜"
+        }
+      ]
+    },
+    {
+      "source": "necessary",
+      "sourcePos": "adj",
+      "sourceMeaning": "必要的；必需的",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "necessity",
+          "meaning": "必需品；必要性"
+        },
+        {
+          "type": "adverb",
+          "form": "necessarily",
+          "meaning": "必然地；必要地"
+        },
+        {
+          "type": "adjective",
+          "form": "unnecessary",
+          "meaning": "不必要的；多余的"
+        }
+      ]
+    },
+    {
+      "source": "blood",
+      "sourcePos": "n",
+      "sourceMeaning": "血",
+      "transforms": [
+        {
+          "type": "verb",
+          "form": "bleed",
+          "meaning": "流血"
+        }
+      ]
+    },
+    {
+      "source": "cancel",
+      "sourcePos": "v",
+      "sourceMeaning": "取消",
+      "transforms": [
+        {
+          "type": "past tense",
+          "form": "cancelled",
+          "meaning": "已取消的"
+        },
+        {
+          "type": "past tense",
+          "form": "canceled",
+          "meaning": "已取消的"
+        }
+      ]
+    },
+    {
+      "source": "battery",
+      "sourcePos": "n",
+      "sourceMeaning": "电池",
+      "transforms": [
+        {
+          "type": "plural",
+          "form": "batteries",
+          "meaning": "电池"
+        }
+      ]
+    },
+    {
+      "source": "lie",
+      "sourcePos": "v",
+      "sourceMeaning": "躺",
+      "transforms": [
+        {
+          "type": "past tense",
+          "form": "lied",
+          "meaning": "撒谎（过去式）"
+        }
+      ]
+    },
+    {
+      "source": "bleed",
+      "sourcePos": "v",
+      "sourceMeaning": "流血",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "blood",
+          "meaning": "血"
+        }
+      ]
+    }
+  ]
+}

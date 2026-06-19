@@ -1,185 +1,215 @@
 const unitData = {
-  "title": "八年级下册 Unit 3 Reading",
+  "title": "八年级下册 Unit 3 reading",
   "vocabulary": [
     {
-      "english": ["the power of curiosity"],
-      "chinese": "好奇心的力量"
+      "english": [
+        "money in the economy"
+      ],
+      "chinese": "经济中的金钱"
     },
     {
-      "english": ["seem never-ending"],
-      "chinese": "似乎永无止境"
+      "english": [
+        "Is there such a thing as a free lunch?"
+      ],
+      "chinese": "天下有免费的午餐吗？"
     },
     {
-      "english": ["be important for the growing mind"],
-      "chinese": "对成长的大脑很重要"
+      "english": [
+        "walk into your favourite shop"
+      ],
+      "chinese": "走进你最喜欢的商店"
     },
     {
-      "english": ["take in new information"],
-      "chinese": "吸收新的信息"
+      "english": [
+        "take whatever you want"
+      ],
+      "chinese": "拿走任何你想要的东西"
     },
     {
-      "english": ["rate one's curiosity about"],
-      "chinese": "评估某人对。。。的好奇度"
+      "english": [
+        "depend on trading goods and services for money"
+      ],
+      "chinese": "依靠商品和服务的交易换取金钱"
     },
     {
-      "english": ["do a research", "conduct a research"],
-      "chinese": "做一个调查研究"
+      "english": [
+        "trade A for B"
+      ],
+      "chinese": "用A交易B / trade sth. with sb. 与某人交易某物"
     },
     {
-      "english": ["Results showed that"],
-      "chinese": "结果显示"
+      "english": [
+        "use their time and talents"
+      ],
+      "chinese": "利用他们的时间和才能"
     },
     {
-      "english": ["as a result"],
-      "chinese": "作为结果"
+      "english": [
+        "for the exchange of money"
+      ],
+      "chinese": "为了交换钱"
     },
     {
-      "english": ["be more likely to do"],
-      "chinese": "更有可能做某事"
+      "english": [
+        "society can keep running smoothly"
+      ],
+      "chinese": "社会能保持平稳运行"
     },
     {
-      "english": ["lead to sth."],
-      "chinese": "导致"
+      "english": [
+        "get paid for their work"
+      ],
+      "chinese": "从工作中获得报酬"
     },
     {
-      "english": ["lead sb. to do sth."],
-      "chinese": "带领某人做某事"
+      "english": [
+        "grow crops"
+      ],
+      "chinese": "种庄稼"
     },
     {
-      "english": ["design their own magic tricks"],
-      "chinese": "设计他们自己的魔术把戏"
+      "english": [
+        "value their hard work"
+      ],
+      "chinese": "重视他们的辛勤工作"
     },
     {
-      "english": ["in a recent experiment"],
-      "chinese": "在最近的实验中"
+      "english": [
+        "come across free things"
+      ],
+      "chinese": "遇到免费的东西"
     },
     {
-      "english": ["It turned out to be", "It turned out"],
-      "chinese": "结果证明是。。。"
+      "english": [
+        "from time to time"
+      ],
+      "chinese": "时不时，偶尔"
     },
     {
-      "english": ["come up with an idea", "think of an idea"],
-      "chinese": "想到一个主意"
+      "english": [
+        "offer free samples of products"
+      ],
+      "chinese": "提供产品的免费样品"
     },
     {
-      "english": ["encourage voluntary learning"],
-      "chinese": "鼓励自发性学习"
+      "english": [
+        "free events and activities"
+      ],
+      "chinese": "免费的活动"
     },
     {
-      "english": ["discover career interests"],
-      "chinese": "发现职业兴趣"
+      "english": [
+        "reply with a well-known saying"
+      ],
+      "chinese": "以一句著名的谚语回答"
     },
     {
-      "english": ["be crazy about"],
-      "chinese": "对。。。疯狂"
+      "english": [
+        "As the saying goes,"
+      ],
+      "chinese": "俗话说"
     },
     {
-      "english": ["do simple repairs"],
-      "chinese": "做一些简单的维修"
+      "english": [
+        "hidden cost"
+      ],
+      "chinese": "隐藏成本"
     },
     {
-      "english": ["a leading heart doctor"],
-      "chinese": "一位杰出的心脏科医生"
+      "english": [
+        "even if =even though"
+      ],
+      "chinese": "即使"
     },
     {
-      "english": ["how the human body worked"],
-      "chinese": "人类身体如何运作"
+      "english": [
+        "in the form of money"
+      ],
+      "chinese": "以金钱的形式"
     },
     {
-      "english": ["go into it deeply"],
-      "chinese": "深入研究它"
+      "english": [
+        "It might be exciting to do sth."
+      ],
+      "chinese": "做。。。有可能很兴奋"
     },
     {
-      "english": ["keep a curious mind"],
-      "chinese": "保持好奇心"
+      "english": [
+        "imagine a world where everything is free"
+      ],
+      "chinese": "想象一个一切都免费的世界"
     },
     {
-      "english": ["therefore"],
-      "chinese": "所以"
+      "english": [
+        "find it more valuable to do sth."
+      ],
+      "chinese": "发现做。。。更有价值"
+    },
+    {
+      "english": [
+        "appreciate the hard work of others"
+      ],
+      "chinese": "珍惜他人的辛勤工作"
+    },
+    {
+      "english": [
+        "economy(n."
+      ],
+      "chinese": "经济)→economic（adj.经济的）→economist(n.经济学家）"
+    },
+    {
+      "english": [
+        "trade（v.",
+        "n."
+      ],
+      "chinese": "贸易；交易）→trader(n.商人）"
+    },
+    {
+      "english": [
+        "exchange（v.",
+        "n."
+      ],
+      "chinese": "交换；兑换）an exchange student"
+    },
+    {
+      "english": [
+        "society（n."
+      ],
+      "chinese": "社会）→ social（a.社会的，社交的）"
+    },
+    {
+      "english": [
+        "produce（v."
+      ],
+      "chinese": "生产；产生）→product（n.产品）→production（n.生产）→producer（n.生产者）"
+    },
+    {
+      "english": [
+        "cost（v.",
+        "n."
+      ],
+      "chinese": "花费；成本）"
+    },
+    {
+      "english": [
+        "value (v.",
+        "n."
+      ],
+      "chinese": "重视；价值) → valuable (adj. 有价值的)"
+    },
+    {
+      "english": [
+        "complete (v."
+      ],
+      "chinese": "完成/a.完全的 ) →completely（ad. 完全地）"
     }
   ],
-  "wordForms": [
-    {
-      "word": "annoy",
-      "forms": [
-        { "type": "verb", "chinese": "使烦恼", "form": "annoy" },
-        { "type": "adjective", "chinese": "恼人的", "form": "annoying" },
-        { "type": "adjective", "chinese": "感到烦人的", "form": "annoyed" }
-      ]
-    },
-    {
-      "word": "research",
-      "forms": [
-        { "type": "noun", "chinese": "研究者", "form": "researcher" },
-        { "type": "noun", "chinese": "研究", "form": "research" },
-        { "type": "verb", "chinese": "研究", "form": "research" }
-      ]
-    },
-    {
-      "word": "like",
-      "forms": [
-        { "type": "verb", "chinese": "喜欢", "form": "like" },
-        { "type": "preposition", "chinese": "像", "form": "like" },
-        { "type": "verb", "chinese": "不喜欢", "form": "dislike" },
-        { "type": "preposition", "chinese": "不像", "form": "unlike" },
-        { "type": "adjective", "chinese": "可能的", "form": "likely" }
-      ]
-    },
-    {
-      "word": "lead",
-      "forms": [
-        { "type": "verb", "chinese": "带领", "form": "lead" },
-        { "type": "noun", "chinese": "领导", "form": "leader" },
-        { "type": "adjective", "chinese": "主要的，重要的", "form": "leading" }
-      ]
-    },
-    {
-      "word": "magic",
-      "forms": [
-        { "type": "adjective", "chinese": "魔术", "form": "magic" },
-        { "type": "noun", "chinese": "魔术师", "form": "magician" }
-      ]
-    },
-    {
-      "word": "voluntary",
-      "forms": [
-        { "type": "adjective", "chinese": "主动的，志愿的", "form": "voluntary" },
-        { "type": "noun", "chinese": "自愿者", "form": "volunteer" },
-        { "type": "verb", "chinese": "自愿做", "form": "volunteer" },
-        { "type": "adverb", "chinese": "自愿地", "form": "voluntarily" }
-      ]
-    },
-    {
-      "word": "deep",
-      "forms": [
-        { "type": "adjective", "chinese": "深的", "form": "deep" },
-        { "type": "adverb", "chinese": "深深地", "form": "deeply" }
-      ]
-    },
-    {
-      "word": "impress",
-      "forms": [
-        { "type": "verb", "chinese": "使留下印象深刻", "form": "impress" },
-        { "type": "adjective", "chinese": "感到印象深刻", "form": "impressed" },
-        { "type": "adjective", "chinese": "印象深刻的", "form": "impressive" },
-        { "type": "noun", "chinese": "印象", "form": "impression" }
-      ]
-    },
-    {
-      "word": "recent",
-      "forms": [
-        { "type": "adjective", "chinese": "最近的", "form": "recent" },
-        { "type": "adverb", "chinese": "最近", "form": "recently" }
-      ]
-    }
-  ]
+  "wordForms": []
 };
 
-// 为了兼容动态导入和直接导入
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { unitData };
 }
 if (typeof window !== 'undefined') {
   window.unitData = unitData;
 }
-

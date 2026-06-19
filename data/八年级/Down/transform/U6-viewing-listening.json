@@ -1,0 +1,110 @@
+{
+  "unit": "U6-viewing-listening",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "friend",
+      "sourcePos": "n.",
+      "sourceMeaning": "朋友",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "friendship",
+          "meaning": "友谊"
+        }
+      ]
+    },
+    {
+      "source": "magic",
+      "sourcePos": "n.",
+      "sourceMeaning": "魔法",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "magical",
+          "meaning": "魔法的"
+        },
+        {
+          "type": "noun",
+          "form": "magician",
+          "meaning": "魔术师"
+        }
+      ]
+    },
+    {
+      "source": "cheer",
+      "sourcePos": "v.",
+      "sourceMeaning": "欢呼",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "cheerful",
+          "meaning": "欢快的"
+        },
+        {
+          "type": "adverb",
+          "form": "cheerfully",
+          "meaning": "欢快地"
+        }
+      ]
+    },
+    {
+      "source": "care",
+      "sourcePos": "n.",
+      "sourceMeaning": "关心",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "caring",
+          "meaning": "体贴的"
+        }
+      ]
+    },
+    {
+      "source": "die",
+      "sourcePos": "v.",
+      "sourceMeaning": "死",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "dead",
+          "meaning": "死去的"
+        },
+        {
+          "type": "noun",
+          "form": "death",
+          "meaning": "死"
+        }
+      ]
+    },
+    {
+      "source": "doubt",
+      "sourcePos": "v.",
+      "sourceMeaning": "怀疑",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "doubtful",
+          "meaning": "怀疑的"
+        },
+        {
+          "type": "adverb",
+          "form": "doubtfully",
+          "meaning": "怀疑地"
+        }
+      ]
+    },
+    {
+      "source": "firm",
+      "sourcePos": "adj.",
+      "sourceMeaning": "坚定的",
+      "transforms": [
+        {
+          "type": "adverb",
+          "form": "firmly",
+          "meaning": "坚定地"
+        }
+      ]
+    }
+  ]
+}

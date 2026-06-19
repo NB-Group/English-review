@@ -1,0 +1,113 @@
+{
+  "unit": "U4-reading",
+  "model": "Qwen/Qwen3-8B",
+  "transformGroups": [
+    {
+      "source": "narrow",
+      "sourcePos": "adj",
+      "sourceMeaning": "狭窄的",
+      "transforms": [
+        {
+          "type": "comparative",
+          "form": "narrower",
+          "meaning": "更狭窄的"
+        },
+        {
+          "type": "superlative",
+          "form": "narrowest",
+          "meaning": "最狭窄的"
+        }
+      ]
+    },
+    {
+      "source": "advertise",
+      "sourcePos": "verb",
+      "sourceMeaning": "广告",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "advertising",
+          "meaning": "广告"
+        },
+        {
+          "type": "noun",
+          "form": "advertisement",
+          "meaning": "广告"
+        }
+      ]
+    },
+    {
+      "source": "image",
+      "sourcePos": "noun",
+      "sourceMeaning": "形象，印象",
+      "transforms": [
+        {
+          "type": "verb",
+          "form": "imagine",
+          "meaning": "想象"
+        },
+        {
+          "type": "noun",
+          "form": "imagination",
+          "meaning": "想象力"
+        }
+      ]
+    },
+    {
+      "source": "influence",
+      "sourcePos": "verb",
+      "sourceMeaning": "影响",
+      "transforms": [
+        {
+          "type": "noun",
+          "form": "influencer",
+          "meaning": "有影响力的人"
+        },
+        {
+          "type": "adjective",
+          "form": "influencing",
+          "meaning": "影响的"
+        }
+      ]
+    },
+    {
+      "source": "attract",
+      "sourcePos": "verb",
+      "sourceMeaning": "吸引",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "attractive",
+          "meaning": "吸引的"
+        },
+        {
+          "type": "noun",
+          "form": "attraction",
+          "meaning": "吸引人的东西"
+        }
+      ]
+    },
+    {
+      "source": "confident",
+      "sourcePos": "adjective",
+      "sourceMeaning": "自信的",
+      "transforms": [
+        {
+          "type": "adjective",
+          "form": "unconfident",
+          "meaning": "不自信的"
+        },
+        {
+          "type": "noun",
+          "form": "confidence",
+          "meaning": "信心"
+        },
+        {
+          "type": "noun",
+          "form": "self-confidence",
+          "meaning": "自信心"
+        }
+      ]
+    }
+  ]
+}
