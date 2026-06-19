@@ -78,4 +78,4 @@ The `transform/` JSON files have a different schema: `{ "transformQuestions": [{
 
 ## CSS Architecture
 
-`style.css` is a single large file using CSS custom properties for theming (SAPG-style dark glassmorphism). Variables defined in `:root`: `--glass-bg`, `--glass-border`, `--accent-blue: #00f2ff`, `--accent-purple: #bd00ff`, etc. The design uses a dark background with glow orbs, grid overlay, and glass-morphism cards. Fonts: Inter (body), Oswald (display).
+`style.css` is a single large file using CSS custom properties for theming (dark glassmorphism). Variables defined in `:root`: `--glass-bg`, `--glass-border`, `--accent-blue: #00f2ff`, `--accent-purple: #bd00ff`, etc. The design uses a dark background with glow orbs, grid overlay, and glass-morphism cards. Fonts: Inter (body), Oswald (display).
