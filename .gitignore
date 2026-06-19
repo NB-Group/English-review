@@ -10,6 +10,9 @@ _test_bash_output.txt
 tools/word_txt/
 tools/__pycache__/
 
+# Secrets
+.env
+
 # OS files
 .DS_Store
 Thumbs.db

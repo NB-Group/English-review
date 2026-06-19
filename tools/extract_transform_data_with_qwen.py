@@ -6,8 +6,11 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from docx import Document
+from dotenv import load_dotenv
 from openai import OpenAI
 
+# 加载项目根目录 .env
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 MODEL_NAME = "Qwen/Qwen3-8B"
 API_KEY = os.environ.get("SILICONFLOW_API_KEY", "")
