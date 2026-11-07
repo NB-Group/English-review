@@ -1,0 +1,9618 @@
+[
+  {
+    "no": 1,
+    "headword": "a few",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "有些；几个（用于可数名词之前）"
+      }
+    ],
+    "grade": "六上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "There are a few apples on the table.",
+        "zh": "桌子上有几个苹果。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：few, a few, little, a little 的词义和用法区别，可参考考纲词汇 919. little。"
+    ],
+    "page": 350
+  },
+  {
+    "no": 2,
+    "headword": "ankle",
+    "ipa": "/ˈæŋkl/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "踝；踝关节"
+      }
+    ],
+    "grade": "六上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "He hurt his ankle while playing football.",
+        "zh": "他踢足球时伤到了脚踝。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 350
+  },
+  {
+    "no": 3,
+    "headword": "balanced",
+    "ipa": "/ˈbælənst/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "保持（或显示）平衡的"
+      }
+    ],
+    "grade": "六上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "A balanced diet is good for our health.",
+        "zh": "均衡的饮食对我们的健康有益。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 350
+  },
+  {
+    "no": 4,
+    "headword": "blog",
+    "ipa": "/blɒɡ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "博客；网志"
+      }
+    ],
+    "grade": "六上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "He writes a blog about his travel experiences.",
+        "zh": "他写了一条关于旅行经历的博客。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "＝weblog /ˈweblɒɡ/"
+    ],
+    "page": 350
+  },
+  {
+    "no": 5,
+    "headword": "calf",
+    "ipa": "/kɑːf/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "小牛；牛犊"
+      }
+    ],
+    "grade": "六上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The calf is following its mother.",
+        "zh": "小牛犊跟着它的妈妈。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 350
+  },
+  {
+    "no": 6,
+    "headword": "calligraphy",
+    "ipa": "/kəˈlɪɡrəfi/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "书法"
+      }
+    ],
+    "grade": "六上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "She is good at calligraphy.",
+        "zh": "她擅长书法。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 350
+  },
+  {
+    "no": 7,
+    "headword": "celebration",
+    "ipa": "/ˌselɪˈbreɪʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "庆典；庆祝活动"
+      }
+    ],
+    "grade": "六上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "We had a big celebration for his birthday.",
+        "zh": "我们为他的生日举行了盛大的庆祝活动。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 350
+  },
+  {
+    "no": 8,
+    "headword": "comment",
+    "ipa": "/ˈkɒment/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "议论；评论；解释"
+      },
+      {
+        "pos": "v.",
+        "zh": "表达意见"
+      }
+    ],
+    "grade": "六上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "His comments on the movie were very interesting.",
+        "zh": "他对这部电影的评论非常有意思。",
+        "rewrite": null
+      },
+      {
+        "en": "He refused to comment on this matter.",
+        "zh": "他拒绝就此事发表意见。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：comment 作名词时，常见搭配有 make a comment“发表评论”，comment on/about“对……的评论”；作动词时，常与 on 或 upon 搭配，comment on/upon sth.“对某事发表意见”。"
+    ],
+    "page": 350
+  },
+  {
+    "no": 9,
+    "headword": "court",
+    "ipa": "/kɔːt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "球场"
+      }
+    ],
+    "grade": "六上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "They are playing tennis on the court.",
+        "zh": "他们在球场上打网球。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 351
+  },
+  {
+    "no": 10,
+    "headword": "excuse me",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "（因打扰别人或失礼表示歉意）对不起；劳驾"
+      }
+    ],
+    "grade": "六上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "Excuse me, can you tell me the way to the station?",
+        "zh": "对不起，你能告诉我去车站的路吗？",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 351
+  },
+  {
+    "no": 11,
+    "headword": "footprint",
+    "ipa": "/ˈfʊtprɪnt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "脚印；足迹"
+      }
+    ],
+    "grade": "六上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "We found some strange footprints in the snow.",
+        "zh": "我们在雪地里发现了一些奇怪的脚印。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 351
+  },
+  {
+    "no": 12,
+    "headword": "gear",
+    "ipa": "/ɡɪə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "（某种活动的）设备，用具，衣服"
+      }
+    ],
+    "grade": "六上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "He bought some new fishing gear.",
+        "zh": "他买了一些新的钓鱼用具。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 351
+  },
+  {
+    "no": 13,
+    "headword": "goalkeeper",
+    "ipa": "/ˈɡəʊlkɪːpə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "守门员"
+      }
+    ],
+    "grade": "六上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "The goalkeeper made a great save.",
+        "zh": "守门员做出了一次精彩的扑救。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 351
+  },
+  {
+    "no": 14,
+    "headword": "goat",
+    "ipa": "/ɡəʊt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "山羊"
+      }
+    ],
+    "grade": "六上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The goat is eating grass.",
+        "zh": "山羊在吃草。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 351
+  },
+  {
+    "no": 15,
+    "headword": "grain",
+    "ipa": "/ɡreɪn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "谷物；谷粒"
+      }
+    ],
+    "grade": "六上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "Farmers grow different kinds of grains.",
+        "zh": "农民种不同种类的谷物。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 351
+  },
+  {
+    "no": 16,
+    "headword": "herd",
+    "ipa": "/hɜːd/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "牧放（牲畜、兽群）"
+      }
+    ],
+    "grade": "六上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The shepherd is herding the sheep.",
+        "zh": "牧羊人在放羊。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 351
+  },
+  {
+    "no": 17,
+    "headword": "high-speed",
+    "ipa": "/ˌhaɪˈspiːd/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "高速的"
+      }
+    ],
+    "grade": "六上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The high-speed train is very fast.",
+        "zh": "高速列车非常快。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 351
+  },
+  {
+    "no": 18,
+    "headword": "How come?",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "怎么回事？怎么发生的？"
+      }
+    ],
+    "grade": "六上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "You are late again. How come?",
+        "zh": "你又迟到了。怎么回事？",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 351
+  },
+  {
+    "no": 19,
+    "headword": "ICT",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "信息通信技术（课程）"
+      }
+    ],
+    "grade": "六上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "We have an ICT class today.",
+        "zh": "我们今天有信息通信技术课。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "＝information and communications technology"
+    ],
+    "page": 351
+  },
+  {
+    "no": 20,
+    "headword": "I'm afraid",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "我怕；恐怕；很遗憾；对不起"
+      }
+    ],
+    "grade": "六上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "I'm afraid we're late for the movie.",
+        "zh": "恐怕我们看电影要迟到了。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 351
+  },
+  {
+    "no": 21,
+    "headword": "ingredient",
+    "ipa": "/ˈɪŋɡrɪdiənt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "（尤指烹饪）材料；成分"
+      }
+    ],
+    "grade": "六上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "Flour is a main ingredient in making bread.",
+        "zh": "面粉是制作面包的主要原料。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 351
+  },
+  {
+    "no": 22,
+    "headword": "jump for joy",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "欢呼雀跃"
+      }
+    ],
+    "grade": "六上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "When she heard the good news, she jumped for joy.",
+        "zh": "听到这个好消息时，她欢呼雀跃。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 351
+  },
+  {
+    "no": 23,
+    "headword": "living room",
+    "ipa": "/ˈlɪvɪŋ ruːm/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "客厅；起居室"
+      }
+    ],
+    "grade": "六上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "We usually watch TV in the living room.",
+        "zh": "我们通常在客厅看电视。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "＝sitting room /ˈsɪtɪŋ ruːm/"
+    ],
+    "page": 351
+  },
+  {
+    "no": 24,
+    "headword": "only child",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "独生子（或女）"
+      }
+    ],
+    "grade": "六上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "As an only child, he gets a lot of love from his parents.",
+        "zh": "作为独生子，他得到父母很多的爱。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 351
+  },
+  {
+    "no": 25,
+    "headword": "peck",
+    "ipa": "/pek/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "啄"
+      }
+    ],
+    "grade": "六上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The chicken pecked at the seeds on the ground.",
+        "zh": "那只鸡啄了地上的种子。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 351
+  },
+  {
+    "no": 26,
+    "headword": "recipe",
+    "ipa": "/ˈresəpi/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "食谱；烹饪法"
+      }
+    ],
+    "grade": "六上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "She found a new recipe for making cakes.",
+        "zh": "她发现了一个做蛋糕的新方子。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 352
+  },
+  {
+    "no": 27,
+    "headword": "relation",
+    "ipa": "/rɪˈleɪʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "关系；联系"
+      }
+    ],
+    "grade": "六上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "The relation between the two countries is very important.",
+        "zh": "两国之间的关系非常重要。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /rɪ'ləʃn/，已按标准读音改为 /rɪˈleɪʃn/"
+    ],
+    "page": 352
+  },
+  {
+    "no": 28,
+    "headword": "rock climbing",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "攀岩"
+      }
+    ],
+    "grade": "六上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "He likes rock climbing very much.",
+        "zh": "他非常喜欢攀岩。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 352
+  },
+  {
+    "no": 29,
+    "headword": "side dish",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "（随同主菜一起上的）配菜"
+      }
+    ],
+    "grade": "六上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "The side dish tastes very good.",
+        "zh": "这道配菜味道很好。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 352
+  },
+  {
+    "no": 30,
+    "headword": "soy sauce",
+    "ipa": "/sɔɪ ˈsɔːs/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "酱油"
+      }
+    ],
+    "grade": "六上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "Add some soy sauce to the dish.",
+        "zh": "给这道菜加点酱油。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "＝soya sauce /sɔɪə ˈsɔːs/"
+    ],
+    "page": 352
+  },
+  {
+    "no": 31,
+    "headword": "sports ground",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "运动场；操场"
+      }
+    ],
+    "grade": "六上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "The students are playing on the sports ground.",
+        "zh": "学生们在操场上玩耍。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 352
+  },
+  {
+    "no": 32,
+    "headword": "super-excited",
+    "ipa": "/ˌsuːpə(r) ɪkˈsaɪtɪd/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "超级激动的；格外兴奋的"
+      }
+    ],
+    "grade": "六上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "She was super-excited when she got the prize.",
+        "zh": "她获奖时超级激动。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /su:spə(r) ik'saɪtɪd/ 损坏，已按构词改为 /ˌsuːpə(r) ɪkˈsaɪtɪd/"
+    ],
+    "page": 352
+  },
+  {
+    "no": 33,
+    "headword": "tasty",
+    "ipa": "/ˈteɪsti/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "美味的；可口的"
+      }
+    ],
+    "grade": "六上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "The cake is very tasty.",
+        "zh": "这个蛋糕非常美味。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 352
+  },
+  {
+    "no": 34,
+    "headword": "track",
+    "ipa": "/træk/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "（赛跑、赛车等的）跑道"
+      }
+    ],
+    "grade": "六上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "The athletes are running on the track.",
+        "zh": "运动员们在跑道上跑步。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：keep track of 追踪"
+    ],
+    "page": 352
+  },
+  {
+    "no": 35,
+    "headword": "warm up",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "（体育活动等前的）适应性活动，准备活动；热身练习"
+      }
+    ],
+    "grade": "六上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "You should warm up before doing exercise.",
+        "zh": "你在做运动前应该热身。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 352
+  },
+  {
+    "no": 36,
+    "headword": "warning",
+    "ipa": "/ˈwɔːnɪŋ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "警告；警示"
+      }
+    ],
+    "grade": "六上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The sign is a warning of danger.",
+        "zh": "这个标志是危险警示。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 352
+  },
+  {
+    "no": 37,
+    "headword": "watch out",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "小心；留神；注意"
+      }
+    ],
+    "grade": "六上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "Watch out! There is a car coming.",
+        "zh": "小心！有辆车来了。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 352
+  },
+  {
+    "no": 38,
+    "headword": "Well done!",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "做得好！干得好！"
+      }
+    ],
+    "grade": "六上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "You finished the work so quickly. Well done!",
+        "zh": "你这么快就完成了工作。干得好！",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 352
+  },
+  {
+    "no": 39,
+    "headword": "What's the matter?",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "怎么了？"
+      }
+    ],
+    "grade": "六上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "You look sad. What's the matter?",
+        "zh": "你看起来很伤心。怎么了？",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 352
+  },
+  {
+    "no": 40,
+    "headword": "announcement",
+    "ipa": "/əˈnaʊnsmənt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "公告；通告"
+      }
+    ],
+    "grade": "六下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "The school made an announcement about the upcoming sports meeting.",
+        "zh": "学校发布了一则关于即将召开的运动会的公告。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：announce v. 宣布；宣称",
+      "常用词组：make an announcement 发布公告"
+    ],
+    "page": 352
+  },
+  {
+    "no": 41,
+    "headword": "beg your pardon",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "请原谅；请再说一遍"
+      }
+    ],
+    "grade": "六下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "Beg your pardon, could you repeat what you just said?",
+        "zh": "抱歉，你能重复一下刚才说的话吗？",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 353
+  },
+  {
+    "no": 42,
+    "headword": "break out",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "突然开始；爆发"
+      }
+    ],
+    "grade": "六下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "A fire broke out in the old building last night.",
+        "zh": "昨晚那栋旧楼突发火灾。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：学生需要知道 break out, happen 和 take place 在表示“发生”时的用法区别：break out 常用来描述战争、火灾、疾病等不好的事情突然发生，且没有被动语态。例如：The war broke out unexpectedly. 战争毫无征兆地发生了。happen 通常指偶然发生。例如：Sometimes, the best moments happen when you least anticipate them. 有时，最美好的瞬间会不期而遇。take place 指有计划、有安排地发生。例如：The wedding ceremony will take place at the beach at sunset. 婚礼将在日落时分在海滩上举行。"
+    ],
+    "page": 353
+  },
+  {
+    "no": 43,
+    "headword": "broken",
+    "ipa": "/ˈbrəʊkən/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "破损的；伤残的"
+      }
+    ],
+    "grade": "六下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "Be careful of the broken glass on the ground.",
+        "zh": "小心地上的碎玻璃。",
+        "rewrite": null
+      },
+      {
+        "en": "After the accident, he had to use a wheelchair due to a broken leg.",
+        "zh": "事故发生后他断了一条腿，不得不坐轮椅。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 353
+  },
+  {
+    "no": 44,
+    "headword": "bulb",
+    "ipa": "/bʌlb/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "电灯泡"
+      }
+    ],
+    "grade": "六下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The bulb in the ceiling light has burned out. Could you please change it for me?",
+        "zh": "吸顶灯里的灯泡坏了，你能帮我换一下吗？",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 353
+  },
+  {
+    "no": 45,
+    "headword": "Celsius",
+    "ipa": "/ˈselsiəs/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "摄氏的"
+      }
+    ],
+    "grade": "六下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "The temperature today is 25 degrees Celsius.",
+        "zh": "今天的温度是 25 摄氏度。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 353
+  },
+  {
+    "no": 46,
+    "headword": "changer",
+    "ipa": "/ˈtʃeɪndʒə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "改变者；改进者"
+      }
+    ],
+    "grade": "六下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "He is a changer in our school, bringing new ideas and methods.",
+        "zh": "他是我们学校的变革者，带来了新的点子和方法。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 353
+  },
+  {
+    "no": 47,
+    "headword": "check out",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "察看，观察（有趣或有吸引力的人或事物）"
+      }
+    ],
+    "grade": "六下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "Check out the new art exhibition at the museum. It's really amazing.",
+        "zh": "去看看博物馆的新艺术展览，真的很棒。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 353
+  },
+  {
+    "no": 48,
+    "headword": "cloth",
+    "ipa": "/klɒθ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "织物；布料"
+      }
+    ],
+    "grade": "六下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "This cloth feels very soft and comfortable.",
+        "zh": "这种布料摸起来非常柔软舒适。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：cloth, clothes 和 clothing 的词义和用法区别，可参考考纲词汇 310. clothes。"
+    ],
+    "page": 353
+  },
+  {
+    "no": 49,
+    "headword": "coal",
+    "ipa": "/kəʊl/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "煤"
+      }
+    ],
+    "grade": "六下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "Coal is still an important energy source in some regions.",
+        "zh": "在某些地区，煤仍然是重要的能源来源。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 354
+  },
+  {
+    "no": 50,
+    "headword": "colourful",
+    "ipa": "/ˈkʌləfl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "颜色鲜艳的；五彩缤纷的"
+      }
+    ],
+    "grade": "六下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The children drew a very colourful picture of a rainbow.",
+        "zh": "孩子们画了一幅色彩非常鲜艳的彩虹画。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 354
+  },
+  {
+    "no": 51,
+    "headword": "container",
+    "ipa": "/kənˈteɪnə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "容器"
+      }
+    ],
+    "grade": "六下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "Put the water into a plastic container.",
+        "zh": "把水倒入一个塑料容器里。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：contain v. 包含；容纳"
+    ],
+    "page": 354
+  },
+  {
+    "no": 52,
+    "headword": "curly",
+    "ipa": "/ˈkɜːli/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "卷曲状的"
+      }
+    ],
+    "grade": "六下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "She has long curly hair that makes her look very cute.",
+        "zh": "她有一头长长的卷发，使她看起来非常可爱。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "反义：straight"
+    ],
+    "page": 354
+  },
+  {
+    "no": 53,
+    "headword": "easy-going",
+    "ipa": "/ˌiːzi ˈɡəʊɪŋ/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "随和的"
+      }
+    ],
+    "grade": "六下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "My new neighbour is very easy-going and we get along well.",
+        "zh": "我的新邻居非常随和，我们相处得很好。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 354
+  },
+  {
+    "no": 54,
+    "headword": "environmental",
+    "ipa": "/ɪnˌvɪərənˈmentl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "环境的"
+      }
+    ],
+    "grade": "六下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "We should take some environmental protection measures to save our planet.",
+        "zh": "我们应该采取一些环境保护措施来拯救我们的星球。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：environmental protection 环境保护；environmental problem 环境问题"
+    ],
+    "_flags": [
+      "ipa：OCR 原文 /m,veirən'mentl/ 损坏，已按标准读音改为 /ɪnˌvɪərənˈmentl/"
+    ],
+    "page": 354
+  },
+  {
+    "no": 55,
+    "headword": "escalator",
+    "ipa": "/ˈeskəleɪtə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "自动扶梯"
+      }
+    ],
+    "grade": "六下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "Take the escalator to the second floor, and you can find the clothing store.",
+        "zh": "乘自动扶梯到二楼，你就能找到服装店。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 354
+  },
+  {
+    "no": 56,
+    "headword": "excite",
+    "ipa": "/ɪkˈsaɪt/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "使激动；使兴奋"
+      }
+    ],
+    "grade": "六下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The news of the school trip excited all the students.",
+        "zh": "学校旅行的消息让所有学生都很兴奋。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 354
+  },
+  {
+    "no": 57,
+    "headword": "extreme",
+    "ipa": "/ɪkˈstriːm/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "极度的；极大的"
+      }
+    ],
+    "grade": "六下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "We are facing extreme weather conditions, such as heavy snow and strong winds.",
+        "zh": "我们正面临极端的天气状况，比如大雪和强风。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：extremely adv. 极其；非常",
+      "常用词组：extreme heat 酷热；extreme cold 严寒"
+    ],
+    "page": 354
+  },
+  {
+    "no": 58,
+    "headword": "foggy",
+    "ipa": "/ˈfɒɡi/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "有雾的"
+      }
+    ],
+    "grade": "六下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "It was a foggy morning, and the visibility was very low.",
+        "zh": "那是一个雾蒙蒙的早晨，能见度很低。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 355
+  },
+  {
+    "no": 59,
+    "headword": "gap",
+    "ipa": "/ɡæp/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "缺口；间隙"
+      }
+    ],
+    "grade": "六下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "There is a small gap between the two boards.",
+        "zh": "两块木板之间有个小缝隙。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：generation gap 代沟；the gap between ... and ... ……和……之间的差距/间隙"
+    ],
+    "page": 355
+  },
+  {
+    "no": 60,
+    "headword": "harvest",
+    "ipa": "/ˈhɑːvɪst/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "收获；收获季节"
+      }
+    ],
+    "grade": "六下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "The farmers are very happy with the good harvest this year.",
+        "zh": "农民们因今年的好收成特别高兴。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：harvest time 收获时节；busy with the harvest 忙于收获"
+    ],
+    "page": 355
+  },
+  {
+    "no": 61,
+    "headword": "heatwave",
+    "ipa": "/ˈhiːtweɪv/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "酷热期；热浪"
+      }
+    ],
+    "grade": "六下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "The city was hit by a severe heatwave last summer.",
+        "zh": "去年夏天，这座城市遭受了严重的热浪袭击。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 355
+  },
+  {
+    "no": 62,
+    "headword": "herb",
+    "ipa": "/hɜːb/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "药草；香草"
+      }
+    ],
+    "grade": "六下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "Many herbs are used in cooking to add flavour.",
+        "zh": "许多香草被用于烹饪以增添风味。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 355
+  },
+  {
+    "no": 63,
+    "headword": "hurrah",
+    "ipa": "/həˈrɑː/",
+    "senses": [
+      {
+        "pos": "excl.",
+        "zh": "万岁；好哇"
+      }
+    ],
+    "grade": "六下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "Hurrah! We won the first prize in the competition!",
+        "zh": "万岁！我们在比赛中获得了一等奖！",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：hurrah 是感叹词，用于表达欢呼、喜悦、庆祝等强烈的积极情绪。类似的表达还有 hurray, yay 等，通常用于口语和非正式写作中，书写时常用感叹号加强语气。"
+    ],
+    "_flags": [
+      "ipa：OCR 原文 /'hɜ:rə/ 存疑，已按标准读音改为 /həˈrɑː/"
+    ],
+    "page": 355
+  },
+  {
+    "no": 64,
+    "headword": "indoors",
+    "ipa": "/ˌɪnˈdɔːz/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "在室内"
+      }
+    ],
+    "grade": "六下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "It's too cold outside, so we stay indoors and watch TV.",
+        "zh": "外面太冷了，所以我们待在室内看电视。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "反义：outdoors"
+    ],
+    "page": 355
+  },
+  {
+    "no": 65,
+    "headword": "inexpensive",
+    "ipa": "/ˌɪnkənˈspensɪv/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "廉价的；不昂贵的"
+      }
+    ],
+    "grade": "六下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "You can buy some inexpensive souvenirs at this local market.",
+        "zh": "你可以在这个当地市场买到一些便宜的纪念品。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /,ɪn'kspensiv/ 缺音节，已按标准读音改为 /ˌɪnkənˈspensɪv/"
+    ],
+    "page": 355
+  },
+  {
+    "no": 66,
+    "headword": "lean",
+    "ipa": "/liːn/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "倚靠；倾斜"
+      }
+    ],
+    "grade": "六下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "She leaned on/against her friend's shoulder when she felt sad.",
+        "zh": "她难过的时候靠在朋友的肩膀上。",
+        "rewrite": null
+      },
+      {
+        "en": "The old house leant to one side.",
+        "zh": "这座老房子向一侧倾斜。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "变形：leant /lent/, leant 或 leaned /liːnd/, leaned"
+    ],
+    "page": 355
+  },
+  {
+    "no": 67,
+    "headword": "low-energy",
+    "ipa": "/ˈləʊˌenədʒi/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "低能耗的"
+      }
+    ],
+    "grade": "六下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "We should use more low-energy appliances to save resources.",
+        "zh": "我们应该使用更多低能耗的电器来节约资源。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 356
+  },
+  {
+    "no": 68,
+    "headword": "lunar calendar",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "农历"
+      }
+    ],
+    "grade": "六下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "According to the lunar calendar, the Spring Festival is the most important traditional festival in China.",
+        "zh": "根据农历，春节是中国最重要的传统节日。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 356
+  },
+  {
+    "no": 69,
+    "headword": "mankind",
+    "ipa": "/mænˈkaɪnd/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "人类"
+      }
+    ],
+    "grade": "六下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "Mankind has made remarkable progress in science and technology.",
+        "zh": "人类在科学技术方面取得了显著的进步。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /ˈmænˌkænd/ 有误，已按标准读音改为 /mænˈkaɪnd/"
+    ],
+    "page": 356
+  },
+  {
+    "no": 70,
+    "headword": "midnight",
+    "ipa": "/ˈmɪdnɪt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "午夜"
+      }
+    ],
+    "grade": "六下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "I usually go to bed before midnight to keep a good schedule.",
+        "zh": "我通常在午夜前上床睡觉，以保持良好作息。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：at midnight 在午夜"
+    ],
+    "page": 356
+  },
+  {
+    "no": 71,
+    "headword": "million",
+    "ipa": "/ˈmɪljən/",
+    "senses": [
+      {
+        "pos": "num.",
+        "zh": "百万"
+      }
+    ],
+    "grade": "六下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The company made a profit of three million dollars last year.",
+        "zh": "这家公司去年盈利300万美元。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：millions of 数以百万计的；很多",
+      "名师点拨：million 前有具体数字时，无论数字是几，million 都用单数形式；表示数量极多但不确切的情况时，用 millions of，后接可数名词复数，类似的表达还有 thousands of“数以千计的”、hundreds of“数以百计的”。例如：The population of the city is over five million people. 那座城市的人口超过500万。There are millions of stars in the sky. 天空中有数以百万计的星星。"
+    ],
+    "page": 356
+  },
+  {
+    "no": 72,
+    "headword": "millions of",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "数以百万计的；很多"
+      }
+    ],
+    "grade": "六下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "Millions of people travel abroad every year.",
+        "zh": "每年有数百万人出国旅行。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 356
+  },
+  {
+    "no": 73,
+    "headword": "mostly",
+    "ipa": "/ˈmɒstli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "主要地；一般地；通常"
+      }
+    ],
+    "grade": "六下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "The students in this class are mostly from the local area.",
+        "zh": "这个班的学生大多来自当地。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 356
+  },
+  {
+    "no": 74,
+    "headword": "musical",
+    "ipa": "/ˈmjuːzɪkl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "音乐的"
+      },
+      {
+        "pos": "n.",
+        "zh": "音乐剧"
+      }
+    ],
+    "grade": "六下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "She has a great musical talent and can play several instruments.",
+        "zh": "她有很棒的音乐天赋，会演奏好几种乐器。",
+        "rewrite": null
+      },
+      {
+        "en": "We watched a wonderful musical in the theatre last night.",
+        "zh": "昨晚我们在剧院看了一场精彩的音乐剧。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：musical instrument 乐器；musical performance 音乐表演"
+    ],
+    "page": 356
+  },
+  {
+    "no": 75,
+    "headword": "nightingale",
+    "ipa": "/ˈnaɪtɪŋɡeɪl/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "夜莺"
+      }
+    ],
+    "grade": "六下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The nightingale's song is very beautiful and can be heard in the forest at night.",
+        "zh": "夜莺的歌声非常美妙，晚上在森林里能听到。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 357
+  },
+  {
+    "no": 76,
+    "headword": "noticeboard",
+    "ipa": "/ˈnəʊtɪsbɔːd/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "布告栏；布告板"
+      }
+    ],
+    "grade": "六下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "Check the noticeboard regularly, as there are always some important announcements.",
+        "zh": "定期查看布告栏，因为总是有一些重要通知。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 357
+  },
+  {
+    "no": 77,
+    "headword": "nut",
+    "ipa": "/nʌt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "坚果"
+      }
+    ],
+    "grade": "六下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "Nuts are a good source of protein and healthy fats.",
+        "zh": "坚果是蛋白质和健康脂肪的良好来源。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：a hard nut to crack 棘手的问题；难对付的人"
+    ],
+    "page": 357
+  },
+  {
+    "no": 78,
+    "headword": "pass on",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "传递；转交；（用后）递给，传给"
+      }
+    ],
+    "grade": "六下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "Please pass on this message to your parents when you get home.",
+        "zh": "你到家时请把这个消息转告给你的父母。",
+        "rewrite": null
+      },
+      {
+        "en": "After reading the book, pass it on to a friend.",
+        "zh": "读完这本书后，把它传给一位朋友。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 357
+  },
+  {
+    "no": 79,
+    "headword": "pat",
+    "ipa": "/pæt/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "轻拍"
+      }
+    ],
+    "grade": "六下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The mother patted her baby gently on the back to make him stop crying.",
+        "zh": "妈妈轻轻地拍着宝宝的背，让他停止哭泣。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 357
+  },
+  {
+    "no": 80,
+    "headword": "peacock",
+    "ipa": "/ˈpiːkɒk/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "孔雀"
+      }
+    ],
+    "grade": "六下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The peacock spread its colourful tail feathers to show off its beauty.",
+        "zh": "孔雀展开它色彩斑斓的尾羽来炫耀自己的美丽。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 357
+  },
+  {
+    "no": 81,
+    "headword": "penicillin",
+    "ipa": "/ˌpenɪˈsɪlɪn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "青霉素；盘尼西林"
+      }
+    ],
+    "grade": "六下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "Penicillin has saved countless lives since it was discovered.",
+        "zh": "青霉素自被发现以来，拯救了无数生命。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /'penislin/ 重音有误，已按标准读音改为 /ˌpenɪˈsɪlɪn/"
+    ],
+    "page": 357
+  },
+  {
+    "no": 82,
+    "headword": "personality",
+    "ipa": "/ˌpɜːsəˈnæləti/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "性格；个性"
+      }
+    ],
+    "grade": "六下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "Everyone has a unique personality, which makes them different from others.",
+        "zh": "每个人都有独特的个性，这使他们与众不同。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 357
+  },
+  {
+    "no": 83,
+    "headword": "power station",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "发电站；发电厂"
+      }
+    ],
+    "grade": "六下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The power station provides electricity for the whole city.",
+        "zh": "这座发电站为整个城市供电。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 357
+  },
+  {
+    "no": 84,
+    "headword": "regards",
+    "ipa": "/rɪˈɡɑːdz/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "（复）致意；问候"
+      }
+    ],
+    "grade": "六下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "Please give my regards to your parents when you see them.",
+        "zh": "见到你父母时，请代我向他们问好。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：with kind regards（常用于信件结尾）致以亲切的问候"
+    ],
+    "page": 357
+  },
+  {
+    "no": 85,
+    "headword": "reunion",
+    "ipa": "/riːˈjuːniən/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "重逢；团聚"
+      }
+    ],
+    "grade": "六下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "Jerry's family has made the fifth day of each month their reunion day.",
+        "zh": "杰瑞一家把每月的5号定为家庭团聚日。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：reunite v.（使）重逢；（使）团聚"
+    ],
+    "_flags": [
+      "ipa：OCR 原文 /ri: 'junin/ 缺音节，已按标准读音改为 /riːˈjuːniən/"
+    ],
+    "page": 358
+  },
+  {
+    "no": 86,
+    "headword": "reusable",
+    "ipa": "/ˌriːˈjuːzəbl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "可重复使用的；可再次使用的"
+      }
+    ],
+    "grade": "六下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "We should use more reusable bags instead of plastic bags to protect the environment.",
+        "zh": "我们应该多用可重复使用的袋子，而不是塑料袋，以保护环境。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 358
+  },
+  {
+    "no": 87,
+    "headword": "runway",
+    "ipa": "/ˈrʌnweɪ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "飞机跑道"
+      }
+    ],
+    "grade": "六下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "The plane landed safely on the runway after a long flight.",
+        "zh": "经过长时间的飞行，飞机安全降落在跑道上。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 358
+  },
+  {
+    "no": 88,
+    "headword": "saver",
+    "ipa": "/ˈseɪvə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "救助者；救星"
+      }
+    ],
+    "grade": "六下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The firefighters are the savers in the fire, rescuing people from danger.",
+        "zh": "消防员在火灾中是救助者，把人们从危险中解救出来。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 358
+  },
+  {
+    "no": 89,
+    "headword": "sort",
+    "ipa": "/sɔːt/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "整理；把……分类"
+      },
+      {
+        "pos": "n.",
+        "zh": "种类；类别"
+      }
+    ],
+    "grade": "六下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "You should sort your clothes by colour before putting them in the wardrobe.",
+        "zh": "你应该先把衣服按颜色分类，再放进衣柜。",
+        "rewrite": null
+      },
+      {
+        "en": "What sort of music do you like best?",
+        "zh": "你最喜欢那种音乐？",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：sort out 整理；解决；sort sth. into ... 把某物分类为……；sort sth. by ... 根据……对某物进行分类；all sorts of 各种各样的；a sort of 一种"
+    ],
+    "page": 358
+  },
+  {
+    "no": 90,
+    "headword": "spring roll",
+    "ipa": "/ˈsprɪŋ rəʊl/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "春卷"
+      }
+    ],
+    "grade": "六下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "Spring rolls are a popular snack during the Chinese New Year.",
+        "zh": "春卷是春节期间很受欢迎的小吃。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 358
+  },
+  {
+    "no": 91,
+    "headword": "storyteller",
+    "ipa": "/ˈstɔːritelə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "讲故事的人"
+      }
+    ],
+    "grade": "六下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The storyteller can always attract a lot of children with his interesting stories.",
+        "zh": "这个讲故事的人总能用他有趣的故事吸引很多孩子。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 358
+  },
+  {
+    "no": 92,
+    "headword": "sunshine",
+    "ipa": "/ˈsʌnʃaɪn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "阳光；日光"
+      }
+    ],
+    "grade": "六下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "We sat in the garden, enjoying the warm sunshine.",
+        "zh": "我们坐在花园里，享受着温暖的阳光。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /'sAnfəm/ 损坏，已按标准读音改为 /ˈsʌnʃaɪn/"
+    ],
+    "page": 358
+  },
+  {
+    "no": 93,
+    "headword": "swan",
+    "ipa": "/swən/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "天鹅"
+      }
+    ],
+    "grade": "六下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "\"You swan, he frog\" has become a popular internet catchphrase.",
+        "zh": "“癞蛤蟆（青蛙）想吃天鹅肉”成为了一条网络热梗。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 358
+  },
+  {
+    "no": 94,
+    "headword": "symphony",
+    "ipa": "/ˈsɪmfəni/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "交响乐；交响曲"
+      }
+    ],
+    "grade": "六下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "The symphony performed by the famous orchestra was really amazing.",
+        "zh": "著名管弦乐队演奏的这首交响乐真是太棒了。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：symphonic adj. 交响乐的；和声的"
+    ],
+    "page": 358
+  },
+  {
+    "no": 95,
+    "headword": "take turns",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "轮流；依次"
+      }
+    ],
+    "grade": "六下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "We take turns to clean the classroom.",
+        "zh": "我们轮流打扫教室。",
+        "rewrite": "We clean the classroom in turn."
+      }
+    ],
+    "notes": [],
+    "page": 359
+  },
+  {
+    "no": 96,
+    "headword": "theory",
+    "ipa": "/ˈθɪəri/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "学说；理论"
+      }
+    ],
+    "grade": "六下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "Einstein's theory of relativity is one of the most important scientific theories in history.",
+        "zh": "爱因斯坦的相对论是历史上最重要的科学理论之一。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：theoretical adj. 理论的；理论上的"
+    ],
+    "page": 359
+  },
+  {
+    "no": 97,
+    "headword": "Traditional Chinese Medicine (TCM)",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "中医药"
+      }
+    ],
+    "grade": "六下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "Traditional Chinese Medicine has a long history and unique treatment methods.",
+        "zh": "中医药有着悠久的历史和独特的治疗方法。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 359
+  },
+  {
+    "no": 98,
+    "headword": "tragedy",
+    "ipa": "/ˈtrædʒədi/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "悲剧；悲剧作品"
+      }
+    ],
+    "grade": "六下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "Hamlet is one of Shakespeare's most famous tragedies.",
+        "zh": "《哈姆雷特》是莎士比亚最著名的悲剧之一。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：tragic adj. 悲剧的；悲惨的"
+    ],
+    "page": 359
+  },
+  {
+    "no": 99,
+    "headword": "unique",
+    "ipa": "/juːˈniːk/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "唯一的；独一无二的"
+      }
+    ],
+    "grade": "六下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The old town tells lively stories about Shanghai's past and its unique culture.",
+        "zh": "这座古镇讲述着关于上海的过往和独特文化的生动故事。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 359
+  },
+  {
+    "no": 100,
+    "headword": "alarm clock",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "闹钟"
+      }
+    ],
+    "grade": "七上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "My alarm clock goes off at 6:00 every morning.",
+        "zh": "我的闹钟每天早上6点响。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 359
+  },
+  {
+    "no": 101,
+    "headword": "artistic",
+    "ipa": "/ɑːˈtɪstɪk/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "艺术的"
+      }
+    ],
+    "grade": "七上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "She has a very artistic taste.",
+        "zh": "她很有艺术品味。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 359
+  },
+  {
+    "no": 102,
+    "headword": "attraction",
+    "ipa": "/əˈtrækʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "向往的地方"
+      }
+    ],
+    "grade": "七上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The Great Wall is a major tourist attraction in China.",
+        "zh": "长城是中国主要的旅游胜地。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 359
+  },
+  {
+    "no": 103,
+    "headword": "belief",
+    "ipa": "/bɪˈliːf/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "信念；相信"
+      }
+    ],
+    "grade": "七上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "His belief in hard work led to his success.",
+        "zh": "他对努力工作的信念使他获得了成功。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 359
+  },
+  {
+    "no": 104,
+    "headword": "career",
+    "ipa": "/kəˈrɪə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "职业；事业"
+      }
+    ],
+    "grade": "七上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "She has a successful career in business.",
+        "zh": "她在商业领域有成功的事业。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 359
+  },
+  {
+    "no": 105,
+    "headword": "chant",
+    "ipa": "/tʃɑːnt/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "反复呼喊；反复唱"
+      }
+    ],
+    "grade": "七上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "The football fans chanted their team's name.",
+        "zh": "球迷们反复呼喊着他们球队的名字。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 359
+  },
+  {
+    "no": 106,
+    "headword": "communication",
+    "ipa": "/kəˌmjuːnɪˈkeɪʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "交流；交际"
+      }
+    ],
+    "grade": "七上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "Good communication is very important in a relationship.",
+        "zh": "良好的沟通在人际关系中非常重要。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 360
+  },
+  {
+    "no": 107,
+    "headword": "costume",
+    "ipa": "/ˈkɒstjuːm/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "服装；演出服"
+      }
+    ],
+    "grade": "七上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "The actors wore beautiful costumes in the play.",
+        "zh": "演员们在剧中穿着漂亮的演出服。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 360
+  },
+  {
+    "no": 108,
+    "headword": "countless",
+    "ipa": "/ˈkaʊntləs/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "无数的；数不尽的"
+      }
+    ],
+    "grade": "七上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "Modern technology has rescued countless lives in the medical field.",
+        "zh": "现代科技在医疗领域拯救了无数生命。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 360
+  },
+  {
+    "no": 109,
+    "headword": "designer",
+    "ipa": "/dɪˈzaɪnə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "设计师"
+      }
+    ],
+    "grade": "七上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "She is a well-known fashion designer.",
+        "zh": "她是一位著名的时装设计师。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 360
+  },
+  {
+    "no": 110,
+    "headword": "deskmate",
+    "ipa": "/ˈdeskmeɪt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "同桌"
+      }
+    ],
+    "grade": "七上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "My deskmate is very helpful.",
+        "zh": "我的同桌很乐于助人。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 360
+  },
+  {
+    "no": 111,
+    "headword": "device",
+    "ipa": "/dɪˈvaɪs/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "仪器"
+      }
+    ],
+    "grade": "七上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "This is a new device for measuring temperature.",
+        "zh": "这是一种测量温度的新仪器。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 360
+  },
+  {
+    "no": 112,
+    "headword": "disappointment",
+    "ipa": "/ˌdɪsəˈpɔɪntmənt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "失望"
+      }
+    ],
+    "grade": "七上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "To my disappointment, I didn't pass the exam.",
+        "zh": "令我失望的是，我没有通过考试。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 360
+  },
+  {
+    "no": 113,
+    "headword": "element",
+    "ipa": "/ˈelɪmənt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "要素"
+      }
+    ],
+    "grade": "七上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "Honesty is an important element in a friendship.",
+        "zh": "诚实是友谊中的一个重要要素。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 360
+  },
+  {
+    "no": 114,
+    "headword": "enter for",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "报名参加"
+      }
+    ],
+    "grade": "七上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "I decided to enter for the singing competition.",
+        "zh": "我决定报名参加歌唱比赛。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：enter for, attend, join, join in 和 take part in 的用法区别，可参考考纲词汇 843. join。"
+    ],
+    "page": 360
+  },
+  {
+    "no": 115,
+    "headword": "entertain",
+    "ipa": "/ˌentəˈteɪn/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "使快乐；娱乐"
+      }
+    ],
+    "grade": "七上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "The clown entertained the children with funny tricks.",
+        "zh": "小丑用有趣的把戏逗孩子们开心。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /ɪnˈteɪtən/ 有误，已按标准读音改为 /ˌentəˈteɪn/"
+    ],
+    "page": 360
+  },
+  {
+    "no": 116,
+    "headword": "firmly",
+    "ipa": "/ˈfɜːmli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "坚定地；牢固地"
+      }
+    ],
+    "grade": "七上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "He held the rope firmly.",
+        "zh": "他紧紧地抓住绳子。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：firm adj. 坚定的；坚决的"
+    ],
+    "page": 360
+  },
+  {
+    "no": 117,
+    "headword": "flow",
+    "ipa": "/fləʊ/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "流；流动"
+      }
+    ],
+    "grade": "七上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The river flows through the city.",
+        "zh": "这条河流经这座城市。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 360
+  },
+  {
+    "no": 118,
+    "headword": "glow",
+    "ipa": "/ɡləʊ/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "发光"
+      }
+    ],
+    "grade": "七上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The fireflies glow in the dark.",
+        "zh": "萤火虫在黑暗中发光。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 360
+  },
+  {
+    "no": 119,
+    "headword": "guidance",
+    "ipa": "/ˈɡaɪdəns/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "指导；引导"
+      }
+    ],
+    "grade": "七上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "The teacher's guidance helped me a lot.",
+        "zh": "老师的指导对我帮助很大。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 360
+  },
+  {
+    "no": 120,
+    "headword": "hairdresser",
+    "ipa": "/ˈheədresə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "理发师"
+      }
+    ],
+    "grade": "七上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "I have an appointment with my hairdresser tomorrow for a haircut.",
+        "zh": "我明天约了理发师剪头发。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 360
+  },
+  {
+    "no": 121,
+    "headword": "handle",
+    "ipa": "/ˈhændl/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "把手"
+      }
+    ],
+    "grade": "七上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The handle of the cup is broken.",
+        "zh": "杯子的把手断了。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 361
+  },
+  {
+    "no": 122,
+    "headword": "have ... in common",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "有相同的特征"
+      }
+    ],
+    "grade": "七上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "We have a lot in common, such as our hobbies.",
+        "zh": "我们有很多共同之处，比如我们的爱好。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 361
+  },
+  {
+    "no": 123,
+    "headword": "health care",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "医疗（服务）"
+      }
+    ],
+    "grade": "七上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "The government is trying to improve the health care system.",
+        "zh": "政府正在努力改善医疗服务体系。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 361
+  },
+  {
+    "no": 124,
+    "headword": "heating",
+    "ipa": "/ˈhiːtɪŋ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "供暖；暖气设备"
+      }
+    ],
+    "grade": "七上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "The heating in our house doesn't work well.",
+        "zh": "我们家的暖气设备不太好。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 361
+  },
+  {
+    "no": 125,
+    "headword": "holder",
+    "ipa": "/ˈhəʊldə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "支托物"
+      }
+    ],
+    "grade": "七上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "This is a pen holder.",
+        "zh": "这是一个笔筒。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：ticket holder 持票人；phone holder 手机支架"
+    ],
+    "page": 361
+  },
+  {
+    "no": 126,
+    "headword": "hopefully",
+    "ipa": "/ˈhəʊpfəli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "有希望地"
+      }
+    ],
+    "grade": "七上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "Hopefully, we can finish the work on time.",
+        "zh": "我们有望按时完成工作。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 361
+  },
+  {
+    "no": 127,
+    "headword": "imagination",
+    "ipa": "/ɪˌmædʒɪˈneɪʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "想象；想象力"
+      }
+    ],
+    "grade": "七上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "Children usually have a rich imagination.",
+        "zh": "孩子们通常有丰富的想象力。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /,maed3i'nerfə(n)/ 损坏，已按标准读音改为 /ɪˌmædʒɪˈneɪʃn/"
+    ],
+    "page": 361
+  },
+  {
+    "no": 128,
+    "headword": "impolite",
+    "ipa": "/ˌɪmpəˈlaɪt/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "不礼貌的"
+      }
+    ],
+    "grade": "七上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "It's impolite to talk loudly in public places, but many people always seem to forget that.",
+        "zh": "在公共场所大声喧哗是不礼貌的行为，但许多人似乎总是忘记这一点。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 361
+  },
+  {
+    "no": 129,
+    "headword": "incorrect",
+    "ipa": "/ˌɪnkəˈrekt/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "不准确的"
+      }
+    ],
+    "grade": "七上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "Your answer is incorrect.",
+        "zh": "你的答案不准确。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 361
+  },
+  {
+    "no": 130,
+    "headword": "keep track of",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "追踪"
+      }
+    ],
+    "grade": "七上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "We should keep track of our expenses.",
+        "zh": "我们应该追踪我们的开支。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 361
+  },
+  {
+    "no": 131,
+    "headword": "layer",
+    "ipa": "/ˈleə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "层；层次"
+      }
+    ],
+    "grade": "七上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "There are several layers of clouds in the sky.",
+        "zh": "天空中有几层云。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 361
+  },
+  {
+    "no": 132,
+    "headword": "leading",
+    "ipa": "/ˈliːdɪŋ/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "最重要的"
+      }
+    ],
+    "grade": "七上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "He is one of the leading scientists in this field.",
+        "zh": "他是这个领域最重要的科学家之一。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 361
+  },
+  {
+    "no": 133,
+    "headword": "lifeblood",
+    "ipa": "/ˈlaɪfblʌd/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "生命线"
+      }
+    ],
+    "grade": "七上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "Tourism is the lifeblood of this small town.",
+        "zh": "旅游业是这个小镇的生命线。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 361
+  },
+  {
+    "no": 134,
+    "headword": "make-up",
+    "ipa": "/ˈmeɪkʌp/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "化妆品"
+      }
+    ],
+    "grade": "七上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "She spends a lot of time on her make-up.",
+        "zh": "她花很多时间化妆。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 361
+  },
+  {
+    "no": 135,
+    "headword": "meaningful",
+    "ipa": "/ˈmiːnɪŋfl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "有意义的"
+      }
+    ],
+    "grade": "七上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "This is a meaningful activity.",
+        "zh": "这是一项有意义的活动。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 361
+  },
+  {
+    "no": 136,
+    "headword": "mode",
+    "ipa": "/məʊd/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "模式；方式"
+      }
+    ],
+    "grade": "七上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "The new mode of transportation is very convenient.",
+        "zh": "这种新的交通方式非常方便。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 362
+  },
+  {
+    "no": 137,
+    "headword": "paper cutting",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "剪纸"
+      }
+    ],
+    "grade": "七上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "Paper cutting is a traditional Chinese art.",
+        "zh": "剪纸是中国的传统艺术。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 362
+  },
+  {
+    "no": 138,
+    "headword": "photographer",
+    "ipa": "/fəˈtɒɡrəfə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "摄影师"
+      }
+    ],
+    "grade": "七上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "He is a professional photographer.",
+        "zh": "他是一名专业摄影师。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 362
+  },
+  {
+    "no": 139,
+    "headword": "plot",
+    "ipa": "/plɒt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "故事情节"
+      }
+    ],
+    "grade": "七上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The fifth book he wrote is my favourite because it has the most exciting plot.",
+        "zh": "他写的第5本书是我的最爱，因为它有最精彩的情节。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 362
+  },
+  {
+    "no": 140,
+    "headword": "port",
+    "ipa": "/pɔːt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "港口"
+      }
+    ],
+    "grade": "七上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "This is a busy port.",
+        "zh": "这是一个繁忙的港口。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 362
+  },
+  {
+    "no": 141,
+    "headword": "poster",
+    "ipa": "/ˈpəʊstə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "海报"
+      }
+    ],
+    "grade": "七上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "There are many posters on the wall.",
+        "zh": "墙上有很多海报。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 362
+  },
+  {
+    "no": 142,
+    "headword": "practical",
+    "ipa": "/ˈpræktɪkl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "实际的"
+      }
+    ],
+    "grade": "七上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "This is a very practical tool.",
+        "zh": "这是一个非常实用的工具。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 362
+  },
+  {
+    "no": 143,
+    "headword": "preparation",
+    "ipa": "/ˌprepəˈreɪʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "准备"
+      }
+    ],
+    "grade": "七上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "We are making preparations for the party.",
+        "zh": "我们正在为聚会做准备工作。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 362
+  },
+  {
+    "no": 144,
+    "headword": "printing",
+    "ipa": "/ˈprɪntɪŋ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "印刷；打印"
+      }
+    ],
+    "grade": "七上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The printing of this book is very good.",
+        "zh": "这本书的印刷质量很好。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 362
+  },
+  {
+    "no": 145,
+    "headword": "readiness",
+    "ipa": "/ˈredɪnəs/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "乐意"
+      }
+    ],
+    "grade": "七上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "He showed great readiness to help others.",
+        "zh": "他表现得很乐于助人。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 362
+  },
+  {
+    "no": 146,
+    "headword": "respond",
+    "ipa": "/rɪˈspɒnd/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "作出反应；回应"
+      }
+    ],
+    "grade": "七上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "He didn't respond to my question.",
+        "zh": "他没有回答我的问题。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 362
+  },
+  {
+    "no": 147,
+    "headword": "riverside",
+    "ipa": "/ˈrɪvəsaɪd/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "河畔；河岸"
+      }
+    ],
+    "grade": "七上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "We had a picnic by the riverside.",
+        "zh": "我们在河畔野餐。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 362
+  },
+  {
+    "no": 148,
+    "headword": "scene",
+    "ipa": "/siːn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "现场；场景"
+      }
+    ],
+    "grade": "七上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "The police arrived at the scene of the accident.",
+        "zh": "警察到达了事故现场。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 362
+  },
+  {
+    "no": 149,
+    "headword": "sink",
+    "ipa": "/sɪŋk/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "下沉；沉没"
+      }
+    ],
+    "grade": "七上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "The ship began to sink.",
+        "zh": "船开始下沉。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "变形：sank /sæŋk/, sunk /sʌŋk/"
+    ],
+    "page": 362
+  },
+  {
+    "no": 150,
+    "headword": "solar cell",
+    "ipa": "/ˌsəʊləˈsel/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "太阳能电池"
+      }
+    ],
+    "grade": "七上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "Solar cells can convert sunlight into electricity.",
+        "zh": "太阳能电池可以将阳光转化为电能。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 362
+  },
+  {
+    "no": 151,
+    "headword": "solar panel",
+    "ipa": "/ˌsəʊləˈpænəl/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "太阳能电池板"
+      }
+    ],
+    "grade": "七上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The house is equipped with solar panels.",
+        "zh": "这幢房子安装了太阳能电池板。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 362
+  },
+  {
+    "no": 152,
+    "headword": "special effects",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "（电影或电视节目的）特技效果"
+      }
+    ],
+    "grade": "七上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The new cartoon is full of amazing special effects that make it fun to watch.",
+        "zh": "这部新动画片充满了令人惊叹的特效，看起来很有趣。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 362
+  },
+  {
+    "no": 153,
+    "headword": "spider",
+    "ipa": "/ˈspaɪdə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "蜘蛛"
+      }
+    ],
+    "grade": "七上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "I saw a spider on the wall.",
+        "zh": "我在墙上看到一只蜘蛛。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 363
+  },
+  {
+    "no": 154,
+    "headword": "sticker",
+    "ipa": "/ˈstɪkə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "贴纸"
+      }
+    ],
+    "grade": "七上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The children like to collect stickers.",
+        "zh": "孩子们喜欢收集贴纸。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 363
+  },
+  {
+    "no": 155,
+    "headword": "stranger",
+    "ipa": "/ˈstreɪndʒə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "陌生人"
+      }
+    ],
+    "grade": "七上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "Don't talk to strangers.",
+        "zh": "不要和陌生人说话。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 363
+  },
+  {
+    "no": 156,
+    "headword": "subtitle",
+    "ipa": "/ˈsʌbtaɪtl/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "字幕"
+      }
+    ],
+    "grade": "七上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "I usually watch English movies with Chinese subtitles.",
+        "zh": "我通常看带有中文字幕的英语电影。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /'sAbtatl/ 损坏，已按标准读音改为 /ˈsʌbtaɪtl/"
+    ],
+    "page": 363
+  },
+  {
+    "no": 157,
+    "headword": "tailor",
+    "ipa": "/ˈteɪlə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "裁缝"
+      }
+    ],
+    "grade": "七上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "The tailor made a beautiful dress for her.",
+        "zh": "裁缝为她做了一件漂亮的连衣裙。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 363
+  },
+  {
+    "no": 158,
+    "headword": "text message",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "（手机）短信息"
+      }
+    ],
+    "grade": "七上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "I received a text message from my friend.",
+        "zh": "我收到了朋友的一条短信。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 363
+  },
+  {
+    "no": 159,
+    "headword": "trainer",
+    "ipa": "/ˈtreɪnə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "教练"
+      }
+    ],
+    "grade": "七上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The trainer is teaching the athletes some new skills.",
+        "zh": "教练正在教运动员一些新技巧。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 363
+  },
+  {
+    "no": 160,
+    "headword": "troublesome",
+    "ipa": "/ˈtrʌblsəm/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "令人烦恼的"
+      }
+    ],
+    "grade": "七上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "This problem is really troublesome. We need to find a way to solve it.",
+        "zh": "这个问题真令人烦恼。我们得想办法解决它。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 363
+  },
+  {
+    "no": 161,
+    "headword": "truly",
+    "ipa": "/ˈtruːli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "确实地；真诚地"
+      }
+    ],
+    "grade": "七上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "I truly believe that he will succeed.",
+        "zh": "我确实相信他会成功。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 363
+  },
+  {
+    "no": 162,
+    "headword": "waterfall",
+    "ipa": "/ˈwɔːtəfɔːl/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "瀑布"
+      }
+    ],
+    "grade": "七上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The waterfall looks so magnificent.",
+        "zh": "瀑布看起来非常壮观。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 363
+  },
+  {
+    "no": 163,
+    "headword": "windsurf",
+    "ipa": "/ˈwɪndsɜːf/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "做帆板运动"
+      }
+    ],
+    "grade": "七上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "He loves to windsurf on the sea during the holidays.",
+        "zh": "他喜欢在假期去海上做帆板运动。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 363
+  },
+  {
+    "no": 164,
+    "headword": "woods",
+    "ipa": "/wʊdz/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "树林"
+      }
+    ],
+    "grade": "七上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "We went for a walk in the woods.",
+        "zh": "我们去树林里散步。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 363
+  },
+  {
+    "no": 165,
+    "headword": "wrestle",
+    "ipa": "/ˈresl/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "摔跤"
+      }
+    ],
+    "grade": "七上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The two men were wrestling on the mat.",
+        "zh": "这两个男人在垫子上摔跤。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 363
+  },
+  {
+    "no": 166,
+    "headword": "accent",
+    "ipa": "/ˈæksent/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "口音"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "She has a strong southern accent, which makes her words sound very charming.",
+        "zh": "她有很重的南方口音，这让她的话听起来很有韵味。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 363
+  },
+  {
+    "no": 167,
+    "headword": "accidentally",
+    "ipa": "/ˌæksɪˈdentəli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "意外地；偶然地"
+      }
+    ],
+    "grade": "七下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "I accidentally met my old friend on the street yesterday.",
+        "zh": "我昨天在街上偶然遇到了我的老朋友。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 363
+  },
+  {
+    "no": 168,
+    "headword": "analyse",
+    "ipa": "/ˈænəlaɪz/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "分析"
+      }
+    ],
+    "grade": "七下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "We need to carefully analyse the problem before we find a solution.",
+        "zh": "在找到解决方案之前，我们需要仔细分析这个问题。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "（美）analyze",
+      "词形拓展：analysis（复 analyses）n. 分析"
+    ],
+    "page": 364
+  },
+  {
+    "no": 169,
+    "headword": "application",
+    "ipa": "/ˌæplɪˈkeɪʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "申请；请求"
+      }
+    ],
+    "grade": "七下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "I submitted my application for the scholarship last week.",
+        "zh": "我上周提交了奖学金申请。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：application form 申请表"
+    ],
+    "page": 364
+  },
+  {
+    "no": 170,
+    "headword": "as usual",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "像往常一样；照例"
+      }
+    ],
+    "grade": "七下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "As usual, he gets up early and goes for a run in the park.",
+        "zh": "像往常一样，他早起去公园跑步。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 364
+  },
+  {
+    "no": 171,
+    "headword": "best-known",
+    "ipa": "/ˌbest ˈnəʊn/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "最知名的"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "This is one of the best-known museums in the world.",
+        "zh": "这是世界上最知名的博物馆之一。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：best-known 是 well-known 的最高级形式，用于强调某人或某物在某个范围内最广为人知。常与 one of 搭配，one of the best-known + 名词复数，表示“最知名的……之一”。"
+    ],
+    "page": 364
+  },
+  {
+    "no": 172,
+    "headword": "booklet",
+    "ipa": "/ˈbʊklət/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "小册子"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "The tourist office provides a free booklet about the local attractions.",
+        "zh": "旅游局提供了一本关于当地景点的免费小册子。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 364
+  },
+  {
+    "no": 173,
+    "headword": "branch",
+    "ipa": "/brɑːntʃ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "树枝"
+      }
+    ],
+    "grade": "七下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "Some volunteers have removed the broken branches from the road already.",
+        "zh": "一些志愿者已经把路上折断的树枝清理掉了。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /braʊntʃ/ 有误，已按标准读音改为 /brɑːntʃ/"
+    ],
+    "page": 364
+  },
+  {
+    "no": 174,
+    "headword": "calmly",
+    "ipa": "/ˈkɑːmli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "沉着地"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "He calmly faced the challenging situation.",
+        "zh": "他沉着面对这具有挑战性的情形。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 364
+  },
+  {
+    "no": 175,
+    "headword": "cast",
+    "ipa": "/kɑːst/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "投（钓线）；抛（钓钩）"
+      }
+    ],
+    "grade": "七下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "He cast the line into the water, hoping for a big catch.",
+        "zh": "他把钓线抛入河中，希望能钓到大鱼。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "变形：cast /kɑːst/, cast"
+    ],
+    "page": 364
+  },
+  {
+    "no": 176,
+    "headword": "chart",
+    "ipa": "/tʃɑːt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "图表，曲线图"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "The chart shows the changes in the company's sales over the past year.",
+        "zh": "这张图表显示了公司过去一年的销售变化。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：bar chart 柱状图；line chart 折线图"
+    ],
+    "page": 364
+  },
+  {
+    "no": 177,
+    "headword": "check out",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "借阅；借出；查看；结账离开；核实"
+      }
+    ],
+    "grade": "七下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "You can check out three books at a time from the library.",
+        "zh": "你一次可以从图书馆借阅三本书。",
+        "rewrite": null
+      },
+      {
+        "en": "We need to check out of the hotel before noon.",
+        "zh": "我们需要在中午前退房。",
+        "rewrite": null
+      },
+      {
+        "en": "Please check out the facts before you make a statement.",
+        "zh": "在发表声明前请先核实事实。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 365
+  },
+  {
+    "no": 178,
+    "headword": "cheer for",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "鼓励；支持"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "All the students cheered for their classmates in the sports meeting.",
+        "zh": "运动会上，所有学生都为他们的同学加油助威。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 365
+  },
+  {
+    "no": 179,
+    "headword": "chorus",
+    "ipa": "/ˈkɔːrəs/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "合唱团；歌唱队"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The chorus sang a beautiful song at the concert.",
+        "zh": "合唱团在音乐会上演唱了一首优美的歌曲。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：in chorus 齐声地"
+    ],
+    "page": 365
+  },
+  {
+    "no": 180,
+    "headword": "classical",
+    "ipa": "/ˈklæsɪkl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "古典的；经典的"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "Mozart's music is a typical example of classical music.",
+        "zh": "莫扎特的音乐是古典音乐的典型代表。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 365
+  },
+  {
+    "no": 181,
+    "headword": "clothing",
+    "ipa": "/ˈkləʊðɪŋ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "衣服；服装"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "We need to donate some warm clothing to the poor in winter.",
+        "zh": "冬天我们需要给穷人捐赠一些保暖衣物。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 365
+  },
+  {
+    "no": 182,
+    "headword": "column",
+    "ipa": "/ˈkɒləm/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "专栏；栏目"
+      }
+    ],
+    "grade": "七下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "I always read the sports column in the newspaper every morning.",
+        "zh": "我每天早上都会读报纸上的体育专栏。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：columnist n. 专栏作家"
+    ],
+    "page": 365
+  },
+  {
+    "no": 183,
+    "headword": "contain",
+    "ipa": "/kənˈteɪn/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "包含；含有；容纳"
+      }
+    ],
+    "grade": "七下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "This box contains all my old books.",
+        "zh": "这个箱子装着我所有的旧书。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 365
+  },
+  {
+    "no": 184,
+    "headword": "coverage",
+    "ipa": "/ˈkʌvərɪdʒ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "覆盖范围"
+      }
+    ],
+    "grade": "七下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The coverage of this wireless network is very wide, reaching most areas of the city.",
+        "zh": "这个无线网络的覆盖范围很广，涵盖了城市的大部分地区。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：media coverage 媒体报道；insurance coverage 保险范围"
+    ],
+    "page": 365
+  },
+  {
+    "no": 185,
+    "headword": "cultural",
+    "ipa": "/ˈkʌltʃərəl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "文化的；与文化有关的"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "We should respect different cultural traditions when travelling abroad.",
+        "zh": "出国旅行时我们应该尊重不同的文化传统。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：cultural heritage 文化遗产；cultural exchange 文化交流"
+    ],
+    "page": 365
+  },
+  {
+    "no": 186,
+    "headword": "display",
+    "ipa": "/dɪsˈpleɪ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "陈列；展示"
+      },
+      {
+        "pos": "v.",
+        "zh": "陈列；展示；表现"
+      }
+    ],
+    "grade": "七下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The museum has a special display of ancient artifacts.",
+        "zh": "博物馆有一个古代文物的特别展览。",
+        "rewrite": null
+      },
+      {
+        "en": "She displayed her artwork at the local gallery.",
+        "zh": "她在当地画廊展出了自己的艺术作品。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 366
+  },
+  {
+    "no": 187,
+    "headword": "earn",
+    "ipa": "/ɜːn/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "挣得；赚得"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "He works hard to earn enough money to support his family.",
+        "zh": "他努力工作以挣得足够的钱来养家。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：earnings n. 收入；收益"
+    ],
+    "page": 366
+  },
+  {
+    "no": 188,
+    "headword": "elderly",
+    "ipa": "/ˈeldəli/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "上了年纪的"
+      }
+    ],
+    "grade": "七下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "We should take good care of the elderly in our society.",
+        "zh": "我们应该好好照顾社会上的老年人。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 366
+  },
+  {
+    "no": 189,
+    "headword": "embarrassment",
+    "ipa": "/ɪmˈbærəsmənt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "难堪"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "He felt a great sense of embarrassment when he forgot his lines on stage.",
+        "zh": "他在舞台上忘词时感到非常难堪。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 366
+  },
+  {
+    "no": 190,
+    "headword": "emoji",
+    "ipa": "/ˈeʊmɒdʒi/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "表情符号"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "People often use emojis to express their emotions in online communication.",
+        "zh": "人们在网络交流中经常使用表情符号来表达自己的情感。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：照录 OCR /ˈeʊmɒdʒi/，与常见读音 /ɪˈməʊdʒi/ 不同，建议对照原书"
+    ],
+    "page": 366
+  },
+  {
+    "no": 191,
+    "headword": "even though",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "尽管；虽然"
+      }
+    ],
+    "grade": "七下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "Even though it was raining heavily, he still went to school on time.",
+        "zh": "尽管雨下得很大，他仍然按时去上学。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：even though 引导让步状语从句，在书面和口语中表达转折、让步关系。它与 although, though 意思相近，但 even though 语气更强。"
+    ],
+    "page": 366
+  },
+  {
+    "no": 192,
+    "headword": "factory-farmed",
+    "ipa": "/ˈfæktri fɑːmd/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "工厂化养殖的"
+      }
+    ],
+    "grade": "七下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "Factory-farmed chickens are more common in the market these days.",
+        "zh": "如今，工厂化养殖的鸡在市场上更为常见。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 366
+  },
+  {
+    "no": 193,
+    "headword": "fault",
+    "ipa": "/fɔːlt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "责任；过错"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "It's not my fault that the plan failed.",
+        "zh": "计划失败不是我的错。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：at fault 有过错；应负责任；find fault with 挑剔；找茬"
+    ],
+    "page": 366
+  },
+  {
+    "no": 194,
+    "headword": "fellow",
+    "ipa": "/ˈfeləʊ/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "同类的；同伴的"
+      },
+      {
+        "pos": "n.",
+        "zh": "家伙；同伴；同事"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "We are fellow students, so we should help each other.",
+        "zh": "我们是同学，所以应该互相帮助。",
+        "rewrite": null
+      },
+      {
+        "en": "He's a funny fellow who always knows how to make us laugh.",
+        "zh": "他是个有趣的家伙，总是知道如何引我们笑。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 366
+  },
+  {
+    "no": 195,
+    "headword": "flyer",
+    "ipa": "/ˈflaɪə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "小（广告）传单"
+      }
+    ],
+    "grade": "七下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "I received a flyer about a new restaurant opening nearby.",
+        "zh": "我收到了一张附近新开餐厅的广告传单。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 367
+  },
+  {
+    "no": 196,
+    "headword": "freshwater",
+    "ipa": "/ˈfreʃwɔːtə(r)/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "淡水的"
+      }
+    ],
+    "grade": "七下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "Freshwater fish live in rivers, lakes and ponds.",
+        "zh": "淡水鱼生活在河流、湖泊和池塘里。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：freshwater ecosystem 淡水生态系统；freshwater resources 淡水资源"
+    ],
+    "page": 367
+  },
+  {
+    "no": 197,
+    "headword": "gesture",
+    "ipa": "/ˈdʒestʃə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "手势；姿势"
+      },
+      {
+        "pos": "v.",
+        "zh": "做手势；用动作示意"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "He made a gesture of welcome when he saw his friend.",
+        "zh": "他看到朋友时做了一个欢迎的手势。",
+        "rewrite": null
+      },
+      {
+        "en": "The tour guide gestured for the group to follow him.",
+        "zh": "导游做手势示意团队跟着他。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：make a gesture 做手势；gesture for/to sb. 向某人做手势"
+    ],
+    "page": 367
+  },
+  {
+    "no": 198,
+    "headword": "giant",
+    "ipa": "/ˈdʒaɪənt/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "巨大的；特大的；伟大的"
+      },
+      {
+        "pos": "n.",
+        "zh": "巨人；巨兽；大公司"
+      }
+    ],
+    "grade": "七下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The giant pumpkin at the fall festival weighed over 500 pounds, breaking the previous record.",
+        "zh": "秋收节上这只巨大的南瓜超过了500磅，打破了之前的纪录。",
+        "rewrite": null
+      },
+      {
+        "en": "The giant in the fairy tale lived in a castle high atop the mountain.",
+        "zh": "童话故事里的巨人住在山顶上的城堡里。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 367
+  },
+  {
+    "no": 199,
+    "headword": "grateful",
+    "ipa": "/ˈɡreɪtfl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "感激的；表示感谢的"
+      }
+    ],
+    "grade": "七下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "I'm very grateful to my teacher for her help.",
+        "zh": "我非常感激老师对我的帮助。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：gratitude n. 感激之情",
+      "常用词组：be grateful to sb. for sth. 因某事感激某人"
+    ],
+    "page": 367
+  },
+  {
+    "no": 200,
+    "headword": "habitat",
+    "ipa": "/ˈhæbɪtæt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "（动植物的）生活环境，栖息地"
+      }
+    ],
+    "grade": "七下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The destruction of the forest has greatly affected the habitat of wild animals.",
+        "zh": "森林的破坏极大地影响了野生动物的栖息地。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 367
+  },
+  {
+    "no": 201,
+    "headword": "hook",
+    "ipa": "/hʊk/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "钩；钓钩；鱼钩"
+      },
+      {
+        "pos": "v.",
+        "zh": "钩住；挂住"
+      }
+    ],
+    "grade": "七下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "He hung his coat on the hook by the door.",
+        "zh": "他把外套挂在门边的挂钩上。",
+        "rewrite": null
+      },
+      {
+        "en": "She hooked the picture frame on the nail on the wall.",
+        "zh": "她把相框挂在墙上的钉子上。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 367
+  },
+  {
+    "no": 202,
+    "headword": "humid",
+    "ipa": "/ˈhjuːmɪd/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "温暖潮湿的"
+      }
+    ],
+    "grade": "七下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The weather in the south is often humid, especially in summer.",
+        "zh": "南方的天气通常很潮湿，尤其是在夏天。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：humidity n. 湿度；潮湿"
+    ],
+    "page": 367
+  },
+  {
+    "no": 203,
+    "headword": "impress",
+    "ipa": "/ɪmˈpres/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "给……留下深刻的好印象"
+      }
+    ],
+    "grade": "七下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "The performance of the young singer impressed the audience deeply.",
+        "zh": "这位年轻歌手的表演给观众留下了深刻的印象。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 368
+  },
+  {
+    "no": 204,
+    "headword": "in person",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "亲自；当面"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "You should go to the office and talk to the manager in person.",
+        "zh": "你应该去办公室亲自和经理谈谈。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 368
+  },
+  {
+    "no": 205,
+    "headword": "jasmine",
+    "ipa": "/ˈdʒæzmɪn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "茉莉"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The jasmine in the garden is in full bloom, filling the air with a sweet fragrance.",
+        "zh": "花园里的茉莉盛开了，空气中弥漫着甜甜的香气。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 368
+  },
+  {
+    "no": 206,
+    "headword": "lead to",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "导致"
+      }
+    ],
+    "grade": "七下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "Eating too much junk food can lead to health problems.",
+        "zh": "吃太多垃圾食品会导致健康问题。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 368
+  },
+  {
+    "no": 207,
+    "headword": "leaflet",
+    "ipa": "/ˈliːflət/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "散页印刷品；传单"
+      }
+    ],
+    "grade": "七下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The act of distributing leaflets for advertising is outdated.",
+        "zh": "靠发传单打广告已经落伍了。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 368
+  },
+  {
+    "no": 208,
+    "headword": "lifetime",
+    "ipa": "/ˈlaɪftaɪm/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "一生；终身；有生之年"
+      }
+    ],
+    "grade": "七下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "She has been passionate about painting all her lifetime.",
+        "zh": "她一生都热衷于绘画。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：in one's lifetime 在某人的一生中"
+    ],
+    "page": 368
+  },
+  {
+    "no": 209,
+    "headword": "look through",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "浏览；查看"
+      }
+    ],
+    "grade": "七下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "I like to look through magazines during my break.",
+        "zh": "我喜欢在休息时间浏览杂志。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 368
+  },
+  {
+    "no": 210,
+    "headword": "lower",
+    "ipa": "/ˈləʊə(r)/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "把……放低；使……降下"
+      },
+      {
+        "pos": "adj.",
+        "zh": "下方的；较低的"
+      }
+    ],
+    "grade": "七下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "Please lower your voice. We are in the library.",
+        "zh": "请你小声一点。我们在图书馆里。",
+        "rewrite": null
+      },
+      {
+        "en": "The lower branches of the tree were easier to reach for picking fruits.",
+        "zh": "长在较低树枝上的果子更容易被摘到。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 368
+  },
+  {
+    "no": 211,
+    "headword": "lyrics",
+    "ipa": "/ˈlɪrɪks/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "（复）歌词"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "I love the lyrics of this song. They are so meaningful.",
+        "zh": "我喜欢这首歌的歌词。它们非常有意义。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /'lɜːrɪks/ 有误，已按标准读音改为 /ˈlɪrɪks/"
+    ],
+    "page": 368
+  },
+  {
+    "no": 212,
+    "headword": "melody",
+    "ipa": "/ˈmelədi/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "旋律；曲调"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The melody of this piece of music is very catchy.",
+        "zh": "这首曲子的旋律非常朗朗上口。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：melodic adj. 旋律优美的"
+    ],
+    "page": 368
+  },
+  {
+    "no": 213,
+    "headword": "melt",
+    "ipa": "/melt/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "（使）熔化，融化"
+      }
+    ],
+    "grade": "七下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The ice will melt when the temperature rises.",
+        "zh": "温度升高时，冰会融化。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：melting adj. 熔化的；融化的"
+    ],
+    "page": 368
+  },
+  {
+    "no": 214,
+    "headword": "misunderstand",
+    "ipa": "/ˌmɪsˈʌndəˌstænd/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "误解；误会"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "Don't misunderstand me. I didn't mean to hurt your feelings.",
+        "zh": "别误解我。我没想伤害你的感情。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 369
+  },
+  {
+    "no": 215,
+    "headword": "nest",
+    "ipa": "/nest/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "巢穴；窝"
+      }
+    ],
+    "grade": "七下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The birds are building a nest in the tree.",
+        "zh": "鸟儿们正在树上筑巢。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 369
+  },
+  {
+    "no": 216,
+    "headword": "not only ... but also ...",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "不仅……而且……"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The toy models at the store are not only for children but also for adults.",
+        "zh": "店里的玩具模型不仅适合儿童，也适合成年人。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：not only ... but also ... 用于连接两个并列的成分，可以是名词、动词、形容词、副词等，强调递进关系，表示“不但……而且……”。当连接两个主语时，谓语动词遵循就近原则，即与 but also 后的主语在人称和数上保持一致。例如：Not only you but also he enjoys hiking in the mountains. 你和他都喜欢在山上徒步。"
+    ],
+    "page": 369
+  },
+  {
+    "no": 217,
+    "headword": "operator",
+    "ipa": "/ˈɒpəreɪtə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "电话员；接线员"
+      }
+    ],
+    "grade": "七下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "I called the operator to ask for help.",
+        "zh": "我打电话给接线员寻求帮助。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 369
+  },
+  {
+    "no": 218,
+    "headword": "palm",
+    "ipa": "/pɑːm/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "手掌；手心"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "He held the coin in the palm of his hand.",
+        "zh": "他把硬币握在手心里。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：palm tree 棕榈树；read one's palm 看手相"
+    ],
+    "page": 369
+  },
+  {
+    "no": 219,
+    "headword": "playlist",
+    "ipa": "/ˈpleɪlɪst/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "音乐播放清单"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "I created a new playlist with all my favourite songs.",
+        "zh": "我为所有喜欢的歌曲创建了一个新的音乐播放清单。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 369
+  },
+  {
+    "no": 220,
+    "headword": "pop",
+    "ipa": "/pɒp/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "流行音乐"
+      },
+      {
+        "pos": "adj.",
+        "zh": "流行的；通俗的"
+      },
+      {
+        "pos": "v.",
+        "zh": "突然出现"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "Pop is very popular among young people.",
+        "zh": "流行音乐在年轻人中非常受欢迎。",
+        "rewrite": null
+      },
+      {
+        "en": "The pop song became a chart-topping hit within days of its release.",
+        "zh": "这首流行歌曲在发布的几天之内就成为了排行榜的热门单曲。",
+        "rewrite": null
+      },
+      {
+        "en": "A squirrel popped out from behind the tree.",
+        "zh": "从树后突然蹿出一只松鼠。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 369
+  },
+  {
+    "no": 221,
+    "headword": "popularity",
+    "ipa": "/ˌpɒpjʊˈlærəti/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "流行"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The popularity of smartphones has changed our way of life.",
+        "zh": "智能手机的流行改变了我们的生活方式。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 369
+  },
+  {
+    "no": 222,
+    "headword": "preference",
+    "ipa": "/ˈprefrəns/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "偏爱；偏好"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "I have a preference for classical music rather than pop music.",
+        "zh": "比起流行音乐，我更喜欢古典音乐。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：have a preference for 偏爱……；in preference to 优先于"
+    ],
+    "page": 369
+  },
+  {
+    "no": 223,
+    "headword": "protection",
+    "ipa": "/prəˈtekʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "保护"
+      }
+    ],
+    "grade": "七下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "We should take measures for the protection of wild animals.",
+        "zh": "我们应该采取措施保护野生动物。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 370
+  },
+  {
+    "no": 224,
+    "headword": "recommendation",
+    "ipa": "/ˌrekəmenˈdeɪʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "推荐；介绍；提议"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "On the ninth page of the guide, you'll find recommendations for best restaurants.",
+        "zh": "在指南的第9页，你会找到最佳餐厅推荐。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /rekə'mendəʃn/ 有误，已按标准读音改为 /ˌrekəmenˈdeɪʃn/"
+    ],
+    "page": 370
+  },
+  {
+    "no": 225,
+    "headword": "request",
+    "ipa": "/rɪˈkwest/",
+    "senses": [
+      {
+        "pos": "n. & v.",
+        "zh": "要求，请求"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "I received a request from my boss to finish the report by tomorrow.",
+        "zh": "我收到老板的要求，明天前完成这份报告。",
+        "rewrite": null
+      },
+      {
+        "en": "The customer requested a refund for the damaged product.",
+        "zh": "顾客就损坏的商品要求退款。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：at sb.'s request 应某人的要求；make a request 提出请求"
+    ],
+    "page": 370
+  },
+  {
+    "no": 226,
+    "headword": "rhythm",
+    "ipa": "/ˈrɪðəm/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "节奏；韵律"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The rhythm of this dance music is very strong.",
+        "zh": "这首舞曲的节奏非常强烈。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 370
+  },
+  {
+    "no": 227,
+    "headword": "second-hand",
+    "ipa": "/ˌsekənd ˈhænd/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "二手的；旧的"
+      }
+    ],
+    "grade": "七下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "I bought a second-hand bike, which is much cheaper than a new one.",
+        "zh": "我买了一辆二手自行车，比新的便宜多了。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 370
+  },
+  {
+    "no": 228,
+    "headword": "smoothly",
+    "ipa": "/ˈsmuːðli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "连续而流畅地"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The presentation went smoothly, and everyone was satisfied.",
+        "zh": "演示进行得相当顺利，每个人都很满意。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：smooth adj. 光滑的；顺利的；平稳的"
+    ],
+    "page": 370
+  },
+  {
+    "no": 229,
+    "headword": "social media",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "社交媒体"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "Social media helps us get news, but it may also include false information.",
+        "zh": "社交媒体帮助我们获取新闻，但它也可能包含虚假信息。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 370
+  },
+  {
+    "no": 230,
+    "headword": "solo",
+    "ipa": "/ˈsəʊləʊ/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "单独地"
+      },
+      {
+        "pos": "n.",
+        "zh": "独唱；独奏"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "She performed the dance solo, attracting everyone's attention.",
+        "zh": "她独自表演了这支舞蹈，吸引了所有人的注意。",
+        "rewrite": null
+      },
+      {
+        "en": "His solo in the concert was really amazing.",
+        "zh": "他在音乐会上的独奏非常精彩。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：soloist n. 独唱者；独奏者"
+    ],
+    "page": 370
+  },
+  {
+    "no": 231,
+    "headword": "spill",
+    "ipa": "/spɪl/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "（使）洒出，泼出，溢出"
+      }
+    ],
+    "grade": "七下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "Be careful not to spill the coffee on the table.",
+        "zh": "小心别把咖啡洒在桌子上。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "变形：spilt /spɪlt/, spilt 或 spilled /spɪld/, spilled"
+    ],
+    "page": 371
+  },
+  {
+    "no": 232,
+    "headword": "stutter",
+    "ipa": "/ˈstʌtə(r)/",
+    "senses": [
+      {
+        "pos": "n. & v.",
+        "zh": "口吃；结巴"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "He has a stutter, so he is a little shy to speak in public.",
+        "zh": "他有口吃，所以在公众场合说话有点害羞。",
+        "rewrite": null
+      },
+      {
+        "en": "He stuttered when he tried to answer the teacher's question.",
+        "zh": "他试着回答老师的问题时结巴了。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：stutterer n. 口吃者"
+    ],
+    "page": 371
+  },
+  {
+    "no": 233,
+    "headword": "suitable",
+    "ipa": "/ˈsuːtəbl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "合适的；适宜的"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "This book is suitable for children aged 8-12.",
+        "zh": "这本书适合8到12岁的孩子。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：suit v. 适合；适宜；suitability n. 合适；适宜性",
+      "常用词组：be suitable for 适合……；be suitable to do sth. 适合做某事"
+    ],
+    "page": 371
+  },
+  {
+    "no": 234,
+    "headword": "sweat",
+    "ipa": "/swet/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "汗"
+      },
+      {
+        "pos": "v.",
+        "zh": "出汗；流汗"
+      }
+    ],
+    "grade": "七下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "He wiped the sweat from his forehead after running.",
+        "zh": "他跑步后擦去额头上的汗。",
+        "rewrite": null
+      },
+      {
+        "en": "The intense heat made everyone sweat within minutes of being outside.",
+        "zh": "烈日炎炎使得每个人在外面待几分钟就开始出汗。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 371
+  },
+  {
+    "no": 235,
+    "headword": "theme",
+    "ipa": "/θiːm/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "（乐曲的）主题，主旋律"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The theme of this symphony is about love and hope.",
+        "zh": "这首交响曲的主题是关于爱与希望。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 371
+  },
+  {
+    "no": 236,
+    "headword": "treetop",
+    "ipa": "/ˈtriːtɒp/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "树梢"
+      }
+    ],
+    "grade": "七下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The bird is singing happily on the treetop.",
+        "zh": "鸟儿在树梢上欢快地歌唱。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 371
+  },
+  {
+    "no": 237,
+    "headword": "trumpet",
+    "ipa": "/ˈtrʌmpɪt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "小号；喇叭"
+      }
+    ],
+    "grade": "七下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The sound of the trumpet filled the concert hall.",
+        "zh": "小号的声音充满了音乐厅。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 371
+  },
+  {
+    "no": 238,
+    "headword": "trunk",
+    "ipa": "/trʌŋk/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "象鼻"
+      }
+    ],
+    "grade": "七下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The elephant used its trunk to pick up the log.",
+        "zh": "大象用它的鼻子卷起了木头。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 371
+  },
+  {
+    "no": 239,
+    "headword": "unknown",
+    "ipa": "/ˌʌnˈnəʊn/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "不出名的；无名的"
+      },
+      {
+        "pos": "n.",
+        "zh": "（the unknown）未知的事物；默默无闻的人"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "He was an unknown writer before his first novel was published.",
+        "zh": "在他的第一部小说出版之前，他是个不出名的作家。",
+        "rewrite": null
+      },
+      {
+        "en": "Embracing the unknown can lead to unexpected opportunities and growth.",
+        "zh": "拥抱未知可能会带来意想不到的机遇和成长。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 371
+  },
+  {
+    "no": 240,
+    "headword": "unluckily",
+    "ipa": "/ʌnˈlʌkli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "不幸地；遗憾地；倒霉地"
+      }
+    ],
+    "grade": "七下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "Unluckily, we arrived at the station just after the last train left.",
+        "zh": "不幸的是，我们到达车站时，最后一班火车刚开走。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 372
+  },
+  {
+    "no": 241,
+    "headword": "update",
+    "ipa": "/ʌpˈdeɪt/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "更新；向……提供最新信息"
+      },
+      {
+        "pos": "n.",
+        "zh": "更新；最新消息"
+      }
+    ],
+    "grade": "七下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "We need to update the software to its latest version.",
+        "zh": "我们需要将软件更新到最新版本。",
+        "rewrite": null
+      },
+      {
+        "en": "Have you received the update on the meeting schedule for next week?",
+        "zh": "你收到下周会议日程的更新了吗？",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名词读音 /ʌpdeɪt/"
+    ],
+    "page": 372
+  },
+  {
+    "no": 242,
+    "headword": "upwards",
+    "ipa": "/ˈʌpwədz/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "向上；向高处"
+      }
+    ],
+    "grade": "七下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "The smoke is rising upwards.",
+        "zh": "烟正向上飘。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义词：downwards"
+    ],
+    "page": 372
+  },
+  {
+    "no": 243,
+    "headword": "warmth",
+    "ipa": "/wɔːmθ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "温暖；暖和"
+      }
+    ],
+    "grade": "七下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "We sat around the fire to enjoy the warmth.",
+        "zh": "我们围坐在火边享受温暖。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 372
+  },
+  {
+    "no": 244,
+    "headword": "well-known",
+    "ipa": "/welˈnəʊn/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "众所周知的"
+      }
+    ],
+    "grade": "七下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "He is a well-known scientist in the field of physics.",
+        "zh": "他是物理学领域一位众所周知的科学家。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：be well-known for 因……而闻名；be well-known as 作为……而闻名"
+    ],
+    "page": 372
+  },
+  {
+    "no": 245,
+    "headword": "wilderness",
+    "ipa": "/ˈwɪldənəs/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "荒野"
+      }
+    ],
+    "grade": "七下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "They went deep into the wilderness to explore the unknown.",
+        "zh": "他们深入荒野去探索未知。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：in the wilderness 在荒野中"
+    ],
+    "page": 372
+  },
+  {
+    "no": 246,
+    "headword": "wildlife",
+    "ipa": "/ˈwaɪldlaɪf/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "野生动物；野生生物"
+      }
+    ],
+    "grade": "七下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "We should protect the wildlife and their habitats.",
+        "zh": "我们应该保护野生动物及其栖息地。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 372
+  },
+  {
+    "no": 247,
+    "headword": "alien",
+    "ipa": "/ˈeɪliən/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "外星人；外星生物"
+      }
+    ],
+    "grade": "八上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "I read a story about an alien visiting Earth.",
+        "zh": "我读了一个关于外星人访问地球的故事。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 372
+  },
+  {
+    "no": 248,
+    "headword": "annoying",
+    "ipa": "/əˈnɔɪɪŋ/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "恼人的；讨厌的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "His annoying habit of tapping his foot makes me angry.",
+        "zh": "他跺脚的恼人习惯让我生气。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：annoy v. 使恼怒；annoyance n. 烦恼",
+      "常用词组：an annoying noise 令人烦躁的噪音"
+    ],
+    "page": 372
+  },
+  {
+    "no": 249,
+    "headword": "any more",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "（常用于否定句和疑问句句末）再也（不），（不）再"
+      }
+    ],
+    "grade": "八上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "Can we trust his promises any more?",
+        "zh": "我们还能再信他的承诺吗？",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：用于否定句时，any more 相当于 no longer，但位置不同，no longer 放在实义动词前，be 动词后。例如：She doesn't work here any more. = She no longer works here. 她不再在这里工作了。He isn't the leader of the team any more. = He is no longer the leader of the team. 他不再是团队领导了。"
+    ],
+    "page": 373
+  },
+  {
+    "no": 250,
+    "headword": "any time",
+    "ipa": "/ˈeni taɪm/",
+    "senses": [
+      {
+        "pos": null,
+        "zh": "在任何时候"
+      }
+    ],
+    "grade": "八上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "You can call me any time you need help.",
+        "zh": "你需要帮助时可以随时给我打电话。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "＝anytime adv."
+    ],
+    "page": 373
+  },
+  {
+    "no": 251,
+    "headword": "ASAP",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": "abbr.",
+        "zh": "尽快"
+      }
+    ],
+    "grade": "八上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "Please finish your homework ASAP.",
+        "zh": "请尽快完成你的作业。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "＝as soon as possible"
+    ],
+    "page": 373
+  },
+  {
+    "no": 252,
+    "headword": "awareness",
+    "ipa": "/əˈweənəs/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "意识"
+      }
+    ],
+    "grade": "八上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "We should raise our awareness of protecting the environment.",
+        "zh": "我们应该提高环保意识。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：environmental awareness 环保意识",
+      "名师点拨：awareness 是不可数名词，常与 raise 搭配，表示“提高意识”。"
+    ],
+    "_flags": [
+      "ipa：OCR 原文 /ə'wiəənə/ 损坏，已按标准读音改为 /əˈweənəs/"
+    ],
+    "page": 373
+  },
+  {
+    "no": 253,
+    "headword": "backstage",
+    "ipa": "/ˌbækˈsteɪdʒ/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "在后台"
+      },
+      {
+        "pos": "adj.",
+        "zh": "后台的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The singer waited backstage before the show.",
+        "zh": "演出前歌手在后台等待。",
+        "rewrite": null
+      },
+      {
+        "en": "She got a backstage pass and met her favourite singer after the show.",
+        "zh": "她拿到了后台通行证，在演出结束后见到了她最喜爱的歌手。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 373
+  },
+  {
+    "no": 254,
+    "headword": "bark",
+    "ipa": "/bɑːk/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "（狗）吠叫"
+      }
+    ],
+    "grade": "八上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "The dog barks loudly when someone comes near.",
+        "zh": "有人靠近时，狗就大声吠叫。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 373
+  },
+  {
+    "no": 255,
+    "headword": "bathe",
+    "ipa": "/beɪð/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "用水清洗（尤指身体部位）"
+      }
+    ],
+    "grade": "八上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The nurse helped him bathe his wounded leg.",
+        "zh": "护士帮他清洗受伤的腿。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：bathe in 沐浴在（阳光等中）"
+    ],
+    "_flags": [
+      "ipa：OCR 原文 /beit/ 有误，已按标准读音改为 /beɪð/"
+    ],
+    "page": 373
+  },
+  {
+    "no": 256,
+    "headword": "beyond",
+    "ipa": "/biˈjɒnd/",
+    "senses": [
+      {
+        "pos": "prep.",
+        "zh": "除……之外"
+      }
+    ],
+    "grade": "八上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "He has no interests beyond reading.",
+        "zh": "除了读书，他没有其他爱好。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：beyond one's reach 够不着；beyond doubt 毫无疑问地"
+    ],
+    "page": 373
+  },
+  {
+    "no": 257,
+    "headword": "billion",
+    "ipa": "/ˈbɪljən/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "十亿"
+      }
+    ],
+    "grade": "八上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "There are over eight billion people in the world.",
+        "zh": "世界上有八十多亿人。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 374
+  },
+  {
+    "no": 258,
+    "headword": "blow up",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "爆炸"
+      }
+    ],
+    "grade": "八上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The bomb may blow up at any moment.",
+        "zh": "炸弹随时可能爆炸。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 374
+  },
+  {
+    "no": 259,
+    "headword": "bluetooth",
+    "ipa": "/ˈbluːtuː/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "蓝牙（用于手机、计算机等电子设备的短距离无线连接技术）"
+      }
+    ],
+    "grade": "八上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "I use bluetooth to connect my phone to the speaker.",
+        "zh": "我用蓝牙把手机和扬声器连接起来。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 374
+  },
+  {
+    "no": 260,
+    "headword": "connection",
+    "ipa": "/kəˈnekʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "连接"
+      }
+    ],
+    "grade": "八上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "There is a connection between the two machines.",
+        "zh": "这两台机器之间有连接。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：have a connection with 与……有关联"
+    ],
+    "page": 374
+  },
+  {
+    "no": 261,
+    "headword": "continuous",
+    "ipa": "/kənˈtɪnjuəs/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "不断的；持续的；连续的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "We had continuous rain for three days.",
+        "zh": "我们这连续下了三天雨。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 374
+  },
+  {
+    "no": 262,
+    "headword": "cure",
+    "ipa": "/kjʊə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "药物；疗法"
+      }
+    ],
+    "grade": "八上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "Doctors are trying to find a cure for this disease.",
+        "zh": "医生们正努力寻找这种疾病的疗法。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 374
+  },
+  {
+    "no": 263,
+    "headword": "cut in",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "插嘴"
+      }
+    ],
+    "grade": "八上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "It's impolite to cut in when others are talking.",
+        "zh": "别人说话时插嘴是不礼貌的。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 374
+  },
+  {
+    "no": 264,
+    "headword": "decade",
+    "ipa": "/ˈdekeɪd/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "十年"
+      }
+    ],
+    "grade": "八上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "Great changes have taken place in the past decade.",
+        "zh": "在过去的十年里发生了巨大的变化。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 374
+  },
+  {
+    "no": 265,
+    "headword": "detect",
+    "ipa": "/dɪˈtekt/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "发现；查明；侦察出"
+      }
+    ],
+    "grade": "八上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "The machine can detect small changes in temperature.",
+        "zh": "这台机器能检测出温度的微小变化。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：detect sb. doing sth. 发现某人做某事"
+    ],
+    "page": 374
+  },
+  {
+    "no": 266,
+    "headword": "dishwasher",
+    "ipa": "/ˈdɪʃwɒʃə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "洗碗碟机"
+      }
+    ],
+    "grade": "八上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "My mother bought a new dishwasher last week.",
+        "zh": "我妈妈上周买了一台新的洗碗机。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 374
+  },
+  {
+    "no": 267,
+    "headword": "disturbing",
+    "ipa": "/dɪˈstɜːbɪŋ/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "令人不安的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "We heard some disturbing news last night.",
+        "zh": "昨晚我们听到了一些令人不安的消息。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 374
+  },
+  {
+    "no": 268,
+    "headword": "DJ",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "（电台、电视台、俱乐部）唱片节目主持人"
+      }
+    ],
+    "grade": "八上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The DJ played our favourite song at the party.",
+        "zh": "派对上，唱片节目主持人播放了我们最喜欢的歌。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "＝disc jockey"
+    ],
+    "page": 374
+  },
+  {
+    "no": 269,
+    "headword": "dramatically",
+    "ipa": "/drəˈmætɪkli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "突然地；巨大地；令人吃惊地"
+      }
+    ],
+    "grade": "八上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "Her health improved dramatically after the treatment.",
+        "zh": "接受治疗后她的健康状况有了显著改善。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 374
+  },
+  {
+    "no": 270,
+    "headword": "eagerly",
+    "ipa": "/ˈiːɡəli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "渴望地；热切地"
+      }
+    ],
+    "grade": "八上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The children waited eagerly for the presents.",
+        "zh": "孩子们热切地等待着礼物。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 375
+  },
+  {
+    "no": 271,
+    "headword": "elevator",
+    "ipa": "/ˈelɪveɪtə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "电梯；升降机"
+      }
+    ],
+    "grade": "八上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "We took the elevator to the top floor.",
+        "zh": "我们乘电梯到了顶楼。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义：lift〈英〉"
+    ],
+    "page": 375
+  },
+  {
+    "no": 272,
+    "headword": "energy-saving",
+    "ipa": "/ˌenədʒi ˈseɪvɪŋ/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "节能的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "We should use energy-saving lamps.",
+        "zh": "我们应该使用节能灯。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 375
+  },
+  {
+    "no": 273,
+    "headword": "extremely",
+    "ipa": "/ɪkˈstriːmli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "极其；非常"
+      }
+    ],
+    "grade": "八上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "It's extremely cold today.",
+        "zh": "今天非常冷。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 375
+  },
+  {
+    "no": 274,
+    "headword": "eyesight",
+    "ipa": "/ˈaɪsaɪt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "视力"
+      }
+    ],
+    "grade": "八上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "As students spend more time in front of screens, their eyesight becomes worse.",
+        "zh": "随着学生们看电子屏幕的时间增多，他们的视力变得越来越差。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 375
+  },
+  {
+    "no": 275,
+    "headword": "figure out",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "弄懂；弄明白"
+      }
+    ],
+    "grade": "八上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "I can't figure out this math problem.",
+        "zh": "我解不出这道数学题。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 375
+  },
+  {
+    "no": 276,
+    "headword": "firefighting",
+    "ipa": "/ˈfaɪəfaɪtɪŋ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "灭火；消防"
+      }
+    ],
+    "grade": "八上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "Quick response is very important in firefighting to prevent disasters.",
+        "zh": "在消防工作中，快速反应对防止灾难非常重要。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：firefighter n. 消防员"
+    ],
+    "page": 375
+  },
+  {
+    "no": 277,
+    "headword": "float",
+    "ipa": "/fləʊt/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "飘动；漂移"
+      }
+    ],
+    "grade": "八上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The balloon floated up into the sky.",
+        "zh": "气球飘向了天空。",
+        "rewrite": null
+      },
+      {
+        "en": "Leaves float on the water.",
+        "zh": "树叶在水面上漂浮。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 375
+  },
+  {
+    "no": 278,
+    "headword": "fully",
+    "ipa": "/ˈfʊli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "完全地；充分地"
+      }
+    ],
+    "grade": "八上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "I fully understand your feelings.",
+        "zh": "我完全理解你的感受。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：be fully aware of 充分意识到"
+    ],
+    "page": 375
+  },
+  {
+    "no": 279,
+    "headword": "grown-up",
+    "ipa": "/ˈɡrəʊn ʌp/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "（尤指用于对儿童说话时）大人"
+      }
+    ],
+    "grade": "八上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "The grown-ups are talking.",
+        "zh": "大人们在说话。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 375
+  },
+  {
+    "no": 280,
+    "headword": "growth",
+    "ipa": "/ɡrəʊθ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "生长，增长"
+      }
+    ],
+    "grade": "八上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "Good food helps the growth of children.",
+        "zh": "良好的食物有助于儿童的成长。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：the growth of population 人口增长"
+    ],
+    "page": 375
+  },
+  {
+    "no": 281,
+    "headword": "handprint",
+    "ipa": "/ˈhændprɪnt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "手印"
+      }
+    ],
+    "grade": "八上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The police found some handprints at the scene.",
+        "zh": "警方在现场发现了一些手印。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 375
+  },
+  {
+    "no": 282,
+    "headword": "headset",
+    "ipa": "/ˈhedset/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "（尤指带麦克风的）头戴式受话器，耳机"
+      }
+    ],
+    "grade": "八上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "He wears a headset to listen to music.",
+        "zh": "他戴着耳机听音乐。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 375
+  },
+  {
+    "no": 283,
+    "headword": "heater",
+    "ipa": "/ˈhiːtə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "加热器；炉子；热水器"
+      }
+    ],
+    "grade": "八上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "We use a heater to keep warm in winter.",
+        "zh": "冬天我们用加热器取暖。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 376
+  },
+  {
+    "no": 284,
+    "headword": "hidden",
+    "ipa": "/ˈhɪdn/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "隐藏的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "When we visit some websites, hidden software may collect our personal information.",
+        "zh": "当我们访问一些网站时，隐藏软件可能会收集我们的个人信息。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 376
+  },
+  {
+    "no": 285,
+    "headword": "in a row",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "连续几次地"
+      }
+    ],
+    "grade": "八上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "He won the game three times in a row.",
+        "zh": "他连续三次赢得比赛。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 376
+  },
+  {
+    "no": 286,
+    "headword": "in conclusion",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "最后"
+      }
+    ],
+    "grade": "八上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "In conclusion, we should work hard to achieve our goals.",
+        "zh": "最后，我们应该努力实现我们的目标。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：in conclusion 常用于议论文或演讲的结尾，总结观点。"
+    ],
+    "page": 376
+  },
+  {
+    "no": 287,
+    "headword": "in my opinion",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "依我看"
+      }
+    ],
+    "grade": "八上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "In my opinion, English is very important.",
+        "zh": "依我看，英语非常重要。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义词：I think, I believe, as far as I'm concerned"
+    ],
+    "page": 376
+  },
+  {
+    "no": 288,
+    "headword": "inborn",
+    "ipa": "/ɪnˈbɔːn/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "天生的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "He has an inborn talent for music.",
+        "zh": "他具有音乐天赋。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义词：natural"
+    ],
+    "page": 376
+  },
+  {
+    "no": 289,
+    "headword": "inconvenience",
+    "ipa": "/ˌɪnkənˈviːniəns/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "不便；麻烦；困难"
+      }
+    ],
+    "grade": "八上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "I'm sorry for the inconvenience I caused.",
+        "zh": "我为造成的不便感到抱歉。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：inconvenient adj. 不方便的"
+    ],
+    "_flags": [
+      "ipa：OCR 原文 /ɪn'kʌvɪniəns/ 有误，已按标准读音改为 /ˌɪnkənˈviːniəns/"
+    ],
+    "page": 376
+  },
+  {
+    "no": 290,
+    "headword": "indirect",
+    "ipa": "/ˌɪndɪˈrekt/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "间接的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "He gave me an indirect answer.",
+        "zh": "他给了我一个间接的回答。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "反义词：direct"
+    ],
+    "_flags": [
+      "ipa：OCR 原文 /ɪnˈdaɪrɛkt; ɪnˈdaɪrɛkt/（双读音且元音有误），已按标准读音改为 /ˌɪndɪˈrekt/"
+    ],
+    "page": 376
+  },
+  {
+    "no": 291,
+    "headword": "inform",
+    "ipa": "/ɪnˈfɔːm/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "知会；通知"
+      }
+    ],
+    "grade": "八上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "Please inform me of the result.",
+        "zh": "请告知我结果。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：inform sb. about/of sth. 通知某人某事"
+    ],
+    "page": 376
+  },
+  {
+    "no": 292,
+    "headword": "IT",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "信息技术"
+      }
+    ],
+    "grade": "八上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "He works in the IT industry.",
+        "zh": "他在信息技术行业工作。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "＝information technology"
+    ],
+    "page": 376
+  },
+  {
+    "no": 293,
+    "headword": "keep an eye on",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "照看；留神；留意"
+      }
+    ],
+    "grade": "八上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "Please keep an eye on my bag while I'm away.",
+        "zh": "我离开时请帮忙照看一下我的包。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义词：look after, take care of"
+    ],
+    "page": 376
+  },
+  {
+    "no": 294,
+    "headword": "litre",
+    "ipa": "/ˈliːtə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "升"
+      }
+    ],
+    "grade": "八上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "This bottle holds two litres of water.",
+        "zh": "这个瓶子能装两升水。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "〈美〉liter"
+    ],
+    "page": 376
+  },
+  {
+    "no": 295,
+    "headword": "living conditions",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "生活条件"
+      }
+    ],
+    "grade": "八上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "Our living conditions have improved a lot.",
+        "zh": "我们的生活条件改善了很多。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "关联：living standard 生活水平"
+    ],
+    "page": 377
+  },
+  {
+    "no": 296,
+    "headword": "magician",
+    "ipa": "/məˈdʒɪʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "魔术师；变戏法的人"
+      }
+    ],
+    "grade": "八上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "The magician performed some wonderful tricks.",
+        "zh": "魔术师表演了一些精彩的魔术。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /mæ'dʒɪsn/ 有误，已按标准读音改为 /məˈdʒɪʃn/"
+    ],
+    "page": 377
+  },
+  {
+    "no": 297,
+    "headword": "mud",
+    "ipa": "/mʌd/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "泥；淤泥"
+      }
+    ],
+    "grade": "八上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The children played in the mud.",
+        "zh": "孩子们在泥里玩耍。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：muddy adj. 泥泞的"
+    ],
+    "page": 377
+  },
+  {
+    "no": 298,
+    "headword": "never-ending",
+    "ipa": "/ˌnevər ˈendɪŋ/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "永无止境的；没完没了的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "We have a never-ending supply of homework.",
+        "zh": "我们有做不完的作业。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 377
+  },
+  {
+    "no": 299,
+    "headword": "off-stage",
+    "ipa": "/ˌɒf ˈsteɪdʒ/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "舞台外的；幕后的"
+      },
+      {
+        "pos": "adv.",
+        "zh": "在舞台外；在幕后"
+      }
+    ],
+    "grade": "八上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "We had an off-stage discussion.",
+        "zh": "我们进行了一次幕后讨论。",
+        "rewrite": null
+      },
+      {
+        "en": "The actor waited off-stage.",
+        "zh": "演员在舞台外等候。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "反义：on-stage"
+    ],
+    "page": 377
+  },
+  {
+    "no": 300,
+    "headword": "passion",
+    "ipa": "/ˈpæʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "酷爱；热衷的爱好（或活动等）"
+      }
+    ],
+    "grade": "八上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "She has a passion for dancing.",
+        "zh": "她酷爱跳舞。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：passionate adj. 热情的",
+      "常用词组：have a passion for 酷爱……"
+    ],
+    "page": 377
+  },
+  {
+    "no": 301,
+    "headword": "presentation",
+    "ipa": "/ˌpreznˈteɪʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "展示会；介绍会"
+      }
+    ],
+    "grade": "八上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "We will have a presentation about this project tomorrow.",
+        "zh": "明天我们将有一个关于这次项目的展示会。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /prez'n'teɪʃn/ 损坏，已按标准读音改为 /ˌpreznˈteɪʃn/"
+    ],
+    "page": 377
+  },
+  {
+    "no": 302,
+    "headword": "punishment",
+    "ipa": "/ˈpʌnɪʃmənt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "惩罚；处罚"
+      }
+    ],
+    "grade": "八上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "He received a punishment for his mistake.",
+        "zh": "他因犯错受到了惩罚。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 377
+  },
+  {
+    "no": 303,
+    "headword": "rare",
+    "ipa": "/reə(r)/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "稀少的；珍贵的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "Pandas are rare animals.",
+        "zh": "熊猫是珍稀动物。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 377
+  },
+  {
+    "no": 304,
+    "headword": "rate",
+    "ipa": "/reɪt/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "划分等级；评估"
+      }
+    ],
+    "grade": "八上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "Teachers rate students' work.",
+        "zh": "老师给学生的作品打分。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：rate sth. as 把某物评为……"
+    ],
+    "page": 377
+  },
+  {
+    "no": 305,
+    "headword": "researcher",
+    "ipa": "/rɪˈsɜːtʃə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "研究者"
+      }
+    ],
+    "grade": "八上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "The researcher is working on a new project.",
+        "zh": "这位研究者正在从事一个新项目。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 377
+  },
+  {
+    "no": 306,
+    "headword": "result in",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "造成；导致"
+      }
+    ],
+    "grade": "八上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "His carelessness resulted in the accident.",
+        "zh": "他的粗心导致了这场事故。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义词：lead to"
+    ],
+    "page": 377
+  },
+  {
+    "no": 307,
+    "headword": "roll",
+    "ipa": "/rəʊl/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "卷；卷轴"
+      }
+    ],
+    "grade": "八上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "She bought a roll of paper.",
+        "zh": "她买了一卷纸。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 378
+  },
+  {
+    "no": 308,
+    "headword": "ruin",
+    "ipa": "/ˈruːɪn/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "毁坏；破坏"
+      }
+    ],
+    "grade": "八上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "The rain ruined our picnic.",
+        "zh": "这场雨破坏了我们的野餐。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /ru:n/ 缺音节，已按标准读音改为 /ˈruːɪn/"
+    ],
+    "page": 378
+  },
+  {
+    "no": 309,
+    "headword": "rural",
+    "ipa": "/ˈrʊərəl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "乡村的；农村的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "He lives in a rural area.",
+        "zh": "他住在农村地区。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：rural life 乡村生活",
+      "反义词：urban"
+    ],
+    "page": 378
+  },
+  {
+    "no": 310,
+    "headword": "security",
+    "ipa": "/sɪˈkjʊərəti/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "安全工作；保安部门"
+      }
+    ],
+    "grade": "八上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The security guard checked our bags.",
+        "zh": "保安检查了我们的包。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：secure adj. 安全的"
+    ],
+    "page": 378
+  },
+  {
+    "no": 311,
+    "headword": "self-important",
+    "ipa": "/ˌself ɪmˈpɔːtnt/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "自大的；自负的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "He is a self-important man.",
+        "zh": "他是个自负的人。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 378
+  },
+  {
+    "no": 312,
+    "headword": "set off",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "出发；动身；启程"
+      }
+    ],
+    "grade": "八上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "We will set off early tomorrow morning.",
+        "zh": "我们明天早上会早点出发。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 378
+  },
+  {
+    "no": 313,
+    "headword": "severe",
+    "ipa": "/sɪˈvɪə(r)/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "极为恶劣的；十分严重的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "He has a severe headache.",
+        "zh": "他头痛得很厉害。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：severely adv. 严重地"
+    ],
+    "page": 378
+  },
+  {
+    "no": 314,
+    "headword": "smartphone",
+    "ipa": "/ˈsmɑːtfəʊn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "智能手机"
+      }
+    ],
+    "grade": "八上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "Many people use smartphones to surf the internet.",
+        "zh": "很多人用智能手机上网。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 378
+  },
+  {
+    "no": 315,
+    "headword": "smelly",
+    "ipa": "/ˈsmeli/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "有难闻气味的；有臭味的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "The smelly rubbish needs to be taken away.",
+        "zh": "这些发臭的垃圾需要被运走。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 378
+  },
+  {
+    "no": 316,
+    "headword": "software",
+    "ipa": "/ˈsɒftweə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "软件"
+      }
+    ],
+    "grade": "八上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "We need to install new software on the computer.",
+        "zh": "我们需要在电脑上安装新软件。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "反义词：hardware"
+    ],
+    "page": 378
+  },
+  {
+    "no": 317,
+    "headword": "super-speed",
+    "ipa": "/ˌsuːpə ˈspiːd/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "超高速的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "This train has a super-speed engine.",
+        "zh": "这列火车有一个超高速引擎。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 378
+  },
+  {
+    "no": 318,
+    "headword": "surprising",
+    "ipa": "/səˈpraɪzɪŋ/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "令人吃惊的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "It's surprising that he won the game.",
+        "zh": "他赢得比赛真令人吃惊。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义词：amazing"
+    ],
+    "page": 378
+  },
+  {
+    "no": 319,
+    "headword": "talented",
+    "ipa": "/ˈtæləntɪd/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "有才能的；天才的；有才干的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "She is a talented singer.",
+        "zh": "她是一位有天赋的歌手。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /'teiləntid/ 有误，已按标准读音改为 /ˈtæləntɪd/"
+    ],
+    "page": 378
+  },
+  {
+    "no": 320,
+    "headword": "touch screen",
+    "ipa": "/ˈtʌtʃ skriːn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "（计算机）触摸屏"
+      }
+    ],
+    "grade": "八上",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "This computer has a touch screen.",
+        "zh": "这台电脑有触摸屏。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 379
+  },
+  {
+    "no": 321,
+    "headword": "touching",
+    "ipa": "/ˈtʌtʃɪŋ/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "令人同情的；感人的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "It's a touching story.",
+        "zh": "这是一个感人的故事。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 379
+  },
+  {
+    "no": 322,
+    "headword": "treatment",
+    "ipa": "/ˈtriːtmənt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "（净化或防治）处理；加工"
+      }
+    ],
+    "grade": "八上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The treatment of wastewater is important.",
+        "zh": "废水处理很重要。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：medical treatment 医疗"
+    ],
+    "page": 379
+  },
+  {
+    "no": 323,
+    "headword": "unbelievable",
+    "ipa": "/ˌʌnbɪˈliːvəbl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "难以置信的；惊人的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "It's unbelievable that he ran so fast.",
+        "zh": "难以置信他竟跑得那么快。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 379
+  },
+  {
+    "no": 324,
+    "headword": "unfamiliar",
+    "ipa": "/ˌʌnfəˈmɪliə(r)/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "陌生的；不熟悉的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "This is an unfamiliar word for me.",
+        "zh": "这个单词对我来说很陌生。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：be unfamiliar with 对……不熟悉"
+    ],
+    "_flags": [
+      "ipa：OCR 原文 /ʌn'fɪmə(r)/ 缺音节，已按标准读音改为 /ˌʌnfəˈmɪliə(r)/"
+    ],
+    "page": 379
+  },
+  {
+    "no": 325,
+    "headword": "unlikely",
+    "ipa": "/ʌnˈlaɪkli/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "不大可能发生的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "It's unlikely to rain tomorrow.",
+        "zh": "明天不大可能下雨。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：be unlikely to do sth. 不大可能做某事"
+    ],
+    "page": 379
+  },
+  {
+    "no": 326,
+    "headword": "unpleasant",
+    "ipa": "/ʌnˈpleznt/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "令人不快的；不舒服的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "We had an unpleasant trip because of the bad weather.",
+        "zh": "因为天气不好，我们的旅行很不愉快。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 379
+  },
+  {
+    "no": 327,
+    "headword": "VIP",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "要人，贵宾"
+      }
+    ],
+    "grade": "八上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The hotel has a special room for VIPs.",
+        "zh": "这家酒店有专门的贵宾室。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "＝Very Important Person"
+    ],
+    "page": 379
+  },
+  {
+    "no": 328,
+    "headword": "VR",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": "abbr.",
+        "zh": "虚拟现实"
+      }
+    ],
+    "grade": "八上",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "He enjoys playing VR games.",
+        "zh": "他喜欢玩虚拟现实游戏。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "＝virtual reality"
+    ],
+    "page": 379
+  },
+  {
+    "no": 329,
+    "headword": "wastewater",
+    "ipa": "/ˈweɪstwɔːtə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "废水"
+      }
+    ],
+    "grade": "八上",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "Factories shouldn't pour wastewater into rivers.",
+        "zh": "工厂不应该把废水排入河流。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /'wɛstwɔ:tə(r)/ 有误，已按标准读音改为 /ˈweɪstwɔːtə(r)/"
+    ],
+    "page": 379
+  },
+  {
+    "no": 330,
+    "headword": "wealthy",
+    "ipa": "/ˈwelθi/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "富有的；富裕的"
+      }
+    ],
+    "grade": "八上",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "He comes from a wealthy family.",
+        "zh": "他来自一个富裕的家庭。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 379
+  },
+  {
+    "no": 331,
+    "headword": "wonderland",
+    "ipa": "/ˈwʌndəlænd/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "（童话中的）仙境，奇境"
+      }
+    ],
+    "grade": "八上",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The park is like a wonderland with many beautiful flowers.",
+        "zh": "这个公园就像一个开满美丽鲜花的仙境。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 379
+  },
+  {
+    "no": 332,
+    "headword": "a great deal of",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "很多；大量"
+      }
+    ],
+    "grade": "八下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "She spent a great deal of time reading books.",
+        "zh": "她花了大量时间看书。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：a great deal of 仅修饰不可数名词。例如：There is a great deal of water in the bottle. 瓶子里有大量的水。a number of 仅修饰可数名词复数，后接谓语用复数。例如：A number of birds fly south in winter. 许多鸟类在冬天飞往南方。many 仅修饰可数名词复数。例如：Many students like playing basketball. 许多学生喜欢打篮球。much 仅修饰不可数名词。例如：I don't have much time to rest. 我没有太多时间休息。"
+    ],
+    "page": 379
+  },
+  {
+    "no": 333,
+    "headword": "account for",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "（数量上、比例上）占"
+      }
+    ],
+    "grade": "八下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "Reading accounts for a large part of our daily English study.",
+        "zh": "阅读在我们日常的英语学习中占很大一部分。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 380
+  },
+  {
+    "no": 334,
+    "headword": "acting",
+    "ipa": "/ˈæktɪŋ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "表演"
+      }
+    ],
+    "grade": "八下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "Her acting in the play won lots of praise.",
+        "zh": "她在剧中的表演赢得了许多好评。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：acting skills 表演技巧"
+    ],
+    "page": 380
+  },
+  {
+    "no": 335,
+    "headword": "advertising",
+    "ipa": "/ˈædvətaɪzɪŋ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "广告活动；广告业；广告"
+      }
+    ],
+    "grade": "八下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "The company will put more money into advertising.",
+        "zh": "这家公司会在广告宣传上投入更多资金。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：advertising industry 广告业"
+    ],
+    "page": 380
+  },
+  {
+    "no": 336,
+    "headword": "as if",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "好像；仿佛"
+      }
+    ],
+    "grade": "八下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "He talks as if he knew everything about the plan.",
+        "zh": "他说话的样子好像对这个计划了如指掌。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：当 as if 引导的从句表示与事实明显不符或纯粹是主观想象、夸大比喻时，使用虚拟语气。此时，如果主句是一般现在时，从句谓语动词通常用过去式（be 动词统一用 were）。例如：She looks as if she were a princess. 她看起来仿佛是一位公主。"
+    ],
+    "page": 380
+  },
+  {
+    "no": 337,
+    "headword": "bad-tempered",
+    "ipa": "/ˌbæd ˈtempəd/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "易怒的；爱发脾气的"
+      }
+    ],
+    "grade": "八下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "My father is a little bad-tempered when he is tired.",
+        "zh": "我爸在累的时候会有点易怒。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义：irritable; cross",
+      "反义：good-tempered; mild"
+    ],
+    "page": 380
+  },
+  {
+    "no": 338,
+    "headword": "baggy",
+    "ipa": "/ˈbæɡi/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "宽松的"
+      }
+    ],
+    "grade": "八下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "He likes to wear baggy jeans in his daily life.",
+        "zh": "他日常生活中喜欢穿宽松的牛仔裤。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义词：loose",
+      "反义词：tight"
+    ],
+    "page": 380
+  },
+  {
+    "no": 339,
+    "headword": "BCE",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": "abbr.",
+        "zh": "公元前"
+      }
+    ],
+    "grade": "八下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "This ancient building was built in 300 BCE.",
+        "zh": "这座古老的建筑建于公元前300年。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "＝before the Common Era"
+    ],
+    "page": 381
+  },
+  {
+    "no": 340,
+    "headword": "be mean to sb.",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "对某人刻薄"
+      }
+    ],
+    "grade": "八下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "It's not polite to be mean to your classmates.",
+        "zh": "对同学刻薄是不礼貌的。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：mean 此处为形容词，表“刻薄的”，区别于动词含义“意思是；打算”。例如：She apologised for her mean comments during the argument. 她为自己在争吵中说的刻薄话道了歉。This decision means a new start for her. 这个决定对她来说意味着一个新的开始。"
+    ],
+    "page": 381
+  },
+  {
+    "no": 341,
+    "headword": "by accident",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "偶然；意外地"
+      }
+    ],
+    "grade": "八下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "I met my primary school teacher by accident on the street.",
+        "zh": "我在街上偶然遇到了我的小学老师。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义词：by chance",
+      "反义词：on purpose"
+    ],
+    "page": 381
+  },
+  {
+    "no": 342,
+    "headword": "caring",
+    "ipa": "/ˈkeərɪŋ/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "关心他人的；体贴的"
+      }
+    ],
+    "grade": "八下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "She is a caring nurse and all patients like her.",
+        "zh": "她是一位体贴的护士，所有病人都喜欢她。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义词：considerate; kind"
+    ],
+    "page": 381
+  },
+  {
+    "no": 343,
+    "headword": "CE",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": "abbr.",
+        "zh": "公元"
+      }
+    ],
+    "grade": "八下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "This important event happened in 200 CE.",
+        "zh": "这个重要事件发生在公元200年。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "＝Common Era"
+    ],
+    "page": 381
+  },
+  {
+    "no": 344,
+    "headword": "cheerful",
+    "ipa": "/ˈtʃɪəfl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "开朗的；乐观的"
+      }
+    ],
+    "grade": "八下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "She is always cheerful and brings joy to everyone around her.",
+        "zh": "她总是很开朗，给身边的人带来快乐。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义词：optimistic; lively",
+      "反义词：sad; gloomy"
+    ],
+    "page": 381
+  },
+  {
+    "no": 345,
+    "headword": "cheerleader",
+    "ipa": "/ˈtʃɪəliːdə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "拉拉队队员；支持者"
+      }
+    ],
+    "grade": "八下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "My sister wants to be a cheerleader for the school basketball team.",
+        "zh": "我妹妹想当校篮球队的拉拉队队员。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：cheerleading n. 拉拉队运动"
+    ],
+    "_flags": [
+      "ipa：OCR 原文 /'tʃɪələdər(r)/ 有误，已按标准读音改为 /ˈtʃɪəliːdə(r)/"
+    ],
+    "page": 381
+  },
+  {
+    "no": 346,
+    "headword": "come across",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "（偶然）遇见，碰见，发现"
+      }
+    ],
+    "grade": "八下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "I came across an old photo album while I was cleaning the closet.",
+        "zh": "我打扫壁橱时偶然发现了一本旧相册。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：come across 无被动形式，后直接接人或物。例如：He came across an acquaintance on his way home. 他在回家的路上偶然碰到了一个熟人。"
+    ],
+    "page": 381
+  },
+  {
+    "no": 347,
+    "headword": "creativity",
+    "ipa": "/ˌkriːeɪˈtɪvəti/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "创造力"
+      }
+    ],
+    "grade": "八下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "Drawing pictures can develop children's creativity.",
+        "zh": "画画能培养孩子的创造力。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /kriːˈɪtɪvəti/ 有误，已按标准读音改为 /ˌkriːeɪˈtɪvəti/"
+    ],
+    "page": 382
+  },
+  {
+    "no": 348,
+    "headword": "decoration",
+    "ipa": "/ˌdekəˈreɪʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "装饰品；装饰"
+      }
+    ],
+    "grade": "八下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "We put some decorations on the Christmas tree.",
+        "zh": "我们在圣诞树上挂了一些装饰品。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 382
+  },
+  {
+    "no": 349,
+    "headword": "discovery",
+    "ipa": "/dɪˈskʌvəri/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "发现；发觉"
+      }
+    ],
+    "grade": "八下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "The discovery of penicillin changed the world of medicine.",
+        "zh": "青霉素的发现改变了医学界。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：make a discovery 发现，找到"
+    ],
+    "page": 382
+  },
+  {
+    "no": 350,
+    "headword": "doubtful",
+    "ipa": "/ˈdaʊtfl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "怀疑的；不确定的"
+      }
+    ],
+    "grade": "八下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "I'm doubtful about whether he can finish the work on time.",
+        "zh": "我怀疑他能否按时完成这项工作。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义：skeptical; uncertain",
+      "反义：certain; sure",
+      "名师点拨：doubtful 后常接介词 about，构成 be doubtful about sth.。例如：She is doubtful about the truth of the news. 她对这个消息的真实性表示怀疑。"
+    ],
+    "page": 382
+  },
+  {
+    "no": 351,
+    "headword": "dynasty",
+    "ipa": "/ˈdɪnəsti/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "王朝；朝代"
+      }
+    ],
+    "grade": "八下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The Tang dynasty is one of the most prosperous dynasties in China.",
+        "zh": "唐朝是中国最繁荣的朝代之一。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 382
+  },
+  {
+    "no": 352,
+    "headword": "economics",
+    "ipa": "/ˌɪkəˈnɒmɪks/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "经济学"
+      }
+    ],
+    "grade": "八下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "He plans to study economics when he goes to university.",
+        "zh": "他上大学后打算学习经济学。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 382
+  },
+  {
+    "no": 353,
+    "headword": "economist",
+    "ipa": "/ˌɪkəˈnɒmɪst/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "经济学家；经济专家"
+      }
+    ],
+    "grade": "八下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "Many economists gave their opinions on the country's economic development.",
+        "zh": "许多经济学家对国家的经济发展发表了看法。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 382
+  },
+  {
+    "no": 354,
+    "headword": "even if",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "即使；纵然；虽然"
+      }
+    ],
+    "grade": "八下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "Even if it rains tomorrow, we will still go for the picnic.",
+        "zh": "即使明天下雨，我们还是会去野餐。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：even if 可与 even though 互换，引导让步状语从句。例如：Even if/though he is busy, he will help us. 即使他很忙，他也会帮我们的。"
+    ],
+    "page": 382
+  },
+  {
+    "no": 355,
+    "headword": "expectation",
+    "ipa": "/ˌekspekˈteɪʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "期望；预期"
+      }
+    ],
+    "grade": "八下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "His parents have high expectations for his study.",
+        "zh": "他的父母对他的学习抱有很高的期望。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：meet one's expectations 达到某人的期望"
+    ],
+    "page": 382
+  },
+  {
+    "no": 356,
+    "headword": "exploration",
+    "ipa": "/ˌekspləˈreɪʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "探索；勘查"
+      }
+    ],
+    "grade": "八下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "The exploration of the deep sea is very challenging.",
+        "zh": "对深海的探索极具挑战性。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：space exploration 太空探索"
+    ],
+    "page": 383
+  },
+  {
+    "no": 357,
+    "headword": "fashionable",
+    "ipa": "/ˈfæʃnəbl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "流行的；时髦的"
+      }
+    ],
+    "grade": "八下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "Wearing silk scarves is fashionable in this winter.",
+        "zh": "今年冬天很流行戴丝巾。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义词：stylish; trendy",
+      "反义词：unfashionable; out of date"
+    ],
+    "page": 383
+  },
+  {
+    "no": 358,
+    "headword": "firm",
+    "ipa": "/fɜːm/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "坚定的；坚决的"
+      }
+    ],
+    "grade": "八下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "She has a firm belief that she will succeed in the exam.",
+        "zh": "她坚信自己能通过这次考试。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义词：steady; resolute",
+      "反义词：weak; unsteady"
+    ],
+    "page": 383
+  },
+  {
+    "no": 359,
+    "headword": "fishnet",
+    "ipa": "/ˈfɪʃnet/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "渔网"
+      }
+    ],
+    "grade": "八下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "The fishermen mended the broken fishnet before going to sea.",
+        "zh": "渔民们出海前修补了破损的渔网。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：a piece of fishnet 一张渔网"
+    ],
+    "page": 383
+  },
+  {
+    "no": 360,
+    "headword": "flowery",
+    "ipa": "/ˈflaʊəri/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "用花装饰的"
+      }
+    ],
+    "grade": "八下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "She received a flowery dress as her birthday gift.",
+        "zh": "她收到了一件带花卉装饰的连衣裙作为生日礼物。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：flowery pattern 花卉图案"
+    ],
+    "page": 383
+  },
+  {
+    "no": 361,
+    "headword": "get away",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "离开；逃离"
+      }
+    ],
+    "grade": "八下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "She wants to get away from the noisy city for a few days.",
+        "zh": "她想离开喧闹的城市几天。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义词：escape; run away"
+    ],
+    "page": 383
+  },
+  {
+    "no": 362,
+    "headword": "go off",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "断电"
+      }
+    ],
+    "grade": "八下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The lights went off suddenly because of the heavy rain.",
+        "zh": "因为大雨，灯突然断电了。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：go off 为多义短语，还可表示“闹钟响；爆炸；变质”。例如：My alarm clock goes off at six every morning. 我的闹钟每天早上6点响。We heard a big noise when the balloon went off. 气球爆炸的时候我们听到了一声巨响。Check the date on the juice carton to make sure it hasn't gone off. 检查一下果汁盒上的日期，确保它还没变质。"
+    ],
+    "page": 383
+  },
+  {
+    "no": 363,
+    "headword": "goods",
+    "ipa": "/ɡʊdz/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "（复）商品；货品"
+      }
+    ],
+    "grade": "八下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "The shop sells all kinds of daily goods.",
+        "zh": "这家商店出售各类日用品。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：imported goods 进口商品；consumer goods 消费品"
+    ],
+    "page": 384
+  },
+  {
+    "no": 364,
+    "headword": "hang out",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "常去某处；闲逛"
+      }
+    ],
+    "grade": "八下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "Teenagers like to hang out with their friends in the mall.",
+        "zh": "青少年喜欢和朋友在商场闲逛。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：hang out 是口语化的短语，后接地点时需加介词 in/at。例如：We often hang out at the coffee shop near the school. 我们经常去学校附近的咖啡店。"
+    ],
+    "page": 384
+  },
+  {
+    "no": 365,
+    "headword": "harmony",
+    "ipa": "/ˈhɑːməni/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "融洽；和谐"
+      }
+    ],
+    "grade": "八下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "We should live in harmony with all living things on the earth.",
+        "zh": "我们应该和地球上的所有生物和谐共处。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：in harmony with 与……和谐相处",
+      "近义词：peace; unity",
+      "反义词：discord; conflict"
+    ],
+    "page": 384
+  },
+  {
+    "no": 366,
+    "headword": "image",
+    "ipa": "/ˈɪmɪdʒ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "形象；印象；图像"
+      }
+    ],
+    "grade": "八下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "This advertisement helps to build a good image of the brand.",
+        "zh": "这则广告有助于树立该品牌的良好形象。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：public image 公众形象；image processing 图像处理"
+    ],
+    "page": 384
+  },
+  {
+    "no": 367,
+    "headword": "in case",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "以防；以防万一"
+      }
+    ],
+    "grade": "八下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "Take an umbrella with you in case it rains this afternoon.",
+        "zh": "带把伞吧，以防今天下午下雨。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：in case 后接从句；in case of 后接名词。例如：We should keep some food in case of an emergency. 我们应该存些食物以防紧急情况。"
+    ],
+    "page": 384
+  },
+  {
+    "no": 368,
+    "headword": "in short",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "总之；简而言之"
+      }
+    ],
+    "grade": "八下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "In short, we need to take action to protect the environment right now.",
+        "zh": "总之，我们现在就应该采取行动保护环境。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义词：in a word; to sum up"
+    ],
+    "page": 384
+  },
+  {
+    "no": 369,
+    "headword": "influencer",
+    "ipa": "/ˈɪnfluənsə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "有影响力的人"
+      }
+    ],
+    "grade": "八下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "She is a popular social media influencer with millions of fans.",
+        "zh": "她是一位拥有数百万粉丝的网红博主。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 384
+  },
+  {
+    "no": 370,
+    "headword": "injure",
+    "ipa": "/ˈɪndʒə(r)/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "伤害；使受伤"
+      }
+    ],
+    "grade": "八下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The man injured his brain and couldn't remember anything for a long time.",
+        "zh": "这名男子脑部受伤，很长一段时间里什么都记不起来了。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：injured adj. 受伤的；injury n. 伤害；损伤",
+      "近义：hurt; harm"
+    ],
+    "page": 385
+  },
+  {
+    "no": 371,
+    "headword": "injured",
+    "ipa": "/ˈɪndʒəd/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "受伤的"
+      }
+    ],
+    "grade": "八下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The nurse in the rescue team treated the injured boy with great patience and care.",
+        "zh": "救援队的护士以极大的耐心与关怀照料着受伤的男孩。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：the injured 伤员（复数概念）"
+    ],
+    "page": 385
+  },
+  {
+    "no": 372,
+    "headword": "injury",
+    "ipa": "/ˈɪndʒəri/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "伤害；损伤"
+      }
+    ],
+    "grade": "八下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "He suffered a serious injury in the sports meeting.",
+        "zh": "他在运动会中受了重伤。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 385
+  },
+  {
+    "no": 373,
+    "headword": "jewellery",
+    "ipa": "/ˈdʒuːəlri/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "珠宝；首饰"
+      }
+    ],
+    "grade": "八下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "Her mother gave her a piece of jewellery on her birthday.",
+        "zh": "她妈妈在她生日时送了她一件珠宝。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "《美》jewelery",
+      "词形拓展：jewel n. 宝石；珠宝首饰；jeweller n. 珠宝商",
+      "常用词组：wear jewellery 佩戴首饰"
+    ],
+    "page": 385
+  },
+  {
+    "no": 374,
+    "headword": "life-saving",
+    "ipa": "/ˈlaɪf ˌseɪvɪŋ/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "救命的；救生的"
+      }
+    ],
+    "grade": "八下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "Learning to swim is a life-saving skill.",
+        "zh": "学会游泳是一项救生技能。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：life-saving equipment 救生设备；life-saving operation 救命手术"
+    ],
+    "page": 385
+  },
+  {
+    "no": 375,
+    "headword": "light up",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "使……变亮"
+      }
+    ],
+    "grade": "八下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "Colorful lights lit up the whole street at night.",
+        "zh": "五颜六色的灯在晚上点亮了整条街道。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：light up 还可表示“（脸）露出喜色”。例如：Her face lit up when she saw the birthday cake. 当她看到生日蛋糕时，脸上露出了喜色。"
+    ],
+    "page": 385
+  },
+  {
+    "no": 376,
+    "headword": "low-lying",
+    "ipa": "/ˈləʊˌlaɪɪŋ/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "低洼的"
+      }
+    ],
+    "grade": "八下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The low-lying areas are easy to be flooded when it rains heavily.",
+        "zh": "暴雨时低洼地区容易被淹。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 386
+  },
+  {
+    "no": 377,
+    "headword": "magical",
+    "ipa": "/ˈmædʒɪkl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "魔法的；神奇的"
+      }
+    ],
+    "grade": "八下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "The little girl had a magical experience in the fairy tale park.",
+        "zh": "小女孩在童话公园有了一次神奇的经历。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义：wonderful"
+    ],
+    "page": 386
+  },
+  {
+    "no": 378,
+    "headword": "mess up",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "出错；搞砸；（在某事上）处理不当"
+      }
+    ],
+    "grade": "八下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "He messed up the important meeting because of his carelessness.",
+        "zh": "他因为粗心搞砸了这次重要的会议。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义：ruin; spoil"
+    ],
+    "page": 386
+  },
+  {
+    "no": 379,
+    "headword": "outfit",
+    "ipa": "/ˈaʊtfɪt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "全套服装；装束"
+      }
+    ],
+    "grade": "八下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "She bought a new sports outfit for the PE class this term.",
+        "zh": "她为这学期的体育课买了一套新的运动服。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 386
+  },
+  {
+    "no": 380,
+    "headword": "over the moon",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "欣喜若狂"
+      }
+    ],
+    "grade": "八下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "She was over the moon when she heard she passed the exam.",
+        "zh": "听到自己通过了考试，她欣喜若狂。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义：on cloud nine; extremely happy"
+    ],
+    "page": 386
+  },
+  {
+    "no": 381,
+    "headword": "payment",
+    "ipa": "/ˈpeɪmənt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "支付；付款；收款"
+      }
+    ],
+    "grade": "八下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "You can make the payment online or in cash in this shop.",
+        "zh": "你可以在这家店在线支付或者用现金付款。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：online payment 在线支付；payment method 支付方式"
+    ],
+    "page": 386
+  },
+  {
+    "no": 382,
+    "headword": "peaceful",
+    "ipa": "/ˈpiːsfl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "安静的；宁静的"
+      }
+    ],
+    "grade": "八下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "We spent a peaceful weekend in the small village in the mountains.",
+        "zh": "我们在山里的小村庄度过了一个宁静的周末。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义：calm; quiet",
+      "反义：noisy"
+    ],
+    "page": 386
+  },
+  {
+    "no": 383,
+    "headword": "percentage",
+    "ipa": "/pəˈsentɪdʒ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "百分率；百分比"
+      }
+    ],
+    "grade": "八下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "What percentage of the students in your class walk to school?",
+        "zh": "你们班有百分之多少的学生步行上学？",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：percentage 后接“of + 名词”，谓语动词的单复数由主语中的名词决定。例如：A large percentage of the water is polluted. 很大一部分的水被污染了。"
+    ],
+    "page": 386
+  },
+  {
+    "no": 384,
+    "headword": "pie chart",
+    "ipa": "/ˈpaɪ tʃɑːt/",
+    "senses": [
+      {
+        "pos": null,
+        "zh": "饼状图"
+      }
+    ],
+    "grade": "八下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "We use a pie chart to show the percentage of different fruits we bought.",
+        "zh": "我们用饼形图展示所购买的不同水果的占比。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 387
+  },
+  {
+    "no": 385,
+    "headword": "pocket money",
+    "ipa": "/ˈpɒkɪt ˈmʌni/",
+    "senses": [
+      {
+        "pos": null,
+        "zh": "（父母给孩子的）零花钱"
+      }
+    ],
+    "grade": "八下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "I save my pocket money to buy a new storybook every month.",
+        "zh": "我每个月都存零花钱买一本新的故事书。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 387
+  },
+  {
+    "no": 386,
+    "headword": "pottery",
+    "ipa": "/ˈpɒtəri/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "陶器；制陶技艺"
+      }
+    ],
+    "grade": "八下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "She learned pottery from a famous artist last year.",
+        "zh": "她去年向一位著名的艺术家学习了制陶技艺。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 387
+  },
+  {
+    "no": 387,
+    "headword": "rapidly",
+    "ipa": "/ˈræpɪdli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "迅速地；快速地；快捷地"
+      }
+    ],
+    "grade": "八下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The city is developing rapidly in recent years.",
+        "zh": "这座城市近年来发展得很迅速。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义：quickly; fast",
+      "反义：slowly; gradually"
+    ],
+    "page": 387
+  },
+  {
+    "no": 388,
+    "headword": "rather than",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "而不是"
+      }
+    ],
+    "grade": "八下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "He chose to stay at home rather than go out with his friends.",
+        "zh": "他选择待在家里，而不是和朋友出去。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：rather than 连接两个并列成分，后接动词常用原形。例如：I prefer to read books rather than watch TV after dinner. 晚饭后我更喜欢看书，而不是看电视。"
+    ],
+    "page": 387
+  },
+  {
+    "no": 389,
+    "headword": "Rd.",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": "abbr.",
+        "zh": "路；道路"
+      }
+    ],
+    "grade": "八下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "My home is on Park Rd. near the central supermarket.",
+        "zh": "我家在公园路上，靠近中心超市。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "＝road"
+    ],
+    "page": 387
+  },
+  {
+    "no": 390,
+    "headword": "relaxed",
+    "ipa": "/rɪˈlækst/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "放松的；自在的"
+      }
+    ],
+    "grade": "八下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "She felt relaxed after listening to the soft music for a while.",
+        "zh": "听了一会儿轻音乐后，她感觉很放松。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义：calm; at ease",
+      "反义：nervous; tense"
+    ],
+    "page": 387
+  },
+  {
+    "no": 391,
+    "headword": "rescue",
+    "ipa": "/ˈreskjuː/",
+    "senses": [
+      {
+        "pos": "n. & v.",
+        "zh": "营救；援救"
+      }
+    ],
+    "grade": "八下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The rescue of the lost hiker took three days in the mountain.",
+        "zh": "在山里营救迷路的徒步旅行者花了3天时间。",
+        "rewrite": null
+      },
+      {
+        "en": "The firefighters rushed to rescue the people in the burning building.",
+        "zh": "消防员赶赴现场营救着火大楼里的人。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：rescuer n. 营救者；救援人员",
+      "常用词组：rescue team 救援队；come to one's rescue 前来营救某人"
+    ],
+    "page": 387
+  },
+  {
+    "no": 392,
+    "headword": "sample",
+    "ipa": "/ˈsɑːmpl/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "样品；试用产品"
+      }
+    ],
+    "grade": "八下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "The company gave away free samples of the new drink to customers.",
+        "zh": "这家公司向顾客赠送了新饮料的免费样品。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 388
+  },
+  {
+    "no": 393,
+    "headword": "scared",
+    "ipa": "/skeəd/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "害怕的；恐惧的；担心的"
+      }
+    ],
+    "grade": "八下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The little boy is scared of the dark when he is alone at home.",
+        "zh": "小男孩独自在家时怕黑。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义：afraid; frightened",
+      "反义：brave; fearless",
+      "名师点拨：scared 后常接介词 of，构成 be scared of (doing) sth.。例如：She is scared of speaking in front of many people. 她害怕在很多人面前讲话。"
+    ],
+    "page": 388
+  },
+  {
+    "no": 394,
+    "headword": "sculptor",
+    "ipa": "/ˈskʌlptə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "雕塑家；雕刻家"
+      }
+    ],
+    "grade": "八下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The famous sculptor made a statue of a little girl in the park.",
+        "zh": "这位著名的雕塑家在公园里雕刻了一座小女孩的雕像。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "词形拓展：sculpt v. 雕刻；雕塑；sculpture n. 雕塑；雕塑作品"
+    ],
+    "page": 388
+  },
+  {
+    "no": 395,
+    "headword": "sculpture",
+    "ipa": "/ˈskʌlptʃə(r)/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "雕塑；雕塑作品"
+      }
+    ],
+    "grade": "八下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "There is a beautiful stone sculpture in the centre of the square.",
+        "zh": "广场中央有一座精美的石雕。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 388
+  },
+  {
+    "no": 396,
+    "headword": "self-expression",
+    "ipa": "/ˌself ɪkˈspreʃn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "自我表达"
+      }
+    ],
+    "grade": "八下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "Painting is a good way of self-expression for many artists.",
+        "zh": "绘画对很多艺术家来说是一种很好的自我表达方式。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "_flags": [
+      "ipa：OCR 原文 /'self ik'sprefn/ 有误，已按标准读音改为 /ˌself ɪkˈspreʃn/"
+    ],
+    "page": 388
+  },
+  {
+    "no": 397,
+    "headword": "stare",
+    "ipa": "/steə(r)/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "盯着看；凝视；注视"
+      }
+    ],
+    "grade": "八下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "He stared out of the window.",
+        "zh": "他凝视着窗外。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 388
+  },
+  {
+    "no": 398,
+    "headword": "stare at",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "盯着看"
+      }
+    ],
+    "grade": "八下",
+    "unit": 6,
+    "examples": [
+      {
+        "en": "It's impolite to stare at strangers in the street.",
+        "zh": "在街上盯着陌生人看是不礼貌的。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义：gaze at"
+    ],
+    "page": 388
+  },
+  {
+    "no": 399,
+    "headword": "terribly",
+    "ipa": "/ˈterəbli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "非常糟地；严重地"
+      }
+    ],
+    "grade": "八下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "He felt terribly sorry for his mistake in the project.",
+        "zh": "他为自己在项目中犯的错误感到非常抱歉。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义：badly; extremely"
+    ],
+    "page": 388
+  },
+  {
+    "no": 400,
+    "headword": "to one's surprise",
+    "ipa": null,
+    "senses": [
+      {
+        "pos": null,
+        "zh": "令某人惊讶的是"
+      }
+    ],
+    "grade": "八下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "To my surprise, he passed the difficult exam with full marks.",
+        "zh": "令我惊讶的是，他以满分通过了这次很难的考试。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 388
+  },
+  {
+    "no": 401,
+    "headword": "totally",
+    "ipa": "/ˈtəʊtəli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "全部地；整个地"
+      }
+    ],
+    "grade": "八下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "I totally agree with your opinion about this important matter.",
+        "zh": "我完全同意你对这件重要事情的看法。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义：completely; entirely"
+    ],
+    "page": 388
+  },
+  {
+    "no": 402,
+    "headword": "trainers",
+    "ipa": "/ˈtreɪnəz/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "（复）运动鞋；便鞋"
+      }
+    ],
+    "grade": "八下",
+    "unit": 4,
+    "examples": [
+      {
+        "en": "He wears a pair of white trainers to school every day.",
+        "zh": "他每天穿一双白色运动鞋上学。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 389
+  },
+  {
+    "no": 403,
+    "headword": "tube",
+    "ipa": "/tjuːb/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "（金属、塑料、橡皮制成的）管，管子"
+      }
+    ],
+    "grade": "八下",
+    "unit": 2,
+    "examples": [
+      {
+        "en": "The water flows through a plastic tube to the garden in the backyard.",
+        "zh": "水通过一根塑料管流到后院的花园里。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：a tube of toothpaste 一管牙膏"
+    ],
+    "page": 389
+  },
+  {
+    "no": 404,
+    "headword": "typhoon",
+    "ipa": "/ˈtaɪfuːn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "台风"
+      }
+    ],
+    "grade": "八下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "A strong typhoon will hit the coastal city next week.",
+        "zh": "一场强台风将在下周袭击这座沿海城市。",
+        "rewrite": null
+      }
+    ],
+    "notes": [],
+    "page": 389
+  },
+  {
+    "no": 405,
+    "headword": "urge",
+    "ipa": "/ɜːdʒ/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "敦促；力劝"
+      }
+    ],
+    "grade": "八下",
+    "unit": 5,
+    "examples": [
+      {
+        "en": "The teacher urged us to finish our homework on time every day.",
+        "zh": "老师敦促我们每天按时完成作业。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "常用词组：urge sb. to do sth. 敦促某人做某事；urge sb. into doing sth. 力劝某人做某事"
+    ],
+    "page": 389
+  },
+  {
+    "no": 406,
+    "headword": "valuable",
+    "ipa": "/ˈvæljuəbl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "很有用的；很重要的；宝贵的"
+      }
+    ],
+    "grade": "八下",
+    "unit": 3,
+    "examples": [
+      {
+        "en": "We gained a lot of valuable experience from this interesting competition.",
+        "zh": "我们从这个有趣的比赛中获得了很多宝贵的经验。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义：precious; important",
+      "反义：worthless; useless"
+    ],
+    "page": 389
+  },
+  {
+    "no": 407,
+    "headword": "vivid",
+    "ipa": "/ˈvɪvɪd/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "生动的；逼真的"
+      }
+    ],
+    "grade": "八下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "The writer described the beautiful scene with vivid language in the novel.",
+        "zh": "作者在小说中用生动的语言描绘了这处美景。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "近义：lively"
+    ],
+    "page": 389
+  },
+  {
+    "no": 408,
+    "headword": "whoever",
+    "ipa": "/huːˈevə(r)/",
+    "senses": [
+      {
+        "pos": "pron.",
+        "zh": "无论谁；不管什么人"
+      }
+    ],
+    "grade": "八下",
+    "unit": 1,
+    "examples": [
+      {
+        "en": "Whoever comes to the party will get a small and lovely gift.",
+        "zh": "无论谁来参加派对，都会得到一份小巧可爱的礼物。",
+        "rewrite": null
+      }
+    ],
+    "notes": [
+      "名师点拨：whoever 可引导让步状语从句（= no matter who），也可引导名词性从句。例如：Whoever you ask, no one will reveal the secret. 无论你问谁，都不会有人泄露这个秘密。Whoever breaks the rule will be punished. 无论谁违反规则都会受到惩罚。"
+    ],
+    "_flags": [
+      "ipa：OCR 原文 /huːwə(r)/ 缺音节，已按标准读音改为 /huːˈevə(r)/"
+    ],
+    "page": 389
+  }
+]

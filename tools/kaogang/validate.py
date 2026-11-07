@@ -19,7 +19,7 @@ EMBEDDED_DIR = Path("/tmp/kaogang_ocr/embedded")
 
 
 def to_halfwidth(s: str) -> str:
-    """全角→半角 + 去空白，用于和出版社文字层对齐"""
+    """全角→半角；压缩行内空白但保留换行（词条行是校验的基本单位）"""
     out = []
     for ch in s:
         name = unicodedata.name(ch, "")
@@ -29,7 +29,8 @@ def to_halfwidth(s: str) -> str:
             out.append(" ")
         else:
             out.append(ch)
-    return re.sub(r"\s+", "", "".join(out))
+    text = "".join(out)
+    return "\n".join(re.sub(r"[ \t]+", "", ln) for ln in text.split("\n"))
 
 
 def load_embedded(page: int) -> str:
@@ -37,11 +38,22 @@ def load_embedded(page: int) -> str:
     return to_halfwidth(p.read_text(encoding="utf-8")) if p.exists() else ""
 
 
-def embedded_entry_line(emb: str, headword: str) -> str:
-    """在文字层里找 headword 出现位置附近的一行（词条头部行）"""
-    hw = to_halfwidth(headword).lower()
-    for line in emb.split("\n"):
-        if hw and hw in line.lower():
+def embedded_entry_line(emb: str, headword: str, no: int | None = None) -> str:
+    """在文字层里找词条头部行：优先 序号.+词头 同行；no 为空时退化为词头首现行。
+    词头归一：去空白、…→...、弯引号→直引号（斜杠词组/省略号词组的匹配盲区）"""
+    def norm(s: str) -> str:
+        return (to_halfwidth(s).lower().replace(" ", "")
+                .replace("…", "...").replace("’", "'").replace("ˊ", "'"))
+    hw = norm(headword)
+    lines = emb.split("\n")
+    if no is not None:
+        marker = f"{no}."
+        for line in lines:
+            if marker in line and hw and hw in norm(line):
+                return line
+        return ""
+    for line in lines:
+        if hw and hw in norm(line):
             return line
     return ""
 
@@ -70,22 +82,32 @@ def check(data: list, name: str, expect_alpha: bool) -> dict:
         page = e.get("page")
         if not page:
             continue
-        emb_line = embedded_entry_line(load_embedded(page), e["headword"])
+        emb_line = embedded_entry_line(load_embedded(page), e["headword"], e.get("no"))
         if not emb_line:
             issues.append({"type": "embed", "at": e.get("no"),
                            "msg": f"p{page} '{e['headword']}' 在文字层找不到"})
             continue
-        # 星级: 文字层词条头部行的 ＊（归一化后为 *）数量
-        m = re.search(r"(\*{0,3})\s*\d+\.\s*\*{0,3}" + re.escape(to_halfwidth(e["headword"])), emb_line)
-        emb_stars = len(m.group(1)) if m else emb_line.count("*") if "*" in emb_line[:40] else 0
-        if emb_stars != (e.get("stars") or 0):
-            issues.append({"type": "stars", "at": e.get("no"),
-                           "msg": f"'{e['headword']}' 星级: OCR={e.get('stars')} 文字层={emb_stars} (p{page})"})
-        # ?标记
-        emb_q = bool(re.search(r"[?？]\s*\d+\.", emb_line))
-        if emb_q != bool(e.get("three_level")):
-            issues.append({"type": "qmark", "at": e.get("no"),
-                           "msg": f"'{e['headword']}' ?标记: OCR={e.get('three_level')} 文字层={emb_q} (p{page})"})
+        # 与 merge.find_entry 相同的读法：词条行 = 序号.与词头同一物理行
+        # 星级 = 行首到词头之间的 * 数（书里 ★ 印在序号之后）
+        # ?标记 = 序号之前的 ? （IPA 里的 ？ 是乱码 ə，不算）
+        if not emb_line:
+            issues.append({"type": "embed", "at": e.get("no"),
+                           "msg": f"p{page} '{e['headword']}' 在文字层找不到"})
+            continue
+        norm = lambda s: (to_halfwidth(s).lower().replace(" ", "")
+                          .replace("…", "...").replace("’", "'").replace("ˊ", "'"))
+        hw_pos = norm(emb_line).find(norm(e["headword"]))
+        no_pos = emb_line.find(f"{e.get('no')}.")
+        if hw_pos >= 0 and no_pos >= 0:
+            zone = emb_line[:hw_pos]
+            emb_stars = min(zone.count("*"), 3)
+            emb_q = "?" in emb_line[:no_pos]
+            if emb_stars != (e.get("stars") or 0):
+                issues.append({"type": "stars", "at": e.get("no"),
+                               "msg": f"'{e['headword']}' 星级: 数据={e.get('stars')} 文字层={emb_stars} (p{page}) | {emb_line[:40]}"})
+            if emb_q != bool(e.get("three_level")):
+                issues.append({"type": "qmark", "at": e.get("no"),
+                               "msg": f"'{e['headword']}' ?标记: 数据={e.get('three_level')} 文字层={emb_q} (p{page}) | {emb_line[:40]}"})
 
     print(f"[{name}] 条目 {len(data)}，问题 {len(issues)}")
     by_type = {}

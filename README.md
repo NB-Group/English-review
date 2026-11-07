@@ -2,6 +2,11 @@
 
 英语词汇复习系统，支持 AI 智能判题与词形转换特训。
 
+> **v2 进行中**：目标转向 2027 上海中考。基于《2027年上海市初中英语考纲词汇用法手册》
+> 全书 OCR 构建结构化词库（~1785 单词 + 347 词组 + 4000+ 例句 + 不规则动词表），
+> 新前端（React 19 + TS + Tailwind 4 + Motion + FSRS 遗忘曲线调度）部署在 `/v2`，
+> 老应用保留在 `/`。详见 `tools/kaogang/` 与 `web/`。
+
 ## 快速开始
 
 ```bash
@@ -9,7 +14,21 @@ pip install -r requirements.txt    # 仅数据提取脚本需要
 python server.py                   # 启动开发服务器
 ```
 
-浏览器打开 `http://127.0.0.1:8080`。
+浏览器打开 `http://127.0.0.1:8080`（老应用）或 `http://127.0.0.1:8080/v2`（新版，需先 `cd web && pnpm build`）。
+
+### v2 数据管线（考纲词库构建）
+
+```bash
+# 1. 全书逐页 OCR（Qwen3.5-4B，需 .env 里 QWEN_FREE_API_KEY；输出 /tmp/kaogang_ocr/out/）
+python tools/kaogang/ocr_pages.py --pages 1-402 --workers 10
+
+# 2. 合并 sub-agent 结构化结果（data/kaogang/sections/）→ 最终数据集 + 文字层修正
+python tools/kaogang/merge.py
+
+# 3. 校验（序号连续性 + 字母序 + 出版社文字层交叉比对）
+python tools/kaogang/validate.py data/kaogang/words.json
+python tools/kaogang/validate.py data/kaogang/phrases.json --no-alpha
+```
 
 ## 功能
 

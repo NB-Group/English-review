@@ -1,0 +1,51 @@
+{
+ "name": "words",
+ "count": 1785,
+ "issues": [
+  {
+   "type": "alpha",
+   "at": 55,
+   "msg": "'always' 之后是 'a.m.'，非字母序"
+  },
+  {
+   "type": "alpha",
+   "at": 1075,
+   "msg": "'ocean' 之后是 'o'clock'，非字母序"
+  },
+  {
+   "type": "alpha",
+   "at": 1138,
+   "msg": "'pay' 之后是 'p.e.'，非字母序"
+  },
+  {
+   "type": "alpha",
+   "at": 1188,
+   "msg": "'plus' 之后是 'p.m.'，非字母序"
+  },
+  {
+   "type": "embed",
+   "at": 53,
+   "msg": "p19 'although / though' 在文字层找不到"
+  },
+  {
+   "type": "embed",
+   "at": 73,
+   "msg": "p23 'anybody / anyone' 在文字层找不到"
+  },
+  {
+   "type": "embed",
+   "at": 165,
+   "msg": "p37 'bicycle / bike' 在文字层找不到"
+  },
+  {
+   "type": "embed",
+   "at": 527,
+   "msg": "p88 'everybody / everyone' 在文字层找不到"
+  },
+  {
+   "type": "embed",
+   "at": 1467,
+   "msg": "p226 'somebody / someone' 在文字层找不到"
+  }
+ ]
+}

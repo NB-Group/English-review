@@ -57,7 +57,7 @@ class EmbeddedPage:
         hw = to_halfwidth(headword).lower()
         marker = f"{no}."
         for i, line in enumerate(self.lines):
-            if marker not line or hw not in line.lower():
+            if marker not in line or hw not in line.lower():
                 continue
             idx = line.index(marker)
             prefix = line[:idx]
@@ -129,11 +129,11 @@ def main():
     print(f"words: {len(words)} 条，文字层修正 {len(wfixes)} 处")
 
     phrases = load("phrases.json")
-    pfixes = []
-    phrases = [fix_word_entry(p, pfixes) for p in phrases]
-    # 词组没有 headword 字段，用 phrase
+    # 词组的词头字段叫 phrase，先归一成 headword 再做文字层修正
     for p in phrases:
         p["headword"] = p.pop("phrase", p.get("headword", ""))
+    pfixes = []
+    phrases = [fix_word_entry(p, pfixes) for p in phrases]
     (OUT / "phrases.json").write_text(json.dumps(phrases, ensure_ascii=False), encoding="utf-8")
     print(f"phrases: {len(phrases)} 条，文字层修正 {len(pfixes)} 处")
 

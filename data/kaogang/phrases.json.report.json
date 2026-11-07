@@ -1,0 +1,21 @@
+{
+ "name": "phrases",
+ "count": 347,
+ "issues": [
+  {
+   "type": "embed",
+   "at": 9,
+   "msg": "p272 'add ... to ...' 在文字层找不到"
+  },
+  {
+   "type": "embed",
+   "at": 319,
+   "msg": "p305 'tell ... from' 在文字层找不到"
+  },
+  {
+   "type": "embed",
+   "at": 328,
+   "msg": "p307 'too ... to' 在文字层找不到"
+  }
+ ]
+}

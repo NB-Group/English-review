@@ -98,9 +98,11 @@ export default function Today({ ds }: { ds: Dataset }) {
         className="glass-strong mt-4 flex flex-col items-center gap-4 p-8 sm:flex-row sm:justify-between"
       >
         <div>
-          <div className="text-lg text-ink">今天最少要过 {Math.min(stats.due + 15, stats.due + stats.p2 > 0 ? stats.due + 15 : stats.due)} 张卡</div>
+          <div className="text-lg text-ink">
+            今天最少要过 {stats.due + 15 + profile.dailyQuota.triage} 张卡
+          </div>
           <div className="mt-1 text-sm text-ink-faint">
-            到期 {stats.due} + 抽查 15 + 清洗额度 {profile.dailyQuota.triage}，清洗和复习混在同一场
+            到期 {stats.due} + 抽查 15 + 清洗 {profile.dailyQuota.triage}，清洗和复习混在同一场
           </div>
         </div>
         <button

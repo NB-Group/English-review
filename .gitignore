@@ -20,3 +20,4 @@ Thumbs.db
 # v2 frontend build artifacts (regenerable)
 web/node_modules/
 web/dist/
+web/tsconfig.tsbuildinfo
