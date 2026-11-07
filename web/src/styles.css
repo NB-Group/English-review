@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  /* 暗色玻璃霓虹 —— 延续老应用视觉基因 */
+  --color-bg-deep: #05070f;
+  --color-bg-raise: #0b101f;
+  --color-glass: rgb(255 255 255 / 0.04);
+  --color-glass-strong: rgb(255 255 255 / 0.07);
+  --color-line: rgb(255 255 255 / 0.09);
+  --color-line-bright: rgb(255 255 255 / 0.16);
+  --color-ink: #eef2ff;
+  --color-ink-soft: #b8c2dd;
+  --color-ink-faint: #5d6a8a;
+  --color-neon: #00f2ff;
+  --color-violet: #bd00ff;
+  --color-mint: #3dffb5;
+  --color-amber: #ffc233;
+  --color-rose: #ff5470;
+  --font-display: "Oswald", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+html {
+  background: var(--color-bg-deep);
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(900px 500px at 12% -8%, rgb(0 242 255 / 0.09), transparent 60%),
+    radial-gradient(800px 480px at 88% 0%, rgb(189 0 255 / 0.10), transparent 55%);
+  background-attachment: fixed;
+}
+
+/* 玻璃卡 */
+.glass {
+  background: var(--color-glass);
+  border: 1px solid var(--color-line);
+  backdrop-filter: blur(14px);
+  border-radius: 1.25rem;
+}
+
+.glass-strong {
+  background: var(--color-glass-strong);
+  border: 1px solid var(--color-line-bright);
+  backdrop-filter: blur(18px);
+  border-radius: 1.25rem;
+}
+
+/* 眉题/meta 标签 */
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+}
+
+/* 输入框 */
+.cyber-input {
+  background: rgb(255 255 255 / 0.05);
+  border: 1px solid var(--color-line-bright);
+  border-radius: 0.75rem;
+  padding: 0.65rem 1rem;
+  color: var(--color-ink);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.cyber-input:focus {
+  border-color: var(--color-neon);
+  box-shadow: 0 0 0 3px rgb(0 242 255 / 0.15);
+}
+.cyber-input:disabled {
+  opacity: 0.55;
+}
+
+::selection {
+  background: rgb(0 242 255 / 0.3);
+}

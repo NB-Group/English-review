@@ -11,6 +11,7 @@ PORT = 8080
 ROOT_DIR = Path(__file__).resolve().parent
 DATA_DIR = ROOT_DIR / "data"
 ACCOUNT_DIR = ROOT_DIR / "local_accounts"
+V2_DIR = ROOT_DIR / "web" / "dist"  # 新版 React 应用的构建产物
 
 GRADE_MAP = {
     "七年级": "7",
@@ -76,7 +77,34 @@ class Handler(SimpleHTTPRequestHandler):
             return self.handle_scan_units()
         if parsed.path == "/api/account-data":
             return self.handle_account_load(parsed)
+        # /v2 与 /v2/* → 新版应用（SPA，回退到 index.html）
+        if parsed.path == "/v2" or parsed.path.startswith("/v2/"):
+            return self.handle_v2(parsed)
         return super().do_GET()
+
+    def handle_v2(self, parsed):
+        rel = parsed.path[len("/v2"):].lstrip("/")
+        if not rel:
+            target = V2_DIR / "index.html"
+        else:
+            candidate = (V2_DIR / rel).resolve()
+            if not str(candidate).startswith(str(V2_DIR.resolve())):
+                return self.send_error(403)
+            target = candidate if candidate.is_file() else V2_DIR / "index.html"
+        if not target.exists():
+            return self.send_error(404, "web/dist not built")
+        self.send_response(200)
+        ctype = (
+            "text/html; charset=utf-8" if target.suffix == ".html"
+            else "application/javascript; charset=utf-8" if target.suffix == ".js"
+            else "text/css; charset=utf-8" if target.suffix == ".css"
+            else "application/json; charset=utf-8" if target.suffix == ".json"
+            else "application/octet-stream"
+        )
+        self.send_header("Content-Type", ctype)
+        self.send_header("Content-Length", str(target.stat().st_size))
+        self.end_headers()
+        self.wfile.write(target.read_bytes())
 
     def do_POST(self):
         parsed = urllib.parse.urlparse(self.path)

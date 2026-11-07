@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/types.ts","./src/lib/data.ts","./src/lib/engine.ts","./src/lib/fsrs.ts","./src/lib/grader.ts","./src/lib/store.ts","./src/lib/tts.ts","./src/views/Goals.tsx","./src/views/Library.tsx","./src/views/Study.tsx","./src/views/Today.tsx"],"version":"5.9.3"}
