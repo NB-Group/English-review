@@ -14,6 +14,11 @@ const KIND_LABEL: Record<SessionCard['kind'], string> = {
   review: '到期复习', spellSpot: '拼写抽查', fluentSpot: '熟词抽查',
   triage: '大清洗', newWord: '新词学习',
 }
+const KIND_TINT: Record<SessionCard['kind'], string> = {
+  review: 'bg-duo-blue-tint/50', spellSpot: 'bg-duo-gold-tint/50',
+  fluentSpot: 'bg-duo-purple-tint/50', triage: 'bg-duo-purple-tint/50',
+  newWord: 'bg-duo-green-tint/50',
+}
 
 function Speaker({ word, big = false }: { word: string; big?: boolean }) {
   return (
@@ -124,7 +129,7 @@ export default function Study({ ds }: { ds: Dataset }) {
 
 function Prompt({ kind, card, children }: { kind: SessionCard['kind']; card: SessionCard; children: React.ReactNode }) {
   return (
-    <div className="text-center">
+    <div className={"rounded-[28px] px-4 py-8 sm:px-8 " + KIND_TINT[kind]}>
       <div className="flex items-center justify-center gap-2 text-[12px] font-extrabold text-ink-faint">
         <span>{KIND_LABEL[kind]}</span>
         <span>·</span>

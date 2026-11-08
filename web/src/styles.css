@@ -45,7 +45,11 @@ html { color-scheme: light; }
 body {
   font-family: var(--font-body);
   color: var(--color-ink);
-  background: var(--color-snow);
+  background:
+    radial-gradient(700px 380px at 85% 100%, rgba(28, 176, 246, 0.06), transparent 70%),
+    radial-gradient(700px 380px at 10% 90%, rgba(255, 200, 0, 0.05), transparent 70%),
+    var(--color-snow);
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
 }
