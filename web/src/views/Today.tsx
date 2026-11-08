@@ -7,9 +7,33 @@ import { isDue } from '../lib/fsrs'
 import { dimsForLevel, goalLevelFor, useProfile } from '../lib/store'
 
 const EASE = [0.16, 1, 0.3, 1] as const
-const EXAM_DATE = new Date('2027-06-13') // 上海中考首日（按惯例六月中旬，可改）
 
-/** 桶：P0 不会 / P1 拼写存疑 / P2 待清洗 / P3 熟词抽查池 */
+function Ring({ pct, size = 168 }: { pct: number; size?: number }) {
+  const r = size / 2 - 12
+  const c = 2 * Math.PI * r
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="shrink-0">
+      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--color-hare)" strokeWidth="14" />
+      <motion.circle
+        cx={size / 2} cy={size / 2} r={r} fill="none"
+        stroke="var(--color-duo-green)" strokeWidth="14" strokeLinecap="round"
+        strokeDasharray={c}
+        initial={{ strokeDashoffset: c }}
+        animate={{ strokeDashoffset: c - (c * pct) / 100 }}
+        transition={{ duration: 1.1, ease: EASE }}
+        transform={`rotate(-90 ${size / 2} ${size / 2})`}
+      />
+      <text x="50%" y="47%" textAnchor="middle" dominantBaseline="central"
+        className="fill-ink font-extrabold" style={{ fontSize: size / 3.6 }}>
+        {pct}%
+      </text>
+      <text x="50%" y="63%" textAnchor="middle" className="fill-[#777] font-bold" style={{ fontSize: size / 11 }}>
+        默写级进度
+      </text>
+    </svg>
+  )
+}
+
 export default function Today({ ds }: { ds: Dataset }) {
   const profile = useProfile((s) => s.profile)
   const reduce = useReducedMotion()
@@ -33,7 +57,6 @@ export default function Today({ ds }: { ds: Dataset }) {
       if (prog.triage === 'unknown' || prog.degraded) p0++
       else if (prog.triage === 'recognize') p1++
       else if (prog.triage === 'fluent') p3++
-      // 到期数
       for (const d of dims) {
         const st = prog.dims[d as Dim]
         if (st && isDue(st)) { due++; break }
@@ -42,75 +65,73 @@ export default function Today({ ds }: { ds: Dataset }) {
     return { p0, p1, p2, p3, due, dictGoal, dictDone }
   }, [ds, profile])
 
-  const daysToExam = Math.max(0, Math.ceil((EXAM_DATE.getTime() - Date.now()) / 86400000))
+  const pct = stats.dictGoal ? Math.round((stats.dictDone / stats.dictGoal) * 100) : 0
 
-  const rings = [
-    { label: '到期复习', n: stats.due, hint: '遗忘曲线今天要救的', cls: 'text-neon' },
-    { label: 'P0 不会', n: stats.p0, hint: '最需要搞的', cls: 'text-rose' },
-    { label: 'P1 拼写存疑', n: stats.p1, hint: '抽查池', cls: 'text-amber' },
-    { label: 'P2 待清洗', n: stats.p2, hint: '还没刷过卡', cls: 'text-violet' },
+  const buckets = [
+    { label: '到期复习', n: stats.due, hint: '遗忘曲线今天要救的', emoji: '⚡', tint: 'bg-duo-blue-tint', ink: 'text-duo-blue-dark' },
+    { label: '不会的词', n: stats.p0, hint: '最优先搞掉', emoji: '🎯', tint: 'bg-duo-red-tint', ink: 'text-duo-red-dark' },
+    { label: '拼写存疑', n: stats.p1, hint: '每天抽查默写', emoji: '✏️', tint: 'bg-duo-gold-tint', ink: 'text-[#8a6a00]' },
+    { label: '待清洗', n: stats.p2, hint: '还没刷过卡', emoji: '🧺', tint: 'bg-duo-purple-tint', ink: 'text-duo-purple-dark' },
   ]
 
   return (
     <div className="mt-8">
-      <motion.div
-        initial={reduce ? false : { opacity: 0, y: 14 }}
+      {/* 主卡：进度环 + 冲刺文案 */}
+      <motion.section
+        initial={reduce ? false : { opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: EASE }}
-        className="flex flex-wrap items-end justify-between gap-4"
+        transition={{ duration: 0.45, ease: EASE }}
+        className="card flex flex-col items-center gap-8 p-8 sm:flex-row sm:p-10"
       >
-        <div>
-          <div className="eyebrow">TODAY</div>
-          <h1 className="font-display mt-1 text-3xl text-ink">
-            距中考 <span className="text-neon">{daysToExam}</span> 天
+        <Ring pct={pct} />
+        <div className="text-center sm:text-left">
+          <div className="eyebrow">TODAY · 冲刺计划</div>
+          <h1 className="mt-2 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
+            今天最少 <span className="text-duo-green">{stats.due + 15 + profile.dailyQuota.triage}</span> 张卡
           </h1>
+          <p className="mt-3 font-bold text-ink-soft">
+            到期 {stats.due} · 抽查 15 · 清洗 {profile.dailyQuota.triage}
+          </p>
+          <p className="mt-1 text-sm font-semibold text-ink-faint">
+            清洗和复习混在同一场，高星词优先。{stats.p3 > 0 && ` 熟词抽查池还有 ${stats.p3} 个。`}
+          </p>
+          <button onClick={() => navigate('/study')} className="push mt-6 w-full text-lg sm:w-auto sm:px-12 sm:py-4">
+            ▶ 开始学习
+          </button>
         </div>
-        <div className="text-right">
-          <div className="text-sm text-ink-faint">默写级目标进度</div>
-          <div className="font-mono text-2xl tabular-nums text-ink">
-            {stats.dictDone}<span className="text-ink-faint">/{stats.dictGoal}</span>
-          </div>
-        </div>
-      </motion.div>
+      </motion.section>
 
-      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        {rings.map((r, i) => (
+      {/* 四桶 */}
+      <div className="mt-5 grid grid-cols-2 gap-4 lg:grid-cols-4">
+        {buckets.map((b, i) => (
           <motion.button
-            key={r.label}
-            initial={reduce ? false : { opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: EASE, delay: 0.05 * i }}
-            whileHover={{ y: -2 }}
+            key={b.label}
+            initial={reduce ? false : { opacity: 0, y: 18, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.4, ease: EASE, delay: 0.06 * i }}
+            whileHover={reduce ? undefined : { y: -4 }}
+            whileTap={{ scale: 0.97 }}
             onClick={() => navigate('/study')}
-            className="glass p-5 text-left"
+            className="card flex items-center gap-4 p-5 text-left"
           >
-            <div className={`font-mono text-3xl tabular-nums ${r.cls}`}>{r.n}</div>
-            <div className="mt-1 text-sm text-ink-soft">{r.label}</div>
-            <div className="text-xs text-ink-faint">{r.hint}</div>
+            <span className={`grid size-14 shrink-0 place-items-center rounded-2xl text-2xl ${b.tint}`}>{b.emoji}</span>
+            <span>
+              <span className={`block text-3xl font-extrabold tabular-nums ${b.ink}`}>{b.n}</span>
+              <span className="block text-sm font-extrabold text-ink">{b.label}</span>
+              <span className="block text-xs font-semibold text-ink-faint">{b.hint}</span>
+            </span>
           </motion.button>
         ))}
       </div>
 
+      {/* 熟词池 */}
       <motion.div
-        initial={reduce ? false : { opacity: 0, y: 14 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: EASE, delay: 0.2 }}
-        className="glass-strong mt-4 flex flex-col items-center gap-4 p-8 sm:flex-row sm:justify-between"
+        initial={reduce ? false : { opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.35 }}
+        className="mt-5 flex items-center justify-center gap-2 text-sm font-bold text-ink-faint"
       >
-        <div>
-          <div className="text-lg text-ink">
-            今天最少要过 {stats.due + 15 + profile.dailyQuota.triage} 张卡
-          </div>
-          <div className="mt-1 text-sm text-ink-faint">
-            到期 {stats.due} + 抽查 15 + 清洗 {profile.dailyQuota.triage}，清洗和复习混在同一场
-          </div>
-        </div>
-        <button
-          onClick={() => navigate('/study')}
-          className="rounded-xl bg-gradient-to-r from-neon to-violet px-8 py-4 font-medium text-[#05070f] transition-transform hover:-translate-y-0.5 active:scale-[0.98]"
-        >
-          开始学习 →
-        </button>
+        <span className="chip bg-mist">🧊 滚瓜烂熟 {stats.p3} 个在抽查池里冬眠</span>
       </motion.div>
     </div>
   )

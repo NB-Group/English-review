@@ -1,82 +1,174 @@
 @import "tailwindcss";
 
+/* Nunito 可变字体（自托管，多邻国同款圆体感） */
+@font-face {
+  font-family: "Nunito";
+  src: url("/v2/fonts/nunito-var.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  /* 暗色玻璃霓虹 —— 延续老应用视觉基因 */
-  --color-bg-deep: #05070f;
-  --color-bg-raise: #0b101f;
-  --color-glass: rgb(255 255 255 / 0.04);
-  --color-glass-strong: rgb(255 255 255 / 0.07);
-  --color-line: rgb(255 255 255 / 0.09);
-  --color-line-bright: rgb(255 255 255 / 0.16);
-  --color-ink: #eef2ff;
-  --color-ink-soft: #b8c2dd;
-  --color-ink-faint: #5d6a8a;
-  --color-neon: #00f2ff;
-  --color-violet: #bd00ff;
-  --color-mint: #3dffb5;
-  --color-amber: #ffc233;
-  --color-rose: #ff5470;
-  --font-display: "Oswald", "Inter", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  /* 多邻国活力配色 */
+  --color-snow: #ffffff;
+  --color-mist: #f7f8fa;
+  --color-ink: #3c3c3c;
+  --color-ink-soft: #6f6f6f;
+  --color-ink-faint: #afafaf;
+  --color-hare: #e5e5e5;   /* Duo 边框灰 */
+  --color-hare-dark: #d0d0d0;
+  --color-duo-green: #58cc02;
+  --color-duo-green-dark: #46a302;
+  --color-duo-green-tint: #d7ffb8;
+  --color-duo-blue: #1cb0f6;
+  --color-duo-blue-dark: #1899d6;
+  --color-duo-blue-tint: #ddf4ff;
+  --color-duo-purple: #ce82ff;
+  --color-duo-purple-dark: #a560d8;
+  --color-duo-purple-tint: #f7e8ff;
+  --color-duo-gold: #ffc800;
+  --color-duo-gold-dark: #e0a600;
+  --color-duo-gold-tint: #fff4cc;
+  --color-duo-red: #ff4b4b;
+  --color-duo-red-dark: #e33b3b;
+  --color-duo-red-tint: #ffdfdf;
+  --color-duo-orange: #ff9600;
+  --color-duo-orange-tint: #ffe8cc;
+  --font-display: "Nunito", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 html {
-  background: var(--color-bg-deep);
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
   font-family: var(--font-body);
   color: var(--color-ink);
+  background: var(--color-snow);
   -webkit-font-smoothing: antialiased;
-  background-image:
-    radial-gradient(900px 500px at 12% -8%, rgb(0 242 255 / 0.09), transparent 60%),
-    radial-gradient(800px 480px at 88% 0%, rgb(189 0 255 / 0.10), transparent 55%);
-  background-attachment: fixed;
+  font-weight: 600;
 }
 
-/* 玻璃卡 */
-.glass {
-  background: var(--color-glass);
-  border: 1px solid var(--color-line);
-  backdrop-filter: blur(14px);
-  border-radius: 1.25rem;
+::selection {
+  background: var(--color-duo-green-tint);
 }
 
-.glass-strong {
-  background: var(--color-glass-strong);
-  border: 1px solid var(--color-line-bright);
-  backdrop-filter: blur(18px);
-  border-radius: 1.25rem;
+/* ── 推压式按钮（多邻国签名交互）────────────────── */
+.push {
+  --push-bg: var(--color-duo-green);
+  --push-dark: var(--color-duo-green-dark);
+  --push-ink: #fff;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 16px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--push-ink);
+  background: var(--push-bg);
+  box-shadow: 0 4px 0 var(--push-dark);
+  transition: filter 0.12s, transform 0.06s, box-shadow 0.06s;
+  user-select: none;
+  cursor: pointer;
+}
+.push:hover { filter: brightness(1.06); }
+.push:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 var(--push-dark);
+}
+.push:disabled {
+  background: var(--color-hare);
+  box-shadow: 0 4px 0 var(--color-hare-dark);
+  color: var(--color-ink-faint);
+  cursor: not-allowed;
+  transform: none;
+}
+.push-blue   { --push-bg: var(--color-duo-blue);  --push-dark: var(--color-duo-blue-dark); }
+.push-purple { --push-bg: var(--color-duo-purple);--push-dark: var(--color-duo-purple-dark); }
+.push-gold   { --push-bg: var(--color-duo-gold);  --push-dark: var(--color-duo-gold-dark); --push-ink: #5a4a00; }
+.push-red    { --push-bg: var(--color-duo-red);   --push-dark: var(--color-duo-red-dark); }
+.push-ghost {
+  --push-bg: #fff;
+  --push-dark: var(--color-hare);
+  --push-ink: var(--color-duo-blue);
+  box-shadow: inset 0 0 0 2px var(--color-duo-blue), 0 4px 0 var(--color-hare);
+}
+.push-ghost:active { box-shadow: inset 0 0 0 2px var(--color-duo-blue), 0 0 0 var(--color-hare); }
+
+/* ── 卡片 ── */
+.card {
+  background: var(--color-snow);
+  border: 2px solid var(--color-hare);
+  border-radius: 16px;
 }
 
-/* 眉题/meta 标签 */
+/* ── 输入框（多邻国式）── */
+.duo-input {
+  width: 100%;
+  border: 2px solid var(--color-hare);
+  border-radius: 16px;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-ink);
+  background: var(--color-snow);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.duo-input::placeholder { color: var(--color-ink-faint); font-weight: 600; }
+.duo-input:focus {
+  border-color: var(--color-duo-blue);
+  box-shadow: 0 0 0 3px var(--color-duo-blue-tint);
+}
+.duo-input:disabled { background: var(--color-mist); color: var(--color-ink-soft); }
+
+/* ── 进度条 ── */
+.duo-track {
+  height: 14px;
+  border-radius: 999px;
+  background: var(--color-hare);
+  overflow: hidden;
+}
+.duo-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, #7ee52e 0 30%, var(--color-duo-green) 30% 100%);
+  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── 药丸标签 ── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+/* ── 眉题 ── */
 .eyebrow {
-  font-family: var(--font-display);
-  font-size: 10px;
-  letter-spacing: 0.18em;
+  font-weight: 900;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-ink-faint);
 }
 
-/* 输入框 */
-.cyber-input {
-  background: rgb(255 255 255 / 0.05);
-  border: 1px solid var(--color-line-bright);
-  border-radius: 0.75rem;
-  padding: 0.65rem 1rem;
-  color: var(--color-ink);
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-.cyber-input:focus {
-  border-color: var(--color-neon);
-  box-shadow: 0 0 0 3px rgb(0 242 255 / 0.15);
-}
-.cyber-input:disabled {
-  opacity: 0.55;
-}
+/* 滚动条 */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--color-hare); border-radius: 999px; border: 2px solid #fff; }
+::-webkit-scrollbar-track { background: transparent; }
 
-::selection {
-  background: rgb(0 242 255 / 0.3);
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

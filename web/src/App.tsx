@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { loadDataset, type Dataset } from './lib/data'
@@ -8,79 +8,118 @@ import Study from './views/Study'
 import Goals from './views/Goals'
 
 const EASE = [0.16, 1, 0.3, 1] as const
+const EXAM_DATE = new Date('2027-06-13')
 
 function View({ children }: { children: React.ReactNode }) {
   const reduce = useReducedMotion()
   return (
     <motion.main
-      initial={reduce ? false : { opacity: 0, y: 14 }}
+      initial={reduce ? false : { opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={reduce ? undefined : { opacity: 0, y: -8 }}
+      exit={reduce ? undefined : { opacity: 0, y: -10 }}
       transition={{ duration: 0.35, ease: EASE }}
-      className="mx-auto w-full max-w-5xl px-4 pb-16 sm:px-8"
+      className="mx-auto w-full max-w-4xl px-4 pb-24 sm:px-6"
     >
       {children}
     </motion.main>
   )
 }
 
-const navClass = ({ isActive }: { isActive: boolean }) =>
-  `px-4 py-2 rounded-full text-sm transition-colors ${
-    isActive ? 'bg-white/10 text-ink' : 'text-ink-faint hover:text-ink-soft'
-  }`
+function Wordmark() {
+  return (
+    <NavLink to="/" className="flex items-center gap-2.5">
+      <motion.div
+        initial={{ rotate: -8, scale: 0.8, opacity: 0 }}
+        animate={{ rotate: 0, scale: 1, opacity: 1 }}
+        transition={{ type: 'spring', stiffness: 260, damping: 16 }}
+        className="grid size-10 place-items-center rounded-2xl bg-duo-green text-xl shadow-[0_3px_0_var(--color-duo-green-dark)]"
+      >
+        🦉
+      </motion.div>
+      <div className="leading-none">
+        <div className="text-lg font-extrabold tracking-wide text-ink">考纲词汇</div>
+        <div className="eyebrow mt-0.5">SHANGHAI · 2027</div>
+      </div>
+    </NavLink>
+  )
+}
 
 export default function App() {
   const [ds, setDs] = useState<Dataset | null>(null)
   const [error, setError] = useState<string | null>(null)
   const location = useLocation()
+  const reduce = useReducedMotion()
 
   useEffect(() => {
     loadDataset().then(setDs).catch((e) => setError(String(e)))
   }, [])
 
+  const daysLeft = useMemo(
+    () => Math.max(0, Math.ceil((EXAM_DATE.getTime() - Date.now()) / 86400000)),
+    [],
+  )
+
+  const tabCls = ({ isActive }: { isActive: boolean }) =>
+    `relative px-4 py-3 text-sm font-extrabold tracking-wide transition-colors ${
+      isActive ? 'text-duo-blue' : 'text-ink-soft hover:text-ink'
+    }`
+
   return (
-    <div className="min-h-dvh">
-      <header className="sticky top-0 z-20 border-b border-white/5 bg-[#05070f]/80 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-5xl items-center gap-2 px-4 py-3 sm:px-8">
-          <div className="mr-2 flex items-baseline gap-2">
-            <span className="font-display text-lg tracking-wide text-ink">考纲词汇</span>
-            <span className="eyebrow hidden sm:inline">SHANGHAI 2027</span>
-          </div>
-          <nav className="flex gap-1">
-            <NavLink to="/" end className={navClass}>
-              今日
-            </NavLink>
-            <NavLink to="/study" className={navClass}>
-              学习
-            </NavLink>
-            <NavLink to="/library" className={navClass}>
-              词库
-            </NavLink>
-            <NavLink to="/goals" className={navClass}>
-              目标
-            </NavLink>
+    <div className="min-h-dvh bg-snow">
+      <header className="sticky top-0 z-30 border-b-2 border-hare bg-snow/95 backdrop-blur">
+        <div className="mx-auto flex max-w-4xl items-center gap-2 px-4 py-2.5 sm:px-6">
+          <Wordmark />
+          <nav className="ml-4 flex items-stretch self-stretch">
+            {([
+              ['/', '今日', true],
+              ['/study', '学习', true],
+              ['/library', '词库', true],
+              ['/goals', '目标', true],
+            ] as const).map(([to, label]) => (
+              <NavLink key={to} to={to} end={to === '/'} className={tabCls}>
+                {({ isActive }) => (
+                  <>
+                    {label}
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-underline"
+                        className="absolute inset-x-2 -bottom-[2px] h-[4px] rounded-t-full bg-duo-blue"
+                        transition={{ duration: 0.3, ease: EASE }}
+                      />
+                    )}
+                  </>
+                )}
+              </NavLink>
+            ))}
           </nav>
+          <div className="ml-auto flex items-center gap-2">
+            <span className="chip hidden bg-duo-green-tint text-duo-green-dark sm:inline-flex">
+              ⏳ 中考 {daysLeft} 天
+            </span>
+          </div>
         </div>
       </header>
 
       {error ? (
-        <div className="mx-auto mt-9 max-w-5xl px-4 sm:px-8">
-          <div className="rounded-2xl border border-rose/30 bg-rose/10 p-6 text-rose">
-            数据加载失败：{error}
+        <div className="mx-auto mt-9 max-w-4xl px-4 sm:px-6">
+          <div className="card p-6 text-duo-red" style={{ borderColor: 'var(--color-duo-red)' }}>
+            <div className="text-lg font-extrabold">数据加载失败</div>
+            <p className="mt-2 text-sm text-ink-soft">{error}</p>
             <p className="mt-2 text-sm text-ink-soft">
-              请确认已运行 <code>python tools/kaogang/merge.py</code> 生成 data/kaogang/ 数据集，
-              且 server.py 在 8080 端口运行。
+              请确认 server.py 在 8080 端口运行，data/kaogang/ 数据集已生成。
             </p>
           </div>
         </div>
       ) : !ds ? (
-        <div className="mx-auto mt-24 max-w-5xl px-4 text-center sm:px-8">
+        <div className="mx-auto mt-28 max-w-4xl px-4 text-center sm:px-6">
           <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 1.2, ease: 'linear' }}
-            className="mx-auto size-8 rounded-full border-2 border-line border-t-neon"
-          />
-          <p className="mt-4 text-ink-soft">正在加载考纲数据集…</p>
+            animate={reduce ? undefined : { y: [0, -8, 0] }}
+            transition={{ repeat: Infinity, duration: 1.1, ease: 'easeInOut' }}
+            className="text-5xl"
+          >
+            🦉
+          </motion.div>
+          <p className="mt-4 font-extrabold text-ink-soft">正在加载考纲数据集…</p>
         </div>
       ) : (
         <AnimatePresence mode="wait">
