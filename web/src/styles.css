@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@import "@fontsource/noto-sans-sc/400.css";
+@import "@fontsource/noto-sans-sc/600.css";
+@import "@fontsource/noto-sans-sc/700.css";
+@import "@fontsource/noto-sans-sc/900.css";
 
 /* Nunito 可变字体（自托管） */
 @font-face {
@@ -32,8 +36,8 @@
   --color-duo-red: #ff4b4b;
   --color-duo-red-dark: #d62f2f;
   --color-duo-red-tint: #ffdfdf;
-  --font-display: "Nunito", system-ui, sans-serif;
-  --font-body: "Nunito", system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-display: "Nunito", "Noto Sans SC", system-ui, sans-serif;
+  --font-body: "Nunito", "Noto Sans SC", system-ui, -apple-system, sans-serif;
 }
 
 html { color-scheme: light; }

@@ -70,15 +70,16 @@ export default function Today({ ds }: { ds: Dataset }) {
   const total = stats.due + 15 + profile.dailyQuota.triage
 
   const buckets = [
-    { label: '到期复习', n: stats.due, emoji: '⚡', ink: 'text-duo-blue-dark' },
-    { label: '不会的词', n: stats.p0, emoji: '🎯', ink: 'text-duo-red-dark' },
-    { label: '拼写存疑', n: stats.p1, emoji: '✏️', ink: 'text-duo-gold-dark' },
-    { label: '待清洗', n: stats.p2, emoji: '🧺', ink: 'text-duo-purple-dark' },
+    { label: '到期复习', sub: '遗忘曲线要救的', n: stats.due, ink: 'text-duo-blue-dark', bar: 'bg-duo-blue' },
+    { label: '不会的词', sub: '最高优先', n: stats.p0, ink: 'text-duo-red-dark', bar: 'bg-duo-red' },
+    { label: '拼写存疑', sub: '每天抽查', n: stats.p1, ink: 'text-duo-gold-dark', bar: 'bg-duo-gold' },
+    { label: '待清洗', n: stats.p2, sub: '还没刷卡', ink: 'text-duo-purple-dark', bar: 'bg-duo-purple' },
   ]
 
   return (
     <div className="pt-10">
       {/* 主视觉：倒计时 + 进度环 */}
+      <div className="-mx-5 rounded-[28px] bg-duo-green-tint/50 px-5 py-10 sm:-mx-8 sm:px-12">
       <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-center sm:justify-between">
         <div className="text-center sm:text-left">
           <div className="flex items-baseline gap-3 sm:justify-start">
@@ -104,6 +105,7 @@ export default function Today({ ds }: { ds: Dataset }) {
         </div>
         <Ring pct={pct} />
       </div>
+      </div>
 
       {/* 四桶：裸排统计，细线分隔 */}
       <div className="hairline-x mt-12 grid grid-cols-2 gap-y-8 pt-8 sm:grid-cols-4">
@@ -113,9 +115,10 @@ export default function Today({ ds }: { ds: Dataset }) {
             onClick={() => navigate('/study')}
             className="group text-left sm:border-l-2 sm:border-hare sm:pl-5 sm:first:border-l-0 sm:first:pl-0"
           >
-            <div className="text-xl">{b.emoji}</div>
-            <div className={`mt-1.5 text-[34px] font-black leading-none tabular-nums ${b.ink}`}>{b.n}</div>
-            <div className="mt-1.5 text-[13px] font-extrabold text-ink-soft group-hover:text-ink">{b.label}</div>
+            <div className={`text-[34px] font-black leading-none tabular-nums ${b.ink}`}>{b.n}</div>
+            <div className="mt-2 h-1.5 w-8 rounded-full" ><div className={`h-full w-full rounded-full ${b.bar}`} /></div>
+            <div className="mt-2 text-[13px] font-extrabold text-ink group-hover:text-ink">{b.label}</div>
+            <div className="text-[12px] font-semibold text-ink-faint">{b.sub}</div>
           </button>
         ))}
       </div>

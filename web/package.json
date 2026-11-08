@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/noto-sans-sc": "^5.3.1",
     "motion": "^12",
     "react": "^19",
     "react-dom": "^19",
