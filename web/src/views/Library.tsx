@@ -187,7 +187,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   if (!arr.some((c) => c !== null && c !== undefined && String(c).trim() !== '')) return null
   return (
     <div className="mt-6">
-      <div className="eyebrow mb-2">{title}</div>
+      <div className="text-[12px] font-extrabold text-ink-faint">{title}</div>
       <div className="space-y-1.5 text-sm font-bold text-ink-soft">{children}</div>
     </div>
   )
@@ -197,7 +197,7 @@ function WordDetail({ w }: { w: WordEntry }) {
   const progress = useProfile((s) => s.profile.progress[`w:${w.no}`])
   return (
     <div>
-      <div className="eyebrow">考纲单词 · W{w.no} · p{w.page}</div>
+      <div className="text-[12px] font-extrabold text-ink-faint">考纲单词 W{w.no} · 第{w.page}页</div>
       <div className="mt-2 flex items-center gap-3">
         <div className="text-4xl font-black tracking-wide text-ink">{w.headword}</div>
         <SpeakerInline text={w.headword} />
@@ -205,12 +205,10 @@ function WordDetail({ w }: { w: WordEntry }) {
       </div>
       {w.ipa && <div className="mt-1.5 font-mono text-sm font-bold text-ink-faint">{w.ipa}</div>}
       {progress?.triage && (
-        <div className="mt-3 flex flex-wrap gap-1.5 text-xs">
-          <span className="chip bg-mist text-ink-soft">
-            {progress.triage === 'fluent' ? '😎 滚瓜烂熟' : progress.triage === 'recognize' ? '🤔 认识拼不出' : '😵 不会'}
-          </span>
-          <span className="chip bg-duo-blue-tint text-duo-blue-dark">认词 {describeDue(progress.dims.w1 ?? null)}</span>
-          <span className="chip bg-duo-green-tint text-duo-green-dark">默词 {describeDue(progress.dims.w2 ?? null)}</span>
+        <div className="mt-3 text-[13px] font-bold text-ink-soft">
+          {progress.triage === 'fluent' ? '😎 滚瓜烂熟' : progress.triage === 'recognize' ? '🤔 认识拼不出' : '😵 不会'}
+          <span className="mx-2 text-hare">|</span>认词 {describeDue(progress.dims.w1 ?? null)}
+          <span className="mx-2 text-hare">|</span>默词 {describeDue(progress.dims.w2 ?? null)}
         </div>
       )}
       {w.inflections.length > 0 && (
@@ -226,9 +224,7 @@ function WordDetail({ w }: { w: WordEntry }) {
         ))}
       </div>
       {w.textbook_tags.length > 0 && (
-        <div className="mt-4 flex flex-wrap gap-1.5">
-          {w.textbook_tags.map((t) => <span key={t} className="chip bg-mist text-ink-faint">{t}</span>)}
-        </div>
+        <div className="mt-3 text-[13px] font-bold text-ink-faint">教材 {w.textbook_tags.join(' / ')}</div>
       )}
       {w.examples.map((ex, i) => (
         <div key={i} className="mt-4 rounded-2xl bg-mist p-4">
@@ -258,7 +254,7 @@ function PhraseDetail({ p }: { p: PhraseEntry }) {
   const progress = useProfile((s) => s.profile.progress[`p:${p.no}`])
   return (
     <div>
-      <div className="eyebrow">考纲词组 · P{p.no} · p{p.page}</div>
+      <div className="text-[12px] font-extrabold text-ink-faint">考纲词组 P{p.no} · 第{p.page}页</div>
       <div className="mt-2 flex items-center gap-3">
         <div className="text-3xl font-black tracking-wide text-ink">{p.headword}</div>
         <SpeakerInline text={p.headword} />

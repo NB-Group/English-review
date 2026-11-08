@@ -40,7 +40,7 @@ export default function Goals() {
         transition={{ duration: 0.35, ease: EASE }}
         className="card p-6"
       >
-        <div className="eyebrow mb-3">PROFILE · 档案</div>
+        <h2 className="text-[15px] font-extrabold text-ink">档案</h2>
         <div className="flex flex-wrap items-center gap-4">
           <label className="text-sm font-extrabold text-ink-soft">用户名</label>
           <input
@@ -58,7 +58,7 @@ export default function Goals() {
         transition={{ duration: 0.35, ease: EASE, delay: 0.05 }}
         className="card p-6"
       >
-        <div className="eyebrow mb-1">TASK LEVELS · 任务等级</div>
+        <h2 className="text-[15px] font-extrabold text-ink">任务等级</h2>
         <p className="mb-5 text-xs font-bold text-ink-faint">一行一条：词集 → 等级。越靠后的规则优先级越高（手动覆盖往后加）。</p>
         <div className="space-y-2.5">
           {profile.goals.map((g, i) => (
@@ -115,7 +115,7 @@ export default function Goals() {
         transition={{ duration: 0.35, ease: EASE, delay: 0.1 }}
         className="card p-6"
       >
-        <div className="eyebrow mb-5">DAILY QUOTA · 每日额度</div>
+        <h2 className="text-[15px] font-extrabold text-ink">每日额度</h2>
         <div className="grid gap-6 sm:grid-cols-3">
           {([['triage', '🧺 清洗', 60], ['spotcheck', '✏️ 抽查', 20], ['newWords', '🌱 新词', 30]] as const).map(([k, label, max]) => (
             <label key={k} className="block">
@@ -140,7 +140,7 @@ export default function Goals() {
         transition={{ duration: 0.35, ease: EASE, delay: 0.15 }}
         className="card p-6"
       >
-        <div className="eyebrow mb-4">DANGER ZONE</div>
+        <h2 className="text-[15px] font-extrabold text-ink">危险操作</h2>
         {confirmReset ? (
           <div className="flex flex-wrap items-center gap-3">
             <span className="text-sm font-extrabold text-duo-red-dark">清空全部学习进度、清洗标记和 FSRS 状态，确定？</span>

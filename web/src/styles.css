@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Nunito 可变字体（自托管，多邻国同款圆体感） */
+/* Nunito 可变字体（自托管） */
 @font-face {
   font-family: "Nunito";
   src: url("/v2/fonts/nunito-var.woff2") format("woff2");
@@ -10,13 +10,12 @@
 }
 
 @theme {
-  /* 多邻国活力配色 */
   --color-snow: #ffffff;
   --color-mist: #f7f8fa;
   --color-ink: #3c3c3c;
   --color-ink-soft: #6f6f6f;
   --color-ink-faint: #afafaf;
-  --color-hare: #e5e5e5;   /* Duo 边框灰 */
+  --color-hare: #e5e5e5;
   --color-hare-dark: #d0d0d0;
   --color-duo-green: #58cc02;
   --color-duo-green-dark: #46a302;
@@ -28,20 +27,16 @@
   --color-duo-purple-dark: #a560d8;
   --color-duo-purple-tint: #f7e8ff;
   --color-duo-gold: #ffc800;
-  --color-duo-gold-dark: #e0a600;
+  --color-duo-gold-dark: #b98a00;
   --color-duo-gold-tint: #fff4cc;
   --color-duo-red: #ff4b4b;
-  --color-duo-red-dark: #e33b3b;
+  --color-duo-red-dark: #d62f2f;
   --color-duo-red-tint: #ffdfdf;
-  --color-duo-orange: #ff9600;
-  --color-duo-orange-tint: #ffe8cc;
   --font-display: "Nunito", system-ui, sans-serif;
   --font-body: "Nunito", system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
-html {
-  color-scheme: light;
-}
+html { color-scheme: light; }
 
 body {
   font-family: var(--font-body);
@@ -51,11 +46,9 @@ body {
   font-weight: 600;
 }
 
-::selection {
-  background: var(--color-duo-green-tint);
-}
+::selection { background: var(--color-duo-green-tint); }
 
-/* ── 推压式按钮（多邻国签名交互）────────────────── */
+/* ── 推压式按钮 ── */
 .push {
   --push-bg: var(--color-duo-green);
   --push-dark: var(--color-duo-green-dark);
@@ -65,10 +58,9 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 16px;
-  padding: 0.8rem 1.5rem;
+  border-radius: 14px;
+  padding: 0.75rem 1.4rem;
   font-weight: 800;
-  letter-spacing: 0.02em;
   color: var(--push-ink);
   background: var(--push-bg);
   box-shadow: 0 4px 0 var(--push-dark);
@@ -77,41 +69,26 @@ body {
   cursor: pointer;
 }
 .push:hover { filter: brightness(1.06); }
-.push:active {
-  transform: translateY(4px);
-  box-shadow: 0 0 0 var(--push-dark);
-}
+.push:active { transform: translateY(4px); box-shadow: 0 0 0 var(--push-dark); }
 .push:disabled {
-  background: var(--color-hare);
-  box-shadow: 0 4px 0 var(--color-hare-dark);
-  color: var(--color-ink-faint);
-  cursor: not-allowed;
-  transform: none;
+  background: var(--color-hare); box-shadow: 0 4px 0 var(--color-hare-dark);
+  color: var(--color-ink-faint); cursor: not-allowed; transform: none;
 }
-.push-blue   { --push-bg: var(--color-duo-blue);  --push-dark: var(--color-duo-blue-dark); }
-.push-purple { --push-bg: var(--color-duo-purple);--push-dark: var(--color-duo-purple-dark); }
-.push-gold   { --push-bg: var(--color-duo-gold);  --push-dark: var(--color-duo-gold-dark); --push-ink: #5a4a00; }
-.push-red    { --push-bg: var(--color-duo-red);   --push-dark: var(--color-duo-red-dark); }
-.push-ghost {
-  --push-bg: #fff;
-  --push-dark: var(--color-hare);
-  --push-ink: var(--color-duo-blue);
+.push-blue   { --push-bg: var(--color-duo-blue);   --push-dark: var(--color-duo-blue-dark); }
+.push-purple { --push-bg: var(--color-duo-purple); --push-dark: var(--color-duo-purple-dark); }
+.push-gold   { --push-bg: var(--color-duo-gold);   --push-dark: var(--color-duo-gold-dark); --push-ink: #4d3a00; }
+.push-red    { --push-bg: var(--color-duo-red);    --push-dark: var(--color-duo-red-dark); }
+.push-ghost  {
+  --push-bg: #fff; --push-dark: var(--color-hare); --push-ink: var(--color-duo-blue);
   box-shadow: inset 0 0 0 2px var(--color-duo-blue), 0 4px 0 var(--color-hare);
 }
 .push-ghost:active { box-shadow: inset 0 0 0 2px var(--color-duo-blue), 0 0 0 var(--color-hare); }
 
-/* ── 卡片 ── */
-.card {
-  background: var(--color-snow);
-  border: 2px solid var(--color-hare);
-  border-radius: 16px;
-}
-
-/* ── 输入框（多邻国式）── */
+/* ── 输入框 ── */
 .duo-input {
   width: 100%;
   border: 2px solid var(--color-hare);
-  border-radius: 16px;
+  border-radius: 14px;
   padding: 0.8rem 1rem;
   font-weight: 700;
   font-size: 1.25rem;
@@ -121,54 +98,25 @@ body {
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 .duo-input::placeholder { color: var(--color-ink-faint); font-weight: 600; }
-.duo-input:focus {
-  border-color: var(--color-duo-blue);
-  box-shadow: 0 0 0 3px var(--color-duo-blue-tint);
-}
+.duo-input:focus { border-color: var(--color-duo-blue); box-shadow: 0 0 0 3px var(--color-duo-blue-tint); }
 .duo-input:disabled { background: var(--color-mist); color: var(--color-ink-soft); }
 
 /* ── 进度条 ── */
-.duo-track {
-  height: 14px;
-  border-radius: 999px;
-  background: var(--color-hare);
-  overflow: hidden;
-}
+.duo-track { height: 14px; border-radius: 999px; background: var(--color-hare); overflow: hidden; }
 .duo-fill {
-  height: 100%;
-  border-radius: 999px;
+  height: 100%; border-radius: 999px;
   background: linear-gradient(to bottom, #7ee52e 0 30%, var(--color-duo-green) 30% 100%);
   transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ── 药丸标签 ── */
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  border-radius: 999px;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.8rem;
-  font-weight: 800;
-}
+/* 细线（分隔用，代替卡片边框） */
+.hairline-x { border-top: 2px solid var(--color-hare); }
 
-/* ── 眉题 ── */
-.eyebrow {
-  font-weight: 900;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-ink-faint);
-}
-
-/* 滚动条 */
+/* 弹层滚动条 */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-thumb { background: var(--color-hare); border-radius: 999px; border: 2px solid #fff; }
 ::-webkit-scrollbar-track { background: transparent; }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }

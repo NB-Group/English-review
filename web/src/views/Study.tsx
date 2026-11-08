@@ -10,29 +10,19 @@ import { speak } from '../lib/tts'
 
 const EASE = [0.16, 1, 0.3, 1] as const
 
-const KIND_META: Record<SessionCard['kind'], { label: string; cls: string }> = {
-  review: { label: '到期复习', cls: 'bg-duo-blue-tint text-duo-blue-dark' },
-  spellSpot: { label: '拼写抽查', cls: 'bg-duo-gold-tint text-[#8a6a00]' },
-  fluentSpot: { label: '熟词抽查', cls: 'bg-duo-purple-tint text-duo-purple-dark' },
-  triage: { label: '大清洗', cls: 'bg-duo-purple-tint text-duo-purple-dark' },
-  newWord: { label: '新词学习', cls: 'bg-duo-green-tint text-duo-green-dark' },
+const KIND_LABEL: Record<SessionCard['kind'], string> = {
+  review: '到期复习', spellSpot: '拼写抽查', fluentSpot: '熟词抽查',
+  triage: '大清洗', newWord: '新词学习',
 }
 
-function Speaker({ word, size = 'md' }: { word: string; size?: 'md' | 'lg' }) {
-  const [on, setOn] = useState(false)
-  const fire = (slow = false) => {
-    setOn(true)
-    speak(word, { slow })
-    window.setTimeout(() => setOn(false), 1400)
-  }
+function Speaker({ word, big = false }: { word: string; big?: boolean }) {
   return (
     <motion.button
       whileTap={{ scale: 0.88 }}
-      animate={on ? { scale: [1, 1.18, 1] } : {}}
-      onClick={() => fire()}
-      onContextMenu={(e) => { e.preventDefault(); fire(true) }}
+      onClick={() => speak(word)}
+      onContextMenu={(e) => { e.preventDefault(); speak(word, { slow: true }) }}
       title="点击朗读 · 右键慢速"
-      className={`push push-blue !px-0 ${size === 'lg' ? 'size-16 text-2xl' : 'size-11 text-base'}`}
+      className={`push push-blue !px-0 ${big ? 'size-16 text-2xl' : 'size-11 text-base'}`}
     >
       🔊
     </motion.button>
@@ -60,85 +50,67 @@ export default function Study({ ds }: { ds: Dataset }) {
   const [streak, setStreak] = useState(0)
   const card = plan.cards[idx]
 
-  useEffect(() => {
-    if (!card) return
-    setStreak(0)
-  }, [plan])
+  useEffect(() => { setStreak(0) }, [plan])
 
   if (done || !card) {
     return <EndScreen plan={plan} onRestart={() => { setIdx(0); setDone(false) }} />
   }
 
   const next = () => (idx + 1 >= plan.cards.length ? setDone(true) : setIdx(idx + 1))
-  const bumpStreak = (good: boolean) => setStreak((s) => (good ? s + 1 : 0))
+  const bump = (good: boolean) => setStreak((s) => (good ? s + 1 : 0))
 
   return (
-    <div className="mt-5 flex min-h-[calc(100dvh-9rem)] flex-col">
-      {/* 顶栏：进度 + 连击 */}
-      <div className="flex items-center gap-4">
+    <div className="mx-auto flex min-h-[calc(100dvh-3.5rem)] w-full max-w-2xl flex-col px-5 sm:px-8">
+      {/* 顶部：进度 + 连击 */}
+      <div className="flex items-center gap-4 py-4">
         <div className="duo-track flex-1">
-          <div className="duo-fill" style={{ width: `${((idx) / plan.cards.length) * 100}%` }} />
+          <div className="duo-fill" style={{ width: `${(idx / plan.cards.length) * 100}%` }} />
         </div>
         <AnimatePresence mode="popLayout">
           {streak >= 2 && (
             <motion.span
               key="streak"
-              initial={{ scale: 0.4, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
+              initial={{ scale: 0.4, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.4, opacity: 0 }}
-              className="chip bg-duo-gold-tint text-[#8a6a00]"
+              className="text-sm font-black text-duo-gold-dark"
             >
-              🔥 {streak}
+              🔥{streak}
             </motion.span>
           )}
         </AnimatePresence>
-        <span className="text-sm font-extrabold tabular-nums text-ink-faint">
+        <span className="text-[13px] font-extrabold tabular-nums text-ink-faint">
           {idx + 1}/{plan.cards.length}
         </span>
       </div>
 
-      {/* 卡片区 */}
-      <div className="relative mt-6 flex-1">
+      {/* 题目区：垂直居中 */}
+      <div className="flex flex-1 flex-col justify-center py-6">
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={`${card.key}-${card.kind}-${idx}`}
-            initial={reduce ? false : { x: 90, opacity: 0 }}
+            initial={reduce ? false : { x: 80, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            exit={reduce ? undefined : { x: -60, opacity: 0 }}
-            transition={{ duration: 0.28, ease: EASE }}
-            className="mx-auto w-full max-w-2xl"
+            exit={reduce ? undefined : { x: -50, opacity: 0 }}
+            transition={{ duration: 0.26, ease: EASE }}
           >
-            <div className="mb-4 flex items-center gap-2">
-              <span className={`chip ${KIND_META[card.kind].cls}`}>{KIND_META[card.kind].label}</span>
-              <span className="text-xs font-bold text-ink-faint">
-                {card.entryKind === 'word' ? `W${card.no}` : `P${card.no}`}
-              </span>
-              {card.stars > 0 && (
-                <span className="chip bg-duo-gold-tint text-[#8a6a00]">{'★'.repeat(card.stars)}</span>
-              )}
-            </div>
-
             {card.kind === 'triage' && (
-              <TriageCard
-                card={card}
-                onDone={(v) => { doTriage(card.key, v); bumpStreak(true); next() }}
-              />
+              <TriageCard card={card} onDone={(v) => { doTriage(card.key, v); bump(true); next() }} />
             )}
             {card.kind === 'newWord' && (
               <NewWordCard
-                ds={ds} card={card} bumpStreak={bumpStreak}
+                ds={ds} card={card} bump={bump}
                 onDone={(r) => {
                   doAnswer(card.key, 'w1', Rating.Easy)
                   doAnswer(card.key, 'w2', r)
-                  bumpStreak(r !== Rating.Again)
+                  bump(r !== Rating.Again)
                   next()
                 }}
               />
             )}
             {(card.kind === 'review' || card.kind === 'spellSpot' || card.kind === 'fluentSpot') && (
               <ReviewCard
-                ds={ds} card={card} bumpStreak={bumpStreak}
-                onDone={(r) => { doAnswer(card.key, card.dim ?? 'w2', r); bumpStreak(r !== Rating.Again); next() }}
+                ds={ds} card={card} bump={bump}
+                onDone={(r) => { doAnswer(card.key, card.dim ?? 'w2', r); bump(r !== Rating.Again); next() }}
               />
             )}
           </motion.div>
@@ -148,26 +120,44 @@ export default function Study({ ds }: { ds: Dataset }) {
   )
 }
 
+/* 舞台分区组件：prompt 在上（自动撑开居中），action 吸底 */
+
+function Prompt({ kind, card, children }: { kind: SessionCard['kind']; card: SessionCard; children: React.ReactNode }) {
+  return (
+    <div className="text-center">
+      <div className="flex items-center justify-center gap-2 text-[12px] font-extrabold text-ink-faint">
+        <span>{KIND_LABEL[kind]}</span>
+        <span>·</span>
+        <span>{card.entryKind === 'word' ? `W${card.no}` : `P${card.no}`}</span>
+        {card.stars > 0 && <span className="text-duo-gold-dark">{'★'.repeat(card.stars)}</span>}
+      </div>
+      <div className="mt-8">{children}</div>
+    </div>
+  )
+}
+
 /* ─────────── 清洗卡 ─────────── */
 
 function TriageCard({ card, onDone }: { card: SessionCard; onDone: (v: TriageVerdict) => void }) {
   useEffect(() => { speak(card.headword) }, [card.headword])
   return (
-    <div className="card p-8 text-center sm:p-10">
-      <div className="flex items-center justify-center gap-4">
-        <div className="text-5xl font-black tracking-wide text-ink sm:text-6xl">{card.headword}</div>
-        <Speaker word={card.headword} size="lg" />
-      </div>
-      <p className="mt-3 text-sm font-bold text-ink-faint">这个词你熟到什么程度？</p>
-      <div className="mt-8 flex flex-col gap-3">
+    <div>
+      <Prompt kind="triage" card={card}>
+        <div className="flex items-center justify-center gap-5">
+          <span className="text-[52px] font-black tracking-wide text-ink sm:text-[64px]">{card.headword}</span>
+          <Speaker word={card.headword} big />
+        </div>
+        <p className="mt-4 text-[14px] font-bold text-ink-faint">这个词你熟到什么程度</p>
+      </Prompt>
+      <div className="mt-10 flex flex-col gap-3">
         <button className="push w-full !py-4 text-lg" onClick={() => onDone('fluent')}>
-          😎 滚瓜烂熟 <span className="font-semibold opacity-80">— the / a 这种，只防抽查</span>
+          😎 滚瓜烂熟 <span className="font-semibold opacity-75">the / a 这种，只防抽查</span>
         </button>
         <button className="push push-gold w-full !py-4 text-lg" onClick={() => onDone('recognize')}>
-          🤔 认识，拼不出 <span className="font-semibold opacity-80">— 见词知义，拼写要练</span>
+          🤔 认识，拼不出 <span className="font-semibold opacity-75">见词知义，拼写要练</span>
         </button>
         <button className="push push-red w-full !py-4 text-lg" onClick={() => onDone('unknown')}>
-          😵 啥词这是 <span className="font-semibold opacity-80">— 从零开始，最高优先</span>
+          😵 啥词这是 <span className="font-semibold opacity-75">从零开始，最高优先</span>
         </button>
       </div>
     </div>
@@ -177,12 +167,8 @@ function TriageCard({ card, onDone }: { card: SessionCard; onDone: (v: TriageVer
 /* ─────────── 新词三段卡 ─────────── */
 
 function NewWordCard({
-  ds, card, bumpStreak, onDone,
-}: {
-  ds: Dataset; card: SessionCard
-  bumpStreak: (g: boolean) => void
-  onDone: (r: Rating) => void
-}) {
+  ds, card, bump, onDone,
+}: { ds: Dataset; card: SessionCard; bump: (g: boolean) => void; onDone: (r: Rating) => void }) {
   const word = card.entryKind === 'word' ? ds.wordByNo.get(card.no) : undefined
   const phrase = card.entryKind === 'phrase' ? ds.phraseByNo.get(card.no) : undefined
   const entry = word ?? phrase
@@ -195,8 +181,7 @@ function NewWordCard({
   const [spellGrade, setSpellGrade] = useState<Grade>('wrong')
 
   useEffect(() => {
-    if (step === 0) speak(card.headword)
-    if (step === 1) speak(card.headword)
+    if (step <= 1) speak(card.headword)
     if (step === 2 && example) speak(example.en)
   }, [step, card.headword, example])
 
@@ -204,15 +189,17 @@ function NewWordCard({
 
   if (step === 0) {
     return (
-      <div className="card p-8 text-center sm:p-10">
-        <div className="text-5xl font-black tracking-wide text-ink sm:text-6xl">{card.headword}</div>
-        {ipa && <div className="mt-3 font-mono text-lg font-bold text-ink-soft">{ipa}</div>}
-        <div className="mt-5 flex items-center justify-center gap-3">
-          <Speaker word={card.headword} />
-          <span className="text-xs font-bold text-ink-faint">右键慢速</span>
-        </div>
-        <div className="mt-8 flex justify-center">
-          <button className="push px-12 py-4 text-lg" onClick={() => setStep(1)}>我会读了 →</button>
+      <div>
+        <Prompt kind="newWord" card={card}>
+          <div className="text-[52px] font-black tracking-wide text-ink sm:text-[64px]">{card.headword}</div>
+          {ipa && <div className="mt-3 font-mono text-[16px] font-bold text-ink-faint">{ipa}</div>}
+          <div className="mt-6 flex items-center justify-center gap-2.5">
+            <Speaker word={card.headword} />
+            <span className="text-[12px] font-bold text-ink-faint">右键慢速</span>
+          </div>
+        </Prompt>
+        <div className="mt-10 flex justify-center">
+          <button className="push w-full max-w-sm !py-4 text-lg" onClick={() => setStep(1)}>我会读了</button>
         </div>
       </div>
     )
@@ -224,62 +211,63 @@ function NewWordCard({
       const g = grade(input, accepted)
       setSpellGrade(g)
       setResult(g)
-      bumpStreak(g === 'exact')
+      bump(g === 'exact')
     }
     return (
-      <div className="card p-8 sm:p-10">
-        <div className="eyebrow text-center">① 听音拼词</div>
-        <div className="mt-4 flex justify-center"><Speaker word={card.headword} size="lg" /></div>
-        <input
-          autoFocus
-          className="duo-input mt-6 text-center text-2xl"
-          placeholder="凭读音拼出来…"
-          value={input}
-          disabled={result !== null}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && !result && input.trim() && submit()}
-        />
-        {result === null ? (
-          <div className="mt-6 flex justify-center">
-            <button className="push w-full max-w-xs py-4 text-lg" disabled={!input.trim()} onClick={submit}>
-              检 查
-            </button>
-          </div>
-        ) : (
-          <Feedback
-            ok={result === 'exact'}
-            title={result === 'exact' ? '一次拼对，漂亮！' : result === 'near' ? '差一点！' : '再看看'}
-            answer={card.headword}
-            yours={input}
-            onContinue={() => { setResult(null); setInput(''); setStep(2) }}
-            continueLabel="继续 →"
+      <div>
+        <Prompt kind="newWord" card={card}>
+          <div className="flex justify-center"><Speaker word={card.headword} big /></div>
+          <p className="mt-5 text-[14px] font-bold text-ink-faint">听音拼词</p>
+        </Prompt>
+        <div className="mt-8">
+          <input
+            autoFocus
+            className="duo-input text-center"
+            placeholder="凭读音拼出来"
+            value={input}
+            disabled={result !== null}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && !result && input.trim() && submit()}
           />
-        )}
+          {result === null ? (
+            <div className="mt-5 flex justify-center">
+              <button className="push w-full max-w-sm !py-4 text-lg" disabled={!input.trim()} onClick={submit}>
+                检查
+              </button>
+            </div>
+          ) : (
+            <Feedback
+              grade={result} answer={card.headword} yours={input}
+              onContinue={() => { setResult(null); setInput(''); setStep(2) }}
+              continueLabel="继续"
+            />
+          )}
+        </div>
       </div>
     )
   }
 
-  const finalRating = spellGrade === 'exact' ? Rating.Good
-    : spellGrade === 'near' ? Rating.Hard : Rating.Again
+  const finalRating = spellGrade === 'exact' ? Rating.Good : spellGrade === 'near' ? Rating.Hard : Rating.Again
   return (
-    <div className="card p-8 sm:p-10">
-      <div className="eyebrow text-center">② 记住意思</div>
-      <div className="mt-4 text-center text-3xl font-black text-ink">{card.headword}</div>
-      <div className="mt-2 text-center text-xl font-extrabold text-ink-soft">{zh}</div>
-      {example && (
-        <div className="mt-6 rounded-2xl bg-mist p-5">
-          <div className="flex items-start justify-between gap-3">
-            <div className="font-bold text-ink">{example.en}</div>
-            <Speaker word={example.en} />
+    <div>
+      <Prompt kind="newWord" card={card}>
+        <div className="text-[40px] font-black tracking-wide text-ink">{card.headword}</div>
+        <div className="mt-4 text-[20px] font-extrabold text-ink">{zh}</div>
+        {example && (
+          <div className="mx-auto mt-7 max-w-lg rounded-2xl bg-mist px-6 py-5 text-left">
+            <div className="flex items-start justify-between gap-3">
+              <div className="text-[15px] font-bold leading-relaxed text-ink">{example.en}</div>
+              <Speaker word={example.en} />
+            </div>
+            <div className="mt-1.5 text-[13px] font-semibold text-ink-faint">{example.zh}</div>
+            {example.rewrite && (
+              <div className="mt-1.5 text-[13px] font-extrabold text-duo-blue-dark">{example.rewrite}</div>
+            )}
           </div>
-          <div className="mt-1 text-sm font-semibold text-ink-faint">{example.zh}</div>
-          {example.rewrite && <div className="mt-1 text-sm font-bold text-duo-blue-dark">{example.rewrite}</div>}
-        </div>
-      )}
-      <div className="mt-8 flex justify-center">
-        <button className="push px-12 py-4 text-lg" onClick={() => onDone(finalRating)}>
-          记住了，下一个 →
-        </button>
+        )}
+      </Prompt>
+      <div className="mt-10 flex justify-center">
+        <button className="push w-full max-w-sm !py-4 text-lg" onClick={() => onDone(finalRating)}>记住了</button>
       </div>
     </div>
   )
@@ -288,12 +276,8 @@ function NewWordCard({
 /* ─────────── 复习卡 ─────────── */
 
 function ReviewCard({
-  ds, card, bumpStreak, onDone,
-}: {
-  ds: Dataset; card: SessionCard
-  bumpStreak: (g: boolean) => void
-  onDone: (r: Rating) => void
-}) {
+  ds, card, bump, onDone,
+}: { ds: Dataset; card: SessionCard; bump: (g: boolean) => void; onDone: (r: Rating) => void }) {
   const word = card.entryKind === 'word' ? ds.wordByNo.get(card.no) : undefined
   const phrase = card.entryKind === 'phrase' ? ds.phraseByNo.get(card.no) : undefined
   const zh = word ? word.senses.map((s) => `${s.pos} ${s.zh}`).join('；') : (phrase?.meaning ?? '')
@@ -307,31 +291,36 @@ function ReviewCard({
 
   if (isW1) {
     return (
-      <div className="card p-8 text-center sm:p-10">
-        <div className="flex items-center justify-center gap-4">
-          <div className="text-4xl font-black tracking-wide text-ink sm:text-5xl">{card.headword}</div>
-          <Speaker word={card.headword} size="lg" />
-        </div>
-        {!revealed ? (
-          <>
-            <p className="mt-4 text-sm font-bold text-ink-faint">心里过一遍意思，然后揭晓</p>
-            <div className="mt-8 flex justify-center">
-              <button className="push push-blue px-10 py-4 text-lg" onClick={() => setRevealed(true)}>
+      <div>
+        <Prompt kind={card.kind} card={card}>
+          <div className="flex items-center justify-center gap-5">
+            <span className="text-[48px] font-black tracking-wide text-ink sm:text-[60px]">{card.headword}</span>
+            <Speaker word={card.headword} big />
+          </div>
+          <p className="mt-4 text-[14px] font-bold text-ink-faint">心里过一遍意思</p>
+          {!revealed && (
+            <div className="mt-10 flex justify-center">
+              <button className="push push-blue w-full max-w-sm !py-4 text-lg" onClick={() => setRevealed(true)}>
                 揭晓答案
               </button>
             </div>
-          </>
-        ) : (
-          <>
-            <div className="mt-5 rounded-2xl bg-duo-blue-tint p-5 text-lg font-extrabold text-duo-blue-dark">{zh}</div>
+          )}
+          {revealed && (
+            <div className="mx-auto mt-8 max-w-lg rounded-2xl bg-duo-blue-tint px-6 py-4 text-[19px] font-extrabold text-duo-blue-dark">
+              {zh}
+            </div>
+          )}
+        </Prompt>
+        {revealed && (
+          <div className="mt-10">
             <RatingRow auto={autoRating} picked={picked} onPick={setPicked} />
             <div className="mt-4 flex justify-center">
-              <button className="push px-12 py-4 text-lg" disabled={picked === null}
-                onClick={() => { bumpStreak(picked !== Rating.Again); onDone(picked!) }}>
-                继续 →
+              <button className="push w-full max-w-sm !py-4 text-lg" disabled={picked === null}
+                onClick={() => { bump(picked !== Rating.Again); onDone(picked!) }}>
+                继续
               </button>
             </div>
-          </>
+          </div>
         )}
       </div>
     )
@@ -342,76 +331,81 @@ function ReviewCard({
     const g = grade(input, accepted)
     setAutoRating(g === 'exact' ? Rating.Good : g === 'near' ? Rating.Hard : Rating.Again)
     setRevealed(true)
-    bumpStreak(g !== 'wrong')
+    bump(g !== 'wrong')
   }
   return (
-    <div className="card p-8 sm:p-10">
-      <div className="eyebrow text-center">拼写</div>
-      <div className="mt-4 text-center text-2xl font-extrabold text-ink">{zh}</div>
-      <input
-        autoFocus
-        className="duo-input mt-6 text-center text-2xl"
-        placeholder="输入英文…"
-        value={input}
-        disabled={revealed}
-        onChange={(e) => setInput(e.target.value)}
-        onKeyDown={(e) => e.key === 'Enter' && !revealed && input.trim() && submit()}
-      />
-      {!revealed ? (
-        <div className="mt-6 flex justify-center">
-          <button className="push w-full max-w-xs py-4 text-lg" disabled={!input.trim()} onClick={submit}>
-            检 查
-          </button>
-        </div>
-      ) : (
-        <Feedback
-          ok={autoRating !== Rating.Again}
-          title={autoRating === Rating.Good ? '太棒了！' : autoRating === Rating.Hard ? '很接近！' : '再试试'}
-          answer={card.headword}
-          yours={input}
-          onContinue={() => onDone(picked ?? autoRating)}
-          continueLabel="继续 →"
-        >
-          <RatingRow auto={autoRating} picked={picked} onPick={setPicked} inline />
-        </Feedback>
-      )}
+    <div>
+      <Prompt kind={card.kind} card={card}>
+        <p className="text-[14px] font-bold text-ink-faint">拼写</p>
+        <div className="mt-4 text-[26px] font-extrabold leading-snug text-ink sm:text-[30px]">{zh}</div>
+      </Prompt>
+      <div className="mt-10">
+        <input
+          autoFocus
+          className="duo-input text-center"
+          placeholder="输入英文"
+          value={input}
+          disabled={revealed}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && !revealed && input.trim() && submit()}
+        />
+        {!revealed ? (
+          <div className="mt-5 flex justify-center">
+            <button className="push w-full max-w-sm !py-4 text-lg" disabled={!input.trim()} onClick={submit}>
+              检查
+            </button>
+          </div>
+        ) : (
+          <Feedback
+            grade={autoRating === Rating.Good ? 'exact' : autoRating === Rating.Hard ? 'near' : 'wrong'}
+            answer={card.headword} yours={input}
+            onContinue={() => onDone(picked ?? autoRating)}
+            continueLabel="继续"
+          >
+            <RatingRow auto={autoRating} picked={picked} onPick={setPicked} />
+          </Feedback>
+        )}
+      </div>
     </div>
   )
 }
 
-/* ─────────── 反馈面板（多邻国底部横幅）─────────── */
+/* ─────────── 反馈面板 ─────────── */
 
 function Feedback({
-  ok, title, answer, yours, onContinue, continueLabel, children,
+  grade, answer, yours, onContinue, continueLabel, children,
 }: {
-  ok: boolean
-  title: string
+  grade: Grade
   answer: string
   yours: string
   onContinue: () => void
   continueLabel: string
   children?: React.ReactNode
 }) {
+  const ok = grade !== 'wrong'
   const tint = ok ? 'var(--color-duo-green-tint)' : 'var(--color-duo-red-tint)'
   const ink = ok ? 'var(--color-duo-green-dark)' : 'var(--color-duo-red-dark)'
+  const title = grade === 'exact' ? '太棒了' : grade === 'near' ? '很接近' : '再试试'
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.32, ease: EASE }}
-      className="mt-6 rounded-2xl p-6"
+      transition={{ duration: 0.26, ease: EASE }}
+      className="mt-5 rounded-2xl p-5"
       style={{ background: tint }}
     >
-      <div className="text-xl font-black" style={{ color: ink }}>
+      <div className="text-[20px] font-black" style={{ color: ink }}>
         {ok ? '✓ ' : '✗ '}{title}
       </div>
-      <div className="mt-3 flex flex-wrap items-center gap-2 text-sm font-bold">
-        <span className="chip bg-white/70" style={{ color: ink }}>正确：{answer}</span>
-        {yours && yours !== answer && <span className="chip bg-white/70 text-ink-soft">你写的：{yours}</span>}
+      <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[14px] font-extrabold">
+        <span style={{ color: ink }}>正确 {answer}</span>
+        {yours && yours.toLowerCase() !== answer.toLowerCase() && (
+          <span className="text-ink-soft">你写的 {yours}</span>
+        )}
       </div>
       {children}
-      <div className="mt-5 flex justify-end">
-        <button className="push px-10 py-3.5" onClick={onContinue}>{continueLabel}</button>
+      <div className="mt-4 flex justify-end">
+        <button className="push !py-3 px-10" onClick={onContinue}>{continueLabel}</button>
       </div>
     </motion.div>
   )
@@ -421,32 +415,26 @@ function Feedback({
 
 const RATING_META: Array<{ r: Rating; label: string; cls: string }> = [
   { r: Rating.Again, label: '重来', cls: 'bg-duo-red-tint text-duo-red-dark' },
-  { r: Rating.Hard, label: '困难', cls: 'bg-duo-gold-tint text-[#8a6a00]' },
+  { r: Rating.Hard, label: '困难', cls: 'bg-duo-gold-tint text-duo-gold-dark' },
   { r: Rating.Good, label: '良好', cls: 'bg-duo-green-tint text-duo-green-dark' },
   { r: Rating.Easy, label: '简单', cls: 'bg-duo-blue-tint text-duo-blue-dark' },
 ]
 
 function RatingRow({
-  auto, picked, onPick, inline,
-}: {
-  auto: Rating
-  picked: Rating | null
-  onPick: (r: Rating) => void
-  inline?: boolean
-}) {
+  auto, picked, onPick,
+}: { auto: Rating; picked: Rating | null; onPick: (r: Rating) => void }) {
   return (
-    <div className={`flex gap-2 ${inline ? 'mt-4' : 'mt-6'}`}>
+    <div className="mt-4 flex gap-2">
       {RATING_META.map(({ r, label, cls }) => (
         <motion.button
           key={r}
           whileTap={{ scale: 0.94 }}
           onClick={() => onPick(r)}
-          className={`chip flex-1 justify-center !py-3 transition-all ${cls} ${
-            picked === r ? 'ring-4 ring-white/80 brightness-95' : picked !== null ? 'opacity-50' : 'hover:brightness-95'
+          className={`flex-1 rounded-xl py-2.5 text-[13px] font-extrabold transition-all ${cls} ${
+            picked === r ? 'ring-4 ring-white/80' : picked !== null ? 'opacity-45' : 'hover:brightness-95'
           }`}
         >
-          {label}
-          {r === auto && <span className="text-[10px] font-bold opacity-70">建议</span>}
+          {label}{r === auto && <span className="ml-1 opacity-60">建议</span>}
         </motion.button>
       ))}
     </div>
@@ -458,30 +446,21 @@ function RatingRow({
 function EndScreen({ plan, onRestart }: { plan: SessionPlan; onRestart: () => void }) {
   const items = Object.entries(plan.stats).filter(([, n]) => n > 0)
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.92 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.4, ease: EASE }}
-      className="card mx-auto mt-16 max-w-lg p-10 text-center"
-    >
+    <div className="mx-auto flex min-h-[calc(100dvh-3.5rem)] max-w-2xl flex-col items-center justify-center px-5 text-center sm:px-8">
       <motion.div
-        animate={{ rotate: [0, -10, 10, 0] }}
-        transition={{ delay: 0.3, duration: 0.6 }}
+        animate={{ rotate: [0, -8, 8, 0] }}
+        transition={{ delay: 0.25, duration: 0.6 }}
         className="text-6xl"
       >
         🏆
       </motion.div>
-      <h2 className="mt-4 text-3xl font-black text-duo-green-dark">本场完成！</h2>
-      <div className="mt-6 flex flex-wrap justify-center gap-2">
+      <h2 className="mt-4 text-[32px] font-black text-duo-green-dark">本场完成</h2>
+      <div className="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[14px] font-extrabold text-ink-soft">
         {items.map(([k, n]) => (
-          <span key={k} className={`chip !py-2 ${KIND_META[k as SessionCard['kind']].cls}`}>
-            {KIND_META[k as SessionCard['kind']].label} × {n}
-          </span>
+          <span key={k}>{KIND_LABEL[k as SessionCard['kind']]} <span className="text-ink">{n}</span></span>
         ))}
       </div>
-      <div className="mt-8 flex justify-center">
-        <button className="push px-10 py-4 text-lg" onClick={onRestart}>再来一轮</button>
-      </div>
-    </motion.div>
+      <button className="push mt-9 px-14 py-4 text-lg" onClick={onRestart}>再来一轮</button>
+    </div>
   )
 }

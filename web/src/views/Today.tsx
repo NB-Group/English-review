@@ -8,27 +8,28 @@ import { dimsForLevel, goalLevelFor, useProfile } from '../lib/store'
 
 const EASE = [0.16, 1, 0.3, 1] as const
 
-function Ring({ pct, size = 168 }: { pct: number; size?: number }) {
-  const r = size / 2 - 12
+function Ring({ pct, size = 150 }: { pct: number; size?: number }) {
+  const r = size / 2 - 11
   const c = 2 * Math.PI * r
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="shrink-0">
-      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--color-hare)" strokeWidth="14" />
+      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--color-hare)" strokeWidth="13" />
       <motion.circle
         cx={size / 2} cy={size / 2} r={r} fill="none"
-        stroke="var(--color-duo-green)" strokeWidth="14" strokeLinecap="round"
+        stroke="var(--color-duo-green)" strokeWidth="13" strokeLinecap="round"
         strokeDasharray={c}
         initial={{ strokeDashoffset: c }}
         animate={{ strokeDashoffset: c - (c * pct) / 100 }}
-        transition={{ duration: 1.1, ease: EASE }}
+        transition={{ duration: 1, ease: EASE }}
         transform={`rotate(-90 ${size / 2} ${size / 2})`}
       />
-      <text x="50%" y="47%" textAnchor="middle" dominantBaseline="central"
-        className="fill-ink font-extrabold" style={{ fontSize: size / 3.6 }}>
+      <text x="50%" y="46%" textAnchor="middle" dominantBaseline="central"
+        className="fill-ink" style={{ fontSize: size / 3.4, fontWeight: 900 }}>
         {pct}%
       </text>
-      <text x="50%" y="63%" textAnchor="middle" className="fill-[#777] font-bold" style={{ fontSize: size / 11 }}>
-        默写级进度
+      <text x="50%" y="62%" textAnchor="middle" className="fill-[#777]"
+        style={{ fontSize: size / 12, fontWeight: 700 }}>
+        默写进度
       </text>
     </svg>
   )
@@ -66,73 +67,58 @@ export default function Today({ ds }: { ds: Dataset }) {
   }, [ds, profile])
 
   const pct = stats.dictGoal ? Math.round((stats.dictDone / stats.dictGoal) * 100) : 0
+  const total = stats.due + 15 + profile.dailyQuota.triage
 
   const buckets = [
-    { label: '到期复习', n: stats.due, hint: '遗忘曲线今天要救的', emoji: '⚡', tint: 'bg-duo-blue-tint', ink: 'text-duo-blue-dark' },
-    { label: '不会的词', n: stats.p0, hint: '最优先搞掉', emoji: '🎯', tint: 'bg-duo-red-tint', ink: 'text-duo-red-dark' },
-    { label: '拼写存疑', n: stats.p1, hint: '每天抽查默写', emoji: '✏️', tint: 'bg-duo-gold-tint', ink: 'text-[#8a6a00]' },
-    { label: '待清洗', n: stats.p2, hint: '还没刷过卡', emoji: '🧺', tint: 'bg-duo-purple-tint', ink: 'text-duo-purple-dark' },
+    { label: '到期复习', n: stats.due, emoji: '⚡', ink: 'text-duo-blue-dark' },
+    { label: '不会的词', n: stats.p0, emoji: '🎯', ink: 'text-duo-red-dark' },
+    { label: '拼写存疑', n: stats.p1, emoji: '✏️', ink: 'text-duo-gold-dark' },
+    { label: '待清洗', n: stats.p2, emoji: '🧺', ink: 'text-duo-purple-dark' },
   ]
 
   return (
-    <div className="mt-8">
-      {/* 主卡：进度环 + 冲刺文案 */}
-      <motion.section
-        initial={reduce ? false : { opacity: 0, y: 18 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45, ease: EASE }}
-        className="card flex flex-col items-center gap-8 p-8 sm:flex-row sm:p-10"
-      >
-        <Ring pct={pct} />
+    <div className="pt-10">
+      {/* 主视觉：倒计时 + 进度环 */}
+      <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-center sm:justify-between">
         <div className="text-center sm:text-left">
-          <div className="eyebrow">TODAY · 冲刺计划</div>
-          <h1 className="mt-2 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
-            今天最少 <span className="text-duo-green">{stats.due + 15 + profile.dailyQuota.triage}</span> 张卡
-          </h1>
-          <p className="mt-3 font-bold text-ink-soft">
-            到期 {stats.due} · 抽查 15 · 清洗 {profile.dailyQuota.triage}
+          <div className="flex items-baseline gap-3 sm:justify-start">
+            <motion.span
+              initial={reduce ? false : { scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ type: 'spring', stiffness: 200, damping: 18 }}
+              className="text-[88px] font-black leading-none tracking-tight text-duo-green-dark sm:text-[104px]"
+            >
+              {total}
+            </motion.span>
+            <span className="text-2xl font-extrabold text-ink-soft">张卡</span>
+          </div>
+          <p className="mt-3 text-[15px] font-bold text-ink-soft">
+            今天最少要过的量 · 到期 {stats.due} ＋ 抽查 15 ＋ 清洗 {profile.dailyQuota.triage}
           </p>
-          <p className="mt-1 text-sm font-semibold text-ink-faint">
-            清洗和复习混在同一场，高星词优先。{stats.p3 > 0 && ` 熟词抽查池还有 ${stats.p3} 个。`}
+          <p className="mt-1 text-[13px] font-semibold text-ink-faint">
+            熟词池 {stats.p3} 个在冬眠，抽查失败会被拖回来重学
           </p>
-          <button onClick={() => navigate('/study')} className="push mt-6 w-full text-lg sm:w-auto sm:px-12 sm:py-4">
-            ▶ 开始学习
+          <button onClick={() => navigate('/study')} className="push mt-7 w-full py-4 text-lg sm:w-auto sm:px-14">
+            开始学习
           </button>
         </div>
-      </motion.section>
-
-      {/* 四桶 */}
-      <div className="mt-5 grid grid-cols-2 gap-4 lg:grid-cols-4">
-        {buckets.map((b, i) => (
-          <motion.button
-            key={b.label}
-            initial={reduce ? false : { opacity: 0, y: 18, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.4, ease: EASE, delay: 0.06 * i }}
-            whileHover={reduce ? undefined : { y: -4 }}
-            whileTap={{ scale: 0.97 }}
-            onClick={() => navigate('/study')}
-            className="card flex items-center gap-4 p-5 text-left"
-          >
-            <span className={`grid size-14 shrink-0 place-items-center rounded-2xl text-2xl ${b.tint}`}>{b.emoji}</span>
-            <span>
-              <span className={`block text-3xl font-extrabold tabular-nums ${b.ink}`}>{b.n}</span>
-              <span className="block text-sm font-extrabold text-ink">{b.label}</span>
-              <span className="block text-xs font-semibold text-ink-faint">{b.hint}</span>
-            </span>
-          </motion.button>
-        ))}
+        <Ring pct={pct} />
       </div>
 
-      {/* 熟词池 */}
-      <motion.div
-        initial={reduce ? false : { opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.35 }}
-        className="mt-5 flex items-center justify-center gap-2 text-sm font-bold text-ink-faint"
-      >
-        <span className="chip bg-mist">🧊 滚瓜烂熟 {stats.p3} 个在抽查池里冬眠</span>
-      </motion.div>
+      {/* 四桶：裸排统计，细线分隔 */}
+      <div className="hairline-x mt-12 grid grid-cols-2 gap-y-8 pt-8 sm:grid-cols-4">
+        {buckets.map((b) => (
+          <button
+            key={b.label}
+            onClick={() => navigate('/study')}
+            className="group text-left sm:border-l-2 sm:border-hare sm:pl-5 sm:first:border-l-0 sm:first:pl-0"
+          >
+            <div className="text-xl">{b.emoji}</div>
+            <div className={`mt-1.5 text-[34px] font-black leading-none tabular-nums ${b.ink}`}>{b.n}</div>
+            <div className="mt-1.5 text-[13px] font-extrabold text-ink-soft group-hover:text-ink">{b.label}</div>
+          </button>
+        ))}
+      </div>
     </div>
   )
 }
