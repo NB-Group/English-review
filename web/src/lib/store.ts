@@ -8,7 +8,7 @@ import type {
   TriageVerdict,
   UserProfile,
 } from '../types'
-import { Rating, rate, seed } from './fsrs'
+import { Rating, rate, craftState } from './fsrs'
 
 /** 全局用户状态：档案 + 学习动作（localStorage 持久化，v1 不做服务端同步） */
 
@@ -23,6 +23,7 @@ const DEFAULT_GOALS: GoalRule[] = [
 interface ProfileState {
   profile: UserProfile
   setProfileName: (name: string) => void
+  loadProfile: (p: UserProfile) => void
   setGoals: (goals: GoalRule[]) => void
   setQuota: (q: Partial<UserProfile['dailyQuota']>) => void
   getProgress: (key: string) => EntryProgress
@@ -42,22 +43,19 @@ function emptyProfile(name = 'me'): UserProfile {
   }
 }
 
-/** 清洗判定 → FSRS 种子（unknown 清空旧状态，支持复清洗） */
+/** 清洗判定 → FSRS 种子（unknown 清空旧状态，支持复清洗）
+ *  熟练：两维 45 天间隔（进抽查池）；认识拼不出：W1 20 天，W2 从零 */
 function seedFromTriage(v: TriageVerdict): { w1: FsrsSeed; w2: FsrsSeed; reset: boolean } {
   switch (v) {
-    case 'fluent': // 滚瓜烂熟：两维都长间隔，进抽查池
-      return {
-        w1: seed([Rating.Easy, Rating.Easy, Rating.Easy]),
-        w2: seed([Rating.Easy, Rating.Easy, Rating.Easy]),
-        reset: true,
-      }
-    case 'recognize': // 认识拼不出：W1 长间隔，W2 从零
-      return { w1: seed([Rating.Good, Rating.Good]), w2: null, reset: true }
-    case 'unknown': // 全部从零
+    case 'fluent':
+      return { w1: craftState(45, 45), w2: craftState(45, 45), reset: true }
+    case 'recognize':
+      return { w1: craftState(20, 18), w2: null, reset: true }
+    case 'unknown':
       return { w1: null, w2: null, reset: true }
   }
 }
-type FsrsSeed = ReturnType<typeof seed> | null
+type FsrsSeed = ReturnType<typeof craftState> | null
 
 export const useProfile = create<ProfileState>()(
   persist(
@@ -66,6 +64,8 @@ export const useProfile = create<ProfileState>()(
 
       setProfileName: (name) =>
         set((s) => ({ profile: { ...s.profile, name } })),
+
+      loadProfile: (p) => set({ profile: p }),
 
       setGoals: (goals) => set((s) => ({ profile: { ...s.profile, goals } })),
 
@@ -113,6 +113,30 @@ export const useProfile = create<ProfileState>()(
     }),
     {
       name: 'kaogang_v2_profile',
+      onRehydrateStorage: () => (state) => {
+        // 一次性迁移：旧版"熟练"种子（Easy×3 只产生 2-4 天间隔，淹没到期队列）升格为 45 天
+        const p = state?.profile
+        if (!p || (p as unknown as { seedsV2?: boolean }).seedsV2) return
+        let fixed = 0
+        for (const entry of Object.values(p.progress)) {
+          const w1 = entry.dims.w1, w2 = entry.dims.w2
+          const short = (s: unknown) => !!s && (s as { scheduled_days: number }).scheduled_days < 20
+          if (entry.degraded) continue // 抽查降级词在正常复习队列，短间隔是合法进度，别重置
+          if (entry.triage === 'fluent') {
+            if (short(w1)) { entry.dims.w1 = craftState(45, 45); fixed++ }
+            if (short(w2)) { entry.dims.w2 = craftState(45, 45); fixed++ }
+          } else if (entry.triage === 'recognize' && short(w1)) {
+            entry.dims.w1 = craftState(20, 18); fixed++
+          }
+        }
+        ;(p as unknown as { seedsV2?: boolean }).seedsV2 = true
+        if (fixed > 0) {
+          try {
+            localStorage.setItem('kaogang_v2_profile', JSON.stringify({ state: { profile: p }, version: 0 }))
+            console.log(`[迁移] ${fixed} 个旧熟练种子已升格为长间隔`)
+          } catch { /* 忽略 */ }
+        }
+      },
     },
   ),
 )

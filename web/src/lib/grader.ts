@@ -32,9 +32,20 @@ export function grade(user: string, accepted: string[]): Grade {
   if (!u) return 'wrong'
   const norms = accepted.map(normalize).filter(Boolean)
   if (norms.includes(u)) return 'exact'
-  // 近似：编辑距离 ≤1，或只差一个尾 s（单复数）
-  const noS = (s: string) => s.replace(/s\b/g, '').replace(/\s/g, '')
-  if (norms.some((n) => noS(n) === noS(u))) return 'near'
+  // 近似：编辑距离 ≤1，或单复数差异（含 -s/-es/-ves/-ies 变化）
+  const stems = (s: string): Set<string> => {
+    const out = new Set([s])
+    if (s.endsWith('ies')) out.add(s.slice(0, -3) + 'y')
+    if (s.endsWith('ves')) out.add(s.slice(0, -3) + 'f')
+    if (s.endsWith('es')) out.add(s.slice(0, -2))
+    if (s.endsWith('s')) out.add(s.slice(0, -1))
+    return out
+  }
+  const pluralMatch = (a: string, b: string) => {
+    for (const x of stems(a)) for (const y of stems(b)) if (x === y) return true
+    return false
+  }
+  if (norms.some((n) => pluralMatch(n, u))) return 'near'
   if (norms.some((n) => Math.abs(n.length - u.length) <= 2 && editDistance(n, u) <= 1)) return 'near'
   return 'wrong'
 }

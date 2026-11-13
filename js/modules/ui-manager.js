@@ -263,9 +263,9 @@ export class UIManager {
                 const item = document.createElement('div');
                 item.className = 'wrong-answer-item';
                 item.innerHTML = `
-                    <div class="wrong-chinese">${wrong.chinese}</div>
-                    <div class="wrong-correct">CORRECT: ${wrong.correct}</div>
-                    <div class="wrong-user">YOURS: ${wrong.userAnswer}</div>
+                    <div class="wrong-chinese">${this.escapeHtml(String(wrong.chinese))}</div>
+                    <div class="wrong-correct">CORRECT: ${this.escapeHtml(String(wrong.correct))}</div>
+                    <div class="wrong-user">YOURS: ${this.escapeHtml(String(wrong.userAnswer))}</div>
                 `;
                 wrongAnswersList.appendChild(item);
             });
@@ -325,7 +325,7 @@ export class UIManager {
 
                 item.innerHTML = `
                     <div class="notebook-item-header">
-                        <div class="notebook-item-title">${wrong.chinese}</div>
+                        <div class="notebook-item-title">${this.escapeHtml(String(wrong.chinese))}</div>
                         <div class="notebook-item-meta">
                             <span>${date} ${time}</span>
                             <span>${wrong.grade}年级 · ${wrong.unit}</span>
@@ -334,9 +334,9 @@ export class UIManager {
                     </div>
                     <div class="notebook-item-content">
                         <div class="notebook-item-question">
-                            <div class="chinese">${wrong.chinese}</div>
-                            <div class="correct">✓ ${wrong.correct}</div>
-                            <div class="user">✗ ${wrong.userAnswer}</div>
+                            <div class="chinese">${this.escapeHtml(String(wrong.chinese))}</div>
+                            <div class="correct">✓ ${this.escapeHtml(String(wrong.correct))}</div>
+                            <div class="user">✗ ${this.escapeHtml(String(wrong.userAnswer))}</div>
                         </div>
                     </div>
                     <div class="notebook-item-actions">

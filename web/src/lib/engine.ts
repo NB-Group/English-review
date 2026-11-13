@@ -115,7 +115,7 @@ export function buildSession(
   )
   for (const e of fluentPool) {
     if (stats.fluentSpot >= budgets.fluentSpot) break
-    if (push({ key: e.key, kind: 'fluentSpot', entryKind: e.kind, no: e.no, headword: e.headword, dim: 'w2', stars: e.stars })) break
+    push({ key: e.key, kind: 'fluentSpot', entryKind: e.kind, no: e.no, headword: e.headword, dim: 'w2', stars: e.stars })
   }
 
   // 4) 清洗（P2 未清洗，高星优先）
@@ -129,8 +129,12 @@ export function buildSession(
   }
 
   // 5) 新词（P0：unknown 且高星优先；带 dictation 级以上才进新词流）
+  // 已开始的词（有 w1/w2 状态）走复习流，否则同一批词每天重教、饿死后续新词
   const newPool = entries
-    .filter((e) => e.progress.triage === 'unknown' && (e.level === 'dictation' || e.level === 'sentence' || e.level === 'full'))
+    .filter((e) =>
+      e.progress.triage === 'unknown' &&
+      !e.progress.dims.w1 && !e.progress.dims.w2 &&
+      e.level !== 'skip')
     .sort((a, b) => b.stars - a.stars)
   for (const e of newPool) {
     if (stats.newWord >= budgets.newWords) break

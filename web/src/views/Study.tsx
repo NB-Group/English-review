@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import type { Dataset } from '../lib/data'
 import type { TriageVerdict } from '../types'
@@ -40,25 +40,24 @@ export default function Study({ ds }: { ds: Dataset }) {
   const doAnswer = useProfile((s) => s.answer)
   const reduce = useReducedMotion()
 
-  const plan: SessionPlan = useMemo(
-    () =>
-      buildSession(ds, profile, {
-        due: 60, spellSpot: 10, fluentSpot: 5,
-        triage: profile.dailyQuota.triage, newWords: profile.dailyQuota.newWords,
-      }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [ds],
-  )
-
+  const build = () =>
+    buildSession(ds, useProfile.getState().profile, {
+      due: 60,
+      spellSpot: profile.dailyQuota.spotcheck,
+      fluentSpot: Math.max(2, Math.round(profile.dailyQuota.spotcheck / 2)),
+      triage: profile.dailyQuota.triage, newWords: profile.dailyQuota.newWords,
+    })
+  const [plan, setPlan] = useState<SessionPlan>(build)
   const [idx, setIdx] = useState(0)
   const [done, setDone] = useState(false)
   const [streak, setStreak] = useState(0)
   const card = plan.cards[idx]
 
-  useEffect(() => { setStreak(0) }, [plan])
+  // 再来一轮：用最新档案重建（已摸底/已学的不再进场）
+  const restart = () => { setPlan(build()); setIdx(0); setDone(false); setStreak(0) }
 
   if (done || !card) {
-    return <EndScreen plan={plan} onRestart={() => { setIdx(0); setDone(false) }} />
+    return <EndScreen plan={plan} onRestart={restart} />
   }
 
   const next = () => (idx + 1 >= plan.cards.length ? setDone(true) : setIdx(idx + 1))
@@ -222,7 +221,9 @@ function NewWordCard({
       <div>
         <Prompt kind="newWord" card={card}>
           <div className="flex justify-center"><Speaker word={card.headword} big /></div>
-          <p className="mt-5 text-[14px] font-bold text-ink-faint">听音拼词</p>
+          <p className="mt-5 text-[14px] font-bold text-ink-faint">
+            {typeof window !== 'undefined' && 'speechSynthesis' in window ? '听音拼词' : '本设备无法朗读，凭记忆拼写'}
+          </p>
         </Prompt>
         <div className="mt-8">
           <input
@@ -387,13 +388,14 @@ function Feedback({
   continueLabel: string
   children?: React.ReactNode
 }) {
+  const reduce = useReducedMotion()
   const ok = grade !== 'wrong'
   const tint = ok ? 'var(--color-duo-green-tint)' : 'var(--color-duo-red-tint)'
   const ink = ok ? 'var(--color-duo-green-dark)' : 'var(--color-duo-red-dark)'
   const title = grade === 'exact' ? '太棒了' : grade === 'near' ? '很接近' : '再试试'
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={reduce ? false : { opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.26, ease: EASE }}
       className="mt-5 rounded-2xl p-5"
@@ -449,11 +451,12 @@ function RatingRow({
 /* ─────────── 结束页 ─────────── */
 
 function EndScreen({ plan, onRestart }: { plan: SessionPlan; onRestart: () => void }) {
+  const reduce = useReducedMotion()
   const items = Object.entries(plan.stats).filter(([, n]) => n > 0)
   return (
     <div className="mx-auto flex min-h-[calc(100dvh-3.5rem)] max-w-2xl flex-col items-center justify-center px-5 text-center sm:px-8">
       <motion.div
-        animate={{ rotate: [0, -8, 8, 0] }}
+        animate={reduce ? undefined : { rotate: [0, -8, 8, 0] }}
         transition={{ delay: 0.25, duration: 0.6 }}
         className="text-5xl"
         style={{ fontFamily: 'Georgia, serif', color: '#567d4f' }}

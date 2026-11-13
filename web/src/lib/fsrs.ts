@@ -67,6 +67,23 @@ export function seed(ratings: Rating[]): FsrsState {
   return serialize(card)
 }
 
+/** 直接构造一张"已牢固"的复习卡（清洗种子用）
+ *  模拟评分链无法产生足够长的间隔（Easy×3 只有 2-4 天），
+ *  熟练词必须手工给长间隔，否则几天内集体到期淹没复习队列 */
+export function craftState(days: number, stability: number): FsrsState {
+  const now = Date.now()
+  return {
+    due: now + days * 86400000,
+    stability,
+    difficulty: 4.5,
+    elapsed_days: 0,
+    scheduled_days: days,
+    reps: 5,
+    lapses: 0,
+    state: 2, // Review
+  }
+}
+
 /** 到期判断（含 learning 卡：due 在过去或现在） */
 export function isDue(state: FsrsState | null, now = Date.now()): boolean {
   if (!state) return false

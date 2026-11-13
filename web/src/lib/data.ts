@@ -30,6 +30,22 @@ export function loadDataset(): Promise<Dataset> {
     fetchJson<Sentence[]>('/data/kaogang/sentences.json'),
     fetchJson<IrregularVerb[]>('/data/kaogang/irregular_verbs.json').catch(() => []),
   ]).then(([words, phrases, sentences, irregularVerbs]) => {
+    // 归一化：OCR 遗留的 inflections 双形状（"复 lives /laɪvz/" 字符串 / note:null）
+    for (const w of words) {
+      if (!Array.isArray(w.inflections)) continue
+      w.inflections = w.inflections
+        .map((rawF) => {
+          // 数据里混有 OCR 原文串与 note:null，类型声明之外的现实
+          const f = rawF as string | { note?: string | null; form?: string }
+          if (typeof f === 'string') {
+            const m = f.match(/^(?:复|比较级|最高级)?\s*([^\s(（]+)/)
+            const label = f.match(/^(复|比较级|最高级)/)?.[1] ?? ''
+            return { note: label, form: m?.[1] ?? f.trim() }
+          }
+          return { note: f.note ?? '', form: f.form ?? '' }
+        })
+        .filter((f) => f.form)
+    }
     const wordByNo = new Map(words.map((w) => [w.no, w]))
     const phraseByNo = new Map(phrases.map((p) => [p.no, p]))
     const wordsByLetter = new Map<string, WordEntry[]>()

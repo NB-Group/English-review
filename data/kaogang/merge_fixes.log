@@ -19,6 +19,7 @@ p106 #644 Friday: tags []→['G6上U3']
 p108 #656 fruit: tags []→['G7上U6']
 p108 #657 fuel: tags []→['G7上U6']
 p115 #698 greenhouse: tags []→['G7上U3']
+p126 #772 hot dog: tags []→['G8下U5']
 p135 #831 iron: tags []→['G7下U4']
 p141 #869 kite: tags []→['G8下U6']
 p145 #895 leg: tags []→['G7下U4']
@@ -250,3 +251,5 @@ p266 #1753 winter: three_level False→True
 p269 #1772 would: three_level False→True
 p271 #1782 yogurt: tags ['G6下U3']→['G6上U3']
 p271 #1785 zoo: three_level False→True
+p291 #174 in English: tags []→['G6下U4']
+p299 #261 pick up: tags ['G6下U5', 'G8下U5']→['G6下U5']

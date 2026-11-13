@@ -869,7 +869,9 @@ export class EnglishReviewApp {
      * 标记错题为已掌握
      */
     markWrongAnswerAsMastered(wrongAnswerId) {
-        this.statsManager.markWrongAnswerMastered(wrongAnswerId);
+        // ui-manager 模板字符串传回的是字符串 id，转数字才能与存储的数字 id 匹配（同 removeWrongAnswer）
+        const id = typeof wrongAnswerId === 'string' ? parseFloat(wrongAnswerId) : wrongAnswerId;
+        this.statsManager.markWrongAnswerMastered(id);
         this.uiManager.showMessage('已标记为已掌握', 'success');
         // 刷新错题本页面
         setTimeout(() => {

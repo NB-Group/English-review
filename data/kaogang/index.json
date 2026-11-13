@@ -1,5 +1,5 @@
 {
- "built_at": "2026-11-08T03:30:54",
+ "built_at": "2026-11-13T19:04:54",
  "units23": 400,
  "unit4": 408,
  "irregular_verbs": 114,
@@ -7,6 +7,6 @@
  "words": 1785,
  "phrases": 347,
  "sentences": 3023,
- "word_fixes": 252,
- "phrase_fixes": 0
+ "word_fixes": 253,
+ "phrase_fixes": 2
 }

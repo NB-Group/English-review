@@ -54,7 +54,8 @@ class EmbeddedPage:
 
     def find_entry(self, headword: str, no: int) -> dict | None:
         """返回 {stars, three_level, textbook_tags} 或 None(找不到)"""
-        hw = to_halfwidth(headword).lower()
+        # 行已去空白，hw 必须同样归一（否则多词词头/词组全部匹配失败）
+        hw = re.sub(r"\s+", "", to_halfwidth(headword)).lower()
         marker = f"{no}."
         for i, line in enumerate(self.lines):
             if marker not in line or hw not in line.lower():

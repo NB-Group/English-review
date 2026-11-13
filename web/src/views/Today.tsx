@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { motion } from 'motion/react'
+import { motion, useReducedMotion } from 'motion/react'
 import type { Dataset } from '../lib/data'
 import type { Dim } from '../types'
 import { isDue } from '../lib/fsrs'
@@ -11,6 +11,7 @@ const EASE = [0.16, 1, 0.3, 1] as const
 
 /** 白色描边进度环（放在绿色横幅里） */
 function Ring({ pct, size = 132 }: { pct: number; size?: number }) {
+  const reduce = useReducedMotion()
   const r = size / 2 - 10
   const c = 2 * Math.PI * r
   return (
@@ -22,7 +23,7 @@ function Ring({ pct, size = 132 }: { pct: number; size?: number }) {
         strokeDasharray={c}
         initial={{ strokeDashoffset: c }}
         animate={{ strokeDashoffset: c - (c * pct) / 100 }}
-        transition={{ duration: 1, ease: EASE, delay: 0.2 }}
+        transition={reduce ? { duration: 0 } : { duration: 1, ease: EASE, delay: 0.2 }}
         transform={`rotate(-90 ${size / 2} ${size / 2})`}
       />
       <text x="50%" y="45%" textAnchor="middle" dominantBaseline="central"
@@ -64,11 +65,11 @@ export default function Today({ ds }: { ds: Dataset }) {
   }, [ds, profile])
 
   const pct = stats.dictGoal ? Math.round((stats.dictDone / stats.dictGoal) * 100) : 0
-  const plan=useMemo(()=>buildSession(ds,profile,{due:60,spellSpot:10,fluentSpot:5,triage:profile.dailyQuota.triage,newWords:profile.dailyQuota.newWords}),[ds,profile])
+  const plan=useMemo(()=>buildSession(ds,profile,{due:60,spellSpot:profile.dailyQuota.spotcheck,fluentSpot:Math.max(2,Math.round(profile.dailyQuota.spotcheck/2)),triage:profile.dailyQuota.triage,newWords:profile.dailyQuota.newWords}),[ds,profile])
   const total = plan.cards.length
 
   const nodes = [
-    { label: '到期复习', sub: '遗忘曲线要救的', n: stats.due, bg: 'var(--color-duo-blue)', dark: 'var(--color-duo-blue-dark)' },
+    { label: '到期复习', sub: '遗忘曲线要救的', n: plan.stats.review, bg: 'var(--color-duo-blue)', dark: 'var(--color-duo-blue-dark)' },
     { label: '不会的词', sub: '最高优先', n: stats.p0, bg: 'var(--color-duo-red)', dark: 'var(--color-duo-red-dark)' },
     { label: '拼写存疑', sub: '每天抽查', n: stats.p1, bg: 'var(--color-duo-gold)', dark: 'var(--color-duo-gold-dark)' },
     { label: '待清洗', sub: '还没刷卡', n: stats.p2, bg: 'var(--color-duo-purple)', dark: 'var(--color-duo-purple-dark)' },

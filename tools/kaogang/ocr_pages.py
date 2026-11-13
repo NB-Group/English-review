@@ -95,12 +95,17 @@ def ocr_page(page: int, model: str, dpi: int, bucket: TokenBucket, retries: int 
     if out_path.exists():
         return page, "cached", 0
 
-    img = render_page(page, dpi)
-    b64 = base64.b64encode(img.read_bytes()).decode()
-
     est = 2500  # 保守估计（图 ~2100 + 输出）
     for attempt in range(retries):
         bucket.acquire(est)
+        try:
+            img = render_page(page, dpi)
+            b64 = base64.b64encode(img.read_bytes()).decode()
+        except Exception as exc:
+            if attempt == retries - 1:
+                return page, f"FAIL(render): {exc}", 0
+            time.sleep(2)
+            continue
         try:
             r = requests.post(
                 API,

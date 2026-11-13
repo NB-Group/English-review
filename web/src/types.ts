@@ -104,7 +104,7 @@ export interface FsrsState {
   scheduled_days: number
   reps: number
   lapses: number
-  state: 0 | 1 | 2 | 3 // new=1 learning=2 review=3 relearning=4 → 序列化见 fsrs.ts
+  state: 0 | 1 | 2 | 3 // ts-fsrs 5.x: New=0 Learning=1 Review=2 Relearning=3
 }
 
 export interface EntryProgress {

@@ -54,12 +54,18 @@ export default function Library({ ds }: { ds: Dataset }) {
   const phrases = useMemo(() => {
     let list = ds.phrases
     if (star !== 'all') list = list.filter((p) => p.stars === star)
+    if (triage !== 'all') {
+      list = list.filter((p) => {
+        const t = profile.progress[`p:${p.no}`]?.triage ?? null
+        return triage === 'none' ? t === null : t === triage
+      })
+    }
     if (q.trim()) {
       const needle = q.trim().toLowerCase()
       list = list.filter((p) => p.headword.toLowerCase().includes(needle) || p.meaning.includes(q.trim()))
     }
     return list
-  }, [ds.phrases, star, q])
+  }, [ds.phrases, star, triage, q, profile.progress])
 
   const word = selected?.kind === 'word' ? ds.wordByNo.get(selected.no) : undefined
   const phrase = selected?.kind === 'phrase' ? ds.phraseByNo.get(selected.no) : undefined
@@ -95,7 +101,7 @@ export default function Library({ ds }: { ds: Dataset }) {
             </button>
           ))}
         </div>
-        {tab === 'word' && (
+        {(
           <div className="flex flex-wrap gap-1.5">
             {([['all', '全部'], ['none', '待清洗'], ['unknown', '不会'], ['recognize', '拼不准'], ['fluent', '熟练']] as const).map(([v, label]) => (
               <button key={v} onClick={() => setTriage(v as TriageFilter)} className={filterChip(triage === v)}>

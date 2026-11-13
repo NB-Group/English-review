@@ -6,8 +6,8 @@ const LEVEL_META: Record<GoalLevel, { label: string; note: string; cls: string }
   skip: { label: '忽略', note: '不进入学习流', cls: 'bg-mist text-ink-faint' },
   recognize: { label: '认读', note: '见词知义即可', cls: 'bg-duo-green-tint text-duo-green-dark' },
   dictation: { label: '默写', note: '听音能拼写', cls: 'bg-duo-green-tint text-duo-green-dark' },
-  sentence: { label: '句子级', note: '例句也认读', cls: 'bg-duo-gold-tint text-duo-gold-dark' },
-  full: { label: '全能', note: '例句挖空也要会', cls: 'bg-duo-purple-tint text-ink-soft' },
+  sentence: { label: '句子级', note: '例句练习即将上线，先按默写', cls: 'bg-duo-gold-tint text-duo-gold-dark' },
+  full: { label: '全能', note: '例句挖空即将上线，先按默写', cls: 'bg-duo-purple-tint text-ink-soft' },
 }
 const LEVEL_ORDER: GoalLevel[] = ['skip', 'recognize', 'dictation', 'sentence', 'full']
 
@@ -105,7 +105,7 @@ export default function Goals() {
         <div className="goal-profile">
           <label className="goal-scope">用户名</label>
           <input className="duo-input goal-select" value={profile.name} onChange={(e) => setName(e.target.value)} />
-          <span className="goal-note">学习记录保存在这台设备的浏览器里，换设备进度暂不跟随。</span>
+          <span className="goal-note">登录账号后，学习进度自动同步，换设备不丢。</span>
         </div>
       </section>
 
