@@ -38,7 +38,7 @@ function emptyProfile(name = 'me'): UserProfile {
     goals: DEFAULT_GOALS,
     progress: {},
     sentenceProgress: {},
-    dailyQuota: { triage: 30, spotcheck: 5, newWords: 10 },
+    dailyQuota: { triage: 15, spotcheck: 5, newWords: 20 },
     createdAt: Date.now(),
   }
 }
@@ -128,6 +128,11 @@ export const useProfile = create<ProfileState>()(
           } else if (entry.triage === 'recognize' && short(w1)) {
             entry.dims.w1 = craftState(20, 18); fixed++
           }
+        }
+        // 老默认额度一次性升级（用户自定义过的值不动）
+        if (p.dailyQuota) {
+          if (p.dailyQuota.triage === 30) p.dailyQuota.triage = 15
+          if (p.dailyQuota.newWords === 10) p.dailyQuota.newWords = 20
         }
         ;(p as unknown as { seedsV2?: boolean }).seedsV2 = true
         if (fixed > 0) {

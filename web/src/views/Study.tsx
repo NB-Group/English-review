@@ -48,6 +48,9 @@ export default function Study({ ds }: { ds: Dataset }) {
       triage: profile.dailyQuota.triage, newWords: profile.dailyQuota.newWords,
     })
   const [plan, setPlan] = useState<SessionPlan>(build)
+  // 调试出口（测试用）：window.__plan 暴露当前组牌
+  useEffect(() => { ;(window as unknown as { __plan?: SessionPlan }).__plan = plan }, [plan])
+
   const [idx, setIdx] = useState(0)
   const [done, setDone] = useState(false)
   const [streak, setStreak] = useState(0)
@@ -179,13 +182,13 @@ function NewWordCard({
   const ipa = word?.ipa ?? null
   const zh = word ? word.senses.map((s) => `${s.pos} ${s.zh}`).join('；') : (phrase?.meaning ?? '')
   const example = (word?.examples ?? phrase?.examples ?? [])[0]
-  const [step, setStep] = useState(0)
+  const [step, setStep] = useState(card.priorTriage === 'recognize' ? 1 : 0)
   const [input, setInput] = useState('')
   const [result, setResult] = useState<Grade | null>(null)
   const [spellGrade, setSpellGrade] = useState<Grade>('wrong')
 
   useEffect(() => {
-    if (step <= 1) speak(card.headword)
+    if (step <= 1 && card.priorTriage !== 'recognize') speak(card.headword)
     if (step === 2 && example) speak(example.en)
   }, [step, card.headword, example])
 
