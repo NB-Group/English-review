@@ -131,7 +131,9 @@ REGISTER_CODE = _env("REGISTER_CODE")
 
 
 def _verify_turnstile(token: str, ip: str) -> tuple[bool, str]:
-    """无 secret → 放行（未配置）；有 secret → 缺 token 拒绝，校验网络失败放行并告警"""
+    """无 secret → 放行（未配置）；有 secret → 缺 token 拒绝。
+    校验服务 5xx/超时等基础设施故障 → 放行并告警（别把所有人锁死）；
+    4xx（含无效 token）→ 拒绝。"""
     if not TURNSTILE_SECRET:
         return True, ""
     if not token:
@@ -148,6 +150,11 @@ def _verify_turnstile(token: str, ip: str) -> tuple[bool, str]:
         if r.get("success"):
             return True, ""
         return False, "人机验证未通过，刷新重试"
+    except urllib.error.HTTPError as exc:
+        if exc.code < 500:
+            return False, "人机验证无效，刷新重试"  # 4xx = 请求/令牌问题，拒绝
+        print(f"[turnstile] 校验服务 {exc.code}，放行并告警")
+        return True, ""
     except Exception as exc:
         print(f"[turnstile] 校验服务不可达，放行并告警: {exc}")
         return True, ""
