@@ -12,7 +12,7 @@ const EASE = [0.16, 1, 0.3, 1] as const
 
 const KIND_LABEL: Record<SessionCard['kind'], string> = {
   review: '到期复习', spellSpot: '拼写抽查', fluentSpot: '熟词抽查',
-  triage: '大清洗', newWord: '新词学习',
+  triage: '词汇摸底', newWord: '新词学习',
 }
 const KIND_TINT: Record<SessionCard['kind'], string> = {
   review: 'bg-duo-blue-tint/50', spellSpot: 'bg-duo-gold-tint/50',
@@ -29,7 +29,7 @@ function Speaker({ word, big = false }: { word: string; big?: boolean }) {
       title="点击朗读 · 右键慢速"
       className={`push push-blue !px-0 ${big ? 'size-16 text-2xl' : 'size-11 text-base'}`}
     >
-      🔊
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14" strokeLinecap="round"/></svg>
     </motion.button>
   )
 }
@@ -149,20 +149,20 @@ function TriageCard({ card, onDone }: { card: SessionCard; onDone: (v: TriageVer
     <div>
       <Prompt kind="triage" card={card}>
         <div className="flex items-center justify-center gap-5">
-          <span className="text-[52px] font-black tracking-wide text-ink sm:text-[64px]">{card.headword}</span>
+          <span className="study-headword text-[52px] font-black tracking-wide text-ink sm:text-[64px]">{card.headword}</span>
           <Speaker word={card.headword} big />
         </div>
-        <p className="mt-4 text-[14px] font-bold text-ink-faint">这个词你熟到什么程度</p>
+        <p className="mt-4 text-[14px] font-bold text-ink-faint">先判断熟悉程度，再为你安排复习。</p>
       </Prompt>
-      <div className="mt-10 flex flex-col gap-3">
+      <div className="triage-options mt-10 flex flex-col gap-3">
         <button className="push w-full !py-4 text-lg" onClick={() => onDone('fluent')}>
-          😎 滚瓜烂熟 <span className="font-semibold opacity-75">the / a 这种，只防抽查</span>
+          已经熟练 <span className="font-semibold opacity-75">认识也能拼写，定期抽查</span>
         </button>
         <button className="push push-gold w-full !py-4 text-lg" onClick={() => onDone('recognize')}>
-          🤔 认识，拼不出 <span className="font-semibold opacity-75">见词知义，拼写要练</span>
+          认识，需要练拼写 <span className="font-semibold opacity-75">见词知义，拼写要练</span>
         </button>
         <button className="push push-red w-full !py-4 text-lg" onClick={() => onDone('unknown')}>
-          😵 啥词这是 <span className="font-semibold opacity-75">从零开始，最高优先</span>
+          还不认识 <span className="font-semibold opacity-75">从零开始，最高优先</span>
         </button>
       </div>
     </div>
@@ -196,7 +196,7 @@ function NewWordCard({
     return (
       <div>
         <Prompt kind="newWord" card={card}>
-          <div className="text-[52px] font-black tracking-wide text-ink sm:text-[64px]">{card.headword}</div>
+          <div className="study-headword text-[52px] font-black tracking-wide text-ink sm:text-[64px]">{card.headword}</div>
           {ipa && <div className="mt-3 font-mono text-[16px] font-bold text-ink-faint">{ipa}</div>}
           <div className="mt-6 flex items-center justify-center gap-2.5">
             <Speaker word={card.headword} />
@@ -455,9 +455,10 @@ function EndScreen({ plan, onRestart }: { plan: SessionPlan; onRestart: () => vo
       <motion.div
         animate={{ rotate: [0, -8, 8, 0] }}
         transition={{ delay: 0.25, duration: 0.6 }}
-        className="text-6xl"
+        className="text-5xl"
+        style={{ fontFamily: 'Georgia, serif', color: '#567d4f' }}
       >
-        🏆
+        ✓
       </motion.div>
       <h2 className="mt-4 text-[32px] font-black text-duo-green-dark">本场完成</h2>
       <div className="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[14px] font-extrabold text-ink-soft">

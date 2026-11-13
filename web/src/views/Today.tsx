@@ -1,9 +1,10 @@
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { motion, useReducedMotion } from 'motion/react'
+import { motion } from 'motion/react'
 import type { Dataset } from '../lib/data'
 import type { Dim } from '../types'
 import { isDue } from '../lib/fsrs'
+import {buildSession} from '../lib/engine'
 import { dimsForLevel, goalLevelFor, useProfile } from '../lib/store'
 
 const EASE = [0.16, 1, 0.3, 1] as const
@@ -34,7 +35,6 @@ function Ring({ pct, size = 132 }: { pct: number; size?: number }) {
 
 export default function Today({ ds }: { ds: Dataset }) {
   const profile = useProfile((s) => s.profile)
-  const reduce = useReducedMotion()
   const navigate = useNavigate()
 
   const stats = useMemo(() => {
@@ -64,7 +64,8 @@ export default function Today({ ds }: { ds: Dataset }) {
   }, [ds, profile])
 
   const pct = stats.dictGoal ? Math.round((stats.dictDone / stats.dictGoal) * 100) : 0
-  const total = stats.due + 15 + profile.dailyQuota.triage
+  const plan=useMemo(()=>buildSession(ds,profile,{due:60,spellSpot:10,fluentSpot:5,triage:profile.dailyQuota.triage,newWords:profile.dailyQuota.newWords}),[ds,profile])
+  const total = plan.cards.length
 
   const nodes = [
     { label: '到期复习', sub: '遗忘曲线要救的', n: stats.due, bg: 'var(--color-duo-blue)', dark: 'var(--color-duo-blue-dark)' },
@@ -73,79 +74,14 @@ export default function Today({ ds }: { ds: Dataset }) {
     { label: '待清洗', sub: '还没刷卡', n: stats.p2, bg: 'var(--color-duo-purple)', dark: 'var(--color-duo-purple-dark)' },
   ]
 
-  return (
-    <div>
-      {/* ── 全宽绿色横幅：猫头鹰 + 大数字 + 环 ── */}
-      <div className="-mx-5 -mt-1 bg-gradient-to-br from-duo-green to-duo-green-dark px-5 pb-10 pt-8 sm:-mx-8 sm:px-10">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-2 sm:flex-row sm:justify-between">
-          <div className="text-center sm:text-left">
-            <div className="flex items-center justify-center gap-3 sm:justify-start">
-              <motion.span
-                initial={reduce ? false : { rotate: -12, scale: 0.6 }}
-                animate={{ rotate: 0, scale: 1 }}
-                transition={{ type: 'spring', stiffness: 240, damping: 14 }}
-                className="grid size-14 place-items-center rounded-2xl bg-white/20 text-3xl backdrop-blur"
-              >
-                🦉
-              </motion.span>
-              <div className="rounded-2xl rounded-bl-sm bg-white px-4 py-2 text-[14px] font-extrabold text-ink">
-                距中考 {Math.max(0, Math.ceil((new Date('2027-06-13').getTime() - Date.now()) / 86400000))} 天，稳住节奏
-              </div>
-            </div>
-            <div className="mt-5 flex items-baseline justify-center gap-2 sm:justify-start">
-              <span className="text-[76px] font-black leading-none tracking-tight text-white sm:text-[96px]">
-                {total}
-              </span>
-              <span className="text-[22px] font-extrabold text-white/85">张卡</span>
-            </div>
-            <p className="mt-2 text-[14px] font-bold text-white/85">
-              到期 {stats.due} ＋ 抽查 15 ＋ 清洗 {profile.dailyQuota.triage}
-            </p>
-            <button
-              onClick={() => navigate('/study')}
-              className="mt-6 w-full rounded-2xl bg-white py-4 text-[17px] font-black text-duo-green-dark shadow-[0_4px_0_rgba(0,0,0,0.18)] transition-transform active:translate-y-1 active:shadow-none sm:w-auto sm:px-14"
-            >
-              开始学习
-            </button>
-          </div>
-          <Ring pct={pct} />
-        </div>
-      </div>
-
-      {/* ── 学习路径：彩色圆节点 + 虚线连接 ── */}
-      <div className="mx-auto mt-9 max-w-3xl">
-        <h2 className="text-[15px] font-black text-ink">今天的战场</h2>
-        <div className="relative mt-5 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4">
-          {/* 连接虚线（桌面横向） */}
-          <div className="pointer-events-none absolute left-[12%] right-[12%] top-8 hidden border-t-[3px] border-dashed border-hare sm:block" />
-          {nodes.map((n, i) => (
-            <motion.button
-              key={n.label}
-              initial={reduce ? false : { scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ type: 'spring', stiffness: 260, damping: 18, delay: 0.1 + i * 0.08 }}
-              whileHover={{ y: -3 }}
-              whileTap={{ scale: 0.96 }}
-              onClick={() => navigate('/study')}
-              className="relative z-10 flex flex-col items-center"
-            >
-              <span
-                className="grid size-16 place-items-center rounded-full text-[22px] font-black text-white tabular-nums"
-                style={{ background: n.bg, boxShadow: `0 4px 0 ${n.dark}` }}
-              >
-                {n.n}
-              </span>
-              <span className="mt-3 text-[14px] font-black text-ink">{n.label}</span>
-              <span className="text-[12px] font-semibold text-ink-faint">{n.sub}</span>
-            </motion.button>
-          ))}
-        </div>
-      </div>
-
-      {/* 熟词池脚注 */}
-      <p className="mt-10 text-center text-[13px] font-bold text-ink-faint">
-        🧊 还有 {stats.p3} 个滚瓜烂熟的词在抽查池里冬眠，抽查答错会被拖回来重学
-      </p>
+  return <div className="today-page">
+    <div className="page-heading"><div><div className="eyebrow">YOUR DAILY PRACTICE</div><h1>让学过的，真正留下来。</h1><p>不用一次学完所有。先完成今天这一小步。</p></div><span className="edition-label">中考考纲 · {ds.words.length + ds.phrases.length} 个词条</span></div>
+    <div className="today-hero-grid">
+      <section className="daily-hero"><div className="hero-overline"><span className="light-dot"/>今日学习计划<span>DAILY PLAN</span></div><div className="hero-big"><span>{total}</span><div>张学习卡片<small>复习优先，再认识一些新词。</small></div></div><div className="hero-breakdown"><span>到期复习 <b>{plan.stats.review}</b></span><span>词汇抽查 <b>{plan.stats.spellSpot+plan.stats.fluentSpot}</b></span><span>词汇摸底 <b>{plan.stats.triage}</b></span></div><button className="start-session" onClick={()=>navigate('/study')}>开始今天的学习 <span>↗</span></button><div className="hero-line-art" aria-hidden="true"><svg viewBox="0 0 300 250"><path d="M20 225 C 100 225 10 65 105 65 S 110 195 195 160 S 210 15 280 15" fill="none" stroke="currentColor" strokeWidth="1"/>{[0,1,2,3,4].map(i=><ellipse key={i} cx="160" cy="125" rx={40+i*21} ry={20+i*19} fill="none" stroke="currentColor" strokeWidth=".7" transform={`rotate(-35 160 125)`}/>)}</svg></div></section>
+      <section className="progress-panel"><div className="section-topline"><span>默写掌握度</span><span>↗</span></div><div className="progress-display"><Ring pct={pct}/></div><div className="progress-caption"><b>{stats.dictDone}</b><span>/ {stats.dictGoal} 个目标词汇</span></div><p>每一次主动回忆，<br/>都在加固你的记忆。</p><button onClick={()=>navigate('/goals')} className="text-link">调整我的目标 <span>→</span></button></section>
     </div>
-  )
+    <div className="section-heading"><h2>从这里，继续前进。</h2><span>按记忆状态，安排下一次见面</span></div>
+    <div className="memory-metrics">{nodes.map((n,i)=><button key={n.label} className="memory-metric" data-metric onClick={()=>navigate('/study')}><div className="metric-top"><span className={'metric-dot dot-'+i}/><span>{['到期复习','还不熟悉','需要巩固','尚未摸底'][i]}</span><span className="metric-arrow">↗</span></div><div className="metric-number">{n.n}<small>词</small></div><div className="metric-foot">{['及时回想，对抗遗忘','重点照顾这些词汇','认识之后，再练拼写','从一次简单的判断开始'][i]}</div></button>)}</div>
+    <div className="today-bottom"><section className="vocabulary-preview"><div className="section-topline"><span>词库里的一次相遇</span><span>WORD OF THE MOMENT</span></div><div className="preview-word">{ds.words.find(w=>w.headword==='remember')?.headword??ds.words[0]?.headword}<span> / 从认识到掌握</span></div><p>{ds.words.find(w=>w.headword==='remember')?.senses[0]?.zh??ds.words[0]?.senses[0]?.zh}</p><button className="text-link" onClick={()=>navigate('/library')}>浏览完整考纲词库 <span>→</span></button></section><section className="quiet-note"><span className="tiny-label">A NOTE TO YOURSELF</span><h3>记不住，也没关系。</h3><p>复习本来就是一次次重新想起。<br/>已熟练的 {stats.p3} 个词也会定期回到抽查里。</p></section></div>
+  </div>
 }

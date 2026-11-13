@@ -19,7 +19,7 @@ function SpeakerInline({ text }: { text: string }) {
       className="grid size-9 shrink-0 place-items-center rounded-full bg-duo-blue-tint text-sm"
       title="朗读"
     >
-      🔊
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14" strokeLinecap="round"/></svg>
     </motion.button>
   )
 }
@@ -69,9 +69,10 @@ export default function Library({ ds }: { ds: Dataset }) {
     `chip !py-1.5 transition-all ${active ? 'bg-duo-blue text-white shadow-[0_2px_0_var(--color-duo-blue-dark)]' : 'bg-mist text-ink-soft hover:bg-hare/60'}`
 
   return (
-    <div className="mt-6">
+    <div className="library-page mt-6">
+      <div className="page-heading library-heading"><div><div className="eyebrow">THE VOCABULARY COLLECTION</div><h1>每一个词，都有它的位置。</h1><p>{ds.words.length} 个单词 · {ds.phrases.length} 个词组，按你的节奏逐一掌握。</p></div></div>
       {/* 过滤器 */}
-      <div className="card flex flex-wrap items-center gap-2 p-3">
+      <div className="library-tools card flex flex-wrap items-center gap-2 p-3">
         <div className="flex rounded-full bg-mist p-1">
           {(['word', 'phrase'] as const).map((t) => (
             <button
@@ -105,14 +106,14 @@ export default function Library({ ds }: { ds: Dataset }) {
         )}
         <input
           className="duo-input ml-auto !w-48 !rounded-full !py-2 text-sm font-semibold"
-          placeholder="🔍 搜词 / 中文…"
+          placeholder="搜索英文或中文释义"
           value={q}
           onChange={(e) => setQ(e.target.value)}
         />
       </div>
 
       {/* 列表 */}
-      <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+      <div className="library-entries mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         {shown.slice(0, 400).map((e, i) => (
           <motion.button
             key={e.no}
@@ -122,7 +123,7 @@ export default function Library({ ds }: { ds: Dataset }) {
             whileHover={reduce ? undefined : { y: -3 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => setSelected({ kind: tab, no: e.no })}
-            className="card p-4 text-left transition-colors hover:border-duo-blue"
+            className="library-entry card p-4 text-left transition-colors hover:border-duo-blue"
           >
             <div className="flex items-baseline justify-between gap-2">
               <span className="truncate text-base font-extrabold text-ink">{e.headword}</span>
@@ -134,9 +135,9 @@ export default function Library({ ds }: { ds: Dataset }) {
           </motion.button>
         ))}
         {shown.length === 0 && (
-          <div className="col-span-full py-16 text-center">
-            <div className="text-4xl">🫥</div>
-            <p className="mt-3 font-extrabold text-ink-soft">没有匹配的词条</p>
+          <div className="empty-state col-span-full">
+            <h1 style={{ fontSize: 22 }}>没有匹配的词条</h1>
+            <p style={{ marginTop: 8 }}>换个关键词，或者放宽筛选条件。</p>
           </div>
         )}
       </div>

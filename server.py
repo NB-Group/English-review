@@ -73,6 +73,12 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         parsed = urllib.parse.urlparse(self.path)
+        if parsed.path == "/":
+            # 发布入口：根路径直达新版应用（老应用仍在 /index.html）
+            self.send_response(302)
+            self.send_header("Location", "/v2")
+            self.end_headers()
+            return
         if parsed.path == "/api/scan-units":
             return self.handle_scan_units()
         if parsed.path == "/api/account-data":
