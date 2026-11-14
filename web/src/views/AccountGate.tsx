@@ -100,7 +100,7 @@ export function AccountGate() {
   const submitPin = async () => {
     if (pin.length < 4) return setErr('PIN 至少 4 位')
     if (mode === 'claim' && pin !== pin2) return setErr('两次输入的 PIN 不一致')
-    if (mode === 'claim' && needRegCode && !regCode.trim()) return setErr('需要注册口令（问老师/同学要）')
+    if (mode === 'claim' && needRegCode && !regCode.trim()) return setErr('需要注册口令：粘贴班群里发的选餐问卷链接')
     setBusy(true); setErr('')
     try {
       if (mode === 'claim') {
@@ -158,7 +158,7 @@ export function AccountGate() {
           <div className="gate-form">
             <div className="gate-user">{user.trim()} · {mode === 'claim' ? '新档案' : '已有档案'}</div>
             {mode === 'claim' && needRegCode && (
-              <input className="duo-input" placeholder="注册口令（问老师/同学要）" value={regCode}
+              <input className="duo-input" placeholder="粘贴班群里发的选餐问卷链接" value={regCode}
                 onChange={(e) => setRegCode(e.target.value)} />
             )}
             <input className="duo-input" placeholder={mode === 'claim' ? '设置 4 位以上 PIN' : 'PIN'} value={pin} type="password"

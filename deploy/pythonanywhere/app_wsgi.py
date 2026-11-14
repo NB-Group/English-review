@@ -150,8 +150,8 @@ def handle_account_action(body, ip):
             ok, msg = _verify_turnstile(str(body.get("cfToken", "")), ip)
             if not ok:
                 return 403, {"error": msg}
-            if REGISTER_CODE and str(body.get("registerCode", "")) != REGISTER_CODE:
-                return 403, {"error": "注册口令不正确（问老师/同学要）"}
+            if REGISTER_CODE and REGISTER_CODE not in str(body.get("registerCode", "")).strip():
+                return 403, {"error": "注册口令不正确（粘贴班群里发的链接）"}
             if meta is not None:
                 return 409, {"error": "这个名字已被使用，换一个或直接登录"}
             _write_account(path, {"rev": 1, "pin": _hash_pin(user, pin)}, {})
@@ -188,14 +188,19 @@ CTYPES = {
 }
 
 
-def _serve_file(target, immutable):
-    """immutable: True=长缓存 False=no-cache None=不发缓存头"""
+def _serve_file(target, immutable, accept_encoding=""):
+    """immutable: True=长缓存 False=no-cache None=不发缓存头；文本类型支持 gzip"""
     if not target.exists():
         return 404, b"not found", "text/plain; charset=utf-8", ""
     data = target.read_bytes()
     ctype = CTYPES.get(target.suffix, "application/octet-stream")
     cache = "" if immutable is None else ("public, max-age=31536000, immutable" if immutable else "no-cache")
-    return 200, data, ctype, cache
+    gzippable = ctype.startswith(("text/", "application/json", "application/javascript"))
+    if gzippable and "gzip" in accept_encoding and len(data) > 2048:
+        import gzip as _gz
+        data = _gz.compress(data, 6)
+        return 200, data, ctype, cache, "gzip"
+    return 200, data, ctype, cache, ""
 
 
 def application(environ, start_response):
@@ -254,18 +259,26 @@ def application(environ, start_response):
         else:
             target = V2_DIR / "index.html"
             immutable = False
-        code, data, ctype, cache = _serve_file(target, immutable)
-        start_response(f"{code} {'OK' if code == 200 else 'NF'}",
-                       [("Content-Type", ctype), ("Content-Length", str(len(data)))]
-                       + ([("Cache-Control", cache)] if cache else []) + headers)
+        code, data, ctype, cache, enc = _serve_file(target, immutable, environ.get("HTTP_ACCEPT_ENCODING", ""))
+        extra = [("Content-Type", ctype), ("Content-Length", str(len(data)))]
+        if cache:
+            extra.append(("Cache-Control", cache))
+        if enc:
+            extra.append(("Content-Encoding", enc))
+            extra.append(("Vary", "Accept-Encoding"))
+        start_response(f"{code} {'OK' if code == 200 else 'NF'}", extra + headers)
         return [data]
 
     if path.startswith("/data/"):
         candidate = (BASE / path.lstrip("/")).resolve()
         try:
             if os.path.commonpath([str(candidate), str(DATA_DIR.resolve())]) == str(DATA_DIR.resolve()) and candidate.is_file():
-                code, data, ctype, _ = _serve_file(candidate, None)
-                start_response(f"{code} OK", [("Content-Type", ctype), ("Content-Length", str(len(data)))] + headers)
+                code, data, ctype, _, enc = _serve_file(candidate, None, environ.get("HTTP_ACCEPT_ENCODING", ""))
+                extra = [("Content-Type", ctype), ("Content-Length", str(len(data)))]
+                if enc:
+                    extra.append(("Content-Encoding", enc))
+                    extra.append(("Vary", "Accept-Encoding"))
+                start_response(f"{code} OK", extra + headers)
                 return [data]
         except ValueError:
             pass

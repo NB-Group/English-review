@@ -314,8 +314,8 @@ class Handler(SimpleHTTPRequestHandler):
                 ok, msg = _verify_turnstile(str(body.get("cfToken", "")), ip)
                 if not ok:
                     return self.write_json({"error": msg}, status=403)
-                if REGISTER_CODE and str(body.get("registerCode", "")) != REGISTER_CODE:
-                    return self.write_json({"error": "注册口令不正确（问老师/同学要）"}, status=403)
+                if REGISTER_CODE and REGISTER_CODE not in str(body.get("registerCode", "")).strip():
+                    return self.write_json({"error": "注册口令不正确（粘贴班群里发的链接）"}, status=403)
                 path = account_file(user)
                 if _read_account(path)[0] is not None:
                     return self.write_json({"error": "这个名字已被使用，换一个或直接登录"}, status=409)
