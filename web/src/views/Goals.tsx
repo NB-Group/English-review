@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { GoalLevel, GoalRule } from '../types'
 import { useProfile } from '../lib/store'
+import { getSession, logout } from '../lib/sync'
 
 const LEVEL_META: Record<GoalLevel, { label: string; note: string; cls: string }> = {
   skip: { label: '忽略', note: '不进入学习流', cls: 'bg-mist text-ink-faint' },
@@ -15,9 +16,14 @@ export default function Goals() {
   const profile = useProfile((s) => s.profile)
   const setGoals = useProfile((s) => s.setGoals)
   const setQuota = useProfile((s) => s.setQuota)
-  const setName = useProfile((s) => s.setProfileName)
   const reset = useProfile((s) => s.resetProfile)
   const [confirmReset, setConfirmReset] = useState(false)
+  const [session, setSession] = useState(() => getSession())
+  useEffect(() => {
+    const onSession = () => setSession(getSession())
+    window.addEventListener('kaogang-session', onSession)
+    return () => window.removeEventListener('kaogang-session', onSession)
+  }, [])
 
   const update = (id: string, patch: Partial<GoalRule>) =>
     setGoals(profile.goals.map((g) => (g.id === id ? { ...g, ...patch } : g)))
@@ -103,9 +109,22 @@ export default function Goals() {
       <section className="card goals-section">
         <div className="goals-section-title">档案</div>
         <div className="goal-profile">
-          <label className="goal-scope">用户名</label>
-          <input className="duo-input goal-select" value={profile.name} onChange={(e) => setName(e.target.value)} />
-          <span className="goal-note">登录账号后，学习进度自动同步，换设备不丢。</span>
+          {session ? (
+            <>
+              <span className="goal-scope">{session.user}</span>
+              <span className="goal-level bg-duo-green-tint text-duo-green-dark">已同步</span>
+              <span className="goal-note">学习进度自动同步到服务器，换设备登录即恢复。</span>
+              <button className="goal-remove" onClick={() => { logout(); location.reload() }}>退出登录</button>
+            </>
+          ) : (
+            <>
+              <span className="goal-level bg-mist text-ink-faint">未登录</span>
+              <span className="goal-note">进度只保存在这台设备上，清缓存会丢。</span>
+              <button className="goal-add" onClick={() => window.dispatchEvent(new CustomEvent('kaogang-gate-open'))}>
+                登录 / 注册
+              </button>
+            </>
+          )}
         </div>
       </section>
 

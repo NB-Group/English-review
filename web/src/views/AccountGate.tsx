@@ -105,9 +105,11 @@ export function AccountGate() {
     try {
       if (mode === 'claim') {
         await claim(user.trim(), pin, regCode.trim(), cfToken)
+        useProfile.getState().setProfileName(user.trim())
         await pushProfile() // 把本机已有进度带上去
       } else {
         const { data } = await auth(user.trim(), pin)
+        useProfile.getState().setProfileName(user.trim())
         const local = useProfile.getState().profile
         if (data && data.progress && Object.keys(data.progress).length > 0) {
           // 两侧都有进度 → 合并（词条并集），再上传合并结果
