@@ -28,6 +28,7 @@ interface ProfileState {
   setQuota: (q: Partial<UserProfile['dailyQuota']>) => void
   getProgress: (key: string) => EntryProgress
   triage: (key: string, verdict: TriageVerdict) => void
+  clearTriage: (key: string) => void
   answer: (key: string, dim: Dim, r: Rating) => void
   resetProfile: () => void
 }
@@ -52,6 +53,8 @@ function seedFromTriage(v: TriageVerdict): { w1: FsrsSeed; w2: FsrsSeed; reset: 
     case 'recognize':
       return { w1: craftState(20, 18), w2: null, reset: true }
     case 'unknown':
+      return { w1: null, w2: null, reset: true }
+    case 'skip': // 彻底不学：无种子，且所有组牌池都不收
       return { w1: null, w2: null, reset: true }
   }
 }
@@ -90,6 +93,13 @@ export const useProfile = create<ProfileState>()(
               },
             },
           }
+        }),
+
+      clearTriage: (key) =>
+        set((s) => {
+          const progress = { ...s.profile.progress }
+          delete progress[key]
+          return { profile: { ...s.profile, progress } }
         }),
 
       answer: (key, dim, r) =>

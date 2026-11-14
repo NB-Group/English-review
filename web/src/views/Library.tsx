@@ -2,14 +2,13 @@ import { useMemo, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import type { Dataset } from '../lib/data'
 import type { PhraseEntry, WordEntry } from '../types'
-import { describeDue } from '../lib/fsrs'
 import { useProfile } from '../lib/store'
 import { speak } from '../lib/tts'
 
 const EASE = [0.16, 1, 0.3, 1] as const
 
 type StarFilter = 0 | 1 | 2 | 3 | 'all'
-type TriageFilter = 'all' | 'none' | 'unknown' | 'recognize' | 'fluent'
+type TriageFilter = 'all' | 'none' | 'unknown' | 'recognize' | 'fluent' | 'skip'
 
 function SpeakerInline({ text }: { text: string }) {
   return (
@@ -102,7 +101,7 @@ export default function Library({ ds }: { ds: Dataset }) {
         </div>
         {(
           <div className="lib-filters">
-            {([['all', '全部'], ['none', '待清洗'], ['unknown', '不会'], ['recognize', '拼不准'], ['fluent', '熟练']] as const).map(([v, label]) => (
+            {([['all', '全部'], ['none', '待清洗'], ['unknown', '不会'], ['recognize', '拼不准'], ['fluent', '熟练'], ['skip', '忽略']] as const).map(([v, label]) => (
               <button key={v} onClick={() => setTriage(v as TriageFilter)} className={filterChip(triage === v)}>
                 {label}
               </button>
@@ -200,7 +199,6 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 }
 
 function WordDetail({ w }: { w: WordEntry }) {
-  const progress = useProfile((s) => s.profile.progress[`w:${w.no}`])
   return (
     <div>
       <div className="text-[12px] font-extrabold text-ink-faint">考纲单词 W{w.no} · 第{w.page}页</div>
@@ -210,13 +208,7 @@ function WordDetail({ w }: { w: WordEntry }) {
         <Stars n={w.stars} />
       </div>
       {w.ipa && <div className="mt-1.5 font-mono text-sm font-bold text-ink-faint">{w.ipa}</div>}
-      {progress?.triage && (
-        <div className="mt-3 text-[13px] font-bold text-ink-soft">
-          {progress.triage === 'fluent' ? '😎 滚瓜烂熟' : progress.triage === 'recognize' ? '🤔 认识拼不出' : '😵 不会'}
-          <span className="mx-2 text-hare">|</span>认词 {describeDue(progress.dims.w1 ?? null)}
-          <span className="mx-2 text-hare">|</span>默词 {describeDue(progress.dims.w2 ?? null)}
-        </div>
-      )}
+      <TriageManager kind="word" no={w.no} />
       {w.inflections.length > 0 && (
         <div className="mt-3 text-sm font-bold text-ink-soft">
           {w.inflections.map((f, i) => <span key={i} className="mr-3">（{f.note} {f.form}）</span>)}
@@ -257,7 +249,6 @@ function WordDetail({ w }: { w: WordEntry }) {
 }
 
 function PhraseDetail({ p }: { p: PhraseEntry }) {
-  const progress = useProfile((s) => s.profile.progress[`p:${p.no}`])
   return (
     <div>
       <div className="text-[12px] font-extrabold text-ink-faint">考纲词组 P{p.no} · 第{p.page}页</div>
@@ -269,13 +260,7 @@ function PhraseDetail({ p }: { p: PhraseEntry }) {
       <div className="mt-3 text-lg font-extrabold text-ink">
         <span className="mr-2 text-sm font-bold text-duo-purple">{p.pos}</span>{p.meaning}
       </div>
-      {progress?.triage && (
-        <div className="mt-3 text-xs">
-          <span className="chip bg-mist text-ink-soft">
-            {progress.triage === 'fluent' ? '😎 滚瓜烂熟' : progress.triage === 'recognize' ? '🤔 认识拼不出' : '😵 不会'}
-          </span>
-        </div>
-      )}
+      <TriageManager kind="phrase" no={p.no} />
       {p.examples.map((ex, i) => (
         <div key={i} className="mt-4 rounded-2xl bg-mist p-4">
           <div className="flex items-start justify-between gap-3">
@@ -287,6 +272,48 @@ function PhraseDetail({ p }: { p: PhraseEntry }) {
         </div>
       ))}
       <Section title="名师点拨">{p.notes.map((n, i) => <div key={i}>{n}</div>)}</Section>
+    </div>
+  )
+}
+
+
+/* 摸底状态管理：改判 / 忽略 / 取消标记 */
+const TRIAGE_META: Record<string, { label: string }> = {
+  fluent: { label: '已熟练' }, recognize: { label: '认识，需练拼写' },
+  unknown: { label: '还不认识' }, skip: { label: '已忽略' },
+}
+
+function TriageManager({ kind, no }: { kind: 'word' | 'phrase'; no: number }) {
+  const key = kind === 'word' ? 'w:' + no : 'p:' + no
+  const progress = useProfile((s) => s.profile.progress[key])
+  const doTriage = useProfile((s) => s.triage)
+  const clearTriage = useProfile((s) => s.clearTriage)
+
+  return (
+    <div className="triage-manager">
+      <div className="triage-manager-head">
+        <span>我的判定</span>
+        <span>{progress?.triage ? (TRIAGE_META[progress.triage]?.label ?? progress.triage) : '尚未摸底'}</span>
+      </div>
+      <div className="triage-manager-row">
+        {([['fluent', '已熟练'], ['recognize', '认识拼不准'], ['unknown', '不会'], ['skip', '忽略这个词']] as const).map(
+          ([v, label]) => (
+            <button
+              key={v}
+              className={'triage-pick' + (progress?.triage === v ? ' active' : '')}
+              onClick={() => doTriage(key, v)}
+            >
+              {label}
+            </button>
+          ),
+        )}
+        {progress && (
+          <button className="triage-clear" onClick={() => clearTriage(key)}>
+            取消标记
+          </button>
+        )}
+      </div>
+      <p className="triage-manager-note">改判会重置该词的记忆进度；忽略后这个词不再出现在任何学习流，可在筛选「忽略」里找回。</p>
     </div>
   )
 }

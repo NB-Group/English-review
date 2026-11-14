@@ -72,3 +72,14 @@
 .lib-filter:hover{color:#456d4c}
 .lib-filter.active{color:#234f3c;font-weight:700}
 .lib-filter.active::after{content:'';display:block;height:2px;background:#567d4f;margin:3px 0 0;border-radius:2px}
+
+/* 详情抽屉：摸底状态管理 */
+.triage-manager{margin-top:18px;border-top:1px solid #e6ebdd;padding-top:16px}
+.triage-manager-head{display:flex;justify-content:space-between;font-size:11px;color:#8b9a83;letter-spacing:1px;margin-bottom:12px}
+.triage-manager-head span:last-child{color:#234f3c;font-weight:700;letter-spacing:.3px}
+.triage-manager-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.triage-pick{background:none;border:1px solid #d9e3d2;border-radius:6px;color:#456d4c;font-size:12px;font-weight:600;padding:7px 13px}
+.triage-pick:hover{border-color:#73946b;background:#eff4e8}
+.triage-pick.active{background:#234f3c;border-color:#234f3c;color:#eef3e6}
+.triage-clear{background:none;border:0;color:#955344;font-size:11.5px;padding:4px;text-decoration:underline;text-underline-offset:3px}
+.triage-manager-note{font-size:11px;color:#98a28f;margin:12px 0 0;line-height:1.7}

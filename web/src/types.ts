@@ -81,7 +81,7 @@ export interface IrregularVerb {
 /** 用户侧 */
 
 /** 清洗判定 */
-export type TriageVerdict = 'fluent' | 'recognize' | 'unknown'
+export type TriageVerdict = 'fluent' | 'recognize' | 'unknown' | 'skip'
 
 /** 掌握维度 */
 export type Dim = 'w1' | 'w2' | 's1' | 's2'
