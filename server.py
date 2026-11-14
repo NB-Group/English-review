@@ -212,6 +212,12 @@ class Handler(SimpleHTTPRequestHandler):
         )
         self.send_header("Content-Type", ctype)
         self.send_header("Content-Length", str(target.stat().st_size))
+        # index 每次回源校验（防旧索引指向已删除的哈希资源）；
+        # 带哈希的静态资源可永久缓存
+        if target.name == "index.html":
+            self.send_header("Cache-Control", "no-cache")
+        else:
+            self.send_header("Cache-Control", "public, max-age=31536000, immutable")
         self.end_headers()
         self.wfile.write(target.read_bytes())
 
