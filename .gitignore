@@ -21,3 +21,7 @@ Thumbs.db
 web/node_modules/
 web/dist/
 web/tsconfig.tsbuildinfo
+
+# 部署打包产物（可再生成）
+deploy/pythonanywhere/english-review/
+deploy/pythonanywhere/*.zip
