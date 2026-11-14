@@ -71,8 +71,7 @@ export default function Library({ ds }: { ds: Dataset }) {
   const phrase = selected?.kind === 'phrase' ? ds.phraseByNo.get(selected.no) : undefined
   const shown = tab === 'word' ? words : phrases
 
-  const filterChip = (active: boolean) =>
-    `chip !py-1.5 transition-all ${active ? 'bg-duo-blue text-white shadow-[0_2px_0_var(--color-duo-blue-dark)]' : 'bg-mist text-ink-soft hover:bg-hare/60'}`
+  const filterChip = (active: boolean) => `lib-filter${active ? ' active' : ''}`
 
   return (
     <div className="library-page mt-6">
@@ -94,7 +93,7 @@ export default function Library({ ds }: { ds: Dataset }) {
             </button>
           ))}
         </div>
-        <div className="flex flex-wrap gap-1.5">
+        <div className="lib-filters">
           {(['all', 3, 2, 1, 0] as const).map((s) => (
             <button key={String(s)} onClick={() => setStar(s as StarFilter)} className={filterChip(star === s)}>
               {s === 'all' ? '全部' : s === 0 ? '无星' : '★'.repeat(s as number)}
@@ -102,7 +101,7 @@ export default function Library({ ds }: { ds: Dataset }) {
           ))}
         </div>
         {(
-          <div className="flex flex-wrap gap-1.5">
+          <div className="lib-filters">
             {([['all', '全部'], ['none', '待清洗'], ['unknown', '不会'], ['recognize', '拼不准'], ['fluent', '熟练']] as const).map(([v, label]) => (
               <button key={v} onClick={() => setTriage(v as TriageFilter)} className={filterChip(triage === v)}>
                 {label}

@@ -60,3 +60,15 @@
 .gate-skip:hover{color:#456d4c}
 .gate-err{margin-top:14px;font-size:12px;color:#955344;background:#f6e9e4;border-radius:6px;padding:9px 13px}
 .gate-turnstile{min-height:65px}
+
+/* Goals 区块卡片（此前遗漏：卡片无内边距导致内容贴边） */
+.goals-section{padding:26px 30px 24px;margin-bottom:22px}
+.goals-section-title{font-size:16px;font-weight:600;color:#23372e;margin:0 0 20px;letter-spacing:.3px}
+
+/* 词库筛选：编辑部式文字行（替换彩色药丸） */
+.lib-filters{display:flex;align-items:center;flex-wrap:wrap}
+.lib-filter{background:none;border:0;border-left:1px solid #e0e7d8;padding:2px 14px;font-size:12.5px;font-weight:600;color:#8b9a83;letter-spacing:.5px;line-height:1.4}
+.lib-filter:first-child{border-left:0;padding-left:0}
+.lib-filter:hover{color:#456d4c}
+.lib-filter.active{color:#234f3c;font-weight:700}
+.lib-filter.active::after{content:'';display:block;height:2px;background:#567d4f;margin:3px 0 0;border-radius:2px}
