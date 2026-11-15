@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base: '/v2/',
+  base: '/',
   plugins: [react(), tailwindcss()],
   server: {
     // 开发时把 /data 代理到仓库根的 data/ 目录（老 server.py 同源时不需要）

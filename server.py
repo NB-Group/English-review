@@ -173,33 +173,67 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         parsed = urllib.parse.urlparse(self.path)
-        if parsed.path == "/":
-            # 发布入口：根路径直达新版应用（老应用仍在 /index.html）
-            self.send_response(302)
-            self.send_header("Location", "/v2")
-            self.end_headers()
-            return
+        # 老 /v2 链接 301 到无尾路径
+        if parsed.path == "/v2":
+            return self.redirect("/")
+        if parsed.path.startswith("/v2/"):
+            return self.redirect(parsed.path[3:] or "/")
+        # 老应用挪到 /legacy
+        if parsed.path == "/legacy" or parsed.path.startswith("/legacy/"):
+            return self.handle_legacy(parsed)
         if parsed.path == "/api/scan-units":
             return self.handle_scan_units()
         if parsed.path == "/api/account-data":
             return self.handle_account_load(parsed)
-        # /v2 与 /v2/* → 新版应用（SPA，回退到 index.html）
-        if parsed.path == "/v2" or parsed.path.startswith("/v2/"):
-            return self.handle_v2(parsed)
-        return super().do_GET()
+        # /data/* → 仓库数据目录（词库数据集）
+        if parsed.path.startswith("/data/"):
+            candidate = (ROOT_DIR / parsed.path.lstrip("/")).resolve()
+            try:
+                if os.path.commonpath([str(candidate), str(DATA_DIR.resolve())]) == str(DATA_DIR.resolve()) and candidate.is_file():
+                    self.send_response(200)
+                    self.send_header("Content-Type", "application/json; charset=utf-8")
+                    self.send_header("Content-Length", str(candidate.stat().st_size))
+                    self.end_headers()
+                    self.wfile.write(candidate.read_bytes())
+                    return
+            except ValueError:
+                pass
+            return self.send_error(404)
+        # 根路径与静态资源 → 新版应用（SPA，回退 index.html）
+        return self.handle_v2(parsed)
+
+    def redirect(self, to):
+        self.send_response(301)
+        self.send_header("Location", to)
+        self.end_headers()
+
+    def handle_legacy(self, parsed):
+        rel = parsed.path[len("/legacy"):].lstrip("/")
+        target = ROOT_DIR / rel if rel else ROOT_DIR / "index.html"
+        if target.is_file():
+            self.send_response(200)
+            ctype = ("text/html" if target.suffix == ".html" else "text/css" if target.suffix == ".css"
+                     else "application/javascript" if target.suffix == ".js" else "application/octet-stream")
+            self.send_header("Content-Type", ctype + "; charset=utf-8")
+            self.send_header("Content-Length", str(target.stat().st_size))
+            self.end_headers()
+            self.wfile.write(target.read_bytes())
+            return
+        self.send_error(404)
 
     def handle_v2(self, parsed):
-        rel = parsed.path[len("/v2"):].lstrip("/")
-        if not rel:
-            target = V2_DIR / "index.html"
-        else:
-            candidate = (V2_DIR / rel).resolve()
+        """根路径 → web/dist SPA（/api、/data、/legacy 已在前面处理）"""
+        rel = parsed.path.lstrip("/")
+        candidate = (V2_DIR / rel).resolve() if rel else None
+        target = V2_DIR / "index.html"
+        if candidate is not None:
             try:
                 if os.path.commonpath([str(candidate), str(V2_DIR.resolve())]) != str(V2_DIR.resolve()):
                     return self.send_error(403)
             except ValueError:
                 return self.send_error(403)
-            target = candidate if candidate.is_file() else V2_DIR / "index.html"
+            if candidate.is_file():
+                target = candidate
         if not target.exists():
             return self.send_error(404, "web/dist not built")
         self.send_response(200)

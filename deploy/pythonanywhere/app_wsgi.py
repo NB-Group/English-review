@@ -239,35 +239,14 @@ def application(environ, start_response):
                                               ("Content-Length", str(len(data)))] + headers)
         return [data]
 
-    if path == "/" or path == "":
-        start_response("302 Found", [("Location", "/v2")] + headers)
+    # 老 /v2 链接 301 去尾
+    if path == "/v2":
+        start_response("301 Moved Permanently", [("Location", "/")] + headers)
+        return [b""]
+    if path.startswith("/v2/"):
+        start_response("301 Moved Permanently", [("Location", path[3:] or "/")] + headers)
         return [b""]
 
-    if path == "/v2" or path.startswith("/v2/"):
-        rel = path[3:].lstrip("/")
-        if rel:
-            candidate = (V2_DIR / rel).resolve()
-            try:
-                if os.path.commonpath([str(candidate), str(V2_DIR.resolve())]) != str(V2_DIR.resolve()):
-                    start_response("403 Forbidden", headers)
-                    return [b""]
-            except ValueError:
-                start_response("403 Forbidden", headers)
-                return [b""]
-            target = candidate if candidate.is_file() else V2_DIR / "index.html"
-            immutable = target.name != "index.html" and candidate.is_file()
-        else:
-            target = V2_DIR / "index.html"
-            immutable = False
-        code, data, ctype, cache, enc = _serve_file(target, immutable, environ.get("HTTP_ACCEPT_ENCODING", ""))
-        extra = [("Content-Type", ctype), ("Content-Length", str(len(data)))]
-        if cache:
-            extra.append(("Cache-Control", cache))
-        if enc:
-            extra.append(("Content-Encoding", enc))
-            extra.append(("Vary", "Accept-Encoding"))
-        start_response(f"{code} {'OK' if code == 200 else 'NF'}", extra + headers)
-        return [data]
 
     if path.startswith("/data/"):
         candidate = (BASE / path.lstrip("/")).resolve()
@@ -284,6 +263,33 @@ def application(environ, start_response):
             pass
         start_response("404 Not Found", headers)
         return [b""]
+
+    # 根路径 → web/dist SPA（/api、/data 已在前面处理）
+    rel = path.lstrip("/")
+    candidate = (V2_DIR / rel).resolve() if rel else None
+    target = V2_DIR / "index.html"
+    immutable = False
+    if candidate is not None:
+        try:
+            if os.path.commonpath([str(candidate), str(V2_DIR.resolve())]) != str(V2_DIR.resolve()):
+                start_response("403 Forbidden", headers)
+                return [b""]
+        except ValueError:
+            start_response("403 Forbidden", headers)
+            return [b""]
+        if candidate.is_file():
+            target = candidate
+            immutable = target.name != "index.html"
+    code, data, ctype, cache, enc = _serve_file(target, immutable, environ.get("HTTP_ACCEPT_ENCODING", ""))
+    extra = [("Content-Type", ctype), ("Content-Length", str(len(data)))]
+    if cache:
+        extra.append(("Cache-Control", cache))
+    if enc:
+        extra.append(("Content-Encoding", enc))
+        extra.append(("Vary", "Accept-Encoding"))
+    start_response(f"{code} {'OK' if code == 200 else 'NF'}", extra + headers)
+    return [data]
+
 
     start_response("404 Not Found", headers)
     return [b""]
