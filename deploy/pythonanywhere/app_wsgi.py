@@ -273,7 +273,7 @@ def application(environ, start_response):
         candidate = (BASE / path.lstrip("/")).resolve()
         try:
             if os.path.commonpath([str(candidate), str(DATA_DIR.resolve())]) == str(DATA_DIR.resolve()) and candidate.is_file():
-                code, data, ctype, _, enc = _serve_file(candidate, None, environ.get("HTTP_ACCEPT_ENCODING", ""))
+                code, data, ctype, _, enc = _serve_file(candidate, True, environ.get("HTTP_ACCEPT_ENCODING", ""))
                 extra = [("Content-Type", ctype), ("Content-Length", str(len(data)))]
                 if enc:
                     extra.append(("Content-Encoding", enc))

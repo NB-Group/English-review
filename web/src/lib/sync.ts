@@ -35,10 +35,12 @@ export class ApiError extends Error {
   }
 }
 
+const API_BASE = import.meta.env.VITE_API_BASE ?? ''
+
 async function api(body: Record<string, unknown>) {
   let res: Response
   try {
-    res = await fetch('/api/account-data', {
+    res = await fetch(`${API_BASE}/api/account-data`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
@@ -133,7 +135,7 @@ export function startAutoSync() {
     const s = getSession()
     if (!s) return
     navigator.sendBeacon?.(
-      '/api/account-data',
+      `${API_BASE}/api/account-data`,
       new Blob(
         [JSON.stringify({ action: 'save', user: s.user, pin: s.pin, rev: s.rev, data: useProfile.getState().profile })],
         { type: 'application/json' },

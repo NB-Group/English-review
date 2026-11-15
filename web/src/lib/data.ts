@@ -24,11 +24,13 @@ async function fetchJson<T>(path: string): Promise<T> {
 export function loadDataset(): Promise<Dataset> {
   if (cache) return Promise.resolve(cache)
   if (loading) return loading
+  // 数据基址独立配置：本地/PA 为根下 /data；GH Pages 为仓库名前缀下
+  const D = (import.meta.env.VITE_DATA_BASE ?? '/data/') + 'kaogang/'
   loading = Promise.all([
-    fetchJson<WordEntry[]>('/data/kaogang/words.json'),
-    fetchJson<PhraseEntry[]>('/data/kaogang/phrases.json'),
-    fetchJson<Sentence[]>('/data/kaogang/sentences.json'),
-    fetchJson<IrregularVerb[]>('/data/kaogang/irregular_verbs.json').catch(() => []),
+    fetchJson<WordEntry[]>(D + 'words.json'),
+    fetchJson<PhraseEntry[]>(D + 'phrases.json'),
+    fetchJson<Sentence[]>(D + 'sentences.json'),
+    fetchJson<IrregularVerb[]>(D + 'irregular_verbs.json').catch(() => []),
   ]).then(([words, phrases, sentences, irregularVerbs]) => {
     // 归一化：OCR 遗留的 inflections 双形状（"复 lives /laɪvz/" 字符串 / note:null）
     for (const w of words) {
