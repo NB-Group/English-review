@@ -83,3 +83,9 @@
 .triage-pick.active{background:#234f3c;border-color:#234f3c;color:#eef3e6}
 .triage-clear{background:none;border:0;color:#955344;font-size:11.5px;padding:4px;text-decoration:underline;text-underline-offset:3px}
 .triage-manager-note{font-size:11px;color:#98a28f;margin:12px 0 0;line-height:1.7}
+
+/* 账号门：口令获取帮助 */
+.gate-help{font-size:12px;color:#65776b;background:#f0f3ed;border-radius:10px;padding:10px 14px}
+.gate-help summary{cursor:pointer;font-weight:700;color:#456d4c;user-select:none}
+.gate-help ol{margin:10px 0 6px;padding-left:20px;line-height:1.9}
+.gate-help p{margin:0;color:#8b9a83}

@@ -158,8 +158,20 @@ export function AccountGate() {
           <div className="gate-form">
             <div className="gate-user">{user.trim()} · {mode === 'claim' ? '新档案' : '已有档案'}</div>
             {mode === 'claim' && needRegCode && (
-              <input className="duo-input" placeholder="粘贴班群里发的选餐问卷链接" value={regCode}
-                onChange={(e) => setRegCode(e.target.value)} />
+              <>
+                <input className="duo-input" placeholder="粘贴选餐问卷链接" value={regCode}
+                  onChange={(e) => setRegCode(e.target.value)} />
+                <details className="gate-help">
+                  <summary>链接从哪里来？</summary>
+                  <ol>
+                    <li>打开<b>钉钉</b>，进你的<b>班级群</b></li>
+                    <li>找到班主任发的<b>「营养食谱选餐」</b>那条消息，点开里面的问卷</li>
+                    <li>问卷打开后，点<b>右上角「···」</b>，选<b>「复制链接」</b></li>
+                    <li>回到这里，粘贴到上面输入框（Ctrl+V / 长按粘贴）</li>
+                  </ol>
+                  <p>找不到就去群里翻一下历史消息，或者问同学要一下。</p>
+                </details>
+              </>
             )}
             <input className="duo-input" placeholder={mode === 'claim' ? '设置 4 位以上 PIN' : 'PIN'} value={pin} type="password"
               onChange={(e) => setPin(e.target.value)} autoFocus />
