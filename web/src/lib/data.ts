@@ -1,4 +1,5 @@
 import type { IrregularVerb, PhraseEntry, Sentence, WordEntry } from '../types'
+import { datasetBasePath } from './data-path'
 
 /** 数据集：从 /data/kaogang/ 静态加载，内存索引 */
 
@@ -24,8 +25,8 @@ async function fetchJson<T>(path: string): Promise<T> {
 export function loadDataset(): Promise<Dataset> {
   if (cache) return Promise.resolve(cache)
   if (loading) return loading
-  // 数据基址独立配置：本地/PA 为根下 /data；GH Pages 为仓库名前缀下
-  const D = (import.meta.env.VITE_DATA_BASE ?? '/data/') + 'kaogang/'
+  // 数据基址独立配置：本地/PA 使用根路径，GH Pages 使用仓库 base 路径
+  const D = datasetBasePath(import.meta.env.BASE_URL, import.meta.env.VITE_DATA_BASE)
   loading = Promise.all([
     fetchJson<WordEntry[]>(D + 'words.json'),
     fetchJson<PhraseEntry[]>(D + 'phrases.json'),
