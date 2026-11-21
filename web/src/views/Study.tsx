@@ -5,6 +5,7 @@ import type { TriageVerdict } from '../types'
 import { buildSession, type SessionCard, type SessionPlan } from '../lib/engine'
 import { Rating } from '../lib/fsrs'
 import { grade, type Grade } from '../lib/grader'
+import { firstCharacterHint } from '../lib/hints'
 import { useProfile } from '../lib/store'
 import { speak } from '../lib/tts'
 
@@ -214,6 +215,7 @@ function NewWordCard({
 
   if (step === 1) {
     const accepted = [card.headword, ...card.headword.split('/')].map((s) => s.trim()).filter(Boolean)
+    const hint = firstCharacterHint(card.headword)
     const submit = () => {
       const g = grade(input, accepted)
       setSpellGrade(g)
@@ -226,6 +228,9 @@ function NewWordCard({
           <div className="flex justify-center"><Speaker word={card.headword} big /></div>
           <p className="mt-5 text-[14px] font-bold text-ink-faint">
             {typeof window !== 'undefined' && 'speechSynthesis' in window ? '听音拼词' : '本设备无法朗读，凭记忆拼写'}
+          </p>
+          <p className="mt-3 text-center text-[13px] font-extrabold text-duo-blue-dark">
+            首字母提示：<span className="font-mono text-[16px]">{hint}</span>
           </p>
         </Prompt>
         <div className="mt-8">
@@ -336,6 +341,7 @@ function ReviewCard({
   }
 
   const accepted = [card.headword, ...card.headword.split('/')].map((s) => s.trim()).filter(Boolean)
+  const hint = firstCharacterHint(card.headword)
   const submit = () => {
     const g = grade(input, accepted)
     setAutoRating(g === 'exact' ? Rating.Good : g === 'near' ? Rating.Hard : Rating.Again)
@@ -347,6 +353,9 @@ function ReviewCard({
       <Prompt kind={card.kind} card={card}>
         <p className="text-[14px] font-bold text-ink-faint">拼写</p>
         <div className="mt-4 text-[26px] font-extrabold leading-snug text-ink sm:text-[30px]">{zh}</div>
+        <p className="mt-3 text-[13px] font-extrabold text-duo-blue-dark">
+          首字母提示：<span className="font-mono text-[16px]">{hint}</span>
+        </p>
       </Prompt>
       <div className="mt-10">
         <input
