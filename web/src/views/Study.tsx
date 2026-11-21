@@ -229,20 +229,25 @@ function NewWordCard({
           <p className="mt-5 text-[14px] font-bold text-ink-faint">
             {typeof window !== 'undefined' && 'speechSynthesis' in window ? '听音拼词' : '本设备无法朗读，凭记忆拼写'}
           </p>
-          <p className="mt-3 text-center text-[13px] font-extrabold text-duo-blue-dark">
-            首字母提示：<span className="font-mono text-[16px]">{hint}</span>
-          </p>
         </Prompt>
         <div className="mt-8">
-          <input
-            autoFocus
-            className="duo-input text-center"
-            placeholder="凭读音拼出来"
-            value={input}
-            disabled={result !== null}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && !result && input.trim() && submit()}
-          />
+          <div className="relative">
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-y-0 left-5 z-10 flex items-center font-mono text-[20px] font-bold text-ink-faint"
+            >
+              {hint}
+            </span>
+            <input
+              autoFocus
+              className="duo-input pl-12 text-left"
+              placeholder="凭读音拼出来"
+              value={input}
+              disabled={result !== null}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && !result && input.trim() && submit()}
+            />
+          </div>
           {result === null ? (
             <div className="mt-5 flex justify-center">
               <button className="push w-full max-w-sm !py-4 text-lg" disabled={!input.trim()} onClick={submit}>
@@ -353,20 +358,25 @@ function ReviewCard({
       <Prompt kind={card.kind} card={card}>
         <p className="text-[14px] font-bold text-ink-faint">拼写</p>
         <div className="mt-4 text-[26px] font-extrabold leading-snug text-ink sm:text-[30px]">{zh}</div>
-        <p className="mt-3 text-[13px] font-extrabold text-duo-blue-dark">
-          首字母提示：<span className="font-mono text-[16px]">{hint}</span>
-        </p>
       </Prompt>
       <div className="mt-10">
-        <input
-          autoFocus
-          className="duo-input text-center"
-          placeholder="输入英文"
-          value={input}
-          disabled={revealed}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && !revealed && input.trim() && submit()}
-        />
+        <div className="relative">
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 left-5 z-10 flex items-center font-mono text-[20px] font-bold text-ink-faint"
+          >
+            {hint}
+          </span>
+          <input
+            autoFocus
+            className="duo-input pl-12 text-left"
+            placeholder="输入英文"
+            value={input}
+            disabled={revealed}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && !revealed && input.trim() && submit()}
+          />
+        </div>
         {!revealed ? (
           <div className="mt-5 flex justify-center">
             <button className="push w-full max-w-sm !py-4 text-lg" disabled={!input.trim()} onClick={submit}>
