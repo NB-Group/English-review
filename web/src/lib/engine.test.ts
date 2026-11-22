@@ -58,7 +58,8 @@ const recognizeOnly = profile({ 'w:1': fluent(), 'w:2': { triage: 'recognize', d
 recognizeOnly.goals = [{ id: 'all', scope: {}, level: 'recognize' }]
 const daily = buildSession(dataset([word(1), word(2), word(3)]), recognizeOnly,
   { due: 0, spellSpot: 5, fluentSpot: 5, triage: 0, newWords: 5 }, now)
-if (daily.cards.length !== 3 || daily.cards.some((card) => card.dim !== 'w1' || card.kind === 'newWord')) {
+if (daily.cards.length !== 3 || daily.cards.some((card) => card.dim !== 'w1') ||
+  !daily.cards.some((card) => card.key === 'w:3' && card.kind === 'newWord')) {
   throw new Error('daily recognition-only goals must never require spelling or strand unlearned words')
 }
 
@@ -70,5 +71,12 @@ const exampleWord = {
 const examplePlan = buildSession(dataset([exampleWord]), profile({
   'w:1': { triage: 'recognize', dims: { w1: state(now + 86_400_000), w2: state(now + 86_400_000) } },
 }), { due: 0, spellSpot: 0, fluentSpot: 0, triage: 0, newWords: 1 }, now)
-if (examplePlan.cards[0]?.dim !== 's1') throw new Error('Known spelling should unlock a separate example card')
+if (examplePlan.cards.length || examplePlan.pending.newLeft) throw new Error('Known spelling must not unlock a separate example card')
+
+const legacyProfile = profile({
+  'w:1': { triage: 'recognize', dims: { w1: state(now + 86_400_000), w2: state(now + 86_400_000), s1: state(now - 1), s2: state(now - 1) } },
+})
+const legacyPlan = buildSession(dataset([exampleWord]), legacyProfile,
+  { due: 10, spellSpot: 0, fluentSpot: 0, triage: 0, newWords: 10 }, now)
+if (legacyPlan.cards.length || legacyPlan.pending.dueLeft) throw new Error('Old example progress must not produce due cards')
 console.log('engine tests passed')

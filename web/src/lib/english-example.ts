@@ -6,15 +6,3 @@ export function getEnglishExample(ds: Dataset, kind: 'word' | 'phrase', no: numb
   return entry?.examples.find((item) => item.en.trim() && item.zh.trim())
     ?? ds.sentences.find((item) => item.kind === kind && item.entry_no === no && item.en.trim() && item.zh.trim())
 }
-
-export function getExampleCloze(example: Example, headword: string) {
-  for (const answer of headword.split('/').map((part) => part.trim()).filter(Boolean)) {
-    const escaped = answer.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-    const match = new RegExp('(?<![A-Za-z])' + escaped + '(?![A-Za-z])', 'i').exec(example.en)
-    if (!match) continue
-    return {
-      text: example.en.slice(0, match.index) + '____' + example.en.slice(match.index + match[0].length),
-      answer: match[0],
-    }
-  }
-}

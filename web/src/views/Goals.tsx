@@ -1,17 +1,15 @@
 import { useEffect, useState } from 'react'
 import type { GoalLevel, GoalRule } from '../types'
-import { useProfile } from '../lib/store'
+import { effectiveGoalLevel, useProfile } from '../lib/store'
 import { useStudyCloud } from '../lib/study-cloud'
 import { getSession, logout } from '../lib/sync'
 
-const LEVEL_META: Record<GoalLevel, { label: string; note: string; cls: string }> = {
+const LEVEL_META = {
   skip: { label: '忽略', note: '不进入学习流', cls: 'bg-mist text-ink-faint' },
   recognize: { label: '认识即可', note: '见词知义即可', cls: 'bg-duo-green-tint text-duo-green-dark' },
   dictation: { label: '需要默写', note: '练习词义和拼写', cls: 'bg-duo-green-tint text-duo-green-dark' },
-  sentence: { label: '句子级', note: '练习词义、拼写和例句理解', cls: 'bg-duo-gold-tint text-duo-gold-dark' },
-  full: { label: '全能', note: '在例句里回忆词义和拼写', cls: 'bg-duo-purple-tint text-ink-soft' },
 }
-const LEVEL_ORDER: GoalLevel[] = ['skip', 'recognize', 'dictation', 'sentence', 'full']
+const LEVEL_ORDER = ['skip', 'recognize', 'dictation'] as const
 
 export default function Goals() {
   const cloud = useStudyCloud()
@@ -51,27 +49,30 @@ export default function Goals() {
       <section className="card goals-section">
         <div className="goals-section-title">任务等级</div>
         <div className="goal-rules">
-          {profile.goals.map((g) => (
-            <div key={g.id} className="goal-rule">
-              <span className="goal-scope">{scopeLabel(g)}</span>
-              <span className="goal-arrow">→</span>
-              <span className={`goal-level ${LEVEL_META[g.level].cls}`}>{LEVEL_META[g.level].label}</span>
-              <span className="goal-note">{LEVEL_META[g.level].note}</span>
-              <select
-                className="duo-input goal-select"
-                value={g.level}
-                onChange={(e) => update(g.id, { level: e.target.value as GoalLevel })}
-              >
-                {LEVEL_ORDER.map((l) => (
-                  <option key={l} value={l}>{LEVEL_META[l].label}</option>
-                ))}
-              </select>
-              <button className="goal-remove" title="删除规则"
-                onClick={() => setGoals(profile.goals.filter((x) => x.id !== g.id))}>
-                ✕
-              </button>
-            </div>
-          ))}
+          {profile.goals.map((g) => {
+            const level = effectiveGoalLevel(g.level)
+            return (
+              <div key={g.id} className="goal-rule">
+                <span className="goal-scope">{scopeLabel(g)}</span>
+                <span className="goal-arrow">→</span>
+                <span className={`goal-level ${LEVEL_META[level].cls}`}>{LEVEL_META[level].label}</span>
+                <span className="goal-note">{LEVEL_META[level].note}</span>
+                <select
+                  className="duo-input goal-select"
+                  value={level}
+                  onChange={(e) => update(g.id, { level: e.target.value as GoalLevel })}
+                >
+                  {LEVEL_ORDER.map((l) => (
+                    <option key={l} value={l}>{LEVEL_META[l].label}</option>
+                  ))}
+                </select>
+                <button className="goal-remove" title="删除规则"
+                  onClick={() => setGoals(profile.goals.filter((x) => x.id !== g.id))}>
+                  ✕
+                </button>
+              </div>
+            )
+          })}
         </div>
         <div className="goal-adds">
           {[3, 2, 1, 0].map((s) => (

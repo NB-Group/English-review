@@ -17,7 +17,7 @@ export const profileStorageKey = 'kaogang_v2_profile'
 /** 全局用户状态：档案 + 学习动作（localStorage 持久化，v1 不做服务端同步） */
 
 const DEFAULT_GOALS: GoalRule[] = [
-  { id: 'g1', scope: { stars: [3] }, level: 'full' }, // ★★★ 全能
+  { id: 'g1', scope: { stars: [3] }, level: 'dictation' },
   { id: 'g2', scope: { stars: [2] }, level: 'dictation' },
   { id: 'g3', scope: { stars: [1] }, level: 'dictation' },
   { id: 'g4', scope: { stars: [0] }, level: 'recognize' },
@@ -175,19 +175,19 @@ export const useProfile = create<ProfileState>()(
   ),
 )
 
+export function effectiveGoalLevel(level: GoalLevel) {
+  return level === 'sentence' || level === 'full' ? 'dictation' : level
+}
+
 /** 目标等级解析：词条 → 该走的维度 */
 export function dimsForLevel(level: GoalLevel): Dim[] {
-  switch (level) {
+  switch (effectiveGoalLevel(level)) {
     case 'skip':
       return []
     case 'recognize':
       return ['w1']
     case 'dictation':
       return ['w1', 'w2']
-    case 'sentence':
-      return ['w1', 'w2', 's1']
-    case 'full':
-      return ['w1', 'w2', 's1', 's2']
   }
 }
 

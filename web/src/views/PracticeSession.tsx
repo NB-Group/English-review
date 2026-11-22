@@ -23,11 +23,19 @@ interface Session {
   readPieceIds?: string[]
 }
 
+function isExampleCard({ subject, card }: PracticeCard) {
+  return subject === 'english' && (card.dim === 's1' || card.dim === 's2')
+}
+
 function restore(key: string): Session | undefined {
   try {
     const saved = JSON.parse(localStorage.getItem(key) ?? 'null') as Session | null
     if (saved && Array.isArray(saved.queue) && Array.isArray(saved.results) &&
-      saved.results.length <= saved.queue.length) return saved
+      saved.results.length <= saved.queue.length) {
+      const done = saved.results.length
+      const queue = saved.queue.filter((card, index) => index < done || !isExampleCard(card))
+      if (queue.length || !saved.queue.length) return { ...saved, queue }
+    }
   } catch { /* Storage may be unavailable. */ }
 }
 
@@ -99,7 +107,7 @@ function PracticeRound({ ds, request, storageKey }: { ds: Dataset; request: Prac
     }
     advance(result.rating >= Rating.Good ? 'correct' : 'review', () => {
       const { answer } = store.getState()
-      if (card.kind === 'newWord') {
+      if (card.kind === 'newWord' && card.dim !== 'w1') {
         answer(card.key, 'w1', Rating.Easy)
         record('english', card.key, 'w1', 'easy')
       }
@@ -112,7 +120,7 @@ function PracticeRound({ ds, request, storageKey }: { ds: Dataset; request: Prac
   }
 
   const title = request.scope === 'today' ? '今日计划' : '专项训练'
-  const reviewCards = session.queue.filter((_, i) => session.results[i]?.outcome === 'review')
+  const reviewCards = session.queue.filter((card, i) => session.results[i]?.outcome === 'review' && !isExampleCard(card))
   const warning = storageError && <p role="status" className="text-sm text-duo-red-dark">本机无法保存这轮的续练位置。</p>
   if (!current) {
     return (
