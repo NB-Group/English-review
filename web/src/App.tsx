@@ -3,7 +3,7 @@ import { Navigate, NavLink, Route, Routes, useLocation, useSearchParams } from '
 import { loadDataset, type Dataset } from './lib/data'
 import ProductToday from './views/ProductToday'
 import PracticeLauncher from './views/PracticeLauncher'
-import Library from './views/Library'
+import ProductLibrary from './views/ProductLibrary'
 import Study from './views/Study'
 import ChineseStudy from './views/ChineseStudy'
 import Goals from './views/Goals'
@@ -61,7 +61,7 @@ export default function App() {
                 <Route path="/" element={<Navigate to="/today" replace />} />
                 <Route path="/today" element={<ProductToday ds={ds} />} />
                 <Route path="/practice" element={<PracticeRoute ds={ds} />} />
-                <Route path="/library" element={<Library ds={ds} />} />
+                <Route path="/library" element={<ProductLibrary ds={ds} />} />
                 <Route path="/study" element={<Study ds={ds} />} />
                 <Route path="/chinese" element={<ChineseStudy />} />
                 <Route path="/progress" element={<Goals />} />
