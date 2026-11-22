@@ -19,6 +19,8 @@
 - 重写统一首页，加入学科任务卡片和专项训练入口
 - 增加全部词组默写、全部单词认知和正式/练习模式选择
 - 在词库页加入全部词组默写入口
+- 建立旧 English profile 到统一卡片状态的迁移映射
+- 增加 Supabase preferences 表迁移和前端适配器
 
 ### Test Results
 | Test | Expected | Actual | Status |

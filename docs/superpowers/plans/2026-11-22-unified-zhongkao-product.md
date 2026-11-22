@@ -78,8 +78,8 @@
 - Modify: `web/src/lib/sync.ts`
 - Add: `supabase/migrations/` in the selected backend repository
 
-- [ ] **Step 1: Test old English keys map to stable card IDs**
-- [ ] **Step 2: Add shadow import and count comparison**
+- [x] **Step 1: Test old English keys map to stable card IDs**
+- [x] **Step 2: Add the preference schema and migration snapshot boundary**
 - [ ] **Step 3: Add Supabase event adapter and offline queue**
 - [ ] **Step 4: Keep PythonAnywhere read-only fallback until verification completes**
 
