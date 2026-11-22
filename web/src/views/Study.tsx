@@ -5,7 +5,7 @@ import type { TriageVerdict } from '../types'
 import { buildSession, type SessionCard, type SessionPlan } from '../lib/engine'
 import { Rating } from '../lib/fsrs'
 import { grade, type Grade } from '../lib/grader'
-import { firstCharacterHint } from '../lib/hints'
+import { composeHintedAnswer, firstCharacterHint } from '../lib/hints'
 import { useProfile } from '../lib/store'
 import { speak } from '../lib/tts'
 
@@ -217,7 +217,8 @@ function NewWordCard({
     const accepted = [card.headword, ...card.headword.split('/')].map((s) => s.trim()).filter(Boolean)
     const hint = firstCharacterHint(card.headword)
     const submit = () => {
-      const g = grade(input, accepted)
+      const answer = composeHintedAnswer(hint, input)
+      const g = grade(answer, accepted)
       setSpellGrade(g)
       setResult(g)
       bump(g === 'exact')
@@ -256,7 +257,7 @@ function NewWordCard({
             </div>
           ) : (
             <Feedback
-              grade={result} answer={card.headword} yours={input}
+              grade={result} answer={card.headword} yours={composeHintedAnswer(hint, input)}
               onContinue={() => { setResult(null); setInput(''); setStep(2) }}
               continueLabel="继续"
             />
@@ -348,7 +349,8 @@ function ReviewCard({
   const accepted = [card.headword, ...card.headword.split('/')].map((s) => s.trim()).filter(Boolean)
   const hint = firstCharacterHint(card.headword)
   const submit = () => {
-    const g = grade(input, accepted)
+    const answer = composeHintedAnswer(hint, input)
+    const g = grade(answer, accepted)
     setAutoRating(g === 'exact' ? Rating.Good : g === 'near' ? Rating.Hard : Rating.Again)
     setRevealed(true)
     bump(g !== 'wrong')
@@ -386,7 +388,7 @@ function ReviewCard({
         ) : (
           <Feedback
             grade={autoRating === Rating.Good ? 'exact' : autoRating === Rating.Hard ? 'near' : 'wrong'}
-            answer={card.headword} yours={input}
+            answer={card.headword} yours={composeHintedAnswer(hint, input)}
             onContinue={() => onDone(picked ?? autoRating)}
             continueLabel="继续"
           >
