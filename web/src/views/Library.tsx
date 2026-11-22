@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { practiceLink } from '../lib/product-types'
 import type { Dataset } from '../lib/data'
 import type { PhraseEntry, WordEntry } from '../types'
 import { useProfile } from '../lib/store'
@@ -25,10 +26,11 @@ function SpeakerInline({ text }: { text: string }) {
 }
 
 export default function Library({ ds }: { ds: Dataset }) {
-  const navigate = useNavigate()
   const [star, setStar] = useState<StarFilter>('all')
   const [triage, setTriage] = useState<TriageFilter>('all')
   const [q, setQ] = useState('')
+  const [unit, setUnit] = useState('')
+  const [phraseSelection, setPhraseSelection] = useState<number[]>([])
   const [tab, setTab] = useState<'word' | 'phrase'>('word')
   const [selected, setSelected] = useState<{ kind: 'word' | 'phrase'; no: number } | null>(null)
   const profile = useProfile((s) => s.profile)
@@ -53,7 +55,7 @@ export default function Library({ ds }: { ds: Dataset }) {
   }, [ds.words, star, triage, q, profile.progress])
 
   const phrases = useMemo(() => {
-    let list = ds.phrases
+    let list = unit ? ds.phrases.filter((p) => p.textbook_tags.includes(unit)) : ds.phrases
     if (star !== 'all') list = list.filter((p) => p.stars === star)
     if (triage !== 'all') {
       list = list.filter((p) => {
@@ -66,17 +68,25 @@ export default function Library({ ds }: { ds: Dataset }) {
       list = list.filter((p) => p.headword.toLowerCase().includes(needle) || p.meaning.includes(q.trim()))
     }
     return list
-  }, [ds.phrases, star, triage, q, profile.progress])
+  }, [ds.phrases, star, triage, q, unit, profile.progress])
 
   const word = selected?.kind === 'word' ? ds.wordByNo.get(selected.no) : undefined
   const phrase = selected?.kind === 'phrase' ? ds.phraseByNo.get(selected.no) : undefined
   const shown = tab === 'word' ? words : phrases
 
+  const units = useMemo(() => [...new Set(ds.phrases.flatMap((phrase) => phrase.textbook_tags))].sort(), [ds.phrases])
+  const selectedLink = (phraseIds: number[]) => practiceLink({
+    subject: 'english', scope: 'phrases', mode: 'formal', order: 'textbook', phraseIds,
+  })
+
   const filterChip = (active: boolean) => `lib-filter${active ? ' active' : ''}`
 
   return (
     <div className="library-page mt-6">
-      <div className="page-heading library-heading"><div><div className="eyebrow">THE CONTENT LIBRARY</div><h1>每一个词，都有它的位置。</h1><p>{ds.words.length} 个单词 · {ds.phrases.length} 个词组，按你的节奏逐一掌握。</p></div><div className="flex gap-2"><button className="push" onClick={() => navigate('/practice?subject=english&scope=all-phrases&mode=formal&order=textbook')}>全部词组默写 ↗</button></div></div>
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <p>{ds.words.length} 个单词 · {ds.phrases.length} 个词组</p>
+        <Link className="push" to="/practice?subject=english&scope=all-phrases">全部词组默写</Link>
+      </div>
       {/* 过滤器 */}
       <div className="library-tools card flex flex-wrap items-center gap-2 p-3">
         <div className="flex rounded-full bg-mist p-1">
@@ -110,6 +120,12 @@ export default function Library({ ds }: { ds: Dataset }) {
             ))}
           </div>
         )}
+        {tab === 'phrase' && (
+          <select aria-label="教材单元" className="duo-input !w-auto !py-2" value={unit} onChange={(event) => setUnit(event.target.value)}>
+            <option value="">全部教材单元</option>
+            {units.map((tag) => <option key={tag} value={tag}>{tag.replace(/^G/, '')}</option>)}
+          </select>
+        )}
         <input
           className="duo-input ml-auto !w-48 !rounded-full !py-2 text-sm font-semibold"
           placeholder="搜索英文或中文释义"
@@ -118,18 +134,33 @@ export default function Library({ ds }: { ds: Dataset }) {
         />
       </div>
 
+      {tab === 'phrase' && (
+        <div className="mt-4 flex flex-wrap gap-2">
+          {phrases.length > 0 && <Link className="choice" to={selectedLink(phrases.map((p) => p.no))}>默写筛选结果（{phrases.length}）</Link>}
+          {phraseSelection.length > 0 && <>
+            <Link className="choice active" to={selectedLink(phraseSelection)}>默写已选词组（{phraseSelection.length}）</Link>
+            <button className="choice" onClick={() => setPhraseSelection([])}>清除选择</button>
+          </>}
+        </div>
+      )}
       {/* 列表 */}
       <div className="library-entries mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         {shown.slice(0, 400).map((e, i) => (
+          <div key={e.no} className="flex min-w-0 items-center gap-2">
+          {tab === 'phrase' && <input type="checkbox" aria-label={`选择 ${e.headword}`}
+            className="size-5 shrink-0 accent-duo-green" checked={phraseSelection.includes(e.no)}
+            onChange={(event) => {
+              const checked = event.target.checked
+              setPhraseSelection((ids) => checked ? [...ids, e.no] : ids.filter((id) => id !== e.no))
+            }} />}
           <motion.button
-            key={e.no}
             initial={reduce ? false : { opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, ease: EASE, delay: Math.min(i * 0.015, 0.3) }}
             whileHover={reduce ? undefined : { y: -3 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => setSelected({ kind: tab, no: e.no })}
-            className="library-entry card p-4 text-left transition-colors hover:border-duo-blue"
+            className="library-entry card w-full flex-1 p-4 text-left transition-colors hover:border-duo-blue"
           >
             <div className="flex items-baseline justify-between gap-2">
               <span className="truncate text-base font-extrabold text-ink">{e.headword}</span>
@@ -139,6 +170,7 @@ export default function Library({ ds }: { ds: Dataset }) {
               {tab === 'word' ? (e as WordEntry).senses[0]?.zh : (e as PhraseEntry).meaning}
             </div>
           </motion.button>
+          </div>
         ))}
         {shown.length === 0 && (
           <div className="empty-state col-span-full">

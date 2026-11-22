@@ -1,4 +1,4 @@
-import { buildSession, buildWordPractice } from './engine.ts'
+import { buildSession, buildVocabularyPractice } from './engine.ts'
 import type { Dataset } from './data.ts'
 import type { EntryProgress, UserProfile, WordEntry } from '../types.ts'
 
@@ -49,9 +49,17 @@ const recentPlan = buildSession(
 )
 if (recentPlan.stats.fluentSpot !== 0) throw new Error('a recently checked fluent entry must be deferred')
 
-const recognitionPlan = buildWordPractice(dataset([word(1), word(2)]), 'textbook')
-if (recognitionPlan.cards.length !== 2 || recognitionPlan.cards.some((card) => card.kind !== 'review' || card.dim !== 'w1')) {
+const recognitionPlan = buildVocabularyPractice(dataset([word(1), word(2)]), 'word', 'textbook', 'recognize')
+if (recognitionPlan.length !== 2 || recognitionPlan.some((card) => card.kind !== 'review' || card.dim !== 'w1')) {
   throw new Error('recognition practice should create w1 review cards')
+}
+
+const recognizeOnly = profile({ 'w:1': fluent(), 'w:2': { triage: 'recognize', dims: {} }, 'w:3': { triage: 'unknown', dims: {} } })
+recognizeOnly.goals = [{ id: 'all', scope: {}, level: 'recognize' }]
+const daily = buildSession(dataset([word(1), word(2), word(3)]), recognizeOnly,
+  { due: 0, spellSpot: 5, fluentSpot: 5, triage: 0, newWords: 5 }, now)
+if (daily.cards.length !== 3 || daily.cards.some((card) => card.dim !== 'w1' || card.kind === 'newWord')) {
+  throw new Error('daily recognition-only goals must never require spelling or strand unlearned words')
 }
 
 console.log('engine tests passed')

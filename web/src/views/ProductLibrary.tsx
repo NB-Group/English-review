@@ -1,32 +1,49 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import type { Dataset } from '../lib/data'
 import { cards, pieces } from '../lib/chinese'
+import { practiceLink } from '../lib/product-types'
+import Library from './Library'
 
 export default function ProductLibrary({ ds }: { ds: Dataset }) {
-  const navigate = useNavigate()
-  const [subject, setSubject] = useState<'english' | 'chinese' | 'chemistry'>('english')
+  const [params, setParams] = useSearchParams()
+  const subject = params.get('subject') === 'chinese' ? 'chinese' : 'english'
+  const [query, setQuery] = useState('')
+  const shown = pieces.filter((piece) => (piece.title + (piece.author ?? '')).includes(query.trim()))
   return (
     <div className="product-library">
-      <div className="page-heading"><div><div className="eyebrow">CONTENT LIBRARY</div><h1>所有内容，都在这里。</h1><p>先浏览，再决定今天要练什么。</p></div></div>
-      <div className="content-subject-tabs">
-        {([['english', '英语'], ['chinese', '语文'], ['chemistry', '化学']] as const).map(([value, label]) => <button key={value} className={subject === value ? 'active' : ''} onClick={() => setSubject(value)}>{label}</button>)}
+      <h1 className="mb-5 text-3xl font-bold">内容库</h1>
+      <div className="content-subject-tabs" aria-label="学科">
+        {([['english', '英语'], ['chinese', '语文']] as const).map(([value, label]) => (
+          <button key={value} aria-pressed={subject === value} className={subject === value ? 'active' : ''}
+            onClick={() => setParams(value === 'chinese' ? { subject: value } : {})}>{label}</button>
+        ))}
       </div>
-      {subject === 'english' && (
-        <section className="library-overview">
-          <div className="content-stat"><b>{ds.words.length}</b><span>个单词</span></div>
-          <div className="content-stat"><b>{ds.phrases.length}</b><span>个词组</span></div>
-          <button className="push" onClick={() => navigate('/practice?subject=english&scope=all-phrases&mode=formal&order=textbook')}>全部词组默写 ↗</button>
-          <button className="push push-ghost" onClick={() => navigate('/practice?subject=english&scope=all-words&mode=formal&order=textbook')}>全部单词认知 ↗</button>
+      {subject === 'english' ? <Library ds={ds} /> : (
+        <section>
+          <div className="content-pack-summary">
+            <span>{pieces.length} 篇诗文 · {cards.length} 道复习题</span>
+            <Link className="choice" to="/practice?subject=chinese&scope=senses">练习文言词义</Link>
+            <Link className="choice" to="/practice?subject=chinese&scope=poetry">练习古诗词</Link>
+            <Link className="choice" to="/practice?subject=chinese&scope=wenyan">练习文言文</Link>
+          </div>
+          <label className="mt-4 block">
+            <span className="sr-only">搜索篇目</span>
+            <input className="duo-input" placeholder="搜索篇目或作者" value={query} onChange={(event) => setQuery(event.target.value)} />
+          </label>
+          <div className="piece-grid">
+            {shown.map((piece) => (
+              <Link key={piece.id} className="choice" to={practiceLink({
+                subject: 'chinese', scope: 'piece', pieceId: piece.id, mode: 'formal', order: 'textbook',
+              })}>
+                <b>{piece.title}</b>
+                <span>{piece.kind === 'poem' ? '古诗词' : '文言文'} {piece.author}</span>
+              </Link>
+            ))}
+          </div>
+          {shown.length === 0 && <p className="mt-5">没有匹配的篇目。</p>}
         </section>
       )}
-      {subject === 'chinese' && (
-        <section className="content-pack-list">
-          <div className="content-pack-summary"><b>{pieces.length}</b><span>篇诗文篇目</span><b>{cards.length}</b><span>张复习卡片</span><button className="push" onClick={() => navigate('/chinese')}>开始中文背诵 ↗</button></div>
-          <div className="piece-grid">{pieces.slice(0, 60).map((piece) => <button key={piece.id} onClick={() => navigate('/chinese')}><b>{piece.title}</b><span>{piece.author ?? '篇目复习'} · {piece.kind === 'poem' ? '诗词' : '文言文'}</span></button>)}</div>
-        </section>
-      )}
-      {subject === 'chemistry' && <section className="chemistry-placeholder"><b>化学内容即将接入</b><span>方程式书写、配平和实验现象会使用独立的输入组件。</span></section>}
     </div>
   )
 }

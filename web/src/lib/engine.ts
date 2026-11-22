@@ -26,39 +26,30 @@ export interface SessionPlan {
   pending: { dueLeft: number; triageLeft: number; newLeft: number }
 }
 
-export function buildPhrasePractice(ds: Dataset, order: 'textbook' | 'random' = 'textbook'): SessionPlan {
-  const phrases = order === 'random' ? shuffle(ds.phrases) : [...ds.phrases].sort((a, b) => a.no - b.no)
-  const cards = phrases.map((phrase) => ({
-    key: `p:${phrase.no}`,
-    kind: 'spellSpot' as const,
-    entryKind: 'phrase' as const,
-    no: phrase.no,
-    headword: phrase.headword,
-    dim: 'w2' as const,
-    stars: phrase.stars,
+export function buildVocabularyPractice(
+  ds: Dataset,
+  entryKind: 'word' | 'phrase',
+  order: 'priority' | 'textbook' | 'random',
+  skill: 'recognize' | 'dictation',
+  selectedIds?: number[],
+): SessionCard[] {
+  const selected = selectedIds && new Set(selectedIds)
+  const entries = (entryKind === 'word' ? ds.words : ds.phrases).filter((entry) => !selected || selected.has(entry.no))
+  const ordered = order === 'random' ? shuffle(entries) : entries.sort((a, b) => a.no - b.no)
+  return ordered.map((entry) => ({
+    key: (entryKind === 'word' ? 'w:' : 'p:') + entry.no,
+    kind: 'review',
+    entryKind,
+    no: entry.no,
+    headword: entry.headword,
+    dim: skill === 'recognize' ? 'w1' : 'w2',
+    stars: entry.stars,
   }))
-  const stats: Record<CardKind, number> = { review: 0, spellSpot: cards.length, fluentSpot: 0, triage: 0, newWord: 0 }
-  return { cards, stats, pending: { dueLeft: 0, triageLeft: 0, newLeft: 0 } }
-}
-
-export function buildWordPractice(ds: Dataset, order: 'textbook' | 'random' = 'textbook'): SessionPlan {
-  const words = order === 'random' ? shuffle(ds.words) : [...ds.words].sort((a, b) => a.no - b.no)
-  const cards = words.map((word) => ({
-    key: `w:${word.no}`,
-    kind: 'review' as const,
-    entryKind: 'word' as const,
-    no: word.no,
-    headword: word.headword,
-    dim: 'w1' as const,
-    stars: word.stars,
-  }))
-  const stats: Record<CardKind, number> = { review: cards.length, spellSpot: 0, fluentSpot: 0, triage: 0, newWord: 0 }
-  return { cards, stats, pending: { dueLeft: 0, triageLeft: 0, newLeft: 0 } }
 }
 
 const SPOTCHECK_COOLDOWN_MS = 24 * 60 * 60 * 1000
 
-function shuffle<T>(arr: T[]): T[] {
+export function shuffle<T>(arr: T[]): T[] {
   const a = [...arr]
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
@@ -71,9 +62,9 @@ function priorityShuffle<T>(arr: T[], getStars: (item: T) => number): T[] {
   return shuffle(arr).sort((a, b) => getStars(b) - getStars(a))
 }
 
-function weakestDueDim(p: EntryProgress, dims: Dim[]): Dim | null {
+function weakestDueDim(p: EntryProgress, dims: Dim[], now: number): Dim | null {
   // 到期维度里挑稳定性最差的考
-  const dueDims = dims.filter((d) => isDue(p.dims[d] ?? null))
+  const dueDims = dims.filter((d) => isDue(p.dims[d] ?? null, now))
   if (dueDims.length === 0) return null
   return dueDims.sort(
     (a, b) => (p.dims[a]?.stability ?? 0) - (p.dims[b]?.stability ?? 0),
@@ -118,12 +109,12 @@ export function buildSession(
     })
   }
 
+  const eligible = entries.filter((entry) => entry.level !== 'skip' && entry.progress.triage !== 'skip')
+
   // ── 各池（互斥条件，一个词条只进一个池）──
   // 到期复习：fluent 未降级且间隔 >40 天的不算欠账
   const dueList = priorityShuffle(
-    entries
-      .filter((e) => e.level !== 'skip' && e.progress.triage !== null)
-      .map((e) => ({ e, dim: weakestDueDim(e.progress, dimsForLevel(e.level)) }))
+    eligible.map((e) => ({ e, dim: weakestDueDim(e.progress, dimsForLevel(e.level), now) }))
       .filter(
         ({ e, dim }) =>
           dim !== null &&
@@ -136,20 +127,25 @@ export function buildSession(
   // 拼写学习流（新词）：unknown 从零学；recognize 且从未练过拼写的直接进学习流——
   // "认识拼不出"的语义就是要练拼写，不该只等每天几张抽查
   const newList = priorityShuffle(
-    entries.filter((e) => {
-      if (e.level === 'skip') return false
+    eligible.filter((e) => {
       const p = e.progress
+      if (e.level === 'recognize') return p.triage === 'unknown' && !p.dims.w1
       if (p.triage === 'unknown') return !p.dims.w1 && !p.dims.w2
       if (p.triage === 'recognize') return !p.dims.w2
       return false
     }),
     (e) => e.stars,
   )
-    .map((e) => ({ key: e.key, kind: 'newWord', entryKind: e.kind, no: e.no, headword: e.headword, dim: 'w2', stars: e.stars, priorTriage: e.progress.triage }) as SessionCard & { priorTriage: string })
+    .map((e): SessionCard => ({
+      key: e.key, kind: e.level === 'recognize' ? 'review' : 'newWord', entryKind: e.kind,
+      no: e.no, headword: e.headword, dim: e.level === 'recognize' ? 'w1' : 'w2',
+      stars: e.stars, priorTriage: e.progress.triage ?? undefined,
+    }))
 
   // 清洗：还没摸过底的
   const triageList = priorityShuffle(
-    entries.filter((e) => e.progress.triage === null && e.level !== 'skip'),
+    eligible.filter((e) => e.progress.triage === null &&
+      !dimsForLevel(e.level).some((dim) => e.progress.dims[dim])),
     (e) => e.stars,
   )
     .map((e) => ({ key: e.key, kind: 'triage', entryKind: e.kind, no: e.no, headword: e.headword, dim: null, stars: e.stars }) as SessionCard)
@@ -160,32 +156,38 @@ export function buildSession(
   const recentlySeen = (p: EntryProgress) =>
     p.lastSeenAt !== undefined && now - p.lastSeenAt < SPOTCHECK_COOLDOWN_MS
   const spellList = shuffle(
-    entries.filter((e) => e.progress.triage === 'recognize' && e.level !== 'skip' && !isDue(e.progress.dims.w2 ?? null, now) && !newKeys.has(e.key) && !recentlySeen(e.progress)),
-  ).map((e) => ({ key: e.key, kind: 'spellSpot', entryKind: e.kind, no: e.no, headword: e.headword, dim: 'w2', stars: e.stars }) as SessionCard)
+    eligible.filter((e) => e.progress.triage === 'recognize' &&
+      !isDue(e.progress.dims[e.level === 'recognize' ? 'w1' : 'w2'] ?? null, now) &&
+      !newKeys.has(e.key) && !recentlySeen(e.progress)),
+  ).map((e): SessionCard => ({ key: e.key, kind: 'spellSpot', entryKind: e.kind, no: e.no,
+    headword: e.headword, dim: e.level === 'recognize' ? 'w1' : 'w2', stars: e.stars }))
   const fluentList = shuffle(
-    entries.filter((e) => e.progress.triage === 'fluent' && !e.progress.degraded && e.level !== 'skip' && !recentlySeen(e.progress)),
-  ).map((e) => ({ key: e.key, kind: 'fluentSpot', entryKind: e.kind, no: e.no, headword: e.headword, dim: 'w2', stars: e.stars }) as SessionCard)
+    eligible.filter((e) => e.progress.triage === 'fluent' && !e.progress.degraded && !recentlySeen(e.progress)),
+  ).map((e): SessionCard => ({ key: e.key, kind: 'fluentSpot', entryKind: e.kind, no: e.no,
+    headword: e.headword, dim: e.level === 'recognize' ? 'w1' : 'w2', stars: e.stars }))
 
   // ── 轮转混排：复习→新词→清洗→抽查 循环取卡 ──
   // （避免"先连刷 30 张清洗才见到背词卡"的死节奏）
-  const pools: Array<{ list: SessionCard[]; cap: number; kind: CardKind }> = [
-    { list: dueList, cap: budgets.due, kind: 'review' },
-    { list: newList, cap: budgets.newWords, kind: 'newWord' },
-    { list: triageList, cap: budgets.triage, kind: 'triage' },
-    { list: spellList, cap: budgets.spellSpot, kind: 'spellSpot' },
-    { list: fluentList, cap: budgets.fluentSpot, kind: 'fluentSpot' },
+  const pools: Array<{ list: SessionCard[]; cap: number }> = [
+    { list: dueList, cap: budgets.due },
+    { list: newList, cap: budgets.newWords },
+    { list: triageList, cap: budgets.triage },
+    { list: spellList, cap: budgets.spellSpot },
+    { list: fluentList, cap: budgets.fluentSpot },
   ]
   const heads = pools.map(() => 0)
+  const added = pools.map(() => 0)
   let progressed = true
   while (progressed) {
     progressed = false
     for (const pi of pools.keys()) {
       const pool = pools[pi]
       while (heads[pi] < pool.list.length) {
-        if (stats[pool.kind] >= pool.cap) break
+        if (added[pi] >= pool.cap) break
         const cand = pool.list[heads[pi]]
         heads[pi]++
         if (push(cand)) {
+          added[pi]++
           progressed = true
           break
         }
@@ -199,7 +201,7 @@ export function buildSession(
     pending: {
       dueLeft: Math.max(0, dueList.length - stats.review),
       triageLeft: Math.max(0, triageList.length - stats.triage),
-      newLeft: Math.max(0, newList.length - stats.newWord),
+      newLeft: Math.max(0, newList.length - added[1]),
     },
   }
 }

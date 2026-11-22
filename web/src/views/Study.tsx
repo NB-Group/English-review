@@ -1,15 +1,12 @@
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
-import { useSearchParams } from 'react-router-dom'
+import { motion, useReducedMotion } from 'motion/react'
 import type { Dataset } from '../lib/data'
 import type { TriageVerdict } from '../types'
-import { buildPhrasePractice, buildSession, buildWordPractice, type SessionCard, type SessionPlan } from '../lib/engine'
+import type { SessionCard } from '../lib/engine'
 import { Rating } from '../lib/fsrs'
 import { grade, type Grade } from '../lib/grader'
 import { composeHintedAnswer, firstCharacterHint } from '../lib/hints'
-import { useProfile } from '../lib/store'
 import { speak } from '../lib/tts'
-import { parsePracticeRequest } from '../lib/product-types'
 
 const EASE = [0.16, 1, 0.3, 1] as const
 
@@ -37,105 +34,19 @@ function Speaker({ word, big = false }: { word: string; big?: boolean }) {
   )
 }
 
-export default function Study({ ds }: { ds: Dataset }) {
-  const profile = useProfile((s) => s.profile)
-  const doTriage = useProfile((s) => s.triage)
-  const doAnswer = useProfile((s) => s.answer)
-  const reduce = useReducedMotion()
-  const [searchParams] = useSearchParams()
-  const request = parsePracticeRequest(searchParams.toString())
+export type EnglishReviewResult =
+  | { kind: 'triage'; verdict: TriageVerdict }
+  | { kind: 'review'; rating: Rating }
 
-  const build = () =>
-    request.scope === 'all-phrases'
-      ? buildPhrasePractice(ds, request.order === 'random' ? 'random' : 'textbook')
-      : request.scope === 'all-words'
-        ? buildWordPractice(ds, request.order === 'random' ? 'random' : 'textbook')
-      : buildSession(ds, useProfile.getState().profile, {
-          due: 60,
-          spellSpot: profile.dailyQuota.spotcheck,
-          fluentSpot: Math.max(2, Math.round(profile.dailyQuota.spotcheck / 2)),
-          triage: profile.dailyQuota.triage, newWords: profile.dailyQuota.newWords,
-        })
-  const [plan, setPlan] = useState<SessionPlan>(build)
-  // 调试出口（测试用）：window.__plan 暴露当前组牌
-  useEffect(() => { ;(window as unknown as { __plan?: SessionPlan }).__plan = plan }, [plan])
-
-  const [idx, setIdx] = useState(0)
-  const [done, setDone] = useState(false)
-  const [streak, setStreak] = useState(0)
-  const card = plan.cards[idx]
-
-  // 再来一轮：用最新档案重建（已摸底/已学的不再进场）
-  const restart = () => { setPlan(build()); setIdx(0); setDone(false); setStreak(0) }
-
-  if (done || !card) {
-    return <EndScreen plan={plan} onRestart={restart} />
+export default function EnglishCard({
+  ds, card, onDone,
+}: { ds: Dataset; card: SessionCard; onDone: (result: EnglishReviewResult) => void }) {
+  if (card.kind === 'triage') {
+    return <TriageCard card={card} onDone={(verdict) => onDone({ kind: 'triage', verdict })} />
   }
-
-  const next = () => (idx + 1 >= plan.cards.length ? setDone(true) : setIdx(idx + 1))
-  const bump = (good: boolean) => setStreak((s) => (good ? s + 1 : 0))
-
-  return (
-    <div className="mx-auto flex min-h-[calc(100dvh-3.5rem)] w-full max-w-2xl flex-col px-5 sm:px-8">
-      {/* 顶部：进度 + 连击 */}
-      <div className="flex items-center gap-4 py-4">
-        <div className="duo-track flex-1">
-          <div className="duo-fill" style={{ width: `${(idx / plan.cards.length) * 100}%` }} />
-        </div>
-        <AnimatePresence mode="popLayout">
-          {streak >= 2 && (
-            <motion.span
-              key="streak"
-              initial={{ scale: 0.4, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.4, opacity: 0 }}
-              className="text-sm font-black text-duo-gold-dark"
-            >
-              🔥{streak}
-            </motion.span>
-          )}
-        </AnimatePresence>
-        <span className="text-[13px] font-extrabold tabular-nums text-ink-faint">
-          {idx + 1}/{plan.cards.length}
-        </span>
-      </div>
-
-      {/* 题目区：垂直居中 */}
-      <div className="flex flex-1 flex-col justify-center py-6">
-        <AnimatePresence mode="wait" initial={false}>
-          <motion.div
-            key={`${card.key}-${card.kind}-${idx}`}
-            initial={reduce ? false : { x: 80, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={reduce ? undefined : { x: -50, opacity: 0 }}
-            transition={{ duration: 0.26, ease: EASE }}
-          >
-            {card.kind === 'triage' && (
-              <TriageCard card={card} onDone={(v) => { doTriage(card.key, v); bump(true); next() }} />
-            )}
-            {card.kind === 'newWord' && (
-              <NewWordCard
-                ds={ds} card={card} bump={bump}
-                onDone={(r) => {
-                  if (request.mode === 'formal') {
-                    doAnswer(card.key, 'w1', Rating.Easy)
-                    doAnswer(card.key, 'w2', r)
-                  }
-                  bump(r !== Rating.Again)
-                  next()
-                }}
-              />
-            )}
-            {(card.kind === 'review' || card.kind === 'spellSpot' || card.kind === 'fluentSpot') && (
-              <ReviewCard
-                ds={ds} card={card} bump={bump}
-                onDone={(r) => { if (request.mode === 'formal') doAnswer(card.key, card.dim ?? 'w2', r); bump(r !== Rating.Again); next() }}
-              />
-            )}
-          </motion.div>
-        </AnimatePresence>
-      </div>
-    </div>
-  )
+  const review = (rating: Rating) => onDone({ kind: 'review', rating })
+  if (card.kind === 'newWord') return <NewWordCard ds={ds} card={card} onDone={review} />
+  return <ReviewCard ds={ds} card={card} onDone={review} />
 }
 
 /* 舞台分区组件：prompt 在上（自动撑开居中），action 吸底 */
@@ -144,7 +55,7 @@ function Prompt({ kind, card, children }: { kind: SessionCard['kind']; card: Ses
   return (
     <div className={"rounded-[28px] px-4 py-8 sm:px-8 " + KIND_TINT[kind]}>
       <div className="flex items-center justify-center gap-2 text-[12px] font-extrabold text-ink-faint">
-        <span>{KIND_LABEL[kind]}</span>
+        <span>{kind === 'review' && card.dim === 'w1' ? '认读' : KIND_LABEL[kind]}</span>
         <span>·</span>
         <span>{card.entryKind === 'word' ? `W${card.no}` : `P${card.no}`}</span>
         {card.stars > 0 && <span className="text-duo-gold-dark">{'★'.repeat(card.stars)}</span>}
@@ -185,8 +96,8 @@ function TriageCard({ card, onDone }: { card: SessionCard; onDone: (v: TriageVer
 /* ─────────── 新词三段卡 ─────────── */
 
 function NewWordCard({
-  ds, card, bump, onDone,
-}: { ds: Dataset; card: SessionCard; bump: (g: boolean) => void; onDone: (r: Rating) => void }) {
+  ds, card, onDone,
+}: { ds: Dataset; card: SessionCard; onDone: (r: Rating) => void }) {
   const word = card.entryKind === 'word' ? ds.wordByNo.get(card.no) : undefined
   const phrase = card.entryKind === 'phrase' ? ds.phraseByNo.get(card.no) : undefined
   const entry = word ?? phrase
@@ -231,7 +142,6 @@ function NewWordCard({
       const g = grade(answer, accepted)
       setSpellGrade(g)
       setResult(g)
-      bump(g === 'exact')
     }
     return (
       <div>
@@ -306,8 +216,8 @@ function NewWordCard({
 /* ─────────── 复习卡 ─────────── */
 
 function ReviewCard({
-  ds, card, bump, onDone,
-}: { ds: Dataset; card: SessionCard; bump: (g: boolean) => void; onDone: (r: Rating) => void }) {
+  ds, card, onDone,
+}: { ds: Dataset; card: SessionCard; onDone: (r: Rating) => void }) {
   const word = card.entryKind === 'word' ? ds.wordByNo.get(card.no) : undefined
   const phrase = card.entryKind === 'phrase' ? ds.phraseByNo.get(card.no) : undefined
   const zh = word ? word.senses.map((s) => `${s.pos} ${s.zh}`).join('；') : (phrase?.meaning ?? '')
@@ -346,7 +256,7 @@ function ReviewCard({
             <RatingRow auto={autoRating} picked={picked} onPick={setPicked} />
             <div className="mt-4 flex justify-center">
               <button className="push w-full max-w-sm !py-4 text-lg" disabled={picked === null}
-                onClick={() => { bump(picked !== Rating.Again); onDone(picked!) }}>
+                onClick={() => { if (picked !== null) onDone(picked) }}>
                 继续
               </button>
             </div>
@@ -363,7 +273,6 @@ function ReviewCard({
     const g = grade(answer, accepted)
     setAutoRating(g === 'exact' ? Rating.Good : g === 'near' ? Rating.Hard : Rating.Again)
     setRevealed(true)
-    bump(g !== 'wrong')
   }
   return (
     <div>
@@ -482,32 +391,6 @@ function RatingRow({
           {label}{r === auto && <span className="ml-1 opacity-60">建议</span>}
         </motion.button>
       ))}
-    </div>
-  )
-}
-
-/* ─────────── 结束页 ─────────── */
-
-function EndScreen({ plan, onRestart }: { plan: SessionPlan; onRestart: () => void }) {
-  const reduce = useReducedMotion()
-  const items = Object.entries(plan.stats).filter(([, n]) => n > 0)
-  return (
-    <div className="mx-auto flex min-h-[calc(100dvh-3.5rem)] max-w-2xl flex-col items-center justify-center px-5 text-center sm:px-8">
-      <motion.div
-        animate={reduce ? undefined : { rotate: [0, -8, 8, 0] }}
-        transition={{ delay: 0.25, duration: 0.6 }}
-        className="text-5xl"
-        style={{ fontFamily: 'Georgia, serif', color: '#567d4f' }}
-      >
-        ✓
-      </motion.div>
-      <h2 className="mt-4 text-[32px] font-black text-duo-green-dark">本场完成</h2>
-      <div className="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[14px] font-extrabold text-ink-soft">
-        {items.map(([k, n]) => (
-          <span key={k}>{KIND_LABEL[k as SessionCard['kind']]} <span className="text-ink">{n}</span></span>
-        ))}
-      </div>
-      <button className="push mt-9 px-14 py-4 text-lg" onClick={onRestart}>再来一轮</button>
     </div>
   )
 }

@@ -4,8 +4,9 @@ import { loadDataset, type Dataset } from './lib/data'
 import ProductToday from './views/ProductToday'
 import PracticeLauncher from './views/PracticeLauncher'
 import ProductLibrary from './views/ProductLibrary'
-import Study from './views/Study'
-import ChineseStudy from './views/ChineseStudy'
+import PracticeSession from './views/PracticeSession'
+import Goals from './views/Goals'
+import { parsePracticeRequest } from './lib/product-types'
 import ProductProgress from './views/ProductProgress'
 import { AccountGate, AccountChip } from './views/AccountGate'
 
@@ -14,31 +15,34 @@ const nav = [
   ['/practice', '专项训练', '↗'],
   ['/library', '内容库', '▤'],
   ['/progress', '进度', '◎'],
+  ['/settings', '设置', '⚙'],
 ]
 
 function PracticeRoute({ ds }: { ds: Dataset }) {
   const [params] = useSearchParams()
-  return params.get('scope') ? <Study ds={ds} /> : <PracticeLauncher />
+  if (!params.has('scope')) return <PracticeLauncher ds={ds} />
+  const request = parsePracticeRequest(params.toString())
+  return request ? <PracticeSession key={JSON.stringify(request)} ds={ds} request={request} />
+    : <section className="empty-state"><h1>练习范围无效</h1><NavLink to="/practice">返回专项训练</NavLink></section>
 }
 
 export default function App() {
   const [ds, setDs] = useState<Dataset | null>(null)
   const [error, setError] = useState('')
   const location = useLocation()
-  const days = Math.max(0, Math.ceil((new Date('2027-06-13').getTime() - Date.now()) / 86400000))
+  const pathname = location.pathname.replace(/\/+$/, '') || '/'
 
   useEffect(() => { loadDataset().then(setDs).catch((e) => setError(String(e))) }, [])
 
-  const isFocusPage = ['/study', '/chinese'].includes(location.pathname) || location.pathname === '/practice' && Boolean(location.search)
+  const isFocusPage = ['/study', '/chinese'].includes(pathname) || pathname === '/practice' && Boolean(location.search)
 
   return (
     <div className="workspace">
       <aside className="sidebar">
         <NavLink to="/today" className="wordmark">
           <span className="brand-mark">中<span>↗</span></span>
-          <div>中考复习<small>ZHONGKAO REVIEW</small></div>
+          <div>中考复习</div>
         </NavLink>
-        <div className="nav-caption">我的学习空间</div>
         <nav>
           {nav.map(([to, label, icon]) => (
             <NavLink key={to} to={to} end={to === '/today'} className={({ isActive }) => 'side-link' + (isActive ? ' active' : '')}>
@@ -46,12 +50,12 @@ export default function App() {
             </NavLink>
           ))}
         </nav>
-        <div className="sidebar-note"><div className="tiny-label">KEEP SHOWING UP</div><p>A little,<br />every day.</p><span>每一次复习，都会留下痕迹。</span><div className="note-rule" /><span>距离中考 <b>{days}</b> 天</span></div>
+        <div className="mt-auto" />
         <AccountChip />
       </aside>
       <div className="workspace-body">
         <header className="workspace-header">
-          <div className="breadcrumb">我的学习空间 <span>/</span> <b>{nav.find((n) => n[0] === location.pathname)?.[1] ?? '今天'}</b></div>
+          <div className="breadcrumb">我的学习空间 <span>/</span> <b>{nav.find((n) => n[0] === pathname)?.[1] ?? '今天'}</b></div>
           <div className="header-right"><span>{new Intl.DateTimeFormat('zh-CN', { month: 'long', day: 'numeric', weekday: 'long' }).format(new Date())}</span><div className="profile-mark">我</div></div>
         </header>
         <div className={'page-content' + (isFocusPage ? ' focus-page' : '')}>
@@ -62,13 +66,14 @@ export default function App() {
                 <Route path="/today" element={<ProductToday ds={ds} />} />
                 <Route path="/practice" element={<PracticeRoute ds={ds} />} />
                 <Route path="/library" element={<ProductLibrary ds={ds} />} />
-                <Route path="/study" element={<Study ds={ds} />} />
-                <Route path="/chinese" element={<ChineseStudy />} />
+                <Route path="/study" element={<Navigate to="/practice?subject=english&scope=today" replace />} />
+                <Route path="/chinese" element={<Navigate to="/practice?subject=chinese&scope=today" replace />} />
+                <Route path="/settings" element={<Goals />} />
+                <Route path="/goals" element={<Navigate to="/settings" replace />} />
                 <Route path="/progress" element={<ProductProgress ds={ds} />} />
                 <Route path="*" element={<Navigate to="/today" replace />} />
               </Routes>}
         </div>
-        <footer className="workspace-footer"><span>ZHONGKAO REVIEW</span><span>学过的，值得记住。</span></footer>
       </div>
       <AccountGate />
     </div>
