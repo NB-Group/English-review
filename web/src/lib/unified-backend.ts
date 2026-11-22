@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 import type { ChineseGrade, UserProfile } from '../types'
+import type { VocabularyAssist } from './vocabulary-assist'
 import { restoreMigratedProfile, type UnifiedLearningState, type UnifiedPreferences } from './migration-map'
 
 export interface UnifiedReviewEvent {
@@ -21,6 +22,7 @@ export interface UnifiedBackend {
   loadProfile(defaults: UserProfile): Promise<UserProfile>
   updatePreferences(ownerId: string, preferences: UnifiedPreferences): Promise<void>
   appendReviewEvent(ownerId: string, event: UnifiedReviewEvent): Promise<void>
+  assistVocabulary: VocabularyAssist
 }
 
 function authEmail(username: string): string {
@@ -65,6 +67,10 @@ export function createUnifiedBackend(url: string, anonKey: string): UnifiedBacke
       } : null
     },
     signIn,
+    assistVocabulary: async (body, signal) => {
+      const { data, error } = await client.functions.invoke('study-vocabulary-assist', { body, signal })
+      return error ? {} : data ?? {}
+    },
     signUp: async (username, password, inviteLink) => {
       const { error } = await client.functions.invoke('register-student', { body: { username, password, inviteLink } })
       if (error) throw error

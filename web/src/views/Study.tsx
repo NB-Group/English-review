@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 import type { Dataset } from '../lib/data'
 import type { TriageVerdict } from '../types'
@@ -6,7 +6,8 @@ import type { SessionCard } from '../lib/engine'
 import { Rating } from '../lib/fsrs'
 import { getEnglishExample } from '../lib/english-example'
 import { grade, type Grade } from '../lib/grader'
-import { composeHintedAnswer, firstCharacterHint } from '../lib/hints'
+import { contextHint, firstCharacterHint, spellingSubmission } from '../lib/hints'
+import { useStudyCloud } from '../lib/study-cloud'
 import { speak } from '../lib/tts'
 
 const EASE = [0.16, 1, 0.3, 1] as const
@@ -94,6 +95,62 @@ function TriageCard({ card, onDone }: { card: SessionCard; onDone: (v: TriageVer
   )
 }
 
+function useSpellingCheck(expected: string, clue: string) {
+  const assist = useStudyCloud()?.assistVocabulary
+  const request = useRef<AbortController | null>(null)
+  const [checking, setChecking] = useState(false)
+  const [result, setResult] = useState<{ grade: Grade; answer: string; ai: boolean }>()
+  useEffect(() => () => request.current?.abort(), [])
+
+  async function submit(input: string) {
+    if (request.current || result || !input.trim()) return
+    const answer = spellingSubmission(expected, input)
+    const local = grade(answer, [expected])
+    if (local === 'exact' || !assist || !clue) {
+      setResult({ grade: local, answer, ai: false })
+      return
+    }
+
+    const controller = new AbortController()
+    request.current = controller
+    const timeout = setTimeout(() => controller.abort(), 4500)
+    setChecking(true)
+    const review = await assist({ intent: 'grade', expected, clue, answer }, controller.signal).catch(() => ({} as { grade?: Grade }))
+    clearTimeout(timeout)
+    if (request.current !== controller) return
+    request.current = null
+    const ai = !controller.signal.aborted && ['exact', 'near', 'wrong'].includes(review.grade ?? '')
+    const refined = ai && review.grade !== 'wrong' ? review.grade ?? local : local
+    setResult({ grade: refined, answer, ai })
+    setChecking(false)
+  }
+  return { checking, result, submit }
+}
+
+function SpellingHint({ expected, clue, example }: { expected: string; clue: string; example?: string }) {
+  const assist = useStudyCloud()?.assistVocabulary
+  const [shown, setShown] = useState(false)
+  const [aiHint, setAiHint] = useState('')
+  const request = useRef<AbortController | null>(null)
+  useEffect(() => () => request.current?.abort(), [])
+  const local = contextHint(expected, example)
+  async function show() {
+    setShown(true)
+    if (!assist || !clue) return
+    const controller = new AbortController()
+    request.current = controller
+    const timeout = setTimeout(() => controller.abort(), 4500)
+    const response = await assist({ intent: 'hint', expected, clue }, controller.signal).catch(() => ({} as { hint?: string }))
+    clearTimeout(timeout)
+    if (!controller.signal.aborted && response.hint) setAiHint(response.hint)
+  }
+  if (shown) return <div className="mt-4 space-y-2 text-sm leading-relaxed text-ink-soft" aria-live="polite">
+    {local && <p>{local}</p>}
+    {aiHint && <p>{aiHint}</p>}
+  </div>
+  return <button className="choice mt-4" onClick={() => void show()}>查看提示</button>
+}
+
 /* ─────────── 新词三段卡 ─────────── */
 
 function NewWordCard({
@@ -108,8 +165,7 @@ function NewWordCard({
   const recognitionOnly = card.dim === 'w1'
   const [step, setStep] = useState(card.priorTriage === 'recognize' ? 1 : 0)
   const [input, setInput] = useState('')
-  const [result, setResult] = useState<Grade | null>(null)
-  const [spellGrade, setSpellGrade] = useState<Grade>('wrong')
+  const { result, checking, submit } = useSpellingCheck(card.headword, zh)
 
   useEffect(() => {
     if (step <= 1 && card.priorTriage !== 'recognize') speak(card.headword)
@@ -137,14 +193,7 @@ function NewWordCard({
   }
 
   if (!recognitionOnly && step === 1) {
-    const accepted = [card.headword, ...card.headword.split('/')].map((s) => s.trim()).filter(Boolean)
     const hint = firstCharacterHint(card.headword)
-    const submit = () => {
-      const answer = composeHintedAnswer(hint, input)
-      const g = grade(answer, accepted)
-      setSpellGrade(g)
-      setResult(g)
-    }
     return (
       <div>
         <Prompt kind="newWord" card={card}>
@@ -152,6 +201,7 @@ function NewWordCard({
           <p className="mt-5 text-[14px] font-bold text-ink-faint">
             {typeof window !== 'undefined' && 'speechSynthesis' in window ? '听音拼词' : '本设备无法朗读，凭记忆拼写'}
           </p>
+          {!result && <SpellingHint expected={card.headword} clue={zh} example={example?.en} />}
         </Prompt>
         <div className="mt-8">
           <div className="relative">
@@ -166,21 +216,21 @@ function NewWordCard({
               className="duo-input dictation-input text-left"
               placeholder="凭读音拼出来"
               value={input}
-              disabled={result !== null}
+              disabled={checking || !!result}
               onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && !result && input.trim() && submit()}
+              onKeyDown={(e) => e.key === 'Enter' && void submit(input)}
             />
           </div>
-          {result === null ? (
+          {!result ? (
             <div className="mt-5 flex justify-center">
-              <button className="push w-full max-w-sm !py-4 text-lg" disabled={!input.trim()} onClick={submit}>
-                检查
+              <button className="push w-full max-w-sm !py-4 text-lg" disabled={checking || !input.trim()} onClick={() => void submit(input)}>
+                {checking ? 'AI 复核中…' : '检查'}
               </button>
             </div>
           ) : (
             <Feedback
-              grade={result} answer={card.headword} yours={composeHintedAnswer(hint, input)}
-              onContinue={() => { setResult(null); setInput(''); setStep(2) }}
+              grade={result.grade} answer={card.headword} yours={result.answer} ai={result.ai}
+              onContinue={() => setStep(2)}
               continueLabel="继续"
             />
           )}
@@ -189,7 +239,7 @@ function NewWordCard({
     )
   }
 
-  const finalRating = recognitionOnly || spellGrade === 'exact' ? Rating.Good : spellGrade === 'near' ? Rating.Hard : Rating.Again
+  const finalRating = recognitionOnly || result?.grade === 'exact' ? Rating.Good : result?.grade === 'near' ? Rating.Hard : Rating.Again
   return (
     <div>
       <Prompt kind="newWord" card={card}>
@@ -225,8 +275,8 @@ function ReviewCard({
   const zh = word ? word.senses.map((s) => `${s.pos} ${s.zh}`).join('；') : (phrase?.meaning ?? '')
   const [input, setInput] = useState('')
   const [revealed, setRevealed] = useState(false)
-  const [autoRating, setAutoRating] = useState<Rating>(Rating.Good)
   const [picked, setPicked] = useState<Rating | null>(null)
+  const { result, checking, submit } = useSpellingCheck(card.headword, zh)
 
   const isW1 = card.dim === 'w1'
   useEffect(() => { if (isW1) speak(card.headword) }, [card.key, isW1, card.headword])
@@ -255,7 +305,7 @@ function ReviewCard({
         </Prompt>
         {revealed && (
           <div className="mt-10">
-            <RatingRow auto={autoRating} picked={picked} onPick={setPicked} />
+            <RatingRow auto={Rating.Good} picked={picked} onPick={setPicked} />
             <div className="mt-4 flex justify-center">
               <button className="push w-full max-w-sm !py-4 text-lg" disabled={picked === null}
                 onClick={() => { if (picked !== null) onDone(picked) }}>
@@ -268,19 +318,14 @@ function ReviewCard({
     )
   }
 
-  const accepted = [card.headword, ...card.headword.split('/')].map((s) => s.trim()).filter(Boolean)
   const hint = firstCharacterHint(card.headword)
-  const submit = () => {
-    const answer = composeHintedAnswer(hint, input)
-    const g = grade(answer, accepted)
-    setAutoRating(g === 'exact' ? Rating.Good : g === 'near' ? Rating.Hard : Rating.Again)
-    setRevealed(true)
-  }
+  const autoRating = result?.grade === 'exact' ? Rating.Good : result?.grade === 'near' ? Rating.Hard : Rating.Again
   return (
     <div>
       <Prompt kind={card.kind} card={card}>
         <p className="text-[14px] font-bold text-ink-faint">拼写</p>
         <div className="mt-4 text-[26px] font-extrabold leading-snug text-ink sm:text-[30px]">{zh}</div>
+        {!result && <SpellingHint expected={card.headword} clue={zh} example={getEnglishExample(ds, card.entryKind, card.no)?.en} />}
       </Prompt>
       <div className="mt-10">
         <div className="relative">
@@ -295,21 +340,20 @@ function ReviewCard({
             className="duo-input dictation-input text-left"
             placeholder="输入英文"
             value={input}
-            disabled={revealed}
+            disabled={checking || !!result}
             onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && !revealed && input.trim() && submit()}
+            onKeyDown={(e) => e.key === 'Enter' && void submit(input)}
           />
         </div>
-        {!revealed ? (
+        {!result ? (
           <div className="mt-5 flex justify-center">
-            <button className="push w-full max-w-sm !py-4 text-lg" disabled={!input.trim()} onClick={submit}>
-              检查
+            <button className="push w-full max-w-sm !py-4 text-lg" disabled={checking || !input.trim()} onClick={() => void submit(input)}>
+              {checking ? 'AI 复核中…' : '检查'}
             </button>
           </div>
         ) : (
           <Feedback
-            grade={autoRating === Rating.Good ? 'exact' : autoRating === Rating.Hard ? 'near' : 'wrong'}
-            answer={card.headword} yours={composeHintedAnswer(hint, input)}
+            grade={result.grade} answer={card.headword} yours={result.answer} ai={result.ai}
             onContinue={() => onDone(picked ?? autoRating)}
             continueLabel="继续"
           >
@@ -324,11 +368,12 @@ function ReviewCard({
 /* ─────────── 反馈面板 ─────────── */
 
 function Feedback({
-  grade, answer, yours, onContinue, continueLabel, children,
+  grade, answer, yours, ai, onContinue, continueLabel, children,
 }: {
   grade: Grade
   answer: string
   yours: string
+  ai: boolean
   onContinue: () => void
   continueLabel: string
   children?: React.ReactNode
@@ -354,10 +399,11 @@ function Feedback({
         {ok ? '✓ ' : '✗ '}{title}
       </div>
       <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[14px] font-extrabold">
-        <span style={{ color: ink }}>正确 {shownAnswer}</span>
-        {grade !== 'exact' && yours && (
+        <span style={{ color: ink }}>{ai ? '参考答案' : '正确'} {shownAnswer}</span>
+        {(grade !== 'exact' || ai) && yours && (
           <span className="text-ink-soft">你写的 {yours}</span>
         )}
+        {ai && <span className="text-ink-soft">AI 已复核</span>}
       </div>
       {children}
       <div className="mt-4 flex justify-end">

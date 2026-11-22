@@ -26,18 +26,30 @@ function editDistance(a: string, b: string): number {
   return dp[a.length][b.length]
 }
 
+export function spellingVariants(answer: string): string[] {
+  const expand = (text: string): string[] => {
+    const optional = /\(([^()]*)\)/.exec(text)
+    if (!optional) return [text]
+    const before = text.slice(0, optional.index)
+    const after = text.slice(optional.index + optional[0].length)
+    return ['', ...optional[1].split('/')].flatMap((part) => expand(before + part.trim() + after))
+  }
+  const alternatives = answer.split(/\/(?![^()]*\))/).flatMap(expand).map((item) => item.replace(/\s+/g, ' ').trim())
+  return [...new Set(alternatives.filter(Boolean))]
+}
+
 /** user 对 accepted（可多个可接受答案）的判级 */
 export function grade(user: string, accepted: string[]): Grade {
   const u = normalize(user)
   if (!u) return 'wrong'
-  const norms = accepted.map(normalize).filter(Boolean)
+  const norms = accepted.flatMap((answer) => [answer, ...spellingVariants(answer)]).map(normalize).filter(Boolean)
   if (norms.includes(u)) return 'exact'
   const wordAlternatives = [...new Set(norms.filter((n) => !n.includes('/') && !n.includes(' ')))]
   if (wordAlternatives.length > 1) {
     const typedAlternatives = u.split(/\s*\/\s*|\s+/).filter(Boolean)
     if (
       typedAlternatives.length === wordAlternatives.length &&
-      typedAlternatives.every((word) => wordAlternatives.includes(word))
+      wordAlternatives.every((word) => typedAlternatives.includes(word))
     ) return 'exact'
   }
   // 近似：编辑距离 ≤1，或单复数差异（含 -s/-es/-ves/-ies 变化）

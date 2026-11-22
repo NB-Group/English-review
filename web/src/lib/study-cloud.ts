@@ -2,6 +2,7 @@ import { createContext, useContext } from 'react'
 import type { ChineseGrade } from '../types'
 import { STUDY_CONTENT_VERSION, type UnifiedLearningState } from './migration-map'
 import type { UnifiedReviewEvent } from './unified-backend'
+import type { VocabularyAssist } from './vocabulary-assist'
 
 export { STUDY_CONTENT_VERSION } from './migration-map'
 
@@ -9,6 +10,7 @@ export interface StudyCloud {
   accountId: string
   review?: (state: UnifiedLearningState, grade: ChineseGrade | null) => void
   guest?: boolean
+  assistVocabulary?: VocabularyAssist
   signOut: () => Promise<void>
   username: string
 }

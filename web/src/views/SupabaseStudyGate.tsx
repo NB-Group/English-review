@@ -150,7 +150,7 @@ export default function SupabaseStudyGate({
   if (account && ready && sync) {
     return (
       <StudyCloudContext.Provider value={{
-        accountId: account.id, username: account.username, review: sync,
+        accountId: account.id, username: account.username, review: sync, assistVocabulary: backend.assistVocabulary,
         signOut: async () => { await backend.signOut(); location.reload() },
       }}>
         {status && <div className="px-4 py-2 text-sm text-ink-soft" role="status">{status}</div>}
