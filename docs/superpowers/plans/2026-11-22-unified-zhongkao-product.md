@@ -80,7 +80,7 @@
 
 - [x] **Step 1: Test old English keys map to stable card IDs**
 - [x] **Step 2: Add the preference schema and migration snapshot boundary**
-- [ ] **Step 3: Add Supabase event adapter and offline queue**
+- [x] **Step 3: Add Supabase event adapter and offline queue**
 - [ ] **Step 4: Keep PythonAnywhere read-only fallback until verification completes**
 
 ### Task 5: Root deployment and cutover
@@ -90,6 +90,6 @@
 - Add: old-path redirect handling
 - Add: release verification record
 
-- [ ] **Step 1: Publish the new shell under the chosen canonical domain**
+- [x] **Step 1: Publish the new shell under the chosen canonical domain**
 - [ ] **Step 2: Verify old `/English-review` links redirect**
 - [ ] **Step 3: Verify account, content, practice and progress flows**

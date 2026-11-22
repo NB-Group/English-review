@@ -26,6 +26,7 @@
 - 建立旧英语档案到统一卡片状态的迁移映射
 - 将内容库改为语文、英语、化学统一入口
 - 增加统一进度页和化学模块占位
+- 将统一产品发布到 `https://nb-group.github.io/study/` 根站点路径
 
 ### Test Results
 | Test | Expected | Actual | Status |
