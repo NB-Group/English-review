@@ -1,0 +1,2642 @@
+[
+  {
+    "id": "segment:970e53223a62",
+    "pieceId": "piece:98aeab76bc72",
+    "order": 0,
+    "text": "移舟泊烟渚，"
+  },
+  {
+    "id": "segment:ade81d47ccd9",
+    "pieceId": "piece:98aeab76bc72",
+    "order": 1,
+    "text": "日暮客愁新。"
+  },
+  {
+    "id": "segment:e441388dc9a0",
+    "pieceId": "piece:98aeab76bc72",
+    "order": 2,
+    "text": "野旷天低树，"
+  },
+  {
+    "id": "segment:607b2432bac3",
+    "pieceId": "piece:98aeab76bc72",
+    "order": 3,
+    "text": "江清月近人。"
+  },
+  {
+    "id": "segment:abef9855b3fb",
+    "pieceId": "piece:2e12fd4564eb",
+    "order": 0,
+    "text": "黑云翻墨未遮山，白雨跳珠乱入船。"
+  },
+  {
+    "id": "segment:39b0f30c2182",
+    "pieceId": "piece:2e12fd4564eb",
+    "order": 1,
+    "text": "卷地风来忽吹散，望湖楼下水如天。"
+  },
+  {
+    "id": "segment:f41b58d5fb3b",
+    "pieceId": "piece:e55797277cab",
+    "order": 0,
+    "text": "明月别枝惊鹊，清风半夜鸣蝉。"
+  },
+  {
+    "id": "segment:3cae5ed5e9c2",
+    "pieceId": "piece:e55797277cab",
+    "order": 1,
+    "text": "稻花香里说丰年，听取蛙声一片。"
+  },
+  {
+    "id": "segment:8fda702bc4da",
+    "pieceId": "piece:e55797277cab",
+    "order": 2,
+    "text": "七八个星天外，两三点雨山前。"
+  },
+  {
+    "id": "segment:488dbe582162",
+    "pieceId": "piece:e55797277cab",
+    "order": 3,
+    "text": "旧时茅店社林边，路转溪桥忽见。"
+  },
+  {
+    "id": "segment:98549100d687",
+    "pieceId": "piece:c9a5d114fe7a",
+    "order": 0,
+    "text": "九曲黄河万里沙，浪淘风簸自天涯。"
+  },
+  {
+    "id": "segment:41995f5ab644",
+    "pieceId": "piece:c9a5d114fe7a",
+    "order": 1,
+    "text": "如今直上银河去，同到牵牛织女家。"
+  },
+  {
+    "id": "segment:2782cc3b6f5f",
+    "pieceId": "piece:9c9361815888",
+    "order": 0,
+    "text": "千里莺啼绿映红，水村山郭酒旗风。"
+  },
+  {
+    "id": "segment:7bb1e4089a47",
+    "pieceId": "piece:9c9361815888",
+    "order": 1,
+    "text": "南朝四百八十寺，多少楼台烟雨中。"
+  },
+  {
+    "id": "segment:35287d5e4e2b",
+    "pieceId": "piece:5027e37accc2",
+    "order": 0,
+    "text": "茅檐长扫净无苔，花木成畦手自栽。"
+  },
+  {
+    "id": "segment:945ba7fb9a81",
+    "pieceId": "piece:5027e37accc2",
+    "order": 1,
+    "text": "一水护田将绿绕，两山排闼送青来。"
+  },
+  {
+    "id": "segment:da28e6520bf3",
+    "pieceId": "piece:aadee4475d3f",
+    "order": 0,
+    "text": "故人具鸡黍，邀我至田家。"
+  },
+  {
+    "id": "segment:74bbe759ccf3",
+    "pieceId": "piece:aadee4475d3f",
+    "order": 1,
+    "text": "绿树村边合，青山郭外斜。"
+  },
+  {
+    "id": "segment:1593dd0cb6db",
+    "pieceId": "piece:aadee4475d3f",
+    "order": 2,
+    "text": "开轩面场圃，把酒话桑麻。"
+  },
+  {
+    "id": "segment:470e798f0ea9",
+    "pieceId": "piece:aadee4475d3f",
+    "order": 3,
+    "text": "待到重阳日，还来就菊花。"
+  },
+  {
+    "id": "segment:e54c65479826",
+    "pieceId": "piece:065e0e68282a",
+    "order": 0,
+    "text": "渭城朝雨浥轻尘，客舍青青柳色新。"
+  },
+  {
+    "id": "segment:90fd10e0036c",
+    "pieceId": "piece:065e0e68282a",
+    "order": 1,
+    "text": "劝君更尽一杯酒，西出阳关无故人。"
+  },
+  {
+    "id": "segment:67b26bd23df5",
+    "pieceId": "piece:e0ba32aa9980",
+    "order": 0,
+    "text": "黄四娘家花满蹊，千朵万朵压枝低。"
+  },
+  {
+    "id": "segment:0c56f641f67b",
+    "pieceId": "piece:e0ba32aa9980",
+    "order": 1,
+    "text": "留连戏蝶时时舞，自在娇莺恰恰啼。"
+  },
+  {
+    "id": "segment:7ba7100d4462",
+    "pieceId": "piece:c28414911d6c",
+    "order": 0,
+    "text": "胜日寻芳泗水滨，无边光景一时新。"
+  },
+  {
+    "id": "segment:34b14456d886",
+    "pieceId": "piece:c28414911d6c",
+    "order": 1,
+    "text": "等闲识得东风面，万紫千红总是春。"
+  },
+  {
+    "id": "segment:41217a74c008",
+    "pieceId": "piece:5e19b59f5b25",
+    "order": 0,
+    "text": "迢迢牵牛星，皎皎河汉女。"
+  },
+  {
+    "id": "segment:b0a7f8769864",
+    "pieceId": "piece:5e19b59f5b25",
+    "order": 1,
+    "text": "纤纤擢素手，札札弄机杼。"
+  },
+  {
+    "id": "segment:fa3dce530927",
+    "pieceId": "piece:5e19b59f5b25",
+    "order": 2,
+    "text": "终日不成章，泣涕零如雨。"
+  },
+  {
+    "id": "segment:f9461de0adb3",
+    "pieceId": "piece:5e19b59f5b25",
+    "order": 3,
+    "text": "河汉清且浅，相去复几许。"
+  },
+  {
+    "id": "segment:41745e4d664b",
+    "pieceId": "piece:5e19b59f5b25",
+    "order": 4,
+    "text": "盈盈一水间，脉脉不得语。"
+  },
+  {
+    "id": "segment:802249a0dac4",
+    "pieceId": "piece:d516cfe2385e",
+    "order": 0,
+    "text": "春城无处不飞花，寒食东风御柳斜。"
+  },
+  {
+    "id": "segment:f8f164129499",
+    "pieceId": "piece:d516cfe2385e",
+    "order": 1,
+    "text": "日暮汉宫传蜡烛，轻烟散入五侯家。"
+  },
+  {
+    "id": "segment:bd2b9f1ea9f8",
+    "pieceId": "piece:c9305459a9f1",
+    "order": 0,
+    "text": "中庭地白树栖鸦，冷露无声湿桂花。"
+  },
+  {
+    "id": "segment:720b1c727ca3",
+    "pieceId": "piece:c9305459a9f1",
+    "order": 1,
+    "text": "今夜月明人尽望，不知秋思落谁家。"
+  },
+  {
+    "id": "segment:06ee9e4c3d06",
+    "pieceId": "piece:b51103a75fee",
+    "order": 0,
+    "text": "垂緌饮清露，流响出疏桐。"
+  },
+  {
+    "id": "segment:5cbd805be1d5",
+    "pieceId": "piece:b51103a75fee",
+    "order": 1,
+    "text": "居高声自远，非是藉秋风。"
+  },
+  {
+    "id": "segment:ef5cd2fc58fc",
+    "pieceId": "piece:ffdf72e4e3f4",
+    "order": 0,
+    "text": "大漠沙如雪，燕山月似钩。"
+  },
+  {
+    "id": "segment:1235b0879bce",
+    "pieceId": "piece:ffdf72e4e3f4",
+    "order": 1,
+    "text": "何当金络脑，快走踏清秋。"
+  },
+  {
+    "id": "segment:26d10e6a5343",
+    "pieceId": "piece:57b2258312b1",
+    "order": 0,
+    "text": "咬定青山不放松，立根原在破岩中。"
+  },
+  {
+    "id": "segment:a5f476f6bc3d",
+    "pieceId": "piece:57b2258312b1",
+    "order": 1,
+    "text": "千磨万击还坚劲，任尔东西南北风。"
+  },
+  {
+    "id": "segment:ff48dd8607ed",
+    "pieceId": "piece:049aa77a91fd",
+    "order": 0,
+    "text": "青青园中葵，朝露待日晞。"
+  },
+  {
+    "id": "segment:abc637c3a61a",
+    "pieceId": "piece:049aa77a91fd",
+    "order": 1,
+    "text": "阳春布德泽，万物生光辉。"
+  },
+  {
+    "id": "segment:f2b6bc279590",
+    "pieceId": "piece:049aa77a91fd",
+    "order": 2,
+    "text": "常恐秋节至，焜黄华叶衰。"
+  },
+  {
+    "id": "segment:c51d0a2ca276",
+    "pieceId": "piece:049aa77a91fd",
+    "order": 3,
+    "text": "百川东到海，何时复西归？"
+  },
+  {
+    "id": "segment:e8572f340a79",
+    "pieceId": "piece:049aa77a91fd",
+    "order": 4,
+    "text": "少壮不努力，老大徒伤悲。"
+  },
+  {
+    "id": "segment:74c5453e9189",
+    "pieceId": "piece:eb6a9e4a4d16",
+    "order": 0,
+    "text": "两个黄鹂鸣翠柳，一行白鹭上青天。"
+  },
+  {
+    "id": "segment:c48e47849110",
+    "pieceId": "piece:eb6a9e4a4d16",
+    "order": 1,
+    "text": "窗含西岭千秋雪，门泊东吴万里船。"
+  },
+  {
+    "id": "segment:6e880e5795df",
+    "pieceId": "piece:93a3bb5dfccd",
+    "order": 0,
+    "text": "春阴垂野草青青，时有幽花一树明。"
+  },
+  {
+    "id": "segment:0ebb1c755fe9",
+    "pieceId": "piece:93a3bb5dfccd",
+    "order": 1,
+    "text": "晚泊孤舟古祠下，满川风雨看潮生。"
+  },
+  {
+    "id": "segment:45060e5c6c4e",
+    "pieceId": "piece:3c03e199b69b",
+    "order": 0,
+    "text": "半亩方塘一鉴开，天光云影共徘徊。"
+  },
+  {
+    "id": "segment:6d86b201a674",
+    "pieceId": "piece:3c03e199b69b",
+    "order": 1,
+    "text": "问渠那得清如许？为有源头活水来。"
+  },
+  {
+    "id": "segment:3bb54f78b181",
+    "pieceId": "piece:ee862d6f9ac9",
+    "order": 0,
+    "text": "东临碣石，以观沧海。"
+  },
+  {
+    "id": "segment:bc8cc5ac3ac0",
+    "pieceId": "piece:ee862d6f9ac9",
+    "order": 1,
+    "text": "水何澹澹，山岛竦峙。"
+  },
+  {
+    "id": "segment:f693a7faa7a5",
+    "pieceId": "piece:ee862d6f9ac9",
+    "order": 2,
+    "text": "树木丛生，百草丰茂。"
+  },
+  {
+    "id": "segment:1bc787e9ae21",
+    "pieceId": "piece:ee862d6f9ac9",
+    "order": 3,
+    "text": "秋风萧瑟，洪波涌起。"
+  },
+  {
+    "id": "segment:3b727789b72c",
+    "pieceId": "piece:ee862d6f9ac9",
+    "order": 4,
+    "text": "日月之行，若出其中；"
+  },
+  {
+    "id": "segment:a7abc70bd29a",
+    "pieceId": "piece:ee862d6f9ac9",
+    "order": 5,
+    "text": "星汉灿烂，若出其里。"
+  },
+  {
+    "id": "segment:76956cc6e533",
+    "pieceId": "piece:ee862d6f9ac9",
+    "order": 6,
+    "text": "幸甚至哉，歌以咏志。"
+  },
+  {
+    "id": "segment:2f2c0f9e4a83",
+    "pieceId": "piece:e5697a12ab61",
+    "order": 0,
+    "text": "客路青山外，行舟绿水前。"
+  },
+  {
+    "id": "segment:b10e9f4b1527",
+    "pieceId": "piece:e5697a12ab61",
+    "order": 1,
+    "text": "潮平两岸阔，风正一帆悬。"
+  },
+  {
+    "id": "segment:ebeb553c5bb6",
+    "pieceId": "piece:e5697a12ab61",
+    "order": 2,
+    "text": "海日生残夜，江春入旧年。"
+  },
+  {
+    "id": "segment:789e5704d3f6",
+    "pieceId": "piece:e5697a12ab61",
+    "order": 3,
+    "text": "乡书何处达？归雁洛阳边。"
+  },
+  {
+    "id": "segment:b8ac8f65e355",
+    "pieceId": "piece:e6eafca7f406",
+    "order": 0,
+    "text": "杨花落尽子规啼，闻道龙标过五溪。"
+  },
+  {
+    "id": "segment:83830b703ec6",
+    "pieceId": "piece:e6eafca7f406",
+    "order": 1,
+    "text": "我寄愁心与明月，随君直到夜郎西。"
+  },
+  {
+    "id": "segment:43b90fc17e6d",
+    "pieceId": "piece:c5a485af18e1",
+    "order": 0,
+    "text": "枯藤老树昏鸦，小桥流水人家，古道西风瘦马。"
+  },
+  {
+    "id": "segment:52aa2a10dc70",
+    "pieceId": "piece:c5a485af18e1",
+    "order": 1,
+    "text": "夕阳西下，断肠人在天涯。"
+  },
+  {
+    "id": "segment:89bdb3f103e4",
+    "pieceId": "piece:1c8b857792dc",
+    "order": 0,
+    "text": "峨眉山月半轮秋，影入平羌江水流。"
+  },
+  {
+    "id": "segment:a5e112ad4537",
+    "pieceId": "piece:1c8b857792dc",
+    "order": 1,
+    "text": "夜发清溪向三峡，思君不见下渝州。"
+  },
+  {
+    "id": "segment:3e21535dbca1",
+    "pieceId": "piece:f758b98acd3b",
+    "order": 0,
+    "text": "岐王宅里寻常见，崔九堂前几度闻。"
+  },
+  {
+    "id": "segment:03f4171df282",
+    "pieceId": "piece:f758b98acd3b",
+    "order": 1,
+    "text": "正是江南好风景，落花时节又逢君。"
+  },
+  {
+    "id": "segment:77c6d2a361e8",
+    "pieceId": "piece:d2fd2840f7c1",
+    "order": 0,
+    "text": "强欲登高去，无人送酒来。"
+  },
+  {
+    "id": "segment:02a2391f0bdf",
+    "pieceId": "piece:d2fd2840f7c1",
+    "order": 1,
+    "text": "遥怜故园菊，应傍战场开。"
+  },
+  {
+    "id": "segment:f8fd80a48028",
+    "pieceId": "piece:291dce3f569e",
+    "order": 0,
+    "text": "回乐烽前沙似雪，受降城外月如霜。"
+  },
+  {
+    "id": "segment:7e9bed08299c",
+    "pieceId": "piece:291dce3f569e",
+    "order": 1,
+    "text": "不知何处吹芦管，一夜征人尽望乡。"
+  },
+  {
+    "id": "segment:54459284d009",
+    "pieceId": "piece:af2076cf0b6d",
+    "order": 0,
+    "text": "自古逢秋悲寂寥，我言秋日胜春朝。"
+  },
+  {
+    "id": "segment:8d6bf8df6550",
+    "pieceId": "piece:af2076cf0b6d",
+    "order": 1,
+    "text": "晴空一鹤排云上，便引诗情到碧霄。"
+  },
+  {
+    "id": "segment:b96616abfe08",
+    "pieceId": "piece:5593f8ec47b0",
+    "order": 0,
+    "text": "君问归期未有期，巴山夜雨涨秋池。"
+  },
+  {
+    "id": "segment:3475e606fa2d",
+    "pieceId": "piece:5593f8ec47b0",
+    "order": 1,
+    "text": "何当共剪西窗烛，却话巴山夜雨时。"
+  },
+  {
+    "id": "segment:e8eb63bb14aa",
+    "pieceId": "piece:3fedfcc55495",
+    "order": 0,
+    "text": "僵卧孤村不自哀，尚思为国戍轮台。"
+  },
+  {
+    "id": "segment:7e8afebb7a2d",
+    "pieceId": "piece:3fedfcc55495",
+    "order": 1,
+    "text": "夜阑卧听风吹雨，铁马冰河入梦来。"
+  },
+  {
+    "id": "segment:1076058040e4",
+    "pieceId": "piece:a269f67c8927",
+    "order": 0,
+    "text": "终古高云簇此城，秋风吹散马蹄声。"
+  },
+  {
+    "id": "segment:055d78b75c5d",
+    "pieceId": "piece:a269f67c8927",
+    "order": 1,
+    "text": "河流大野犹嫌束，山入潼关不解平。"
+  },
+  {
+    "id": "segment:d728df18f3fa",
+    "pieceId": "piece:4ac4391d88fe",
+    "order": 0,
+    "text": "独坐幽篁里，弹琴复长啸。"
+  },
+  {
+    "id": "segment:6499da135754",
+    "pieceId": "piece:4ac4391d88fe",
+    "order": 1,
+    "text": "深林人不知，明月来相照。"
+  },
+  {
+    "id": "segment:ad7ce20eaa82",
+    "pieceId": "piece:e9bc2d7657d8",
+    "order": 0,
+    "text": "谁家玉笛暗飞声，散入春风满洛城。"
+  },
+  {
+    "id": "segment:4c7452093a9f",
+    "pieceId": "piece:e9bc2d7657d8",
+    "order": 1,
+    "text": "此夜曲中闻折柳，何人不起故园情。"
+  },
+  {
+    "id": "segment:f06cc919c380",
+    "pieceId": "piece:01c28919e0b7",
+    "order": 0,
+    "text": "故园东望路漫漫，双袖龙钟泪不干。"
+  },
+  {
+    "id": "segment:d2bac05519f9",
+    "pieceId": "piece:01c28919e0b7",
+    "order": 1,
+    "text": "马上相逢无纸笔，凭君传语报平安。"
+  },
+  {
+    "id": "segment:c3357b0bab8d",
+    "pieceId": "piece:ba5ef9e499c0",
+    "order": 0,
+    "text": "草树知春不久归，百般红紫斗芳菲。"
+  },
+  {
+    "id": "segment:4fcc095ad619",
+    "pieceId": "piece:ba5ef9e499c0",
+    "order": 1,
+    "text": "杨花榆荚无才思，惟解漫天作雪飞。"
+  },
+  {
+    "id": "segment:187746516b87",
+    "pieceId": "piece:392ab89186eb",
+    "order": 0,
+    "text": "前不见古人，后不见来者。"
+  },
+  {
+    "id": "segment:b1be279f9d9d",
+    "pieceId": "piece:392ab89186eb",
+    "order": 1,
+    "text": "念天地之悠悠，独怆然而涕下！"
+  },
+  {
+    "id": "segment:2ed72b460912",
+    "pieceId": "piece:295f184804e5",
+    "order": 0,
+    "text": "岱宗夫如何？齐鲁青未了。"
+  },
+  {
+    "id": "segment:d364852d3b3b",
+    "pieceId": "piece:295f184804e5",
+    "order": 1,
+    "text": "造化钟神秀，阴阳割昏晓。"
+  },
+  {
+    "id": "segment:f1426f0587e2",
+    "pieceId": "piece:295f184804e5",
+    "order": 2,
+    "text": "荡胸生曾云，决眦入归鸟。"
+  },
+  {
+    "id": "segment:b166c805deb4",
+    "pieceId": "piece:295f184804e5",
+    "order": 3,
+    "text": "会当凌绝顶，一览众山小。"
+  },
+  {
+    "id": "segment:4fa15a2227eb",
+    "pieceId": "piece:7329ae03f621",
+    "order": 0,
+    "text": "飞来山上千寻塔，闻说鸡鸣见日升。"
+  },
+  {
+    "id": "segment:ac29d8ab1c9f",
+    "pieceId": "piece:7329ae03f621",
+    "order": 1,
+    "text": "不畏浮云遮望眼，自缘身在最高层。"
+  },
+  {
+    "id": "segment:8309b603d56d",
+    "pieceId": "piece:bbebbe36a41a",
+    "order": 0,
+    "text": "莫笑农家腊酒浑，丰年留客足鸡豚。"
+  },
+  {
+    "id": "segment:8c48e683b5ea",
+    "pieceId": "piece:bbebbe36a41a",
+    "order": 1,
+    "text": "山重水复疑无路，柳暗花明又一村。"
+  },
+  {
+    "id": "segment:ae6c9794ea4f",
+    "pieceId": "piece:bbebbe36a41a",
+    "order": 2,
+    "text": "箫鼓追随春社近，衣冠简朴古风存。"
+  },
+  {
+    "id": "segment:8df8995400f5",
+    "pieceId": "piece:bbebbe36a41a",
+    "order": 3,
+    "text": "从今若许闲乘月，拄杖无时夜叩门。"
+  },
+  {
+    "id": "segment:0c9e4ec82f1e",
+    "pieceId": "piece:4acf66d7c105",
+    "order": 0,
+    "text": "浩荡离愁白日斜，吟鞭东指即天涯。"
+  },
+  {
+    "id": "segment:5349fc8d0b9e",
+    "pieceId": "piece:4acf66d7c105",
+    "order": 1,
+    "text": "落红不是无情物，化作春泥更护花。"
+  },
+  {
+    "id": "segment:2b6cc199ed00",
+    "pieceId": "piece:22cbaf23d07d",
+    "order": 0,
+    "text": "烟笼寒水月笼沙，夜泊秦淮近酒家。"
+  },
+  {
+    "id": "segment:500a0d139bd7",
+    "pieceId": "piece:22cbaf23d07d",
+    "order": 1,
+    "text": "商女不知亡国恨，隔江犹唱后庭花。"
+  },
+  {
+    "id": "segment:77ba658c1258",
+    "pieceId": "piece:1066f76683dd",
+    "order": 0,
+    "text": "宣室求贤访逐臣，贾生才调更无伦。"
+  },
+  {
+    "id": "segment:aee011104eb4",
+    "pieceId": "piece:1066f76683dd",
+    "order": 1,
+    "text": "可怜夜半虚前席，不问苍生问鬼神。"
+  },
+  {
+    "id": "segment:b8461ccc73bb",
+    "pieceId": "piece:1fc5c96d1a89",
+    "order": 0,
+    "text": "莫言下岭便无难，赚得行人错喜欢。"
+  },
+  {
+    "id": "segment:37b0ed9bd851",
+    "pieceId": "piece:1fc5c96d1a89",
+    "order": 1,
+    "text": "政入万山围子里，一山放出一山拦。"
+  },
+  {
+    "id": "segment:55b7cff11b12",
+    "pieceId": "piece:e746c6b2a9c0",
+    "order": 0,
+    "text": "黄梅时节家家雨，青草池塘处处蛙。"
+  },
+  {
+    "id": "segment:23dc21a7eb55",
+    "pieceId": "piece:e746c6b2a9c0",
+    "order": 1,
+    "text": "有约不来过夜半， 闲敲棋子落灯花。"
+  },
+  {
+    "id": "segment:4f3b8b4cb25e",
+    "pieceId": "piece:1db609b4aff0",
+    "order": 0,
+    "text": "东皋薄暮望，徙倚欲何依。"
+  },
+  {
+    "id": "segment:bb91a92da340",
+    "pieceId": "piece:1db609b4aff0",
+    "order": 1,
+    "text": "树树皆秋色， 山山唯落晖。"
+  },
+  {
+    "id": "segment:895255451d49",
+    "pieceId": "piece:1db609b4aff0",
+    "order": 2,
+    "text": "牧人驱犊返，猎马带禽归。"
+  },
+  {
+    "id": "segment:27f2eeb7f325",
+    "pieceId": "piece:1db609b4aff0",
+    "order": 3,
+    "text": "相顾无相识，长歌怀采薇。"
+  },
+  {
+    "id": "segment:6d3c33528220",
+    "pieceId": "piece:307473fafcdc",
+    "order": 0,
+    "text": "昔人已乘黄鹤去，此地空余黄鹤楼。"
+  },
+  {
+    "id": "segment:df1610b6ab21",
+    "pieceId": "piece:307473fafcdc",
+    "order": 1,
+    "text": "黄鹤一去不复返， 白云千载空悠悠。"
+  },
+  {
+    "id": "segment:4076e4ef2ccc",
+    "pieceId": "piece:307473fafcdc",
+    "order": 2,
+    "text": "晴川历历汉阳树，芳草萋萋鹦鹉洲。"
+  },
+  {
+    "id": "segment:9ea89d8d3d61",
+    "pieceId": "piece:307473fafcdc",
+    "order": 3,
+    "text": "日暮乡关何处是？烟波江上使人愁。"
+  },
+  {
+    "id": "segment:34217114eefd",
+    "pieceId": "piece:f4f8e4921290",
+    "order": 0,
+    "text": "单车欲问边，属国过居延。"
+  },
+  {
+    "id": "segment:8004fa8fdaab",
+    "pieceId": "piece:f4f8e4921290",
+    "order": 1,
+    "text": "征蓬出汉塞，归雁入胡天。"
+  },
+  {
+    "id": "segment:80d2e94eb2ba",
+    "pieceId": "piece:f4f8e4921290",
+    "order": 2,
+    "text": "大漠孤烟直，长河落日圆。"
+  },
+  {
+    "id": "segment:81274447285a",
+    "pieceId": "piece:f4f8e4921290",
+    "order": 3,
+    "text": "萧关逢候骑，都护在燕然。"
+  },
+  {
+    "id": "segment:29c41c909adf",
+    "pieceId": "piece:f2497243fc3c",
+    "order": 0,
+    "text": "渡远荆门外，来从楚国游。"
+  },
+  {
+    "id": "segment:c8361706e1a5",
+    "pieceId": "piece:f2497243fc3c",
+    "order": 1,
+    "text": "山随平野尽，江入大荒流。"
+  },
+  {
+    "id": "segment:8fece6823cef",
+    "pieceId": "piece:f2497243fc3c",
+    "order": 2,
+    "text": "月下飞天镜，云生结海楼。"
+  },
+  {
+    "id": "segment:dadf00d564f7",
+    "pieceId": "piece:f2497243fc3c",
+    "order": 3,
+    "text": "仍怜故乡水，万里送行舟。"
+  },
+  {
+    "id": "segment:40b57cfac762",
+    "pieceId": "piece:e1a347cf5a3f",
+    "order": 0,
+    "text": "孤山寺北贾亭西，水面初平云脚低。"
+  },
+  {
+    "id": "segment:a971b0bb63b9",
+    "pieceId": "piece:e1a347cf5a3f",
+    "order": 1,
+    "text": "几处早莺争暖树，谁家新燕啄春泥。"
+  },
+  {
+    "id": "segment:ba3cb4111132",
+    "pieceId": "piece:e1a347cf5a3f",
+    "order": 2,
+    "text": "乱花渐欲迷人眼，浅草才能没马蹄。"
+  },
+  {
+    "id": "segment:b4d82b127bc7",
+    "pieceId": "piece:e1a347cf5a3f",
+    "order": 3,
+    "text": "最爱湖东行不足，绿杨阴里白沙堤。"
+  },
+  {
+    "id": "segment:d9bfc614eed1",
+    "pieceId": "piece:27a3adea69a8",
+    "order": 0,
+    "text": "庭中有奇树，绿叶发华滋。"
+  },
+  {
+    "id": "segment:60d882df23d6",
+    "pieceId": "piece:27a3adea69a8",
+    "order": 1,
+    "text": "攀条折其荣，将以遗所思。"
+  },
+  {
+    "id": "segment:cc38eeba51c6",
+    "pieceId": "piece:27a3adea69a8",
+    "order": 2,
+    "text": "馨香盈怀袖，路远莫致之。"
+  },
+  {
+    "id": "segment:4c0aa9d0e88e",
+    "pieceId": "piece:27a3adea69a8",
+    "order": 3,
+    "text": "此物何足贵？但感别经时。"
+  },
+  {
+    "id": "segment:33f344074e2c",
+    "pieceId": "piece:a95282aa8610",
+    "order": 0,
+    "text": "神龟虽寿，犹有竟时；"
+  },
+  {
+    "id": "segment:b5ac21a433e8",
+    "pieceId": "piece:a95282aa8610",
+    "order": 1,
+    "text": "腾蛇乘雾，终为土灰。"
+  },
+  {
+    "id": "segment:19d64bc97945",
+    "pieceId": "piece:a95282aa8610",
+    "order": 2,
+    "text": "老骥伏枥，志在千里；"
+  },
+  {
+    "id": "segment:a483c83d0c3a",
+    "pieceId": "piece:a95282aa8610",
+    "order": 3,
+    "text": "烈士暮年，壮心不已。"
+  },
+  {
+    "id": "segment:f37d70becc12",
+    "pieceId": "piece:a95282aa8610",
+    "order": 4,
+    "text": "盈缩之期，不但在天；"
+  },
+  {
+    "id": "segment:f0315a7217da",
+    "pieceId": "piece:a95282aa8610",
+    "order": 5,
+    "text": "养怡之福，可得永年。"
+  },
+  {
+    "id": "segment:7250779cb418",
+    "pieceId": "piece:a95282aa8610",
+    "order": 6,
+    "text": "幸甚至哉，歌以咏志。"
+  },
+  {
+    "id": "segment:65995566ac50",
+    "pieceId": "piece:77080e971fde",
+    "order": 0,
+    "text": "亭亭山上松，瑟瑟谷中风。"
+  },
+  {
+    "id": "segment:2594e5bdda85",
+    "pieceId": "piece:77080e971fde",
+    "order": 1,
+    "text": "风声一何盛，松枝一何劲！"
+  },
+  {
+    "id": "segment:c337090af436",
+    "pieceId": "piece:77080e971fde",
+    "order": 2,
+    "text": "冰霜正惨凄，终岁常端正。"
+  },
+  {
+    "id": "segment:a1229af3c201",
+    "pieceId": "piece:77080e971fde",
+    "order": 3,
+    "text": "岂不罹凝寒？松柏有本性。"
+  },
+  {
+    "id": "segment:9d8646936263",
+    "pieceId": "piece:72b1ab2386db",
+    "order": 0,
+    "text": "八方各异气，千里殊风雨。"
+  },
+  {
+    "id": "segment:56f5827f46fa",
+    "pieceId": "piece:72b1ab2386db",
+    "order": 1,
+    "text": "剧哉边海民，寄身于草野。"
+  },
+  {
+    "id": "segment:57e7867d14e3",
+    "pieceId": "piece:72b1ab2386db",
+    "order": 2,
+    "text": "妻子象禽兽，行止依林阻。"
+  },
+  {
+    "id": "segment:3734a48e63e7",
+    "pieceId": "piece:72b1ab2386db",
+    "order": 3,
+    "text": "柴门何萧条，狐兔翔我宇。"
+  },
+  {
+    "id": "segment:a8aa0affa841",
+    "pieceId": "piece:d962a5783f82",
+    "order": 0,
+    "text": "结庐在人境，而无车马喧。"
+  },
+  {
+    "id": "segment:b2f6642bef81",
+    "pieceId": "piece:d962a5783f82",
+    "order": 1,
+    "text": "问君何能尔？心远地自偏。"
+  },
+  {
+    "id": "segment:5c174a233b74",
+    "pieceId": "piece:d962a5783f82",
+    "order": 2,
+    "text": "采菊东篱下，悠然见南山。"
+  },
+  {
+    "id": "segment:2a9ae4b84d72",
+    "pieceId": "piece:d962a5783f82",
+    "order": 3,
+    "text": "山气日夕佳，飞鸟相与还。"
+  },
+  {
+    "id": "segment:bbd737284c63",
+    "pieceId": "piece:d962a5783f82",
+    "order": 4,
+    "text": "此中有真意，欲辨已忘言。"
+  },
+  {
+    "id": "segment:4926497993e2",
+    "pieceId": "piece:fdcfe835e385",
+    "order": 0,
+    "text": "国破山河在，城春草木深。"
+  },
+  {
+    "id": "segment:b5a9bf175d62",
+    "pieceId": "piece:fdcfe835e385",
+    "order": 1,
+    "text": "感时花溅泪，恨别鸟惊心。"
+  },
+  {
+    "id": "segment:6184733ea8bb",
+    "pieceId": "piece:fdcfe835e385",
+    "order": 2,
+    "text": "烽火连三月，家书抵万金。"
+  },
+  {
+    "id": "segment:3863ea7c746a",
+    "pieceId": "piece:fdcfe835e385",
+    "order": 3,
+    "text": "白头搔更短，浑欲不胜簪。"
+  },
+  {
+    "id": "segment:934a0ec61dab",
+    "pieceId": "piece:f9c57791e18f",
+    "order": 0,
+    "text": "黑云压城城欲摧，甲光向日金鳞开。"
+  },
+  {
+    "id": "segment:c05984df5c54",
+    "pieceId": "piece:f9c57791e18f",
+    "order": 1,
+    "text": "角声满天秋色里，塞上燕脂凝夜紫。"
+  },
+  {
+    "id": "segment:040b059efb25",
+    "pieceId": "piece:f9c57791e18f",
+    "order": 2,
+    "text": "半卷红旗临易水，霜重鼓寒声不起。"
+  },
+  {
+    "id": "segment:ce28f8151e12",
+    "pieceId": "piece:f9c57791e18f",
+    "order": 3,
+    "text": "报君黄金台上意，提携玉龙为君死。"
+  },
+  {
+    "id": "segment:7e25f1969a20",
+    "pieceId": "piece:f09d09cc7fe1",
+    "order": 0,
+    "text": "折戟沉沙铁未销，自将磨洗认前朝。"
+  },
+  {
+    "id": "segment:e9ae8ae223da",
+    "pieceId": "piece:f09d09cc7fe1",
+    "order": 1,
+    "text": "东风不与周郎便，铜雀春深锁二乔。"
+  },
+  {
+    "id": "segment:28bc1a40c921",
+    "pieceId": "piece:759b16d5fd16",
+    "order": 0,
+    "text": "天接云涛连晓雾，星河欲转千帆舞。仿佛梦魂归帝所。闻天语，殷勤问我归何处。"
+  },
+  {
+    "id": "segment:7b1f785593f0",
+    "pieceId": "piece:759b16d5fd16",
+    "order": 1,
+    "text": "我报路长嗟日暮，学诗谩有惊人句。九万里风鹏正举。风休住，蓬舟吹取三山去！"
+  },
+  {
+    "id": "segment:8b1d5463f862",
+    "pieceId": "piece:5b31ca0da3e0",
+    "order": 0,
+    "text": "一曲新词酒一杯，去年天气旧亭台。夕阳西下几时回？"
+  },
+  {
+    "id": "segment:f260d41280b3",
+    "pieceId": "piece:5b31ca0da3e0",
+    "order": 1,
+    "text": "无可奈何花落去，似曾相识燕归来。小园香径独徘徊。"
+  },
+  {
+    "id": "segment:b05eb974a9a8",
+    "pieceId": "piece:57fac7b8a021",
+    "order": 0,
+    "text": "轻舟短棹西湖好，绿水逶迤。芳草长堤，隐隐笙歌处处随。"
+  },
+  {
+    "id": "segment:1a7fff418d45",
+    "pieceId": "piece:57fac7b8a021",
+    "order": 1,
+    "text": "无风水面琉璃滑，不觉船移。微动涟漪，惊起沙禽掠岸飞。"
+  },
+  {
+    "id": "segment:dc9b675c9c43",
+    "pieceId": "piece:206773c8caa2",
+    "order": 0,
+    "text": "金陵城上西楼，倚清秋。万里夕阳垂地大江流。"
+  },
+  {
+    "id": "segment:d46a28b14923",
+    "pieceId": "piece:206773c8caa2",
+    "order": 1,
+    "text": "中原乱，簪缨散，几时收？试倩悲风吹泪过扬州。"
+  },
+  {
+    "id": "segment:95cb8104e98b",
+    "pieceId": "piece:3244ef02883c",
+    "order": 0,
+    "text": "常记溪亭日暮，沉醉不知归路。"
+  },
+  {
+    "id": "segment:863a5b9195d3",
+    "pieceId": "piece:3244ef02883c",
+    "order": 1,
+    "text": "兴尽晚回舟，误入藕花深处。"
+  },
+  {
+    "id": "segment:4f5c88e7cc37",
+    "pieceId": "piece:3244ef02883c",
+    "order": 2,
+    "text": "争渡，争渡，惊起一滩鸥鹭。"
+  },
+  {
+    "id": "segment:7f542f9408d7",
+    "pieceId": "piece:dd5cf6132b33",
+    "order": 0,
+    "text": "式微，式微，胡不归？"
+  },
+  {
+    "id": "segment:8a28e379d360",
+    "pieceId": "piece:dd5cf6132b33",
+    "order": 1,
+    "text": "微君之故，胡为乎中露？"
+  },
+  {
+    "id": "segment:35308f6f0346",
+    "pieceId": "piece:dd5cf6132b33",
+    "order": 2,
+    "text": "式微，式微，胡不归？"
+  },
+  {
+    "id": "segment:792eea93d8ae",
+    "pieceId": "piece:dd5cf6132b33",
+    "order": 3,
+    "text": "微君之躬，胡为乎泥中？"
+  },
+  {
+    "id": "segment:d07dfe5a9bed",
+    "pieceId": "piece:cb33603320f4",
+    "order": 0,
+    "text": "青青子衿，悠悠我心。"
+  },
+  {
+    "id": "segment:71d5274fc461",
+    "pieceId": "piece:cb33603320f4",
+    "order": 1,
+    "text": "纵我不往，子宁不嗣音？"
+  },
+  {
+    "id": "segment:40091766f918",
+    "pieceId": "piece:cb33603320f4",
+    "order": 2,
+    "text": "青青子佩，悠悠我思。"
+  },
+  {
+    "id": "segment:e0e8a7d658d4",
+    "pieceId": "piece:cb33603320f4",
+    "order": 3,
+    "text": "纵我不往，子宁不来？"
+  },
+  {
+    "id": "segment:e076c2eb32f9",
+    "pieceId": "piece:cb33603320f4",
+    "order": 4,
+    "text": "挑兮达兮，在城阙兮。"
+  },
+  {
+    "id": "segment:be20fe410cb6",
+    "pieceId": "piece:cb33603320f4",
+    "order": 5,
+    "text": "一日不见，如三月兮。"
+  },
+  {
+    "id": "segment:f298b358541b",
+    "pieceId": "piece:e76941f3598c",
+    "order": 0,
+    "text": "城阙辅三秦，风烟望五津。"
+  },
+  {
+    "id": "segment:a31f173f9b98",
+    "pieceId": "piece:e76941f3598c",
+    "order": 1,
+    "text": "与君离别意，同是宦游人。"
+  },
+  {
+    "id": "segment:550e5dcde998",
+    "pieceId": "piece:e76941f3598c",
+    "order": 2,
+    "text": "海内存知己，天涯若比邻。"
+  },
+  {
+    "id": "segment:c6170833f1e2",
+    "pieceId": "piece:e76941f3598c",
+    "order": 3,
+    "text": "无为在歧路，儿女共沾巾。"
+  },
+  {
+    "id": "segment:0c446fed549f",
+    "pieceId": "piece:4ce6ef37306a",
+    "order": 0,
+    "text": "八月湖水平，涵虚混太清。"
+  },
+  {
+    "id": "segment:65b67923ea78",
+    "pieceId": "piece:4ce6ef37306a",
+    "order": 1,
+    "text": "气蒸云梦泽，波撼岳阳城。"
+  },
+  {
+    "id": "segment:2e1e9a311829",
+    "pieceId": "piece:4ce6ef37306a",
+    "order": 2,
+    "text": "欲济无舟楫，端居耻圣明。"
+  },
+  {
+    "id": "segment:b6959b18c13d",
+    "pieceId": "piece:4ce6ef37306a",
+    "order": 3,
+    "text": "坐观垂钓者，徒有羡鱼情。"
+  },
+  {
+    "id": "segment:6ebb6d62bba8",
+    "pieceId": "piece:3f4b4fccbf42",
+    "order": 0,
+    "text": "暮投石壕村，有吏夜捉人。"
+  },
+  {
+    "id": "segment:8df35585040d",
+    "pieceId": "piece:3f4b4fccbf42",
+    "order": 1,
+    "text": "老翁逾墙走，老妇出门看。"
+  },
+  {
+    "id": "segment:8cc9b9a8413a",
+    "pieceId": "piece:3f4b4fccbf42",
+    "order": 2,
+    "text": "吏呼一何怒！妇啼一何苦！"
+  },
+  {
+    "id": "segment:875f64a5c9d6",
+    "pieceId": "piece:3f4b4fccbf42",
+    "order": 3,
+    "text": "听妇前致词：三男邺城戍。"
+  },
+  {
+    "id": "segment:122654251eae",
+    "pieceId": "piece:3f4b4fccbf42",
+    "order": 4,
+    "text": "一男附书至，二男新战死。"
+  },
+  {
+    "id": "segment:349644c197f9",
+    "pieceId": "piece:3f4b4fccbf42",
+    "order": 5,
+    "text": "存者且偷生，死者长已矣！"
+  },
+  {
+    "id": "segment:9ffce16a53b0",
+    "pieceId": "piece:3f4b4fccbf42",
+    "order": 6,
+    "text": "室中更无人，惟有乳下孙。"
+  },
+  {
+    "id": "segment:534ff7a99320",
+    "pieceId": "piece:3f4b4fccbf42",
+    "order": 7,
+    "text": "有孙母未去，出入无完裙。"
+  },
+  {
+    "id": "segment:23d8fe763191",
+    "pieceId": "piece:3f4b4fccbf42",
+    "order": 8,
+    "text": "老妪力虽衰，请从吏夜归。"
+  },
+  {
+    "id": "segment:67766452325d",
+    "pieceId": "piece:3f4b4fccbf42",
+    "order": 9,
+    "text": "急应河阳役，犹得备晨炊。"
+  },
+  {
+    "id": "segment:1a0e0b8971ee",
+    "pieceId": "piece:3f4b4fccbf42",
+    "order": 10,
+    "text": "夜久语声绝，如闻泣幽咽。"
+  },
+  {
+    "id": "segment:092240c8592c",
+    "pieceId": "piece:3f4b4fccbf42",
+    "order": 11,
+    "text": "天明登前途，独与老翁别。"
+  },
+  {
+    "id": "segment:e2ab2f7b040f",
+    "pieceId": "piece:610d8533b95c",
+    "order": 0,
+    "text": "八月秋高风怒号，卷我屋上三重茅。"
+  },
+  {
+    "id": "segment:770e94d1d91c",
+    "pieceId": "piece:610d8533b95c",
+    "order": 1,
+    "text": "茅飞渡江洒江郊，高者挂罥长林梢，下者飘转沉塘坳。"
+  },
+  {
+    "id": "segment:125237a9e0bf",
+    "pieceId": "piece:610d8533b95c",
+    "order": 2,
+    "text": "南村群童欺我老无力，忍能对面为盗贼。"
+  },
+  {
+    "id": "segment:666b13eb3764",
+    "pieceId": "piece:610d8533b95c",
+    "order": 3,
+    "text": "公然抱茅入竹去，唇焦口燥呼不得，归来倚杖自叹息。"
+  },
+  {
+    "id": "segment:f646a9ffbff3",
+    "pieceId": "piece:610d8533b95c",
+    "order": 4,
+    "text": "俄顷风定云墨色，秋天漠漠向昏黑。"
+  },
+  {
+    "id": "segment:865e12062bb7",
+    "pieceId": "piece:610d8533b95c",
+    "order": 5,
+    "text": "布衾多年冷似铁，娇儿恶卧踏里裂。"
+  },
+  {
+    "id": "segment:3138b4ff9925",
+    "pieceId": "piece:610d8533b95c",
+    "order": 6,
+    "text": "床头屋漏无干处，雨脚如麻未断绝。"
+  },
+  {
+    "id": "segment:9660888ae13b",
+    "pieceId": "piece:610d8533b95c",
+    "order": 7,
+    "text": "自经丧乱少睡眠，长夜沾湿何由彻！"
+  },
+  {
+    "id": "segment:73b56f8f7b91",
+    "pieceId": "piece:610d8533b95c",
+    "order": 8,
+    "text": "安得广厦千万间，大庇天下寒士俱欢颜！"
+  },
+  {
+    "id": "segment:25d8ae72d57f",
+    "pieceId": "piece:610d8533b95c",
+    "order": 9,
+    "text": "风雨不动安如山。"
+  },
+  {
+    "id": "segment:35af4f469f87",
+    "pieceId": "piece:610d8533b95c",
+    "order": 10,
+    "text": "呜呼！何时眼前突兀见此屋，吾庐独破受冻死亦足！"
+  },
+  {
+    "id": "segment:c1065bdaf5b8",
+    "pieceId": "piece:38c11f2a68ad",
+    "order": 0,
+    "text": "卖炭翁，伐薪烧炭南山中。"
+  },
+  {
+    "id": "segment:d24fd4116f60",
+    "pieceId": "piece:38c11f2a68ad",
+    "order": 1,
+    "text": "满面尘灰烟火色，两鬓苍苍十指黑。"
+  },
+  {
+    "id": "segment:2611abb24ea0",
+    "pieceId": "piece:38c11f2a68ad",
+    "order": 2,
+    "text": "卖炭得钱何所营？身上衣裳口中食。"
+  },
+  {
+    "id": "segment:c8fff06aa06b",
+    "pieceId": "piece:38c11f2a68ad",
+    "order": 3,
+    "text": "可怜身上衣正单，心忧炭贱愿天寒。"
+  },
+  {
+    "id": "segment:5d523827bcb5",
+    "pieceId": "piece:38c11f2a68ad",
+    "order": 4,
+    "text": "夜来城外一尺雪，晓驾炭车辗冰辙。"
+  },
+  {
+    "id": "segment:e85b30736110",
+    "pieceId": "piece:38c11f2a68ad",
+    "order": 5,
+    "text": "牛困人饥日已高，市南门外泥中歇。"
+  },
+  {
+    "id": "segment:a540bc0420d2",
+    "pieceId": "piece:38c11f2a68ad",
+    "order": 6,
+    "text": "翩翩两骑来是谁？黄衣使者白衫儿。"
+  },
+  {
+    "id": "segment:d54e18b56ac6",
+    "pieceId": "piece:38c11f2a68ad",
+    "order": 7,
+    "text": "手把文书口称敕，回车叱牛牵向北。"
+  },
+  {
+    "id": "segment:6f859caf717e",
+    "pieceId": "piece:38c11f2a68ad",
+    "order": 8,
+    "text": "一车炭，千余斤，宫使驱将惜不得。"
+  },
+  {
+    "id": "segment:a0c9de0c48a3",
+    "pieceId": "piece:38c11f2a68ad",
+    "order": 9,
+    "text": "半匹红纱一丈绫，系向牛头充炭直。"
+  },
+  {
+    "id": "segment:405b33fc0208",
+    "pieceId": "piece:c91bd64833e3",
+    "order": 0,
+    "text": "清晨入古寺，初日照高林。"
+  },
+  {
+    "id": "segment:5e6f4dd3982d",
+    "pieceId": "piece:c91bd64833e3",
+    "order": 1,
+    "text": "曲径通幽处，禅房花木深。"
+  },
+  {
+    "id": "segment:65966c3b4819",
+    "pieceId": "piece:c91bd64833e3",
+    "order": 2,
+    "text": "山光悦鸟性，潭影空人心。"
+  },
+  {
+    "id": "segment:93c7b03fc63c",
+    "pieceId": "piece:c91bd64833e3",
+    "order": 3,
+    "text": "万籁此都寂，但余钟磬音。"
+  },
+  {
+    "id": "segment:89d11706c46f",
+    "pieceId": "piece:a66f2c94f84a",
+    "order": 0,
+    "text": "青山横北郭，白水绕东城。"
+  },
+  {
+    "id": "segment:9579e8b6f92f",
+    "pieceId": "piece:a66f2c94f84a",
+    "order": 1,
+    "text": "此地一为别，孤蓬万里征。"
+  },
+  {
+    "id": "segment:346719a888c0",
+    "pieceId": "piece:a66f2c94f84a",
+    "order": 2,
+    "text": "浮云游子意，落日故人情。"
+  },
+  {
+    "id": "segment:f0e0c8e49865",
+    "pieceId": "piece:a66f2c94f84a",
+    "order": 3,
+    "text": "挥手自兹去，萧萧班马鸣。"
+  },
+  {
+    "id": "segment:b3655d9ec20f",
+    "pieceId": "piece:cd54163a8cc1",
+    "order": 0,
+    "text": "缺月挂疏桐，漏断人初静。谁见幽人独往来，缥缈孤鸿影。"
+  },
+  {
+    "id": "segment:45cfd5db9807",
+    "pieceId": "piece:cd54163a8cc1",
+    "order": 1,
+    "text": "惊起却回头，有恨无人省。拣尽寒枝不肯栖，寂寞沙洲冷。"
+  },
+  {
+    "id": "segment:1c97d4ffdc16",
+    "pieceId": "piece:39f5ffe3f888",
+    "order": 0,
+    "text": "驿外断桥边，寂寞开无主。已是黄昏独自愁，更著风和雨。"
+  },
+  {
+    "id": "segment:bfab27b269a7",
+    "pieceId": "piece:39f5ffe3f888",
+    "order": 1,
+    "text": "无意苦争春，一任群芳妒。零落成泥碾作尘，只有香如故。"
+  },
+  {
+    "id": "segment:9fbf68d7963e",
+    "pieceId": "piece:8a31d23ec81e",
+    "order": 0,
+    "text": "金樽清酒斗十千，玉盘珍羞直万钱。"
+  },
+  {
+    "id": "segment:8ad494f5938d",
+    "pieceId": "piece:8a31d23ec81e",
+    "order": 1,
+    "text": "停杯投箸不能食，拔剑四顾心茫然。"
+  },
+  {
+    "id": "segment:5e08fc0bc5b6",
+    "pieceId": "piece:8a31d23ec81e",
+    "order": 2,
+    "text": "欲渡黄河冰塞川，将登太行雪满山。"
+  },
+  {
+    "id": "segment:516f9ebc0fee",
+    "pieceId": "piece:8a31d23ec81e",
+    "order": 3,
+    "text": "闲来垂钓碧溪上，忽复乘舟梦日边。"
+  },
+  {
+    "id": "segment:808ef3ae38a4",
+    "pieceId": "piece:8a31d23ec81e",
+    "order": 4,
+    "text": "行路难，行路难，多歧路，今安在？"
+  },
+  {
+    "id": "segment:f61c6feea0ed",
+    "pieceId": "piece:8a31d23ec81e",
+    "order": 5,
+    "text": "长风破浪会有时，直挂云帆济沧海。"
+  },
+  {
+    "id": "segment:e4134a9982cc",
+    "pieceId": "piece:4c569e5c22cc",
+    "order": 0,
+    "text": "巴山楚水凄凉地，二十三年弃置身。"
+  },
+  {
+    "id": "segment:1319674dbca9",
+    "pieceId": "piece:4c569e5c22cc",
+    "order": 1,
+    "text": "怀旧空吟闻笛赋，到乡翻似烂柯人。"
+  },
+  {
+    "id": "segment:8d9bf39fa1f4",
+    "pieceId": "piece:4c569e5c22cc",
+    "order": 2,
+    "text": "沉舟侧畔千帆过，病树前头万木春。"
+  },
+  {
+    "id": "segment:1458801c251a",
+    "pieceId": "piece:4c569e5c22cc",
+    "order": 3,
+    "text": "今日听君歌一曲，暂凭杯酒长精神。"
+  },
+  {
+    "id": "segment:1d0d74714384",
+    "pieceId": "piece:55887c9cde81",
+    "order": 0,
+    "text": "明月几时有？把酒问青天。不知天上宫阙，今夕是何年。我欲乘风归去，又恐琼楼玉宇，高处不胜寒。起舞弄清影，何似在人间。"
+  },
+  {
+    "id": "segment:baa1dceb8c76",
+    "pieceId": "piece:55887c9cde81",
+    "order": 1,
+    "text": "转朱阁，低绮户，照无眠。不应有恨，何事长向别时圆？人有悲欢离合，月有阴晴圆缺，此事古难全。但愿人长久，千里共婵娟。"
+  },
+  {
+    "id": "segment:4f0ce9ffaa1f",
+    "pieceId": "piece:1098163cdf0c",
+    "order": 0,
+    "text": "戍鼓断人行，边秋一雁声。"
+  },
+  {
+    "id": "segment:8e03c51cf6b4",
+    "pieceId": "piece:1098163cdf0c",
+    "order": 1,
+    "text": "露从今夜白，月是故乡明。"
+  },
+  {
+    "id": "segment:512974347281",
+    "pieceId": "piece:1098163cdf0c",
+    "order": 2,
+    "text": "有弟皆分散，无家问死生。"
+  },
+  {
+    "id": "segment:2a6437b59124",
+    "pieceId": "piece:1098163cdf0c",
+    "order": 3,
+    "text": "寄书长不达，况乃未休兵。"
+  },
+  {
+    "id": "segment:8067c650b419",
+    "pieceId": "piece:af0a3d3f5465",
+    "order": 0,
+    "text": "三年谪宦此栖迟，万古惟留楚客悲。"
+  },
+  {
+    "id": "segment:2afb78249d3d",
+    "pieceId": "piece:af0a3d3f5465",
+    "order": 1,
+    "text": "秋草独寻人去后，寒林空见日斜时。"
+  },
+  {
+    "id": "segment:04f50a00fac3",
+    "pieceId": "piece:af0a3d3f5465",
+    "order": 2,
+    "text": "汉文有道恩犹薄，湘水无情吊岂知？"
+  },
+  {
+    "id": "segment:fa9bf9cd7b18",
+    "pieceId": "piece:af0a3d3f5465",
+    "order": 3,
+    "text": "寂寂江山摇落处，怜君何事到天涯！"
+  },
+  {
+    "id": "segment:1d216bc6c06c",
+    "pieceId": "piece:85c60f501db0",
+    "order": 0,
+    "text": "一封朝奏九重天，夕贬潮阳路八千。"
+  },
+  {
+    "id": "segment:cae638b9f0d4",
+    "pieceId": "piece:85c60f501db0",
+    "order": 1,
+    "text": "欲为圣明除弊事，肯将衰朽惜残年！"
+  },
+  {
+    "id": "segment:36c389daa07c",
+    "pieceId": "piece:85c60f501db0",
+    "order": 2,
+    "text": "云横秦岭家何在？雪拥蓝关马不前。"
+  },
+  {
+    "id": "segment:9c8145142c71",
+    "pieceId": "piece:85c60f501db0",
+    "order": 3,
+    "text": "知汝远来应有意，好收吾骨瘴江边。"
+  },
+  {
+    "id": "segment:9e0f8b1be9b7",
+    "pieceId": "piece:e28b8009edc4",
+    "order": 0,
+    "text": "晨起动征铎，客行悲故乡。"
+  },
+  {
+    "id": "segment:3c2eb3786006",
+    "pieceId": "piece:e28b8009edc4",
+    "order": 1,
+    "text": "鸡声茅店月，人迹板桥霜。"
+  },
+  {
+    "id": "segment:72065a1c67d9",
+    "pieceId": "piece:e28b8009edc4",
+    "order": 2,
+    "text": "槲叶落山路，枳花明驿墙。"
+  },
+  {
+    "id": "segment:aede3fe81660",
+    "pieceId": "piece:e28b8009edc4",
+    "order": 3,
+    "text": "因思杜陵梦，凫雁满回塘。"
+  },
+  {
+    "id": "segment:c0ca7c063778",
+    "pieceId": "piece:7947a4a84ec2",
+    "order": 0,
+    "text": "一上高城万里愁，蒹葭杨柳似汀洲。"
+  },
+  {
+    "id": "segment:dd5f32ccb0dc",
+    "pieceId": "piece:7947a4a84ec2",
+    "order": 1,
+    "text": "溪云初起日沉阁，山雨欲来风满楼。"
+  },
+  {
+    "id": "segment:c33f716bf128",
+    "pieceId": "piece:7947a4a84ec2",
+    "order": 2,
+    "text": "鸟下绿芜秦苑夕，蝉鸣黄叶汉宫秋。"
+  },
+  {
+    "id": "segment:2eaa6e27c2c0",
+    "pieceId": "piece:7947a4a84ec2",
+    "order": 3,
+    "text": "行人莫问当年事，故国东来渭水流。"
+  },
+  {
+    "id": "segment:b41ae446d7a7",
+    "pieceId": "piece:3f7768f42090",
+    "order": 0,
+    "text": "相见时难别亦难，东风无力百花残。"
+  },
+  {
+    "id": "segment:c6987d95b34c",
+    "pieceId": "piece:3f7768f42090",
+    "order": 1,
+    "text": "春蚕到死丝方尽，蜡炬成灰泪始干。"
+  },
+  {
+    "id": "segment:4b8e00ad94d8",
+    "pieceId": "piece:3f7768f42090",
+    "order": 2,
+    "text": "晓镜但愁云鬓改，夜吟应觉月光寒。"
+  },
+  {
+    "id": "segment:a25e7ae3d5a6",
+    "pieceId": "piece:3f7768f42090",
+    "order": 3,
+    "text": "蓬山此去无多路，青鸟殷勤为探看。"
+  },
+  {
+    "id": "segment:6689476a4687",
+    "pieceId": "piece:5ff51dbcfaba",
+    "order": 0,
+    "text": "少年不识愁滋味，爱上层楼。爱上层楼，为赋新词强说愁。"
+  },
+  {
+    "id": "segment:413b045c2c36",
+    "pieceId": "piece:5ff51dbcfaba",
+    "order": 1,
+    "text": "而今识尽愁滋味，欲说还休。欲说还休，却道“天凉好个秋！”"
+  },
+  {
+    "id": "segment:2bc198b10dcc",
+    "pieceId": "piece:6694e976b6bd",
+    "order": 0,
+    "text": "塞下秋来风景异，衡阳雁去无留意。四面边声连角起，千嶂里，长烟落日孤城闭。"
+  },
+  {
+    "id": "segment:ac02db81d4aa",
+    "pieceId": "piece:6694e976b6bd",
+    "order": 1,
+    "text": "浊酒一杯家万里，燕然未勒归无计。羌管悠悠霜满地，人不寐，将军白发征夫泪。"
+  },
+  {
+    "id": "segment:524380c9388c",
+    "pieceId": "piece:5c835b2d7478",
+    "order": 0,
+    "text": "老夫聊发少年狂，左牵黄，右擎苍，锦帽貂裘，千骑卷平冈。为报倾城随太守，亲射虎，看孙郎。"
+  },
+  {
+    "id": "segment:845fc4422680",
+    "pieceId": "piece:5c835b2d7478",
+    "order": 1,
+    "text": "酒酣胸胆尚开张，鬓微霜，又何妨！持节云中，何日遣冯唐？会挽雕弓如满月，西北望，射天狼。"
+  },
+  {
+    "id": "segment:f20f44fd3b42",
+    "pieceId": "piece:8c9ca731b024",
+    "order": 0,
+    "text": "醉里挑灯看剑，梦回吹角连营。八百里分麾下炙，五十弦翻塞外声，沙场秋点兵。"
+  },
+  {
+    "id": "segment:7378b038a776",
+    "pieceId": "piece:8c9ca731b024",
+    "order": 1,
+    "text": "马作的卢飞快，弓如霹雳弦惊。了却君王天下事，赢得生前身后名。可怜白发生！"
+  },
+  {
+    "id": "segment:4488bf558640",
+    "pieceId": "piece:d8aaaf1c105b",
+    "order": 0,
+    "text": "辛苦遭逢起一经，干戈寥落四周星。"
+  },
+  {
+    "id": "segment:ba6f3c5a4925",
+    "pieceId": "piece:d8aaaf1c105b",
+    "order": 1,
+    "text": "山河破碎风飘絮，身世浮沉雨打萍。"
+  },
+  {
+    "id": "segment:b135f4fc55a5",
+    "pieceId": "piece:d8aaaf1c105b",
+    "order": 2,
+    "text": "惶恐滩头说惶恐，零丁洋里叹零丁。"
+  },
+  {
+    "id": "segment:bceb85b23a54",
+    "pieceId": "piece:d8aaaf1c105b",
+    "order": 3,
+    "text": "人生自古谁无死？留取丹心照汗青。"
+  },
+  {
+    "id": "segment:eed97e0489f9",
+    "pieceId": "piece:24ae5b4f3eb9",
+    "order": 0,
+    "text": "小住京华，早又是，中秋佳节。为篱下黄花开遍，秋容如拭。"
+  },
+  {
+    "id": "segment:311b408035d5",
+    "pieceId": "piece:24ae5b4f3eb9",
+    "order": 1,
+    "text": "四面歌残终破楚，八年风味徒思浙。苦将侬，强派作蛾眉，殊未屑！"
+  },
+  {
+    "id": "segment:1ddc639ff178",
+    "pieceId": "piece:24ae5b4f3eb9",
+    "order": 2,
+    "text": "身不得，男儿列，心却比，男儿烈。算平生肝胆，因人常热。"
+  },
+  {
+    "id": "segment:8100d2f9fa93",
+    "pieceId": "piece:24ae5b4f3eb9",
+    "order": 3,
+    "text": "俗子胸襟谁识我？英雄"
+  },
+  {
+    "id": "segment:2dad06c24a11",
+    "pieceId": "piece:e6c7b997bf69",
+    "order": 0,
+    "text": "莫听穿林打叶声，何妨吟啸且徐行。"
+  },
+  {
+    "id": "segment:a6b0b78ddd97",
+    "pieceId": "piece:e6c7b997bf69",
+    "order": 1,
+    "text": "竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。"
+  },
+  {
+    "id": "segment:57a2b40d3777",
+    "pieceId": "piece:e6c7b997bf69",
+    "order": 2,
+    "text": "料峭春风吹酒醒，微冷，山头斜照却相迎。"
+  },
+  {
+    "id": "segment:c4ba1627ba02",
+    "pieceId": "piece:e6c7b997bf69",
+    "order": 3,
+    "text": "回首向来萧瑟处，归去，也无风雨也无晴。"
+  },
+  {
+    "id": "segment:665b239738e2",
+    "pieceId": "piece:0450b807e6ed",
+    "order": 0,
+    "text": "忆昔午桥桥上饮，坐中多是豪英。"
+  },
+  {
+    "id": "segment:3c50d0f84f07",
+    "pieceId": "piece:0450b807e6ed",
+    "order": 1,
+    "text": "长沟流月去无声。"
+  },
+  {
+    "id": "segment:1fe47c3509be",
+    "pieceId": "piece:0450b807e6ed",
+    "order": 2,
+    "text": "杏花疏影里，吹笛到天明。"
+  },
+  {
+    "id": "segment:fe5c39ffd8bf",
+    "pieceId": "piece:0450b807e6ed",
+    "order": 3,
+    "text": "二十余年如一梦，此身虽在堪惊。"
+  },
+  {
+    "id": "segment:370374316854",
+    "pieceId": "piece:0450b807e6ed",
+    "order": 4,
+    "text": "闲登小阁看新晴。"
+  },
+  {
+    "id": "segment:fda3487b7b14",
+    "pieceId": "piece:0450b807e6ed",
+    "order": 5,
+    "text": "古今多少事，渔唱起三更。"
+  },
+  {
+    "id": "segment:8acc2ebda398",
+    "pieceId": "piece:09ab5a00dd21",
+    "order": 0,
+    "text": "一轮秋影转金波，飞镜又重磨。"
+  },
+  {
+    "id": "segment:430c40279288",
+    "pieceId": "piece:09ab5a00dd21",
+    "order": 1,
+    "text": "把酒问姮娥：被白发，欺人奈何？"
+  },
+  {
+    "id": "segment:215eae22da1d",
+    "pieceId": "piece:09ab5a00dd21",
+    "order": 2,
+    "text": "乘风好去，长空万里，直下看山河。"
+  },
+  {
+    "id": "segment:7847794801d5",
+    "pieceId": "piece:09ab5a00dd21",
+    "order": 3,
+    "text": "斫去桂婆娑，人道是，清光更多。"
+  },
+  {
+    "id": "segment:8c06f9ef40a4",
+    "pieceId": "piece:e55402b1c72c",
+    "order": 0,
+    "text": "身向云山那畔行，北风吹断马嘶声，深秋远塞若为情。"
+  },
+  {
+    "id": "segment:86dacaffa699",
+    "pieceId": "piece:e55402b1c72c",
+    "order": 1,
+    "text": "一抹晚烟荒戍垒，半竿斜日旧关城，古今幽恨几时平。"
+  },
+  {
+    "id": "segment:7d5e18e2deb2",
+    "pieceId": "piece:84990c165080",
+    "order": 0,
+    "text": "十五从军征，八十始得归。"
+  },
+  {
+    "id": "segment:0886a00cb897",
+    "pieceId": "piece:84990c165080",
+    "order": 1,
+    "text": "道逢乡里人：“家中有阿谁？”"
+  },
+  {
+    "id": "segment:031607f3047f",
+    "pieceId": "piece:84990c165080",
+    "order": 2,
+    "text": "“遥看是君家，松柏冢累累。”"
+  },
+  {
+    "id": "segment:4483aec7f6ec",
+    "pieceId": "piece:84990c165080",
+    "order": 3,
+    "text": "兔从狗窦入，雉从梁上飞。"
+  },
+  {
+    "id": "segment:183e6990ce84",
+    "pieceId": "piece:84990c165080",
+    "order": 4,
+    "text": "中庭生旅谷，井上生旅葵。"
+  },
+  {
+    "id": "segment:de3acab2f1bc",
+    "pieceId": "piece:84990c165080",
+    "order": 5,
+    "text": "舂谷持作饭，采葵持作羹。"
+  },
+  {
+    "id": "segment:d981e6606d00",
+    "pieceId": "piece:84990c165080",
+    "order": 6,
+    "text": "羹饭一时熟，不知贻阿谁。"
+  },
+  {
+    "id": "segment:ea8109e9de02",
+    "pieceId": "piece:84990c165080",
+    "order": 7,
+    "text": "出门东向看，泪落沾我衣。"
+  },
+  {
+    "id": "segment:3703235e2aee",
+    "pieceId": "piece:6f9d8d28ea0d",
+    "order": 0,
+    "text": "北风卷地白草折，胡天八月即飞雪。"
+  },
+  {
+    "id": "segment:2f210d87d10d",
+    "pieceId": "piece:6f9d8d28ea0d",
+    "order": 1,
+    "text": "忽如一夜春风来，千树万树梨花开。"
+  },
+  {
+    "id": "segment:6b32c01a4531",
+    "pieceId": "piece:6f9d8d28ea0d",
+    "order": 2,
+    "text": "散入珠帘湿罗幕，狐裘不暖锦衾薄。"
+  },
+  {
+    "id": "segment:098f28d7a03d",
+    "pieceId": "piece:6f9d8d28ea0d",
+    "order": 3,
+    "text": "将军角弓不得控，都护铁衣冷难着。"
+  },
+  {
+    "id": "segment:9e8f004881cf",
+    "pieceId": "piece:6f9d8d28ea0d",
+    "order": 4,
+    "text": "瀚海阑干百丈冰，愁云惨淡万里凝。"
+  },
+  {
+    "id": "segment:889c9f680d8f",
+    "pieceId": "piece:6f9d8d28ea0d",
+    "order": 5,
+    "text": "中军置酒饮归客，胡琴琵琶与羌笛。"
+  },
+  {
+    "id": "segment:beef99f389fb",
+    "pieceId": "piece:6f9d8d28ea0d",
+    "order": 6,
+    "text": "纷纷暮雪下辕门，风掣红旗冻不翻。"
+  },
+  {
+    "id": "segment:772a6b86bfb8",
+    "pieceId": "piece:6f9d8d28ea0d",
+    "order": 7,
+    "text": "轮台东门送君去，去时雪满天山路。"
+  },
+  {
+    "id": "segment:4cf3f94c36d8",
+    "pieceId": "piece:6f9d8d28ea0d",
+    "order": 8,
+    "text": "山回路转不见君，雪上空留马行处。"
+  },
+  {
+    "id": "segment:353bbd2340ab",
+    "pieceId": "piece:8364fd36be61",
+    "order": 0,
+    "text": "何处望神州？满眼风光北固楼。"
+  },
+  {
+    "id": "segment:d8dbc16b6842",
+    "pieceId": "piece:8364fd36be61",
+    "order": 1,
+    "text": "千古兴亡多少事？悠悠。"
+  },
+  {
+    "id": "segment:1a1df25a04b0",
+    "pieceId": "piece:8364fd36be61",
+    "order": 2,
+    "text": "不尽长江滚滚流。"
+  },
+  {
+    "id": "segment:3e896636c46c",
+    "pieceId": "piece:8364fd36be61",
+    "order": 3,
+    "text": "年少万兜鍪，坐断东南战未休。"
+  },
+  {
+    "id": "segment:c1da9ce34441",
+    "pieceId": "piece:8364fd36be61",
+    "order": 4,
+    "text": "天下英雄谁敌手？曹刘。"
+  },
+  {
+    "id": "segment:d81af0780ae4",
+    "pieceId": "piece:8364fd36be61",
+    "order": 5,
+    "text": "生子当如孙仲谋。"
+  },
+  {
+    "id": "segment:8f5c5ccb10e3",
+    "pieceId": "piece:2701f85447b0",
+    "order": 0,
+    "text": "峰峦如聚，波涛如怒，山河表里潼关路。望西都，意踌躇。"
+  },
+  {
+    "id": "segment:4981eb11be8e",
+    "pieceId": "piece:2701f85447b0",
+    "order": 1,
+    "text": "伤心秦汉经行处，宫阙万间都做了土。兴，百姓苦；亡，百姓苦。"
+  },
+  {
+    "id": "segment:f632a733042f",
+    "pieceId": "piece:fbd7b6fbefb4",
+    "order": 0,
+    "text": "孔子东游，见两小儿辩斗，问其故。"
+  },
+  {
+    "id": "segment:49c1523299c1",
+    "pieceId": "piece:fbd7b6fbefb4",
+    "order": 1,
+    "text": "一儿曰：\"我以日始出时去人近，而日中时远也。\""
+  },
+  {
+    "id": "segment:6c841c8075f7",
+    "pieceId": "piece:fbd7b6fbefb4",
+    "order": 2,
+    "text": "一儿曰：\"我以日初出远，而日中时近也。\""
+  },
+  {
+    "id": "segment:4693bacc8b33",
+    "pieceId": "piece:fbd7b6fbefb4",
+    "order": 3,
+    "text": "一儿曰：\"日初出大如车盖，及日中则如盘盂，此不为远者小而近者大乎？\""
+  },
+  {
+    "id": "segment:6008860fcd77",
+    "pieceId": "piece:fbd7b6fbefb4",
+    "order": 4,
+    "text": "一儿曰：\"日初出沧沧凉凉，及其日中如探汤，此不为近者热而远者凉乎？\""
+  },
+  {
+    "id": "segment:cb3d7ac46613",
+    "pieceId": "piece:fbd7b6fbefb4",
+    "order": 5,
+    "text": "孔子不能决也。"
+  },
+  {
+    "id": "segment:8f131da5e291",
+    "pieceId": "piece:fbd7b6fbefb4",
+    "order": 6,
+    "text": "两小儿笑曰：\"孰为汝多知乎？\""
+  },
+  {
+    "id": "segment:b794e3a915fa",
+    "pieceId": "piece:4d80bf4f5e82",
+    "order": 0,
+    "text": "曹冲生五六岁，智意所及，有若成人之智。时孙权曾致巨象，太祖欲知其斤重，访之群下，咸莫能出其理。"
+  },
+  {
+    "id": "segment:6d6e56b0af32",
+    "pieceId": "piece:4d80bf4f5e82",
+    "order": 1,
+    "text": "冲曰：\"置象大船之上，而刻其水痕所至，称物以载之，则校可知矣。\""
+  },
+  {
+    "id": "segment:42eb447d7b44",
+    "pieceId": "piece:4d80bf4f5e82",
+    "order": 2,
+    "text": "太祖悦，即施行焉。"
+  },
+  {
+    "id": "segment:ad15343f715b",
+    "pieceId": "piece:9f603781a913",
+    "order": 0,
+    "text": "弈秋，通国之善弈者也。使弈秋诲二人弈，其一人专心致志，惟弈秋之为听；一人虽听之，一心以为有鸿鹄将至，思援弓缴而射之。虽与之俱学，弗若之矣。为是其智弗若与？曰：非然也。"
+  },
+  {
+    "id": "segment:d9423a4f4a1b",
+    "pieceId": "piece:4cb293e2ff40",
+    "order": 0,
+    "text": "列子学射，中矣，请于关尹子。尹子曰：\"子知子之所以中者乎？\"对曰：\"弗知也。\"关尹子曰：\"未可。\"退而习之，三年，又以报关尹子。尹子曰：\"子知子之所以中乎？\"列子曰：\"知之矣。\"关尹子曰：\"可矣，守而勿失也。非独射也，为国与身亦皆如之。\""
+  },
+  {
+    "id": "segment:2e812baddf51",
+    "pieceId": "piece:8e21488f3e38",
+    "order": 0,
+    "text": "谢太傅寒雪日内集，与儿女讲论文义。俄而雪骤，公欣然曰：\"白雪纷纷何所似？\"兄子胡儿曰：\"撒盐空中差可拟。\"兄女曰：\"未若柳絮因风起。\"公大笑乐。即公大兄无奕女，左将军王凝之妻也。"
+  },
+  {
+    "id": "segment:af32fe746237",
+    "pieceId": "piece:efa6796fe13c",
+    "order": 0,
+    "text": "陈太丘与友期行，期日中。过中不至，太丘舍去，去后乃至。元方时年七岁，门外戏。客问元方：\"尊君在不？\"答曰：\"待君久不至，已去。\"友人便怒曰：\"非人哉！与人期行，相委而去。\"元方曰：\"君与家君期日中。日中不至，则是无信；对子骂父，则是无礼。\"友人惭，下车引之。元方入门不顾。"
+  },
+  {
+    "id": "segment:9cf7e9aecf34",
+    "pieceId": "piece:9c48078139c4",
+    "order": 0,
+    "text": "一屠晚归，担中肉尽，止有剩骨。途中两狼，缀行甚远。屠惧，投以骨。一狼得骨止，一狼仍从。复投之，后狼止而前狼又至。骨已尽矣，而两狼之并驱如故。屠大窘，恐前后受其敌。顾野有麦场，场主积薪其中，苫蔽成丘。屠乃奔倚其下，弛担持刀。狼不敢前，眈眈相向。少时，一狼径去，其一犬坐于前。久之，目似瞑，意暇甚。屠暴起，以刀劈狼首，又数刀毙"
+  },
+  {
+    "id": "segment:2665d7423ced",
+    "pieceId": "piece:9c48078139c4",
+    "order": 1,
+    "text": "之。方欲行，转视积薪后，一狼洞其中，意将隧入以攻其后也。身已半入，止露尻尾。屠自后断其股，亦毙之。乃悟前狼假寐，盖以诱敌。狼亦黠矣，而顷刻两毙，禽兽之变诈几何哉？止增笑耳。"
+  },
+  {
+    "id": "segment:f9c16f4f161e",
+    "pieceId": "piece:95a7733598eb",
+    "order": 0,
+    "text": "宋之丁氏，家无井而出溉汲，常一人居外。及其家穿井，告人曰：\"吾穿井得一人。\"有闻而传之者：\"丁氏穿井得一人。\"国人道之，闻之于宋君。宋君令人问之于丁氏，丁氏对曰：\"得一人之使，非得一人于井中也。\"求闻之若此，不若无闻也。"
+  },
+  {
+    "id": "segment:9adfb046853a",
+    "pieceId": "piece:682e38813bda",
+    "order": 0,
+    "text": "杞国有人忧天地崩坠，身亡所寄，废寝食者。又有忧彼之所忧者，因往晓之，曰：\"天，积气耳，亡处亡气。若屈伸呼吸，终日在天中行止，奈何忧崩坠乎？\"其人曰：\"天果积气，日月星宿，不当坠耶？\"晓之者曰：\"日月星宿，亦积气中之有光耀者，只使坠，亦不能有所中伤。\"其人曰：\"奈地坏何？\"晓之者曰：\"地，积块耳，充塞四虚，亡处亡块。若躇步跐蹈，终日在地上行止，奈何忧其坏？\"其人舍然大喜，晓之者亦舍然大喜。"
+  },
+  {
+    "id": "segment:d76d7fb71036",
+    "pieceId": "piece:682e38813bda",
+    "order": 1,
+    "text": "目相待，大兄何见事之晚乎！\"肃遂拜蒙母，结友而别。"
+  },
+  {
+    "id": "segment:7ba55de20c7c",
+    "pieceId": "piece:781a1943e26e",
+    "order": 0,
+    "text": "初，权谓吕蒙曰：\"卿今当涂掌事，不可不学！\"蒙辞以军中多务。权曰：\"孤岂欲卿治经为博士邪！但当涉猎，见往事耳。卿言多务，孰若孤？孤常读书，自以为大有所益。\"蒙乃始就学。及鲁肃过寻阳，与蒙论议，大惊曰：\"卿今者才略，非复吴下阿蒙！\"蒙曰：\"士别三日，即更刮"
+  },
+  {
+    "id": "segment:da41c39b2847",
+    "pieceId": "piece:781a1943e26e",
+    "order": 1,
+    "text": "目相待，大兄何见事之晚乎！\"肃遂拜蒙母，结友而别。"
+  },
+  {
+    "id": "segment:9950179c73c8",
+    "pieceId": "piece:9810afe6804e",
+    "order": 0,
+    "text": "唧唧复唧唧，木兰当户织。不闻机杼声，唯闻女叹息。问女何所思，问女何所忆。女亦无所思，女亦无所忆。昨夜见军帖，可汗大点兵，军书十二卷，卷卷有爷名。阿爷无大儿，木兰无长兄，愿为市鞍马，从此替爷征。东市买骏马，西市买鞍鞯，南市买辔头，北市买长鞭。旦辞爷娘去，暮宿黄河边，不闻爷娘唤女声，但闻黄河流水鸣溅溅。旦辞黄河去，暮至黑山头，不闻爷娘唤女声，但闻燕山胡骑鸣啾啾。万里赴戎机，关山度若飞。朔气传金柝，寒光照铁衣。将军百战死，壮士十年归。归来见天子，天子坐明堂。策勋十二转，赏赐百千强。可汗问所欲，木兰不用尚书郎，愿驰千里足，送儿还故乡。爷娘闻女来，出郭相扶将；阿姊闻妹来，当户理红妆；小弟闻姊来，磨刀霍霍向猪羊。开我东阁门，坐我西阁床。脱我战时袍，著我旧时裳。当窗理云鬓，对镜帖花黄。出门看火伴，火伴皆惊忙：同行十二年，不知木兰是女郎。雄兔脚扑朔，雌兔眼迷离；双兔傍地走，安能辨我是雄雌？"
+  },
+  {
+    "id": "segment:ed3d11915528",
+    "pieceId": "piece:9810afe6804e",
+    "order": 1,
+    "text": "出处：《乐府诗集》 朝代：南北朝"
+  },
+  {
+    "id": "segment:8285d8f13db7",
+    "pieceId": "piece:3f1f1e36b7f8",
+    "order": 0,
+    "text": "陈康肃公善射，当世无双，公亦以此自矜。尝射于家圃，有卖油翁释担而立，睨之久而不去。见其发矢十中八九，但微颔之。康肃问曰：\"汝亦知射乎？吾射不亦精乎？\"翁曰：\"无他，但手熟尔。\"康肃忿然曰：\"尔安敢轻吾射！\"翁曰：\"以我酌油知之。\"乃取一葫芦置于地，以钱覆其口，徐以杓酌油沥之，自钱孔入，而钱不湿。因曰：\"我亦无他，惟手熟尔。\"康肃笑而遣之。"
+  },
+  {
+    "id": "segment:1d7bbe76e4ef",
+    "pieceId": "piece:0dade901763f",
+    "order": 0,
+    "text": "山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。苔痕上阶绿，草色入帘"
+  },
+  {
+    "id": "segment:38019659c160",
+    "pieceId": "piece:7320f813ed0d",
+    "order": 0,
+    "text": "水陆草木之花，可爱者甚蕃。晋陶渊明独爱菊。自李唐来，世人甚爱牡丹。予独爱莲之出淤泥而不染，濯清涟而不妖，中通外直，不蔓不枝，香远益清，亭亭净植，可远观而不可亵玩焉。"
+  },
+  {
+    "id": "segment:4ccf7652a8ac",
+    "pieceId": "piece:7320f813ed0d",
+    "order": 1,
+    "text": "予谓菊，花之隐逸者也；牡丹，花之富贵者也；莲，花之君子者也。噫！菊之爱，陶后鲜有闻。莲之爱，同予者何人？牡丹之爱，宜乎众矣。"
+  },
+  {
+    "id": "segment:4bd3bd18430a",
+    "pieceId": "piece:cd541b2aa419",
+    "order": 0,
+    "text": "自三峡七百里中，两岸连山，略无阙处。重岩叠嶂，隐天蔽日，自非亭午夜分，不见曦月。"
+  },
+  {
+    "id": "segment:03bab018ba8b",
+    "pieceId": "piece:cd541b2aa419",
+    "order": 1,
+    "text": "至于夏水襄陵，沿溯阻绝。或王命急宣，有时朝发白帝，暮到江陵，其间千二百里，虽乘奔御风，不以疾也。"
+  },
+  {
+    "id": "segment:d566902110b2",
+    "pieceId": "piece:cd541b2aa419",
+    "order": 2,
+    "text": "春冬之时，则素湍绿潭，回清倒影，绝巘多生怪柏，悬泉瀑布，飞漱其间，清荣峻茂，良多趣味。"
+  },
+  {
+    "id": "segment:272a97ddc254",
+    "pieceId": "piece:cd541b2aa419",
+    "order": 3,
+    "text": "每至晴初霜旦，林寒涧肃，常有高猿长啸，属引凄异，空谷传响，哀转久绝。故渔者歌曰：\"巴东三峡巫峡长，猿鸣三声泪沾裳。\""
+  },
+  {
+    "id": "segment:3d0e667305cf",
+    "pieceId": "piece:1397912ec15f",
+    "order": 0,
+    "text": "山川之美，古来共谈。高峰入云，清流见底。两岸石壁，五色交辉。青林翠竹，四时俱备。晓雾将歇，猿鸟乱鸣；夕日欲颓，沉鳞竞跃。实是欲界之仙都。自康乐以来，未复有能与其奇者。"
+  },
+  {
+    "id": "segment:20db25c5bbda",
+    "pieceId": "piece:918f8dbfaf09",
+    "order": 0,
+    "text": "元丰六年十月十二日夜，解衣欲睡，月色入户，欣然起行。念无与为乐者，遂至承天寺寻张怀民。怀民亦未寝，相与步于中庭。庭下如积水空明，水中藻、荇交横，盖竹柏影也。何夜无月？何处无竹柏？但少闲人如吾两人者耳。"
+  },
+  {
+    "id": "segment:75ea18175032",
+    "pieceId": "piece:71da16331813",
+    "order": 0,
+    "text": "风烟俱净，天山共色。从流飘荡，任意东西。自富阳至桐庐一百许里，奇山异水，天下独绝。"
+  },
+  {
+    "id": "segment:cfb37842f01d",
+    "pieceId": "piece:71da16331813",
+    "order": 1,
+    "text": "水皆缥碧，千丈见底。游鱼细石，直视无碍。急湍甚箭，猛浪若奔。"
+  },
+  {
+    "id": "segment:4e26a3be8e92",
+    "pieceId": "piece:71da16331813",
+    "order": 2,
+    "text": "夹岸高山，皆生寒树，负势竞上，互相轩邈，争高直指，千百成峰。泉水激石，泠泠作响；好鸟相鸣，嘤嘤成韵。蝉则千转不穷，猿则百叫无绝。鸢飞戾天者，望峰息心；经纶世务者，窥谷忘反。横柯上蔽，在昼犹昏；疏条交映，有时见日。"
+  },
+  {
+    "id": "segment:2175f736f8ab",
+    "pieceId": "piece:68b6a5d697b3",
+    "order": 0,
+    "text": "天时不如地利，地利不如人和。三里之城，七里之郭，环而攻之而不胜。夫环而攻之，必有得天时者矣，然而不胜者，是天时不如地利也。城非不高也，池非不深也，兵革非不坚利也，米粟非不多也，委而去之，是地利不如人和也。故曰：域民不以封疆之界，固国不以山溪之险，威天下不以兵革之利。得道者多助，失道者寡助。寡助之至，亲戚畔之；多助之至，天下顺之。以天下之所顺，攻亲戚之所畔，故君子有不战，战必胜矣。"
+  },
+  {
+    "id": "segment:07ef35356e9f",
+    "pieceId": "piece:76c1a09b7ae0",
+    "order": 0,
+    "text": "景春曰：\"公孙衍、张仪岂不诚大丈夫哉？一怒而诸侯惧，安居而天下熄。\"孟子曰：\"是焉得为大丈夫乎？子未学礼乎？丈夫之冠也，父命之；女子之嫁也，母命之，送往之门，戒之曰：往之女家，必敬必戒，无违夫子！以顺为正者，妾妇之道也。居天下之广居，立天下之正位，行天下之大道。得志，与民由之；不得志，独行其道。富贵不能淫，贫贱不能移，威武不能屈，此之谓大丈夫。\""
+  },
+  {
+    "id": "segment:96c2ac2719e9",
+    "pieceId": "piece:e719495a1cb5",
+    "order": 0,
+    "text": "舜发于畎亩之中，傅说举于版筑之间，胶鬲举于鱼盐之中，管夷吾举于士，孙叔敖举于海，百里奚举于市。故天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。人恒过，然后能改；困于心，衡于虑，而后作；征于色，发于声，而后喻。入则无法家拂士，出则无敌国外患者，国恒亡。然后知生于忧患而死于安乐也。"
+  },
+  {
+    "id": "segment:a87ad9351775",
+    "pieceId": "piece:20ee58a3d3ab",
+    "order": 0,
+    "text": "太行、王屋二山，方七百里，高万仞，本在冀州之南，河阳之北。北山愚公者，年且九十，面山而居。惩山北之塞，出入之迂也，聚室而谋曰：'吾与汝毕力平险，指通豫南，达于汉阴，可乎？'杂然相许。其妻献疑曰：'以君之力，曾不能损魁父之丘，如太行、王屋何？且焉置土石？'杂曰：'投诸渤海之尾，隐土之北。'遂率子孙荷担者三夫，叩石垦壤，箕畚运于渤海之尾。邻人京城氏之孀妻有遗男，始龀，跳往助之。寒暑易节，始一反焉。河曲智叟笑而止之曰：'甚矣，汝之不惠！以残年余力，曾不能毁山之一毛，其如土石何？'北山愚公长息曰：'汝心之固，固不可彻，曾不若孀妻弱子。虽我之死，有子存焉。子又生孙，孙又生子；子又有子，子又有孙；子子孙孙无穷匮也，而山不加增，何苦而不平？'河曲智叟亡以应。操蛇之神闻之，惧其不已也，告之于帝。帝感其诚，命夸娥氏二子负二山，一厝朔东，一厝雍南。自此，冀之南，汉之阴，无陇断焉。"
+  },
+  {
+    "id": "segment:30ac6024b7da",
+    "pieceId": "piece:1f6e858b776d",
+    "order": 0,
+    "text": "文帝之后六年，匈奴大入边。乃以宗正刘礼为将军，军霸上；祝兹侯徐厉为将军，军棘门；以河内守亚夫为将军，军细柳：以备胡。上自劳军。至霸上及棘门军，直驰入，将以下骑送迎。已而之细柳军，军士吏被甲，锐兵刃，彀弓弩，持满。天子先驱至，不得入。先驱曰：'天子且至！'军门都尉曰：'将军令曰军中闻将军令，不闻天子之诏。'居无何，上至，又不得入。于是上乃使使持节诏将军：'吾欲入劳军。'"
+  },
+  {
+    "id": "segment:2fcdaa2970c7",
+    "pieceId": "piece:ea356d9fec12",
+    "order": 0,
+    "text": "晋太元中，武陵人捕鱼为业。缘溪行，忘路之远近。忽逢桃花林，夹岸数百步，中无杂树，芳草鲜美，落英缤纷。渔人甚异之，复前行，欲穷其林。"
+  },
+  {
+    "id": "segment:12fbe287284c",
+    "pieceId": "piece:ea356d9fec12",
+    "order": 1,
+    "text": "林尽水源，便得一山，山有小口，仿佛若有光。便舍船，从口入。初极狭，才通人。复行数十步，豁然开朗。土地平旷，屋舍俨然，有良田、美池、桑竹之属。阡陌交通，鸡犬相闻。其中往来种作，男女衣着，悉如外人。黄发垂髫，并怡然自乐。"
+  },
+  {
+    "id": "segment:bd79701945bf",
+    "pieceId": "piece:ea356d9fec12",
+    "order": 2,
+    "text": "见渔人，乃大惊，问所从来。具答之。便要还家，设酒杀鸡作食。村中闻有此人，咸来问讯。自云先世避秦时乱，率妻子邑人来此绝境，不复出焉，遂与外人间隔。问今是何世，乃不知有汉，无论魏晋。此人一一为具言所闻，皆叹惋。余人各复延至其家，皆出酒食。停数日，辞去。此中人语云：'不足为外人道也。'"
+  },
+  {
+    "id": "segment:55ffdee8195c",
+    "pieceId": "piece:ea356d9fec12",
+    "order": 3,
+    "text": "既出，得其船，便扶向路，处处志之。及郡下，诣太守，说如此。太守即遣人随其往，寻向所志，遂迷，不复得路。"
+  },
+  {
+    "id": "segment:3c542b3a753c",
+    "pieceId": "piece:ea356d9fec12",
+    "order": 4,
+    "text": "南阳刘子骥，高尚士也，闻之，欣然规往。未果，寻病终。后遂无问津者。"
+  },
+  {
+    "id": "segment:90469930192d",
+    "pieceId": "piece:30cb36bb9d7d",
+    "order": 0,
+    "text": "明有奇巧人曰王叔远，能以径寸之木，为宫室、器皿、人物，以至鸟兽、木石，罔不因势象形，各具情态。尝贻余核舟一，盖大苏泛赤壁云。"
+  },
+  {
+    "id": "segment:bc2ad947059c",
+    "pieceId": "piece:30cb36bb9d7d",
+    "order": 1,
+    "text": "舟首尾长约八分有奇，高可二黍许。中轩敞者为舱，箬篷覆之。旁开小窗，左右各四，共八扇。启窗而观，雕栏相望焉。闭之，则右刻'山高月小，水落石出'，左刻'清风徐来，水波不兴'，石青糁之。"
+  },
+  {
+    "id": "segment:aa58c3862236",
+    "pieceId": "piece:30cb36bb9d7d",
+    "order": 2,
+    "text": "船头坐三人，中峨冠而多髯者为东坡，佛印居右，鲁直居左。苏、黄共阅一手卷。东坡右手执卷端，左手抚鲁直背。鲁直左手执卷末，右手指卷，如有所语。东坡现右足，鲁直现左足，各微侧，其两膝相比者，各隐卷底衣褶中。佛印绝类弥勒，袒胸露乳，矫首昂视，神情与苏、黄不属。卧右膝，诎右臂支船，而竖其左膝，左臂挂念珠倚之——珠可历历数也。"
+  },
+  {
+    "id": "segment:45188bdb7ba5",
+    "pieceId": "piece:30cb36bb9d7d",
+    "order": 3,
+    "text": "舟尾横卧一楫。楫左右舟子各一人。居右者椎髻仰面，左手倚一衡木，右手攀右趾，若啸呼状。居左者右手执蒲葵扇，左手抚炉，炉上有壶，其人视端容寂，若听茶声然。"
+  },
+  {
+    "id": "segment:212d29de4fee",
+    "pieceId": "piece:30cb36bb9d7d",
+    "order": 4,
+    "text": "其船背稍夷，则题名其上，文曰\"天启壬戌秋日，虞山王毅叔远甫刻\"，细若蚊足，钩画了了，其色墨。又用篆章一，文曰\"初平山人\"，其色丹。"
+  },
+  {
+    "id": "segment:3e49f727a4fc",
+    "pieceId": "piece:30cb36bb9d7d",
+    "order": 5,
+    "text": "通计一舟，为人五；为窗八；为箬篷，为楫，为炉，为壶，为手卷，为念珠各一；对联、题名并篆文，为字共三十有四。而计其长曾不盈寸。盖简桃核修狭者为之。嘻，技亦灵怪矣哉！"
+  },
+  {
+    "id": "segment:e901f75e3268",
+    "pieceId": "piece:f07b8108d015",
+    "order": 0,
+    "text": "从小丘西行百二十步，隔篁竹，闻水声，如鸣珮环，心乐之。伐竹取道，下见小潭，水尤清冽。全石以为底，近岸，卷石底以出，为坻，为屿，为嵁，为岩。青树翠蔓，蒙络摇缀，参差披拂。"
+  },
+  {
+    "id": "segment:c6767c698136",
+    "pieceId": "piece:f07b8108d015",
+    "order": 1,
+    "text": "潭中鱼可百许头，皆若空游无所依，日光下澈，影布石上。佁然不动，俶尔远逝，往来翕忽，似与游者相乐。"
+  },
+  {
+    "id": "segment:26d4e521ee70",
+    "pieceId": "piece:f07b8108d015",
+    "order": 2,
+    "text": "潭西南而望，斗折蛇行，明灭可见。其岸势犬牙差互，不可知其源。"
+  },
+  {
+    "id": "segment:f17e4e27fe1d",
+    "pieceId": "piece:f07b8108d015",
+    "order": 3,
+    "text": "坐潭上，四面竹树环合，寂寥无人，凄神寒骨，悄怆幽邃。以其境过清，不可久居，乃记之而去。"
+  },
+  {
+    "id": "segment:d4bd4e6b68b9",
+    "pieceId": "piece:f07b8108d015",
+    "order": 4,
+    "text": "同游者：吴武陵，龚古，余弟宗玄。隶而从者，崔氏二小生，曰恕己，曰奉壹。"
+  },
+  {
+    "id": "segment:aac0dc295c77",
+    "pieceId": "piece:85eda662b402",
+    "order": 0,
+    "text": "关关雎鸠，在河之洲。窈窕淑女，君子好逑。"
+  },
+  {
+    "id": "segment:f4201b069ea7",
+    "pieceId": "piece:85eda662b402",
+    "order": 1,
+    "text": "参差荇菜，左右流之。窈窕淑女，寤寐求之。"
+  },
+  {
+    "id": "segment:a4fcc266e401",
+    "pieceId": "piece:85eda662b402",
+    "order": 2,
+    "text": "求之不得，寤寐思服。悠哉悠哉，辗转反侧。"
+  },
+  {
+    "id": "segment:7b5c99d120b2",
+    "pieceId": "piece:85eda662b402",
+    "order": 3,
+    "text": "参差荇菜，左右采之。窈窕淑女，琴瑟友之。"
+  },
+  {
+    "id": "segment:3aec4a936088",
+    "pieceId": "piece:85eda662b402",
+    "order": 4,
+    "text": "参差荇菜，左右芼之。窈窕淑女，钟鼓乐之。"
+  },
+  {
+    "id": "segment:f5a9863b0348",
+    "pieceId": "piece:a8412cb9e67c",
+    "order": 0,
+    "text": "蒹葭苍苍，白露为霜。所谓伊人，在水一方。溯洄从之，道阻且长。溯游从之，宛在水中央。"
+  },
+  {
+    "id": "segment:a0c4ead982bb",
+    "pieceId": "piece:a8412cb9e67c",
+    "order": 1,
+    "text": "蒹葭萋萋，白露未晞。所谓伊人，在水之湄。溯洄从之，道阻且跻。溯游从之，宛在水中坻。"
+  },
+  {
+    "id": "segment:867d2ce6743a",
+    "pieceId": "piece:a8412cb9e67c",
+    "order": 2,
+    "text": "蒹葭采采，白露未已。所谓伊人，在水之涘。溯洄从之，道阻且右。溯游从之，宛在水中沚。"
+  },
+  {
+    "id": "segment:f1e76efdee75",
+    "pieceId": "piece:cd2998d2e627",
+    "order": 0,
+    "text": "北冥有鱼，其名为鲲。鲲之大，不知其几千里也；化而为鸟，其名为鹏。鹏之背，不知其几千\n里也；怒而飞，其翼若垂天之云。是鸟也，海运则将徙于南冥。南冥者，天池也。《齐谐》\n者，志怪者也。《谐》之言曰：\"鹏之徙于南冥也，水击三千里，抟扶摇而上者九万里，去以\n六月息者也。\"野马也，尘埃也，生物之以息相吹也。天之苍苍，其正色邪？其远而无所至极\n邪？其视下也，亦若是则已矣。"
+  },
+  {
+    "id": "segment:353316a4dcd6",
+    "pieceId": "piece:36ec8fa65337",
+    "order": 0,
+    "text": "庄子与惠子游于濠梁之上。庄子曰：\"鲦鱼出游从容，是鱼之乐也。\"惠子曰：\"子非鱼，安知鱼\n之乐？\"庄子曰：\"子非我，安知我不知鱼之乐？\"惠子曰：\"我非子，固不知子矣；子固非鱼\n也，子之不知鱼之乐，全矣！\"庄子曰：\"请循其本。子曰汝安知鱼乐云者，既已知吾知之而问\n我，我知之濠上也。\""
+  },
+  {
+    "id": "segment:fa1befec56d8",
+    "pieceId": "piece:9dfde3490d01",
+    "order": 0,
+    "text": "虽有嘉肴，弗食，不知其旨也；虽有至道，弗学，不知其善也。是故学然后知不足，教然后知\n困。知不足，然后能自反也；知困，然后能自强也。故曰：教学相长也。《兑命》曰\"学学半\n\"，其此之谓乎！"
+  },
+  {
+    "id": "segment:e923c21cc291",
+    "pieceId": "piece:251fb7cdc4a1",
+    "order": 0,
+    "text": "大道之行也"
+  },
+  {
+    "id": "segment:9222d23dcc38",
+    "pieceId": "piece:251fb7cdc4a1",
+    "order": 1,
+    "text": "大道之行也，天下为公。选贤与能，讲信修睦。故人不独亲其亲，不独子其子，使老有所终，\n壮有所用，幼有所长，矜、寡、孤、独、废疾者皆有所养，男有分，女有归。货恶其弃于地\n也，不必藏于己；力恶其不出于身也，不必为己。是故谋闭而不兴，盗窃乱贼而不作，故外户\n而不闭。是谓大同。"
+  },
+  {
+    "id": "segment:5224cb9569b6",
+    "pieceId": "piece:251fb7cdc4a1",
+    "order": 2,
+    "text": "马说\n作者：韩愈 出处：《昌黎先生集》 朝代：唐\n世有伯乐，然后有千里马。千里马常有，而伯乐不常有。故虽有名马，祗辱于奴隶人之手，骈\n死于槽枥之间，不以千里称也。\n马之千里者，一食或尽粟一石。食马者不知其能千里而食也。是马也，虽有千里之能，食不\n饱，力不足，才美不外见，且欲与常马等不可得，安求其能千里也？\n策之不以其道，食之不能尽其材，鸣之而不能通其意，执策而临之，曰：\"天下无马！\"呜呼！\n其真无马邪？其真不知马也！"
+  },
+  {
+    "id": "segment:de03832b77c9",
+    "pieceId": "piece:251fb7cdc4a1",
+    "order": 3,
+    "text": "岳阳楼记\n作者：范仲淹 出处：《范文正公集》 朝代：北宋\n庆历四年春，滕子京谪守巴陵郡。越明年，政通人和，百废具兴，乃重修岳阳楼，增其旧制，\n刻唐贤今人诗赋于其上，属予作文以记之。\n予观夫巴陵胜状，在洞庭一湖。衔远山，吞长江，浩浩汤汤，横无际涯，朝晖夕阴，气象万\n千，此则岳阳楼之大观也，前人之述备矣。然则北通巫峡，南极潇湘，迁客骚人，多会于此，\n览物之情，得无异乎？\n若夫淫雨霏霏，连月不开，阴风怒号，浊浪排空，日星隐曜，山岳潜形，商旅不行，樯倾楫\n摧，薄暮冥冥，虎啸猿啼。登斯楼也，则有去国怀乡，忧谗畏讥，满目萧然，感极而悲者矣。\n至若春和景明，波澜不惊，上下天光，一碧万顷，沙鸥翔集，锦鳞游泳，岸芷汀兰，郁郁青\n青。而或长烟一空，皓月千里，浮光跃金，静影沉璧，渔歌互答，此乐何极！登斯楼也，则有\n心旷神怡，宠辱偕忘，把酒临风，其喜洋洋者矣。\n嗟夫！予尝求古仁人之心，或异二者之为，何哉？不以物喜，不以己悲，居庙堂之高则忧其\n民，处江湖之远则忧其君。是进亦忧，退亦忧。然则何时而乐耶？其必曰\"先天下之忧而忧，\n后天下之乐而乐\"乎！噫！微斯人，吾谁与归？"
+  },
+  {
+    "id": "segment:6c83390b249c",
+    "pieceId": "piece:3255888fdc74",
+    "order": 0,
+    "text": "时六年九月十五日。"
+  },
+  {
+    "id": "segment:12dc684f6b05",
+    "pieceId": "piece:3255888fdc74",
+    "order": 1,
+    "text": "醉翁亭记"
+  },
+  {
+    "id": "segment:66ed0fff660d",
+    "pieceId": "piece:3255888fdc74",
+    "order": 2,
+    "text": "作者：欧阳修 出处：《欧阳文忠公文集》 朝代：北宋"
+  },
+  {
+    "id": "segment:9514ca5e6fd8",
+    "pieceId": "piece:3255888fdc74",
+    "order": 3,
+    "text": "环滁皆山也。其西南诸峰，林壑尤美，望之蔚然而深秀者，琅琊也。山行六七里，渐闻水声潺潺，而泻出于两峰之间者，酿泉也。峰回路转，有亭翼然临于泉上者，醉翁亭也。作亭者谁？山之僧智仙也。名之者谁？太守自谓也。太守与客来饮于此，饮少辄醉，而年又最高，故自号曰醉翁也。醉翁之意不在酒，在乎山水之间也。山水之乐，得之心而寓之酒也。"
+  },
+  {
+    "id": "segment:91b6710a8b7d",
+    "pieceId": "piece:3255888fdc74",
+    "order": 4,
+    "text": "若夫日出而林霏开，云归而岩穴暝，晦明变化者，山间之朝暮也。野芳发而幽香，佳木秀而繁阴，风霜高洁，水落而石出者，山间之四时也。朝而往，暮而归，四时之景不同，而乐亦无穷也。"
+  },
+  {
+    "id": "segment:008b93b56224",
+    "pieceId": "piece:3255888fdc74",
+    "order": 5,
+    "text": "至于负者歌于途，行者休于树，前者呼，后者应，伛偻提携，往来而不绝者，滁人游也。临溪而渔，溪深而鱼肥，酿泉为酒，泉香而酒洌，山肴野蔌，杂然而前陈者，太守宴也。宴酣之乐，非丝非竹，射者中，弈者胜，觥筹交错，起坐而喧哗者，众宾欢也。苍颜白发，颓然乎其间者，太守醉也。"
+  },
+  {
+    "id": "segment:c69b6285edda",
+    "pieceId": "piece:3255888fdc74",
+    "order": 6,
+    "text": "已而夕阳在山，人影散乱，太守归而宾客从也。树林阴翳，鸣声上下，游人去而禽鸟乐也。然而禽鸟知山林之乐，而不知人之乐；人知从太守游而乐，而不知太守之乐其乐也。醉能同其乐，醒能述以文者，太守也。太守谓谁？庐陵欧阳修也。"
+  },
+  {
+    "id": "segment:a8917119ae1b",
+    "pieceId": "piece:3255888fdc74",
+    "order": 7,
+    "text": "湖心亭看雪"
+  },
+  {
+    "id": "segment:be07362809ed",
+    "pieceId": "piece:3255888fdc74",
+    "order": 8,
+    "text": "作者：张岱 出处：《陶庵梦忆》 朝代：明末清初"
+  },
+  {
+    "id": "segment:0bce36282f56",
+    "pieceId": "piece:3255888fdc74",
+    "order": 9,
+    "text": "崇祯五年十二月，余住西湖。大雪三日，湖中人鸟声俱绝。是日更定矣，余拏一小舟，拥毳衣炉火，独往湖心亭看雪。雾凇沆砀，天与云与山与水，上下一白，湖上影子，惟长堤一痕、湖心亭一点、与余舟一芥、舟中人两三粒而已。"
+  },
+  {
+    "id": "segment:c42271d5f81a",
+    "pieceId": "piece:3255888fdc74",
+    "order": 10,
+    "text": "到亭上，有两人铺毡对坐，一童子烧酒炉正沸。见余大喜曰：\"湖中焉得更有此人！\"拉余同饮。余强饮三大白而别。问其姓氏，是金陵人，客此。及下船，舟子喃喃曰：\"莫说相公痴，更有痴似相公者。\""
+  },
+  {
+    "id": "segment:5c6005d1691b",
+    "pieceId": "piece:bc7ba78f0e5e",
+    "order": 0,
+    "text": "鱼，我所欲也；熊掌，亦我所欲也。二者不可得兼，舍鱼而取熊掌者也。生，亦我所欲也；义，亦我所欲也。二者不可得兼，舍生而取义者也。生亦我所欲，所欲有甚于生者，故不为苟得也；死亦我所恶，所恶有甚于死者，故患有所不辟也。如使人之所欲莫甚于生，则凡可以得生者何不用也？使人之所恶莫甚于死者，则凡可以辟患者何不为也？由是则生而有不用也，由是则可以辟患而有不为也。是故所欲有甚于生者，所恶有甚于死者。非独贤者有是心也，人皆有之，贤者能勿丧耳。"
+  },
+  {
+    "id": "segment:a5d378bc2348",
+    "pieceId": "piece:bc7ba78f0e5e",
+    "order": 1,
+    "text": "一箪食，一豆羹，得之则生，弗得则死。呼尔而与之，行道之人弗受；蹴尔而与之，乞人不屑也。万钟则不辩礼义而受之，万钟于我何加焉！为宫室之美、妻妾之奉、所识穷乏者得我与？乡为身死而不受，今为宫室之美为之；乡为身死而不受，今为妻妾之奉为之；乡为身死而不受，今为所识穷乏者得我而为之：是亦不可以已乎？此之谓失其本心。"
+  },
+  {
+    "id": "segment:35e2d52299ef",
+    "pieceId": "piece:569bbea766d2",
+    "order": 0,
+    "text": "余幼时即嗜学。家贫，无从致书以观，每假借于藏书之家，手自笔录，计日以还。天大寒，砚冰坚，手指不可屈伸，弗之怠。录毕，走送之，不敢稍逾约。以是人多以书假余，余因得遍观群书。既加冠，益慕圣贤之道，又患无硕师名人与游，尝趋百里外，从乡之先达执经叩问。先达德隆望尊，门人弟子填其室，未尝稍降辞色。余立侍左右，援疑质理，俯身倾耳以请；或遇其叱咄，色愈恭，礼愈至，不敢出一言以复；俟其欣悦，则又请焉。故余虽愚，卒获有所闻。"
+  },
+  {
+    "id": "segment:e4afbbca0afd",
+    "pieceId": "piece:569bbea766d2",
+    "order": 1,
+    "text": "当余之从师也，负箧曳屣行深山巨谷中。穷冬烈风，大雪深数尺，足肤皲裂而不知。至舍，四肢僵劲不能动，媵人持汤沃灌，以衾拥覆，久而乃和。寓逆旅，主人日再食，无鲜肥滋味之享。同舍生皆被绮绣，戴朱缨宝饰之帽，腰白玉之环，左佩刀，右备容臭，烨然若神人；余则缊袍敝衣处其间，略无慕艳意，以中有足乐者，不知口体之奉不若人也。盖余之勤且艰若此。"
+  },
+  {
+    "id": "segment:46a4ed957b16",
+    "pieceId": "piece:569bbea766d2",
+    "order": 2,
+    "text": "今虽耄老，未有所成，犹幸预君子之列，而承天子之宠光，缀公卿之后，日侍坐备顾问，四海亦谬称其氏名，况才之过于余者乎？今诸生学于太学，县官日有廪稍之供，父母岁有裘葛之遗，无冻馁之患矣；坐大厦之下而诵诗书，无奔走之劳矣；有司业、博士为之师，未有问而不告、求而不得者也；凡所宜有之书，皆集于此，不必若余之手录，假诸人而后见也。其业有不精、德有不成者，非天质之卑，则心若不  余之专耳，岂他人之过哉？"
+  },
+  {
+    "id": "segment:e369ed891ed4",
+    "pieceId": "piece:569bbea766d2",
+    "order": 3,
+    "text": "东阳马生君则，在太学已二年，流辈甚称其贤。余朝京师，生以乡人子谒余，撰长书以为贽，辞甚畅达。与之论辨，言和而色夷。自谓少时用心于学甚劳，是可谓善学者矣。其将归见其亲"
+  },
+  {
+    "id": "segment:067156e71fbe",
+    "pieceId": "piece:391382e1c476",
+    "order": 0,
+    "text": "十年春，齐师伐我。公将战，曹刿请见。其乡人曰：\"肉食者谋之，又何间焉？\"刿曰：\"肉食者鄙，未能远谋。\"乃入见。问：\"何以战？\"公曰：\"衣食所安，弗敢专也，必以分人。\"对曰：\"小惠未遍，民弗从也。\"公曰：\"牺牲玉帛，弗敢加也，必以信。\"对曰：\"小信未孚，神弗福也。\"公曰：\"小大之狱，虽不能察，必以情。\"对曰：\"忠之属也。可以一战。战则请从。\""
+  },
+  {
+    "id": "segment:a2d855abe5a5",
+    "pieceId": "piece:391382e1c476",
+    "order": 1,
+    "text": "公与之乘，战于长勺。公将鼓之。刿曰：\"未可。\"齐人三鼓。刿曰：\"可矣。\"齐师败绩。公将驰之。刿曰：\"未可。\"下视其辙，登轼而望之，曰：\"可矣。\"遂逐齐师。"
+  },
+  {
+    "id": "segment:a4fcc39c2999",
+    "pieceId": "piece:391382e1c476",
+    "order": 2,
+    "text": "既克，公问其故。对曰：\"夫战，勇气也。一鼓作气，再而衰，三而竭。彼竭我盈，故克之。夫大国，难测也，惧有伏焉。吾视其辙乱，望其旗靡，故逐之。\""
+  },
+  {
+    "id": "segment:7e4d4a74db91",
+    "pieceId": "piece:8eae8468380d",
+    "order": 0,
+    "text": "先帝创业未半而中道崩殂，今天下三分，益州疲弊，此诚危急存亡之秋也。然侍卫之臣不懈于内，忠志之士忘身于外者，盖追先帝之殊遇，欲报之于陛下也。诚宜开张圣听，以光先帝遗德，恢弘志士之气，不宜妄自菲薄，引喻失义，以塞忠谏之路也。"
+  },
+  {
+    "id": "segment:5aa4495927a7",
+    "pieceId": "piece:8eae8468380d",
+    "order": 1,
+    "text": "宫中府中，俱为一体，陟罚臧否，不宜异同。若有作奸犯科及为忠善者，宜付有司论其刑赏，以昭陛下平明之理，不宜偏私，使内外异法也。"
+  },
+  {
+    "id": "segment:e9222895be1e",
+    "pieceId": "piece:8eae8468380d",
+    "order": 2,
+    "text": "侍中、侍郎郭攸之、费祎、董允等，此皆良实，志虑忠纯，是以先帝简拔以遗陛下。愚以为宫中之事，事无大小，悉以咨之，然后施行，必能裨补阙漏，有所广益。"
+  },
+  {
+    "id": "segment:84bd28dbc3ea",
+    "pieceId": "piece:8eae8468380d",
+    "order": 3,
+    "text": "将军向宠，性行淑均，晓畅军事，试用于昔日，先帝称之曰能，是以众议举宠为督。愚以为营中之事，悉以咨之，必能使行阵和睦，优劣得所。"
+  },
+  {
+    "id": "segment:0534dda56791",
+    "pieceId": "piece:8eae8468380d",
+    "order": 4,
+    "text": "亲贤臣，远小人，此先汉所以兴隆也；亲小人，远贤臣，此后汉所以倾颓也。先帝在时，每与臣论此事，未尝不叹息痛恨于桓、灵也。侍中、尚书、长史、参军，此悉贞良死节之臣，愿陛下亲之信之，则汉室之隆，可计日而待也。"
+  },
+  {
+    "id": "segment:18df6a5d5579",
+    "pieceId": "piece:8eae8468380d",
+    "order": 5,
+    "text": "臣本布衣，躬耕于南阳，苟全性命于乱世，不求闻达于诸侯。先帝不以臣卑鄙，猥自枉屈，三顾臣于草庐之中，咨臣以当世之事，由是感激，遂许先帝以驱驰。后值倾覆，受任于败军之际，奉命于危难之间，尔来二十有一年矣。"
+  },
+  {
+    "id": "segment:a8ecb0e1bd2d",
+    "pieceId": "piece:8eae8468380d",
+    "order": 6,
+    "text": "先帝知臣谨慎，故临崩寄臣以大事也。受命以来，夙夜忧叹，恐托付不效，以伤先帝之明，故\n五月渡泸，深入不毛。今南方已定，兵甲已足，当奖率三军，北定中原，庶竭驽钝，攘除奸\n凶，兴复汉室，还于旧都。此臣所以报先帝而忠陛下之职分也。至于斟酌损益，进尽忠言，则\n攸之、祎、允之任也。\n愿陛下托臣以讨贼兴复之效；不效，则治臣之罪，以告先帝之灵。若无兴德之言，则责攸之、\n祎、允等之慢，以彰其咎；陛下亦宜自谋，以咨诹善道，察纳雅言，深追先帝遗诏。臣不胜受\n恩感激。今当远离，临表涕零，不知所言。"
+  },
+  {
+    "id": "segment:6cb129220446",
+    "pieceId": "piece:8eae8468380d",
+    "order": 7,
+    "text": "邹忌讽齐王纳谏\n作者：刘向编纂 出处：《战国策·齐策一》 朝代：西汉\n邹忌修八尺有余，而形貌昳丽。朝服衣冠，窥镜，谓其妻曰：\"我孰与城北徐公美？\"其妻曰：\"\n君美甚，徐公何能及君也？\"城北徐公，齐国之美丽者也。忌不自信，而复问其妾曰：\"吾孰与\n徐公美？\"妾曰：\"徐公何能及君也？\"旦日，客从外来，与坐谈，问之客曰：\"吾与徐公孰美？\"\n客曰：\"徐公不若君之美也。\"明日徐公来，孰视之，自以为不如；窥镜而自视，又弗如远甚。\n暮寝而思之，曰：\"吾妻之美我者，私我也；妾之美我者，畏我也；客之美我者，欲有求于我\n也。\"\n于是入朝见威王，曰：\"臣诚知不如徐公美。臣之妻私臣，臣之妾畏臣，臣之客欲有求于臣，\n皆以美于徐公。今齐地方千里，百二十城，宫妇左右莫不私王，朝廷之臣莫不畏王，四境之内\n莫不有求于王：由此观之，王之蔽甚矣。\"\n王曰：\"善。\"乃下令：\"群臣吏民能面刺寡人之过者，受上赏；上书谏寡人者，受中赏；能谤讥\n于市朝，闻寡人之耳者，受下赏。\"令初下，群臣进谏，门庭若市；数月之后，时时而间进；\n期年之后，虽欲言，无可进者。燕、赵、韩、魏闻之，皆朝于齐。此所谓战胜于朝廷。"
+  },
+  {
+    "id": "segment:0db9fd7784cf",
+    "pieceId": "piece:8eae8468380d",
+    "order": 8,
+    "text": "陈涉世家\n作者：司马迁 出处：《史记》 朝代：西汉\n陈胜者，阳城人也，字涉。吴广者，阳夏人也，字叔。陈涉少时，尝与人佣耕，辍耕之垄上，\n怅恨久之，曰：\"苟富贵，无相忘。\"佣者笑而应曰：\"若为佣耕，何富贵也？\"陈涉太息曰：\"嗟\n乎！燕雀安知鸿鹄之志哉！\"\n二世元年七月，发闾左谪戍渔阳，九百人屯大泽乡。陈胜、吴广皆次当行，为屯长。会天大"
+  },
+  {
+    "id": "segment:a63a82b0f2dd",
+    "pieceId": "piece:4be75867b294",
+    "order": 0,
+    "text": "雨，道不通，度已失期。失期，法皆斩。陈胜、吴广乃谋曰：\"今亡亦死，举大计亦死；等死，死国可乎？\"陈胜曰：\"天下苦秦久矣。吾闻二世少子也，不当立，当立者乃公子扶苏。扶苏以数谏故，上使外将兵。今或闻无罪，二世杀之。百姓多闻其贤，未知其死也。项燕为楚将，数有功，爱士卒，楚人怜之。或以为死，或以为亡。今诚以吾众诈自称公子扶苏、项燕，为天下唱，宜多应者。\"吴广以为然。乃行卜。卜者知其指意，曰：\"足下事皆成，有功。然足下卜之鬼乎？\"陈胜、吴广喜，念鬼，曰：\"此教我先威众耳。\"乃丹书帛曰\"陈胜王\"，置人所罾鱼腹中。卒买鱼烹食，得鱼腹中书，固以怪之矣。又间令吴广之次所旁丛祠中，夜篝火，狐鸣呼曰：\"大楚兴，陈胜王。\"卒皆夜惊恐。旦日，卒中往往语，皆指目陈胜。\n吴广素爱人，士卒多为用者。将尉醉，广故数言欲亡，忿恚尉，令辱之，以激怒其众。尉果笞广。尉剑挺，广起，夺而杀尉。陈胜佐之，并杀两尉。召令徒属曰：\"公等遇雨，皆已失期，失期当斩。藉第令毋斩，而戍死者固十六七。且壮士不死即已，死即举大名耳，王侯将相宁有种乎！\"徒属皆曰：\"敬受命。\"乃诈称公子扶苏、项燕，从民欲也。袒右，称大楚。为坛而盟，祭以尉首。陈胜自立为将军，吴广为都尉。攻大泽乡，收而攻蕲。蕲下，乃令符离人葛婴将兵徇蕲以东。攻铚、酂、苦、柘、谯皆下之。行收兵。比至陈，车六七百乘，骑千余，卒数万人。攻陈，陈守令皆不在，独守丞与战谯门中。弗胜，守丞死，乃入据陈。数日，号令召三老、豪杰与皆来会计事。三老、豪杰皆曰：\"将军身被坚执锐，伐无道，诛暴秦，复立楚国之社稷，功宜为王。\"陈涉乃立为王，号为张楚。当此时，诸郡县苦秦吏者，皆刑其长吏，杀之以应陈涉。"
+  },
+  {
+    "id": "segment:ead403329055",
+    "pieceId": "piece:d9077f697015",
+    "order": 0,
+    "text": "作者：韩愈 出处：《昌黎先生集》 朝代：唐\n世有伯乐，然后有千里马。千里马常有，而伯乐不常有。故虽有名马，祗辱于奴隶人之手，骈\n死于槽枥之间，不以千里称也。\n马之千里者，一食或尽粟一石。食马者不知其能千里而食也。是马也，虽有千里之能，食不\n饱，力不足，才美不外见，且欲与常马等不可得，安求其能千里也？\n策之不以其道，食之不能尽其材，鸣之而不能通其意，执策而临之，曰：\"天下无马！\"呜呼！\n其真无马邪？其真不知马也！\n九年级上册"
+  },
+  {
+    "id": "segment:90da7d568f5d",
+    "pieceId": "piece:12b8908cf1a6",
+    "order": 0,
+    "text": "作者：范仲淹 出处：《范文正公集》 朝代：北宋\n庆历四年春，滕子京谪守巴陵郡。越明年，政通人和，百废具兴，乃重修岳阳楼，增其旧制，\n刻唐贤今人诗赋于其上，属予作文以记之。\n予观夫巴陵胜状，在洞庭一湖。衔远山，吞长江，浩浩汤汤，横无际涯，朝晖夕阴，气象万\n千，此则岳阳楼之大观也，前人之述备矣。然则北通巫峡，南极潇湘，迁客骚人，多会于此，\n览物之情，得无异乎？\n若夫淫雨霏霏，连月不开，阴风怒号，浊浪排空，日星隐曜，山岳潜形，商旅不行，樯倾楫\n摧，薄暮冥冥，虎啸猿啼。登斯楼也，则有去国怀乡，忧谗畏讥，满目萧然，感极而悲者矣。\n至若春和景明，波澜不惊，上下天光，一碧万顷，沙鸥翔集，锦鳞游泳，岸芷汀兰，郁郁青\n青。而或长烟一空，皓月千里，浮光跃金，静影沉璧，渔歌互答，此乐何极！登斯楼也，则有\n心旷神怡，宠辱偕忘，把酒临风，其喜洋洋者矣。\n嗟夫！予尝求古仁人之心，或异二者之为，何哉？不以物喜，不以己悲，居庙堂之高则忧其\n民，处江湖之远则忧其君。是进亦忧，退亦忧。然则何时而乐耶？其必曰\"先天下之忧而忧，\n后天下之乐而乐\"乎！噫！微斯人，吾谁与归？\n第 12 页 共 17 页"
+  },
+  {
+    "id": "segment:420af764b349",
+    "pieceId": "piece:49fe2f202659",
+    "order": 0,
+    "text": "作者：张岱 出处：《陶庵梦忆》 朝代：明末清初\n崇祯五年十二月，余住西湖。大雪三日，湖中人鸟声俱绝。是日更定矣，余拏一小舟，拥毳衣\n炉火，独往湖心亭看雪。雾凇沆砀，天与云与山与水，上下一白，湖上影子，惟长堤一痕、湖\n心亭一点、与余舟一芥、舟中人两三粒而已。\n到亭上，有两人铺毡对坐，一童子烧酒炉正沸。见余大喜曰：\"湖中焉得更有此人！\"拉余同\n饮。余强饮三大白而别。问其姓氏，是金陵人，客此。及下船，舟子喃喃曰：\"莫说相公痴，\n更有痴似相公者。\"\n九年级下册"
+  },
+  {
+    "id": "segment:90a6bd6d0869",
+    "pieceId": "piece:90bd7946a818",
+    "order": 0,
+    "text": "作者：刘向编纂 出处：《战国策·齐策一》 朝代：西汉\n邹忌修八尺有余，而形貌昳丽。朝服衣冠，窥镜，谓其妻曰：\"我孰与城北徐公美？\"其妻曰：\"\n君美甚，徐公何能及君也？\"城北徐公，齐国之美丽者也。忌不自信，而复问其妾曰：\"吾孰与\n徐公美？\"妾曰：\"徐公何能及君也？\"旦日，客从外来，与坐谈，问之客曰：\"吾与徐公孰美？\"\n客曰：\"徐公不若君之美也。\"明日徐公来，孰视之，自以为不如；窥镜而自视，又弗如远甚。\n暮寝而思之，曰：\"吾妻之美我者，私我也；妾之美我者，畏我也；客之美我者，欲有求于我\n也。\"\n于是入朝见威王，曰：\"臣诚知不如徐公美。臣之妻私臣，臣之妾畏臣，臣之客欲有求于臣，\n皆以美于徐公。今齐地方千里，百二十城，宫妇左右莫不私王，朝廷之臣莫不畏王，四境之内\n莫不有求于王：由此观之，王之蔽甚矣。\"\n王曰：\"善。\"乃下令：\"群臣吏民能面刺寡人之过者，受上赏；上书谏寡人者，受中赏；能谤讥\n于市朝，闻寡人之耳者，受下赏。\"令初下，群臣进谏，门庭若市；数月之后，时时而间进；\n期年之后，虽欲言，无可进者。燕、赵、韩、魏闻之，皆朝于齐。此所谓战胜于朝廷。"
+  }
+]

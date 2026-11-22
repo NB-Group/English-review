@@ -1,0 +1,10 @@
+{
+  "packId": "zhongkao-qwen-2026.11.22",
+  "version": "2026.11.22",
+  "title": "上海中考初中文言文与古诗词（Qwen 整理候选）",
+  "counts": {
+    "prosePieces": 42,
+    "poetryPieces": 98,
+    "wordSenses": 354
+  }
+}

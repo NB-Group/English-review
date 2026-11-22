@@ -1,0 +1,4960 @@
+[
+  {
+    "id": "sense:061f9f9849da",
+    "term": "比",
+    "meaning": "靠近",
+    "example": "其两膝相比者，各隐卷底衣褶中",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 1,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:870ae7c44084",
+    "term": "比",
+    "meaning": "及，等到 (……的时候)",
+    "example": "比至陈，车六七百乘",
+    "source": "陈涉世家 (九下) (非考试篇目)",
+    "tags": [],
+    "number": 1,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:52df76cb654e",
+    "term": "比",
+    "meaning": "比较",
+    "example": "心却比，男儿烈浅陋，目光短浅",
+    "source": "满江红·小住京华 (九下) (非考试篇目)",
+    "tags": [],
+    "number": 1,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:8cb121286285",
+    "term": "鄙",
+    "meaning": "浅陋，目光短浅",
+    "example": "刿曰：‘肉食者鄙，未能远谋。’",
+    "source": "曹刿论战 (九下)",
+    "tags": [],
+    "number": 2,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:d3d2ff5a0cd2",
+    "term": "兵",
+    "meaning": "兵器，武器",
+    "example": "今南方已定，兵甲已足",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 3,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:caba0f742776",
+    "term": "兵",
+    "meaning": "军队",
+    "example": "可汗大点兵",
+    "source": "木兰诗 (七下) (非考试篇目)",
+    "tags": [],
+    "number": 3,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:0af8f4218898",
+    "term": "兵",
+    "meaning": "士兵",
+    "example": "一老河兵闻之",
+    "source": "河中石兽 (七下) (被删除篇目)",
+    "tags": [],
+    "number": 3,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:1cdf46af90c4",
+    "term": "兵",
+    "meaning": "战争",
+    "example": "况乃未休兵",
+    "source": "月夜忆舍弟 (九上) (非考试篇目)",
+    "tags": [],
+    "number": 3,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:218537ccb576",
+    "term": "病",
+    "meaning": "生病",
+    "example": "未果，寻病终",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 4,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:bc1ea874fde4",
+    "term": "病",
+    "meaning": "枯萎",
+    "example": "病树前头万木春",
+    "source": "酬乐天扬州初逢席上见赠 (九上)",
+    "tags": [],
+    "number": 4,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:a710d6f4d07c",
+    "term": "乘",
+    "meaning": "坐、驾 (车)",
+    "example": "公与之乘",
+    "source": "曹刿论战 (九下)",
+    "tags": [],
+    "number": 5,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:f8ecef9b1985",
+    "term": "乘",
+    "meaning": "趁着，冒着",
+    "example": "从今若许闲乘月",
+    "source": "游山西村 (七下)",
+    "tags": [],
+    "number": 5,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:3c91225d471f",
+    "term": "乘",
+    "meaning": "辆 (用以计算车子)",
+    "example": "车六七百乘",
+    "source": "陈涉世家 (九下) (非考试篇目)",
+    "tags": [],
+    "number": 5,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:11d00075d571",
+    "term": "持",
+    "meaning": "拉",
+    "example": "锐兵刃，彀弓弩，持满",
+    "source": "周亚夫军细柳 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 6,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:3e8bd364653c",
+    "term": "持",
+    "meaning": "拿着",
+    "example": "屠乃奔倚其下，弛担持刀",
+    "source": "狼 (七上)",
+    "tags": [],
+    "number": 6,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:53b209bf1ac8",
+    "term": "从",
+    "meaning": "跟从，跟随",
+    "example": "七十而从心所欲",
+    "source": "《论语》十二章 (七上)",
+    "tags": [],
+    "number": 7,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:f3ed7f31a28b",
+    "term": "从",
+    "meaning": "听从，顺从",
+    "example": "小惠未遍，民弗从也",
+    "source": "曹刿论战 (九下)",
+    "tags": [],
+    "number": 7,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:6eb5cbbd9c25",
+    "term": "从",
+    "meaning": "采取某一种办法",
+    "example": "无从致书以观",
+    "source": "送东阳马生序 (九下)",
+    "tags": [],
+    "number": 7,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:8ae55b079ab0",
+    "term": "从",
+    "meaning": "自，由",
+    "example": "从小丘西行百二十步",
+    "source": "小石潭记 (八下)",
+    "tags": [],
+    "number": 7,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      1
+    ]
+  },
+  {
+    "id": "sense:7ae8a45ceec1",
+    "term": "达",
+    "meaning": "到达",
+    "example": "指通豫南，达于汉阴",
+    "source": "愚公移山 (八上)",
+    "tags": [],
+    "number": 8,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:3ec8a5146a83",
+    "term": "达",
+    "meaning": "得志，显贵",
+    "example": "不求闻达于诸侯",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 8,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:bc2d26ecfb0b",
+    "term": "达",
+    "meaning": "有道德，有学问 (的人)",
+    "example": "从乡之先达执经叩问",
+    "source": "送东阳马生序 (九下)",
+    "tags": [],
+    "number": 8,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:56f7819b141c",
+    "term": "达",
+    "meaning": "通顺，通畅",
+    "example": "辞甚畅达",
+    "source": "送东阳马生序 (九下)",
+    "tags": [],
+    "number": 8,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:93ae71dfd8b2",
+    "term": "当",
+    "meaning": "在 (某时、某处)",
+    "example": "陈康肃公善射，当世无双",
+    "source": "卖油翁 (七下)",
+    "tags": [],
+    "number": 9,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:e1b8c3d049bf",
+    "term": "当",
+    "meaning": "应当，应该",
+    "example": "耕当问奴，织当问婢",
+    "source": "书戴嵩画牛 (六上)",
+    "tags": [],
+    "number": 9,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:79b7c3e72a0d",
+    "term": "当",
+    "meaning": "将要，就要",
+    "example": "今当远离",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 9,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:30ac5281ca7e",
+    "term": "当",
+    "meaning": "对着，面对",
+    "example": "木兰当户织",
+    "source": "木兰诗 (七下) (非考试篇目)",
+    "tags": [],
+    "number": 9,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:6505ff7cae54",
+    "term": "当",
+    "meaning": "掌管，主持",
+    "example": "卿今当涂掌事",
+    "source": "孙权劝学 (七下)",
+    "tags": [],
+    "number": 9,
+    "senseIndex": 5,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:0a4cbb1b9d6b",
+    "term": "道",
+    "meaning": "路；途",
+    "example": "伐竹取道，下见小潭，水尤清冽",
+    "source": "小石潭记 (八下)",
+    "tags": [],
+    "number": 10,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:6f2092232de8",
+    "term": "道",
+    "meaning": "道理，规律，方法",
+    "example": "虽有至道，弗学，不知其善也",
+    "source": "虽有嘉肴 (八下)",
+    "tags": [],
+    "number": 10,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:ac1aac5a8cc4",
+    "term": "道",
+    "meaning": "(儒家推崇的上古时代的) 政治制度",
+    "example": "以咨诹善道，察纳雅言",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 10,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:a1c5610cdfb7",
+    "term": "道",
+    "meaning": "正道",
+    "example": "得道者多助，失道者寡助",
+    "source": "得道多助，失道寡助 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 10,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:c32619b5f295",
+    "term": "道",
+    "meaning": "说，讲",
+    "example": "国人道之，闻之于宋君",
+    "source": "穿井得一人 (七上)",
+    "tags": [],
+    "number": 10,
+    "senseIndex": 5,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:dcf3773fd84e",
+    "term": "得",
+    "meaning": "得到，获得 (取得)",
+    "example": "穿井得一人",
+    "source": "穿井得一人 (七上)",
+    "tags": [],
+    "number": 11,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:39daf4d5ac23",
+    "term": "得",
+    "meaning": "(看到，看见)",
+    "example": "林尽水源，便得一山",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 11,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:44094a78123a",
+    "term": "得",
+    "meaning": "(领会)",
+    "example": "得之心而寓之酒也",
+    "source": "醉翁亭记 (九上)",
+    "tags": [],
+    "number": 11,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:c5f80da3e6b4",
+    "term": "得",
+    "meaning": "(找到)",
+    "example": "求二石兽于水中，竟不可得",
+    "source": "河中石兽 (七下) (被删除篇目)",
+    "tags": [],
+    "number": 11,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      2
+    ]
+  },
+  {
+    "id": "sense:58d19e584a65",
+    "term": "尔",
+    "meaning": "同“耳”，相当于“罢了”",
+    "example": "无他，但手熟尔",
+    "source": "卖油翁 (七下)",
+    "tags": [],
+    "number": 12,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      3
+    ]
+  },
+  {
+    "id": "sense:ffe2c2b4f8d7",
+    "term": "尔",
+    "meaning": "助词，附在形容词、动词、副词或拟声词后，用作后缀",
+    "example": "呼尔而与之，行道之人弗受",
+    "source": "鱼我所欲也 (九下)",
+    "tags": [],
+    "number": 12,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      3
+    ]
+  },
+  {
+    "id": "sense:95da3750ca68",
+    "term": "尔",
+    "meaning": "词尾，相当于“地”“然”",
+    "example": "俶尔远逝",
+    "source": "小石潭记 (八下)",
+    "tags": [],
+    "number": 12,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      3
+    ]
+  },
+  {
+    "id": "sense:cc2956d52b85",
+    "term": "尔",
+    "meaning": "代词，你 (你们)",
+    "example": "尔安敢轻吾射",
+    "source": "卖油翁 (七下)",
+    "tags": [],
+    "number": 12,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      3
+    ]
+  },
+  {
+    "id": "sense:d88d6dfb6ab8",
+    "term": "尔",
+    "meaning": "指示代词，这，那",
+    "example": "尔来二十有一年矣",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 12,
+    "senseIndex": 5,
+    "category": "real-word",
+    "sourcePages": [
+      3
+    ]
+  },
+  {
+    "id": "sense:f38bdd08de24",
+    "term": "伐",
+    "meaning": "砍伐",
+    "example": "伐竹取道，下见小潭，水尤清冽",
+    "source": "小石潭记 (八下)",
+    "tags": [],
+    "number": 13,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      3
+    ]
+  },
+  {
+    "id": "sense:de1e70b94a7d",
+    "term": "伐",
+    "meaning": "攻打，讨伐",
+    "example": "十年春，齐师伐我",
+    "source": "曹刿论战 (九下)",
+    "tags": [],
+    "number": 13,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      3
+    ]
+  },
+  {
+    "id": "sense:35a09ec70cd7",
+    "term": "犯",
+    "meaning": "侵害，危害",
+    "example": "至于亚夫，可得而犯邪",
+    "source": "周亚夫军细柳 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 14,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      3
+    ]
+  },
+  {
+    "id": "sense:d491eb855b84",
+    "term": "犯",
+    "meaning": "触犯，违犯",
+    "example": "若有作奸犯科及为忠善者",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 14,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      3
+    ]
+  },
+  {
+    "id": "sense:f9b3a51991fa",
+    "term": "方",
+    "meaning": "方圆，周围",
+    "example": "太行、王屋二山，方七百里",
+    "source": "愚公移山 (八上)",
+    "tags": [],
+    "number": 15,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      3
+    ]
+  },
+  {
+    "id": "sense:32b072cf1cbb",
+    "term": "方",
+    "meaning": "区域，地方",
+    "example": "有朋自远方来，不亦乐乎",
+    "source": "《论语》十二章 (七上)",
+    "tags": [],
+    "number": 15,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      3
+    ]
+  },
+  {
+    "id": "sense:ac052396aa0d",
+    "term": "方",
+    "meaning": "将，将要",
+    "example": "方欲行，转视积薪后",
+    "source": "狼 (七上)",
+    "tags": [],
+    "number": 15,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      3
+    ]
+  },
+  {
+    "id": "sense:4b4226c016c1",
+    "term": "方",
+    "meaning": "表示时间、相当于“始”“才”",
+    "example": "方鼓琴而志在太山",
+    "source": "伯牙鼓琴 (六上)",
+    "tags": [],
+    "number": 15,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      3
+    ]
+  },
+  {
+    "id": "sense:dedc719c01b8",
+    "term": "负",
+    "meaning": "背，以背载物",
+    "example": "帝感其诚，命夸娥氏二子负二山",
+    "source": "愚公移山 (八上)",
+    "tags": [],
+    "number": 16,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      3
+    ]
+  },
+  {
+    "id": "sense:db4a1342a2ea",
+    "term": "负",
+    "meaning": "凭借，依仗，依靠",
+    "example": "皆生寒树，负势竞上",
+    "source": "与朱元思书 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 16,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      3
+    ]
+  },
+  {
+    "id": "sense:1d0d00a67076",
+    "term": "赋",
+    "meaning": "一种文体",
+    "example": "刻唐贤今人诗赋于其上",
+    "source": "岳阳楼记 (九上)",
+    "tags": [],
+    "number": 17,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      3
+    ]
+  },
+  {
+    "id": "sense:9d7d0afd7bed",
+    "term": "更",
+    "meaning": "另，另外",
+    "example": "士别三日，即更刮目相待",
+    "source": "孙权劝学 (七下)",
+    "tags": [],
+    "number": 18,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:b652bcd2185f",
+    "term": "更",
+    "meaning": "再",
+    "example": "室中更无人，惟有乳下孙",
+    "source": "石壕吏 (八下)",
+    "tags": [],
+    "number": 18,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:eb39aac68a08",
+    "term": "更",
+    "meaning": "又，还",
+    "example": "湖中焉得更有此人",
+    "source": "湖心亭看雪 (九上) (非考试篇目)",
+    "tags": [],
+    "number": 18,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:21d1f2aed4dc",
+    "term": "更",
+    "meaning": "夜间计时的单位",
+    "example": "是日更定矣",
+    "source": "湖心亭看雪 (九上) (非考试篇目)",
+    "tags": [],
+    "number": 18,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:fb2bc943bdcb",
+    "term": "更",
+    "meaning": "随便，苟且",
+    "example": "苟全性命于乱世",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 18,
+    "senseIndex": 5,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:79c237ea1a95",
+    "term": "苟",
+    "meaning": "随便，苟且",
+    "example": "苟全性命于乱世",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 19,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:cb27f14ac551",
+    "term": "苟",
+    "meaning": "故不为苟得也",
+    "example": "故不为苟得也",
+    "source": "鱼我所欲也 (九下)",
+    "tags": [],
+    "number": 19,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:4f27aa630eff",
+    "term": "故",
+    "meaning": "过去，原来，照旧",
+    "example": "温故而知新，可以为师矣",
+    "source": "《论语》十二章 (七上)",
+    "tags": [],
+    "number": 20,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:31cc1acbda8c",
+    "term": "故",
+    "meaning": "原因，缘故",
+    "example": "见两小儿辩斗，问其故",
+    "source": "两小儿辩日 (六下)",
+    "tags": [],
+    "number": 20,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:38036c87fd8c",
+    "term": "故",
+    "meaning": "所以，因此",
+    "example": "故天将降大任于是人也",
+    "source": "生于忧患，死于安乐 (八上)",
+    "tags": [],
+    "number": 20,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:ee0e45f1cb42",
+    "term": "故",
+    "meaning": "是故学然后知不足",
+    "example": "是故学然后知不足",
+    "source": "虽有嘉肴 (八下)",
+    "tags": [],
+    "number": 20,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:ad325ce47e93",
+    "term": "故",
+    "meaning": "故曰：教学相长也",
+    "example": "故曰：教学相长也",
+    "source": "虽有嘉肴 (八下)",
+    "tags": [],
+    "number": 20,
+    "senseIndex": 5,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:4b992bb3cebe",
+    "term": "故",
+    "meaning": "故自号曰醉翁也",
+    "example": "故自号曰醉翁也",
+    "source": "醉翁亭记 (九上)",
+    "tags": [],
+    "number": 20,
+    "senseIndex": 6,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:8b42646e3430",
+    "term": "故",
+    "meaning": "故临崩寄臣以大事也",
+    "example": "故临崩寄臣以大事也",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 20,
+    "senseIndex": 7,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:9939e79b850c",
+    "term": "故",
+    "meaning": "故五月渡泸，深入不毛",
+    "example": "故五月渡泸，深入不毛",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 20,
+    "senseIndex": 8,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:27b94c6712b6",
+    "term": "故",
+    "meaning": "故克之",
+    "example": "故克之",
+    "source": "曹刿论战 (九下)",
+    "tags": [],
+    "number": 20,
+    "senseIndex": 9,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:4243c7d5458a",
+    "term": "故",
+    "meaning": "④特意",
+    "example": "余故道为学之难以告之",
+    "source": "送东阳马生序 (九下)",
+    "tags": [],
+    "number": 20,
+    "senseIndex": 10,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:51bfaecc9a85",
+    "term": "顾",
+    "meaning": "回头看，看，视",
+    "example": "元方入门不顾",
+    "source": "陈太丘与友期行 (七上)",
+    "tags": [],
+    "number": 21,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:7758e189093d",
+    "term": "顾",
+    "meaning": "顾野有麦场",
+    "example": "顾野有麦场",
+    "source": "狼 (七上)",
+    "tags": [],
+    "number": 21,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:4dd55d27488f",
+    "term": "顾",
+    "meaning": "拜访",
+    "example": "三顾臣于草庐之中",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 21,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:9502363bceb3",
+    "term": "观",
+    "meaning": "看，仔细看",
+    "example": "启窗而观",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 22,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:984bcff5252d",
+    "term": "观",
+    "meaning": "(观赏)",
+    "example": "可远观而不可亵玩焉",
+    "source": "爱莲说 (七下)",
+    "tags": [],
+    "number": 22,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:28f1fb5f7f28",
+    "term": "观",
+    "meaning": "予观夫巴陵胜状",
+    "example": "予观夫巴陵胜状",
+    "source": "岳阳楼记 (九上)",
+    "tags": [],
+    "number": 22,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:eb0caa7626c8",
+    "term": "观",
+    "meaning": "景象",
+    "example": "此则岳阳楼之大观也",
+    "source": "岳阳楼记 (九上)",
+    "tags": [],
+    "number": 22,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      4
+    ]
+  },
+  {
+    "id": "sense:7dc76809165a",
+    "term": "过",
+    "meaning": "①犯错",
+    "example": "人恒过，然后能改",
+    "source": "生于忧患，死于安乐 (八上)",
+    "tags": [],
+    "number": 24,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      5
+    ]
+  },
+  {
+    "id": "sense:4f106d17fc62",
+    "term": "过",
+    "meaning": "②过分，过于",
+    "example": "以其境过清，不可久居",
+    "source": "小石潭记 (八下)",
+    "tags": [],
+    "number": 24,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      5
+    ]
+  },
+  {
+    "id": "sense:0fc3511fe6b7",
+    "term": "过",
+    "meaning": "③过了，超过",
+    "example": "过中不至，太丘舍去",
+    "source": "陈太丘与友期行 (七上)",
+    "tags": [],
+    "number": 24,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      5
+    ]
+  },
+  {
+    "id": "sense:e5f64076bf99",
+    "term": "过",
+    "meaning": "④经过",
+    "example": "及鲁肃过寻阳，与蒙论议",
+    "source": "孙权劝学 (七下)",
+    "tags": [],
+    "number": 24,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      5
+    ]
+  },
+  {
+    "id": "sense:d460ecf8a2c2",
+    "term": "好",
+    "meaning": "①美丽的",
+    "example": "好鸟相鸣，嘤嘤成韵",
+    "source": "与朱元思书 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 25,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      5
+    ]
+  },
+  {
+    "id": "sense:543a64b7de0b",
+    "term": "好",
+    "meaning": "②使人满意，与“坏”相对",
+    "example": "窈窕淑女，君子好逑",
+    "source": "关雎 (八下)",
+    "tags": [],
+    "number": 25,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      5
+    ]
+  },
+  {
+    "id": "sense:235e32ce0296",
+    "term": "好",
+    "meaning": "③爱好，喜爱",
+    "example": "蜀中有杜处士，好书画",
+    "source": "书戴嵩画牛 (六上)",
+    "tags": [],
+    "number": 25,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      5
+    ]
+  },
+  {
+    "id": "sense:87b00c3b27a9",
+    "term": "号",
+    "meaning": "①大叫，呼啸",
+    "example": "阴风怒号，浊浪排空",
+    "source": "岳阳楼记 (九上)",
+    "tags": [],
+    "number": 26,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      5
+    ]
+  },
+  {
+    "id": "sense:c575f18b8602",
+    "term": "号",
+    "meaning": "②取名号",
+    "example": "故自号曰醉翁也",
+    "source": "醉翁亭记 (九上)",
+    "tags": [],
+    "number": 26,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      5
+    ]
+  },
+  {
+    "id": "sense:a0aed56ba7d2",
+    "term": "还",
+    "meaning": "①返回，回到",
+    "example": "便要还家，设酒杀鸡作食",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 27,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      5
+    ]
+  },
+  {
+    "id": "sense:d9f094efb3d3",
+    "term": "还",
+    "meaning": "②交还，归还",
+    "example": "计日以还",
+    "source": "送东阳马生序 (九下)",
+    "tags": [],
+    "number": 27,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      5
+    ]
+  },
+  {
+    "id": "sense:8966b580dcd8",
+    "term": "会",
+    "meaning": "①会合，聚会，集会",
+    "example": "迁客骚人，多会于此",
+    "source": "岳阳楼记 (九上)",
+    "tags": [],
+    "number": 28,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      5
+    ]
+  },
+  {
+    "id": "sense:cf020b36b4ad",
+    "term": "会",
+    "meaning": "②适逢，恰巧遇到",
+    "example": "会天大雨",
+    "source": "陈涉世家 (九下) (非考试篇目)",
+    "tags": [],
+    "number": 28,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      5
+    ]
+  },
+  {
+    "id": "sense:bb30d4dab3ea",
+    "term": "会",
+    "meaning": "③终将",
+    "example": "会当凌绝顶",
+    "source": "望岳 (七下)",
+    "tags": [],
+    "number": 28,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      5
+    ]
+  },
+  {
+    "id": "sense:24ed892bface",
+    "term": "惠",
+    "meaning": "①恩惠，(给人以)好处",
+    "example": "小惠未遍，民弗从也",
+    "source": "曹刿论战 (九下)",
+    "tags": [],
+    "number": 29,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      5
+    ]
+  },
+  {
+    "id": "sense:9ff41007b9bc",
+    "term": "惠",
+    "meaning": "②同“慧”，聪明",
+    "example": "甚矣，汝之不惠",
+    "source": "愚公移山 (八上)",
+    "tags": [],
+    "number": 29,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      5
+    ]
+  },
+  {
+    "id": "sense:c2984b3cf774",
+    "term": "极",
+    "meaning": "①尽头",
+    "example": "其远而无所至极邪",
+    "source": "北冥有鱼 (八下)",
+    "tags": [],
+    "number": 32,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      6
+    ]
+  },
+  {
+    "id": "sense:4b1b2b0ac199",
+    "term": "极",
+    "meaning": "②极点",
+    "example": "感极而悲者矣",
+    "source": "岳阳楼记 (九上)",
+    "tags": [],
+    "number": 32,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      6
+    ]
+  },
+  {
+    "id": "sense:61b19c837769",
+    "term": "极",
+    "meaning": "③很，非常",
+    "example": "初极狭，才通人",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 32,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      6
+    ]
+  },
+  {
+    "id": "sense:a4ac5c581b40",
+    "term": "极",
+    "meaning": "计算，计量，总计",
+    "example": "通计一舟，为人五",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 32,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      6
+    ]
+  },
+  {
+    "id": "sense:fb1026dfc90c",
+    "term": "计",
+    "meaning": "计算，计量，总计",
+    "example": "通计一舟，为人五",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 33,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      6
+    ]
+  },
+  {
+    "id": "sense:680cf53f4c0d",
+    "term": "济",
+    "meaning": "渡",
+    "example": "直挂云帆济沧海",
+    "source": "行路难 (其一) (九上)",
+    "tags": [],
+    "number": 34,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      6
+    ]
+  },
+  {
+    "id": "sense:dd96bf18730e",
+    "term": "假",
+    "meaning": "①不真实的，假装，与“真”相对",
+    "example": "乃悟前狼假寐",
+    "source": "狼 (七上)",
+    "tags": [],
+    "number": 35,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      6
+    ]
+  },
+  {
+    "id": "sense:6ea18d312460",
+    "term": "假",
+    "meaning": "②借",
+    "example": "以是人多以书假余",
+    "source": "送东阳马生序 (九下)",
+    "tags": [],
+    "number": 35,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      6
+    ]
+  },
+  {
+    "id": "sense:233056b8e7b5",
+    "term": "间",
+    "meaning": "①中间",
+    "example": "尾搐人两股间",
+    "source": "书戴嵩画牛 (六上)",
+    "tags": [],
+    "number": 36,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      6
+    ]
+  },
+  {
+    "id": "sense:d09e373dda87",
+    "term": "间",
+    "meaning": "②期间",
+    "example": "少选之间而志在流水",
+    "source": "伯牙鼓琴 (六上)",
+    "tags": [],
+    "number": 36,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      6
+    ]
+  },
+  {
+    "id": "sense:fe827bd71411",
+    "term": "间",
+    "meaning": "③参与",
+    "example": "肉食者谋之，又何间焉",
+    "source": "曹刿论战 (九下)",
+    "tags": [],
+    "number": 36,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      6
+    ]
+  },
+  {
+    "id": "sense:fa1617749e8f",
+    "term": "间",
+    "meaning": "④隔开，不连接",
+    "example": "遂与外人间隔",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 36,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      6
+    ]
+  },
+  {
+    "id": "sense:c9c0309b3ec6",
+    "term": "竭",
+    "meaning": "穷尽 (耗尽，消失)",
+    "example": "一鼓作气，再而衰，三而竭",
+    "source": "曹刿论战 (九下)",
+    "tags": [],
+    "number": 38,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      7
+    ]
+  },
+  {
+    "id": "sense:4d4060c2f343",
+    "term": "尽",
+    "meaning": "①完，没有了",
+    "example": "一屠晚归，担中肉尽，止有剩骨",
+    "source": "狼 (七上)",
+    "tags": [],
+    "number": 39,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      7
+    ]
+  },
+  {
+    "id": "sense:b845a48b44c2",
+    "term": "尽",
+    "meaning": "(吃完)",
+    "example": "马之千里者，一食或尽粟一石",
+    "source": "马说 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 39,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      7
+    ]
+  },
+  {
+    "id": "sense:77fb3be47302",
+    "term": "尽",
+    "meaning": "(发挥完)",
+    "example": "策之不以其道，食之不能尽其材",
+    "source": "马说 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 39,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      7
+    ]
+  },
+  {
+    "id": "sense:75c65fbbf5de",
+    "term": "尽",
+    "meaning": "②全部，都 (毫无保留)",
+    "example": "至于斟酌损益，进尽忠言",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 39,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      7
+    ]
+  },
+  {
+    "id": "sense:8eb02f5cee24",
+    "term": "进",
+    "meaning": "①在朝廷做官",
+    "example": "是进亦忧，退亦忧",
+    "source": "岳阳楼记 (九上)",
+    "tags": [],
+    "number": 40,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      7
+    ]
+  },
+  {
+    "id": "sense:75fe12891719",
+    "term": "进",
+    "meaning": "②进献，奉献",
+    "example": "进尽忠言",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 40,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      7
+    ]
+  },
+  {
+    "id": "sense:9609a6b5573b",
+    "term": "居",
+    "meaning": "①停留",
+    "example": "以其境过清，不可久居",
+    "source": "小石潭记 (八下)",
+    "tags": [],
+    "number": 41,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      7
+    ]
+  },
+  {
+    "id": "sense:9996a852e662",
+    "term": "居",
+    "meaning": "②居住，安居",
+    "example": "面山而居",
+    "source": "愚公移山 (八上)",
+    "tags": [],
+    "number": 41,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      7
+    ]
+  },
+  {
+    "id": "sense:d44ad2d939d2",
+    "term": "居",
+    "meaning": "③处在，处于 (某种地位或某个地方)",
+    "example": "佛印居右，鲁直居左",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 41,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      7
+    ]
+  },
+  {
+    "id": "sense:1882a7dac221",
+    "term": "居",
+    "meaning": "④经过，表示相隔一段时间",
+    "example": "居无何，上至，又不得入",
+    "source": "周亚夫军细柳 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 41,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      7
+    ]
+  },
+  {
+    "id": "sense:c16d6aca727e",
+    "term": "举",
+    "meaning": "举荐，推举",
+    "example": "胶鬲举于鱼盐之中",
+    "source": "生于忧患，死于安乐 (八上)",
+    "tags": [],
+    "number": 42,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      7
+    ]
+  },
+  {
+    "id": "sense:d68c19c0a274",
+    "term": "具",
+    "meaning": "①具备，具有",
+    "example": "罔不因势象形，各具情态",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 43,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      7
+    ]
+  },
+  {
+    "id": "sense:5126725070ef",
+    "term": "具",
+    "meaning": "②通“俱”，全部，详细",
+    "example": "具答之",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 43,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      7
+    ]
+  },
+  {
+    "id": "sense:56203e6ce0dd",
+    "term": "俱",
+    "meaning": "①全，都",
+    "example": "青林翠竹，四时俱备",
+    "source": "答谢中书书 (八上)",
+    "tags": [],
+    "number": 44,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:e09bdec4ff1e",
+    "term": "俱",
+    "meaning": "②一起",
+    "example": "虽与之俱学",
+    "source": "学弈 (六下)",
+    "tags": [],
+    "number": 44,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:12e1e7b88a69",
+    "term": "聚",
+    "meaning": "①集合",
+    "example": "聚室而谋曰",
+    "source": "愚公移山 (八上)",
+    "tags": [],
+    "number": 45,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:8bd0c7ff25ba",
+    "term": "聚",
+    "meaning": "②聚拢",
+    "example": "峰峦如聚",
+    "source": "山坡羊·潼关怀古 (九下)",
+    "tags": [
+      "非考试篇目"
+    ],
+    "number": 45,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:6f0464e1a9d4",
+    "term": "遽",
+    "meaning": "就",
+    "example": "其父虽善游，其子岂遽善游哉",
+    "source": "《吕氏春秋》 (非考试篇目)",
+    "tags": [],
+    "number": 46,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:8228a4e151b6",
+    "term": "决",
+    "meaning": "①分辨，判断",
+    "example": "孔子不能决也",
+    "source": "两小儿辩日 (六下)",
+    "tags": [],
+    "number": 47,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:b85808e5c051",
+    "term": "决",
+    "meaning": "②裂开",
+    "example": "决眦入归鸟",
+    "source": "望岳 (七下)",
+    "tags": [],
+    "number": 47,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:0b860f3927ec",
+    "term": "绝",
+    "meaning": "①断",
+    "example": "伯牙破琴绝弦",
+    "source": "伯牙鼓琴 (六上)",
+    "tags": [],
+    "number": 48,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:3fe06868f338",
+    "term": "绝",
+    "meaning": "②与世隔绝的",
+    "example": "率妻子邑人来此绝境",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 48,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:6dee394b3153",
+    "term": "绝",
+    "meaning": "③独一无二的，独特的",
+    "example": "奇山异水，天下独绝",
+    "source": "与朱元思书 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 48,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:8b22d980550a",
+    "term": "绝",
+    "meaning": "④极，非常",
+    "example": "佛印绝类弥勒",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 48,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:121b1711ba1a",
+    "term": "绝",
+    "meaning": "⑤停止，消失",
+    "example": "空谷传响，哀转久绝",
+    "source": "三峡 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 48,
+    "senseIndex": 5,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:eff649fa32f5",
+    "term": "类",
+    "meaning": "类似，像",
+    "example": "佛印绝类弥勒",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 49,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:f5004decf0ea",
+    "term": "临",
+    "meaning": "①靠近（居高面下）",
+    "example": "有亭翼然临于泉上者，醉翁亭也",
+    "source": "醉翁亭记 (九上)",
+    "tags": [],
+    "number": 50,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:f982ade7e805",
+    "term": "临",
+    "meaning": "②来到",
+    "example": "临溪而渔",
+    "source": "醉翁亭记 (九上)",
+    "tags": [],
+    "number": 50,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:f7d5d7353784",
+    "term": "临",
+    "meaning": "③面对，对着",
+    "example": "把酒临风，其喜洋洋者矣",
+    "source": "岳阳楼记 (九上)",
+    "tags": [],
+    "number": 50,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:c6684cc810d5",
+    "term": "临",
+    "meaning": "④正当，将要，就要",
+    "example": "故临崩寄臣以大事也",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 50,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:8d32547f9645",
+    "term": "虑",
+    "meaning": "思虑，思绪，心思",
+    "example": "困于心，衡于虑，而后作",
+    "source": "生于忧患，死于安乐 (八上)",
+    "tags": [],
+    "number": 51,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      8
+    ]
+  },
+  {
+    "id": "sense:a71680c3b9eb",
+    "term": "漫",
+    "meaning": "①遍，到处都是",
+    "example": "惟解漫天作雪飞",
+    "source": "晚春 (七下)(非考试篇目)",
+    "tags": [],
+    "number": 53,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      9
+    ]
+  },
+  {
+    "id": "sense:05f960c9cea5",
+    "term": "漫",
+    "meaning": "②长",
+    "example": "故园东望路漫漫",
+    "source": "逢入京使 (七下) (非考试篇目)",
+    "tags": [],
+    "number": 53,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      9
+    ]
+  },
+  {
+    "id": "sense:f7decd66624e",
+    "term": "明",
+    "meaning": "①明亮，光明",
+    "example": "斗折蛇行，明灭可见",
+    "source": "小石潭记 (八下)",
+    "tags": [],
+    "number": 54,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      9
+    ]
+  },
+  {
+    "id": "sense:4a2fd9d6460d",
+    "term": "明",
+    "meaning": "②英明",
+    "example": "以昭陛下平明之理",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 54,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      9
+    ]
+  },
+  {
+    "id": "sense:dbc5143ecb43",
+    "term": "明",
+    "meaning": "③次，下一个",
+    "example": "越明年，政通人和",
+    "source": "岳阳楼记 (九上)",
+    "tags": [],
+    "number": 54,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      9
+    ]
+  },
+  {
+    "id": "sense:429d9d35cfbe",
+    "term": "明",
+    "meaning": "④明确，坚定",
+    "example": "非淡泊无以明志",
+    "source": "诫子书 (七上)(非考试篇目)",
+    "tags": [],
+    "number": 54,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      9
+    ]
+  },
+  {
+    "id": "sense:98398160cdb2",
+    "term": "命",
+    "meaning": "①命令，号令",
+    "example": "五十而知天命",
+    "source": "《论语》十二章 (七上)",
+    "tags": [],
+    "number": 56,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      10
+    ]
+  },
+  {
+    "id": "sense:6c91fe58cc22",
+    "term": "命",
+    "meaning": "②任命，委派",
+    "example": "受命以来，夙夜忧叹",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 56,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      10
+    ]
+  },
+  {
+    "id": "sense:2df86c2a52c7",
+    "term": "命",
+    "meaning": "③生命，性命",
+    "example": "苟全性命于乱世",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 56,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      10
+    ]
+  },
+  {
+    "id": "sense:754cb5cbea0e",
+    "term": "命",
+    "meaning": "④文章体裁之一",
+    "example": "《兑命》曰“学学半”",
+    "source": "虽有嘉肴 (八下)",
+    "tags": [],
+    "number": 56,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      10
+    ]
+  },
+  {
+    "id": "sense:bdcf66ad3d8b",
+    "term": "难",
+    "meaning": "①不容易，困难",
+    "example": "夫大国，难测也，惧有伏焉",
+    "source": "曹刿论战 (九下)",
+    "tags": [],
+    "number": 57,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      10
+    ]
+  },
+  {
+    "id": "sense:e380b4694799",
+    "term": "难",
+    "meaning": "②灾难",
+    "example": "奉命于危难之间",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 57,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      10
+    ]
+  },
+  {
+    "id": "sense:cfd1e7b1369a",
+    "term": "平",
+    "meaning": "①平坦",
+    "example": "土地平旷，屋舍俨然",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 58,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      10
+    ]
+  },
+  {
+    "id": "sense:517c5f58770a",
+    "term": "平",
+    "meaning": "②填平，铲平",
+    "example": "吾与汝毕力平险",
+    "source": "愚公移山 (八上)",
+    "tags": [],
+    "number": 58,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      10
+    ]
+  },
+  {
+    "id": "sense:64a8772ff028",
+    "term": "平",
+    "meaning": "③公平，公正",
+    "example": "以昭陛下平明之理",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 58,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      10
+    ]
+  },
+  {
+    "id": "sense:59e15ebe5550",
+    "term": "戚",
+    "meaning": "亲属 (指族外)",
+    "example": "寡助之至，亲戚畔之",
+    "source": "得道多助，失道寡助 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 59,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      10
+    ]
+  },
+  {
+    "id": "sense:94152b70150a",
+    "term": "强",
+    "meaning": "①强悍，强大",
+    "example": "知困，然后能自强也",
+    "source": "虽有嘉肴 (八下)",
+    "tags": [],
+    "number": 60,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      10
+    ]
+  },
+  {
+    "id": "sense:bd281ebd9eed",
+    "term": "强",
+    "meaning": "② (qiǎng) 竭力，尽力 (勉强，硬要)",
+    "example": "余强饮三大白而别",
+    "source": "湖心亭看雪 (九上) (非考试篇目)",
+    "tags": [],
+    "number": 60,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      10
+    ]
+  },
+  {
+    "id": "sense:420271a00daa",
+    "term": "强",
+    "meaning": "③有余",
+    "example": "赏赐百千强",
+    "source": "木兰诗 (七下) (非考试篇目)",
+    "tags": [],
+    "number": 60,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      10
+    ]
+  },
+  {
+    "id": "sense:01fbddb36e7c",
+    "term": "窃",
+    "meaning": "偷取",
+    "example": "盗窃乱贼而不作",
+    "source": "大道之行也 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 61,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      10
+    ]
+  },
+  {
+    "id": "sense:d72aaacc8922",
+    "term": "穷",
+    "meaning": "①穷困（生活困难）",
+    "example": "所识穷乏者得我与",
+    "source": "鱼我所欲也 (九下)",
+    "tags": [],
+    "number": 63,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      11
+    ]
+  },
+  {
+    "id": "sense:838dad3585ee",
+    "term": "穷",
+    "meaning": "②穷尽，完结",
+    "example": "子子孙孙无穷匮也",
+    "source": "愚公移山 (八上)",
+    "tags": [],
+    "number": 63,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      11
+    ]
+  },
+  {
+    "id": "sense:4689730998a8",
+    "term": "穷",
+    "meaning": "③极",
+    "example": "穷冬烈风",
+    "source": "送东阳马生序 (九下)",
+    "tags": [],
+    "number": 63,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      11
+    ]
+  },
+  {
+    "id": "sense:3d4b95cef42a",
+    "term": "求",
+    "meaning": "①寻找，寻求",
+    "example": "求二石兽于水中",
+    "source": "河中石兽 (七下) (被删除篇目)",
+    "tags": [],
+    "number": 64,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      11
+    ]
+  },
+  {
+    "id": "sense:a41d67fe9bea",
+    "term": "求",
+    "meaning": "②探求，探索，追求，谋求，奢求",
+    "example": "予尝求古仁人之心",
+    "source": "岳阳楼记 (九上)",
+    "tags": [],
+    "number": 64,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      11
+    ]
+  },
+  {
+    "id": "sense:f2c332e503c2",
+    "term": "求",
+    "meaning": "③索取，要求，需求",
+    "example": "安求其能千里也",
+    "source": "马说 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 64,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      11
+    ]
+  },
+  {
+    "id": "sense:380fc572dee6",
+    "term": "取",
+    "meaning": "①拿",
+    "example": "乃取一葫芦置于地",
+    "source": "卖油翁 (七下)",
+    "tags": [],
+    "number": 65,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      11
+    ]
+  },
+  {
+    "id": "sense:b0fe412b4571",
+    "term": "取",
+    "meaning": "②获得，讨取 (开辟)",
+    "example": "伐竹取道，下见小潭，水尤清冽",
+    "source": "小石潭记 (八下)",
+    "tags": [],
+    "number": 65,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      11
+    ]
+  },
+  {
+    "id": "sense:d365ed88d080",
+    "term": "取",
+    "meaning": "③选取，采用",
+    "example": "舍鱼而取熊掌者也",
+    "source": "鱼我所欲也 (九下)",
+    "tags": [],
+    "number": 65,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      11
+    ]
+  },
+  {
+    "id": "sense:7925552a9523",
+    "term": "去",
+    "meaning": "①离开",
+    "example": "一狼径去",
+    "source": "狼 (七上)",
+    "tags": [],
+    "number": 66,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      11
+    ]
+  },
+  {
+    "id": "sense:2ea572abb32d",
+    "term": "去",
+    "meaning": "(消逝，丧失)",
+    "example": "意与日去，遂成枯落",
+    "source": "诫子书 (七上) (非考试篇目)",
+    "tags": [],
+    "number": 66,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      11
+    ]
+  },
+  {
+    "id": "sense:6df31a571d50",
+    "term": "去",
+    "meaning": "②距离",
+    "example": "我以日始出时去人近",
+    "source": "两小儿辩日 (六下)",
+    "tags": [],
+    "number": 66,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      11
+    ]
+  },
+  {
+    "id": "sense:76aaf92e62f2",
+    "term": "全",
+    "meaning": "①完整，整个",
+    "example": "全石以为底",
+    "source": "小石潭记 (八下)",
+    "tags": [],
+    "number": 67,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      11
+    ]
+  },
+  {
+    "id": "sense:05a2ef08ff90",
+    "term": "全",
+    "meaning": "②完全，完备",
+    "example": "子之不知鱼之乐，全矣",
+    "source": "庄子与惠子游于濠梁之上 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 67,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      11
+    ]
+  },
+  {
+    "id": "sense:de80ae0c0a5b",
+    "term": "全",
+    "meaning": "③保全",
+    "example": "苟全性命于乱世",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 67,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      11
+    ]
+  },
+  {
+    "id": "sense:ebfa5f23af7f",
+    "term": "入",
+    "meaning": "进入，与“出”相对",
+    "example": "元方入门不顾",
+    "source": "陈太丘与友期行 (七上)",
+    "tags": [],
+    "number": 69,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      12
+    ]
+  },
+  {
+    "id": "sense:dfb261d978d3",
+    "term": "入",
+    "meaning": "②在国内",
+    "example": "入则无法家拂士",
+    "source": "生于忧患，死于安乐 (八上)",
+    "tags": [],
+    "number": 69,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      12
+    ]
+  },
+  {
+    "id": "sense:18da06462bef",
+    "term": "入",
+    "meaning": "(进入朝廷)",
+    "example": "乃入见",
+    "source": "曹刿论战 (九下)",
+    "tags": [],
+    "number": 69,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      12
+    ]
+  },
+  {
+    "id": "sense:366caaf2b994",
+    "term": "若",
+    "meaning": "①像，如，似",
+    "example": "巍巍乎若太山",
+    "source": "伯牙鼓琴 (六上)",
+    "tags": [],
+    "number": 70,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      12
+    ]
+  },
+  {
+    "id": "sense:ea64c6359cbd",
+    "term": "若",
+    "meaning": "②假如，如果",
+    "example": "若有作奸犯科及为忠善者",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 70,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      12
+    ]
+  },
+  {
+    "id": "sense:266a9244a03a",
+    "term": "若",
+    "meaning": "③你",
+    "example": "若屈伸呼吸，终日在天中行止",
+    "source": "杞人忧天 (七上) (非考试篇目)",
+    "tags": [],
+    "number": 70,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      12
+    ]
+  },
+  {
+    "id": "sense:48fbb928c5db",
+    "term": "少",
+    "meaning": "①不多，数量小",
+    "example": "饮少辄醉，而年又最高",
+    "source": "醉翁亭记 (九上)",
+    "tags": [],
+    "number": 72,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      13
+    ]
+  },
+  {
+    "id": "sense:8cfda1b71216",
+    "term": "少",
+    "meaning": "②缺少",
+    "example": "但少闲人如吾两人者耳",
+    "source": "记承天寺夜游 (八上)",
+    "tags": [],
+    "number": 72,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      13
+    ]
+  },
+  {
+    "id": "sense:c38a33582d2c",
+    "term": "少",
+    "meaning": "③(shào)年轻，少年，年纪小",
+    "example": "陈涉少时，尝与人佣耕",
+    "source": "陈涉世家 (九下) (非考试篇目)",
+    "tags": [],
+    "number": 72,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      13
+    ]
+  },
+  {
+    "id": "sense:74be5303e20f",
+    "term": "舍",
+    "meaning": "①(shè)房屋，房舍",
+    "example": "土地平旷，屋舍俨然",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 73,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      13
+    ]
+  },
+  {
+    "id": "sense:d71b9d6c1c22",
+    "term": "舍",
+    "meaning": "②(shě)舍弃，丢弃",
+    "example": "过中不至，太丘舍去",
+    "source": "陈太丘与友期行 (七上)",
+    "tags": [],
+    "number": 73,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      13
+    ]
+  },
+  {
+    "id": "sense:e3e501ce87c2",
+    "term": "舍",
+    "meaning": "(同“释”，解除，消除)",
+    "example": "其人舍然大喜",
+    "source": "杞人忧天 (七上) (非考试篇目)",
+    "tags": [],
+    "number": 73,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      13
+    ]
+  },
+  {
+    "id": "sense:5730e83ab1f5",
+    "term": "涉",
+    "meaning": "浏览，阅读",
+    "example": "但当涉猎，见往事耳",
+    "source": "孙权劝学 (七下)",
+    "tags": [],
+    "number": 74,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      13
+    ]
+  },
+  {
+    "id": "sense:52bd03eba8aa",
+    "term": "生",
+    "meaning": "①(草木)生长，出生，诞生",
+    "example": "绝巘多生怪柏",
+    "source": "三峡 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 75,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      13
+    ]
+  },
+  {
+    "id": "sense:6ac32b44d834",
+    "term": "生",
+    "meaning": "②生存，活着",
+    "example": "然后知生于忧患而死于安乐也",
+    "source": "生于忧患，死于安乐 (八上)",
+    "tags": [],
+    "number": 75,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      13
+    ]
+  },
+  {
+    "id": "sense:e7d362de5436",
+    "term": "生",
+    "meaning": "③生命",
+    "example": "生物之以息相吹也",
+    "source": "北冥有鱼 (八下)",
+    "tags": [],
+    "number": 75,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      13
+    ]
+  },
+  {
+    "id": "sense:1bbbb9672111",
+    "term": "生",
+    "meaning": "④后生，晚辈",
+    "example": "隶而从者，崔氏二小生",
+    "source": "小石潭记 (八下)",
+    "tags": [],
+    "number": 75,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      13
+    ]
+  },
+  {
+    "id": "sense:a730b1ec394e",
+    "term": "胜",
+    "meaning": "①胜利",
+    "example": "射者中，弈者胜，觥筹交错",
+    "source": "醉翁亭记 (九上)",
+    "tags": [],
+    "number": 76,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      13
+    ]
+  },
+  {
+    "id": "sense:cc19dd1b7f7b",
+    "term": "胜",
+    "meaning": "②尽，完",
+    "example": "臣不胜受恩感激",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 76,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      13
+    ]
+  },
+  {
+    "id": "sense:c82bd2138668",
+    "term": "胜",
+    "meaning": "③美好",
+    "example": "予观夫巴陵胜状，在洞庭一湖",
+    "source": "岳阳楼记 (九上)",
+    "tags": [],
+    "number": 76,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      13
+    ]
+  },
+  {
+    "id": "sense:b47da44f8230",
+    "term": "师",
+    "meaning": "①军队",
+    "example": "十年春，齐师伐我",
+    "source": "曹刿论战 (九下)",
+    "tags": [],
+    "number": 77,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      13
+    ]
+  },
+  {
+    "id": "sense:d085b95a0f35",
+    "term": "师",
+    "meaning": "②老师",
+    "example": "温故而知新，可以为师矣",
+    "source": "《论语》十二章 (七上)",
+    "tags": [],
+    "number": 77,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      13
+    ]
+  },
+  {
+    "id": "sense:48ef96b20fd6",
+    "term": "师",
+    "meaning": "③首都，京城",
+    "example": "余朝京师，生以乡人子谒余",
+    "source": "送东阳马生序 (九下)",
+    "tags": [],
+    "number": 77,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      13
+    ]
+  },
+  {
+    "id": "sense:84f428204bea",
+    "term": "实",
+    "meaning": "①实际，事实 (实在)",
+    "example": "实是欲界之仙都",
+    "source": "答谢中书书 (八上)",
+    "tags": [],
+    "number": 79,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      14
+    ]
+  },
+  {
+    "id": "sense:935aacb8561d",
+    "term": "实",
+    "meaning": "②诚实，真实",
+    "example": "此皆良实",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 79,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      14
+    ]
+  },
+  {
+    "id": "sense:34593ba80386",
+    "term": "食",
+    "meaning": "①吃，吃饭",
+    "example": "弗食，不知其旨也",
+    "source": "虽有嘉肴 (八下)",
+    "tags": [],
+    "number": 80,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      14
+    ]
+  },
+  {
+    "id": "sense:3d15a58b07f0",
+    "term": "食",
+    "meaning": "②粮食，食物",
+    "example": "一箪食，一瓢饮，在陋巷",
+    "source": "《论语》十二章 (七上)",
+    "tags": [],
+    "number": 80,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      14
+    ]
+  },
+  {
+    "id": "sense:b306c0c43c88",
+    "term": "食",
+    "meaning": "③供养，给……吃",
+    "example": "主人日再食",
+    "source": "马说 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 80,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      14
+    ]
+  },
+  {
+    "id": "sense:55ebc83b4487",
+    "term": "使",
+    "meaning": "①使唤，派遣",
+    "example": "得一人之使，非得一人于井中也",
+    "source": "穿井得一人 (七上)",
+    "tags": [],
+    "number": 81,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      14
+    ]
+  },
+  {
+    "id": "sense:7a9c95beccb2",
+    "term": "使",
+    "meaning": "②让，叫，令；使得，致使",
+    "example": "使弈秋诲二人弈",
+    "source": "学弈 (六下)",
+    "tags": [],
+    "number": 81,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      14
+    ]
+  },
+  {
+    "id": "sense:6889930f0fd0",
+    "term": "使",
+    "meaning": "③出使",
+    "example": "安陵君因使唐雎使于秦",
+    "source": "唐雎不辱使命 (九下) (非考试篇目)",
+    "tags": [],
+    "number": 81,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      14
+    ]
+  },
+  {
+    "id": "sense:b422b58e1f79",
+    "term": "使",
+    "meaning": "④使节",
+    "example": "于是上乃使使持节诏将军",
+    "source": "周亚夫军细柳 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 81,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      14
+    ]
+  },
+  {
+    "id": "sense:0c9c5e3e60cd",
+    "term": "使",
+    "meaning": "⑤假使，纵使，即使",
+    "example": "使人之所恶莫甚于死者",
+    "source": "鱼我所欲也 (九下)",
+    "tags": [],
+    "number": 81,
+    "senseIndex": 5,
+    "category": "real-word",
+    "sourcePages": [
+      14
+    ]
+  },
+  {
+    "id": "sense:a8646c51663a",
+    "term": "释",
+    "meaning": "放下",
+    "example": "有卖油翁释担而立",
+    "source": "卖油翁 (七下)",
+    "tags": [],
+    "number": 82,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      14
+    ]
+  },
+  {
+    "id": "sense:2a6786a0e7c4",
+    "term": "市",
+    "meaning": "①市场，集市",
+    "example": "百里奚举于市",
+    "source": "生于忧患，死于安乐 (八上)",
+    "tags": [],
+    "number": 83,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      14
+    ]
+  },
+  {
+    "id": "sense:be760966ebc8",
+    "term": "市",
+    "meaning": "②买",
+    "example": "愿为市鞍马，从此替爷征",
+    "source": "木兰诗 (七下) (非考试篇目)",
+    "tags": [],
+    "number": 83,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      14
+    ]
+  },
+  {
+    "id": "sense:efe3a9e6440b",
+    "term": "恃",
+    "meaning": "依赖，倚仗",
+    "example": "子何恃而往",
+    "source": "为学 (非考试篇目)",
+    "tags": [],
+    "number": 84,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      14
+    ]
+  },
+  {
+    "id": "sense:400bddd12065",
+    "term": "数",
+    "meaning": "①几，几个",
+    "example": "以刀劈狼首，又数刀毙之",
+    "source": "狼 (七上)",
+    "tags": [],
+    "number": 85,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      14
+    ]
+  },
+  {
+    "id": "sense:9d8bfd52edec",
+    "term": "数",
+    "meaning": "②计算，点数",
+    "example": "所宝以百数",
+    "source": "书戴嵩画牛 (六上)",
+    "tags": [],
+    "number": 85,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      14
+    ]
+  },
+  {
+    "id": "sense:a54d7ed4d82e",
+    "term": "说",
+    "meaning": "①陈述，解说，讲",
+    "example": "及郡下，诣太守，说如此",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 87,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      15
+    ]
+  },
+  {
+    "id": "sense:9cf9be6ef444",
+    "term": "说",
+    "meaning": "②古代的一种文体",
+    "example": "爱莲说",
+    "source": "爱莲说 (七下)",
+    "tags": [],
+    "number": 87,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      15
+    ]
+  },
+  {
+    "id": "sense:f8a2b9526277",
+    "term": "说",
+    "meaning": "③(yuè)同“悦”,愉快，高兴",
+    "example": "学而时习之，不亦说乎",
+    "source": "《论语》十二章 (七上)",
+    "tags": [],
+    "number": 87,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      15
+    ]
+  },
+  {
+    "id": "sense:680ee2f09b9e",
+    "term": "素",
+    "meaning": "①白的，白色的",
+    "example": "春冬之时，则素湍绿潭",
+    "source": "三峡 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 88,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      15
+    ]
+  },
+  {
+    "id": "sense:fa4296a5f955",
+    "term": "素",
+    "meaning": "②朴素，不加装饰",
+    "example": "可以调素琴，阅金经",
+    "source": "陋室铭 (七下)",
+    "tags": [],
+    "number": 88,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      15
+    ]
+  },
+  {
+    "id": "sense:4a2eda72173b",
+    "term": "汤",
+    "meaning": "①热水，开水",
+    "example": "日初出沧沧凉凉，及其日中如探汤",
+    "source": "两小儿辩日 (六下)",
+    "tags": [],
+    "number": 89,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      15
+    ]
+  },
+  {
+    "id": "sense:24ee845fd8ec",
+    "term": "汤",
+    "meaning": "②( shāng ) 水流大而急的样子",
+    "example": "汤汤乎若流水",
+    "source": "伯牙鼓琴 (六上)",
+    "tags": [],
+    "number": 89,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      15
+    ]
+  },
+  {
+    "id": "sense:67e62029b688",
+    "term": "徒",
+    "meaning": "空，光",
+    "example": "亦免冠徒跣，以头抢地尔",
+    "source": "唐雎不辱使命 (九下) (非考试篇目)",
+    "tags": [],
+    "number": 90,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      15
+    ]
+  },
+  {
+    "id": "sense:39f4d37e018e",
+    "term": "亡",
+    "meaning": "①灭亡，死亡",
+    "example": "出则无敌国外患者，国恒亡",
+    "source": "生于忧患，死于安乐 (八上)",
+    "tags": [],
+    "number": 91,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      15
+    ]
+  },
+  {
+    "id": "sense:d14235c701a3",
+    "term": "亡",
+    "meaning": "②(wú)无，没有",
+    "example": "河曲智叟亡以应",
+    "source": "愚公移山 (八上)",
+    "tags": [],
+    "number": 91,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      15
+    ]
+  },
+  {
+    "id": "sense:43ebb000931a",
+    "term": "委",
+    "meaning": "抛弃，舍弃",
+    "example": "与人期行，相委而去",
+    "source": "陈太丘与友期行 (七上)",
+    "tags": [],
+    "number": 93,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      16
+    ]
+  },
+  {
+    "id": "sense:08f7b483e833",
+    "term": "委",
+    "meaning": "事务，事情",
+    "example": "蒙辞以军中多务",
+    "source": "孙权劝学 (七下)",
+    "tags": [],
+    "number": 93,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      16
+    ]
+  },
+  {
+    "id": "sense:eb613c17fe4d",
+    "term": "务",
+    "meaning": "经纶世务者，窥谷忘反",
+    "example": "经纶世务者，窥谷忘反",
+    "source": "与朱元思书 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 94,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      16
+    ]
+  },
+  {
+    "id": "sense:82bb974cdc0e",
+    "term": "鲜",
+    "meaning": "①鲜艳，鲜明",
+    "example": "芳草鲜美，落英缤纷",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 95,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      16
+    ]
+  },
+  {
+    "id": "sense:c2d3cd14fb12",
+    "term": "鲜",
+    "meaning": "②滋味鲜美",
+    "example": "无鲜肥滋味之享",
+    "source": "送东阳马生序 (九下)",
+    "tags": [],
+    "number": 95,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      16
+    ]
+  },
+  {
+    "id": "sense:2a05049de525",
+    "term": "鲜",
+    "meaning": "③ ( xiǎn)少",
+    "example": "菊之爱，陶后鲜有闻",
+    "source": "爱莲说 (七下)",
+    "tags": [],
+    "number": 95,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      16
+    ]
+  },
+  {
+    "id": "sense:f28617752b35",
+    "term": "向",
+    "meaning": "①对着，朝着",
+    "example": "狼不敢前，眈眈相向",
+    "source": "狼 (七上)",
+    "tags": [],
+    "number": 96,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      16
+    ]
+  },
+  {
+    "id": "sense:130cd1101de0",
+    "term": "向",
+    "meaning": "②过去的，先前的，原来的",
+    "example": "便扶向路，处处志之",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 96,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      16
+    ]
+  },
+  {
+    "id": "sense:f4c7741402fc",
+    "term": "效",
+    "meaning": "①功效",
+    "example": "愿陛下托臣以讨贼兴复之效",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 97,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      16
+    ]
+  },
+  {
+    "id": "sense:fc350f5c23fc",
+    "term": "效",
+    "meaning": "②效果，见效，奏效",
+    "example": "夙夜忧叹，恐托付不效",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 97,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      16
+    ]
+  },
+  {
+    "id": "sense:e6d9a7004f10",
+    "term": "谢",
+    "meaning": "①问候",
+    "example": "使人称谢",
+    "source": "周亚夫军细柳 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 98,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      16
+    ]
+  },
+  {
+    "id": "sense:4dd5aeacacc5",
+    "term": "谢",
+    "meaning": "②道歉",
+    "example": "秦王色挠，长跪而谢之",
+    "source": "唐雎不辱使命 (九下) (非考试篇目)",
+    "tags": [],
+    "number": 98,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      16
+    ]
+  },
+  {
+    "id": "sense:bc16c33efee3",
+    "term": "信",
+    "meaning": "①信用，诚信 (讲信用)",
+    "example": "日中不至，则是无信",
+    "source": "陈太丘与友期行 (七上)",
+    "tags": [],
+    "number": 99,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      17
+    ]
+  },
+  {
+    "id": "sense:40032753301a",
+    "term": "信",
+    "meaning": "②相信，信任",
+    "example": "愿陛下亲之信之",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 99,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      17
+    ]
+  },
+  {
+    "id": "sense:d719c3562de7",
+    "term": "行",
+    "meaning": "①行走",
+    "example": "陈太丘与友期行",
+    "source": "陈太丘与友期行 (七上)",
+    "tags": [],
+    "number": 100,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      17
+    ]
+  },
+  {
+    "id": "sense:149d8bae2b2e",
+    "term": "行",
+    "meaning": "(爬行)",
+    "example": "斗折蛇行",
+    "source": "小石潭记 (八下)",
+    "tags": [],
+    "number": 100,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      17
+    ]
+  },
+  {
+    "id": "sense:f9d563dd2c65",
+    "term": "行",
+    "meaning": "(通行，出行)",
+    "example": "商旅不行",
+    "source": "岳阳楼记 (九上)",
+    "tags": [],
+    "number": 100,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      17
+    ]
+  },
+  {
+    "id": "sense:376f476fb99b",
+    "term": "行",
+    "meaning": "(划船，划行)",
+    "example": "缘溪行",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 100,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      17
+    ]
+  },
+  {
+    "id": "sense:15e4652af4cc",
+    "term": "行",
+    "meaning": "②做，实行，实施 (做事)",
+    "example": "行拂乱其所为",
+    "source": "生于忧患，死于安乐 (八上)",
+    "tags": [],
+    "number": 100,
+    "senseIndex": 5,
+    "category": "real-word",
+    "sourcePages": [
+      17
+    ]
+  },
+  {
+    "id": "sense:c62ab6a0bebf",
+    "term": "行",
+    "meaning": "③品德，品行",
+    "example": "夫君子之行，静以修身，俭以养德",
+    "source": "诫子书 (七上) (非考试篇目)",
+    "tags": [],
+    "number": 100,
+    "senseIndex": 6,
+    "category": "real-word",
+    "sourcePages": [
+      17
+    ]
+  },
+  {
+    "id": "sense:80784eb6977e",
+    "term": "行",
+    "meaning": "④ (háng) 行列，指队伍，部队",
+    "example": "必能使行阵和睦，优劣得所",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 100,
+    "senseIndex": 7,
+    "category": "real-word",
+    "sourcePages": [
+      17
+    ]
+  },
+  {
+    "id": "sense:e524f36e3ca6",
+    "term": "形",
+    "meaning": "①形体，躯体",
+    "example": "无案牍之劳形",
+    "source": "陋室铭 (七下)",
+    "tags": [],
+    "number": 101,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      17
+    ]
+  },
+  {
+    "id": "sense:b60277760ccb",
+    "term": "形",
+    "meaning": "②形状，样子",
+    "example": "罔不因势象形",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 101,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      17
+    ]
+  },
+  {
+    "id": "sense:7aebac36b337",
+    "term": "形",
+    "meaning": "(形迹，踪迹，踪影)",
+    "example": "日星隐曜，山岳潜形",
+    "source": "岳阳楼记 (九上)",
+    "tags": [],
+    "number": 101,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      17
+    ]
+  },
+  {
+    "id": "sense:6822411788ea",
+    "term": "兴",
+    "meaning": "①起，兴起",
+    "example": "清风徐来，水波不兴",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 102,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      17
+    ]
+  },
+  {
+    "id": "sense:176c6e792b4f",
+    "term": "兴",
+    "meaning": "②兴办，创办",
+    "example": "越明年，政通人和，百废具兴",
+    "source": "岳阳楼记 (九上)",
+    "tags": [],
+    "number": 102,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      17
+    ]
+  },
+  {
+    "id": "sense:858ced7dbdef",
+    "term": "兴",
+    "meaning": "③兴盛，振兴，复兴",
+    "example": "此先汉所以兴隆也",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 102,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      17
+    ]
+  },
+  {
+    "id": "sense:ac331a5f2699",
+    "term": "徐",
+    "meaning": "缓缓地，慢慢地",
+    "example": "徐以杓酌油沥之，自钱孔人，而钱不湿",
+    "source": "卖油翁 (七下)",
+    "tags": [],
+    "number": 104,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      18
+    ]
+  },
+  {
+    "id": "sense:97f9e645cfee",
+    "term": "许",
+    "meaning": "①表约数，上下，光景",
+    "example": "潭中鱼可百许头",
+    "source": "小石潭记 (八下)",
+    "tags": [],
+    "number": 105,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      18
+    ]
+  },
+  {
+    "id": "sense:87fa11f6e88d",
+    "term": "许",
+    "meaning": "②赞同，答应，应允",
+    "example": "杂然相许",
+    "source": "愚公移山 (八上)",
+    "tags": [],
+    "number": 105,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      18
+    ]
+  },
+  {
+    "id": "sense:97cf15831d81",
+    "term": "寻",
+    "meaning": "①寻找，寻求，探求",
+    "example": "遂至承天寺，寻张怀民",
+    "source": "记承天寺夜游 (八上)",
+    "tags": [],
+    "number": 106,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      18
+    ]
+  },
+  {
+    "id": "sense:ac497098ddf7",
+    "term": "寻",
+    "meaning": "②不久，随即",
+    "example": "未果，寻病终",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 106,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      18
+    ]
+  },
+  {
+    "id": "sense:7201a663a658",
+    "term": "业",
+    "meaning": "①事业，功业",
+    "example": "先帝创业未半而中道崩殂",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 107,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      18
+    ]
+  },
+  {
+    "id": "sense:bcbb6b75c356",
+    "term": "业",
+    "meaning": "②职业",
+    "example": "晋太元中，武陵人捕鱼为业",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 107,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      18
+    ]
+  },
+  {
+    "id": "sense:7d06698b8a02",
+    "term": "业",
+    "meaning": "(学业，学习的功课)",
+    "example": "其业有不精、德有不成者",
+    "source": "送东阳马生序 (九下)",
+    "tags": [],
+    "number": 107,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      18
+    ]
+  },
+  {
+    "id": "sense:5d9773698993",
+    "term": "遗",
+    "meaning": "①遗留，留下",
+    "example": "邻人京城氏之孀妻有遗男",
+    "source": "愚公移山 (八上)",
+    "tags": [],
+    "number": 108,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      18
+    ]
+  },
+  {
+    "id": "sense:a677c056a319",
+    "term": "遗",
+    "meaning": "② (wèi) 留给，给予，赠送",
+    "example": "是以先帝简拔以遗陛下",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 108,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      18
+    ]
+  },
+  {
+    "id": "sense:e4f62a3e85aa",
+    "term": "贻",
+    "meaning": "赠",
+    "example": "尝贻余核舟一",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 109,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      18
+    ]
+  },
+  {
+    "id": "sense:333b1da4a6e6",
+    "term": "夷",
+    "meaning": "①平坦",
+    "example": "其船背稍夷",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 110,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      18
+    ]
+  },
+  {
+    "id": "sense:84b532f0d587",
+    "term": "夷",
+    "meaning": "②平易",
+    "example": "言和而色夷",
+    "source": "送东阳马生序 (九下)",
+    "tags": [],
+    "number": 110,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      18
+    ]
+  },
+  {
+    "id": "sense:d46cd241a9fe",
+    "term": "异",
+    "meaning": "①不同，不同的",
+    "example": "览物之情，得无异乎",
+    "source": "岳阳楼记 (九上)",
+    "tags": [],
+    "number": 111,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      18
+    ]
+  },
+  {
+    "id": "sense:5ce64da664b9",
+    "term": "异",
+    "meaning": "(特别的，奇特的，奇异的)",
+    "example": "属引凄异",
+    "source": "三峡 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 111,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      18
+    ]
+  },
+  {
+    "id": "sense:1550c61a6820",
+    "term": "异",
+    "meaning": "②惊异，诧异，奇怪",
+    "example": "渔人甚异之",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 111,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      18
+    ]
+  },
+  {
+    "id": "sense:a5943c5978eb",
+    "term": "易",
+    "meaning": "①更替",
+    "example": "寒暑易节，始一反焉",
+    "source": "愚公移山 (八上)",
+    "tags": [],
+    "number": 112,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:371048ef2e75",
+    "term": "易",
+    "meaning": "②交换",
+    "example": "寡人欲以五百里之地易安陵",
+    "source": "唐雎不辱使命 (九下) (非考试篇目)",
+    "tags": [],
+    "number": 112,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:aa99d4ab23bc",
+    "term": "诣",
+    "meaning": "到，到达，到……去 (拜访、谒见)",
+    "example": "及郡下，诣太守，说如此",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 113,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:9273777616c2",
+    "term": "益",
+    "meaning": "①增长，增加",
+    "example": "所以动心忍性，曾益其所不能",
+    "source": "生于忧患，死于安乐 (八上)",
+    "tags": [],
+    "number": 114,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:6c60bd9e1227",
+    "term": "益",
+    "meaning": "②好处，利益",
+    "example": "至于斟酌损益，进尽忠言",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 114,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:0e2714486120",
+    "term": "益",
+    "meaning": "（帮助）",
+    "example": "必能裨补阙漏，有所广益",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 114,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:6fe740c64afa",
+    "term": "益",
+    "meaning": "③更加",
+    "example": "香远益清",
+    "source": "爱莲说 (七下)",
+    "tags": [],
+    "number": 114,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:b813973220a8",
+    "term": "阴",
+    "meaning": "①山之北，水之南",
+    "example": "达于汉阴，可乎",
+    "source": "愚公移山 (八上)",
+    "tags": [],
+    "number": 115,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:c1d6454dc785",
+    "term": "阴",
+    "meaning": "②阴沉，阴冷",
+    "example": "朝晖夕阴，气象万千",
+    "source": "岳阳楼记 (九上)",
+    "tags": [],
+    "number": 115,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:6b12134ecbca",
+    "term": "阴",
+    "meaning": "③树阴，阴影",
+    "example": "野芳发而幽香，佳木秀而繁阴",
+    "source": "醉翁亭记 (九上)",
+    "tags": [],
+    "number": 115,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:0b1eea2bdd77",
+    "term": "引",
+    "meaning": "①称引，譬喻",
+    "example": "不宜妄自菲薄，引喻失义",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 116,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:ea2352515c85",
+    "term": "引",
+    "meaning": "②拉，牵拉",
+    "example": "友人惭，下车引之",
+    "source": "陈太丘与友期行 (七上)",
+    "tags": [],
+    "number": 116,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:fa780d3aef9f",
+    "term": "引",
+    "meaning": "③延长",
+    "example": "属引凄异",
+    "source": "三峡 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 116,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:4d36f0dbf2eb",
+    "term": "盈",
+    "meaning": "满，充满（旺盛）",
+    "example": "而计其长曾不盈寸",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 117,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:df79ef84276e",
+    "term": "余",
+    "meaning": "①我，我的",
+    "example": "尝贻余核舟一",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 118,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:1d0bb7467af7",
+    "term": "余",
+    "meaning": "②剩下，多余",
+    "example": "以残年余力",
+    "source": "愚公移山 (八上)",
+    "tags": [],
+    "number": 118,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:ad832586207a",
+    "term": "余",
+    "meaning": "③多，表示整数后不定的零数",
+    "example": "阅十余岁",
+    "source": "河中石兽 (七下) (被删除篇目)",
+    "tags": [],
+    "number": 118,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:c8b0ccb9db82",
+    "term": "余",
+    "meaning": "④其他，其余",
+    "example": "余人各复延至其家，皆出酒食",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 118,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:60852fbc9e60",
+    "term": "狱",
+    "meaning": "诉讼案件",
+    "example": "小大之狱",
+    "source": "曹刿论战 (九下)",
+    "tags": [],
+    "number": 119,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:d6fb645859b6",
+    "term": "御",
+    "meaning": "驾驭",
+    "example": "虽乘奔御风，不以疾也",
+    "source": "三峡 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 120,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:b15a97c5d40f",
+    "term": "缘",
+    "meaning": "沿着，顺着",
+    "example": "缘溪行，忘路之远近",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 121,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      19
+    ]
+  },
+  {
+    "id": "sense:e8489e605be2",
+    "term": "云",
+    "meaning": "说",
+    "example": "古语有云",
+    "source": "书戴嵩画牛 (六上)",
+    "tags": [],
+    "number": 123,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      20
+    ]
+  },
+  {
+    "id": "sense:c06079de10d0",
+    "term": "云",
+    "meaning": "句末语气词，无实义",
+    "example": "盖大苏泛赤壁云",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 123,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      20
+    ]
+  },
+  {
+    "id": "sense:d115868cb476",
+    "term": "云",
+    "meaning": "天空的云，云彩",
+    "example": "不义而富且贵，于我如浮云",
+    "source": "《论语》十二章 (七上)",
+    "tags": [],
+    "number": 123,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      20
+    ]
+  },
+  {
+    "id": "sense:c5ec30a27952",
+    "term": "云",
+    "meaning": "(像云一样的)",
+    "example": "当窗理云鬓",
+    "source": "木兰诗 (七下) (非考试篇目)",
+    "tags": [],
+    "number": 123,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      20
+    ]
+  },
+  {
+    "id": "sense:867c13837528",
+    "term": "云",
+    "meaning": "如此，这样",
+    "example": "子曰“汝安知鱼乐”云者",
+    "source": "庄子与惠子游于濠梁之上 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 123,
+    "senseIndex": 5,
+    "category": "real-word",
+    "sourcePages": [
+      20
+    ]
+  },
+  {
+    "id": "sense:c2bee9fb5510",
+    "term": "章",
+    "meaning": "印章",
+    "example": "又用篆章一",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 124,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      20
+    ]
+  },
+  {
+    "id": "sense:992fcdc4f289",
+    "term": "章",
+    "meaning": "知道，明白",
+    "example": "以我酌油知之",
+    "source": "卖油翁 (七下)",
+    "tags": [],
+    "number": 124,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      20
+    ]
+  },
+  {
+    "id": "sense:68b964cf7b65",
+    "term": "止",
+    "meaning": "停止",
+    "example": "一狼得骨止，一狼仍从",
+    "source": "狼 (七上)",
+    "tags": [],
+    "number": 126,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:943285d9c386",
+    "term": "止",
+    "meaning": "制止，阻止",
+    "example": "河曲智叟笑而止之曰",
+    "source": "愚公移山 (八上)",
+    "tags": [],
+    "number": 126,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:1ce2ffe1d35d",
+    "term": "止",
+    "meaning": "仅，只是",
+    "example": "担中肉尽，止有剩骨",
+    "source": "狼 (七上)",
+    "tags": [],
+    "number": 126,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:eda1710980f4",
+    "term": "志",
+    "meaning": "标记，记号",
+    "example": "寻向所志，遂迷，不复得路",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 127,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:c7ce12b9204f",
+    "term": "志",
+    "meaning": "做标记，做记号",
+    "example": "便扶向路，处处志之",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 127,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:163785dd9604",
+    "term": "志",
+    "meaning": "记载",
+    "example": "《齐谐》者，志怪者也",
+    "source": "北冥有鱼 (八下)",
+    "tags": [],
+    "number": 127,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:e5adb160fcf9",
+    "term": "志",
+    "meaning": "心志，情志，志向",
+    "example": "方鼓琴而志在太山",
+    "source": "伯牙鼓琴 (六上)",
+    "tags": [],
+    "number": 127,
+    "senseIndex": 4,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:6d241fc14cce",
+    "term": "志",
+    "meaning": "志气，意志",
+    "example": "必先苦其心志，劳其筋骨",
+    "source": "生于忧患，死于安乐 (八上)",
+    "tags": [],
+    "number": 127,
+    "senseIndex": 5,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:70e9332ad0b2",
+    "term": "致",
+    "meaning": "取得，得到",
+    "example": "家贫，无以致书以观",
+    "source": "送东阳马生序 (九下)",
+    "tags": [],
+    "number": 128,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:a633d66358c6",
+    "term": "致",
+    "meaning": "达到，实现",
+    "example": "非宁静无以致远",
+    "source": "诫子书 (七上) (非考试篇目)",
+    "tags": [],
+    "number": 128,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:0a35a506cb46",
+    "term": "质",
+    "meaning": "询问",
+    "example": "余立侍左右，援疑质理",
+    "source": "送东阳马生序 (九下)",
+    "tags": [],
+    "number": 129,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:f210f831afe2",
+    "term": "质",
+    "meaning": "资质",
+    "example": "德有不成者，非天质之卑",
+    "source": "送东阳马生序 (九下)",
+    "tags": [],
+    "number": 129,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:b91f04790557",
+    "term": "专",
+    "meaning": "独有，独自享有",
+    "example": "衣食所安，弗敢专也，必以分人",
+    "source": "曹刿论战 (九下)",
+    "tags": [],
+    "number": 130,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:201f768b2419",
+    "term": "专",
+    "meaning": "专门，专一",
+    "example": "则心不若余之专耳",
+    "source": "送东阳马生序 (九下)",
+    "tags": [],
+    "number": 130,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:d823cabfb8d3",
+    "term": "走",
+    "meaning": "跑，逃跑",
+    "example": "双兔傍地走",
+    "source": "木兰诗 (七下) (非考试篇目)",
+    "tags": [],
+    "number": 131,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:b420892f288e",
+    "term": "走",
+    "meaning": "脚",
+    "example": "细若蚊足，钩画了了",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 131,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:8bd303bf287c",
+    "term": "走",
+    "meaning": "足够，充足",
+    "example": "是故学然后知不足",
+    "source": "虽有嘉肴 (八下)",
+    "tags": [],
+    "number": 131,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:e26218a79d85",
+    "term": "足",
+    "meaning": "脚",
+    "example": "细若蚊足，钩画了了",
+    "source": "核舟记 (八下) (非考试篇目)",
+    "tags": [],
+    "number": 132,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:d8c2e2539d53",
+    "term": "足",
+    "meaning": "足够，充足",
+    "example": "是故学然后知不足",
+    "source": "虽有嘉肴 (八下)",
+    "tags": [],
+    "number": 132,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:dc9887339ac5",
+    "term": "足",
+    "meaning": "值得，够得上",
+    "example": "以为世无足复为鼓琴者",
+    "source": "伯牙鼓琴 (六上)",
+    "tags": [],
+    "number": 132,
+    "senseIndex": 3,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:003d16ad84ce",
+    "term": "卒",
+    "meaning": "最后，终于",
+    "example": "故余虽愚，卒获有所闻",
+    "source": "送东阳马生序 (九下)",
+    "tags": [],
+    "number": 133,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:e920f5c85a06",
+    "term": "作",
+    "meaning": "振作，奋发",
+    "example": "困于心，衡于虑，而后作",
+    "source": "生于忧患，死于安乐 (八上)",
+    "tags": [],
+    "number": 134,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      21
+    ]
+  },
+  {
+    "id": "sense:d3705b3f0bb6",
+    "term": "坐",
+    "meaning": "坐着，坐下 (古人双膝着地，臀部压在脚后跟上)",
+    "example": "少时，一狼径去，其一犬坐于前",
+    "source": "狼 (七上)",
+    "tags": [],
+    "number": 135,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      22
+    ]
+  },
+  {
+    "id": "sense:71cf26bf4d6d",
+    "term": "坐",
+    "meaning": "起坐而喧哗者，众宾欢也",
+    "example": "起坐而喧哗者，众宾欢也",
+    "source": "醉翁亭记 (九上)",
+    "tags": [],
+    "number": 135,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      22
+    ]
+  },
+  {
+    "id": "sense:1258bb1ddd12",
+    "term": "卑鄙",
+    "meaning": "社会地位低微，见识短浅",
+    "example": "先帝不以臣卑鄙",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 136,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      22
+    ]
+  },
+  {
+    "id": "sense:9041c203a931",
+    "term": "布衣",
+    "meaning": "平民",
+    "example": "臣本布衣，躬耕于南阳",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 137,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      22
+    ]
+  },
+  {
+    "id": "sense:1da294ca791f",
+    "term": "布衣",
+    "meaning": "大王尝闻布衣之怒乎",
+    "example": "大王尝闻布衣之怒乎",
+    "source": "唐雎不辱使命 (九下) (非考试篇目)",
+    "tags": [],
+    "number": 137,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      22
+    ]
+  },
+  {
+    "id": "sense:67c2c11c5d7e",
+    "term": "菲薄",
+    "meaning": "轻视，看轻",
+    "example": "不宜妄自菲薄，引喻失义",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 138,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      22
+    ]
+  },
+  {
+    "id": "sense:6b057cea57ea",
+    "term": "其实",
+    "meaning": "其，它的。实，果实",
+    "example": "叶徒相似，其实味不同",
+    "source": "橘逾淮为枳 (非考试篇目)",
+    "tags": [],
+    "number": 139,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      22
+    ]
+  },
+  {
+    "id": "sense:ca0b0e879a31",
+    "term": "亲戚",
+    "meaning": "内外亲属，包括父系亲属和母系亲属",
+    "example": "寡助之至，亲戚畔之",
+    "source": "得道多助，失道寡助 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 140,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      22
+    ]
+  },
+  {
+    "id": "sense:a375be20b6a7",
+    "term": "驱驰",
+    "meaning": "①奔走效劳",
+    "example": "由是感激，遂许先帝以驱驰",
+    "source": "出师表 (九下)",
+    "tags": [],
+    "number": 141,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      22
+    ]
+  },
+  {
+    "id": "sense:501df8470e9d",
+    "term": "驱驰",
+    "meaning": "②策马快奔",
+    "example": "将军曰，军中不得驱驰",
+    "source": "周亚夫军细柳 (八上) (非考试篇目)",
+    "tags": [],
+    "number": 141,
+    "senseIndex": 2,
+    "category": "real-word",
+    "sourcePages": [
+      22
+    ]
+  },
+  {
+    "id": "sense:851e1b947cec",
+    "term": "无论",
+    "meaning": "不要说，更不必说",
+    "example": "乃不知有汉，无论魏晋",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 142,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      22
+    ]
+  },
+  {
+    "id": "sense:be29f16c66e5",
+    "term": "牺牲",
+    "meaning": "指祭祀用的纯色全体牲畜",
+    "example": "牺牲玉帛，弗敢加也，必以信",
+    "source": "曹刿论战 (九下)",
+    "tags": [],
+    "number": 143,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      22
+    ]
+  },
+  {
+    "id": "sense:d0ab9e563c1f",
+    "term": "鸿儒",
+    "meaning": "博学的人",
+    "example": "谈笑有鸿儒，往来无白丁",
+    "source": "陋室铭 (七下)",
+    "tags": [],
+    "number": 144,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      22
+    ]
+  },
+  {
+    "id": "sense:a515c8de2f3e",
+    "term": "白丁",
+    "meaning": "平民，指没有功名的人",
+    "example": "谈笑有鸿儒，往来无白丁",
+    "source": "陋室铭 (七下)",
+    "tags": [],
+    "number": 145,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      22
+    ]
+  },
+  {
+    "id": "sense:ede0d485de61",
+    "term": "阡陌",
+    "meaning": "田间小路",
+    "example": "阡陌交通，鸡犬相闻",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 146,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      23
+    ]
+  },
+  {
+    "id": "sense:470ccd319fbd",
+    "term": "交通",
+    "meaning": "交错相通",
+    "example": "阡陌交通，鸡犬相闻",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 147,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      23
+    ]
+  },
+  {
+    "id": "sense:83ac23c62ff2",
+    "term": "问津",
+    "meaning": "询问渡口，探求，访求",
+    "example": "后遂无问津者",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 148,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      23
+    ]
+  },
+  {
+    "id": "sense:4b82f3b4e7f1",
+    "term": "绝境",
+    "meaning": "与人世隔绝的地方",
+    "example": "率妻子邑人来此绝境",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 149,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      23
+    ]
+  },
+  {
+    "id": "sense:afa891495e86",
+    "term": "妻子",
+    "meaning": "妻子儿女",
+    "example": "率妻子邑人来此绝境",
+    "source": "桃花源记 (八下)",
+    "tags": [],
+    "number": 150,
+    "senseIndex": 1,
+    "category": "real-word",
+    "sourcePages": [
+      23
+    ]
+  },
+  {
+    "id": "sense:09dff2650ec2",
+    "term": "之",
+    "meaning": "①代词。可译为“他 (她)”\n“他 (她) 们”“我”“我\n们” “它”“它们”",
+    "example": "伯牙鼓琴，锺子期听之",
+    "source": "伯牙鼓琴 (六上)",
+    "tags": [],
+    "number": 1,
+    "senseIndex": 1,
+    "category": "function-word",
+    "sourcePages": [
+      23
+    ]
+  },
+  {
+    "id": "sense:2cb7e453d233",
+    "term": "之",
+    "meaning": "②助词。相当于“的”",
+    "example": "少选之间而志在流水",
+    "source": "伯牙鼓琴 (六上)",
+    "tags": [],
+    "number": 1,
+    "senseIndex": 2,
+    "category": "function-word",
+    "sourcePages": [
+      23
+    ]
+  },
+  {
+    "id": "sense:dd27a9683add",
+    "term": "其",
+    "meaning": "① 代 词 。 可 译 为 “ 他 ( 她 ) 的 ” “ 他 ( 她 ) 们 的 ” “ 它 的 ” 等",
+    "example": "人不堪其忧，回也不改其乐",
+    "source": "《论语》十二章 ( 七上 )",
+    "tags": [],
+    "number": 2,
+    "senseIndex": 1,
+    "category": "function-word",
+    "sourcePages": [
+      24
+    ]
+  },
+  {
+    "id": "sense:cdba397abf8b",
+    "term": "其",
+    "meaning": "② 副 词 。 放 在 句 首 或 句 中，表 示 推 测、反 诘、期 望、祈 使 等 语 气。视 情 况 可 译 为 “ 大 概 ” “ 怎 么 ” “ 难 道 ” “ 还 是 ” 等，或 不 翻 译",
+    "example": "其如土石何",
+    "source": "愚公移山 ( 八上 )",
+    "tags": [],
+    "number": 2,
+    "senseIndex": 2,
+    "category": "function-word",
+    "sourcePages": [
+      24
+    ]
+  },
+  {
+    "id": "sense:edc1e544aae3",
+    "term": "而",
+    "meaning": "① 连 词，不 译，或 译 为 “ 地 ” 连 词。表 示 并 列 关 系，可 不 译",
+    "example": "杂然而前陈者",
+    "source": "醉翁亭记 ( 九上 )",
+    "tags": [],
+    "number": 3,
+    "senseIndex": 1,
+    "category": "function-word",
+    "sourcePages": [
+      24
+    ]
+  },
+  {
+    "id": "sense:5dd03b10cf67",
+    "term": "以",
+    "meaning": "① 连 词，不 译，或 译 为 “ 地 ” 连 词。表 示 并 列 关 系，可 不 译",
+    "example": "杂然而前陈者",
+    "source": "醉翁亭记 ( 九上 )",
+    "tags": [],
+    "number": 4,
+    "senseIndex": 1,
+    "category": "function-word",
+    "sourcePages": [
+      25
+    ]
+  },
+  {
+    "id": "sense:5af42f6eb790",
+    "term": "以",
+    "meaning": "② 连 词。不 译，或 译 为 “ 地 ” 连 词。表 示 并 列 关 系，可 不 译",
+    "example": "学而不思则罔",
+    "source": "《论语》十二章 ( 七上 )",
+    "tags": [],
+    "number": 4,
+    "senseIndex": 2,
+    "category": "function-word",
+    "sourcePages": [
+      25
+    ]
+  },
+  {
+    "id": "sense:21f33f492df6",
+    "term": "以",
+    "meaning": "③ 连 词。表 示 转 折 关 系，可 译 为 “ 但 是”“ 却”",
+    "example": "我以日初出远，而日中时近也",
+    "source": "两小儿辩日 ( 六下 )",
+    "tags": [],
+    "number": 4,
+    "senseIndex": 3,
+    "category": "function-word",
+    "sourcePages": [
+      25
+    ]
+  },
+  {
+    "id": "sense:c020870cfaf1",
+    "term": "以",
+    "meaning": "④ 连 词。表 示 因 果 或 目 的",
+    "example": "方鼓琴而志在太山",
+    "source": "伯牙鼓琴 ( 六上 )",
+    "tags": [],
+    "number": 4,
+    "senseIndex": 4,
+    "category": "function-word",
+    "sourcePages": [
+      25
+    ]
+  },
+  {
+    "id": "sense:ca97160b367e",
+    "term": "以",
+    "meaning": "⑤ 副 词 的 词 尾。表 示 仅 止 于 此，相 当 于 “ 罢 了”",
+    "example": "已而夕阳在山",
+    "source": "醉翁亭记 ( 九上 )",
+    "tags": [],
+    "number": 4,
+    "senseIndex": 5,
+    "category": "function-word",
+    "sourcePages": [
+      25
+    ]
+  },
+  {
+    "id": "sense:d824daa0acb2",
+    "term": "以",
+    "meaning": "⑥ 介 词。因 为",
+    "example": "以其境过清",
+    "source": "小石潭记 ( 八下 )",
+    "tags": [],
+    "number": 4,
+    "senseIndex": 6,
+    "category": "function-word",
+    "sourcePages": [
+      25
+    ]
+  },
+  {
+    "id": "sense:3a67866beddd",
+    "term": "以",
+    "meaning": "⑦ 介 词。( 用、把、拿)",
+    "example": "所宝以百数",
+    "source": "书戴嵩画牛 ( 六上 )",
+    "tags": [],
+    "number": 4,
+    "senseIndex": 7,
+    "category": "function-word",
+    "sourcePages": [
+      25
+    ]
+  },
+  {
+    "id": "sense:4f60ab8e20e1",
+    "term": "以",
+    "meaning": "⑧ 介 词。凭 借、按 照",
+    "example": "可以调素琴",
+    "source": "陋室铭 ( 七下 )",
+    "tags": [],
+    "number": 4,
+    "senseIndex": 8,
+    "category": "function-word",
+    "sourcePages": [
+      25
+    ]
+  },
+  {
+    "id": "sense:f1c314332f7e",
+    "term": "以",
+    "meaning": "⑨ 连 词。相 当 于 “ 而”",
+    "example": "近岸，卷石底以出",
+    "source": "小石潭记 ( 八下 )",
+    "tags": [],
+    "number": 4,
+    "senseIndex": 9,
+    "category": "function-word",
+    "sourcePages": [
+      25
+    ]
+  },
+  {
+    "id": "sense:cfa044cfcdc9",
+    "term": "何",
+    "meaning": "①疑问代词。表示询问或反问。相当于“什么”“怎么”“为什么”",
+    "example": "禽兽之变诈几何哉",
+    "source": "狼 ( 七上 )",
+    "tags": [],
+    "number": 5,
+    "senseIndex": 1,
+    "category": "function-word",
+    "sourcePages": [
+      26
+    ]
+  },
+  {
+    "id": "sense:5cb29c9bce83",
+    "term": "何",
+    "meaning": "②表示程度深，可译为“多么”“何等”等",
+    "example": "此乐何极",
+    "source": "岳阳楼记 ( 九上 )",
+    "tags": [],
+    "number": 5,
+    "senseIndex": 2,
+    "category": "function-word",
+    "sourcePages": [
+      26
+    ]
+  },
+  {
+    "id": "sense:b113bd9de522",
+    "term": "何",
+    "meaning": "③不久；很短时间之后",
+    "example": "居无何，上至，又不得入",
+    "source": "周亚夫军细柳 ( 八上 ) ( 非考试篇目 )",
+    "tags": [],
+    "number": 5,
+    "senseIndex": 3,
+    "category": "function-word",
+    "sourcePages": [
+      26
+    ]
+  },
+  {
+    "id": "sense:40e8aa08ed54",
+    "term": "于",
+    "meaning": "介词。引出动作的处所、时间和对象。可译为“在”“到”“向”“对于”等",
+    "example": "吾十有五而志于学",
+    "source": "《论语》十二章 ( 七上 )",
+    "tags": [],
+    "number": 6,
+    "senseIndex": 1,
+    "category": "function-word",
+    "sourcePages": [
+      26
+    ]
+  },
+  {
+    "id": "sense:2debbbdfc24c",
+    "term": "于",
+    "meaning": "(表示比较，相当于“比”)",
+    "example": "所欲有甚于生者，故不为苟得也",
+    "source": "鱼我所欲也 ( 九下 )",
+    "tags": [],
+    "number": 6,
+    "senseIndex": 2,
+    "category": "function-word",
+    "sourcePages": [
+      26
+    ]
+  },
+  {
+    "id": "sense:3508ec846122",
+    "term": "于",
+    "meaning": "(在被动句中引出动作的主动者，相当于“被”)",
+    "example": "闻之于宋君",
+    "source": "穿井得一人 ( 七上 )",
+    "tags": [],
+    "number": 6,
+    "senseIndex": 3,
+    "category": "function-word",
+    "sourcePages": [
+      26
+    ]
+  },
+  {
+    "id": "sense:da55a0672e44",
+    "term": "于",
+    "meaning": "(表示把动作、行为加给对方，相当于“给”)",
+    "example": "故天将降大任于是人也",
+    "source": "生于忧患，死于安乐 ( 八上 )",
+    "tags": [],
+    "number": 6,
+    "senseIndex": 4,
+    "category": "function-word",
+    "sourcePages": [
+      26
+    ]
+  }
+]

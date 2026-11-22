@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "piece:98aeab76bc72",
+    "kind": "poem",
+    "title": "宿建德江",
+    "author": "[唐] 孟浩然",
+    "textbookLocation": "【六上】",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:2e12fd4564eb",
+    "kind": "poem",
+    "title": "六月二十七日望湖楼醉书",
+    "author": "宋・苏轼",
+    "textbookLocation": "",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:e55797277cab",
+    "kind": "poem",
+    "title": "西江月・夜行黄沙道中",
+    "author": "宋・辛弃疾",
+    "textbookLocation": "",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:c9a5d114fe7a",
+    "kind": "poem",
+    "title": "浪淘沙・其一",
+    "author": "唐・刘禹锡",
+    "textbookLocation": "",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:9c9361815888",
+    "kind": "poem",
+    "title": "江南春",
+    "author": "唐・杜牧",
+    "textbookLocation": "",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:5027e37accc2",
+    "kind": "poem",
+    "title": "书湖阴先生壁",
+    "author": "宋・王安石",
+    "textbookLocation": "",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:aadee4475d3f",
+    "kind": "poem",
+    "title": "过故人庄",
+    "author": "唐・孟浩然",
+    "textbookLocation": "",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:065e0e68282a",
+    "kind": "poem",
+    "title": "送元二使安西",
+    "author": "唐・王维",
+    "textbookLocation": "",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:e0ba32aa9980",
+    "kind": "poem",
+    "title": "江畔独步寻花",
+    "author": "唐・杜甫",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:c28414911d6c",
+    "kind": "poem",
+    "title": "春日",
+    "author": "[宋] 朱熹",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:5e19b59f5b25",
+    "kind": "poem",
+    "title": "迢迢牵牛星",
+    "author": "汉乐府",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:d516cfe2385e",
+    "kind": "poem",
+    "title": "寒食",
+    "author": "唐・韩翃",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:c9305459a9f1",
+    "kind": "poem",
+    "title": "十五夜望月",
+    "author": "唐・王建",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:b51103a75fee",
+    "kind": "poem",
+    "title": "蝉",
+    "author": "唐・虞世南",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:ffdf72e4e3f4",
+    "kind": "poem",
+    "title": "马诗",
+    "author": "唐・李贺",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:57b2258312b1",
+    "kind": "poem",
+    "title": "竹石",
+    "author": "清・郑燮",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:049aa77a91fd",
+    "kind": "poem",
+    "title": "长歌行",
+    "author": "汉乐府",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:eb6a9e4a4d16",
+    "kind": "poem",
+    "title": "绝句",
+    "author": "唐・杜甫",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:93a3bb5dfccd",
+    "kind": "poem",
+    "title": "淮中晚泊犊头",
+    "author": "宋・苏舜钦",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:3c03e199b69b",
+    "kind": "poem",
+    "title": "观书有感",
+    "author": "宋・朱熹",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:ee862d6f9ac9",
+    "kind": "poem",
+    "title": "观沧海",
+    "author": "三国・曹操",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:e5697a12ab61",
+    "kind": "poem",
+    "title": "次北固山下",
+    "author": "唐・王湾",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:e6eafca7f406",
+    "kind": "poem",
+    "title": "闻王昌龄左迁龙标遥有此寄",
+    "author": "唐・李白",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:c5a485af18e1",
+    "kind": "poem",
+    "title": "天净沙・秋思",
+    "author": "元・马致远",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:1c8b857792dc",
+    "kind": "poem",
+    "title": "峨眉山月歌",
+    "author": "唐・李白",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:f758b98acd3b",
+    "kind": "poem",
+    "title": "江南逢李龟年",
+    "author": "唐・杜甫",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:d2fd2840f7c1",
+    "kind": "poem",
+    "title": "行军九日思长安故园",
+    "author": "唐・岑参",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:291dce3f569e",
+    "kind": "poem",
+    "title": "夜上受降城闻笛",
+    "author": "唐・李益",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:af2076cf0b6d",
+    "kind": "poem",
+    "title": "秋词",
+    "author": "唐・刘禹锡",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:5593f8ec47b0",
+    "kind": "poem",
+    "title": "夜雨寄北",
+    "author": "唐・李商隐",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:3fedfcc55495",
+    "kind": "poem",
+    "title": "十一月四日风雨大作",
+    "author": "宋・陆游",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:a269f67c8927",
+    "kind": "poem",
+    "title": "潼关",
+    "author": "清・谭嗣同",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:4ac4391d88fe",
+    "kind": "poem",
+    "title": "竹里馆",
+    "author": "唐・王维",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:e9bc2d7657d8",
+    "kind": "poem",
+    "title": "春夜洛城闻笛",
+    "author": "唐・李白",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:01c28919e0b7",
+    "kind": "poem",
+    "title": "逢入京使",
+    "author": "唐・岑参",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:ba5ef9e499c0",
+    "kind": "poem",
+    "title": "晚春",
+    "author": "唐・韩愈",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:392ab89186eb",
+    "kind": "poem",
+    "title": "登幽州台歌",
+    "author": "唐・陈子昂",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:295f184804e5",
+    "kind": "poem",
+    "title": "望岳",
+    "author": "唐・杜甫",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:7329ae03f621",
+    "kind": "poem",
+    "title": "登飞来峰",
+    "author": "宋・王安石",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:bbebbe36a41a",
+    "kind": "poem",
+    "title": "游山西村",
+    "author": "宋・陆游",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:4acf66d7c105",
+    "kind": "poem",
+    "title": "己亥杂诗",
+    "author": "清・龚自珍",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:22cbaf23d07d",
+    "kind": "poem",
+    "title": "泊秦淮",
+    "author": "唐・杜牧",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:1066f76683dd",
+    "kind": "poem",
+    "title": "贾生",
+    "author": "唐・李商隐",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:1fc5c96d1a89",
+    "kind": "poem",
+    "title": "过松源晨炊漆公店",
+    "author": "宋・杨万里",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:e746c6b2a9c0",
+    "kind": "poem",
+    "title": "约客",
+    "author": "宋・赵师秀",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:1db609b4aff0",
+    "kind": "poem",
+    "title": "野望",
+    "author": "王绩",
+    "textbookLocation": "【八上】",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:307473fafcdc",
+    "kind": "poem",
+    "title": "黄鹤楼",
+    "author": "崔颢",
+    "textbookLocation": "【八上】",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:f4f8e4921290",
+    "kind": "poem",
+    "title": "使至塞上",
+    "author": "王维",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:f2497243fc3c",
+    "kind": "poem",
+    "title": "渡荆门送别",
+    "author": "李白",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:e1a347cf5a3f",
+    "kind": "poem",
+    "title": "钱塘湖春行",
+    "author": "白居易",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:27a3adea69a8",
+    "kind": "poem",
+    "title": "庭中有奇树",
+    "author": "《古诗十九首》",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:a95282aa8610",
+    "kind": "poem",
+    "title": "龟虽寿",
+    "author": "曹操",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:77080e971fde",
+    "kind": "poem",
+    "title": "赠从弟（其二）",
+    "author": "刘桢",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:72b1ab2386db",
+    "kind": "poem",
+    "title": "梁甫行",
+    "author": "曹植",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:d962a5783f82",
+    "kind": "poem",
+    "title": "饮酒（其五）",
+    "author": "陶渊明",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:fdcfe835e385",
+    "kind": "poem",
+    "title": "春望",
+    "author": "杜甫",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:f9c57791e18f",
+    "kind": "poem",
+    "title": "雁门太守行",
+    "author": "李贺",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:f09d09cc7fe1",
+    "kind": "poem",
+    "title": "赤壁",
+    "author": "杜牧",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:759b16d5fd16",
+    "kind": "poem",
+    "title": "渔家傲（天接云涛连晓雾）",
+    "author": "李清照",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:5b31ca0da3e0",
+    "kind": "poem",
+    "title": "浣溪沙（一曲新词酒一杯）",
+    "author": "晏殊",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:57fac7b8a021",
+    "kind": "poem",
+    "title": "采桑子（轻舟短棹西湖好）",
+    "author": "欧阳修",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:206773c8caa2",
+    "kind": "poem",
+    "title": "相见欢（金陵城上西楼）",
+    "author": "朱敦儒",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:3244ef02883c",
+    "kind": "poem",
+    "title": "如梦令（常记溪亭日暮）",
+    "author": "李清照",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:dd5cf6132b33",
+    "kind": "poem",
+    "title": "式微",
+    "author": "《诗经・邺风》",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:cb33603320f4",
+    "kind": "poem",
+    "title": "子衿",
+    "author": "《诗经・郑风》",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:e76941f3598c",
+    "kind": "poem",
+    "title": "送杜少府之任蜀州",
+    "author": "王勃",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:4ce6ef37306a",
+    "kind": "poem",
+    "title": "望洞庭湖赠张丞相",
+    "author": "孟浩然",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:3f4b4fccbf42",
+    "kind": "poem",
+    "title": "石壕吏",
+    "author": "杜甫",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:610d8533b95c",
+    "kind": "poem",
+    "title": "茅屋为秋风所破歌",
+    "author": "杜甫",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:38c11f2a68ad",
+    "kind": "poem",
+    "title": "卖炭翁",
+    "author": "白居易",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:c91bd64833e3",
+    "kind": "poem",
+    "title": "题破山寺后禅院",
+    "author": "常建",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:a66f2c94f84a",
+    "kind": "poem",
+    "title": "送友人",
+    "author": "李白",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:cd54163a8cc1",
+    "kind": "poem",
+    "title": "卜算子・黄州定慧院寓居作",
+    "author": "苏轼",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:39f5ffe3f888",
+    "kind": "poem",
+    "title": "卜算子・咏梅",
+    "author": "陆游",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:8a31d23ec81e",
+    "kind": "poem",
+    "title": "行路难（其一）",
+    "author": "李白",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:4c569e5c22cc",
+    "kind": "poem",
+    "title": "酬乐天扬州初逢席上见赠",
+    "author": "刘禹锡",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:55887c9cde81",
+    "kind": "poem",
+    "title": "水调歌头（明月几时有）",
+    "author": "苏轼",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:1098163cdf0c",
+    "kind": "poem",
+    "title": "月夜忆舍弟",
+    "author": "杜甫",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:af0a3d3f5465",
+    "kind": "poem",
+    "title": "长沙过贾谊宅",
+    "author": "刘长卿",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:85c60f501db0",
+    "kind": "poem",
+    "title": "左迁至蓝关示侄孙湘",
+    "author": "韩愈",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:e28b8009edc4",
+    "kind": "poem",
+    "title": "商山早行",
+    "author": "温庭筠",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:7947a4a84ec2",
+    "kind": "poem",
+    "title": "咸阳城东楼",
+    "author": "许浑",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:3f7768f42090",
+    "kind": "poem",
+    "title": "无题",
+    "author": "李商隐",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:e55a69cf308d",
+    "kind": "poem",
+    "title": "行香子（树绕村庄）",
+    "author": "秦观",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:5ff51dbcfaba",
+    "kind": "poem",
+    "title": "丑奴儿・书博山道中壁",
+    "author": "辛弃疾",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:6694e976b6bd",
+    "kind": "poem",
+    "title": "渔家傲・秋思",
+    "author": "范仲淹",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:5c835b2d7478",
+    "kind": "poem",
+    "title": "江城子・密州出猎",
+    "author": "苏轼",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:8c9ca731b024",
+    "kind": "poem",
+    "title": "破阵子・为陈同甫赋壮词以寄之",
+    "author": "辛弃疾",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:d8aaaf1c105b",
+    "kind": "poem",
+    "title": "过零丁洋",
+    "author": "文天祥",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:24ae5b4f3eb9",
+    "kind": "poem",
+    "title": "满江红・小住京华",
+    "author": "清・秋瑾",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:e6c7b997bf69",
+    "kind": "poem",
+    "title": "定风波",
+    "author": "宋・苏轼",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:0450b807e6ed",
+    "kind": "poem",
+    "title": "临江仙・夜登小阁",
+    "author": "宋・陈与义",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:09ab5a00dd21",
+    "kind": "poem",
+    "title": "太常引・建康中秋夜",
+    "author": "宋・辛弃疾",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:e55402b1c72c",
+    "kind": "poem",
+    "title": "浣溪沙・身向云山那畔行",
+    "author": "清・纳兰性德",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:84990c165080",
+    "kind": "poem",
+    "title": "十五从军征",
+    "author": "汉乐府",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:6f9d8d28ea0d",
+    "kind": "poem",
+    "title": "白雪歌送武判官归京",
+    "author": "唐・岑参",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:8364fd36be61",
+    "kind": "poem",
+    "title": "南乡子・登京口北固亭有怀",
+    "author": "宋・辛弃疾",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:2701f85447b0",
+    "kind": "poem",
+    "title": "山坡羊・潼关怀古",
+    "author": "元・张养浩",
+    "textbookLocation": "新 6-9 年级要背诵的古诗词.（打印）.pdf",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:fbd7b6fbefb4",
+    "kind": "prose",
+    "title": "两小儿辩日",
+    "author": "列御寇",
+    "textbookLocation": "六年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:4d80bf4f5e82",
+    "kind": "prose",
+    "title": "曹冲称象",
+    "author": "陈寿",
+    "textbookLocation": "六年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:9f603781a913",
+    "kind": "prose",
+    "title": "学弈",
+    "author": "孟子",
+    "textbookLocation": "六年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:4cb293e2ff40",
+    "kind": "prose",
+    "title": "关尹子教射",
+    "author": "列御寇",
+    "textbookLocation": "七年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:8e21488f3e38",
+    "kind": "prose",
+    "title": "咏雪",
+    "author": "刘义庆",
+    "textbookLocation": "七年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:efa6796fe13c",
+    "kind": "prose",
+    "title": "陈太丘与友期行",
+    "author": "刘义庆",
+    "textbookLocation": "七年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:9c48078139c4",
+    "kind": "prose",
+    "title": "狼",
+    "author": "蒲松龄",
+    "textbookLocation": "七年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:95a7733598eb",
+    "kind": "prose",
+    "title": "穿井得一人",
+    "author": "吕不韦",
+    "textbookLocation": "七年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:682e38813bda",
+    "kind": "prose",
+    "title": "杞人忧天",
+    "author": "列御寇",
+    "textbookLocation": "七年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:781a1943e26e",
+    "kind": "prose",
+    "title": "孙权劝学",
+    "author": "司马光",
+    "textbookLocation": "七年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:9810afe6804e",
+    "kind": "prose",
+    "title": "木兰诗",
+    "author": "佚名",
+    "textbookLocation": "七年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:3f1f1e36b7f8",
+    "kind": "prose",
+    "title": "卖油翁",
+    "author": "欧阳修",
+    "textbookLocation": "七年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:0dade901763f",
+    "kind": "prose",
+    "title": "陋室铭",
+    "author": "刘禹锡",
+    "textbookLocation": "七年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:7320f813ed0d",
+    "kind": "prose",
+    "title": "爱莲说",
+    "author": "周敦颐",
+    "textbookLocation": "八年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:cd541b2aa419",
+    "kind": "prose",
+    "title": "三峡",
+    "author": "郦道元",
+    "textbookLocation": "八年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:1397912ec15f",
+    "kind": "prose",
+    "title": "答谢中书书",
+    "author": "陶弘景",
+    "textbookLocation": "八年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:918f8dbfaf09",
+    "kind": "prose",
+    "title": "记承天寺夜游",
+    "author": "苏轼",
+    "textbookLocation": "八年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:71da16331813",
+    "kind": "prose",
+    "title": "与朱元思书",
+    "author": "吴均",
+    "textbookLocation": "八年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:68b6a5d697b3",
+    "kind": "prose",
+    "title": "得道多助，失道寡助",
+    "author": "孟子",
+    "textbookLocation": "八年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:76c1a09b7ae0",
+    "kind": "prose",
+    "title": "富贵不能淫",
+    "author": "孟子",
+    "textbookLocation": "八年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:e719495a1cb5",
+    "kind": "prose",
+    "title": "生于忧患，死于安乐",
+    "author": "孟子",
+    "textbookLocation": "八年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:20ee58a3d3ab",
+    "kind": "prose",
+    "title": "愚公移山",
+    "author": "列御寇",
+    "textbookLocation": "八年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:1f6e858b776d",
+    "kind": "prose",
+    "title": "周亚夫军细柳",
+    "author": "司马迁",
+    "textbookLocation": "八年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:ea356d9fec12",
+    "kind": "prose",
+    "title": "桃花源记",
+    "author": "陶渊明",
+    "textbookLocation": "八年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:30cb36bb9d7d",
+    "kind": "prose",
+    "title": "核舟记",
+    "author": "魏学洢",
+    "textbookLocation": "八年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:f07b8108d015",
+    "kind": "prose",
+    "title": "小石潭记",
+    "author": "柳宗元",
+    "textbookLocation": "八年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:85eda662b402",
+    "kind": "prose",
+    "title": "关雎",
+    "author": "佚名",
+    "textbookLocation": "八年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:a8412cb9e67c",
+    "kind": "prose",
+    "title": "蒹葭",
+    "author": "佚名",
+    "textbookLocation": "八年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:cd2998d2e627",
+    "kind": "prose",
+    "title": "北冥有鱼",
+    "author": "庄子",
+    "textbookLocation": "八年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:36ec8fa65337",
+    "kind": "prose",
+    "title": "庄子与惠子游于濠梁之上",
+    "author": "庄子",
+    "textbookLocation": "八年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:9dfde3490d01",
+    "kind": "prose",
+    "title": "虽有嘉肴",
+    "author": "戴圣编纂",
+    "textbookLocation": "八年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:251fb7cdc4a1",
+    "kind": "prose",
+    "title": "大道之行也",
+    "author": "戴圣编纂",
+    "textbookLocation": "八年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:3255888fdc74",
+    "kind": "prose",
+    "title": "醉翁亭记",
+    "author": "欧阳修",
+    "textbookLocation": "九年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:bc7ba78f0e5e",
+    "kind": "prose",
+    "title": "鱼我所欲也",
+    "author": "孟子及其弟子",
+    "textbookLocation": "《孟子·告子上》",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:569bbea766d2",
+    "kind": "prose",
+    "title": "送东阳马生序",
+    "author": "宋濂",
+    "textbookLocation": "《宋学士文集》",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:391382e1c476",
+    "kind": "prose",
+    "title": "曹刿论战",
+    "author": "左丘明",
+    "textbookLocation": "《左传·庄公十年》",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:8eae8468380d",
+    "kind": "prose",
+    "title": "出师表",
+    "author": "诸葛亮",
+    "textbookLocation": "《三国志·诸葛亮传》",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:4be75867b294",
+    "kind": "prose",
+    "title": "陈涉世家",
+    "author": "司马迁",
+    "textbookLocation": "《史记》",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:d9077f697015",
+    "kind": "prose",
+    "title": "马说",
+    "author": "韩愈",
+    "textbookLocation": "九年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:12b8908cf1a6",
+    "kind": "prose",
+    "title": "岳阳楼记",
+    "author": "范仲淹",
+    "textbookLocation": "九年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:49fe2f202659",
+    "kind": "prose",
+    "title": "湖心亭看雪",
+    "author": "张岱",
+    "textbookLocation": "九年级上册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  },
+  {
+    "id": "piece:90bd7946a818",
+    "kind": "prose",
+    "title": "邹忌讽齐王纳谏",
+    "author": "刘向编纂",
+    "textbookLocation": "九年级下册",
+    "sourceTags": [
+      "qwen-page-organization"
+    ]
+  }
+]
