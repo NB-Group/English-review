@@ -27,6 +27,7 @@
 - 将内容库改为语文、英语、化学统一入口
 - 增加统一进度页和化学模块占位
 - 将统一产品发布到 `https://nb-group.github.io/study/` 根站点路径
+- 增加 PythonAnywhere 档案的无 PIN 迁移快照导出工具并通过测试
 
 ### Test Results
 | Test | Expected | Actual | Status |

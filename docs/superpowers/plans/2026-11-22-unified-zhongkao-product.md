@@ -79,7 +79,7 @@
 - Add: `supabase/migrations/` in the selected backend repository
 
 - [x] **Step 1: Test old English keys map to stable card IDs**
-- [x] **Step 2: Add the preference schema and migration snapshot boundary**
+- [x] **Step 2: Add the preference schema, migration snapshot boundary and dry-run exporter**
 - [ ] **Step 3: Integrate Supabase event adapter with the active sync path**
 - [ ] **Step 4: Keep PythonAnywhere read-only fallback until verification completes**
 
