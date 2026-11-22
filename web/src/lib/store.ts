@@ -11,6 +11,9 @@ import type {
 } from '../types'
 import { Rating, rate, craftState } from './fsrs'
 
+const cloudConfigured = Boolean(import.meta.env?.VITE_SUPABASE_URL && import.meta.env?.VITE_SUPABASE_ANON_KEY)
+const profileStorageKey = 'kaogang_v2_profile'
+
 /** 全局用户状态：档案 + 学习动作（localStorage 持久化，v1 不做服务端同步） */
 
 const DEFAULT_GOALS: GoalRule[] = [
@@ -35,7 +38,7 @@ interface ProfileState {
   resetProfile: () => void
 }
 
-function emptyProfile(name = 'me'): UserProfile {
+export function emptyProfile(name = 'me'): UserProfile {
   return {
     name,
     goals: DEFAULT_GOALS,
@@ -132,7 +135,13 @@ export const useProfile = create<ProfileState>()(
       resetProfile: () => set({ profile: emptyProfile(get().profile.name) }),
     }),
     {
-      name: 'kaogang_v2_profile',
+      name: cloudConfigured ? 'study-cloud-working-profile' : profileStorageKey,
+      skipHydration: cloudConfigured,
+      ...(cloudConfigured ? { storage: {
+        getItem: () => null,
+        setItem: () => undefined,
+        removeItem: () => undefined,
+      } } : {}),
       onRehydrateStorage: () => (state) => {
         // 一次性迁移：旧版"熟练"种子（Easy×3 只产生 2-4 天间隔，淹没到期队列）升格为 45 天
         const p = state?.profile
@@ -157,7 +166,7 @@ export const useProfile = create<ProfileState>()(
         ;(p as unknown as { seedsV2?: boolean }).seedsV2 = true
         if (fixed > 0) {
           try {
-            localStorage.setItem('kaogang_v2_profile', JSON.stringify({ state: { profile: p }, version: 0 }))
+            localStorage.setItem(profileStorageKey, JSON.stringify({ state: { profile: p }, version: 0 }))
             console.log(`[迁移] ${fixed} 个旧熟练种子已升格为长间隔`)
           } catch { /* 忽略 */ }
         }

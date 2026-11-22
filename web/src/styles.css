@@ -7,7 +7,7 @@
 /* Nunito 可变字体（自托管） */
 @font-face {
   font-family: "Nunito";
-  src: url("/v2/fonts/nunito-var.woff2") format("woff2");
+  src: url("/fonts/nunito-var.woff2") format("woff2");
   font-weight: 400 900;
   font-style: normal;
   font-display: swap;

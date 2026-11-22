@@ -6,6 +6,9 @@ import { buildPracticeSession, type PracticeCard } from '../lib/session-builder'
 import { useProfile } from '../lib/store'
 import { getSession } from '../lib/sync'
 import { Rating } from '../lib/fsrs'
+import { mapEnglishProfile, makeUnifiedCardId } from '../lib/migration-map'
+import { STUDY_CONTENT_VERSION, useStudyCloud } from '../lib/study-cloud'
+import type { ChineseGrade, Dim } from '../types'
 import { rateChinese } from '../lib/chinese'
 import EnglishCard, { type EnglishReviewResult } from './Study'
 import ChineseReviewCard from './ChineseStudy'
@@ -33,13 +36,15 @@ function subscribeToAccount(notify: () => void) {
 }
 
 export default function PracticeSession({ ds, request }: { ds: Dataset; request: PracticeRequest }) {
+  const cloud = useStudyCloud()
   const owner = useSyncExternalStore(subscribeToAccount, () => getSession()?.user ?? null)
-  const storageKey = 'zhongkao-practice-v1:' + JSON.stringify([owner, request])
+  const storageKey = 'zhongkao-practice-v1:' + JSON.stringify([cloud?.accountId ?? owner, request])
   return <PracticeRound key={storageKey} storageKey={storageKey} ds={ds} request={request} />
 }
 
 function PracticeRound({ ds, request, storageKey }: { ds: Dataset; request: PracticeRequest; storageKey: string }) {
   const store = useProfile
+  const cloud = useStudyCloud()
   const fresh = (): Session => ({ queue: buildPracticeSession(ds, store.getState().profile, request), results: [] })
   const [session, setSession] = useState<Session>(() => restore(storageKey) ?? fresh())
   const [storageError, setStorageError] = useState(false)
@@ -67,17 +72,36 @@ function PracticeRound({ ds, request, storageKey }: { ds: Dataset; request: Prac
     save({ queue: session.queue, results: [...session.results, { outcome }] })
   }
 
+  function record(subject: 'english' | 'chinese', key: string, skill: Dim | 'recall', grade: ChineseGrade | null) {
+    if (!cloud) return
+    const cardId = makeUnifiedCardId(STUDY_CONTENT_VERSION, subject, key, skill)
+    const state = mapEnglishProfile(store.getState().profile, STUDY_CONTENT_VERSION).learningStates
+      .find((candidate) => candidate.cardId === cardId)
+    if (state) cloud.review(state, grade)
+  }
+
   function finishEnglish(result: EnglishReviewResult) {
     if (current?.subject !== 'english') return
     const card = current.card
     if (result.kind === 'triage') {
-      advance('assessed', () => store.getState().triage(card.key, result.verdict))
+      advance('assessed', () => {
+        store.getState().triage(card.key, result.verdict)
+        record('english', card.key, 'w1', null)
+        record('english', card.key, 'w2', null)
+      })
       return
     }
     advance(result.rating >= Rating.Good ? 'correct' : 'review', () => {
       const { answer } = store.getState()
-      if (card.kind === 'newWord') answer(card.key, 'w1', Rating.Easy)
-      answer(card.key, card.dim ?? 'w2', result.rating)
+      if (card.kind === 'newWord') {
+        answer(card.key, 'w1', Rating.Easy)
+        record('english', card.key, 'w1', 'easy')
+      }
+      const dim = card.dim ?? 'w2'
+      answer(card.key, dim, result.rating)
+      const grade: ChineseGrade = result.rating === Rating.Easy ? 'easy' : result.rating === Rating.Good ? 'good'
+        : result.rating === Rating.Hard ? 'hard' : 'again'
+      record('english', card.key, dim, grade)
     })
   }
 
@@ -129,6 +153,7 @@ function PracticeRound({ ds, request, storageKey }: { ds: Dataset; request: Prac
               advance(grade === 'good' || grade === 'easy' ? 'correct' : 'review', () => {
                 const state = store.getState()
                 state.setChineseCardState(id, rateChinese(state.profile.chineseProgress?.[id], grade))
+                record('chinese', id, 'recall', grade)
               })
             }} />}
       </div>

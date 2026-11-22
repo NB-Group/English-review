@@ -62,4 +62,13 @@ if (daily.cards.length !== 3 || daily.cards.some((card) => card.dim !== 'w1' || 
   throw new Error('daily recognition-only goals must never require spelling or strand unlearned words')
 }
 
+const exampleWord = {
+  ...word(1),
+  headword: 'agree with',
+  examples: [{ en: 'I agree with you.', zh: '我同意你的看法。', rewrite: null }],
+}
+const examplePlan = buildSession(dataset([exampleWord]), profile({
+  'w:1': { triage: 'recognize', dims: { w1: state(now + 86_400_000), w2: state(now + 86_400_000) } },
+}), { due: 0, spellSpot: 0, fluentSpot: 0, triage: 0, newWords: 1 }, now)
+if (examplePlan.cards[0]?.dim !== 's1') throw new Error('Known spelling should unlock a separate example card')
 console.log('engine tests passed')

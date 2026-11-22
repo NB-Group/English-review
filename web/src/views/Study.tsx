@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 import type { Dataset } from '../lib/data'
-import type { TriageVerdict } from '../types'
+import type { Example, TriageVerdict } from '../types'
 import type { SessionCard } from '../lib/engine'
 import { Rating } from '../lib/fsrs'
+import { getEnglishExample, getExampleCloze } from '../lib/english-example'
 import { grade, type Grade } from '../lib/grader'
 import { composeHintedAnswer, firstCharacterHint } from '../lib/hints'
 import { speak } from '../lib/tts'
@@ -46,7 +47,62 @@ export default function EnglishCard({
   }
   const review = (rating: Rating) => onDone({ kind: 'review', rating })
   if (card.kind === 'newWord') return <NewWordCard ds={ds} card={card} onDone={review} />
+  if (card.dim === 's1' || card.dim === 's2') {
+    const example = getEnglishExample(ds, card.entryKind, card.no)
+    if (example) return <ExampleCard card={card} example={example} onDone={review} />
+  }
   return <ReviewCard ds={ds} card={card} onDone={review} />
+}
+
+function ExampleCard({ card, example, onDone }: {
+  card: SessionCard; example: Example; onDone: (rating: Rating) => void
+}) {
+  const gap = card.dim === 's2' ? getExampleCloze(example, card.headword) : undefined
+  const [revealed, setRevealed] = useState(false)
+  const [input, setInput] = useState('')
+  const [rating, setRating] = useState<Rating | null>(null)
+  const reveal = () => {
+    if (gap) {
+      const result = grade(input, [gap.answer])
+      setRating(result === 'exact' ? Rating.Good : result === 'near' ? Rating.Hard : Rating.Again)
+    }
+    setRevealed(true)
+  }
+  return (
+    <section>
+      <Prompt kind={card.kind} card={card}>
+        <p className="text-sm font-bold text-ink-soft">{gap ? '补全例句' : '理解例句'}</p>
+        <h1 className="mt-3 text-2xl font-bold">{gap?.text ?? example.en}</h1>
+        {gap ? <p className="mt-3">{example.zh}</p> : <div className="mt-4"><Speaker word={example.en} /></div>}
+      </Prompt>
+      <div className="mt-5">
+        {gap && !revealed &&
+          <label className="block">
+            <span className="sr-only">空缺的英文</span>
+            <input className="duo-input" value={input} onChange={(event) => setInput(event.target.value)}
+              onKeyDown={(event) => event.key === 'Enter' && input.trim() && reveal()} />
+          </label>}
+        {!revealed && <button className="push mt-4 w-full" disabled={!!gap && !input.trim()} onClick={reveal}>
+          {gap ? '检查' : '查看释义'}
+        </button>}
+        {revealed && <div aria-live="polite" className="card p-5">
+          <p className="font-bold">{gap ? example.en : example.zh}</p>
+          {gap ? (
+            <>
+              <p className="mt-2 text-sm">{rating === Rating.Good ? '答对了' : `参考答案 ${gap.answer}`}</p>
+              <button className="push mt-4 w-full" onClick={() => onDone(rating ?? Rating.Again)}>下一题</button>
+            </>
+          ) : (
+            <div className="mt-4 flex flex-wrap gap-2">
+              <button className="choice" onClick={() => onDone(Rating.Again)}>没想起来</button>
+              <button className="choice" onClick={() => onDone(Rating.Hard)}>有点模糊</button>
+              <button className="push" onClick={() => onDone(Rating.Good)}>理解了</button>
+            </div>
+          )}
+        </div>}
+      </div>
+    </section>
+  )
 }
 
 /* 舞台分区组件：prompt 在上（自动撑开居中），action 吸底 */

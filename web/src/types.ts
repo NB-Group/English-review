@@ -128,7 +128,7 @@ export interface UserProfile {
   name: string
   goals: GoalRule[]
   progress: Record<string, EntryProgress> // key: "w:598" / "p:22"
-  sentenceProgress: Record<string, Record<Dim, FsrsState>> // key: sentence id
+  sentenceProgress: Record<string, Partial<Record<Dim, FsrsState>>> // key: sentence id
   chineseProgress?: Record<string, ChineseCardState>
   dailyQuota: { triage: number; spotcheck: number; newWords: number }
   createdAt: number

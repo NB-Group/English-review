@@ -1,18 +1,20 @@
 import { useEffect, useState } from 'react'
 import type { GoalLevel, GoalRule } from '../types'
 import { useProfile } from '../lib/store'
+import { useStudyCloud } from '../lib/study-cloud'
 import { getSession, logout } from '../lib/sync'
 
 const LEVEL_META: Record<GoalLevel, { label: string; note: string; cls: string }> = {
   skip: { label: '忽略', note: '不进入学习流', cls: 'bg-mist text-ink-faint' },
   recognize: { label: '认识即可', note: '见词知义即可', cls: 'bg-duo-green-tint text-duo-green-dark' },
   dictation: { label: '需要默写', note: '练习词义和拼写', cls: 'bg-duo-green-tint text-duo-green-dark' },
-  sentence: { label: '句子级', note: '例句练习即将上线，先按默写', cls: 'bg-duo-gold-tint text-duo-gold-dark' },
-  full: { label: '全能', note: '例句挖空即将上线，先按默写', cls: 'bg-duo-purple-tint text-ink-soft' },
+  sentence: { label: '句子级', note: '练习词义、拼写和例句理解', cls: 'bg-duo-gold-tint text-duo-gold-dark' },
+  full: { label: '全能', note: '在例句里回忆词义和拼写', cls: 'bg-duo-purple-tint text-ink-soft' },
 }
 const LEVEL_ORDER: GoalLevel[] = ['skip', 'recognize', 'dictation', 'sentence', 'full']
 
 export default function Goals() {
+  const cloud = useStudyCloud()
   const profile = useProfile((s) => s.profile)
   const setGoals = useProfile((s) => s.setGoals)
   const setQuota = useProfile((s) => s.setQuota)
@@ -109,7 +111,12 @@ export default function Goals() {
       <section className="card goals-section">
         <div className="goals-section-title">档案</div>
         <div className="goal-profile">
-          {session ? (
+          {cloud ? (
+            <>
+              <span className="goal-scope">{cloud.username}</span>
+              <button className="goal-remove" onClick={() => void cloud.signOut()}>退出登录</button>
+            </>
+          ) : session ? (
             <>
               <span className="goal-scope">{session.user}</span>
               <span className="goal-level bg-duo-green-tint text-duo-green-dark">已同步</span>
@@ -129,7 +136,7 @@ export default function Goals() {
       </section>
 
       {/* 危险操作 */}
-      <section className="card goals-section goals-danger">
+      {!cloud && <section className="card goals-section goals-danger">
         <div className="goals-section-title">重置</div>
         {confirmReset ? (
           <div className="goal-profile">
@@ -140,7 +147,7 @@ export default function Goals() {
         ) : (
           <button className="goal-add" onClick={() => setConfirmReset(true)}>重置学习档案…</button>
         )}
-      </section>
+      </section>}
     </div>
   )
 }

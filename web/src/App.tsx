@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { Navigate, NavLink, Route, Routes, useLocation, useSearchParams } from 'react-router-dom'
 import { loadDataset, type Dataset } from './lib/data'
 import ProductToday from './views/ProductToday'
@@ -9,6 +9,9 @@ import Goals from './views/Goals'
 import { parsePracticeRequest } from './lib/product-types'
 import ProductProgress from './views/ProductProgress'
 import { AccountGate, AccountChip } from './views/AccountGate'
+import { useStudyCloud } from './lib/study-cloud'
+
+const SupabaseStudyGate = lazy(() => import('./views/SupabaseStudyGate'))
 
 const nav = [
   ['/today', '今天', '◷'],
@@ -27,6 +30,20 @@ function PracticeRoute({ ds }: { ds: Dataset }) {
 }
 
 export default function App() {
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+  const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+  if (supabaseUrl && supabaseKey) {
+    return (
+      <Suspense fallback={<div className="empty-state">正在载入学习档案…</div>}>
+        <SupabaseStudyGate url={supabaseUrl} keyValue={supabaseKey}><StudyWorkspace /></SupabaseStudyGate>
+      </Suspense>
+    )
+  }
+  return <StudyWorkspace />
+}
+
+function StudyWorkspace() {
+  const cloud = useStudyCloud()
   const [ds, setDs] = useState<Dataset | null>(null)
   const [error, setError] = useState('')
   const location = useLocation()
@@ -51,7 +68,9 @@ export default function App() {
           ))}
         </nav>
         <div className="mt-auto" />
-        <AccountChip />
+        {cloud
+          ? <div className="sidebar-bottom">{cloud.username} <button className="gate-skip" onClick={() => void cloud.signOut()}>退出</button></div>
+          : <AccountChip />}
       </aside>
       <div className="workspace-body">
         <header className="workspace-header">
@@ -75,7 +94,7 @@ export default function App() {
               </Routes>}
         </div>
       </div>
-      <AccountGate />
+      {!cloud && <AccountGate />}
     </div>
   )
 }

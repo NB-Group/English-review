@@ -1,6 +1,7 @@
 import type { Dataset } from './data'
 import type { Dim, EntryProgress, GoalLevel, UserProfile } from '../types'
 import { isDue } from './fsrs'
+import { getEnglishExample, getExampleCloze } from './english-example'
 import { dimsForLevel, goalLevelFor } from './store'
 
 /** 会话组牌：到期复习 → P1 拼写抽查 → P3 熟词抽查 → 清洗 → 新词
@@ -110,11 +111,18 @@ export function buildSession(
   }
 
   const eligible = entries.filter((entry) => entry.level !== 'skip' && entry.progress.triage !== 'skip')
+    .map((entry) => {
+      const dims = dimsForLevel(entry.level)
+      if (!dims.includes('s1')) return { ...entry, dims }
+      const example = getEnglishExample(ds, entry.kind, entry.no)
+      return { ...entry, dims: dims.filter((dim) =>
+        dim === 's1' ? !!example : dim !== 's2' || !!(example && getExampleCloze(example, entry.headword))) }
+    })
 
   // ── 各池（互斥条件，一个词条只进一个池）──
   // 到期复习：fluent 未降级且间隔 >40 天的不算欠账
   const dueList = priorityShuffle(
-    eligible.map((e) => ({ e, dim: weakestDueDim(e.progress, dimsForLevel(e.level), now) }))
+    eligible.map((e) => ({ e, dim: weakestDueDim(e.progress, e.dims, now) }))
       .filter(
         ({ e, dim }) =>
           dim !== null &&
@@ -141,6 +149,16 @@ export function buildSession(
       no: e.no, headword: e.headword, dim: e.level === 'recognize' ? 'w1' : 'w2',
       stars: e.stars, priorTriage: e.progress.triage ?? undefined,
     }))
+
+  const examples = priorityShuffle(eligible, (entry) => entry.stars).flatMap((entry): SessionCard[] => {
+    if (!entry.progress.dims.w2) return []
+    const dim = entry.dims.find((skill) => (skill === 's1' || skill === 's2') && !entry.progress.dims[skill])
+    if (!dim) return []
+    return [{
+      key: entry.key, kind: 'review', entryKind: entry.kind, no: entry.no,
+      headword: entry.headword, stars: entry.stars, dim,
+    }]
+  })
 
   // 清洗：还没摸过底的
   const triageList = priorityShuffle(
@@ -170,7 +188,7 @@ export function buildSession(
   // （避免"先连刷 30 张清洗才见到背词卡"的死节奏）
   const pools: Array<{ list: SessionCard[]; cap: number }> = [
     { list: dueList, cap: budgets.due },
-    { list: newList, cap: budgets.newWords },
+    { list: [...newList, ...examples], cap: budgets.newWords },
     { list: triageList, cap: budgets.triage },
     { list: spellList, cap: budgets.spellSpot },
     { list: fluentList, cap: budgets.fluentSpot },
@@ -201,7 +219,7 @@ export function buildSession(
     pending: {
       dueLeft: Math.max(0, dueList.length - stats.review),
       triageLeft: Math.max(0, triageList.length - stats.triage),
-      newLeft: Math.max(0, newList.length - added[1]),
+      newLeft: Math.max(0, newList.length + examples.length - added[1]),
     },
   }
 }

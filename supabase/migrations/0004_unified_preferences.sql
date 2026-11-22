@@ -5,7 +5,17 @@ create table if not exists public.user_preferences (
 );
 
 alter table public.user_preferences enable row level security;
+grant select, insert, update on public.user_preferences to authenticated;
 
-drop policy if exists "preferences are private" on public.user_preferences;
-create policy "preferences are private" on public.user_preferences
-  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+do $migration$
+begin
+  if not exists (
+    select 1 from pg_policies
+    where schemaname = 'public' and tablename = 'user_preferences'
+      and policyname = 'preferences are private'
+  ) then
+    create policy "preferences are private" on public.user_preferences
+      for all to authenticated using (auth.uid() = user_id) with check (auth.uid() = user_id);
+  end if;
+end;
+$migration$;
