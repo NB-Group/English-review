@@ -114,7 +114,8 @@ export default function Goals() {
           {cloud ? (
             <>
               <span className="goal-scope">{cloud.username}</span>
-              <button className="goal-remove" onClick={() => void cloud.signOut()}>退出登录</button>
+              {cloud.guest && <span className="goal-note">进度保存在这台设备上。</span>}
+              <button className="goal-remove" onClick={() => void cloud.signOut()}>{cloud.guest ? '登录 / 注册' : '退出登录'}</button>
             </>
           ) : session ? (
             <>
@@ -136,7 +137,7 @@ export default function Goals() {
       </section>
 
       {/* 危险操作 */}
-      {!cloud && <section className="card goals-section goals-danger">
+      {(!cloud || cloud.guest) && <section className="card goals-section goals-danger">
         <div className="goals-section-title">重置</div>
         {confirmReset ? (
           <div className="goal-profile">

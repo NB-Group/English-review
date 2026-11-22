@@ -16,6 +16,7 @@ export interface UnifiedBackend {
   getSession(): Promise<{ id: string; username: string } | null>
   signIn(username: string, password: string): Promise<{ id: string; username: string }>
   signUp(username: string, password: string, inviteLink: string): Promise<{ id: string; username: string }>
+  claimLegacyAccount(username: string, pin: string, password: string): Promise<{ id: string; username: string }>
   signOut(): Promise<void>
   loadProfile(defaults: UserProfile): Promise<UserProfile>
   updatePreferences(ownerId: string, preferences: UnifiedPreferences): Promise<void>
@@ -66,6 +67,11 @@ export function createUnifiedBackend(url: string, anonKey: string): UnifiedBacke
     signIn,
     signUp: async (username, password, inviteLink) => {
       const { error } = await client.functions.invoke('register-student', { body: { username, password, inviteLink } })
+      if (error) throw error
+      return signIn(username, password)
+    },
+    claimLegacyAccount: async (username, pin, password) => {
+      const { error } = await client.functions.invoke('claim-study-account', { body: { username, pin, password } })
       if (error) throw error
       return signIn(username, password)
     },

@@ -69,7 +69,7 @@ function StudyWorkspace() {
         </nav>
         <div className="mt-auto" />
         {cloud
-          ? <div className="sidebar-bottom">{cloud.username} <button className="gate-skip" onClick={() => void cloud.signOut()}>退出</button></div>
+          ? <div className="sidebar-bottom">{cloud.username} <button className="gate-skip" onClick={() => void cloud.signOut()}>{cloud.guest ? '登录' : '退出'}</button></div>
           : <AccountChip />}
       </aside>
       <div className="workspace-body">

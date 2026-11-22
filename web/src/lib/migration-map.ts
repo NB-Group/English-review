@@ -1,4 +1,6 @@
-import type { ChineseCardState, ChineseGrade, Dim, EntryProgress, FsrsState, UserProfile } from '../types'
+import type { ChineseCardState, ChineseGrade, Dim, EntryProgress, FsrsState, UserProfile } from '../types.ts'
+
+export const STUDY_CONTENT_VERSION = '2026.11.22'
 
 export type UnifiedCardStatus = 'new' | 'learning' | 'review' | 'mastered'
 

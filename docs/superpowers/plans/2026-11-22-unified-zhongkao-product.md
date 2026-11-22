@@ -81,7 +81,8 @@
 - [x] **Step 1: Test old English keys map to stable card IDs**
 - [x] **Step 2: Add the preference schema, migration snapshot boundary and dry-run exporter**
 - [x] **Step 3: Integrate Supabase events and locally verify the configured sync path**
-- [ ] **Step 4: Verify a real backup, apply migrations in the target project, match account IDs, and reconcile all imported progress before switching the production sync provider**
+- [x] **Step 4: Verify the PythonAnywhere backup and reconcile its baseline in Supabase**
+- [x] **Step 5: Let each legacy account verify its PIN and set a Supabase password. Refresh its baseline from the authenticated source during activation.**
 
 ### Task 5: Root deployment and cutover
 
@@ -98,4 +99,5 @@
 
 - Pages release `d78b1c3` serves the app and vocabulary at `https://nb-group.github.io/study/`. Browser checks covered the mixed daily queue, full and selected phrase scopes, session resume, practice-only scoring, settings, and the legacy URL redirect into an independently scored example card.
 - The Supabase build was tested with a local browser API fixture. It covers sign-in, review queueing during an outage, retry after reload, and isolation from the old local profile. The PostgreSQL fixture verified role isolation, repeat imports, rejected conflicts, and atomic rollback. These fixtures use synthetic accounts.
-- The production site still uses PythonAnywhere for account sync. The target Supabase project cannot currently be administered from the tool session. The connector fails on OAuth refresh, the CLI lacks a session, and the dashboard controls time out. The PythonAnywhere source archive and production account mapping have yet to be verified.
+- The Aleph project has the additive study migrations. The PythonAnywhere archive checksum matched the downloaded tar. The two reserved Supabase accounts matched all 228 imported card states in both a rollback rehearsal and the committed import.
+- A synthetic account exercised the deployed activation endpoint with an incorrect PIN and an accepted PIN. The browser restored the imported scheduler state, reloaded the session, rejected a second activation, and opened the existing local guest profile.

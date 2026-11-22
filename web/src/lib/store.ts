@@ -12,7 +12,7 @@ import type {
 import { Rating, rate, craftState } from './fsrs'
 
 const cloudConfigured = Boolean(import.meta.env?.VITE_SUPABASE_URL && import.meta.env?.VITE_SUPABASE_ANON_KEY)
-const profileStorageKey = 'kaogang_v2_profile'
+export const profileStorageKey = 'kaogang_v2_profile'
 
 /** 全局用户状态：档案 + 学习动作（localStorage 持久化，v1 不做服务端同步） */
 

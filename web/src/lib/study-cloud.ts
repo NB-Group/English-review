@@ -1,13 +1,14 @@
 import { createContext, useContext } from 'react'
 import type { ChineseGrade } from '../types'
-import type { UnifiedLearningState } from './migration-map'
+import { STUDY_CONTENT_VERSION, type UnifiedLearningState } from './migration-map'
 import type { UnifiedReviewEvent } from './unified-backend'
 
-export const STUDY_CONTENT_VERSION = '2026.11.22'
+export { STUDY_CONTENT_VERSION } from './migration-map'
 
 export interface StudyCloud {
   accountId: string
-  review: (state: UnifiedLearningState, grade: ChineseGrade | null) => void
+  review?: (state: UnifiedLearningState, grade: ChineseGrade | null) => void
+  guest?: boolean
   signOut: () => Promise<void>
   username: string
 }

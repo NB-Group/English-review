@@ -38,7 +38,8 @@ function subscribeToAccount(notify: () => void) {
 export default function PracticeSession({ ds, request }: { ds: Dataset; request: PracticeRequest }) {
   const cloud = useStudyCloud()
   const owner = useSyncExternalStore(subscribeToAccount, () => getSession()?.user ?? null)
-  const storageKey = 'zhongkao-practice-v1:' + JSON.stringify([cloud?.accountId ?? owner, request])
+  const roundOwner = cloud?.guest ? owner : cloud?.accountId ?? owner
+  const storageKey = 'zhongkao-practice-v1:' + JSON.stringify([roundOwner, request])
   return <PracticeRound key={storageKey} storageKey={storageKey} ds={ds} request={request} />
 }
 
@@ -73,7 +74,7 @@ function PracticeRound({ ds, request, storageKey }: { ds: Dataset; request: Prac
   }
 
   function record(subject: 'english' | 'chinese', key: string, skill: Dim | 'recall', grade: ChineseGrade | null) {
-    if (!cloud) return
+    if (!cloud?.review) return
     const cardId = makeUnifiedCardId(STUDY_CONTENT_VERSION, subject, key, skill)
     const state = mapEnglishProfile(store.getState().profile, STUDY_CONTENT_VERSION).learningStates
       .find((candidate) => candidate.cardId === cardId)
