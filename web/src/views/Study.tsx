@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
+import { useSearchParams } from 'react-router-dom'
 import type { Dataset } from '../lib/data'
 import type { TriageVerdict } from '../types'
-import { buildSession, type SessionCard, type SessionPlan } from '../lib/engine'
+import { buildPhrasePractice, buildSession, type SessionCard, type SessionPlan } from '../lib/engine'
 import { Rating } from '../lib/fsrs'
 import { grade, type Grade } from '../lib/grader'
 import { composeHintedAnswer, firstCharacterHint } from '../lib/hints'
 import { useProfile } from '../lib/store'
 import { speak } from '../lib/tts'
+import { parsePracticeRequest } from '../lib/product-types'
 
 const EASE = [0.16, 1, 0.3, 1] as const
 
@@ -40,14 +42,18 @@ export default function Study({ ds }: { ds: Dataset }) {
   const doTriage = useProfile((s) => s.triage)
   const doAnswer = useProfile((s) => s.answer)
   const reduce = useReducedMotion()
+  const [searchParams] = useSearchParams()
+  const request = parsePracticeRequest(searchParams.toString())
 
   const build = () =>
-    buildSession(ds, useProfile.getState().profile, {
-      due: 60,
-      spellSpot: profile.dailyQuota.spotcheck,
-      fluentSpot: Math.max(2, Math.round(profile.dailyQuota.spotcheck / 2)),
-      triage: profile.dailyQuota.triage, newWords: profile.dailyQuota.newWords,
-    })
+    request.scope === 'all-phrases'
+      ? buildPhrasePractice(ds, request.order === 'random' ? 'random' : 'textbook')
+      : buildSession(ds, useProfile.getState().profile, {
+          due: 60,
+          spellSpot: profile.dailyQuota.spotcheck,
+          fluentSpot: Math.max(2, Math.round(profile.dailyQuota.spotcheck / 2)),
+          triage: profile.dailyQuota.triage, newWords: profile.dailyQuota.newWords,
+        })
   const [plan, setPlan] = useState<SessionPlan>(build)
   // 调试出口（测试用）：window.__plan 暴露当前组牌
   useEffect(() => { ;(window as unknown as { __plan?: SessionPlan }).__plan = plan }, [plan])
@@ -108,8 +114,10 @@ export default function Study({ ds }: { ds: Dataset }) {
               <NewWordCard
                 ds={ds} card={card} bump={bump}
                 onDone={(r) => {
-                  doAnswer(card.key, 'w1', Rating.Easy)
-                  doAnswer(card.key, 'w2', r)
+                  if (request.mode === 'formal') {
+                    doAnswer(card.key, 'w1', Rating.Easy)
+                    doAnswer(card.key, 'w2', r)
+                  }
                   bump(r !== Rating.Again)
                   next()
                 }}
@@ -118,7 +126,7 @@ export default function Study({ ds }: { ds: Dataset }) {
             {(card.kind === 'review' || card.kind === 'spellSpot' || card.kind === 'fluentSpot') && (
               <ReviewCard
                 ds={ds} card={card} bump={bump}
-                onDone={(r) => { doAnswer(card.key, card.dim ?? 'w2', r); bump(r !== Rating.Again); next() }}
+                onDone={(r) => { if (request.mode === 'formal') doAnswer(card.key, card.dim ?? 'w2', r); bump(r !== Rating.Again); next() }}
               />
             )}
           </motion.div>

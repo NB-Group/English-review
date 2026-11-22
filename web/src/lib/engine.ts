@@ -26,6 +26,21 @@ export interface SessionPlan {
   pending: { dueLeft: number; triageLeft: number; newLeft: number }
 }
 
+export function buildPhrasePractice(ds: Dataset, order: 'textbook' | 'random' = 'textbook'): SessionPlan {
+  const phrases = order === 'random' ? shuffle(ds.phrases) : [...ds.phrases].sort((a, b) => a.no - b.no)
+  const cards = phrases.map((phrase) => ({
+    key: `p:${phrase.no}`,
+    kind: 'spellSpot' as const,
+    entryKind: 'phrase' as const,
+    no: phrase.no,
+    headword: phrase.headword,
+    dim: 'w2' as const,
+    stars: phrase.stars,
+  }))
+  const stats: Record<CardKind, number> = { review: 0, spellSpot: cards.length, fluentSpot: 0, triage: 0, newWord: 0 }
+  return { cards, stats, pending: { dueLeft: 0, triageLeft: 0, newLeft: 0 } }
+}
+
 const SPOTCHECK_COOLDOWN_MS = 24 * 60 * 60 * 1000
 
 function shuffle<T>(arr: T[]): T[] {
