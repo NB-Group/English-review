@@ -4,7 +4,7 @@ import { isDue } from './fsrs'
 import { dimsForLevel, goalLevelFor } from './store'
 
 /** 会话组牌：到期复习 → P1 拼写抽查 → P3 熟词抽查 → 清洗 → 新词
- *  防瞬时记忆：同词条同场冷却（隔 8 张）；形近/同族相邻规避由卡片选择时兜底 */
+ *  同一词条一场只出现一次，抽查词条跨会话保留冷却时间。 */
 
 export type CardKind = 'review' | 'spellSpot' | 'fluentSpot' | 'triage' | 'newWord'
 
@@ -26,7 +26,7 @@ export interface SessionPlan {
   pending: { dueLeft: number; triageLeft: number; newLeft: number }
 }
 
-const COOLDOWN = 8
+const SPOTCHECK_COOLDOWN_MS = 24 * 60 * 60 * 1000
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr]
@@ -35,6 +35,10 @@ function shuffle<T>(arr: T[]): T[] {
     ;[a[i], a[j]] = [a[j], a[i]]
   }
   return a
+}
+
+function priorityShuffle<T>(arr: T[], getStars: (item: T) => number): T[] {
+  return shuffle(arr).sort((a, b) => getStars(b) - getStars(a))
 }
 
 function weakestDueDim(p: EntryProgress, dims: Dim[]): Dim | null {
@@ -56,12 +60,11 @@ export function buildSession(
   const stats: Record<CardKind, number> = {
     review: 0, spellSpot: 0, fluentSpot: 0, triage: 0, newWord: 0,
   }
-  const lastPos = new Map<string, number>()
+  const seenKeys = new Set<string>()
 
   const push = (c: SessionCard): boolean => {
-    const last = lastPos.get(c.key) ?? -Infinity
-    if (cards.length - last < COOLDOWN) return false // 冷却不够，本场跳过
-    lastPos.set(c.key, cards.length)
+    if (seenKeys.has(c.key)) return false
+    seenKeys.add(c.key)
     cards.push(c)
     stats[c.kind]++
     return true
@@ -87,47 +90,53 @@ export function buildSession(
 
   // ── 各池（互斥条件，一个词条只进一个池）──
   // 到期复习：fluent 未降级且间隔 >40 天的不算欠账
-  const dueList = entries
-    .filter((e) => e.level !== 'skip' && e.progress.triage !== null)
-    .map((e) => ({ e, dim: weakestDueDim(e.progress, dimsForLevel(e.level)) }))
-    .filter(
-      ({ e, dim }) =>
-        dim !== null &&
-        !(e.progress.triage === 'fluent' && !e.progress.degraded && e.progress.dims[dim!]!.scheduled_days > 40),
-    )
-    .sort(({ e: a }, { e: b }) => b.stars - a.stars)
+  const dueList = priorityShuffle(
+    entries
+      .filter((e) => e.level !== 'skip' && e.progress.triage !== null)
+      .map((e) => ({ e, dim: weakestDueDim(e.progress, dimsForLevel(e.level)) }))
+      .filter(
+        ({ e, dim }) =>
+          dim !== null &&
+          !(e.progress.triage === 'fluent' && !e.progress.degraded && e.progress.dims[dim!]!.scheduled_days > 40),
+      ),
+    ({ e }) => e.stars,
+  )
     .map(({ e, dim }) => ({ key: e.key, kind: 'review', entryKind: e.kind, no: e.no, headword: e.headword, dim: dim!, stars: e.stars }) as SessionCard)
 
   // 拼写学习流（新词）：unknown 从零学；recognize 且从未练过拼写的直接进学习流——
   // "认识拼不出"的语义就是要练拼写，不该只等每天几张抽查
-  const newList = entries
-    .filter((e) => {
+  const newList = priorityShuffle(
+    entries.filter((e) => {
       if (e.level === 'skip') return false
       const p = e.progress
       if (p.triage === 'unknown') return !p.dims.w1 && !p.dims.w2
       if (p.triage === 'recognize') return !p.dims.w2
       return false
-    })
-    .sort((a, b) => b.stars - a.stars)
+    }),
+    (e) => e.stars,
+  )
     .map((e) => ({ key: e.key, kind: 'newWord', entryKind: e.kind, no: e.no, headword: e.headword, dim: 'w2', stars: e.stars, priorTriage: e.progress.triage }) as SessionCard & { priorTriage: string })
 
   // 清洗：还没摸过底的
-  const triageList = entries
-    .filter((e) => e.progress.triage === null && e.level !== 'skip')
-    .sort((a, b) => b.stars - a.stars)
+  const triageList = priorityShuffle(
+    entries.filter((e) => e.progress.triage === null && e.level !== 'skip'),
+    (e) => e.stars,
+  )
     .map((e) => ({ key: e.key, kind: 'triage', entryKind: e.kind, no: e.no, headword: e.headword, dim: null, stars: e.stars }) as SessionCard)
 
   // 抽查池
   // 抽查池排除本场已在学习流的词（同词不双占名额）
   const newKeys = new Set(newList.map((n) => n.key))
+  const recentlySeen = (p: EntryProgress) =>
+    p.lastSeenAt !== undefined && now - p.lastSeenAt < SPOTCHECK_COOLDOWN_MS
   const spellList = shuffle(
-    entries.filter((e) => e.progress.triage === 'recognize' && e.level !== 'skip' && !isDue(e.progress.dims.w2 ?? null, now) && !newKeys.has(e.key)),
+    entries.filter((e) => e.progress.triage === 'recognize' && e.level !== 'skip' && !isDue(e.progress.dims.w2 ?? null, now) && !newKeys.has(e.key) && !recentlySeen(e.progress)),
   ).map((e) => ({ key: e.key, kind: 'spellSpot', entryKind: e.kind, no: e.no, headword: e.headword, dim: 'w2', stars: e.stars }) as SessionCard)
   const fluentList = shuffle(
-    entries.filter((e) => e.progress.triage === 'fluent' && !e.progress.degraded && e.level !== 'skip'),
+    entries.filter((e) => e.progress.triage === 'fluent' && !e.progress.degraded && e.level !== 'skip' && !recentlySeen(e.progress)),
   ).map((e) => ({ key: e.key, kind: 'fluentSpot', entryKind: e.kind, no: e.no, headword: e.headword, dim: 'w2', stars: e.stars }) as SessionCard)
 
-  // ── 轮转混排：复习→新词→清洗→抽查 循环取卡，冷却不够就跳过取下一候选 ──
+  // ── 轮转混排：复习→新词→清洗→抽查 循环取卡 ──
   // （避免"先连刷 30 张清洗才见到背词卡"的死节奏）
   const pools: Array<{ list: SessionCard[]; cap: number; kind: CardKind }> = [
     { list: dueList, cap: budgets.due, kind: 'review' },

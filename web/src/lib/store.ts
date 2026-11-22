@@ -89,7 +89,7 @@ export const useProfile = create<ProfileState>()(
               ...s.profile,
               progress: {
                 ...s.profile.progress,
-                [key]: { ...prev, triage: verdict, dims, degraded: false },
+                [key]: { ...prev, triage: verdict, dims, degraded: false, lastSeenAt: Date.now() },
               },
             },
           }
@@ -113,7 +113,7 @@ export const useProfile = create<ProfileState>()(
               ...s.profile,
               progress: {
                 ...s.profile.progress,
-                [key]: { ...prev, dims, degraded },
+                [key]: { ...prev, dims, degraded, lastSeenAt: Date.now() },
               },
             },
           }

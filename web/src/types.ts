@@ -111,6 +111,7 @@ export interface EntryProgress {
   triage: TriageVerdict | null
   dims: Partial<Record<Dim, FsrsState>>
   degraded?: boolean // 抽查失败被降级
+  lastSeenAt?: number // 最近一次进入学习卡片的时间
 }
 
 export interface UserProfile {
