@@ -21,6 +21,13 @@ export interface ChineseCard {
 export const cards = cardsData as ChineseCard[]
 export const pieces = piecesData as Array<{ id: string; kind: 'poem' | 'prose'; title: string; author?: string; textbookLocation?: string }>
 
+export const segmentsByPiece = new Map<string, typeof segmentsData>()
+for (const segment of [...segmentsData].sort((a, b) => a.order - b.order)) {
+  const segments = segmentsByPiece.get(segment.pieceId) ?? []
+  segments.push(segment)
+  segmentsByPiece.set(segment.pieceId, segments)
+}
+
 const orderedSegments = new Map(segmentsData.map((segment) => [segment.pieceId + ':' + segment.order, segment.text]))
 export const previousSegment = new Map(segmentsData.map((segment) =>
   [segment.id, orderedSegments.get(segment.pieceId + ':' + (segment.order - 1))] as const))

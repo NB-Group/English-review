@@ -20,6 +20,7 @@ interface Result {
 interface Session {
   queue: PracticeCard[]
   results: Result[]
+  readPieceIds?: string[]
 }
 
 function restore(key: string): Session | undefined {
@@ -52,6 +53,10 @@ function PracticeRound({ ds, request, storageKey }: { ds: Dataset; request: Prac
   const submitted = useRef(-1)
   const index = session.results.length
   const current = session.queue[index]
+  const readPieceIds = Array.isArray(session.readPieceIds) ? session.readPieceIds : []
+  const pieceId = current?.subject === 'chinese' && current.card.kind === 'segment-continuation'
+    ? current.card.pieceId : undefined
+  const needsReading = Boolean(pieceId && !readPieceIds.includes(pieceId))
 
   function save(next: Session) {
     setSession(next)
@@ -70,7 +75,7 @@ function PracticeRound({ ds, request, storageKey }: { ds: Dataset; request: Prac
     } catch {
       setStorageError(true)
     }
-    save({ queue: session.queue, results: [...session.results, { outcome }] })
+    save({ ...session, results: [...session.results, { outcome }] })
   }
 
   function record(subject: 'english' | 'chinese', key: string, skill: Dim | 'recall', grade: ChineseGrade | null) {
@@ -149,7 +154,9 @@ function PracticeRound({ ds, request, storageKey }: { ds: Dataset; request: Prac
       <div key={index}>
         {current.subject === 'english'
           ? <EnglishCard ds={ds} card={current.card} onDone={finishEnglish} />
-          : <ChineseReviewCard card={current.card} onGrade={(grade) => {
+          : <ChineseReviewCard card={current.card} needsReading={needsReading} onStartReciting={() => {
+              if (pieceId && needsReading) save({ ...session, readPieceIds: [...readPieceIds, pieceId] })
+            }} onGrade={(grade) => {
               const id = current.card.id
               advance(grade === 'good' || grade === 'easy' ? 'correct' : 'review', () => {
                 const state = store.getState()
