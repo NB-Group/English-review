@@ -6,7 +6,7 @@ import PracticeLauncher from './views/PracticeLauncher'
 import ProductLibrary from './views/ProductLibrary'
 import Study from './views/Study'
 import ChineseStudy from './views/ChineseStudy'
-import Goals from './views/Goals'
+import ProductProgress from './views/ProductProgress'
 import { AccountGate, AccountChip } from './views/AccountGate'
 
 const nav = [
@@ -64,7 +64,7 @@ export default function App() {
                 <Route path="/library" element={<ProductLibrary ds={ds} />} />
                 <Route path="/study" element={<Study ds={ds} />} />
                 <Route path="/chinese" element={<ChineseStudy />} />
-                <Route path="/progress" element={<Goals />} />
+                <Route path="/progress" element={<ProductProgress ds={ds} />} />
                 <Route path="*" element={<Navigate to="/today" replace />} />
               </Routes>}
         </div>
