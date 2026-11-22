@@ -32,6 +32,14 @@ export function grade(user: string, accepted: string[]): Grade {
   if (!u) return 'wrong'
   const norms = accepted.map(normalize).filter(Boolean)
   if (norms.includes(u)) return 'exact'
+  const wordAlternatives = [...new Set(norms.filter((n) => !n.includes('/') && !n.includes(' ')))]
+  if (wordAlternatives.length > 1) {
+    const typedAlternatives = u.split(/\s*\/\s*|\s+/).filter(Boolean)
+    if (
+      typedAlternatives.length === wordAlternatives.length &&
+      typedAlternatives.every((word) => wordAlternatives.includes(word))
+    ) return 'exact'
+  }
   // 近似：编辑距离 ≤1，或单复数差异（含 -s/-es/-ves/-ies 变化）
   const stems = (s: string): Set<string> => {
     const out = new Set([s])

@@ -417,6 +417,10 @@ function Feedback({
   const tint = ok ? 'var(--color-duo-green-tint)' : 'var(--color-duo-red-tint)'
   const ink = ok ? 'var(--color-duo-green-dark)' : 'var(--color-duo-red-dark)'
   const title = grade === 'exact' ? '太棒了' : grade === 'near' ? '很接近' : '再试试'
+  const answerOptions = answer.split('/').map((option) => option.trim()).filter(Boolean)
+  const shownAnswer = answerOptions.length > 1 && answerOptions.every((option) => !option.includes(' '))
+    ? answerOptions.join(' 或 ')
+    : answer
   return (
     <motion.div
       initial={reduce ? false : { opacity: 0, y: 20 }}
@@ -429,8 +433,8 @@ function Feedback({
         {ok ? '✓ ' : '✗ '}{title}
       </div>
       <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[14px] font-extrabold">
-        <span style={{ color: ink }}>正确 {answer}</span>
-        {yours && yours.toLowerCase() !== answer.toLowerCase() && (
+        <span style={{ color: ink }}>正确 {shownAnswer}</span>
+        {grade !== 'exact' && yours && (
           <span className="text-ink-soft">你写的 {yours}</span>
         )}
       </div>
