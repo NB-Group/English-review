@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
+import { useNavigate } from 'react-router-dom'
 import type { Dataset } from '../lib/data'
 import type { PhraseEntry, WordEntry } from '../types'
 import { useProfile } from '../lib/store'
@@ -24,6 +25,7 @@ function SpeakerInline({ text }: { text: string }) {
 }
 
 export default function Library({ ds }: { ds: Dataset }) {
+  const navigate = useNavigate()
   const [star, setStar] = useState<StarFilter>('all')
   const [triage, setTriage] = useState<TriageFilter>('all')
   const [q, setQ] = useState('')
@@ -74,7 +76,7 @@ export default function Library({ ds }: { ds: Dataset }) {
 
   return (
     <div className="library-page mt-6">
-      <div className="page-heading library-heading"><div><div className="eyebrow">THE VOCABULARY COLLECTION</div><h1>每一个词，都有它的位置。</h1><p>{ds.words.length} 个单词 · {ds.phrases.length} 个词组，按你的节奏逐一掌握。</p></div></div>
+      <div className="page-heading library-heading"><div><div className="eyebrow">THE CONTENT LIBRARY</div><h1>每一个词，都有它的位置。</h1><p>{ds.words.length} 个单词 · {ds.phrases.length} 个词组，按你的节奏逐一掌握。</p></div><div className="flex gap-2"><button className="push" onClick={() => navigate('/practice?subject=english&scope=all-phrases&mode=formal&order=textbook')}>全部词组默写 ↗</button></div></div>
       {/* 过滤器 */}
       <div className="library-tools card flex flex-wrap items-center gap-2 p-3">
         <div className="flex rounded-full bg-mist p-1">
