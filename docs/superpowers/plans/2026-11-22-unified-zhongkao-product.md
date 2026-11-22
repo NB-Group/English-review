@@ -93,7 +93,7 @@
 
 - [x] **Step 1: Publish the new shell under the chosen canonical domain**
 - [x] **Step 2: Verify old `/English-review` links redirect**
-- [ ] **Step 3: Verify production Supabase sign-in and account progress after cutover**
+- [x] **Step 3: Verify production Supabase sign-in and account progress after cutover**
 
 ## Verification
 
@@ -101,3 +101,4 @@
 - The Supabase build was tested with a local browser API fixture. It covers sign-in, review queueing during an outage, retry after reload, and isolation from the old local profile. The PostgreSQL fixture verified role isolation, repeat imports, rejected conflicts, and atomic rollback. These fixtures use synthetic accounts.
 - The Aleph project has the additive study migrations. The PythonAnywhere archive checksum matched the downloaded tar. The two reserved Supabase accounts matched all 228 imported card states in both a rollback rehearsal and the committed import.
 - A synthetic account exercised the deployed activation endpoint with an incorrect PIN and an accepted PIN. The browser restored the imported scheduler state, reloaded the session, rejected a second activation, and opened the existing local guest profile.
+- Pages release `b658361` uses Supabase for account sync. A synthetic account signed in on the live site, restored its progress, submitted a formal dictation answer, and resumed the round after a reload. The old study URL redirected to the new site. The two legacy account holders can set their own passwords through the activation form.
