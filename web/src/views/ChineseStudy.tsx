@@ -19,7 +19,10 @@ export default function ChineseReviewCard({
   return (
     <div>
       <section className="rounded-[28px] bg-duo-blue-tint/50 px-5 py-8 sm:px-8">
-        <p className="text-sm font-bold text-ink-soft">{isSense ? '文言词义' : piece?.title}</p>
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-sm text-ink-soft">
+          <p className="font-bold">{isSense ? '文言词义' : piece?.title}</p>
+          {!isSense && piece?.author?.trim() && <p>{piece.author}</p>}
+        </div>
         {(card.context || previous) &&
           <p className="mt-5 text-xl leading-relaxed text-ink">{card.context ?? previous}</p>}
         <h1 className="mt-3 text-2xl font-bold leading-relaxed text-ink">
