@@ -2,6 +2,7 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import type {
   Dim,
+  ChineseCardState,
   EntryProgress,
   GoalLevel,
   GoalRule,
@@ -30,6 +31,7 @@ interface ProfileState {
   triage: (key: string, verdict: TriageVerdict) => void
   clearTriage: (key: string) => void
   answer: (key: string, dim: Dim, r: Rating) => void
+  setChineseCardState: (key: string, state: ChineseCardState) => void
   resetProfile: () => void
 }
 
@@ -118,6 +120,14 @@ export const useProfile = create<ProfileState>()(
             },
           }
         }),
+
+      setChineseCardState: (key, state) =>
+        set((s) => ({
+          profile: {
+            ...s.profile,
+            chineseProgress: { ...(s.profile.chineseProgress ?? {}), [key]: state },
+          },
+        })),
 
       resetProfile: () => set({ profile: emptyProfile(get().profile.name) }),
     }),

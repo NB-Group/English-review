@@ -1,4 +1,5 @@
 import cardsData from '../data/zhongkao-qwen-2026.11.22/cards.json'
+import type { ChineseCardState } from '../types'
 
 export type ChineseCardKind = 'sense-recall' | 'segment-continuation'
 
@@ -13,14 +14,6 @@ export interface ChineseCard {
   options?: string[]
   answer: string
   estimatedSeconds: number
-}
-
-export interface ChineseCardState {
-  dueAt: string
-  intervalDays: number
-  lapseCount: number
-  lastGrade?: 'again' | 'hard' | 'good' | 'easy'
-  updatedAt: string
 }
 
 export const cards = cardsData as ChineseCard[]

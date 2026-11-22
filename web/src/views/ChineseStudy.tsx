@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { cards, selectChineseSession, type ChineseCard, type ChineseCardState } from '../lib/chinese'
+import { cards, selectChineseSession, type ChineseCard } from '../lib/chinese'
+import type { ChineseCardState, ChineseGrade } from '../types'
+import { useProfile } from '../lib/store'
 
 const STORAGE_KEY = 'zhongkao_v1_card_states'
 
-type ChineseGrade = 'again' | 'hard' | 'good' | 'easy'
-
-function loadStates(): Record<string, ChineseCardState> {
+function loadLegacyStates(): Record<string, ChineseCardState> {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
     return raw ? JSON.parse(raw) as Record<string, ChineseCardState> : {}
@@ -52,7 +52,9 @@ function CardHeader({ card, index, total }: { card: ChineseCard; index: number; 
 
 export default function ChineseStudy() {
   const navigate = useNavigate()
-  const [states, setStates] = useState<Record<string, ChineseCardState>>(loadStates)
+  const setChineseCardState = useProfile((state) => state.setChineseCardState)
+  const profileStates = useProfile((state) => state.profile.chineseProgress ?? {})
+  const [states, setStates] = useState<Record<string, ChineseCardState>>(() => ({ ...loadLegacyStates(), ...profileStates }))
   const [session] = useState<ChineseCard[]>(() => selectChineseSession(cards, states, 20))
   const [index, setIndex] = useState(0)
   const [revealed, setRevealed] = useState(false)
@@ -63,7 +65,7 @@ export default function ChineseStudy() {
     if (!card) return
     const next = { ...states, [card.id]: nextState(states[card.id], value) }
     setStates(next)
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(next))
+    setChineseCardState(card.id, next[card.id])
     setRevealed(false)
     setWrongChoice(null)
     setIndex((current) => current + 1)

@@ -89,6 +89,16 @@ export type Dim = 'w1' | 'w2' | 's1' | 's2'
 /** 目标等级（词集 → 等级） */
 export type GoalLevel = 'skip' | 'recognize' | 'dictation' | 'sentence' | 'full'
 
+export type ChineseGrade = 'again' | 'hard' | 'good' | 'easy'
+
+export interface ChineseCardState {
+  dueAt: string
+  intervalDays: number
+  lapseCount: number
+  lastGrade?: ChineseGrade
+  updatedAt: string
+}
+
 export interface GoalRule {
   id: string
   scope: { stars?: number[]; kind?: 'word' | 'phrase'; threeLevelOnly?: boolean }
@@ -119,6 +129,7 @@ export interface UserProfile {
   goals: GoalRule[]
   progress: Record<string, EntryProgress> // key: "w:598" / "p:22"
   sentenceProgress: Record<string, Record<Dim, FsrsState>> // key: sentence id
+  chineseProgress?: Record<string, ChineseCardState>
   dailyQuota: { triage: number; spotcheck: number; newWords: number }
   createdAt: number
 }
