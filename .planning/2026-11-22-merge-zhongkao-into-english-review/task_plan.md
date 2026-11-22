@@ -4,7 +4,7 @@
 以 English-review 的前端交互为主，将中考背诵内容接入同一套学习入口，并为后续统一 Supabase 账号和事件同步保留边界。
 
 ## Next Step
-复制当前版本化中文内容包，并建立 English-review 的中文轨道数据入口。
+定义英语卡片状态到统一 Supabase 复习事件的迁移方案。
 
 ## Current Phase
 Phase 1
@@ -12,11 +12,11 @@ Phase 1
 ## Phases
 
 ### Phase 1: 内容和领域对齐
-- [ ] 复制当前中文内容包到 English-review 的版本化数据目录
-- [ ] 增加中文轨道的共享卡片和学习状态适配层
-- [ ] 在 English-review 现有外壳中增加中文学习入口
-- [ ] 验证构建、内容数量和首个复习流程
-- **Status:** in_progress
+- [x] 复制当前中文内容包到 English-review 的版本化数据目录
+- [x] 增加中文轨道的共享卡片和学习状态适配层
+- [x] 在 English-review 现有外壳中增加中文学习入口
+- [x] 验证构建、内容数量和首个复习流程
+- **Status:** complete
 
 ### Phase 2: 统一账号和事件边界
 - [ ] 定义 English `EntryProgress` 到卡片状态的迁移

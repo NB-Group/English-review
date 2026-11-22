@@ -3,7 +3,7 @@
 ## Session: 2026-11-22
 
 ### Current Status
-- **Phase:** 1 - 内容和领域对齐
+- **Phase:** 1 - 内容和领域对齐完成
 - **Started:** 2026-11-22
 
 ### Actions Taken
@@ -11,12 +11,18 @@
 - 检查 zhongkao-recall 的 workspace、领域包、中文内容包、Supabase 和离线同步
 - 确定 English-review 前端作为第一阶段合并宿主
 - 初始化合并计划和发现记录
+- 复制 `zhongkao-qwen-2026.11.22` 内容包到 English-review
+- 新增 `/chinese` 中考背诵入口和本地卡片状态保存
+- 将首页和侧栏接入中文背诵入口
+- 发布 GitHub Pages 并通过浏览器验证首张诗文句段卡片
 
 ### Test Results
 | Test | Expected | Actual | Status |
 |------|----------|--------|--------|
 | English-review current build | Existing frontend builds | Previously verified | passed |
 | zhongkao-recall content pack counts | Versioned pack is readable | 140 pieces, 440 segments, 354 senses, 794 cards | passed |
+| English-review merged build | TypeScript and Vite build | Build completed with a chunk-size warning | passed |
+| Merged Chinese route | `/chinese` displays a study card | First poem segment card displayed online | passed |
 
 ### Errors
 | Error | Resolution |
