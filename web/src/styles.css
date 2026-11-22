@@ -108,6 +108,27 @@ body {
 .duo-input::placeholder { color: var(--color-ink-faint); font-weight: 600; }
 .duo-input:focus { border-color: var(--color-duo-blue); box-shadow: 0 0 0 3px var(--color-duo-blue-tint); }
 .duo-input:disabled { background: var(--color-mist); color: var(--color-ink-soft); }
+.dictation-input { padding-left: 3.5rem !important; }
+.dictation-hint {
+  position: absolute;
+  top: 50%;
+  left: 0.75rem;
+  z-index: 1;
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  transform: translateY(-50%);
+  pointer-events: none;
+  border-radius: 0.5rem;
+  background: var(--color-mist);
+  box-shadow: inset 0 0 0 1px var(--color-hare-dark);
+  color: var(--color-ink-soft);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1;
+}
 
 /* ── 进度条 ── */
 .duo-track { height: 14px; border-radius: 999px; background: var(--color-hare); overflow: hidden; }

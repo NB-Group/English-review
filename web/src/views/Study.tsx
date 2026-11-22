@@ -234,13 +234,13 @@ function NewWordCard({
           <div className="relative">
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute inset-y-0 left-5 z-10 flex items-center font-mono text-[20px] font-bold text-ink-faint"
+              className="dictation-hint"
             >
               {hint}
             </span>
             <input
               autoFocus
-              className="duo-input pl-12 text-left"
+              className="duo-input dictation-input text-left"
               placeholder="凭读音拼出来"
               value={input}
               disabled={result !== null}
@@ -363,13 +363,13 @@ function ReviewCard({
         <div className="relative">
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 left-5 z-10 flex items-center font-mono text-[20px] font-bold text-ink-faint"
+            className="dictation-hint"
           >
             {hint}
           </span>
           <input
             autoFocus
-            className="duo-input pl-12 text-left"
+            className="duo-input dictation-input text-left"
             placeholder="输入英文"
             value={input}
             disabled={revealed}
