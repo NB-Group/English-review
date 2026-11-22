@@ -1,4 +1,4 @@
-import { buildSession } from './engine.ts'
+import { buildSession, buildWordPractice } from './engine.ts'
 import type { Dataset } from './data.ts'
 import type { EntryProgress, UserProfile, WordEntry } from '../types.ts'
 
@@ -48,5 +48,10 @@ const recentPlan = buildSession(
   { due: 0, spellSpot: 0, fluentSpot: 1, triage: 0, newWords: 0 }, now,
 )
 if (recentPlan.stats.fluentSpot !== 0) throw new Error('a recently checked fluent entry must be deferred')
+
+const recognitionPlan = buildWordPractice(dataset([word(1), word(2)]), 'textbook')
+if (recognitionPlan.cards.length !== 2 || recognitionPlan.cards.some((card) => card.kind !== 'review' || card.dim !== 'w1')) {
+  throw new Error('recognition practice should create w1 review cards')
+}
 
 console.log('engine tests passed')

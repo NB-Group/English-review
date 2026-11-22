@@ -34,7 +34,7 @@ export default function PracticeLauncher() {
           {subject === 'english' && <>
             <button className={scope === 'today' ? 'choice-line active' : 'choice-line'} onClick={() => setScope('today')}><b>今日任务</b><span>按记忆状态安排</span></button>
             <button className={scope === 'all-phrases' ? 'choice-line active' : 'choice-line'} onClick={() => setScope('all-phrases')}><b>全部词组</b><span>完整检查 347 个词组</span></button>
-            <button className={scope === 'all-words' ? 'choice-line active' : 'choice-line'} onClick={() => setScope('all-words')}><b>全部单词</b><span>完整检查考纲单词</span></button>
+            <button className={scope === 'all-words' ? 'choice-line active' : 'choice-line'} onClick={() => setScope('all-words')}><b>全部单词认知</b><span>完整检查考纲单词释义</span></button>
           </>}
           {subject === 'chinese' && <button className="choice-line active"><b>语文背诵</b><span>诗文句段和实词</span></button>}
           {subject === 'chemistry' && <button className="choice-line disabled"><b>化学方程式</b><span>等待书写规则接入</span></button>}

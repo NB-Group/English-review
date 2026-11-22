@@ -41,6 +41,21 @@ export function buildPhrasePractice(ds: Dataset, order: 'textbook' | 'random' = 
   return { cards, stats, pending: { dueLeft: 0, triageLeft: 0, newLeft: 0 } }
 }
 
+export function buildWordPractice(ds: Dataset, order: 'textbook' | 'random' = 'textbook'): SessionPlan {
+  const words = order === 'random' ? shuffle(ds.words) : [...ds.words].sort((a, b) => a.no - b.no)
+  const cards = words.map((word) => ({
+    key: `w:${word.no}`,
+    kind: 'review' as const,
+    entryKind: 'word' as const,
+    no: word.no,
+    headword: word.headword,
+    dim: 'w1' as const,
+    stars: word.stars,
+  }))
+  const stats: Record<CardKind, number> = { review: cards.length, spellSpot: 0, fluentSpot: 0, triage: 0, newWord: 0 }
+  return { cards, stats, pending: { dueLeft: 0, triageLeft: 0, newLeft: 0 } }
+}
+
 const SPOTCHECK_COOLDOWN_MS = 24 * 60 * 60 * 1000
 
 function shuffle<T>(arr: T[]): T[] {

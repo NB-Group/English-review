@@ -3,7 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { useSearchParams } from 'react-router-dom'
 import type { Dataset } from '../lib/data'
 import type { TriageVerdict } from '../types'
-import { buildPhrasePractice, buildSession, type SessionCard, type SessionPlan } from '../lib/engine'
+import { buildPhrasePractice, buildSession, buildWordPractice, type SessionCard, type SessionPlan } from '../lib/engine'
 import { Rating } from '../lib/fsrs'
 import { grade, type Grade } from '../lib/grader'
 import { composeHintedAnswer, firstCharacterHint } from '../lib/hints'
@@ -48,6 +48,8 @@ export default function Study({ ds }: { ds: Dataset }) {
   const build = () =>
     request.scope === 'all-phrases'
       ? buildPhrasePractice(ds, request.order === 'random' ? 'random' : 'textbook')
+      : request.scope === 'all-words'
+        ? buildWordPractice(ds, request.order === 'random' ? 'random' : 'textbook')
       : buildSession(ds, useProfile.getState().profile, {
           due: 60,
           spellSpot: profile.dailyQuota.spotcheck,
