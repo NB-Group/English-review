@@ -16,6 +16,9 @@
 - 中文卡片状态接回 English-review 用户档案，沿用现有 Zustand 和 PythonAnywhere 档案同步
 - 将首页和侧栏接入中文背诵入口
 - 发布 GitHub Pages 并通过浏览器验证首张诗文句段卡片
+- 重写统一首页，加入学科任务卡片和专项训练入口
+- 增加全部词组默写、全部单词认知和正式/练习模式选择
+- 在词库页加入全部词组默写入口
 
 ### Test Results
 | Test | Expected | Actual | Status |

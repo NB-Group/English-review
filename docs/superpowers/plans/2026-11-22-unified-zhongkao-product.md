@@ -37,10 +37,10 @@
 - Modify: `web/src/styles.css`
 - Modify: `web/src/redesign.css`
 
-- [ ] **Step 1: Write route and scope tests**
-- [ ] **Step 2: Implement subject-aware navigation and the unified Today screen**
-- [ ] **Step 3: Implement the Practice launcher with subject, scope and mode controls**
-- [ ] **Step 4: Verify English and Chinese entry points from the new shell**
+- [x] **Step 1: Write route and scope tests**
+- [x] **Step 2: Implement subject-aware navigation and the unified Today screen**
+- [x] **Step 3: Implement the Practice launcher with subject, scope and mode controls**
+- [x] **Step 4: Verify English and Chinese entry points from the new shell**
 
 ### Task 2: Unified card and session contracts
 
@@ -51,10 +51,10 @@
 - Modify: `web/src/views/Study.tsx`
 - Modify: `web/src/views/ChineseStudy.tsx`
 
-- [ ] **Step 1: Add failing tests for all-phrase scope and subject filters**
-- [ ] **Step 2: Implement `ReviewScope`, `PracticeRequest` and card adapters**
-- [ ] **Step 3: Route both tracks through one session shell**
-- [ ] **Step 4: Verify formal and practice-only result modes**
+- [x] **Step 1: Add failing tests for all-phrase scope and subject filters**
+- [x] **Step 2: Implement `ReviewScope`, `PracticeRequest` and card adapters**
+- [x] **Step 3: Route both tracks through one session shell**
+- [x] **Step 4: Verify formal and practice-only result modes**
 
 ### Task 3: English goals and content-range practice
 
@@ -64,10 +64,10 @@
 - Modify: `web/src/lib/store.ts`
 - Create: `web/src/lib/practice-selection.test.ts`
 
-- [ ] **Step 1: Test recognition-only and dictation goals**
-- [ ] **Step 2: Add all phrases, filtered phrases and manual selection scopes**
-- [ ] **Step 3: Add the library-to-practice flow**
-- [ ] **Step 4: Verify results update the intended learning state**
+- [x] **Step 1: Test recognition-only and dictation goals**
+- [x] **Step 2: Add all phrases, filtered phrases and manual selection scopes**
+- [x] **Step 3: Add the library-to-practice flow**
+- [x] **Step 4: Verify results update the intended learning state**
 
 ### Task 4: Supabase migration boundary
 
