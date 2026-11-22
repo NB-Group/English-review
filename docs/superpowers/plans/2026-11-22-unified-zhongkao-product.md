@@ -15,7 +15,7 @@
 - 产品名称暂用「中考复习」，实现中保留可替换能力。
 - 首页同时展示各学科今日任务和专项训练。
 - 英语支持「认识即可」和「需要默写」两种目标。
-- 化学先提供任务类型和入口，不制作方程式书写界面。
+- 化学保留学科类型，界面等用户提供内容后接入。
 - PythonAnywhere 数据在迁移完成前保持可回退。
 - Supabase 迁移需要备份、映射、试导入和核对。
 
@@ -80,8 +80,8 @@
 
 - [x] **Step 1: Test old English keys map to stable card IDs**
 - [x] **Step 2: Add the preference schema, migration snapshot boundary and dry-run exporter**
-- [ ] **Step 3: Integrate Supabase event adapter with the active sync path**
-- [ ] **Step 4: Keep PythonAnywhere read-only fallback until verification completes**
+- [x] **Step 3: Integrate Supabase events and locally verify the configured sync path**
+- [ ] **Step 4: Verify a real backup, apply migrations in the target project, match account IDs, and reconcile all imported progress before switching the production sync provider**
 
 ### Task 5: Root deployment and cutover
 
@@ -91,5 +91,11 @@
 - Add: release verification record
 
 - [x] **Step 1: Publish the new shell under the chosen canonical domain**
-- [ ] **Step 2: Verify old `/English-review` links redirect**
-- [ ] **Step 3: Verify account, content, practice and progress flows**
+- [x] **Step 2: Verify old `/English-review` links redirect**
+- [ ] **Step 3: Verify production Supabase sign-in and account progress after cutover**
+
+## Verification
+
+- Pages release `d78b1c3` serves the app and vocabulary at `https://nb-group.github.io/study/`. Browser checks covered the mixed daily queue, full and selected phrase scopes, session resume, practice-only scoring, settings, and the legacy URL redirect into an independently scored example card.
+- The Supabase build was tested with a local browser API fixture. It covers sign-in, review queueing during an outage, retry after reload, and isolation from the old local profile. The PostgreSQL fixture verified role isolation, repeat imports, rejected conflicts, and atomic rollback. These fixtures use synthetic accounts.
+- The production site still uses PythonAnywhere for account sync. The target Supabase project cannot currently be administered from the tool session. The connector fails on OAuth refresh, the CLI lacks a session, and the dashboard controls time out. The PythonAnywhere source archive and production account mapping have yet to be verified.
