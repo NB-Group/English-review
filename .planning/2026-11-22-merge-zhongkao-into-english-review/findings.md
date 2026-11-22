@@ -19,6 +19,8 @@
 | 中文卡片使用版本化 ID | 保留内容修订和后续学习状态迁移能力 |
 | 第二阶段再迁移 Supabase | 当前 PythonAnywhere 是英语旧账号的运行依赖 |
 
+第一阶段的中文卡片状态已经写入 English-review 的 `UserProfile.chineseProgress`，旧的独立 localStorage 读取保留为兼容迁移入口。
+
 ## Issues Encountered
 | Issue | Resolution |
 |-------|------------|

@@ -13,6 +13,7 @@
 - 初始化合并计划和发现记录
 - 复制 `zhongkao-qwen-2026.11.22` 内容包到 English-review
 - 新增 `/chinese` 中考背诵入口和本地卡片状态保存
+- 中文卡片状态接回 English-review 用户档案，沿用现有 Zustand 和 PythonAnywhere 档案同步
 - 将首页和侧栏接入中文背诵入口
 - 发布 GitHub Pages 并通过浏览器验证首张诗文句段卡片
 
