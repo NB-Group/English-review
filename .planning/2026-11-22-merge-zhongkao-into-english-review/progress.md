@@ -21,6 +21,9 @@
 - 在词库页加入全部词组默写入口
 - 建立旧 English profile 到统一卡片状态的迁移映射
 - 增加 Supabase preferences 表迁移和前端适配器
+- 将首页、专项训练、内容库和进度导航重写为中性产品结构
+- 增加全部词组默写、全部单词认知和学科内容库入口
+- 建立旧英语档案到统一卡片状态的迁移映射
 
 ### Test Results
 | Test | Expected | Actual | Status |
